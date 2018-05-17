@@ -1,0 +1,50 @@
+CC     = "C:\Program Files\MATLABtosho\sys\lcc\bin\lcc.exe"
+LD     = "C:\Program Files\MATLABtosho\sys\lcc\bin\lcclnk.exe"
+LIBCMD = "C:\Program Files\MATLABtosho\sys\lcc\bin\lcclib.exe"
+CFLAGS = -c -Zp8 -DMATLAB_MEX_FILE -noregistrylookup 
+LDFLAGS = -s -dll -L"C:\Program Files\MATLABtosho\sys\lcc\lib" 
+LIBFLAGS = 
+
+OBJECTS = \
+	"Klatt1_sfun.obj"\
+	"c1_Klatt1.obj"\
+	"c2_Klatt1.obj"\
+	"c3_Klatt1.obj"\
+	"c4_Klatt1.obj"\
+	"c5_Klatt1.obj"\
+	"Klatt1_sfun_registry.obj"\
+	"lccstub.obj"\
+	"C:\Program Files\MATLABtosho\sys\lcc\mex\lccdef.def"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\sf_runtime.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libmwblas.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libmx.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libmex.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libmat.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libfixedpoint.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libut.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libmwmathutil.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libemlrt.lib"\
+	"C:\Program Files\MATLABtosho\extern\lib\win32\lcc\libmwsl_log_load_blocks.lib"\
+	"C:\Program Files\MATLABtosho\lib\win32\libippmwipt.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLABtosho\sys\lcc\include"  -I"C:\Program Files\MATLABtosho\extern\include"  -I"C:\Program Files\MATLABtosho\simulink\include"  -I"C:\Program Files\MATLABtosho\stateflow\c\mex\include"  -I"C:\Program Files\MATLABtosho\rtw\c\src"  -I"C:\ŽG‰¹‰º’®Žæ\klattsynthesizersimulink\Klatt-Speech-Synthesizer-master\slprj\_sfprj\Klatt1\_self\sfun\src" 
+ 
+
+Klatt1_sfun.mexw32 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o Klatt1_sfun.mexw32 @Klatt1_sfun.lmko
+Klatt1_sfun.obj :	"Klatt1_sfun.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Klatt1_sfun.c"
+c1_Klatt1.obj :	"c1_Klatt1.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c1_Klatt1.c"
+c2_Klatt1.obj :	"c2_Klatt1.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c2_Klatt1.c"
+c3_Klatt1.obj :	"c3_Klatt1.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c3_Klatt1.c"
+c4_Klatt1.obj :	"c4_Klatt1.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c4_Klatt1.c"
+c5_Klatt1.obj :	"c5_Klatt1.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c5_Klatt1.c"
+Klatt1_sfun_registry.obj :	"Klatt1_sfun_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "Klatt1_sfun_registry.c"
+lccstub.obj :	"C:\Program Files\MATLABtosho\sys\lcc\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLABtosho\sys\lcc\mex\lccstub.c"

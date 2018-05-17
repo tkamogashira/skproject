@@ -1,0 +1,138 @@
+* SuperLab v2.0 experiment file.
+
+#Script-Version	21
+#Background-Color	65280	65280	65280
+#Background-Pattern	0	0	0	0
+#Runtime-Options	20	88	0	0	0	0	0	0
+#Input-Method	gnrc	100	0	-1	0
+#Timing-Method	tick
+
+#Event-Settings
+wait	Inter-Stimulus-Interval	100
+visl	Picture-File	100
+text	Text-String	100
+
+#Plug-ins-Used	3
+wait	Inter-Stimulus-Interval	100
+visl	Picture-File	100
+text	Text-String	100
+
+#Directories
+*  Path	ID
+c:\documents and settings\user\Desktop\stroop small	109
+
+#Codes
+condition	control	experim
+word	RED	BLUE	GREEN
+color	red	blue	green
+
+#Responses
+201	Z
+202	X
+203	C
+205	B
+
+#Feedbacks
+* All feedbacks are declared here
+ErroFeed
+
+#Events
+*  Event	Event	Response		Misc.	Correct
+** Name	Type	 Action	Duration	Flags	Response
+instructions	visl	2	0	0	-2
+Fixation	text	4	500	0	-2
+ISI500	wait	1	0	8	-2
+bluexxx	visl	2	0	9	201
+greenxxx	visl	2	0	9	202
+redxxx	visl	2	0	9	203
+bluegreen	visl	2	0	9	201
+bluered	visl	2	0	9	201
+greenred	visl	2	0	9	202
+greenblue	visl	2	0	9	202
+redblue	visl	2	0	9	203
+redgreen	visl	2	0	9	203
+ErrorFeed	text	4	1000	0	-2
+keypress	text	2	0	0	-2
+
+#Inter-Stimulus-Interval
+*  Event	Misc.
+** Name	Flags	Duration	Reserved
+ISI500	4	500	0
+
+#Picture-File
+*  Event	File	Dir	Vert	Horiz	Vert	Horiz	Misc.	Play	Lead	 
+** Name	Name	ID	Size	Size	Pos.	Pos.	Flags	Time	Time	Reserved
+instructions	instructions.BMP	109	0	0	0	0	12326	-1	0	0
+bluexxx	bluexxx.bmp	109	0	0	0	0	12326	-1	0	0
+greenxxx	greenxxx.bmp	109	0	0	0	0	12326	-1	0	0
+redxxx	redxxx.bmp	109	0	0	0	0	12326	-1	0	0
+bluegreen	bluegreen.BMP	109	0	0	0	0	12326	-1	0	0
+bluered	bluered.BMP	109	0	0	0	0	12326	-1	0	0
+greenred	greenred.BMP	109	0	0	0	0	12326	-1	0	0
+greenblue	greenblue.BMP	109	0	0	0	0	12326	-1	0	0
+redblue	redblue.BMP	109	0	0	0	0	12326	-1	0	0
+redgreen	redgreen.BMP	109	0	0	0	0	12326	-1	0	0
+
+#Text-String
+*  Event	Font	Font	 	RGB	 RGB	RGB	Vert	Horiz
+** Name	Name	Size	Text	red	green	blue	Pos.	Pos.	Flags	Reserved
+Fixation	System	18	+	0	0	0	0	0	38	0
+ErrorFeed	System	18	ERROR	65280	0	0	0	0	38	0
+keypress	System	18	Press any key to continue	0	0	0	0	0	38	0
+
+#Trials
+* Codes:	condition	word	color
+instructions			
+bluexxx	control		blue
+greenxxx	control		green
+redxxx	control		red
+bluegreen	experim	GREEN	blue
+bluered	experim	RED	blue
+greenred	experim	RED	green
+greenblue	experim	BLUE	green
+redblue	experim	BLUE	red
+redgreen	experim	GREEN	red
+keypress			
+
+#Blocks
+instructions	0	0
+block1	1	0
+keypress	0	0
+block2	1	0
+
+#Block-Trials
+instructions	instructions
+block1	bluexxx	greenxxx	redxxx	bluegreen	bluered	greenred	greenblue	redblue
+block1	redgreen
+keypress	keypress
+block2	bluexxx	greenxxx	redxxx	bluegreen	bluered	greenred	greenblue	redblue
+block2	redgreen
+
+#Trial-Events
+instructions	instructions
+bluexxx	Fixation	ISI500	bluexxx
+greenxxx	Fixation	ISI500	greenxxx
+redxxx	Fixation	ISI500	redxxx
+bluegreen	Fixation	ISI500	bluegreen
+bluered	Fixation	ISI500	bluered
+greenred	Fixation	ISI500	greenred
+greenblue	Fixation	ISI500	greenblue
+redblue	Fixation	ISI500	redblue
+redgreen	Fixation	ISI500	redgreen
+keypress	Fixation	ISI500	keypress
+
+#Feedback-To-Events
+*	 	 	  No	 RT	  RT	No Response	Less Than	Greater Than	Misc.
+**	Correct	Incorrect	Response	Less	Greater	Time Limit	Time Limit	 Time Limit	Flags
+bluexxx		ErroFeed				0	0	0	1
+greenxxx		ErroFeed				0	0	0	1
+redxxx		ErroFeed				0	0	0	1
+bluegreen		ErroFeed				0	0	0	1
+bluered		ErroFeed				0	0	0	1
+greenred		ErroFeed				0	0	0	1
+greenblue		ErroFeed				0	0	0	1
+redblue		ErroFeed				0	0	0	1
+redgreen		ErroFeed				0	0	0	1
+
+#Feedback-Events
+ErroFeed	ErrorFeed

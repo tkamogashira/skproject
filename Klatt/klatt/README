@@ -1,0 +1,16 @@
+To synthesize a sample of speech perform the following steps:
+
+>> h = handsy(len); % where LEN is the duration of the stimulus in
+		    % milliseconds
+>> x = synth(h);    % X is now the waveform
+
+To synthesize a cochlear normalized stimulus perform the following steps:
+
+>> h = handsy(len);           % use synthesis parameters appropriate for human
+>> [x fs] = cxform(h, A, a, k, F);
+% A, a, k, are constants appropriate for the species. See Greenwood (1990)
+% for examples.  If F is a scalar value (e.g., 512), then this frequency
+% will be equivalent for both human and the target species. If F is a two
+% element vector, then the frequency in the first element will become the
+% frequency in the second element for the target listener. The value
+% returned in fs will be the sampling rate.
