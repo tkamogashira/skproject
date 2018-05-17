@@ -1,0 +1,65 @@
+% tool
+%
+%   INPUT VALUES:
+%
+%   RETURN VALUE:
+%
+%
+% (c) 2003, University of Cambridge, Medical Research Council
+% Stefan Bleeck (stefan@bleeck.de)
+% http://www.mrc-cbu.cam.ac.uk/cnbh/aimmanual
+% $Date: 2003/01/17 16:57:44 $
+% $Revision: 1.3 $
+
+function sig=gen_complex_damp(orgsig,carriers,halflifes,reprate,amplitudes)
+
+% each combination possible
+grafix=1;
+
+for j=1:length(carriers)
+    save_sigs(j)=generatedampsinus(orgsig,carriers(j),reprate(j),amplitudes(j),halflifes(j));
+    
+    if j==1
+        gsig=save_sigs(j);
+    else
+        gsig=gsig+save_sigs(j);
+    end
+end
+
+% savewave(tsig,'tsig');
+
+sig=gsig;
+
+
+
+if grafix
+    plot_w=150;
+    figure(1)
+    clf
+    subplot(3,1,[1,2])
+    hold on
+    nrc=length(carriers);
+    
+    % calculate where on the y-axis we are
+    minf=100;
+    maxf=5000;
+    
+    
+    for i=1:nrc
+        f=carriers(i);
+        x=f2f(f,
+%         offx=2*i;
+        plot(save_sigs(i)+offx);
+    end
+    set(gca,'xlim',[0 plot_w])
+    set(gca,'ylim',[0 offx+2])
+    set(gca,'ytick',[])
+    xlabel('')
+    ylabel('')
+    title('part signals')
+    subplot(3,1,3)
+    plot(sig);
+    set(gca,'xlim',[0 plot_w])
+    title('total signal')
+
+end

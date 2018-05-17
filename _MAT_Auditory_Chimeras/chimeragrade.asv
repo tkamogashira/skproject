@@ -1,0 +1,12 @@
+env1_fts2cell={};
+for s=1:4
+
+env1_fts2=make_band_chimeras2('s67S_ga.wav','noise',[4],1,1,s);
+
+env1_fts2cell{s,1}=env1_fts2;
+clear env1_fts2
+
+end;
+
+figure
+f

@@ -1,0 +1,41 @@
+% method of class @signal
+% 
+%   INPUT VALUES:
+%  sig,attenuation
+% sig is the signal
+% attenuation is the attenuation against the lowdest possible tone
+% 
+% 
+%
+%   RETURN VALUE:
+%
+% 
+% (c) 2003, University of Cambridge, Medical Research Council 
+% Stefan Bleeck (stefan@bleeck.de)
+% http://www.mrc-cbu.cam.ac.uk/cnbh/aimmanual
+% $Date: 2003/06/11 10:46:32 $
+% $Revision: 1.1 $
+
+
+
+function sig=attenuate(sig,attenuation)
+
+if attenuation==0
+    return
+end
+
+dat=sig.werte;
+ma=max(dat);
+mi=min(dat);
+if -mi > ma
+    ma=-mi;
+end
+
+
+amphigh=max(sig);
+
+amp=amphigh / power(10,-attenuation/20);
+if amp>0
+    sig=scaletomaxvalue(sig,amp);
+end
+

@@ -1,0 +1,24 @@
+% mystraight
+% transforms it with two parameters: scale and fotrans
+
+function sig=straight(sig,scale,f0trans)
+
+straightCIv1('initialize');
+straightCIv1('initializeparams');
+straightCIv1('setwavedata',sig);
+straightCIv1('source',sig);
+straightCIv1('bandcorrbtn');
+straightCIv1('bypassbtn');
+
+scales(1)=scale;
+scales(1)=f0trans;
+
+straightCIv1('set_scales',scales)
+straightCIv1('synthesizegraded')
+
+sigc=sig;
+
+
+
+
+

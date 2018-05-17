@@ -1,0 +1,27 @@
+% method of class @signal
+% function sig=gentransposed(sig,fc,fm)
+%   INPUT VALUES:
+%       sig: @signal with length and samplerate 
+% create a transposed stimulus according to (Hartmann, 1998, p. 106):
+
+% (c) 2003, University of Cambridge, Medical Research Council 
+% Stefan Bleeck (stefan@bleeck.de)
+% http://www.mrc-cbu.cam.ac.uk/cnbh/aimmanual
+% $Date: 2005/10/10 09:32:22 $
+% $Revision: 1.12 $
+
+function sig=gentransposed(sig,fc,fm,phic,phim)
+
+if nargin<5
+    
+x=getxvalues(sig);
+nr=length(x);
+
+omc=2*pi/fc;
+omm=2*pi/fm;
+
+for i=1:nr
+   
+    a=sin(
+    
+end

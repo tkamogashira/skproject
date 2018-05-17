@@ -1,0 +1,42 @@
+% method of class @signal
+% 
+%   INPUT VALUES:
+%  
+%   RETURN VALUE:
+%
+% 
+% (c) 2003, University of Cambridge, Medical Research Council 
+% Stefan Bleeck (stefan@bleeck.de)
+% http://www.mrc-cbu.cam.ac.uk/cnbh/aimmanual
+% $Date: 2003/06/11 10:45:20 $
+% $Revision: 1.5 $
+
+function sig=plus(a,b)
+% addition 
+% einfachster Fall: Addiere eine konstante Zahl
+% sonst: Addiere ein zweites Signal zum Zeitpunkt Null
+
+if isnumeric(b)
+    a.werte=a.werte+b;
+    sig=a;
+    return
+end
+
+if isobject(b)
+    % a couple of cases possible:
+    % a==b, easy
+    % a>b,  add b to a
+    % b>a, add a to b
+    dur1=getlength(a);
+    dur2=getlength(b);
+    start1=getminimumtime(a);
+    start2=getminimumtime(b);
+    if dur1==dur2 && start1==start2
+        sig=add(a,b);
+    else
+        if start1+dur1>
+        
+    end
+end
+
+

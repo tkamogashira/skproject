@@ -1,0 +1,49 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Matlab Software for Synthesis of Auditory Chimeras</title>
+</head>
+
+<body>
+
+<p align="center"><b><font size="5">Matlab™ Software for Synthesis of Auditory
+Chimeras</font></b></p>
+<p>&nbsp;</p>
+<p>You can easily create your own auditory chimeras using Matlab software.&nbsp;
+Matlab is a higher-level language&nbsp; for computation and visualization
+developed by <a href="http://www.mathworks.com/">The Mathworks.</a>&nbsp; The
+Winzip archive contains Matlab functions for creating chimeras from original
+sounds stored as WAV files.&nbsp; Once you have unzipped the archive, start
+Matlab and run the functions.</p>
+<p>The main function is &quot;make_band_chimeras&quot;, which takes two WAV
+files as inputs, creates pairs of chimeras for any number of frequency bands,
+and stores the results in uniquely-named WAV files.&nbsp; Type <font face="Courier New">help
+make_band_chimeras </font>at the Matlab prompt for usage information.&nbsp; For
+eaxample, <font face="Courier New">make_band_chimeras('speech', 'music', [1 8
+32]) </font>will synthesize pairs of auditory chimeras with 1, 8 and 32 bands
+from the WAV files <font face="Courier New">'speech' </font>and<font face="Courier New">
+'music'.</font></p>
+<p>Once you have created auditory chimeras, you can listen to them using the
+Matlab function &quot;play_chimera&quot;.&nbsp; Type <font face="Courier New">help
+play_chimera </font>at the Matlab prompt for usage.</p>
+<p>The core function which performs the computations is &quot;multi_band_chimera&quot;
+(which is called by &quot;make_band_chimeras&quot;).&nbsp; This function splits
+the input sounds into frequency bands, separates the envelope and the fine time
+structure in each band using Hilbert transforms, and then exchanges the
+envelopes and fine structures of the two sounds.</p>
+<p>Also included (and used by &quot;make_band_chimeras&quot;) are utilities for
+creating filter banks and synthesizing noise having the same power spectrum as
+any given sound.</p>
+<p>Software © Bertrand Delgutte, 1999-2000.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
