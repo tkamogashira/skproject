@@ -1,0 +1,1 @@
+function character = GetKey% character = GetKey% % "GetKey" has been renamed "GetChar", which more accurately describes% its function. Please use the new name.%% See GetChar.% 8/2/97 dgp% 2/7/98 dgp Error.error('GetKey is obsolete. Use GetChar instead.')

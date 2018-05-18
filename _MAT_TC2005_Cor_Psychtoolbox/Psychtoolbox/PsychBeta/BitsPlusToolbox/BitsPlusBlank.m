@@ -1,0 +1,1 @@
+function BitsPlusBlank(screen)% BitsPlusBlank(screen)%% Just zero the Bits++ clut to save the screen.% Probably shouldn't be called when screen is open.%% 5/4/03  dhb  Wrote it.% 9/20/03 dhb  Needs screen pointer.window = Screen(screen,'OpenWindow',0,[],32);Screen(window,'SetClut',(0:255)'*ones(1,3));BitsPlusSetClut(window,zeros(256,3));Screen(window,'Close');

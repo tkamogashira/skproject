@@ -1,0 +1,1 @@
+function CopyCImage% CopyCImage(image,[rowPixels,colPixels])% % MEX file to copy the matrix as a color image to the clipboard% in PICT format.  Use this to pass image data from Matlab to% other programs.%% If size is not passed, image is assumed to be square.%% 8/14/94		dhb		Added optional size argument.% 8/19/94		dhb		Link in new pixmap handling code.

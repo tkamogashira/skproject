@@ -1,0 +1,1 @@
+function path=DiskRoot% DiskRoot is the root path for the Matlab disk.% Also see MatlabRoot, PsychtoolboxRoot, DesktopFolder.% 5/1/02  dgp Wrote it.% 9/10/02 dgp Cosmetic.path=matlabroot;i=find(filesep==path);path=path(1:i(1));

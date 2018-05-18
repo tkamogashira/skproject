@@ -1,0 +1,268 @@
+function [mdata,data]=Thresh(dimSignal,dimNoise,Color1,Color2,noiseContrast,noiseType)
+% RGratio > 1
+
+% Set parameters
+imageSize = 144;			  			% Image size in pixels
+expandSize = 1;							% Amount to expand image for display
+cyclesPerImage = [2 4 8 16 32];					% Spatial freq, c/image.
+% cyclesPerDeg=[0.5 1 2 4 8];
+cyclesPerImageNoise=cyclesPerImage(3);
+spaceConstant=imageSize/4;	% Gaussian grating envelope
+nRepeats=4;
+minITIsec=2;
+white=[255 255 255];
+black=[0 0 0];
+meanColor=(Color1+Color2)/2;
+
+
+if(nargin<5), noiseType=0; end
+
+% Stimulus location
+xy=zeros(4,2);
+xy(1,:)=[-1 -1]*96;
+xy(2,:)=[1 -1]*96;
+xy(3,:)=[-1 1]*96;
+xy(4,:)=[1 1]*96;
+
+switch(dimSignal)
+    case 0, %lum
+        RcontS=Color1(1)-meanColor(1);
+        GcontS=Color1(1)-meanColor(1);
+        BcontS=Color1(1)-meanColor(1);
+    case 1, % RG
+        RcontS=Color1(1)-meanColor(1);
+        GcontS=Color1(2)-meanColor(2);
+        BcontS=Color1(3)-meanColor(3);
+end
+switch(dimNoise)
+    case 0, %lum
+        RcontN=Color1(1)-meanColor(1);
+        GcontN=Color1(1)-meanColor(1);
+        BcontN=Color1(1)-meanColor(1);
+    case 1, % RG
+        RcontN=Color1(1)-meanColor(1);
+        GcontN=Color1(2)-meanColor(2);
+        BcontN=Color1(3)-meanColor(3);
+end
+resfile=sprintf('ThreshMask%d%d.mat',dimSignal,dimNoise);
+
+% Seed random number generator
+ClockRandSeed;
+
+% Read screen calibration and compute cluts.
+calCT = LoadCalFile(0);
+calCT = SetGammaMethod(calCT,1);
+
+% Open window and set the linear clut for the experiment
+bkgColor=PrimaryToSettings(calCT,meanColor')';
+[window,screenRect]=SCREEN(0,'OpenWindow',bkgColor,[],32);
+screenFramerate=FrameRate(0);
+
+% Start trials
+conditions=repmat(1:length(cyclesPerImage),1,nRepeats);
+conditions=conditions(randperm(length(conditions)));
+data = zeros(length(conditions),2);
+wrongRight = ['Wrong' ; 'Right'];
+
+fixationRect=CenterRect(SetRect(0,0,4,4),screenRect);
+%SCREEN(window,'FillRect',black,fixationRect);
+instString = 'Hit any key when ready';
+SCREEN(window,'DrawText',instString,50,100,black);
+GetChar;
+SCREEN(window,'DrawText',instString,50,100,bkgColor);
+HideCursor;
+
+% Make a rect of correct size.
+signalRect=ScaleRect(SetRect(0,0,imageSize,imageSize),expandSize,expandSize);
+done_trial=0;
+trial=1;
+tic;
+
+%while(trial<=length(conditions)),
+    
+    nIntervals=4; nResponses = 4;
+    beta=3.5; delta=0.01; gamma=1/nIntervals;
+    pCorrect=0.625;
+    thresholdGuess = log10(0.1);
+    priorSd = 4;
+    q=QuestCreate(thresholdGuess,priorSd,pCorrect,beta,delta,gamma);
+    
+    % Make signal and noise
+    signal=MakeSignalsCT(imageSize,cyclesPerImage(conditions(trial)),spaceConstant);
+    noise=MakeNoisesCT(imageSize,noiseContrast,cyclesPerImageNoise,noiseType);
+    stimulus = zeros([size(signal) 3]);
+
+    % Display stimulus
+    for loc=1:4, % Show background noise images    
+        noise1(:,:,1) = meanColor(1)*(RcontN*noise+1); % 0-1
+        noise1(:,:,2) = meanColor(2)*(GcontN*noise+1);
+        noise1(:,:,3) = meanColor(3)*(BcontN*noise+1);
+        noisestm=GammaCorrectImage(noise1,calCT);
+        putRect = CenterRect(signalRect,screenRect);
+        putRect = OffsetRect(putRect,xy(loc,1),xy(loc,2));
+        SCREEN(window,'PutImage',noisestm,putRect);
+    end
+
+    for t=1:20
+        stmloc=ceil(randi(4));
+        putRect = CenterRect(signalRect,screenRect);
+        putRect = OffsetRect(putRect,xy(stmloc,1),xy(stmloc,2));
+        
+        
+    
+         % Get level to test
+	    trialCon=10^QuestQuantile(q); 
+    
+        stimulus(:,:,1)=noise1(:,:,1)+trialCon*RcontS*signal;
+        stimulus(:,:,2)=noise1(:,:,2)+trialCon*GcontS*signal;
+        stimulus(:,:,3)=noise1(:,:,3)+trialCon*BcontS*signal;
+        
+        stimulus=GammaCorrectImage(stimulus,calCT);
+        
+        SCREEN(window,'WaitBlanking',minITIsec*screenFramerate+randi(screenFramerate));
+        SCREEN(window,'FillRect',black,fixationRect);
+        SCREEN(window,'WaitBlanking',randi(screenFramerate));
+        SCREEN(window,'FillRect',bkgColor,fixationRect);
+        SCREEN(window,'WaitBlanking',screenFramerate/2);
+        
+        SCREEN(window,'PutImage',stimulus,putRect);
+        SCREEN(window,'WaitBlanking',screenFramerate/10);
+        SCREEN(window,'PutImage',noisestm,putRect);
+        
+        while(1)
+            response=GetResp(stmloc);
+            if(response~=-1),break;end
+            if(response==9),
+                ShowCursor;
+                SCREEN('CloseAll');
+                return;
+            end
+        end
+        GiveFeedback(response);
+        
+        % Update Quest and store data
+        
+        q = QuestUpdate(q,log10(trialCon),response);
+        theData(cnd,t,1) = trialCon;
+        theData(cnd,t,2) = response;
+        theData(cnd,t,3) = QuestMean(q);
+        theData(cnd,t,4) = QuestSd(q);
+        
+    end
+    plot(theData(:,1),theData(:,2));
+    done_trial=done_trial+1;
+    data(cnd,1) = cyclesPerImage(conditions(trial));
+    data(cnd,2) = QuestMean(q);   
+    data(cnd,3) = QuestSd(q);
+    cnd=cnd+1;
+    %end
+
+% Close up
+ShowCursor;
+SCREEN('CloseAll');
+
+
+save(resfile,'data');
+
+[v id]=sort(data(:,1));
+data=data(id,:);
+rdata=reshape(data,nRepeats,length(cyclesPerImage),2);
+mdata=squeeze(mean(rdata,1));
+
+figure;
+subplot(1,2,1);
+loglog(data(:,1),100*data(:,2),'o');
+xlabel('cycle/image');
+ylabel('Threshold (%)');
+hold on
+loglog(mdata(:,1),100*mdata(:,2));
+
+subplot(1,2,2);
+loglog(data(:,1),ones(size(data,1),1)./data(:,2)/100,'o');
+xlabel('cycle/image');
+ylabel('Sensitivity   (1/Threshold)');
+hold on
+loglog(mdata(:,1),ones(size(mdata,1),1)./mdata(:,2)/100);
+toc
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+function signal=MakeSignalsCT(imageSize,cyclesPerImage,spaceConstant)
+ % Generate the waveform
+x=1:imageSize;
+x=(x-mean(x));
+wave=sign(randn(1))*sin(2*pi*cyclesPerImage*x/imageSize);
+
+% Generate the Gaussian
+gaussianX=exp(-(x/spaceConstant).^2);
+gaussianY=exp(-(x/spaceConstant).^2);
+
+% Put them together as an image
+signal = (gaussianX.*wave)'*gaussianY;
+
+function noise=MakeNoisesCT(imageSize,noiseContrast,noiseCyclesPerImage,noiseType)
+if(noiseContrast>0)
+    if noiseType==0
+        x=meshgrid(1:imageSize)';
+        noise=noiseContrast*sin(2*pi*noiseCyclesPerImage*x/imageSize+2*pi*rand(1));
+    else
+        noiseBound=2;
+        x=-noiseBound:.001:noiseBound;
+        pdf=exp(-0.5*x.^2);
+        noisePowerFactor=sum(pdf.*x.^2)/sum(pdf);
+        clear x pdf;
+        
+        % Make noises
+        noise=randn(imageSize,imageSize);
+        maxNoiseCon=-Inf;
+        minNoiseCon=Inf;
+        while (1)
+            elements=find(noise<-noiseBound | noise>noiseBound);
+            if isempty(elements);break;end;
+            noise(elements)=randn(size(elements));
+        end
+        noise=noise*(noiseContrast/sqrt(noisePowerFactor));
+    end
+else
+    noise=zeros(imageSize,imageSize);
+end
+
+function image=GammaCorrectImage(image01,calCT)
+image01_2d=reshape(image01,size(image01,1)*size(image01,2),3);
+image=PrimaryToSettings(calCT,image01_2d')';
+image=reshape(image,size(image01,1),size(image01,2),3);
+
+
+function resp=GetResp(stmloc)
+[keyIsDown,secs,keyCode] = KbCheck;
+resp=-1;
+key1=192;
+key2=219;
+key3=186;
+key4=221;
+key5=27;
+if keyCode(key1),
+    if(stmloc==1), resp=1;
+    else resp=0;
+    end
+end
+if keyCode(key2),
+    if(stmloc==2), resp=1;
+    else resp=0;
+    end
+end
+if keyCode(key3),
+    if(stmloc==3), resp=1;
+    else resp=0;
+    end
+end
+if keyCode(key4),
+    if(stmloc==4), resp=1;
+    else resp=0;
+    end
+end
+if keyCode(key5),
+    resp=9;
+end
+
+       

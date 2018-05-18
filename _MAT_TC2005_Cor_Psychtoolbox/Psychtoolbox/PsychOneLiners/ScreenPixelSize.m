@@ -1,0 +1,1 @@
+function pixelSize = ScreenPixelSize(w)% pixelSize = ScreenPixelSize(windowPtrOrScreenNumber)% % See also ScreenDacBits, ScreenUsesHighGammaBits, ScreenClutSize.% 8/10/02  dgp     Wrote it.pixelSize=Screen(w,'PixelSize');

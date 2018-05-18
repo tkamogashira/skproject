@@ -1,0 +1,1 @@
+function status = IsDownArrow(char)% status = IsDownArrow(char)%% Is the passed char a down arrow on this platform?%% 04/14/00  dhb  Wrote it.if strcmp(computer,'PCWIN')	status = (abs(char) == 25);else	status = (abs(char) == 31);end

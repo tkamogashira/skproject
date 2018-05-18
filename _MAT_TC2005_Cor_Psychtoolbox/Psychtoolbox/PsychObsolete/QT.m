@@ -1,0 +1,1 @@
+function varargout=QT(varargin)% QT has been renamed Showtime, at the request of A.B.Watson. See Showtime.switch nargoutcase 0;	Showtime(varargin{:});case 1; [varargout{1}]=Showtime(varargin{:});case 2; [varargout{1},varargout{2}]=Showtime(varargin{:});otherwise error('QT: too many output args.');end

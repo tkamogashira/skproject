@@ -1,0 +1,1 @@
+function FlushEvents% FlushEvents(['mouseUp'],['mouseDown'],['keyDown'],['autoKey'],['update'],...)% % Removes all events of the specified types from the event queue.% The arguments can be in any order. Empty strings are ignored.% % See also EventAvail.% 3/25/97  dgp	Wrote it.

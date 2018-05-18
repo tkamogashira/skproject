@@ -1,0 +1,1 @@
+function path=DesktopFolder% DesktopFolder returns the path to the desktop folder.% Also see MatlabRoot, PsychtoolboxRoot, DiskRoot.% 5/1/02 dgp Wrote it.path=fullfile(DiskRoot,'Desktop Folder','');

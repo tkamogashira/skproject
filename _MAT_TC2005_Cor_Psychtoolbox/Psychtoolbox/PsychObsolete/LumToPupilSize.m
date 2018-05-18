@@ -1,0 +1,1 @@
+function [d,trolands] = LumToPupilSize(lum)% [d,trolands] = LumToPupilSize(lum)%% LumToPupilSize is obsolete.  Use PupilDiameterFromLum');error('LumToPupilSize is obsolete.  Use PupilDiameterFromLum');

@@ -1,0 +1,1 @@
+function status = IsUpArrow(char)% status = IsUpArrow(char)%% Is the passed char the up arrow for the platform% currently running.%% 04/14/00  dhb  Wrote it.if (strcmp(computer,'PCWIN'))	status = (abs(char) == 24);else	status = (abs(char) == 30);end

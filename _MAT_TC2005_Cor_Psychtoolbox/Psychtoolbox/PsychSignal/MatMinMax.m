@@ -1,0 +1,1 @@
+function [minval,maxval] = MatMinMax(image)% [min,max] = MatMinMax(image)% Find the minumum and maximum values in a matrix.minval = MatMin(image);maxval = MatMax(image);

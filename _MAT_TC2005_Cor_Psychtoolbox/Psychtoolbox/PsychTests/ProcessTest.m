@@ -1,0 +1,1 @@
+% ??/??/??  dgp   Wrote it.   % 4/24/02   awi   Exit on PC with message.if strcmp('PCWIN',computer)    error('Win: Screen ''Process'' not yet supported.');endproc=Screen('Preference','Process','MATL')proc=Screen('Preference','Process','MACS')proc=Screen('Preference','Process','tims')

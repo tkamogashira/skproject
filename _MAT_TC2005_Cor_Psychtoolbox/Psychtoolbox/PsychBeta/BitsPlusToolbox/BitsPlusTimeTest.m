@@ -1,0 +1,1 @@
+theClut=[1:256; 1:256; 1:256]';t=GetSecs;row=BitsPlusEncodeClutRow(theClut);t=GetSecs-t;fprintf('Total time %.1f ms.\n',t*1000);

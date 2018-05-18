@@ -1,0 +1,1 @@
+function varargout = serial(varargin)% SERIAL.mex has been renamed "PsychSerial.mex" to avoid a name conflict % with the serial command in Matlab 6.  %% See PsychSerial PsychSerialTest.m.% 4/26/02 awi Wrote it.  switch nargout	case 0, PsychSerial(varargin{:});	case 1, [varargout{1}]=PsychSerial(varargin{:});otherwise, error('SERIAL.m: too many output args.');end	

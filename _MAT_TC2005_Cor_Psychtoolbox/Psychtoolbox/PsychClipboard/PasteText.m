@@ -1,0 +1,1 @@
+function M = PasteText% M = PasteText% % Paste the clipboard into matrix M.  The clipboard% should be data in tab delimited format.  This is% what will come to you from most spreadsheets,% graphing programs, etc. 

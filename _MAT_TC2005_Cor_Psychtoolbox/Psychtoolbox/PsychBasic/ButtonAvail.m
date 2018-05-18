@@ -1,0 +1,1 @@
+function avail=ButtonAvail% avail=ButtonAvail% % ButtonAvail peeks into the event queue for a mouse button message.% It returns 1 if there is a mouse button message and 0 otherwise.% 3/8/00  emw wrote it.% 3/12/00 dgp Added Mac support.% 8/9/02  dgp Made it a function.if strcmp(computer,'MAC2')   avail=EventAvail('mouseUp','mouseDown');end

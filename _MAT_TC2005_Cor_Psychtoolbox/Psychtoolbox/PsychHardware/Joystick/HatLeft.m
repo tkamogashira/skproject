@@ -1,0 +1,1 @@
+function result = HatLeft% Return a constant for hat left position.  To read a hat position, use:% JOYSTICK(joystickNumber,'GetHat',hatNumber).  %% % 8/17/01   awi wrote itresult = 4;

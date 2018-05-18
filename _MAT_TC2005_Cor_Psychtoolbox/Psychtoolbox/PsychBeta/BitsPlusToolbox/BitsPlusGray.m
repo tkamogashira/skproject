@@ -1,0 +1,1 @@
+function BitsPlusGray(screen)% BitsPlusGray(screen)%% Put a gray ramp in the Bits++ box.%% 10/07/03  dhb  Wrote it.grayClut = linspace(0,2^14-1,256)'*ones(1,3);window = Screen(screen,'OpenWindow',0,[],32);Screen(window,'SetClut',(0:255)'*ones(1,3));BitsPlusSetClut(window,grayClut);Screen(window,'Close');

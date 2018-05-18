@@ -1,0 +1,1 @@
+function xy = uvToxy(uv)% xy = uvToxy(uv)%% Convert CIE u'v' chromaticity to CIE xy chromaticity.%% 7/15/03  dhb, bx  Wrote it.uvY = [uv ; ones(size(xy,2))];XYZ = uvYToXYZ(uvY);xyY = XYZToxyY(XYZ);xy = xyY(1:2,:);

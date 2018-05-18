@@ -1,0 +1,1 @@
+function SetColor9(color,rgb)% SetColor9(color,rgb)%% OBSOLETE. Use Screen(w,''SetClut'',clut,9).% % Set the clut.% 11/21/94  ccc  Modified from SetColor.% 2/23/97   dhb  Modified to use 'SetClut' with bits arg.error('SetColor9 is obsolete.  Use Screen(w,''SetClut'',clut,9).');
