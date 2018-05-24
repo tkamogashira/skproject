@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--    -->
+<!-- Copyright 2007-2013 The MathWorks, Inc. -->
+<product name="Fixed-Point Designer">
+<map mask="Array-Vector Add"                   class="Simulink.SFunction"           value="dspautoscaler.ArrayVectorAutoscaler"/>       <!-- dspmtrx3/Array-Vector Add -->
+<map mask="Array-Vector Divide"                class="Simulink.SFunction"           value="dspautoscaler.ArrayVectorAutoscaler"/>       <!-- dspmtrx3/Array-Vector Divide -->
+<map mask="Array-Vector Multiply"              class="Simulink.SFunction"           value="dspautoscaler.ArrayVectorAutoscaler"/>       <!-- dspmtrx3/Array-Vector Multiply -->
+<map mask="Array-Vector Subtract"              class="Simulink.SFunction"           value="dspautoscaler.ArrayVectorAutoscaler"/>       <!-- dspmtrx3/Array-Vector Subtract -->
+<map mask="Autocorrelation"                    class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspstat3/Autocorrelation -->
+<map mask="Backward Substitution"              class="Simulink.SFunction"           value="dspautoscaler.BkwdFrwdSubstAutoscaler"/>     <!-- dspsolvers/Backward Substitution -->
+<map mask="Biquad Filter"                      class="Simulink.SFunction"           value="dspautoscaler.BiquadFilterAutoscaler"/>      <!-- dsparch4/Biquad Filter -->
+<map mask=""                                   class="Simulink.Buffer"              value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspbuff3/Buffer -->
+<map mask="Constant Ramp"                      class="Simulink.SFunction"           value="dspautoscaler.ConstantRampAutoscaler"/>      <!-- dspsigops/Constant Ramp -->
+<map mask="Convolution"                        class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspsigops/Convolution -->
+<map mask="Correlation"                        class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspstat3/Correlation -->
+<map mask="Create Diagonal Matrix"             class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspmtrx3/Create Diagonal Matrix -->
+<map mask="Cumulative Product"                 class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspmathops/Cumulative Product -->
+<map mask="Cumulative Sum"                     class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspmathops/Cumulative Sum -->
+<map mask="DCT"                                class="Simulink.SFunction"           value="dvautoscaler.DCT_FFT_Autoscaler"/>           <!-- dspxfrm3/DCT -->
+<map mask="Delay"                              class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspsigops/Delay -->
+<map mask="Delay Line"                         class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspbuff3/Delay Line -->
+<map mask="Difference"                         class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspmathops/Difference -->
+<map mask="Digital Filter"                     class="Simulink.SFunction"           value="dspautoscaler.DigitalFilterAutoscaler"/>     <!-- dsparch4/Digital Filter -->
+<map mask="Discrete Impulse "                  class="Simulink.SFunction"           value="dspautoscaler.DiscreteImpulseAutoscaler"/>   <!-- dspsrcs4/Discrete  Impulse -->
+<map mask="Downsample"                         class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspsigops/Downsample -->
+<map mask="Extract Diagonal"                   class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspmtrx3/Extract Diagonal -->
+<map mask="Extract Triangular Matrix"          class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspmtrx3/Extract Triangular Matrix -->
+<map mask="FFT"                                class="Simulink.SFunction"           value="dvautoscaler.DCT_FFT_Autoscaler"/>           <!-- dspxfrm3/FFT -->
+<map mask="FIR Decimation"                     class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoscaler"/>           <!-- dspmlti4/FIR Decimation -->
+<map mask="FIR Interpolation"                  class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoscaler"/>           <!-- dspmlti4/FIR Interpolation -->
+<map mask="FIR Rate Conversion"                class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoscaler"/>           <!-- dspmlti4/FIR Rate Conversion -->
+<map mask="Forward Substitution"               class="Simulink.SFunction"           value="dspautoscaler.BkwdFrwdSubstAutoscaler"/>     <!-- dspsolvers/Forward Substitution -->
+<map mask="Histogram"                          class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspstat3/Histogram -->
+<map mask="Identity Matrix"                    class="Simulink.SFunction"           value="dspautoscaler.IdentityMatrixAutoscaler"/>    <!-- dspmtrx3/Identity Matrix -->
+<map mask="IDCT"                               class="Simulink.SFunction"           value="dvautoscaler.DCT_FFT_Autoscaler"/>           <!-- dspxfrm3/IDCT -->
+<map mask="IFFT"                               class="Simulink.SFunction"           value="dvautoscaler.DCT_FFT_Autoscaler"/>           <!-- dspxfrm3/IFFT -->
+<map mask="LDL Factorization"                  class="Simulink.SFunction"           value="dvautoscaler.DspEntityAutoscaler"/>          <!-- dspfactors/LDL Factorization -->
+<map mask="Levinson-Durbin"                    class="Simulink.SFunction"           value="dspautoscaler.LevinsonDurbinAutoscaler"/>    <!-- dspsolvers/Levinson-Durbin -->
+<map mask="LMS Filter"                         class="Simulink.SFunction"           value="dspautoscaler.LMSFilterAutoscaler"/>         <!-- dspadpt3/LMS Filter -->
+<map mask="LU Factorization"                   class="Simulink.SFunction"           value="dvautoscaler.DspEntityAutoscaler"/>          <!-- dspfactors/LU Factorization -->
+<map mask="Matrix 1-Norm"                      class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspmtrx3/Matrix 1-Norm -->
+<map mask="Matrix Product"                     class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspmtrx3/Matrix Product -->
+<map mask="Matrix Sum"                         class="Simulink.SFunction"           value="dvautoscaler.SPCSgnSameAsInputAutoscaler"/>  <!-- dspmtrx3/Matrix Sum -->
+<map mask="Maximum"                            class="Simulink.SFunction"           value="dvautoscaler.MinMaxAutoscaler"/>             <!-- dspstat3/Maximum -->
+<map mask="Mean"                               class="Simulink.SFunction"           value="dvautoscaler.MeanAutoscaler"/>               <!-- dspstat3/Mean -->
+<map mask="Median"                             class="Simulink.SFunction"           value="dvautoscaler.MedianAutoscaler"/>             <!-- dspstat3/Median -->
+<map mask="Minimum"                            class="Simulink.SFunction"           value="dvautoscaler.MinMaxAutoscaler"/>             <!-- dspstat3/Minimum -->
+<map mask="Multiport Selector"                 class="Simulink.SFunction"           value="dspautoscaler.MultiportSelectorAutoscaler"/>  <!-- dspindex/Multiport Selector -->
+<map mask="Normalization"                      class="Simulink.SFunction"           value="dvautoscaler.SPCUniDTAutoSignAutoscaler"/>   <!-- dspmathops/Normalization -->
+<map mask="Offset"                             class="Simulink.SFunction"           value="dspautoscaler.OffsetAutoscaler"/>            <!-- dspsigops/Offset -->
+<map mask="Overwrite Values"                   class="Simulink.SFunction"           value="dvautoscaler.SPCSharedInputsDTAutoscaler"/>  <!-- dspmtrx3/Overwrite Values -->
+<map mask="Pad"                                class="Simulink.SFunction"           value="dvautoscaler.SPCSharedInputsDTAutoscaler"/>  <!-- dspsigops/Pad -->
+<map mask="Permute Matrix"                     class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspmtrx3/Permute Matrix -->
+<map mask="Queue"                              class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspbuff3/Queue -->
+<map mask="Repeat"                             class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspsigops/Repeat -->
+<map mask="Scalar Quantizer Decoder"           class="Simulink.SFunction"           value="dspautoscaler.SQVQDecoderAutoscaler"/>       <!-- dspquant2/Scalar Quantizer Decoder -->
+<map mask="Sine Wave"                          class="Simulink.SFunction"           value="dspautoscaler.SineWaveAutoscaler"/>          <!-- dspsrcs4/Sine Wave -->
+<map mask="Sort"                               class="Simulink.SFunction"           value="dspautoscaler.SortAutoscaler"/>              <!-- dspstat3/Sort -->
+<map mask="Stack"                              class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspbuff3/Stack -->
+<map mask="Submatrix"                          class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspmtrx3/Submatrix -->
+<map mask="Toeplitz"                           class="Simulink.SFunction"           value="dvautoscaler.SPCSharedInputsDTAutoscaler"/>  <!-- dspmtrx3/Toeplitz -->
+<map mask=""                                   class="Simulink.Unbuffer"            value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspbuff3/Unbuffer -->
+<map mask="Upsample"                           class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspsigops/Upsample -->
+<map mask="Variable Fractional Delay"          class="Simulink.SFunction"           value="dspautoscaler.VFDelayAutoscaler"/>           <!-- dspsigops/Variable Fractional Delay -->
+<map mask="Variable Integer Delay"             class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspsigops/Variable Integer Delay -->
+<map mask="Variable Selector"                  class="Simulink.SFunction"           value="dspautoscaler.DSPSameDTFirstInAndOutPortAutoscaler"/>  <!-- dspindex/Variable Selector -->
+<map mask="Variance"                           class="Simulink.SFunction"           value="dvautoscaler.VarianceAutoscaler"/>           <!-- dspstat3/Variance -->
+<map mask="Vector Quantizer Decoder"           class="Simulink.SFunction"           value="dspautoscaler.SQVQDecoderAutoscaler"/>       <!-- dspquant2/Vector Quantizer Decoder -->
+<map mask="Vector Quantizer Encoder"           class="Simulink.SFunction"           value="dspautoscaler.VQEncoderAutoscaler"/>         <!-- dspquant2/Vector Quantizer Encoder -->
+<map mask="Window Function"                    class="Simulink.SFunction"           value="dspautoscaler.WindowFunctionAutoscaler"/>    <!-- dspsigops/Window Function -->
+<map mask="sdspfirdn2RawSFunWithoutMask"       class="Simulink.SFunction"           value="dspautoscaler.DspSubbandEntityAutoscaler"/>  <!-- dspmlti4/Two-Channel Analysis Subband Filter/Lowpass FIR Decimation -->
+<map mask="sdspupfir2RawSFunWithoutMask"       class="Simulink.SFunction"           value="dspautoscaler.DspSubbandEntityAutoscaler"/>  <!-- dspmlti4/Two-Channel Synthesis Subband Filter/Lowpass FIR Interpolation -->
+</product>

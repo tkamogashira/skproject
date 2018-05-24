@@ -1,0 +1,19 @@
+function [p, v] = thisinfo(Ha)
+%THISINFO
+
+%   Author(s): J. Schickler
+%   Copyright 1999-2002 The MathWorks, Inc.
+
+[p, v] = adaptfilt_info(Ha);
+
+p = {p{:}, getString(message('signal:dfilt:info:StepSize')), ...
+     getString(message('signal:dfilt:info:Leakage')), ...
+     getString(message('signal:dfilt:info:AveragingFactor')), ...
+     getString(message('signal:dfilt:info:BlockLength')), ...
+     getString(message('signal:dfilt:info:Offset'))};
+
+v = {v{:}, num2str(get(Ha, 'StepSize')), num2str(get(Ha, 'Leakage')), ...
+        num2str(get(Ha, 'AvgFactor')), num2str(get(Ha, 'BlockLength')), ...
+        num2str(get(Ha, 'Offset'))};;
+
+% [EOF]

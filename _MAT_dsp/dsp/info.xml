@@ -1,0 +1,56 @@
+<productinfo
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.mathworks.com/namespace/info/v1/info.xsd">
+<?xml-stylesheet type="text/xsl" href="http://www.mathworks.com/namespace/info/v1/info.xsl"?>
+
+<matlabrelease>13</matlabrelease>
+<name>DSP System</name>
+<type>toolbox</type>
+<icon>$toolbox/matlab/icons/matlabicon.gif</icon>
+<help_location>$docroot/toolbox/dsp</help_location>
+<preference_panel>
+  <label>DSP System Toolbox</label>
+  <source>com.mathworks.toolbox.dsp.DspblksPrefsPanel</source>
+</preference_panel>
+
+<list>
+
+<listitem>
+<label>Block Library</label>
+<callback>dsplib</callback>
+<icon>$toolbox/simulink/simulink/simulinkicon.gif</icon>
+</listitem>
+
+<listitem>
+<label>Filter Builder (filterbuilder)</label>
+<callback>filterbuilder</callback>
+<icon>$toolbox/matlab/icons/figureicon.gif</icon>
+</listitem>
+
+<listitem>
+<label>Filter Design &amp; Analysis Tool (fdatool)</label>
+<callback>fdatool</callback>
+<icon>$toolbox/signal/sigtools/private/fdatoolicon.gif</icon>
+</listitem>
+
+<listitem>
+<label>Help</label>
+<callback>doc dsp/</callback>
+<icon>$toolbox/matlab/icons/book_mat.gif</icon>
+</listitem>
+
+<listitem>
+<label>Demos</label>
+<callback>demo toolbox dsp</callback>
+<icon>$toolbox/matlab/icons/demoicon.gif</icon>
+</listitem>
+
+<listitem>
+<label>Product Page (Web)</label>
+<callback>web http://www.mathworks.com/products/dsp-system/ -browser;</callback>
+<icon>$toolbox/matlab/icons/webicon.gif</icon>
+</listitem>
+
+</list>
+
+</productinfo>

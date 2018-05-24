@@ -1,0 +1,12 @@
+<Block<SourceBlock|dspxfrm3/FFT><WrapInput:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><WrapInput:remove>>
+<Block<SourceBlock|dspspect3/Magnitude\nFFT><WrapInput:remove>>
+<Block<BlockType|SignalToWorkspace><Save2DSignal:rename Save2DMode>>
+<Block<SourceBlock|dspvision/To Multimedia File><videoQuality:remove>>
+<Block<SourceBlock|dspvision/To Multimedia File><mj2000CompFactor:remove>>
+<Block<SourceBlock|dspsrcs4/MIDI Controls><RawUint8:remove>>
+<Block<SourceBlock|dspsrcs4/From Audio\nDevice><inputChannelMapping:remove>>
+<Block<SourceBlock|dspsrcs4/From Audio\nDevice><defaultInputChannelMapping:remove>>
+<Block<SourceBlock|dspsnks4/To Audio\nDevice><outputChannelMapping:remove>>
+<Block<SourceBlock|dspsnks4/To Audio\nDevice><defaultOutputChannelMapping:remove>>
+<Block<SourceBlock|dspvision/From Multimedia File><inputFilename:remove>>

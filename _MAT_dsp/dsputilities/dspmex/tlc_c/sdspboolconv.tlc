@@ -1,0 +1,45 @@
+%% 
+
+%% 
+%% Copyright 1995-2005 The MathWorks, Inc.
+%%
+%% Abstract: TLC Code generation for DSP System Toolbox Logical Converter block (for sdspboolconv.c)
+%%
+
+%implements sdspboolconv "C"
+
+%%%%%%%%%%%%%%%%%%%%% 
+%% Function: Outputs ===========================================================
+%%
+%function Outputs(block, system) Output
+%%
+%assign INPORT_D  = 0
+%assign INPORT_R  = 1
+%assign OUTPORT   = 0
+%%
+%assign DTYPE_ID_INPORT_D = LibBlockInputSignalDataTypeId(INPORT_D)
+%assign DTYPE_ID_OUTPORT  = LibBlockOutputSignalDataTypeId(OUTPORT)
+%assign need_copy         = (LibBlockInputSignalBufferDstPort(INPORT_D) != OUTPORT)
+%%
+%if (need_copy)  %%copy input to output only if not in-place
+  /* DSP System Toolbox Boolean Converter (%<ParamSettings.FunctionName>) - '%<Name>' - Output */
+  %if (DTYPE_ID_INPORT_D == DTYPE_ID_OUTPORT)
+    %<LibBlockCopyInputsToOutputs(INPORT_D, OUTPORT)>
+  %else
+    %assign DTYPE_STR_INPORT_D = LibBlockInputSignalDataTypeName(INPORT_D,"")
+    %assign outputDTypeStr     = (DTYPE_ID_OUTPORT == tSS_DOUBLE) ? "real_T" : "boolean_T"
+    {
+      const %<DTYPE_STR_INPORT_D> *u1 = %<LibBlockInputSignalAddr(INPORT_D, "", "", 0)>;
+      %<outputDTypeStr> *y = %<LibBlockOutputSignalAddr(OUTPORT, "", "", 0)>;
+      int_T arraySize  = %<LibDataInputPortWidth(INPORT_D)>;
+      while(arraySize--) {
+        *y++ = (%<outputDTypeStr>)((int)(*u1++));
+      }
+    }
+  %endif
+
+%endif %% need_copy
+%endfunction  %% Outputs    
+    
+
+%% [EOF] sdspboolconv.tlc

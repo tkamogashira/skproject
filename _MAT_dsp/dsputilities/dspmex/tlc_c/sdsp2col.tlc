@@ -1,0 +1,27 @@
+%% 
+%% 
+%% 
+%%
+%% Copyright 1995-2003 The MathWorks, Inc.
+%%
+
+%implements sdsp2col "C"
+
+%% Function: Outputs ==========================================================
+%%
+%function Outputs(block, system) Output
+  %%
+  %% Only generate code if output buffer does not share the input buffer space.
+  %%
+  %assign INPORT    = 0
+  %assign OUTPORT   = 0
+  %assign NEED_COPY = (LibBlockInputSignalBufferDstPort(INPORT) != OUTPORT)
+  %%
+  %if NEED_COPY
+    /* DSP System Toolbox convert vector to column (%<ParamSettings.FunctionName>) - '%<Name>' */
+    %<LibBlockCopyInputsToOutputs(INPORT, OUTPORT)>
+  %endif
+
+%endfunction
+
+%% [EOF] sdsp2col.tlc

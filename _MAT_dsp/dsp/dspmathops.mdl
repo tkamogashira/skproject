@@ -1,0 +1,1464 @@
+Library {
+  Name			  "dspmathops"
+  Version		  8.0
+  MdlSubVersion		  0
+  RequirementInfo	  "9"
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Created		  "Thu Jun 25 10:17:02 1998"
+  Creator		  "don"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lij"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Oct 10 16:26:03 2011"
+  RTWModifiedTimeStamp	  240164750
+  ModelVersionFormat	  "1.%<AutoIncrement:665>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "d"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.12.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.12.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.12.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  AccelParallelForEachSubsystem	on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.12.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "Warning"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.12.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.12.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.12.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  GenerateCodeMetricsReport off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"PortableWordSizes"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      CodeExecutionProfiling  off
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 520, 285, 1400, 915 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Newton-Raphson"
+      Iterations	      "3"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Trigonometry
+      Operator		      "sin"
+      ApproximationMethod     "None"
+      NumberOfIterations      "11"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+    }
+  }
+  System {
+    Name		    "dspmathops"
+    Location		    [67, 117, 481, 418]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "12"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Complex\nExponential"
+      SID		      "1"
+      Ports		      [1, 1]
+      Position		      [300, 62, 350, 98]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Complex Exponential"
+      MaskDescription	      "Compute the complex exponential function of real inputs via\nEuler's formula, y = cos(x)+"
+      "jsin(x)."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskDisplay	      "text(0.2, 0.55,'exp(jx)');"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+      System {
+	Name			"Complex\nExponential"
+	Location		[205, 126, 485, 248]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "2"
+	  Position		  [15, 53, 45, 67]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Trigonometry
+	  Name			  "Trigonometric\nFunction1"
+	  SID			  "5"
+	  Ports			  [1, 1]
+	  Position		  [95, 45, 180, 75]
+	  ShowName		  off
+	  Operator		  "cos + jsin"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "6"
+	  Position		  [225, 53, 255, 67]
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Trigonometric\nFunction1"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Trigonometric\nFunction1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Cumulative\nProduct"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [160, 152, 240, 188]
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag1"
+      FunctionName	      "sdspcumsumprod"
+      Parameters	      "dim,InputProcessing,reset,fcn,outputMin,outputMax,dtInfo.interProdMode,dtInfo.interProdWordLen"
+      "gth,dtInfo.interProdFracLength,dtInfo.prodOutputMode,dtInfo.prodOutputWordLength,dtInfo.prodOutputFracLength,dtI"
+      "nfo.accumMode,dtInfo.accumWordLength,dtInfo.accumFracLength,dtInfo.outputMode,dtInfo.outputWordLength,dtInfo.out"
+      "putFracLength,dtInfo.roundingMode,dtInfo.overflowMode"
+      EnableBusSupport	      off
+      MaskType		      "Cumulative Product"
+      MaskDescription	      "Cumulative product of input matrix or input vector elements along the specified dimension"
+      ": rows, columns, or channels.  "
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Multiply input along:|Input processing:|Reset port:|inter prod mode|inter prod wl|inter "
+      "prod fl|Intermediate product data type string:|Last intermediate product data type string:|prod output mode|prod"
+      " output wl|prod output fl|ProdOutput data type string:|Last prodOutput data type string:|accum mode|accum wl|acc"
+      "um fl|Accum data type string:|Last accum data type string:|output mode|output wl|output fl|Output data type stri"
+      "ng:|Last output data type string:|Output minimum:|Output maximum:|rm|om|Lock scaling"
+      MaskStyleString	      "popup(Columns|Rows|Channels (running product)),popup(Columns as channels (frame based)|El"
+      "ements as channels (sample based)|Inherited (this choice will be removed - see release notes)),popup(None|Rising"
+      " edge|Falling edge|Either edge|Non-zero sample),popup(Same as input|Binary point scaling|Slope and bias scaling)"
+      ",edit,edit,unidt({a=7|||}{i=Inherit: Same as input}{s=UDTBinaryPointMode}{g=UDTInheritSign}),edit,popup(Same as "
+      "input|Binary point scaling|Slope and bias scaling),edit,edit,unidt({a=12|||}{i=Inherit: Same as input}{s=UDTBina"
+      "ryPointMode}{g=UDTInheritSign}),edit,popup(Same as product output|Same as input|Binary point scaling|Slope and b"
+      "ias scaling),edit,edit,unidt({a=17|||}{i=Inherit: Same as input|Inherit: Same as product output}{s=UDTBinaryPoin"
+      "tMode}{g=UDTInheritSign}),edit,popup(Same as product output|Same as input|Binary point scaling|Slope and bias sc"
+      "aling),edit,edit,unidt({a=22|24|25|}{i=Inherit: Same as input|Inherit: Same as product output}{s=UDTBinaryPointM"
+      "ode}{g=UDTInheritSign}),edit,min,max,popup(Ceiling|Convergent|Floor|Nearest|Round|Simplest|Zero),checkbox,checkb"
+      "ox"
+      MaskVariables	      "dim=@1;InputProcessing=@2;reset_popup=@3;interProdMode=@4;interProdWordLength=@5;interProdF"
+      "racLength=@6;interProdDataTypeStr=@7;interProdLastDataTypeStr=&8;prodOutputMode=@9;prodOutputWordLength=@10;prod"
+      "OutputFracLength=@11;prodOutputDataTypeStr=@12;prodOutputLastDataTypeStr=&13;accumMode=@14;accumWordLength=@15;a"
+      "ccumFracLength=@16;accumDataTypeStr=@17;accumLastDataTypeStr=&18;outputMode=@19;outputWordLength=@20;outputFracL"
+      "ength=@21;outputDataTypeStr=@22;outputLastDataTypeStr=&23;outputMin=@24;outputMax=@25;roundingMode=@26;overflowM"
+      "ode=@27;LockScale=@28;"
+      MaskTunableValueString  "off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off"
+      ",off,off,off,off,off,off"
+      MaskCallbackString      "|||||||||||||||||||||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "blkh   = gcbh;\nreset  = reset_popup-1;\nfcn    = 1;\ndspSetFrameUpgradeParameter(blkh,"
+      " 'InputProcessing', 'Inherited (this choice will be removed - see release notes)');\ndtRows = dspblkGetCumProdDT"
+      "RowInfo();\ndtInfo = dspGetUDTFixptDataTypeInfo(blkh, dtRows, true);\n"
+      MaskSelfModifiable      on
+      MaskDisplay	      "s = dspblkcumsumprod();\ndisp([s.str '\\nProduct'])\nport_label('input',s.i1,s.i1s);\nport_la"
+      "bel('input',s.i2,s.i2s);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Channels (running product)|Columns as channels (frame based)|None|Same as input|16|15|Inh"
+      "erit: Same as input|Inherit: Same as input|Same as input|32|30|Inherit: Same as input|Inherit: Same as input|Sam"
+      "e as input|32|30|Inherit: Same as input|Inherit: Same as input|Same as input|16|15|Inherit: Same as input|Inheri"
+      "t: Same as input|[]|[]|Floor|off|off"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Cumulative\nSum"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [40, 152, 120, 188]
+      UserDataPersistent      on
+      UserData		      "DataTag2"
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag3"
+      FunctionName	      "sdspcumsumprod"
+      Parameters	      "dim,InputProcessing,reset,fcn,outputMin,outputMax,-1,0,0,-1,0,0,dtInfo.accumMode,dtInfo.accumW"
+      "ordLength,dtInfo.accumFracLength,dtInfo.outputMode,dtInfo.outputWordLength,dtInfo.outputFracLength,dtInfo.roundi"
+      "ngMode,dtInfo.overflowMode"
+      EnableBusSupport	      off
+      MaskType		      "Cumulative Sum"
+      MaskDescription	      "Cumulative sum of input matrix or input vector elements along the specified dimension: ro"
+      "ws, columns, or channels."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Sum input along:|Input processing:|Reset port:|accMode|accWL|accFL|Accum data type strin"
+      "g:|Last accum data type string:|outputMode|outputWL|outputFL|Output data type string:|Last output data type stri"
+      "ng:|Output minimum:|Output maximum:|rm|om|Lock scaling"
+      MaskStyleString	      "popup(Columns|Rows|Channels (running sum)),popup(Columns as channels (frame based)|Elemen"
+      "ts as channels (sample based)|Inherited (this choice will be removed - see release notes)),popup(None|Rising edg"
+      "e|Falling edge|Either edge|Non-zero sample),popup(Same as input|Binary point scaling|Slope and bias scaling),edi"
+      "t,edit,unidt({a=7|||}{i=Inherit: Same as input}{s=UDTBinaryPointMode}{g=UDTInheritSign}),edit,popup(Same as accu"
+      "mulator|Same as input|Binary point scaling|Slope and bias scaling),edit,edit,unidt({a=12|14|15|}{i=Inherit: Same"
+      " as input|Inherit: Same as accumulator}{s=UDTBinaryPointMode}{g=UDTInheritSign}),edit,min,max,popup(Ceiling|Conv"
+      "ergent|Floor|Nearest|Round|Simplest|Zero),checkbox,checkbox"
+      MaskVariables	      "dim=@1;InputProcessing=@2;reset_popup=@3;accumMode=@4;accumWordLength=@5;accumFracLength=@6"
+      ";accumDataTypeStr=@7;accumLastDataTypeStr=&8;outputMode=@9;outputWordLength=@10;outputFracLength=@11;outputDataT"
+      "ypeStr=@12;outputLastDataTypeStr=&13;outputMin=@14;outputMax=@15;roundingMode=@16;overflowMode=@17;LockScale=@18"
+      ";"
+      MaskTunableValueString  "off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off"
+      MaskCallbackString      "|||||||||||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "blkh   = gcbh;\nreset  = reset_popup-1;\nfcn    = 0;\ndspSetFrameUpgradeParameter(blkh,"
+      " 'InputProcessing', 'Inherited (this choice will be removed - see release notes)');\ndtRows = dspblkGetCumSumDTR"
+      "owInfo();\ndtInfo = dspGetUDTFixptDataTypeInfo(blkh, dtRows, true);"
+      MaskSelfModifiable      on
+      MaskDisplay	      "s = dspblkcumsumprod();\ndisp([s.str '\\nSum'])\nport_label('input',s.i1,s.i1s);\nport_label("
+      "'input',s.i2,s.i2s);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Channels (running sum)|Columns as channels (frame based)|None|Same as input|32|30|Inherit"
+      ": Same as input|Inherit: Same as input|Same as accumulator|16|15|Inherit: Same as accumulator|Inherit: Same as a"
+      "ccumulator|[]|[]|Floor|off|off"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Difference"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [295, 149, 355, 191]
+      UserDataPersistent      on
+      UserData		      "DataTag4"
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag5"
+      FunctionName	      "sdspdiff2"
+      Parameters	      "Run,dim,Dimension,outputMin,outputMax,dtInfo.accumMode,dtInfo.accumWordLength,dtInfo.accumFrac"
+      "Length,dtInfo.outputMode,dtInfo.outputWordLength,dtInfo.outputFracLength,dtInfo.roundingMode,dtInfo.overflowMode"
+      EnableBusSupport	      off
+      MaskType		      "Difference"
+      MaskDescription	      "Difference between adjacent input elements.  For oriented inputs, difference along the sp"
+      "ecified dimension."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Running difference:|Difference along:|Dimension:|------- Show additional parameters ----"
+      "---|Allow overrides from DSP Fixed-Point Attributes blocks|Fixed-point output attributes:|Output word length:|Ou"
+      "tput fraction length:|Output data type string:|Last output data type string:|Output minimum:|Output maximum:|Fix"
+      "ed-point accumulator attributes:|Accumulator word length:|Accumulator fraction length:|Accum data type string:|L"
+      "ast accum data type string:|Round integer calculations toward:|Saturate on integer overflow|Lock scaling"
+      MaskStyleString	      "popup(No|Yes|Inherit from input (this choice will be removed - see release notes)),popup("
+      "Columns|Rows|Specified dimension),edit,checkbox,checkbox,popup(Same as accumulator|Same as input|Binary point sc"
+      "aling|Slope and bias scaling|User-defined),edit,edit,unidt({a=9|11|12|}{i=Inherit: Same as input|Inherit: Same a"
+      "s accumulator}{s=UDTBinaryPointMode}{g=UDTInheritSign}),edit,min,max,popup(Inherit via internal rule|Same as inp"
+      "ut|Binary point scaling|Slope and bias scaling|User-defined),edit,edit,unidt({a=16|||}{i=Inherit: Inherit via in"
+      "ternal rule|Inherit: Same as input}{s=UDTBinaryPointMode}{g=UDTInheritSign}),edit,popup(Ceiling|Convergent|Floor"
+      "|Nearest|Round|Simplest|Zero),checkbox,checkbox"
+      MaskVariables	      "Run=@1;dim=@2;Dimension=@3;additionalParams=@4;allowOverrides=@5;outputMode=@6;outputWordLe"
+      "ngth=@7;outputFracLength=@8;outputDataTypeStr=@9;outputLastDataTypeStr=&10;outputMin=@11;outputMax=@12;accumMode"
+      "=@13;accumWordLength=@14;accumFracLength=@15;accumDataTypeStr=@16;accumLastDataTypeStr=&17;roundingMode=@18;over"
+      "flowMode=@19;LockScale=@20;"
+      MaskTunableValueString  "off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off"
+      MaskCallbackString      "|||||||||||||||||||"
+      MaskEnableString	      "on,on,on,off,off,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,off,off,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "blkh   = gcbh;\ndspSetFrameUpgradeParameter(blkh, 'Run', 'Inherit from input (this choi"
+      "ce will be removed - see release notes)');\ndtRows = dspblkGetDiffDTRowInfo();\ndtInfo = dspGetUDTFixptDataTypeI"
+      "nfo(blkh, dtRows, true);"
+      MaskSelfModifiable      on
+      MaskDisplay	      "if strcmpi(get_param(gcbh, 'Run'), 'Yes')\n    disp('Running\\nDiff');\nelse\n    disp('Diff'"
+      ");\nend"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "No|Columns|1|off|on|Same as accumulator|16|15|Inherit: Same as accumulator|Inherit: Same "
+      "as accumulator|[]|[]|Inherit via internal rule|32|30|Inherit: Inherit via internal rule|Inherit: Inherit via int"
+      "ernal rule|Floor|off|off"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Normalization"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [55, 232, 105, 268]
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag6"
+      FunctionName	      "sdsp2norm2"
+      Parameters	      "Bias,NormType,NormOver,ColComp,Dimension,outputMin,outputMax,dtInfo.prodOutputMode,dtInfo.prod"
+      "OutputWordLength,dtInfo.prodOutputFracLength,dtInfo.accumMode,dtInfo.accumWordLength,dtInfo.accumFracLength,dtIn"
+      "fo.outputMode,dtInfo.outputWordLength,dtInfo.outputFracLength,dtInfo.roundingMode,dtInfo.overflowMode"
+      EnableBusSupport	      off
+      MaskType		      "Normalization"
+      MaskDescription	      "Normalize the input over the specified dimension by the vector 2-norm, sqrt(u'u)+b, or by"
+      " the squared 2-norm, u'u+b, where b is a bias used to protect against divide-by-zero.  Normalization is performe"
+      "d over rows, columns, or the dimension of the input signal specified in the 'Dimension' parameter."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Norm:|Normalization bias:|Normalize over:|Treat sample-based row input as a column|Dimen"
+      "sion:|--------------- Show additional parameters ---------------|Allow overrides from DSP Attributes blocks|Fixe"
+      "d-point output attributes:|Output word length:|Output fraction length:|Output data type string:|Last output data"
+      " type string:|Output minimum:|Output maximum:|Fixed-point accumulator attributes|Accumulator word length:|Accumu"
+      "lator fraction length:|Accum data type string:|Last accum data type string:|Fixed-point product output attribute"
+      "s:|Product output word length:|Product output fraction length:|ProdOutput data type string:|Last prodOutput data"
+      " type string:|Round integer calculations toward:|Saturate on integer overflow|Lock scaling"
+      MaskStyleString	      "popup(2-norm|Squared 2-norm),edit,popup(Each column|Each row|Specified dimension),checkbo"
+      "x,edit,checkbox,checkbox,popup(Same as accumulator|Same as product output|Same as input|Binary point scaling|Slo"
+      "pe and bias scaling),edit,edit,unidt({a=11|13|14|}{i=Inherit: Same as input|Inherit: Same as product output|Inhe"
+      "rit: Same as accumulator}{s=UDTBinaryPointMode}{g=UDTInheritSign}),edit,min,max,popup(Same as product output|Sam"
+      "e as input|Binary point scaling|Slope and bias scaling),edit,edit,unidt({a=18|||}{i=Inherit: Same as input|Inher"
+      "it: Same as product output}{s=UDTBinaryPointMode}{g=UDTInheritSign}),edit,popup(Same as input|Binary point scali"
+      "ng|Slope and bias scaling),edit,edit,unidt({a=23|||}{i=Inherit: Same as input}{s=UDTBinaryPointMode}{g=UDTInheri"
+      "tSign}),edit,popup(Ceiling|Convergent|Floor|Nearest|Round|Simplest|Zero),checkbox,checkbox"
+      MaskVariables	      "NormType=@1;Bias=@2;NormOver=@3;ColComp=@4;Dimension=@5;additionalParams=@6;allowOverrides="
+      "@7;outputMode=@8;outputWordLength=@9;outputFracLength=@10;outputDataTypeStr=@11;outputLastDataTypeStr=&12;output"
+      "Min=@13;outputMax=@14;accumMode=@15;accumWordLength=@16;accumFracLength=@17;accumDataTypeStr=@18;accumLastDataTy"
+      "peStr=&19;prodOutputMode=@20;prodOutputWordLength=@21;prodOutputFracLength=@22;prodOutputDataTypeStr=@23;prodOut"
+      "putLastDataTypeStr=&24;roundingMode=@25;overflowMode=@26;LockScale=@27;"
+      MaskTunableValueString  "off,on,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,off,"
+      "off,off,off,off,off"
+      MaskCallbackString      "||||||||||||||||||||||||||"
+      MaskEnableString	      "on,on,on,on,on,off,off,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,on,on,off,off,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "blkh   = gcbh;\ndtRows = dspblkGetTwoNormDTRowInfo();\ndtInfo = dspGetUDTFixptDataTypeI"
+      "nfo(blkh, dtRows, true);"
+      MaskSelfModifiable      on
+      MaskDisplay	      "x = [0 NaN 100 NaN 20 80 NaN 30 30 NaN 36 36 NaN 58 58 NaN 64 64];\ny = [0 NaN 100 NaN 60 60 "
+      "NaN 9 43 NaN 9 43 NaN 9 43 NaN 9 43];\nif NormType==1, sqr_txt = ' '; else sqr_txt = '2'; end\nplot(x,y)\ntext(4"
+      "4,80,'u'); text(44,25,'u'); text(72,39,sqr_txt)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "Squared 2-norm|1e-10|Each column|on|1|off|on|Same as product output|32|32|Inherit: Same a"
+      "s product output|Inherit: Same as product output|[]|[]|Same as product output|32|30|Inherit: Same as product out"
+      "put|Inherit: Same as product output|Same as input|32|32|Inherit: Same as input|Inherit: Same as input|Floor|off|"
+      "off"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "dB Conversion"
+      SID		      "11"
+      Ports		      [1, 1]
+      Position		      [50, 61, 110, 99]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "dB Conversion"
+      MaskDescription	      "Convert input of watts or volts to decibels. Voltage inputs are first converted to power "
+      "relative to the specified load resistance, where P = (V^2)/R.  When converting to dB, the reference power is 1 W"
+      ". When converting to dBm, the reference power is 1 mW."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Convert to:|Input signal:|Load resistance (ohms):|Add eps to input to protect against  \""
+      "log(0) = -inf\""
+      MaskStyleString	      "popup(dB|dBm),popup(Power|Amplitude),edit,checkbox"
+      MaskVariables	      "dBtype=@1;intype=@2;R=@3;fuzz=@4;"
+      MaskTunableValueString  "on,off,on,on"
+      MaskCallbackString      "dspblkdb2|dspblkdb2||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskInitialization      "[str fuzz_val dBval] = dspblkdb2('init');\ndspblkdb2('checkparam');\ndspblkdb2('update'"
+      ");"
+      MaskSelfModifiable      on
+      MaskDisplay	      "disp(str)\n\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "dB|Amplitude|1|off"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+      System {
+	Name			"dB Conversion"
+	Location		[350, 529, 887, 677]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"12"
+	Block {
+	  BlockType		  Inport
+	  Name			  "in"
+	  SID			  "11:1"
+	  Position		  [15, 15, 35, 35]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "11:2"
+	  Position		  [49, 90, 111, 120]
+	  BlockRotation		  270
+	  Value			  "fuzz_val"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  SID			  "11:3"
+	  Position		  [339, 90, 401, 120]
+	  BlockRotation		  270
+	  Value			  "dBval"
+	  OutDataTypeStr	  "Inherit: Inherit via back propagation"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Err if\nnon-flt"
+	  SID			  "11:4"
+	  Ports			  [1, 1]
+	  Position		  [45, 16, 55, 34]
+	  LibraryVersion	  "1.503"
+	  SourceBlock		  "dspsigattribs/Check Signal\nAttributes"
+	  SourceType		  "Check Signal Attributes"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  SigAttribCheckMethod	  "Does not match attributes exactly"
+	  Complexity		  "Ignore"
+	  Frame			  "Ignore"
+	  DimsCheckMethod	  "Ignore"
+	  Dimensions		  "1-D"
+	  DatatypeCheckMethod	  "Is..."
+	  DatatypeGeneral	  "Floating-point"
+	  DtypeFloatSpecific	  "Any floating-point"
+	  DtypeFixedSpecific	  "Any fixed-point"
+	  DtypeIntSpecific	  "Any integer"
+	  SampleMode		  "Ignore"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Error\nif Cplx"
+	  SID			  "11:5"
+	  Ports			  [1, 1]
+	  Position		  [60, 15, 70, 35]
+	  LibraryVersion	  "1.503"
+	  SourceBlock		  "dspsigattribs/Check Signal\nAttributes"
+	  SourceType		  "Check Signal Attributes"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  SigAttribCheckMethod	  "Matches attributes exactly"
+	  Complexity		  "Complex"
+	  Frame			  "Ignore"
+	  DimsCheckMethod	  "Ignore"
+	  Dimensions		  "1-D"
+	  DatatypeCheckMethod	  "Ignore"
+	  DatatypeGeneral	  "Boolean"
+	  DtypeFloatSpecific	  "Any floating-point"
+	  DtypeFixedSpecific	  "Any fixed-point"
+	  DtypeIntSpecific	  "Any integer"
+	  SampleMode		  "Ignore"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "11:6"
+	  Position		  [330, 15, 360, 45]
+	  Gain			  "10"
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Magsq"
+	  SID			  "11:7"
+	  Ports			  [1, 1]
+	  Position		  [155, 15, 180, 45]
+	  Operator		  "magnitude^2"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Scale by R"
+	  SID			  "11:8"
+	  Position		  [210, 15, 240, 45]
+	  Gain			  "1./R"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "11:9"
+	  Ports			  [2, 1]
+	  Position		  [95, 20, 115, 40]
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "11:10"
+	  Ports			  [2, 1]
+	  Position		  [415, 25, 435, 45]
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "log10"
+	  SID			  "11:11"
+	  Ports			  [1, 1]
+	  Position		  [260, 18, 305, 42]
+	  Operator		  "log10"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out"
+	  SID			  "11:12"
+	  Position		  [480, 20, 500, 40]
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  Points		  [0, -45]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -5]
+	  DstBlock		  "out"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Magsq"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Error\nif Cplx"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in"
+	  SrcPort		  1
+	  DstBlock		  "Err if\nnon-flt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Err if\nnon-flt"
+	  SrcPort		  1
+	  DstBlock		  "Error\nif Cplx"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Scale by R"
+	  SrcPort		  1
+	  DstBlock		  "log10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Magsq"
+	  SrcPort		  1
+	  DstBlock		  "Scale by R"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "log10"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "dB Gain"
+      SID		      "12"
+      Ports		      [1, 1]
+      Position		      [170, 62, 230, 98]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "dB Gain"
+      MaskDescription	      "Apply a gain specified in dB."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Gain, dB:|Input signal:"
+      MaskStyleString	      "edit,popup(Power|Amplitude)"
+      MaskVariables	      "dB=@1;intype=@2;"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskInitialization      "if isempty(dB)\n  dB = 0; g = 0;\n  s  = ['dB Gain'];\nelse\n  g=10.^(dB/(10*intype));\n"
+      "  if (isscalar(dB))\n    s = sprintf('%g dB\\n(%g)',dB,g);\n  else\n    s = ['dB Gain'];\n  end\nend\n"
+      MaskSelfModifiable      on
+      MaskDisplay	      "fprintf(s)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "autoscale"
+      MaskValueString	      "-40|Amplitude"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+      System {
+	Name			"dB Gain"
+	Location		[238, 486, 514, 586]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"3"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "12:1"
+	  Position		  [25, 33, 55, 47]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "12:2"
+	  Position		  [115, 25, 145, 55]
+	  ShowName		  off
+	  Gain			  "10.^(dB/(10*intype))"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "12:3"
+	  Position		  [205, 33, 235, 47]
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Annotation {
+      Name		      "Math Operations"
+      Position		      [200, 29]
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  7
+  DataRecord {
+    Tag			    DataTag6
+    Data		    "  %)30     .    N     8    (     0         %    \"     $    \"     0         .    .     8    (    !    "
+    "      %    \"     $    '     0         0    !P   %1W;TYO<FT #@   $@    &    \"     0         !0    @    !    %0   "
+    " $         $    !4   !34$-5;FEF:65D1FEX<'1$;&=$1$<    "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    L     8    (     0         %    \"     $    \"     0         .    ,     8    (    !    "
+    "      %    \"     $    $     0         0  0 1&EF9@X   !(    !@    @    $          4    (     0   !4    !         !"
+    "     5    4U!#56YI9FEE9$9I>'!T1&QG1$1'    "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    N     8    (     0         %    \"     $    \"     0         .    .     8    (    !    "
+    "      %    \"     $    &     0         0    !@   $-U;5-U;0  #@   $@    &    \"     0         !0    @    !    %0   "
+    " $         $    !4   !34$-5;FEF:65D1FEX<'1$;&=$1$<    "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    N     8    (     0         %    \"     $    \"     0         .    .     8    (    !    "
+    "      %    \"     $    '     0         0    !P   $-U;5!R;V0 #@   $@    &    \"     0         !0    @    !    %0   "
+    " $         $    !4   !34$-5;FEF:65D1FEX<'1$;&=$1$<    "
+  }
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+}

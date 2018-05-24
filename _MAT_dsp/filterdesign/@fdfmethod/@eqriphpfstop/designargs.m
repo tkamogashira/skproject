@@ -1,0 +1,13 @@
+function args = designargs(this, hspecs)
+%DESIGNARGS   Return the design arguments.
+
+%   Author(s): J. Schickler
+%   Copyright 1999-2004 The MathWorks, Inc.
+
+args = {hspecs.FilterOrder, ...
+    [0 hspecs.Fstop hspecs.Fpass 1], ...
+    [0 0 1 1], ...
+    [100 convertmagunits(hspecs.Apass, 'db', 'linear', 'pass')], ...
+    {'w', 'c'}};
+
+% [EOF]

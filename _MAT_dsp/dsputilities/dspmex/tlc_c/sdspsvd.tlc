@@ -1,0 +1,171 @@
+%% 
+%% 
+%% 
+%%
+%% Abstract: TLC Code generation for DSP System Toolbox SVD block.
+%%
+%% Copyright 1995-2006 The MathWorks, Inc.
+%%
+
+%implements sdspsvd "C"
+
+%% Function: BlockInstanceSetup ================================================
+%%
+%function BlockInstanceSetup(block, system) void
+    %assign WANTV = SFcnParamSettings.WANTV     %% Show singular vectors checkbox
+    %assign WANTERR = SFcnParamSettings.WANTERR %% Show error status checkbox
+
+    %assign INPORT    = 0
+    %assign OUTPORT_U = 0
+    %assign OUTPORT_S = 1
+    %assign OUTPORT_V = 2
+    %assign OUTPORT_E = 3
+
+    %%dimension of input matrix
+    %assign NUM_INP_DIMS = LibBlockInputSignalNumDimensions(INPORT)
+    %assign INPUT_DIMS   = LibBlockInputSignalDimensions(   INPORT)
+    %assign M            = INPUT_DIMS[0]
+    %assign N            = (NUM_INP_DIMS == 2) ? INPUT_DIMS[1] : 1
+    %if M < N
+        %assign Mnew = N
+        %assign Nnew = M
+    %else
+        %assign Mnew = M
+        %assign Nnew = N
+    %endif
+
+    %%Data types
+    %assign DTYPE_ID     = LibBlockInputSignalDataTypeId(INPORT)
+    %assign INP_COMPLEX  = LibBlockInputSignalIsComplex(INPORT)
+
+    %assign block = block + INPORT + OUTPORT_U + OUTPORT_S + OUTPORT_V
+    %assign block = block + OUTPORT_E + DTYPE_ID + INP_COMPLEX + WANTV 
+    %assign block = block + WANTERR + M + N + Mnew + Nnew
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs ===========================================================
+%%
+%function Outputs(block, system) Output
+    /* DSP System Toolbox SVD (%<ParamSettings.FunctionName>) - '%<Name>' */
+    %assign dnam    = ["R", "C", "D", "Z"]                %% Data type
+    %assign dtype   = (DTYPE_ID == tSS_SINGLE) ? 0 : 2    %% Double or single
+    %assign dlet    = dnam[dtype+INP_COMPLEX]             %% R|C|D|Z
+    %if WANTV == 1
+        %if M >= N
+            %assign outportu = LibBlockOutputSignalAddr(OUTPORT_U,  "", "", 0)
+            %assign outportv = LibBlockOutputSignalAddr(OUTPORT_V,  "", "", 0)
+        %else
+            %assign outportv = LibBlockOutputSignalAddr(OUTPORT_U,  "", "", 0)
+            %assign outportu = LibBlockOutputSignalAddr(OUTPORT_V,  "", "", 0)
+        %endif
+    %else
+        %assign outportu = "NULL"
+        %assign outportv = "NULL"
+    %endif
+    
+    %if WANTERR == 1
+      %if WANTV == 1
+        %assign outporte = LibBlockOutputSignal(OUTPORT_E, "", "", 0)
+      %else
+        %assign outporte = LibBlockOutputSignal(OUTPORT_S, "", "", 0)
+      %endif
+    %endif
+    %%
+    %<CopyInput(block)>\
+    %if WANTERR == 1
+      {
+      int_T convstatus = %<dspSvd(dlet, "%<LibBlockDWorkAddr(X, "", "", 0)>", \
+                            Mnew, Nnew, \
+                            "%<LibBlockDWorkAddr(S,"", "", 0)>", "%<LibBlockDWorkAddr(E,"", "", 0)>", \
+                            "%<LibBlockDWorkAddr(WORK, "", "", 0)>", "%<outportu>", \
+                            "%<outportv>", WANTV)>;
+    %else
+      %<dspSvd(dlet, "%<LibBlockDWorkAddr(X, "", "", 0)>", \
+               Mnew, Nnew, \
+               "%<LibBlockDWorkAddr(S,"", "", 0)>", "%<LibBlockDWorkAddr(E,"", "", 0)>", \
+               "%<LibBlockDWorkAddr(WORK, "", "", 0)>", "%<outportu>", \
+               "%<outportv>", WANTV)>;
+    %endif
+
+    %%Copy to output
+    %<CopyToOutput(block)>\
+    %%
+    %if WANTERR == 1                       
+    %<outporte> = (boolean_T) (convstatus != 0);
+    }
+    %endif
+%endfunction  %% Outputs
+
+%function CopyInput(block) Output
+{
+  %if INP_COMPLEX
+    %assign label = (DTYPE_ID == tSS_DOUBLE) ? "creal_T" : "creal32_T"
+    const %<label> *pA = %<LibBlockInputSignalAddr(INPORT, "", "", 0)>;
+    %<label> *pX = %<LibBlockDWorkAddr(X, "", "", 0)>;
+    int_T MN = %<M*N>;                                    
+    %if (M >= N)                                     
+        /* Matrix is tall and skinny, copy as is. */    
+        while(MN--)                                     
+            *pX++ = *pA++;                                                                                 
+    %else                                             
+        /* Matrix is short and fat, so transpose it. */ 
+        int i,j;                                        
+        for (i=0; i<%<M>; i++)                             
+            for (j=0; j<%<N>; j++) {                       
+                /* HERMITIAN trans-> neg imag part */   
+                *pX = *(pA + i + j*%<M>);                  
+                pX->im = -(pX->im);                     
+                pX++;                                   
+            }                                           
+    %endif
+  %else
+    %assign label = (DTYPE_ID == tSS_DOUBLE) ? "real_T" : "real32_T"
+    const %<label> *pA = %<LibBlockInputSignalAddr(INPORT, "", "", 0)>;
+    %<label> *pX = %<LibBlockDWorkAddr(X, "", "", 0)>;
+    int_T MN = %<M*N>;                                     
+    %if (M >= N)                                       
+        /* Matrix is tall and skinny, copy as is. */    
+        while(MN--)                                     
+            *pX++ = *pA++;                                                                                 
+    %else                                              
+        /* Matrix is short and fat, so transpose it. */ 
+        int i,j;                                        
+        for (i=0; i<%<M>; i++)                             
+            for (j=0; j<%<N>; j++)                         
+                *pX++ = *(pA + i + j*%<M>);                
+    %endif
+  %endif
+}
+%endfunction %% CopyInput
+
+%%
+%function CopyToOutput(block) Output
+  %assign copyportnum = WANTV ? OUTPORT_S : OUTPORT_U
+  %assign P = M > N ? N : M
+  {
+    %if (DTYPE_ID == tSS_DOUBLE)
+      %assign label1 = "real_T"
+      %assign label2 = INP_COMPLEX ? "creal_T" : "real_T"
+    %else
+      %assign label1 = "real32_T"
+      %assign label2 = INP_COMPLEX ? "creal32_T" : "real32_T"
+    %endif
+    %<label1> *pOS = %<LibBlockOutputSignalAddr(copyportnum,  "", "", 0)>;
+    %<label2> *pS = %<LibBlockDWorkAddr(S,    "", "", 0)>;
+    int_T P = %<P>;
+    %if INP_COMPLEX
+    while(P--) {
+        *pOS++ = pS->re;
+        pS++;
+    }
+    %else
+    while(P--) {
+        *pOS++ = *pS++;
+    }
+    %endif
+  }
+%%
+%endfunction   %%CopyToOutput
+
+%% [EOF] sdspsvd.tlc
+

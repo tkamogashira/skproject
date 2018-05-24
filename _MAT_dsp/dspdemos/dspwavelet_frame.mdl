@@ -1,0 +1,2642 @@
+Model {
+  Name			  "dspwavelet_frame"
+  Version		  8.3
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "US-ASCII"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.251"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [0.0, 22.0, 764.0, 675.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[720.0, 461.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, -4.0]
+      }
+    }
+  }
+  Created		  "Fri Aug 07 06:58:46 1998"
+  Creator		  "The MathWorks Inc."
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Jan 17 19:40:31 2014"
+  RTWModifiedTimeStamp	  311888430
+  ModelVersionFormat	  "1.%<AutoIncrement:251>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  on
+  ShowLineDimensions	  on
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    6
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "dspwavelet_frame"
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "dspwavelet_frame"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      ""
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  CovEnableCumulative	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  CovSFcnEnable		  off
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      7
+      Version		      "1.14.2"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  8
+	  Version		  "1.14.2"
+	  StartTime		  "0.0"
+	  StopTime		  "1024"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  9
+	  Version		  "1.14.2"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  off
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "sigsOut"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  10
+	  Version		  "1.14.2"
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  11
+	  Version		  "1.14.2"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "none"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "None"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  12
+	  Version		  "1.14.2"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  13
+	  Version		  "1.14.2"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  14
+	  Version		  "1.14.2"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  15
+	  Version		  "1.14.2"
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      16
+	      Version		      "1.14.2"
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      17
+	      Version		      "1.14.2"
+	      Array {
+		Type			"Cell"
+		Dimension		1
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      ExtraOptions	      "-aGenRTModel=1 "
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 278, 151, 1158, 781 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    7
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    18
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  WSDataSource		  "MAT-File"
+  WSSourceFileName	  "dspwlets.mat"
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      DeadZone
+      LowerValue	      "-0.5"
+      UpperValue	      "0.5"
+      SaturateOnIntegerOverflow	on
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      Lockdown		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      PropagateVarSize	      "Only when enabling"
+      ShowOutputPort	      off
+      ZeroCross		      on
+      PortDimensions	      "1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      MultiPortSwitch
+      DataPortOrder	      "One-based contiguous"
+      Inputs		      "3"
+      DataPortIndices	      "{1,2,3}"
+      DataPortForDefault      "Last data port"
+      DiagnosticForDefault    "Error"
+      zeroidx		      off
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      TimeScope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      Floating		      off
+    }
+  }
+  System {
+    Name		    "dspwavelet_frame"
+    Location		    [0, 22, 764, 697]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "69"
+    Block {
+      BlockType		      Reference
+      Name		      "Delay"
+      SID		      "1"
+      Ports		      [1, 1]
+      Position		      [225, 67, 375, 93]
+      ZOrder		      -1
+      LibraryVersion	      "1.735"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "dspsigops/Delay"
+      SourceType	      "Delay"
+      InputProcessing	      "Columns as channels (frame based)"
+      dly_unit		      "Samples"
+      delay		      "7*(length(lod)-1)"
+      ic_detail		      on
+      dif_ic_for_ch	      off
+      dif_ic_for_dly	      off
+      ic		      "0"
+      reset_popup	      "None"
+      Port {
+	PortNumber		1
+	Name			"Input"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Info"
+      SID		      "3"
+      Ports		      []
+      Position		      [27, 339, 78, 389]
+      ZOrder		      -3
+      BackgroundColor	      "cyan"
+      LibraryVersion	      "1.82"
+      SourceBlock	      "dspmisc/Info"
+      SourceType	      "Info"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Median"
+      SID		      "5"
+      Ports		      [1, 1]
+      Position		      [500, 362, 560, 408]
+      ZOrder		      -5
+      LibraryVersion	      "1.532"
+      SourceBlock	      "dspstat3/Median"
+      SourceType	      "Median"
+      sortAlg		      "Quick sort"
+      directionMode	      "Each column"
+      dimension		      "1"
+      treatSBRowAsCol	      on
+      additionalParams	      off
+      allowOverrides	      off
+      outputMode	      "Same as accumulator"
+      outputWordLength	      "16"
+      outputFracLength	      "15"
+      outputDataTypeStr	      "Inherit: Same as accumulator"
+      outputLastDataTypeStr   "Inherit: Same as accumulator"
+      outputMin		      "[]"
+      outputMax		      "[]"
+      accumMode		      "Same as product output"
+      accumWordLength	      "32"
+      accumFracLength	      "30"
+      accumDataTypeStr	      "Inherit: Same as product output"
+      accumLastDataTypeStr    "Inherit: Same as product output"
+      prodOutputMode	      "Same as input"
+      prodOutputWordLength    "32"
+      prodOutputFracLength    "30"
+      prodOutputDataTypeStr   "Inherit: Same as input"
+      prodOutputLastDataTypeStr	"Inherit: Same as input"
+      roundingMode	      "Floor"
+      overflowMode	      off
+      LockScale		      off
+    }
+    Block {
+      BlockType		      MultiPortSwitch
+      Name		      "Multiport\nSwitch"
+      SID		      "6"
+      Ports		      [3, 1]
+      Position		      [390, 217, 420, 263]
+      ZOrder		      -6
+      DataPortOrder	      "Zero-based contiguous"
+      Inputs		      "2"
+      zeroidx		      on
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"Output"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Noise Reduction\nsubsystem"
+      SID		      "7"
+      Ports		      [1, 1, 1]
+      Position		      [240, 304, 340, 346]
+      ZOrder		      -7
+      DropShadow	      on
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      System {
+	Name			"Noise Reduction\nsubsystem"
+	Location		[650, 111, 1248, 470]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "8"
+	  Position		  [20, 103, 50, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  EnablePort
+	  Name			  "Enable"
+	  SID			  "9"
+	  Ports			  []
+	  Position		  [235, 20, 255, 40]
+	  ZOrder		  -2
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Delay Alignment"
+	  SID			  "10"
+	  Ports			  [4, 4]
+	  Position		  [175, 72, 255, 143]
+	  ZOrder		  -3
+	  RequestExecContextInheritance	off
+	  System {
+	    Name		    "Delay Alignment"
+	    Location		    [265, 290, 601, 739]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "11"
+	      Position		      [25, 38, 55, 52]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      SID		      "12"
+	      Position		      [25, 98, 55, 112]
+	      ZOrder		      -2
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In3"
+	      SID		      "13"
+	      Position		      [25, 158, 55, 172]
+	      ZOrder		      -3
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4"
+	      SID		      "14"
+	      Position		      [25, 208, 55, 222]
+	      ZOrder		      -4
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      SID		      "15"
+	      Ports		      [1, 1]
+	      Position		      [90, 30, 195, 60]
+	      ZOrder		      -5
+	      ShowName		      off
+	      LibraryVersion	      "1.735"
+	      UserDataPersistent      on
+	      UserData		      "DataTag1"
+	      SourceBlock	      "dspsigops/Delay"
+	      SourceType	      "Delay"
+	      InputProcessing	      "Columns as channels (frame based)"
+	      dly_unit		      "Samples"
+	      delay		      "3*(length(lod)-1)"
+	      ic_detail		      on
+	      dif_ic_for_ch	      off
+	      dif_ic_for_dly	      off
+	      ic		      "0"
+	      reset_popup	      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay1"
+	      SID		      "16"
+	      Ports		      [1, 1]
+	      Position		      [90, 90, 195, 120]
+	      ZOrder		      -6
+	      ShowName		      off
+	      LibraryVersion	      "1.735"
+	      UserDataPersistent      on
+	      UserData		      "DataTag2"
+	      SourceBlock	      "dspsigops/Delay"
+	      SourceType	      "Delay"
+	      InputProcessing	      "Columns as channels (frame based)"
+	      dly_unit		      "Samples"
+	      delay		      "length(lod) - 1"
+	      ic_detail		      on
+	      dif_ic_for_ch	      off
+	      dif_ic_for_dly	      off
+	      ic		      "0"
+	      reset_popup	      "None"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "17"
+	      Position		      [225, 38, 255, 52]
+	      ZOrder		      -7
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      SID		      "18"
+	      Position		      [225, 98, 255, 112]
+	      ZOrder		      -8
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out3"
+	      SID		      "19"
+	      Position		      [220, 158, 250, 172]
+	      ZOrder		      -9
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out4"
+	      SID		      "20"
+	      Position		      [220, 208, 250, 222]
+	      ZOrder		      -10
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "In3"
+	      SrcPort		      1
+	      DstBlock		      "Out3"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      DstBlock		      "Out4"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      DstBlock		      "Delay1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Dyadic Analysis\nFilter Bank"
+	  SID			  "21"
+	  Ports			  [1, 4]
+	  Position		  [75, 76, 140, 139]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.437"
+	  SourceBlock		  "dspmlti4/Dyadic Analysis\nFilter Bank"
+	  SourceType		  "Dyadic Analysis Filter Bank"
+	  Wname			  "User-defined"
+	  OrdRec_ordDec		  "[1 / 1]"
+	  Order			  "2"
+	  LPF			  "lod"
+	  HPF			  "hid"
+	  NumLevels		  "3"
+	  tree			  "Asymmetric"
+	  Output		  "Multiple ports"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Dyadic Synthesis\nFilter Bank"
+	  SID			  "22"
+	  Ports			  [4, 1]
+	  Position		  [390, 77, 455, 138]
+	  ZOrder		  -5
+	  LibraryVersion	  "1.437"
+	  SourceBlock		  "dspmlti4/Dyadic Synthesis\nFilter Bank"
+	  SourceType		  "Dyadic Synthesis Filter Bank"
+	  Wname			  "User-defined"
+	  OrdRec_ordDec		  "[1 / 1]"
+	  Order			  "2"
+	  LPF			  "lor"
+	  HPF			  "hir"
+	  NumLevels		  "3"
+	  tree			  "Asymmetric"
+	  Input			  "Multiple ports"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Soft Threshold"
+	  SID			  "23"
+	  Ports			  [4, 4]
+	  Position		  [285, 76, 355, 139]
+	  ZOrder		  -6
+	  ShowPortLabels	  "none"
+	  RequestExecContextInheritance	off
+	  Object {
+	    $PropName		    "MaskObject"
+	    $ObjectID		    19
+	    $ClassName		    "Simulink.Mask"
+	    Type		    "Soft Threshold"
+	    Description		    "Apply a soft threshold (deadzone transfer function) to each signal in the decomposition.  First"
+	    " threshold applies to top-most filter bank output."
+	    Help		    "Vector of thresholds for each decomposition level.\n"
+	    Initialization	    "x=([-1 1 NaN 0 0 NaN -1 -.5 .5 1]+1)/2*.7+.15;\ny=([0 0 NaN -1 1 NaN -1 0 0 1]+1)/2*.7+.05;"
+	    Display		    "text(.1,.9,'Dead Zone')\nplot(x,y)"
+	    IconUnits		    "normalized"
+	    Object {
+	      $PropName		      "Parameters"
+	      $ObjectID		      20
+	      $ClassName	      "Simulink.MaskParameter"
+	      Type		      "edit"
+	      Name		      "st"
+	      Prompt		      "Vector of thresholds for each level:"
+	      Value		      "[3 2 1 0]"
+	    }
+	  }
+	  System {
+	    Name		    "Soft Threshold"
+	    Location		    [273, 206, 943, 709]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_1"
+	      SID		      "24"
+	      Position		      [30, 25, 50, 45]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_2"
+	      SID		      "25"
+	      Position		      [30, 80, 50, 100]
+	      ZOrder		      -2
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_3"
+	      SID		      "26"
+	      Position		      [30, 140, 50, 160]
+	      ZOrder		      -3
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "in_4"
+	      SID		      "27"
+	      Position		      [30, 205, 50, 225]
+	      ZOrder		      -4
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      DeadZone
+	      Name		      "Dead Zone1"
+	      SID		      "28"
+	      Position		      [165, 16, 205, 54]
+	      ZOrder		      -5
+	      LowerValue	      "-st(1)"
+	      UpperValue	      "st(1)"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      DeadZone
+	      Name		      "Dead Zone2"
+	      SID		      "29"
+	      Position		      [165, 71, 205, 109]
+	      ZOrder		      -6
+	      LowerValue	      "-st(2)"
+	      UpperValue	      "st(2)"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      DeadZone
+	      Name		      "Dead Zone3"
+	      SID		      "30"
+	      Position		      [165, 131, 205, 169]
+	      ZOrder		      -7
+	      LowerValue	      "-st(3)"
+	      UpperValue	      "st(3)"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      DeadZone
+	      Name		      "Dead Zone4"
+	      SID		      "31"
+	      Position		      [165, 196, 205, 234]
+	      ZOrder		      -8
+	      LowerValue	      "-st(4)"
+	      UpperValue	      "st(4)"
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_1"
+	      SID		      "32"
+	      Position		      [335, 25, 355, 45]
+	      ZOrder		      -9
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_2"
+	      SID		      "33"
+	      Position		      [335, 80, 355, 100]
+	      ZOrder		      -10
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_3"
+	      SID		      "34"
+	      Position		      [330, 140, 350, 160]
+	      ZOrder		      -11
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "out_4"
+	      SID		      "35"
+	      Position		      [330, 205, 350, 225]
+	      ZOrder		      -12
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "in_1"
+	      SrcPort		      1
+	      DstBlock		      "Dead Zone1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "in_2"
+	      SrcPort		      1
+	      DstBlock		      "Dead Zone2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "in_3"
+	      SrcPort		      1
+	      DstBlock		      "Dead Zone3"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "in_4"
+	      SrcPort		      1
+	      DstBlock		      "Dead Zone4"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "Dead Zone1"
+	      SrcPort		      1
+	      DstBlock		      "out_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "Dead Zone2"
+	      SrcPort		      1
+	      DstBlock		      "out_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "Dead Zone3"
+	      SrcPort		      1
+	      DstBlock		      "out_3"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Dead Zone4"
+	      SrcPort		      1
+	      DstBlock		      "out_4"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "36"
+	  Position		  [475, 103, 505, 117]
+	  ZOrder		  -7
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Dyadic Analysis\nFilter Bank"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Dyadic Synthesis\nFilter Bank"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  2
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  1
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  2
+	  DstBlock		  "Soft Threshold"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  1
+	  DstBlock		  "Soft Threshold"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Soft Threshold"
+	  SrcPort		  1
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Soft Threshold"
+	  SrcPort		  2
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  3
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  4
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  3
+	  DstBlock		  "Soft Threshold"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  4
+	  DstBlock		  "Soft Threshold"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  "Soft Threshold"
+	  SrcPort		  3
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "Soft Threshold"
+	  SrcPort		  4
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  4
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Noisy doppler\nsignal"
+      SID		      "37"
+      Ports		      [0, 1]
+      Position		      [25, 223, 80, 257]
+      ZOrder		      -8
+      LibraryVersion	      "1.734"
+      SourceBlock	      "dspsrcs4/Signal From\nWorkspace"
+      SourceType	      "Signal From Workspace"
+      ContentPreviewEnabled   off
+      X			      "noisdopp"
+      Ts		      "ts"
+      nsamps		      "64"
+      OutputAfterFinalValue   "Setting to zero"
+      ignoreOrWarnInputAndFrameLengths off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Operation"
+      SID		      "38"
+      Ports		      [0, 3]
+      Position		      [140, 218, 265, 272]
+      ZOrder		      -9
+      DropShadow	      on
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		21
+	$ClassName		"Simulink.Mask"
+	Type			"Wavelet Application"
+	Description		"Select a wavelet application"
+	Initialization		"if operation == 1\n    str = 'Perfect Reconstruction';\nelse\n    str = 'Remove Noise';\nend"
+	Display			"disp(str)"
+	Object {
+	  $PropName		  "Parameters"
+	  $ObjectID		  22
+	  $ClassName		  "Simulink.MaskParameter"
+	  Type			  "popup"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    2
+	    Cell		    "Perfect reconstruction"
+	    Cell		    "Remove noise"
+	    PropName		    "TypeOptions"
+	  }
+	  Name			  "operation"
+	  Prompt		  "Operation:"
+	  Value			  "Remove noise"
+	}
+      }
+      System {
+	Name			"Operation"
+	Location		[266, 314, 618, 727]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Constant"
+	  SID			  "39"
+	  Ports			  [1, 1]
+	  Position		  [115, 25, 145, 55]
+	  ZOrder		  -1
+	  LibraryVersion	  "1.287"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+	  SourceType		  "Compare To Constant"
+	  ContentPreviewEnabled	  off
+	  relop			  "=="
+	  const			  "1"
+	  OutDataTypeStr	  "uint8"
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Constant1"
+	  SID			  "40"
+	  Ports			  [1, 1]
+	  Position		  [115, 155, 145, 185]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.287"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+	  SourceType		  "Compare To Constant"
+	  ContentPreviewEnabled	  off
+	  relop			  "=="
+	  const			  "2"
+	  OutDataTypeStr	  "uint8"
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Operation"
+	  SID			  "41"
+	  Position		  [25, 85, 55, 115]
+	  ZOrder		  -3
+	  Value			  "operation"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "42"
+	  Position		  [210, 23, 240, 37]
+	  ZOrder		  -4
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out2"
+	  SID			  "43"
+	  Position		  [210, 88, 240, 102]
+	  ZOrder		  -5
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out3"
+	  SID			  "44"
+	  Position		  [210, 143, 240, 157]
+	  ZOrder		  -6
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Operation"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    ZOrder		    2
+	    Points		    [0, -60]
+	    DstBlock		    "Compare\nTo Constant"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    Points		    [0, 70]
+	    DstBlock		    "Compare\nTo Constant1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Compare\nTo Constant"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Compare\nTo Constant1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -20]
+	  Branch {
+	    ZOrder		    6
+	    DstBlock		    "Out3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    7
+	    Points		    [0, -55]
+	    DstBlock		    "Out2"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "RMS"
+      SID		      "46"
+      Ports		      [1, 1]
+      Position		      [439, 325, 491, 370]
+      ZOrder		      -11
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.532"
+      UserDataPersistent      on
+      UserData		      "DataTag3"
+      SourceBlock	      "dspstat3/RMS"
+      SourceType	      "RMS"
+      run		      on
+      reset_popup	      "None"
+      InputProcessing	      "Columns as channels (frame based)"
+      directionMode	      "Entire input"
+      dimension		      "1"
+      treatSBRowAsCol	      on
+    }
+    Block {
+      BlockType		      Display
+      Name		      "RMS of Difference"
+      SID		      "47"
+      Ports		      [1]
+      Position		      [580, 370, 670, 400]
+      ZOrder		      -12
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      SID		      "48"
+      Ports		      [2, 1]
+      Position		      [475, 160, 505, 190]
+      ZOrder		      -13
+      NamePlacement	      "alternate"
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "+-"
+      Port {
+	PortNumber		1
+	Name			"Difference"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      TimeScope
+      Name		      "Time Scope"
+      SID		      "69"
+      Ports		      [3]
+      Position		      [620, 75, 675, 155]
+      ZOrder		      2
+      NumInputPorts	      "3"
+      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+      ScopeSpecification      "DataTag4"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Wavelet Reconstruction\nsubsystem"
+      SID		      "49"
+      Ports		      [1, 1, 1]
+      Position		      [240, 144, 340, 186]
+      ZOrder		      -14
+      DropShadow	      on
+      NamePlacement	      "alternate"
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      System {
+	Name			"Wavelet Reconstruction\nsubsystem"
+	Location		[183, 359, 688, 734]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "50"
+	  Position		  [45, 103, 75, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  EnablePort
+	  Name			  "Enable"
+	  SID			  "51"
+	  Ports			  []
+	  Position		  [235, 20, 255, 40]
+	  ZOrder		  -2
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Delay Alignment"
+	  SID			  "52"
+	  Ports			  [4, 4]
+	  Position		  [200, 72, 280, 143]
+	  ZOrder		  -3
+	  RequestExecContextInheritance	off
+	  System {
+	    Name		    "Delay Alignment"
+	    Location		    [265, 290, 601, 739]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "53"
+	      Position		      [25, 38, 55, 52]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In2"
+	      SID		      "54"
+	      Position		      [25, 98, 55, 112]
+	      ZOrder		      -2
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In3"
+	      SID		      "55"
+	      Position		      [25, 158, 55, 172]
+	      ZOrder		      -3
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In4"
+	      SID		      "56"
+	      Position		      [25, 208, 55, 222]
+	      ZOrder		      -4
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay"
+	      SID		      "57"
+	      Ports		      [1, 1]
+	      Position		      [90, 30, 195, 60]
+	      ZOrder		      -5
+	      ShowName		      off
+	      LibraryVersion	      "1.735"
+	      UserDataPersistent      on
+	      UserData		      "DataTag5"
+	      SourceBlock	      "dspsigops/Delay"
+	      SourceType	      "Delay"
+	      InputProcessing	      "Columns as channels (frame based)"
+	      dly_unit		      "Samples"
+	      delay		      "3*(length(lod)-1)"
+	      ic_detail		      on
+	      dif_ic_for_ch	      off
+	      dif_ic_for_dly	      off
+	      ic		      "0"
+	      reset_popup	      "None"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay1"
+	      SID		      "58"
+	      Ports		      [1, 1]
+	      Position		      [90, 90, 195, 120]
+	      ZOrder		      -6
+	      ShowName		      off
+	      LibraryVersion	      "1.735"
+	      UserDataPersistent      on
+	      UserData		      "DataTag6"
+	      SourceBlock	      "dspsigops/Delay"
+	      SourceType	      "Delay"
+	      InputProcessing	      "Columns as channels (frame based)"
+	      dly_unit		      "Samples"
+	      delay		      "length(lod) - 1"
+	      ic_detail		      on
+	      dif_ic_for_ch	      off
+	      dif_ic_for_dly	      off
+	      ic		      "0"
+	      reset_popup	      "None"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "59"
+	      Position		      [225, 38, 255, 52]
+	      ZOrder		      -7
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out2"
+	      SID		      "60"
+	      Position		      [225, 98, 255, 112]
+	      ZOrder		      -8
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out3"
+	      SID		      "61"
+	      Position		      [220, 158, 250, 172]
+	      ZOrder		      -9
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out4"
+	      SID		      "62"
+	      Position		      [220, 208, 250, 222]
+	      ZOrder		      -10
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "In3"
+	      SrcPort		      1
+	      DstBlock		      "Out3"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "In4"
+	      SrcPort		      1
+	      DstBlock		      "Out4"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "In2"
+	      SrcPort		      1
+	      DstBlock		      "Delay1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      DstBlock		      "Out2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      DstBlock		      "Delay"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "Delay"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Dyadic Analysis\nFilter Bank"
+	  SID			  "63"
+	  Ports			  [1, 4]
+	  Position		  [100, 76, 165, 139]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.437"
+	  SourceBlock		  "dspmlti4/Dyadic Analysis\nFilter Bank"
+	  SourceType		  "Dyadic Analysis Filter Bank"
+	  Wname			  "User-defined"
+	  OrdRec_ordDec		  "[1 / 1]"
+	  Order			  "2"
+	  LPF			  "lod"
+	  HPF			  "hid"
+	  NumLevels		  "3"
+	  tree			  "Asymmetric"
+	  Output		  "Multiple ports"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Dyadic Synthesis\nFilter Bank"
+	  SID			  "64"
+	  Ports			  [4, 1]
+	  Position		  [310, 77, 375, 138]
+	  ZOrder		  -5
+	  LibraryVersion	  "1.437"
+	  SourceBlock		  "dspmlti4/Dyadic Synthesis\nFilter Bank"
+	  SourceType		  "Dyadic Synthesis Filter Bank"
+	  Wname			  "User-defined"
+	  OrdRec_ordDec		  "[1 / 1]"
+	  Order			  "2"
+	  LPF			  "lor"
+	  HPF			  "hir"
+	  NumLevels		  "3"
+	  tree			  "Asymmetric"
+	  Input			  "Multiple ports"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "65"
+	  Position		  [395, 103, 425, 117]
+	  ZOrder		  -6
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Dyadic Analysis\nFilter Bank"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Dyadic Synthesis\nFilter Bank"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  2
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  1
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  2
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  1
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  3
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Dyadic Analysis\nFilter Bank"
+	  SrcPort		  4
+	  DstBlock		  "Delay Alignment"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  3
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "Delay Alignment"
+	  SrcPort		  4
+	  DstBlock		  "Dyadic Synthesis\nFilter Bank"
+	  DstPort		  4
+	}
+      }
+    }
+    Line {
+      Name		      "Input"
+      ZOrder		      1
+      Labels		      [0, 0]
+      SrcBlock		      "Delay"
+      SrcPort		      1
+      Points		      [110, 0; 0, 10]
+      Branch {
+	ZOrder			2
+	DstBlock		"Sum"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			3
+	DstBlock		"Time Scope"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Difference"
+      ZOrder		      4
+      Labels		      [0, 0]
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      Points		      [40, 0]
+      Branch {
+	ZOrder			5
+	Points			[0, 110; -85, 0]
+	DstBlock		"RMS"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			6
+	Points			[0, -35]
+	DstBlock		"Time Scope"
+	DstPort			3
+      }
+    }
+    Line {
+      ZOrder		      7
+      SrcBlock		      "Operation"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Wavelet Reconstruction\nsubsystem"
+      DstPort		      enable
+    }
+    Line {
+      ZOrder		      8
+      SrcBlock		      "Noisy doppler\nsignal"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	ZOrder			9
+	Points			[0, 85]
+	DstBlock		"Noise Reduction\nsubsystem"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			10
+	Points			[0, -75]
+	Branch {
+	  ZOrder		  11
+	  Points		  [0, -85]
+	  DstBlock		  "Delay"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  12
+	  DstBlock		  "Wavelet Reconstruction\nsubsystem"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      ZOrder		      13
+      SrcBlock		      "Operation"
+      SrcPort		      2
+      Points		      [100, 0; 0, -20]
+      DstBlock		      "Multiport\nSwitch"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      14
+      SrcBlock		      "Operation"
+      SrcPort		      3
+      Points		      [20, 0]
+      DstBlock		      "Noise Reduction\nsubsystem"
+      DstPort		      enable
+    }
+    Line {
+      ZOrder		      15
+      SrcBlock		      "Noise Reduction\nsubsystem"
+      SrcPort		      1
+      Points		      [15, 0; 0, -70]
+      DstBlock		      "Multiport\nSwitch"
+      DstPort		      3
+    }
+    Line {
+      Name		      "Output"
+      ZOrder		      16
+      Labels		      [0, 0]
+      SrcBlock		      "Multiport\nSwitch"
+      SrcPort		      1
+      Points		      [65, 0; 0, -30]
+      Branch {
+	ZOrder			17
+	Points			[95, 0; 0, -95]
+	DstBlock		"Time Scope"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			18
+	DstBlock		"Sum"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      19
+      SrcBlock		      "RMS"
+      SrcPort		      1
+      Points		      [0, 10]
+      DstBlock		      "Median"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      20
+      SrcBlock		      "Wavelet Reconstruction\nsubsystem"
+      SrcPort		      1
+      Points		      [15, 0; 0, 75]
+      DstBlock		      "Multiport\nSwitch"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      21
+      SrcBlock		      "Median"
+      SrcPort		      1
+      DstBlock		      "RMS of Difference"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "66"
+      Name		      "Wavelet Reconstruction and Noise Reduction"
+      Position		      [339, 21, 685, 41]
+      InternalMargins	      [1, 1, 1, 1]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -1
+      FontName		      "Arial"
+      FontSize		      16
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "67"
+      Name		      "Copyright 2008-2010 The MathWorks, Inc."
+      Position		      [320, 400, 509, 412]
+      InternalMargins	      [1, 1, 1, 1]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -2
+    }
+    Annotation {
+      SID		      "68"
+      Name		      "(frame-based version)"
+      Position		      [322, 43, 441, 59]
+      InternalMargins	      [1, 1, 1, 1]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -3
+      FontName		      "Arial"
+      FontSize		      12
+    }
+  }
+}
+MatData {
+  NumRecords		  7
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    F     8    (    $0         !          $ ! !-0T]3 0   !L   !S<&)S8V]P97,N5&EM95-C;W!E0FQ"
+    "O8VM#9F<       X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(    !     0    $  "
+    "  %    #@   (!A   &    \"     D         !0    @    !    4&$   $          @   %!A     4E-      X   \"@8   !@    @  "
+    "  \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X   !88   !@    @    1          $   "
+    "       0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .    &&    8    (     0         %    \"    \"4    !     0       "
+    "  .    H 4   8    (    \"0         %    \"    ' %   !     0         \"    < 4   (    3    $ $  ' !  #X 0  > ,  / $"
+    "  !P!0            !A;GD 5'EP90!.86UE $5N86)L90!0<F]P97)T>5-E= !E>'1M9W( 0V]N9FEG=7)A=&EO;@!#;VYF:6=U<F%T:6]N4V5T $"
+    "%L;&]W0V]N9FEG16YA8FQE0VAA;F=E9$5V96YT $%R9W, 4&%R<V5D07)G<P!38V]P94-,20!U:7-C;W!E<P!!<F=.86UE<P!4:6UE4V-O<&5\";&]"
+    "C:T-F9P!S<&)S8V]P97, 3W!E;D%T361L4W1A<G0 5FES:6)L94%T36]D96Q/<&5N $-U<G)E;G1#;VYF:6=U<F%T:6]N                     "
+    "         8    %               &    !P              !@    @               T    ,               0    #P             "
+    "            !     0    $    A     0    $    !    '@    $    !     0    ,    !     0    $    (     0    $    !    #"
+    "0    $    !     0   !(    !     0    $    7     0    $    !    '                                     4            "
+    "   $         #P    ,               (         #0    (                    !     @    $               ,          0   "
+    " (                    \"    !     $               0          P    (                    #    !@    $               "
+    "4         !0    (                    $    \"     $               8         !P    (                    %    \"@    "
+    "$               <         \"0    (                    &    #     $               @         \"P    0               "
+    "     '    #@              !     (    !          ,    !     0    0    !     @    4    !    !          $     @    $ "
+    "   %     P    $    &    !     $    '    !0    $    )          0    \"     0    H    #     0    L    $     0    P  "
+    "  %     0    X         !     (    !    #P    ,    !    $     0    !    $0    4    !    $P         $     @    $    "
+    "4     P    $    5    !     $    6    !0    $    8          0    \"     0   !D    #     0   !H    $     0   !L    %"
+    "     0   !T          @    H    !    'P    L    !    (                                                             "
+    "                                                                                                                  "
+    "      X         #@   #     &    \"     0         !0    @    !    !     $         $  $ $-O<F4.    0     8    (    !"
+    "          %    \"     $    *     0         0    \"@   $=E;F5R86P@54D        .    ,     8    (    \"0(        %    "
+    "\"     $    !     0         \"  $  0    X   ! !   !@    @    \"          4    (     0    $    !          4 !  )   "
+    "  0   !(   !C;&%S<P    !#:&EL9')E;@         .    2     8    (    !          %    \"     $    2     0         0    "
+    "$@   &5X=&UG<BY0<F]P97)T>5-E=         X   \"8 P  !@    @    1          $          0    8   !H86YD;&4   $    /    9"
+    "7AT;6=R+E!R;W!E<G1Y  X   !0 P  !@    @    !          4    (    !     $    !          X    0 0  !@    @    )       "
+    "   4    (    X     $    !          (   #@     0    4   !0    <    (@   \"X    P    .               &5X=&UG<@!0<F]P"
+    "97)T>0!-051,04(@87)R87D 5F%L=64 8F]O;                        0    (       $                  0    ,    !          "
+    "                                $               $          0                         !    !     4    !     0      "
+    "   .    >     8    (     0         %    \"     $    !     0         .    2     8    (    #0         %    \"     4 "
+    "   !     0         &    %        -T\"     0    $    !          X   !0 0  !@    @    \"          4    (     0    $ "
+    "   !          4 !  '     0   !P   !.86UE    4W1A='5S %1Y<&4   !686QU90        X   !     !@    @    $          4   "
+    " (     0    T    !         !     -    4VAO=U-T871U<V)A<@    X    X    !@    @    $          4    (     0    8    !"
+    "         !     &    06-T:79E   .    ,     8    (    !          %    \"     $    $     0         0  0 8F]O; X    P "
+    "   !@    @    ) @        4    (     0    $    !          (  0      #@   #     &    \"     D\"        !0    @    ! "
+    "    0    $          @ !       .    2     8    (    #0         %    \"     8    !     0         &    &        -T\" "
+    "    0    $    $     0    X    P    !@    @    $          4    (     0    0    !         !  ! !#;W)E#@   $     &   "
+    " \"     0         !0    @    !    \"0    $         $     D   !3;W5R8V4@54D         #@   #     &    \"     D\"     "
+    "   !0    @    !     0    $          @ !  $    .    V     8    (     @         %    \"     $    !     0         %  "
+    "0 \"0    $    2    8VQA<W,     0VAI;&1R96X         #@   $@    &    \"     0         !0    @    !    $@    $       "
+    "  $    !(   !E>'1M9W(N4')O<&5R='E3970        .    ,     8    (    !@         %    \"                0         )   "
+    "       X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(    !     0    8    !    #"
+    "@   #@    &    \"     0         !0    @    !    !P    $         $     <   !3;W5R8V5S  X   !     !@    @    $      "
+    "    4    (     0    T    !         !     -    5VER9613:6UU;&EN:P    X    P    !@    @    ) @        4    (     0  "
+    "  $    !          (  0 !    #@   -@    &    \"     (         !0    @    !     0    $         !0 $  D    !    $@   "
+    "&-L87-S     $-H:6QD<F5N          X   !(    !@    @    $          4    (     0   !(    !         !     2    97AT;6="
+    "R+E!R;W!E<G1Y4V5T        #@   #     &    \"     8         !0    @               $         \"0         .    2     8"
+    "    (    #0         %    \"     8    !     0         &    &        -T\"     0    $    (     0    X    X    !@    @"
+    "    $          4    (     0    <    !         !     '    5FES=6%L<P .    0     8    (    !          %    \"     $ "
+    "   +     0         0    \"P   %1I;64@1&]M86EN       .    ,     8    (    \"0(        %    \"     $    !     0     "
+    "    \"  $  0    X   #@/0  !@    @    \"          4    (     0    $    !          4 !  )     0   !(   !C;&%S<P    !"
+    "#:&EL9')E;@         .    2     8    (    !          %    \"     $    2     0         0    $@   &5X=&UG<BY0<F]P97)T"
+    ">5-E=         X    X/0  !@    @    1          $          0    8   !H86YD;&4   $    /    97AT;6=R+E!R;W!E<G1Y  X   "
+    "#P/   !@    @    !          4    (    \"0    $    !          X   #P 0  !@    @    )          4    (    P $   $    "
+    "!          (   #  0   0    <   !P    D    -@   !0 0  6 $  , !             &5X=&UG<@!0<F]P97)T>0!-051,04(@87)R87D 5"
+    "F%L=64 ;7A!<G)A>0!4:6UE07AI<TQA8F5L<U1Y<&4 0F]T=&]M                           !     @       0                 !   "
+    "  P    $          0    ,    !     @    $    #     0    0    !     P    $    &                                     "
+    "0               0         !     0               @         \"     0               P         #     0              ! "
+    "         $                          $    $    !0    $    !          $    $    !0    $    #          $    $    !0  "
+    "  $    %          $    $    !@         '          X   \"     !@    @    !          4    (     0    $    !         "
+    " X   !0    !@    @    -          4    (    \"     $    !          8    @        W0(    !    !     $    \"     P   "
+    " 0    .    < $   8    (     @         %    \"     $    !     0         %  0 !P    $    <    3F%M90   %-T871U<P!4>7"
+    "!E    5F%L=64        .    2     8    (    !          %    \"     $    7     0         0    %P   $1I<W!L87E,87EO=71"
+    "$:6UE;G-I;VYS  X    X    !@    @    $          4    (     0    8    !         !     &    06-T:79E   .    .     8  "
+    "  (    !          %    \"     $    '     0         0    !P   &UX07)R87D #@   $     &    \"     8         !0    @  "
+    "  !     @    $         \"0   !             (0        / _#@   $     &    \"     8         !0    @    !     @    $  "
+    "       \"0   !             (0        / _#@   !@%   &    \"     (         !0    @    !     0    $         !0 $  <  "
+    "  !    '    $YA;64   !3=&%T=7, 5'EP90   %9A;'5E        #@   $@    &    \"     0         !0    @    !    %P    $   "
+    "      $    !<   !$:7-P;&%Y4')O<&5R='E$969A=6QT<P .    .     8    (    !          %    \"     $    &     0         "
+    "0    !@   $%C=&EV90  #@   #@    &    \"     0         !0    @    !    !P    $         $     <   !M>$%R<F%Y  X   #H"
+    " P  !@    @    \"          4    (     0    $    !          4 !  1     0   *H   !93&%B96Q296%L         $UI;EE,:6U-8"
+    "6<         36%X64QI;4UA9P        !,96=E;F16:7-I8FEL:71Y %A'<FED                64=R:60               !0;&]T36%G4&A"
+    "A<V4      $%X97-#;VQO<@          07AE<U1I8VM#;VQO<@    !#;VQO<D]R9&5R                  X   !     !@    @    $     "
+    "     4    (     0    D    !         !     )    06UP;&ET=61E          X    P    !@    @    $          4    (     0 "
+    "   $    !         !   0 P    #@   #     &    \"     0         !0    @    !     @    $         $  \" #$P   .    ,  "
+    "   8    (    !          %    \"     $    #     0         0  , ;V9F  X    P    !@    @    ) @        4    (     0  "
+    "  $    !          (  0 !    #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    .    ,   "
+    "  8    (    \"0(        %    \"     $    !     0         \"  $       X   !(    !@    @    &          4    (     0 "
+    "   ,    !          D    8                                    #@   $@    &    \"     8         !0    @    !     P  "
+    "  $         \"0   !@    R53 JJ1/4/S)5,\"JI$]0_,E4P*JD3U#\\.    P     8    (    !@         %    \"     8    #     0"
+    "         )    D            / _        \\#\\                  / _                  #H/P       / _                  "
+    "#P/P                  \\#\\       #H/P                  \\#\\       #P/P                            #H/PX   #H P  "
+    "!@    @    \"          4    (     0    $    !          4 !  1     0   *H   !93&%B96Q296%L         $UI;EE,:6U-86<  "
+    "       36%X64QI;4UA9P        !,96=E;F16:7-I8FEL:71Y %A'<FED                64=R:60               !0;&]T36%G4&AA<V4"
+    "      $%X97-#;VQO<@          07AE<U1I8VM#;VQO<@    !#;VQO<D]R9&5R                  X   !     !@    @    $         "
+    " 4    (     0    D    !         !     )    06UP;&ET=61E          X    P    !@    @    $          4    (     0    $"
+    "    !         !   0 P    #@   #     &    \"     0         !0    @    !     @    $         $  \" #$P   .    ,     8"
+    "    (    !          %    \"     $    #     0         0  , ;V9F  X    P    !@    @    ) @        4    (     0    $ "
+    "   !          (  0 !    #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    .    ,     8 "
+    "   (    \"0(        %    \"     $    !     0         \"  $       X   !(    !@    @    &          4    (     0    ,"
+    "    !          D    8                                    #@   $@    &    \"     8         !0    @    !     P    $ "
+    "        \"0   !@    R53 JJ1/4/S)5,\"JI$]0_,E4P*JD3U#\\.    P     8    (    !@         %    \"     8    #     0    "
+    "     )    D            / _        \\#\\                  / _                  #H/P       / _                  #P/P"
+    "                  \\#\\       #H/P                  \\#\\       #P/P                            #H/PX   \"0%P  !@ "
+    "   @    \"          4    (     0    $    !          4 !  '     0   !P   !.86UE    4W1A='5S %1Y<&4   !686QU90      "
+    "  X   !(    !@    @    $          4    (     0   !(    !         !     2    4V5R:6%L:7IE9$1I<W!L87ES        #@   #"
+    "@    &    \"     0         !0    @    !    !@    $         $     8   !!8W1I=F4   X    X    !@    @    $          4"
+    "    (     0    <    !         !     '    ;7A!<G)A>0 .    8!8   8    (     0         %    \"     $    #     0      "
+    "   .    8 <   8    (     @         %    \"     $    !     0         %  0 &     $   #( 0  36EN64QI;5)E86P          "
+    "       36%X64QI;5)E86P                 64QA8F5L4F5A;                   36EN64QI;4UA9P                  36%X64QI;4U"
+    "A9P                  3&5G96YD5FES:6)I;&ET>0          6$=R:60                         64=R:60                      "
+    "   4&QO=$UA9U!H87-E                07AE<T-O;&]R                    07AE<U1I8VM#;VQO<@              0V]L;W)/<F1E<@ "
+    "                 5&ET;&4                         3&EN95!R;W!E<G1I97-#86-H90      57-E<D1E9FEN961#:&%N;F5L3F%M97, 3"
+    "G5M3&EN97,                     3&EN94YA;65S                    4VAO=T-O;G1E;G0                 4&QA8V5M96YT       "
+    "             #@   #@    &    \"     0         !0    @    !    \"     $         $     @    M,3 N.3 P,PX    X    !@ "
+    "   @    $          4    (     0    8    !         !     &    ,3 N.3@Y   .    0     8    (    !          %    \"   "
+    "  $    )     0         0    \"0   $%M<&QI='5D90         .    ,     8    (    !          %    \"     $    !     0  "
+    "       0  $ ,     X    P    !@    @    $          4    (     0    (    !         !   @ Q,   #@   #     &    \"    "
+    " 0         !0    @    !     P    $         $  # &]F9@ .    ,     8    (    \"0(        %    \"     $    !     0   "
+    "      \"  $  0    X    P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   #     &    \"    "
+    " D\"        !0    @    !     0    $          @ !       .    2     8    (    !@         %    \"     $    #     0   "
+    "      )    &                                     X   !(    !@    @    &          4    (     0    ,    !          D"
+    "    8    ]O7U]?7UY3_V]?7U]?7E/_;U]?7U]>4_#@   -@    &    \"     8         !0    @    '     P    $         \"0   *@"
+    "           #P/Q,3$Q,3$[,_        \\#\\9&1D9&1G9/_?V]O;V]N8_'AX>'AX>KC\\       #P/P       / _]//S\\_/SXS]:6EI:6EK:/"
+    "YN:FIJ:FNH_DI&1D9&1T3\\       #P/Q,3$Q,3$[,_$1$1$1$1L3\\       #P/Y64E)24E,0_$Q,3$Q,3LS\\       #P/P       / _U=34"
+    "U-34Y#\\.    0     8    (    !          %    \"     $    ,     0         0    #    $EN<'5T(%-I9VYA;      .    *   "
+    "  8    (     0         %    \"                0         .    *     8    (     0         %    \"                0  "
+    "       .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   &     &    \"  "
+    "   $         !0    @    !     0    $         #@   #     &    \"     8         !0    @               $         \"0 "
+    "        .    ,     8    (    \"0(        %    \"     $    !     0         \"  $  0    X    X    !@    @    &      "
+    "    4    (     0    $    !          D    (            \\#\\.    8 <   8    (     @         %    \"     $    !     "
+    "0         %  0 &     $   #( 0  36EN64QI;5)E86P                 36%X64QI;5)E86P                 64QA8F5L4F5A;      "
+    "             36EN64QI;4UA9P                  36%X64QI;4UA9P                  3&5G96YD5FES:6)I;&ET>0          6$=R:"
+    "60                         64=R:60                         4&QO=$UA9U!H87-E                07AE<T-O;&]R           "
+    "         07AE<U1I8VM#;VQO<@              0V]L;W)/<F1E<@                  5&ET;&4                         3&EN95!R;"
+    "W!E<G1I97-#86-H90      57-E<D1E9FEN961#:&%N;F5L3F%M97, 3G5M3&EN97,                     3&EN94YA;65S               "
+    "     4VAO=T-O;G1E;G0                 4&QA8V5M96YT                    #@   #@    &    \"     0         !0    @    !"
+    "    \"     $         $     @    M.2XP-C,U,0X    X    !@    @    $          4    (     0    <    !         !     ' "
+    "   .\"XX,C0S-  .    0     8    (    !          %    \"     $    )     0         0    \"0   $%M<&QI='5D90         ."
+    "    ,     8    (    !          %    \"     $    !     0         0  $ ,     X    P    !@    @    $          4    ( "
+    "    0    (    !         !   @ Q,   #@   #     &    \"     0         !0    @    !     P    $         $  # &]F9@ .  "
+    "  ,     8    (    \"0(        %    \"     $    !     0         \"  $  0    X    P    !@    @    ) @        4    ( "
+    "    0    $    !          (  0 !    #@   #     &    \"     D\"        !0    @    !     0    $          @ !       . "
+    "   2     8    (    !@         %    \"     $    #     0         )    &                                     X   !(  "
+    "  !@    @    &          4    (     0    ,    !          D    8    ]O7U]?7UY3_V]?7U]?7E/_;U]?7U]>4_#@   -@    &    "
+    "\"     8         !0    @    '     P    $         \"0   *@           #P/Q,3$Q,3$[,_        \\#\\9&1D9&1G9/_?V]O;V]N"
+    "8_'AX>'AX>KC\\       #P/P       / _]//S\\_/SXS]:6EI:6EK:/YN:FIJ:FNH_DI&1D9&1T3\\       #P/Q,3$Q,3$[,_$1$1$1$1L3\\ "
+    "      #P/Y64E)24E,0_$Q,3$Q,3LS\\       #P/P       / _U=34U-34Y#\\.    0     8    (    !          %    \"     $    "
+    "-     0         0    #0   $]U='!U=\"!3:6=N86P    .    *     8    (     0         %    \"                0         "
+    ".    *     8    (     0         %    \"                0         .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   &     &    \"     $         !0    @    !     0    $         #@   #     "
+    "&    \"     8         !0    @               $         \"0         .    ,     8    (    \"0(        %    \"     $  "
+    "  !     0         \"  $  0    X    X    !@    @    &          4    (     0    $    !          D    (             $"
+    " .    8 <   8    (     @         %    \"     $    !     0         %  0 &     $   #( 0  36EN64QI;5)E86P            "
+    "     36%X64QI;5)E86P                 64QA8F5L4F5A;                   36EN64QI;4UA9P                  36%X64QI;4UA9"
+    "P                  3&5G96YD5FES:6)I;&ET>0          6$=R:60                         64=R:60                        "
+    " 4&QO=$UA9U!H87-E                07AE<T-O;&]R                    07AE<U1I8VM#;VQO<@              0V]L;W)/<F1E<@   "
+    "               5&ET;&4                         3&EN95!R;W!E<G1I97-#86-H90      57-E<D1E9FEN961#:&%N;F5L3F%M97, 3G5"
+    "M3&EN97,                     3&EN94YA;65S                    4VAO=T-O;G1E;G0                 4&QA8V5M96YT         "
+    "           #@   #@    &    \"     0         !0    @    !    \"     $         $     @    M,RXV,C$Q-0X    X    !@   "
+    " @    $          4    (     0    <    !         !     '    -\"XP,#,U-P .    0     8    (    !          %    \"    "
+    " $    )     0         0    \"0   $%M<&QI='5D90         .    ,     8    (    !          %    \"     $    !     0   "
+    "      0  $ ,     X    P    !@    @    $          4    (     0    (    !         !   @ Q,   #@   #     &    \"     "
+    "0         !0    @    !     P    $         $  # &]F9@ .    ,     8    (    \"0(        %    \"     $    !     0    "
+    "     \"  $  0    X    P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   #     &    \"     "
+    "D\"        !0    @    !     0    $          @ !       .    2     8    (    !@         %    \"     $    #     0    "
+    "     )    &                                     X   !(    !@    @    &          4    (     0    ,    !          D "
+    "   8    ]O7U]?7UY3_V]?7U]?7E/_;U]?7U]>4_#@   -@    &    \"     8         !0    @    '     P    $         \"0   *@ "
+    "          #P/Q,3$Q,3$[,_        \\#\\9&1D9&1G9/_?V]O;V]N8_'AX>'AX>KC\\       #P/P       / _]//S\\_/SXS]:6EI:6EK:/Y"
+    "N:FIJ:FNH_DI&1D9&1T3\\       #P/Q,3$Q,3$[,_$1$1$1$1L3\\       #P/Y64E)24E,0_$Q,3$Q,3LS\\       #P/P       / _U=34U"
+    "-34Y#\\.    0     8    (    !          %    \"     $    *     0         0    \"@   $1I9F9E<F5N8V4        .    *   "
+    "  8    (     0         %    \"                0         .    *     8    (     0         %    \"                0  "
+    "       .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   &     &    \"  "
+    "   $         !0    @    !     0    $         #@   #     &    \"     8         !0    @               $         \"0 "
+    "        .    ,     8    (    \"0(        %    \"     $    !     0         \"  $  0    X    X    !@    @    &      "
+    "    4    (     0    $    !          D    (            \"$ .    8!8   8    (     0         %    \"     $    #     0"
+    "         .    8 <   8    (     @         %    \"     $    !     0         %  0 &     $   #( 0  36EN64QI;5)E86P    "
+    "             36%X64QI;5)E86P                 64QA8F5L4F5A;                   36EN64QI;4UA9P                  36%X6"
+    "4QI;4UA9P                  3&5G96YD5FES:6)I;&ET>0          6$=R:60                         64=R:60                "
+    "         4&QO=$UA9U!H87-E                07AE<T-O;&]R                    07AE<U1I8VM#;VQO<@              0V]L;W)/<"
+    "F1E<@                  5&ET;&4                         3&EN95!R;W!E<G1I97-#86-H90      57-E<D1E9FEN961#:&%N;F5L3F%"
+    "M97, 3G5M3&EN97,                     3&EN94YA;65S                    4VAO=T-O;G1E;G0                 4&QA8V5M96YT "
+    "                   #@   #@    &    \"     0         !0    @    !    \"     $         $     @    M,3 N.3 P,PX    X "
+    "   !@    @    $          4    (     0    8    !         !     &    ,3 N.3@Y   .    0     8    (    !          %   "
+    " \"     $    )     0         0    \"0   $%M<&QI='5D90         .    ,     8    (    !          %    \"     $    !  "
+    "   0         0  $ ,     X    P    !@    @    $          4    (     0    (    !         !   @ Q,   #@   #     &    "
+    "\"     0         !0    @    !     P    $         $  # &]F9@ .    ,     8    (    \"0(        %    \"     $    !   "
+    "  0         \"  $  0    X    P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   #     &    "
+    "\"     D\"        !0    @    !     0    $          @ !       .    2     8    (    !@         %    \"     $    #   "
+    "  0         )    &                                     X   !(    !@    @    &          4    (     0    ,    !     "
+    "     D    8    ]O7U]?7UY3_V]?7U]?7E/_;U]?7U]>4_#@   -@    &    \"     8         !0    @    '     P    $         \""
+    "0   *@           #P/Q,3$Q,3$[,_        \\#\\9&1D9&1G9/_?V]O;V]N8_'AX>'AX>KC\\       #P/P       / _]//S\\_/SXS]:6EI"
+    ":6EK:/YN:FIJ:FNH_DI&1D9&1T3\\       #P/Q,3$Q,3$[,_$1$1$1$1L3\\       #P/Y64E)24E,0_$Q,3$Q,3LS\\       #P/P       /"
+    " _U=34U-34Y#\\.    0     8    (    !          %    \"     $    ,     0         0    #    $EN<'5T(%-I9VYA;      .  "
+    "  *     8    (     0         %    \"                0         .    *     8    (     0         %    \"             "
+    "   0         .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   &     &  "
+    "  \"     $         !0    @    !     0    $         #@   #     &    \"     8         !0    @               $       "
+    "  \"0         .    ,     8    (    \"0(        %    \"     $    !     0         \"  $  0    X    X    !@    @    &"
+    "          4    (     0    $    !          D    (            \\#\\.    8 <   8    (     @         %    \"     $    "
+    "!     0         %  0 &     $   #( 0  36EN64QI;5)E86P                 36%X64QI;5)E86P                 64QA8F5L4F5A;"
+    "                   36EN64QI;4UA9P                  36%X64QI;4UA9P                  3&5G96YD5FES:6)I;&ET>0         "
+    " 6$=R:60                         64=R:60                         4&QO=$UA9U!H87-E                07AE<T-O;&]R     "
+    "               07AE<U1I8VM#;VQO<@              0V]L;W)/<F1E<@                  5&ET;&4                         3&E"
+    "N95!R;W!E<G1I97-#86-H90      57-E<D1E9FEN961#:&%N;F5L3F%M97, 3G5M3&EN97,                     3&EN94YA;65S         "
+    "           4VAO=T-O;G1E;G0                 4&QA8V5M96YT                    #@   #@    &    \"     0         !0    "
+    "@    !    \"     $         $     @    M.2XP-C,U,0X    X    !@    @    $          4    (     0    <    !         ! "
+    "    '    .\"XX,C0S-  .    0     8    (    !          %    \"     $    )     0         0    \"0   $%M<&QI='5D90    "
+    "     .    ,     8    (    !          %    \"     $    !     0         0  $ ,     X    P    !@    @    $          4"
+    "    (     0    (    !         !   @ Q,   #@   #     &    \"     0         !0    @    !     P    $         $  # &]F"
+    "9@ .    ,     8    (    \"0(        %    \"     $    !     0         \"  $  0    X    P    !@    @    ) @        4"
+    "    (     0    $    !          (  0 !    #@   #     &    \"     D\"        !0    @    !     0    $          @ !   "
+    "    .    2     8    (    !@         %    \"     $    #     0         )    &                                     X "
+    "  !(    !@    @    &          4    (     0    ,    !          D    8    ]O7U]?7UY3_V]?7U]?7E/_;U]?7U]>4_#@   -@   "
+    " &    \"     8         !0    @    '     P    $         \"0   *@           #P/Q,3$Q,3$[,_        \\#\\9&1D9&1G9/_?V"
+    "]O;V]N8_'AX>'AX>KC\\       #P/P       / _]//S\\_/SXS]:6EI:6EK:/YN:FIJ:FNH_DI&1D9&1T3\\       #P/Q,3$Q,3$[,_$1$1$1$"
+    "1L3\\       #P/Y64E)24E,0_$Q,3$Q,3LS\\       #P/P       / _U=34U-34Y#\\.    0     8    (    !          %    \"    "
+    " $    -     0         0    #0   $]U='!U=\"!3:6=N86P    .    *     8    (     0         %    \"                0   "
+    "      .    *     8    (     0         %    \"                0         .    .     8    (    !@         %    \"    "
+    " $    !     0         )    \"               #@   &     &    \"     $         !0    @    !     0    $         #@   "
+    "#     &    \"     8         !0    @               $         \"0         .    ,     8    (    \"0(        %    \"  "
+    "   $    !     0         \"  $  0    X    X    !@    @    &          4    (     0    $    !          D    (        "
+    "     $ .    8 <   8    (     @         %    \"     $    !     0         %  0 &     $   #( 0  36EN64QI;5)E86P      "
+    "           36%X64QI;5)E86P                 64QA8F5L4F5A;                   36EN64QI;4UA9P                  36%X64Q"
+    "I;4UA9P                  3&5G96YD5FES:6)I;&ET>0          6$=R:60                         64=R:60                  "
+    "       4&QO=$UA9U!H87-E                07AE<T-O;&]R                    07AE<U1I8VM#;VQO<@              0V]L;W)/<F1"
+    "E<@                  5&ET;&4                         3&EN95!R;W!E<G1I97-#86-H90      57-E<D1E9FEN961#:&%N;F5L3F%M9"
+    "7, 3G5M3&EN97,                     3&EN94YA;65S                    4VAO=T-O;G1E;G0                 4&QA8V5M96YT   "
+    "                 #@   #@    &    \"     0         !0    @    !    \"     $         $     @    M,RXV,C$Q-0X    X   "
+    " !@    @    $          4    (     0    <    !         !     '    -\"XP,#,U-P .    0     8    (    !          %    "
+    "\"     $    )     0         0    \"0   $%M<&QI='5D90         .    ,     8    (    !          %    \"     $    !   "
+    "  0         0  $ ,     X    P    !@    @    $          4    (     0    (    !         !   @ Q,   #@   #     &    \""
+    "     0         !0    @    !     P    $         $  # &]F9@ .    ,     8    (    \"0(        %    \"     $    !     "
+    "0         \"  $  0    X    P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   #     &    \""
+    "     D\"        !0    @    !     0    $          @ !       .    2     8    (    !@         %    \"     $    #     "
+    "0         )    &                                     X   !(    !@    @    &          4    (     0    ,    !       "
+    "   D    8    ]O7U]?7UY3_V]?7U]?7E/_;U]?7U]>4_#@   -@    &    \"     8         !0    @    '     P    $         \"0 "
+    "  *@           #P/Q,3$Q,3$[,_        \\#\\9&1D9&1G9/_?V]O;V]N8_'AX>'AX>KC\\       #P/P       / _]//S\\_/SXS]:6EI:6"
+    "EK:/YN:FIJ:FNH_DI&1D9&1T3\\       #P/Q,3$Q,3$[,_$1$1$1$1L3\\       #P/Y64E)24E,0_$Q,3$Q,3LS\\       #P/P       / _"
+    "U=34U-34Y#\\.    0     8    (    !          %    \"     $    *     0         0    \"@   $1I9F9E<F5N8V4        .   "
+    " *     8    (     0         %    \"                0         .    *     8    (     0         %    \"              "
+    "  0         .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   &     &   "
+    " \"     $         !0    @    !     0    $         #@   #     &    \"     8         !0    @               $        "
+    " \"0         .    ,     8    (    \"0(        %    \"     $    !     0         \"  $  0    X    X    !@    @    & "
+    "         4    (     0    $    !          D    (            \"$ .    < $   8    (     @         %    \"     $    ! "
+    "    0         %  0 !P    $    <    3F%M90   %-T871U<P!4>7!E    5F%L=64        .    0     8    (    !          %   "
+    " \"     $    .     0         0    #@   %1I;65!>&ES3&%B96QS   .    .     8    (    !          %    \"     $    &   "
+    "  0         0    !@   $%C=&EV90  #@   $@    &    \"     0         !0    @    !    $@    $         $    !(   !4:6UE"
+    "07AI<TQA8F5L<U1Y<&4        .    .     8    (    !          %    \"     $    &     0         0    !@   $)O='1O;0  #"
+    "@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $    !    \"@    $    .    ."
+    "     8    (    !          %    \"     $    %     0         0    !0   %1O;VQS    #@   $     &    \"     0         !"
+    "0    @    !    #P    $         $     \\   !0;&]T($YA=FEG871I;VX #@   #     &    \"     D\"        !0    @    !    "
+    " 0    $          @ !  $    .    V     8    (     @         %    \"     $    !     0         %  0 \"0    $    2    "
+    "8VQA<W,     0VAI;&1R96X         #@   $@    &    \"     0         !0    @    !    $@    $         $    !(   !E>'1M9"
+    "W(N4')O<&5R='E3970        .    ,     8    (    !@         %    \"                0         )          X   !(    !@"
+    "    @    -          4    (    !@    $    !          8    8        W0(    !     0    P    !    #@   #@    &    \"  "
+    "   0         !0    @    !    !0    $         $     4   !4;V]L<P    X   !     !@    @    $          4    (     0   "
+    " P    !         !     ,    365A<W5R96UE;G1S      X    P    !@    @    ) @        4    (     0    $    !          ("
+    "  0 !    #@   !@$   &    \"     (         !0    @    !     0    $         !0 $  D    !    $@   &-L87-S     $-H:6QD"
+    "<F5N          X   !(    !@    @    $          4    (     0   !(    !         !     2    97AT;6=R+E!R;W!E<G1Y4V5T  "
+    "      #@   ' #   &    \"    !$          0         !    !@   &AA;F1L90   0    \\   !E>'1M9W(N4')O<&5R='D #@   \"@# "
+    "  &    \"     $         !0    @    #     0    $         #@   !@!   &    \"     D         !0    @   #H     0    $  "
+    "        @   .@    !    !@   %@   !X    D    ,    #(    Z               97AT;6=R %!R;W!E<G1Y $U!5$Q!0B!A<G)A>0!686Q"
+    "U90!S=')I;F< ,C Q-&$                       $    \"       !                  $    #     0                          "
+    "               !               !          $                          0    0    %          8         #@   '@    &  "
+    "  \"     $         !0    @    !     0    $         #@   $@    &    \"     T         !0    @    %     0    $       "
+    "  !@   !0       #= @    $    !     0         .    6 $   8    (     @         %    \"     $    !     0         %  0"
+    " !P    $    <    3F%M90   %-T871U<P!4>7!E    5F%L=64        .    .     8    (    !          %    \"     $    '    "
+    " 0         0    !P   %9E<G-I;VX #@   #@    &    \"     0         !0    @    !    !@    $         $     8   !!8W1I="
+    "F4   X    X    !@    @    $          4    (     0    8    !         !     &    <W1R:6YG   .    .     8    (    !  "
+    "        %    \"     $    %     0         0    !0   #(P,31A    #@   $@    &    \"     T         !0    @    &     0 "
+    "   $         !@   !@       #= @    $    !    #@    $    .    ( (   8    (     @         %    \"     $    !     0  "
+    "       %  0 '@    $   \"6    5F5R<VEO;@                              06QL;W=#;VYF:6=%;F%B;&5#:&%N9V5D179E;G0 0VAI;"
+    "&1R96X                             3F%M90                                  1&5S8W)I<'1I;VX                        "
+    "    .    .     8    (    !@         %    \"     $    !     0         )    \"            / _#@   #     &    \"     "
+    "D\"        !0    @    !     0    $          @ !  $    .    8     8    (    #0         %    \"     L    !     0    "
+    "     &    +        -T\"     0    8    #    !0    <    )    \"P    T    \"          X    P    !@    @    $         "
+    " 4    (               !         !          #@   #     &    \"     0         !0    @               $         $     "
+    "     .    ,     8    (    !          %    \"                0         0          X    P    !@    @    $          4"
+    "    (               !         !          #@   .@#   &    \"     (         !0    @    !     0    $         !0 $ !4 "
+    "   !    T@   &-L87-S                     $-U<G)E;G1#;VYF:6=U<F%T:6]N %-C;W!E0TQ)                 %!O<VET:6]N      "
+    "           $QO8V%T:6]N                 $QA<W10;W-I=&EO;E!R;W!E<G1Y %=I;F1O=U-T>6QE             %9E<G-I;VX         "
+    "         %9I<VEB;&5!=$UO9&5L3W!E;@   $]P96Y!=$UD;%-T87)T                  X   !0    !@    @    $          4    (  "
+    "   0   !L    !         !     ;    <W!B<V-O<&5S+E1I;6538V]P94)L;V-K0V9G       .    2     8    (    #0         %    "
+    "\"     8    !     0         &    &        -T\"     0    $    \"     P    X   !(    !@    @    -          4    (   "
+    " !@    $    !          8    8        W0(    !     0    \\    $    #@   %     &    \"     8         !0    @    !   "
+    " !     $         \"0   \"            B(0        &1       !0>T        !_0 X   !0    !@    @    &          4    (   "
+    "  0    0    !          D    @           (B$        !W0       V))         BT .    .     8    (    !          %    \""
+    "     $    (     0         0    \"    %!O<VET:6]N#@   #@    &    \"     0         !0    @    !    \"     $         "
+    "$     @   !U;F1O8VME9 X    X    !@    @    $          4    (     0    4    !         !     %    ,C Q-&$    .    , "
+    "    8    (    !          %    \"     $    \"     0         0  ( ;VX   X    P    !@    @    ) @        4    (     0"
+    "    $    !          (  0 !    #@   ' $   &    \"     $         !0    @    &     0    $         #@   #@    &    \" "
+    "    (         !0    @    !          $         !0 $  $    !          X    X    !@    @    \"          4    (     0 "
+    "        !          4 !  !     0         .    >     8    (     @         %    \"     $    !     0         %  0 !P  "
+    "  $    '    16YA8FQE   .    ,     8    (    \"0(        %    \"     $    !     0         \"  $       X   \"0    !@"
+    "    @    \"          4    (     0    $    !          4 !  >     0   !X   !!;&QO=T-O;F9I9T5N86)L94-H86YG961%=F5N=  "
+    "   X    P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   # !   &    \"     (         !0  "
+    "  @    !     0    $         !0 $  L    !    +    $YA;64         07)G<P        !087)S961!<F=S $%R9TYA;65S          "
+    "X    P    !@    @    $          4    (               !         !          #@   \"@    &    \"     $         !0    "
+    "@               $         #@   \"@    &    \"     $         !0    @               $         #@   \"@    &    \"   "
+    "  $         !0    @               $         #@   ' !   &    \"     (         !0    @    !     0    $         !0 $ "
+    "!4    !    5    $]P96Y!=$UD;%-T87)T         %9I<VEB;&5!=$UO9&5L3W!E;@   $-U<G)E;G1#;VYF:6=U<F%T:6]N %-C;W!E0TQ)   "
+    "                    .    ,     8    (    \"0(        %    \"     $    !     0         \"  $       X    P    !@    "
+    "@    $          4    (     0    ,    !         !   P!/9F8 #@   #     &    \"     8         !0    @               $"
+    "         \"0         .    ,     8    (    !@         %    \"                0         )          X   \"8    !@    "
+    "@    )          4    (     0   &@    !          (   !H      %)30     .    6     8    (     @         %    \"     $"
+    "    !     0         %  0 !P    $    .    34-/4P   &AA;F1L90    X         #@         "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag6
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+}

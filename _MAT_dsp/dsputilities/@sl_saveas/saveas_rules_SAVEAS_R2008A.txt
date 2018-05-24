@@ -1,0 +1,493 @@
+<Block<SourceBlock|dspxfrm3/FFT><WrapInput:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><WrapInput:remove>>
+<Block<SourceBlock|dspspect3/Magnitude\nFFT><WrapInput:remove>>
+<Block<BlockType|SignalToWorkspace><Save2DSignal:rename Save2DMode>>
+<Block<SourceBlock|dspvision/To Multimedia File><videoQuality:remove>>
+<Block<SourceBlock|dspvision/To Multimedia File><mj2000CompFactor:remove>>
+<Block<SourceBlock|dspsrcs4/MIDI Controls><RawUint8:remove>>
+<Block<SourceBlock|dspsrcs4/From Audio\nDevice><inputChannelMapping:remove>>
+<Block<SourceBlock|dspsrcs4/From Audio\nDevice><defaultInputChannelMapping:remove>>
+<Block<SourceBlock|dspsnks4/To Audio\nDevice><outputChannelMapping:remove>>
+<Block<SourceBlock|dspsnks4/To Audio\nDevice><defaultOutputChannelMapping:remove>>
+<Block<SourceBlock|dspvision/From Multimedia File><inputFilename:remove>>
+<Block<SourceBlock|dspvision/From Multimedia File:repval dspsrcs4/From Multimedia File>>
+<Block<SourceBlock|dspvision/To Multimedia File:repval dspsnks4/To Multimedia File>>
+<Block<SourceBlock|dspsrcs4/From Multimedia File><outSamplingMode:remove>>
+<Block<SourceBlock|dspvision/From Multimedia File><outSamplingMode:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><FFTImplementation:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><FFTImplementation:remove>>
+<Block<SourceBlock|dspspect3/Magnitude\nFFT><FFTImplementation:remove>>
+<Block<SourceBlock|dspspect3/Periodogram><FFTImplementation:remove>>
+<Block<SourceBlock|dspsnks4/Triggered\nTo Workspace><Save2DMode:remove>>
+<Block<SourceBlock|dspxfrm3/Short-Time FFT><TreatMby1Signals:remove>>
+<Block<SourceBlock|dsparch4/Overlap-Save\nFFT Filter><TreatMby1Signals:remove>>
+<Block<SourceBlock|dsparch4/Overlap-Add\nFFT Filter><TreatMby1Signals:remove>>
+<Block<SourceBlock|dspsnks4/Spectrum\nScope><TreatMby1Signals:remove>>
+<Block<SourceBlock|dspsnks4/Spectrum\nScope><isFrameUpgraded:remove>>
+<Block<SourceBlock|dspmathops/Difference><Run:remove>>
+<Block<SourceBlock|dspsigops/Unwrap><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Window\nFunction><RowConvenienceOn:remove>>
+<Block<SourceBlock|dsparch4/Biquad Filter><InputProcessing:remove>>
+<Block<SourceBlock|dspswit3/Edge\nDetector><InputProcessing:remove>>
+<Block<SourceBlock|dspxfrm3/Analytic Signal><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Variable\nInteger Delay><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Zero Crossing><InputProcessing:remove>>
+<Block<SourceBlock|dspstat3/Minimum><InputProcessing:remove>>
+<Block<SourceBlock|dspstat3/Maximum><InputProcessing:remove>>
+<Block<SourceBlock|dspstat3/Mean><InputProcessing:remove>>
+<Block<SourceBlock|dspstat3/Standard\nDeviation><InputProcessing:remove>>
+<Block<SourceBlock|dspstat3/Variance><InputProcessing:remove>>
+<Block<SourceBlock|dspstat3/RMS><InputProcessing:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nSum><InputProcessing:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><InputProcessing:remove>>
+<Block<SourceBlock|dsparch4/Digital Filter><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Delay><InputProcessing:remove>>
+<Block<SourceBlock|dspmlti4/CIC\nDecimation><RateOptions:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><InputProcessing:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><InputProcessing:remove>>
+<Block<SourceBlock|dspmlti4/CIC\nInterpolation><InputProcessing:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><InputProcessing:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><InputProcessing:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><framing|Allow multirate processing:repval Maintain input frame size>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><framing|Allow multirate processing:repval Maintain input frame size>>
+<Block<SourceBlock|dspmlti4/CIC\nInterpolation><framing|Allow multirate processing:repval Maintain input frame size>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><framing|Allow multirate processing:repval Maintain input frame size>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><framing|Allow multirate processing:repval Maintain input frame size>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><framing|Enforce single-rate processing:repval Maintain input frame rate>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><framing|Enforce single-rate processing:repval Maintain input frame rate>>
+<Block<SourceBlock|dspmlti4/CIC\nInterpolation><framing|Enforce single-rate processing:repval Maintain input frame rate>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><framing|Enforce single-rate processing:repval Maintain input frame rate>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><framing|Enforce single-rate processing:repval Maintain input frame rate>>
+<Block<SourceType|"Histogram"><operateOver|Inherited (this choice will be removed - see release notes):repval Entire input>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><firstCoeffSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><prodOutputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><accumSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><outputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><firstCoeffSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><prodOutputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><accumSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><outputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><firstCoeffSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><prodOutputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><accumSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><outputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><firstCoeffSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><prodOutputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><accumSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><outputSignedness:remove>>
+<Block<SourceBlock|dspmtrx3/Identity Matrix><OutDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Identity Matrix><LastOutDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nSquare><OutMin:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nSquare><OutMax:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nSquare><OutDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nSquare><LockScale:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nSquare><RndMeth:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nSquare><SaturateOnIntegerOverflow:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><outputMin:remove>>
+<Block<SourceBlock|dspfactors/LU Factorization><outputMax:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><interProdDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><interProdLastDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><outputMin:remove>>
+<Block<SourceBlock|dspfactors/LDL Factorization><outputMax:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><outputMin:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><outputMax:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><outputMin:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nInterpolation><outputMax:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><outputMin:remove>>
+<Block<SourceBlock|dspmlti4/FIR Rate\nConversion><outputMax:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><outputMin:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Analysis\nSubband Filter><outputMax:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><outputMin:remove>>
+<Block<SourceBlock|dspmlti4/Two-Channel Synthesis\nSubband Filter><outputMax:remove>>
+<Block<SourceBlock|dspquant2/Scalar Quantizer\nDecoder><OutDataTypeStr:remove>>
+<Block<SourceBlock|dspquant2/Scalar Quantizer\nDecoder><LastOutDataTypeStr:remove>>
+<Block<SourceBlock|dspquant2/Vector Quantizer\nDecoder><OutDataTypeStr:remove>>
+<Block<SourceBlock|dspquant2/Vector Quantizer\nDecoder><LastOutDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Constant Ramp><OutDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Constant Ramp><LastOutDataTypeStr:remove>>
+<Block<SourceBlock|dspsrcs4/Discrete \nImpulse><OutDataTypeStr:remove>>
+<Block<SourceBlock|dspsrcs4/Discrete \nImpulse><LastOutDataTypeStr:remove>>
+<Block<SourceBlock|dspsrcs4/Sine Wave><OutDataTypeStr:remove>>
+<Block<SourceBlock|dspsrcs4/Sine Wave><LastOutDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><RowConvenienceOn:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><RowConvenienceOn:remove>>
+<Block<SourceBlock|dspbuff3/Delay Line><TreatMby1Signals:remove>>
+<Block<SourceBlock|dspobslib/Triggered\nDelay Line><TreatMby1Signals:remove>>
+<Block<SourceBlock|dspsigops/Downsample><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Downsample><RateOptions:remove>>
+<Block<SourceBlock|dspsigops/Upsample><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Upsample><RateOptions|Enforce single-rate processing:remove><mode:repval Maintain input frame rate>>
+<Block<SourceBlock|dspsigops/Upsample><RateOptions|Allow multirate processing:remove><mode:repval Maintain input frame size>>
+<Block<SourceBlock|dspsigops/Repeat><InputProcessing:remove>>
+<Block<SourceBlock|dspsigops/Repeat><RateOptions|Enforce single-rate processing:remove><mode:repval Maintain input frame rate>>
+<Block<SourceBlock|dspsigops/Repeat><RateOptions|Allow multirate processing:remove><mode:repval Maintain input frame size>>
+<Block<SourceBlock|dspbuff3/Queue><adf:remove>>
+<Block<SourceBlock|dspnetwork/UDP Send><separateLengthPort:remove>>
+<Block<SourceBlock|dspmlti4/FIR\nDecimation><inputOffset:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><outputMin:remove>>
+<Block<SourceBlock|dspxfrm3/FFT><outputMax:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><outputMin:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><outputMax:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><outputMin:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><outputMax:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><outputMin:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><outputMax:remove>>
+<Block<SourceBlock|dspsrcs4/From Multimedia File><fourcc:remove>>
+<Block<SourceBlock|dspsrcs4/From Multimedia File><computeAudioFrameSize:remove>>
+<Block<SourceBlock|dspsnks4/To Multimedia File><fourcc:remove>>
+<Block<SourceBlock|dspsnks4/To Multimedia File><audioDatatype:remove>>
+<Block<SourceBlock|dspsnks4/To Multimedia File><fileType:remove>>
+<Block<SourceType|"Check Signal Attributes"><DatatypeGeneral|Enum:repval Integer>>
+<Block<SourceType|"Check Signal Attributes"><DatatypeGeneral|Floating-point or boolean:repval Floating-point>>
+<Block<SourceType|"Spectrum Scope"><XUnits|rad/sec:repval Hertz>>
+<Block<SourceType|"Spectrum Scope"><YUnits|Watts/Hertz:repval Magnitude-squared>>
+<Block<SourceType|"Spectrum Scope"><YUnits|dBW/Hertz:repval dB>>
+<Block<SourceType|"Spectrum Scope"><YUnits|dBm/Hertz:repval dB>>
+<Block<SourceType|"Spectrum Scope"><YUnits|Watts:repval Magnitude-squared>>
+<Block<SourceType|"Spectrum Scope"><YUnits|dBW:repval dB>>
+<Block<SourceType|"Spectrum Scope"><YUnits|dBm:repval dB>>
+<Block<SourceType|"Spectrum Scope"><XRange|One-sided ([0...Fs/2]):repval [0...Fs/2]>>
+<Block<SourceType|"Spectrum Scope"><XRange|Two-sided ((-Fs/2...Fs/2]):repval [-Fs/2...Fs/2]>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><interProdDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><interProdLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><outputMin:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nProduct><outputMax:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nSum><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nSum><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nSum><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nSum><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nSum><outputMin:remove>>
+<Block<SourceBlock|dspmathops/Cumulative\nSum><outputMax:remove>>
+<Block<SourceBlock|dspmathops/Difference><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Difference><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Difference><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Difference><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Difference><outputMin:remove>>
+<Block<SourceBlock|dspmathops/Difference><outputMax:remove>>
+<Block<SourceBlock|dspmathops/Normalization><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Normalization><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Normalization><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Normalization><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Normalization><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Normalization><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmathops/Normalization><outputMin:remove>>
+<Block<SourceBlock|dspmathops/Normalization><outputMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><outputMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nAdd><outputMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><outputMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nDivide><outputMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><outputMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nMultiply><outputMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><firstCoeffMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><firstCoeffMax:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><outputMin:remove>>
+<Block<SourceBlock|dspmtrx3/Array-Vector\nSubtract><outputMax:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix \n1-Norm><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix \n1-Norm><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix \n1-Norm><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix \n1-Norm><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix \n1-Norm><outputMin:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix \n1-Norm><outputMax:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><interProdDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><interProdLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><outputMin:remove>>
+<Block<SourceBlock|dspmtrx3/Matrix\nProduct><outputMax:remove>>
+<Block<SourceBlock|dspstat3/Maximum><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Maximum><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Maximum><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Maximum><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Minimum><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Minimum><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Minimum><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Minimum><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Sort><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Sort><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Sort><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Sort><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Histogram><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Histogram><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Histogram><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Histogram><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><outputMin:remove>>
+<Block<SourceBlock|dspstat3/Autocorrelation><outputMax:remove>>
+<Block<SourceBlock|dspstat3/Correlation><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Correlation><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Correlation><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Correlation><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Correlation><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Correlation><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Correlation><outputMin:remove>>
+<Block<SourceBlock|dspstat3/Correlation><outputMax:remove>>
+<Block<SourceBlock|dspstat3/Mean><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Mean><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Mean><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Mean><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Mean><outputMin:remove>>
+<Block<SourceBlock|dspstat3/Mean><outputMax:remove>>
+<Block<SourceBlock|dspstat3/Median><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Median><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Median><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Median><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Median><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Median><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspstat3/Median><outputMin:remove>>
+<Block<SourceBlock|dspstat3/Median><outputMax:remove>>
+<Block<SourceBlock|dspsigops/Convolution><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Convolution><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Convolution><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Convolution><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Convolution><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Convolution><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsigops/Convolution><outputMin:remove>>
+<Block<SourceBlock|dspsigops/Convolution><outputMax:remove>>
+<Block<SourceBlock|dspspect3/Periodogram><measurement:remove>>
+<Block<SourceBlock|dspspect3/Periodogram><inheritTs:remove>>
+<Block<SourceBlock|dspspect3/Periodogram><Ts:remove>>
+<Block<SourceBlock|dspspect3/Yule-Walker\nMethod><inheritTs:remove>>
+<Block<SourceBlock|dspspect3/Yule-Walker\nMethod><Ts:remove>>
+<Block<SourceBlock|dspspect3/Burg Method><inheritTs:remove>>
+<Block<SourceBlock|dspspect3/Burg Method><Ts:remove>>
+<Block<SourceBlock|dspspect3/Covariance Method><inheritTs:remove>>
+<Block<SourceBlock|dspspect3/Covariance Method><Ts:remove>>
+<Block<SourceBlock|dspspect3/Modified Covariance\nMethod><inheritTs:remove>>
+<Block<SourceBlock|dspspect3/Modified Covariance\nMethod><Ts:remove>>
+<Block<roundingMode|Round:repval Nearest>>
+<Block<roundingMode|Convergent:repval Nearest>>
+<Block<roundingMode|Simplest:repval Floor>>
+<Block<SourceType|"Variable Fractional Delay"><mode|OBSOLETE><modeActive|Linear:remove><mode:repval Linear interpolation>>
+<Block<SourceType|"Variable Fractional Delay"><mode|OBSOLETE><modeActive|FIR:remove><mode:repval FIR interpolation>>
+<Block<SourceType|"Variable Fractional Delay"><mode|OBSOLETE><modeActive|Farrow:remove><mode:repval Linear interpolation>>
+<Block<SourceBlock|dsparch4/Biquad Filter><ScaleValueMode:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><outputMin:remove>>
+<Block<SourceBlock|dspsolvers/Backward\nSubstitution><outputMax:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><outputMin:remove>>
+<Block<SourceBlock|dspsolvers/Forward\nSubstitution><outputMax:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><prodOutputDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><prodOutputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><accumDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><accumLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><firstCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><firstCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><firstCoeffMin:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><firstCoeffMax:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><secondCoeffDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><secondCoeffLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><secondCoeffMin:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><secondCoeffMax:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><outputDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><outputLastDataTypeStr:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><outputMin:remove>>
+<Block<SourceBlock|dspsolvers/Levinson-Durbin><outputMax:remove>>
+<Block<SourceBlock|dspsrcs4/From Multimedia File><audioFrameSize:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><noDFT:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><FarrowL:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><fallbackFIR:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><fallbackFarrow:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><outputMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><outputWordLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><outputFracLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><prodOutputMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><prodOutputWordLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><prodOutputFracLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><accumMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><accumWordLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><accumFracLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><firstCoeffMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><firstCoeffWordLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><firstCoeffFracLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><interProdMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><interProdWordLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><interProdFracLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><secondCoeffMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><secondCoeffWordLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><secondCoeffFracLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><memoryMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><memoryWordLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><memoryFracLength:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><roundingMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><overflowMode:remove>>
+<Block<SourceBlock|dspsigops/Variable\nFractional Delay><LockScale:remove>>
+<Block<SourceBlock|dspsigops/Variable\nInteger Delay><noDFT:remove>>
+<Block<SourceBlock|dspsnks4/Spectrum\nScope><XAxisParamsVer:remove>>
+<Block<SourceBlock|dspsnks4/Vector\nScope><XAxisParamsVer:remove>>
+<Block<SourceType|"IFFT"><TableOpt|HYBRID><TableOpt:remove><TableOptActive:rename TableOpt>>
+<Block<SourceType|"IFFT"><TableOpt|NEW><TableOpt:remove><TableOptActive:rename TableOpt>>
+1<Block<SourceType|"IFFT"><SkipNorm|on:repval aTempVal>>
+2<Block<SourceType|"IFFT"><SkipNorm|off:repval on>>
+3<Block<SourceType|"IFFT"><SkipNorm|aTempVal:repval off>>
+1<Block<SourceType|"FFT"><SkipNorm|on:repval aTempVal>>
+2<Block<SourceType|"FFT"><SkipNorm|off:repval on>>
+3<Block<SourceType|"FFT"><SkipNorm|aTempVal:repval off>>
+<Block<SourceType|"IDCT"><CompMethod|HYBRID><CompMethod:remove><CompMethodActive:rename CompMethod>>
+<Block<SourceType|"IDCT"><CompMethod|NEW><CompMethod:remove><CompMethodActive:rename CompMethod>>
+<Block<SourceType|"FFT"><TableOpt|HYBRID><TableOpt:remove><TableOptActive:rename TableOpt>>
+<Block<SourceType|"FFT"><TableOpt|NEW><TableOpt:remove><TableOptActive:rename TableOpt>>
+<Block<SourceBlock|dspstat3/Minimum><roiEnable:remove>>
+<Block<SourceBlock|dspstat3/Minimum><roiType:remove>>
+<Block<SourceBlock|dspstat3/Minimum><roiPortion:remove>>
+<Block<SourceBlock|dspstat3/Minimum><roiOutput:remove>>
+<Block<SourceBlock|dspstat3/Minimum><roiFlag:remove>>
+<Block<SourceBlock|dspstat3/Maximum><roiEnable:remove>>
+<Block<SourceBlock|dspstat3/Maximum><roiType:remove>>
+<Block<SourceBlock|dspstat3/Maximum><roiPortion:remove>>
+<Block<SourceBlock|dspstat3/Maximum><roiOutput:remove>>
+<Block<SourceBlock|dspstat3/Maximum><roiFlag:remove>>
+<Block<SourceBlock|dspfactors/QR Factorization><outputSize:remove>>
+<Block<SourceBlock|dspxfrm3/IFFT><outSamplingMode:remove>>
+<Block<SourceBlock|dspxfrm3/IDCT><Dimension:remove><outSamplingMode:remove>>
+<Block<SourceBlock|dspxfrm3/DCT><Dimension:remove>>

@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2010-2013 The MathWorks, Inc. -->
+<demos>
+    <name>DSP System</name>
+    <type>toolbox</type>
+    <icon>$toolbox/matlab/icons/matlabicon.gif</icon>
+    <description isCdata="no">
+        <p>DSP System Toolbox&#8482; provides algorithms and tools for the 
+            design and simulation of signal processing systems.  These capabilities are provided as 
+            MATLAB&#174; functions, MATLAB System objects, and Simulink&#174; blocks.  The system 
+            toolbox includes design methods for specialized FIR and IIR filters, FFTs, multirate processing, 
+            and DSP techniques for processing streaming data and creating real-time prototypes.  
+            You can design adaptive and multirate filters, implement filters using computationally efficient
+            architectures, and simulate floating-point digital filters.   Tools for signal I/O from files and devices, 
+            signal generation, spectral analysis, and interactive visualization enable you to analyze system behavior 
+            and performance.
+        </p>
+        <p>For rapid prototyping and embedded system design, the system toolbox supports fixed-point arithmetic
+            and C or HDL code generation.
+        </p>
+    </description>
+    
+    <demosection>
+        <label>Tutorial Examples</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Designing Low Pass FIR Filters</label>
+                <type>M-file</type>
+                <source>lpfirdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Generating Testbenches for Development of Signal Processing Algorithms</label>
+                <type>M-file</type>
+                <source>GenDSPTestbenchExample</source>
+            </demoitem>
+            <demoitem>
+                <label>FIR Interpolation</label>
+                <type>M-file</type>
+                <source>mfiltinterpolatorsdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>FIR Decimation</label>
+                <type>M-file</type>
+                <source>mfiltdecimatorsdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Arbitrary Magnitude Filter Design</label>
+                <type>M-file</type>
+                <source>arbmagdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Signal Statistics</label>
+                <type>M-file</type>
+                <source>dspStats</source>
+            </demoitem>
+            <demoitem>
+                <label>Wavelet Denoising</label>
+                <type>M-file</type>
+                <source>dspWaveletDeNoise</source>
+            </demoitem>
+            <demoitem>
+                <label>Creating New Kinds of System Objects for File Input and Output</label>
+                <type>M-file</type>
+                <source>creatingFileSystemObjects</source>
+            </demoitem>
+            <demoitem>
+                <label>Creating New Kinds of System objects: a Teager-Kaiser DESA-2 Operator</label>
+                <type>M-file</type>
+                <source>Desa2SysobjExample</source>
+            </demoitem>
+        </demosection>
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Sine Wave Generation</label>
+                <type>model</type>
+                <file>html/dspsinecomp.html</file>
+                <source>dspsinecomp</source>
+                <dependency>Simulink</dependency>
+            </demoitem>                
+            <demoitem>
+                <label>Overlap-Add/Save</label>
+                <type>model</type>
+                <file>html/olapfilt.html</file>
+                <source>olapfilt</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Queues</label>
+                <type>model</type>
+                <file>html/dspqdemo.html</file>
+                <source>dspqdemo</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Vector Quantizer Design</label>
+                <type>model</type>
+                <file>html/dspvqtwodim.html</file>
+                <source>dspvqtwodim</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Comparison of Spectral Analysis Techniques</label>
+                <type>model</type>
+                <file>html/dspsacomp.html</file>
+                <source>dspsacomp</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Short-Time Spectral Attenuation</label>
+                <type>model</type>
+                <file>html/dspstsa.html</file>
+                <source>dspstsa</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+    <demosection>
+        <label>FIR Filter Design</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Designing Low Pass FIR Filters</label>
+                <type>M-file</type>
+                <source>lpfirdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Efficient Narrow Transition-Band FIR Filter Design</label>
+                <type>M-file</type>
+                <source>narrowtwdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Minimax FIR Filter Design</label>
+                <type>M-file</type>
+                <source>firgrdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>FIR Nyquist (L-th band) Filter Design</label>
+                <type>M-file</type>
+                <source>firnyquistdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>FIR Halfband Filter Design</label>
+                <type>M-file</type>
+                <source>firhalfbanddemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Least Pth-norm Optimal FIR Filter Design</label>
+                <type>M-file</type>
+                <source>firlpnormdemo</source>
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+    <demosection>
+        <label>IIR Filter Design</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Classic IIR Filter Design</label>
+                <type>M-file</type>
+                <source>classiciirdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>IIR Polyphase Filter Design</label>
+                <type>M-file</type>
+                <source>iirallpassdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Design of Peaking and Notching Filters</label>
+                <type>M-file</type>
+                <source>peaknotchdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>IIR Filter Design Given a Prescribed Group Delay</label>
+                <type>M-file</type>
+                <source>iirgrpdelaydemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Least Pth-Norm Optimal IIR Filter Design</label>
+                <type>M-file</type>
+                <source>iirlpnormdemo</source>
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+    <demosection>
+        <label>Multirate Filters</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Design of Decimators/Interpolators</label>
+                <type>M-file</type>
+                <source>deciminterpdesigndemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Multistage Design Of Decimators/Interpolators</label>
+                <type>M-file</type>
+                <source>multistagesrcdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Efficient Sample Rate Conversion between Arbitrary Factors</label>
+                <type>M-file</type>
+                <source>efficientsrcdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Reconstruction through Two-channel Filter Bank</label>
+                <type>M-file</type>
+                <source>pr2chfilterbankdemo</source>
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+    <demosection>
+        <label>Adaptive Processing</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Adaptive Line Enhancer (ALE)</label>
+                <type>M-file</type>
+                <source>aledemo</source>
+            </demoitem>     
+            <demoitem>
+                <label>Adaptive Noise Canceling (ANC) Applied to Fetal Electrocardiography</label>
+                <type>M-file</type>
+                <source>adaptncdemo</source>
+            </demoitem>     
+            <demoitem>
+                <label>Active Noise Control Using a Filtered-X LMS FIR Adaptive Filter</label>
+                <type>M-file</type>
+                <source>adaptfxlmsdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Adaptive Noise Cancellation Using RLS Adaptive Filtering</label>
+                <type>M-file</type>
+                <source>adaptrlsdemo</source>
+            </demoitem>           
+            <demoitem>
+                <label>Estimating Position of an Aircraft using Kalman Filter</label>
+                <type>M-file</type>
+                <source>AircraftPositionEstimateExample</source>
+            </demoitem> 
+            <demoitem>
+                <label>System Identification Using RLS Adaptive Filtering</label>
+                <type>M-file</type>
+                <source>RLSFilterSystemIdentificationExample</source>
+            </demoitem> 
+        </demosection>
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Acoustic Noise Cancellation (LMS)</label>
+                <type>model</type>
+                <file>html/dspanc.html</file>
+                <source>dspanc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Adaptive Filter Convergence</label>
+                <type>model</type>
+                <file>html/lmsxyplot.html</file>
+                <source>lmsxyplot</source>
+                <dependency>Simulink</dependency>
+            </demoitem>          
+            <demoitem>
+                <label>Noise Canceler (RLS)</label>
+                <type>model</type>
+                <file>html/rlsdemo.html</file>
+                <source>rlsdemo</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Nonstationary Channel Estimation Using Recursive Least Squares</label>
+                <type>model</type>
+                <file>html/dspchanest.html</file>
+                <source>dspchanest</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Time-Delay Estimation</label>
+                <type>model</type>
+                <file>html/lmsadtde.html</file>
+                <source>lmsadtde</source>
+                <dependency>Simulink</dependency>
+            </demoitem>     
+        </demosection> 
+    </demosection>
+    
+    <demosection>
+        <label>Audio Processing</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Audio Flanging</label>
+                <type>M-file</type>
+                <source>dspFlanger</source>
+            </demoitem>
+            <demoitem>
+                <label>LPC Analysis and Synthesis of Speech</label>
+                <type>M-file</type>
+                <source>dspLinearPredictiveCoder</source>
+            </demoitem>  
+            <demoitem>
+                <label>Pitch Shifting and Time Dilation Using a Phase Vocoder</label>
+                <type>M-file</type>
+                <source>dspPhaseVocoder</source>
+            </demoitem>
+            <demoitem>
+                <label>Audio Sample-Rate Conversion</label>
+                <type>M-file</type>
+                <source>audiosrc</source>
+            </demoitem>
+            <demoitem>
+                <label>Acoustic Echo Cancellation (AEC)</label>
+                <type>M-file</type>
+                <source>adaptecdemo</source>
+            </demoitem>    
+            <demoitem>
+                <label>Audio Weighting Filters</label>
+                <type>M-file</type>
+                <source>audioweightingdemo</source>
+            </demoitem>      
+            <demoitem>
+                <label>Octave-Band and Fractional Octave-Band Filters</label>
+                <type>M-file</type>
+                <source>octavedemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Parametric Equalizer Design</label>
+                <type>M-file</type>
+                <source>parameqdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>3-Band Parametric Audio Equalizer Using UDP Packets and Code Generation</label>
+                <type>M-file</type>
+                <source>paramequalizer_demo</source>
+            </demoitem>  
+            <demoitem>
+                <label>Removing an Interfering Tone From a Streaming Audio Signal</label>
+                <type>M-file</type>
+                <source>AudioInterferringToneRemovalExample</source>
+            </demoitem>
+            <demoitem>
+                <label>Audio Equalization using Parametric Equalizer Filters</label>
+                <type>M-file</type>
+                <source>AudioEqualizationWithParametricEQExample</source>
+            </demoitem>
+            <demoitem>
+                <label>Multiband Dynamic Range Compression</label>
+                <type>M-file</type>
+                <source>audiomultibanddynamiccompressionexample</source>
+            </demoitem>
+            <demoitem>
+                <label>Sound Pressure Measurement Using A- and C- Weighting Filters</label>
+                <type>M-file</type>
+                <source>soundPressureUI</source>
+            </demoitem>
+            <demoitem>
+                <label>Measuring Audio Latency</label>
+                <type>M-file</type>
+                <source>AudioLatencyMeasurementExample</source>
+            </demoitem>
+            <demoitem>
+                <label>Live Direction Of Arrival Estimation with a Linear Microphone Array</label>
+                <type>M-file</type>
+                <source>AudioArrayDOAEstimationExample</source>
+            </demoitem>
+        </demosection>
+        <demosection>
+            <label>Simulink Examples</label>   
+            <demoitem>
+                <label>Acoustic Noise Cancellation (LMS)</label>
+                <type>model</type>
+                <file>html/dspanc.html</file>
+                <source>dspanc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Audio Sample Rate Conversion</label>
+                <type>model</type>
+                <file>html/dspaudiosrc.html</file>
+                <source>dspaudiosrc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Audio Special Effects</label>
+                <type>model</type>
+                <file>html/dspaudioeffects.html</file>
+                <source>dspaudioeffects</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Cochlear Implant Speech Processor</label>
+                <type>model</type>
+                <file>html/dspcochlear.html</file>
+                <source>dspcochlear</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Comparison of LDM, CVSD, and ADPCM</label>
+                <type>model</type>
+                <file>html/dspdltmd.html</file>
+                <source>dspdltmd</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Dynamic Range Compression Using Overlap-Add Reconstruction</label>
+                <type>model</type>
+                <file>html/olamodel.html</file>
+                <source>olamodel</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Internet Low Bitrate Codec (iLBC) for VoIP</label>
+                <type>model</type>
+                <file>html/dspilbc.html</file>
+                <source>dspilbc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>LPC Analysis and Synthesis of Speech</label>
+                <type>model</type>
+                <file>html/dsplpc.html</file>
+                <source>dsplpc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>  
+            <demoitem>
+                <label>Measuring Audio Latency</label>
+                <type>M-file</type>
+                <file>html/AudioLatencyMeasurementExample.html</file>
+                <source>AudioLatencyMeasurementExample</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Parametric Audio Equalizer</label>
+                <type>model</type>
+                <file>html/dspparameq.html</file>
+                <source>dspparameq</source>
+                <dependency>Simulink</dependency>
+            </demoitem>          
+            <demoitem>
+                <label>Pitch Shifting and Time Dilation Using a Phase Vocoder</label>
+                <type>model</type>
+                <file>html/dsppitchtime.html</file>
+                <source>dsppitchtime</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Positional Audio</label>
+                <type>model</type>
+                <file>html/dspAudioPos.html</file>
+                <source>dspAudioPos</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Short-Time Spectral Attenuation</label>
+                <type>model</type>
+                <file>html/dspstsa.html</file>
+                <source>dspstsa</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Simulation of a Plucked String</label>
+                <type>model</type>
+                <file>html/dsppluck.html</file>
+                <source>dsppluck</source>
+                <dependency>Simulink</dependency>
+            </demoitem>       
+            <demoitem>
+                <label>Vorbis Decoder</label>
+                <type>model</type>
+                <file>html/dspvorbisdec.html</file>
+                <source>dspvorbisdec</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+    <demosection>
+        <label>Communications</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Pulse Shaping Filter Design</label>
+                <type>M-file</type>
+                <source>pulseshapingfilterdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Envelope Detection</label>
+                <type>M-file</type>
+                <source>dspEnvelopeDetector</source>
+            </demoitem>
+            <demoitem>
+                <label>Equalization in Digital Communications</label>
+                <type>M-file</type>
+                <source>adaptequaldemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Voice Over IP (VOIP)</label>
+                <type>M-file</type>
+                <source>dspVoiceOverIP</source>
+            </demoitem>
+            <demoitem>
+                <label>Three-Channel Wavelet Transmultiplexer</label>
+                <type>M-file</type>
+                <source>dspWaveletTransMultiplexer</source>
+            </demoitem>
+            <demoitem>
+                <label>Arbitrary Magnitude and Phase Filter Design</label>
+                <type>M-file</type>
+                <source>arbmagnphasedemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Fractional Delay Filters Using Farrow Structures</label>
+                <type>M-file</type>
+                <source>farrowdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Complex Bandpass Filter Design</label>
+                <type>M-file</type>
+                <source>cbpfilterdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>IF Subsampling with Complex Multirate Filters</label>
+                <type>M-file</type>
+                <source>ifsubsamplingdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>GSM Digital Down Converter</label>
+                <type>M-file</type>
+                <source>dspDigitalDownConverter</source>
+                <dependency>Fixed-Point Designer</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Design and Analysis of a Digital Down Converter</label>
+                <type>M-file</type>
+                <source>dspDigitalDownConverterDesign</source>
+                <dependency>Fixed-Point Designer</dependency>
+            </demoitem>            
+            <demoitem>
+                <label>Digital Up and Down Conversion for Family Radio Service</label>
+                <type>M-file</type>
+                <source>dspFRS</source>
+            </demoitem>      
+            <demoitem>
+                <label>Implementing the Filter Chain of a Digital Down-Converter in HDL</label>
+                <type>M-file</type>
+                <source>ddcfilterchaindemo</source>
+            </demoitem>
+        </demosection>   
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Envelope Detection</label>
+                <type>model</type>
+                <file>html/dspenvdet.html</file>
+                <source>dspenvdet</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>DTMF Generator and Receiver</label>
+                <type>model</type>
+                <file>html/dspdtmf.html</file>
+                <source>dspdtmf</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>GSM Digital Down Converter</label>
+                <type>model</type>
+                <file>html/dspddc.html</file>
+                <source>dspddc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>SSB Modulation</label>
+                <type>model</type>
+                <file>html/ssbdemo.html</file>
+                <source>ssbdemo</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Voice Over IP (VOIP)</label>
+                <type>model</type>
+                <file>html/dspvoip.html</file>
+                <source>dspvoip</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>WWV Digital Receiver - Synchronization and Detection</label>
+                <type>model</type>
+                <file>html/dspwwv.html</file>
+                <source>dspwwv</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+        </demosection>   
+    </demosection> 
+    
+    <demosection>
+        <label>Fixed Point</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Optimized Fixed-Point FIR Filters</label>
+                <type>M-file</type>
+                <source>optimfixedptfirdemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Floating-Point to Fixed-Point Conversion of IIR Filters</label>
+                <type>M-file</type>
+                <source>iirfloat2fixeddemo</source>
+            </demoitem>
+            <demoitem>
+                <label>Fixed-Point Scaling of an Elliptic IIR Filter</label>
+                <type>M-file</type>
+                <source>iirautoscaledemo</source>
+            </demoitem>
+            <demoitem>
+                <label>GSM Digital Down Converter</label>
+                <type>M-file</type>
+                <source>dspDigitalDownConverter</source>
+                <dependency>Fixed-Point Designer</dependency>
+            </demoitem>     
+        </demosection>   
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Acoustic Noise Cancellation (LMS)</label>
+                <type>model</type>
+                <file>html/dspanc.html</file>
+                <source>dspanc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Audio Sample Rate Conversion</label>
+                <type>model</type>
+                <file>html/dspaudiosrc.html</file>
+                <source>dspaudiosrc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Autoscaling and Curve Fitting</label>
+                <type>model</type>
+                <file>html/dspautoscale.html</file>
+                <source>dspautoscale</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Cochlear Implant Speech Processor</label>
+                <type>model</type>
+                <file>html/dspcochlear.html</file>
+                <source>dspcochlear</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Converting a Parametric Audio Equalizer to Fixed Point</label>
+                <type>model</type>
+                <file>html/dspparameqflt2fix.html</file>
+                <source>dspparameqflt2fix</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>GSM Digital Down Converter</label>
+                <type>model</type>
+                <file>html/dspddc.html</file>
+                <source>dspddc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>     
+            <demoitem>
+                <label>Sigma-Delta A/D Conversion</label>
+                <type>model</type>
+                <file>html/dspsdadc.html</file>
+                <source>dspsdadc</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Wavelet Reconstruction and Noise Reduction</label>
+                <type>model</type>
+                <file>html/dspwavelet.html</file>
+                <source>dspwavelet</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+        </demosection>   
+    </demosection> 
+    
+    <demosection>
+        <label>MATLAB(R) Compiler(TM)</label>
+        <demosection>
+            <label>MATLAB Examples</label>
+            <demoitem>
+                <label>Using System Objects with MATLAB Compiler</label>
+                <type>M-file</type>
+                <source>dspLinearPredictiveCoderCompiler</source>
+                <dependency>MATLAB Compiler</dependency>
+            </demoitem>
+        </demosection>   
+    </demosection> 
+    
+    <demosection>
+        <label>Radar</label>
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Radar Tracking</label>
+                <type>model</type>
+                <file>html/aero_radmod_dsp.html</file>
+                <source>aero_radmod_dsp</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Synthetic Aperture Radar (SAR) Processing</label>
+                <type>model</type>
+                <file>html/SarImageFormation.html</file>
+                <source>SarImageFormation</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+        </demosection>  
+    </demosection>
+    
+    <demosection>
+        <label>Spectral Analysis</label>
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Spectrum Analyzer Measurements</label>
+                <type>model</type>
+                <file>html/SpectrumAnalyzerMeasurementsExample.html</file>
+                <source>SpectrumAnalyzerMeasurementsExample</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+            <demoitem>
+                <label>Comparison of Spectral Analysis Techniques</label>
+                <type>model</type>
+                <file>html/dspsacomp.html</file>
+                <source>dspsacomp</source>
+                <dependency>Simulink</dependency>
+            </demoitem>      
+            <demoitem>
+                <label>Short-Time Spectral Attenuation</label>
+                <type>model</type>
+                <file>html/dspstsa.html</file>
+                <source>dspstsa</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+    <demosection>
+        <label>HDL</label>
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Generate HDL Code for Programmable FIR Filter</label>
+                <dependency>Simulink</dependency>
+                <dependency>HDL Coder</dependency>
+                <type>M-file</type>
+                <source>dspprogfirhdl_m</source>
+                <file>html/dspprogfirhdl_m.html</file> 
+            </demoitem>
+            <demoitem>
+                <label>Generate HDL Code for Multichannel FIR Filter</label>
+                <dependency>Simulink</dependency>
+                <dependency>HDL Coder</dependency>
+                <type>M-file</type>
+                <source>dspmultichannelhdl_m</source>
+                <file>html/dspmultichannelhdl_m.html</file> 
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+    <demosection>
+        <label>Hardware Interfaces</label>
+        <demosection>
+            <label>Simulink Examples</label>
+            <demoitem>
+                <label>Using a MIDI Control Surface to Interact with a Simulink Model</label>
+                <type>model</type>
+                <file>html/dspmidi.html</file>
+                <source>dspmidi</source>
+                <dependency>Simulink</dependency>
+            </demoitem>
+        </demosection>
+    </demosection>
+    
+</demos>

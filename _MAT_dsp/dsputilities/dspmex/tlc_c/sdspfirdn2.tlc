@@ -1,0 +1,934 @@
+%% 
+%% 
+%% 
+%%
+%% Copyright 1995-2010 The MathWorks, Inc.
+%%
+%% Abstract: FIR Decimator
+%%
+
+%implements sdspfirdn2 "C"
+
+%% Function: BlockInstanceSetup ===============================================
+%%
+%% Abstract:
+%%      Rename the S-Function parameters for easy reference.
+%%
+%function BlockInstanceSetup(block, system) void
+    %%
+    %% All fixed-point blocks call the fixed-point setup function
+    %%
+    %<FixPt_Setup(block, system)>
+    %%
+    %% I/O port data types
+    %assign inDT    = FixPt_GetInputDataType(0)
+    %assign outDT   = FixPt_GetOutputDataType(0)
+    %assign isFloat = FixPt_DataTypeIsFloat(inDT)
+    %assign block   = block + inDT + outDT + isFloat
+    %%
+    %assign INPORT       = 0
+    %assign OUTPORT      = 0
+    %assign INPORTWIDTH  = LibDataInputPortWidth(INPORT)
+    %assign block = block + INPORT + OUTPORT
+    %%
+    %% Complexity and other flags
+    %%
+    %assign DATA_COMPLEX    = (LibBlockInputSignalIsComplex(INPORT) != 0)
+    %assign FILT_COMPLEX    = LibBlockParameterIsComplex(FILT)
+    %assign OUT_COMPLEX     = (FILT_COMPLEX || DATA_COMPLEX)
+    %assign DFACTOR         = SFcnParamSettings.DFACTOR
+    %assign dFactorMinusOne = DFACTOR-1
+    %assign block = block + DATA_COMPLEX + FILT_COMPLEX + OUT_COMPLEX + DFACTOR + dFactorMinusOne
+    %%
+    %% FIRDN ALGORITHM
+    %assign FIR_TDF = 2
+    %assign FIR_TDF_DEGENERATE = 3
+    %assign ALGO = SFcnParamSettings.FIRDNALGO
+    %assign block = block + FIR_TDF + FIR_TDF_DEGENERATE + ALGO
+    %%
+    %% Data types
+    %%
+    %assign INPORT_IS_SINGLE = (LibBlockInputSignalDataTypeId(INPORT) == tSS_SINGLE)
+    %assign DAT_T  = LibBlockInputSignalDataTypeName(INPORT,"")
+    %assign FILT_T = LibBlockParameterDataTypeName(FILT,"")
+    %assign OUT_T  = LibBlockOutputSignalDataTypeName(OUTPORT,"")
+    %assign bytesPerOutElemStr  = "sizeof(%<OUT_T>)"
+    %assign block = block + FILT_T + DAT_T + OUT_T + INPORT_IS_SINGLE + bytesPerOutElemStr
+    %%
+    %% Simulation/runtime parameters for low-latency operation
+    %%
+    %assign IS_MULTI_RATE    = !LibIsSFcnSingleRate(block)
+    %assign IS_MULTI_TASKING = IsModelMultiTasking()
+    %assign block = block + IS_MULTI_TASKING + IS_MULTI_RATE
+    %%
+    %% I/O Port Dimensions
+    %%
+    %assign numDims = LibBlockInputSignalNumDimensions(INPORT)
+    %assign dims    = LibBlockInputSignalDimensions(INPORT)
+    %assign IN_COLS    = (numDims == 2) ? dims[1] : 1
+    %assign IN_ROWS    = dims[0]
+    %assign outnumDims = LibBlockOutputSignalNumDimensions(OUTPORT)
+    %assign outdims    = LibBlockOutputSignalDimensions(OUTPORT)
+    %assign OUT_COLS   = (outnumDims == 2) ? outdims[1] : 1
+    %assign OUT_ROWS   = outdims[0]
+    %assign FRAMEBASED = SFcnParamSettings.INFRAMEBASED
+    %assign NUM_CHANS  = FRAMEBASED ? IN_COLS : INPORTWIDTH
+    %assign block = block + FRAMEBASED + NUM_CHANS + IN_COLS + IN_ROWS + OUT_ROWS + OUT_COLS
+    %%
+    %% Parameter Dimensions
+    %%
+    %assign  filtLen          = LibBlockParameterSize(FILT)[1]
+    %assign  outElem          = OUT_ROWS * OUT_COLS
+    %assign  polyphaseFiltLen = filtLen/DFACTOR
+    %assign  inFrameSize      = FRAMEBASED ? IN_ROWS : 1
+    %assign  outFrameSize     = FRAMEBASED ? OUT_ROWS : 1
+    %assign useSpecialSampleHit = (inFrameSize == 1) && (DFACTOR > 1)
+    %assign block = block + filtLen + outElem + polyphaseFiltLen + inFrameSize + outFrameSize + useSpecialSampleHit
+    %%
+%endfunction %% BlockInstanceSetup
+
+
+%% Function: InitializeConditions =============================================
+%%
+%% Abstract:
+%%      Initialize the DWork vector (Buffer) to the initial values specified.
+%%
+%function InitializeConditions(block, system) Output
+/* DSP System Toolbox FIR Decimation %<Type> (%<ParamSettings.FunctionName>) - '%<Name>' */
+{
+    %assign IC_CPLX       = LibBlockParameterIsComplex(IC)
+    %assign IC_dims       = LibGetRecordDimensions(IC)
+    %assign ic_rows       = IC_dims[0]
+    %assign ic_cols       = IC_dims[1]
+    %assign NUM_IC        = ic_rows * ic_cols
+    %assign IC_Pointer    = "(const byte_T *)" + LibBlockParameterAddr(IC, "", "", "0")
+    %assign numOutputElem = LibBlockOutputSignalWidth(OUTPORT)
+    %assign outBufPointer = "(byte_T *)" + LibBlockDWorkAddr(OutBuff, "", "", 0)
+    %assign inDTypeId     = LibBlockInputSignalDataTypeId(INPORT)
+    %assign outDTypeId    = LibBlockOutputSignalDataTypeId(OUTPORT)
+    %assign dTypeName     = LibBlockInputSignalDataTypeName(INPORT,"%<tRealPart>")
+    %%
+    /* Initialize accumulators */
+    memset(%<LibBlockDWorkAddr(Sums, "", "", 0)>, 0, %<LibBlockDWorkWidth(Sums)>*sizeof(%<LibBlockDWorkDataTypeName(Sums,"")>));
+
+    /* Initialize states buffer */
+    %if (ALGO != FIR_TDF_DEGENERATE)
+      memset(%<LibBlockDWorkAddr(StatesBuff, "", "", 0)>, 0, %<LibBlockDWorkWidth(StatesBuff)>*sizeof(%<LibBlockDWorkDataTypeName(StatesBuff,"")>));
+    %endif
+    %%
+    %% We only need ICs in certain condition for this block.
+    %% The required conditions where ICs are needed are as follows:
+    %%
+    /* Initialize data buffers */
+    %% output uses a double buffer
+    %assign outBufWidth = (useSpecialSampleHit) ? OUT_COLS * OUT_ROWS : 2 * OUT_COLS * OUT_ROWS
+    memset((byte_T *)%<LibBlockDWorkAddr(OutBuff, "", "", 0)>, 0, %<outBufWidth> * %<bytesPerOutElemStr>);
+
+    %if (!useSpecialSampleHit)
+      %if ( IS_MULTI_RATE && (FRAMEBASED || IS_MULTI_TASKING) )
+        /* Initialize the internal buffers with block initial conditions */
+        %if (NUM_IC <= 1)
+          { 
+            int_T k;
+            for (k=0; k < %<numOutputElem>; k++)  {
+                %<LibBlockDWork(OutBuff, "k+%<numOutputElem>", "", 0)> = %<LibBlockParameter(IC, "", "", "0")>;
+            }
+          }
+        %else
+            memcpy(%<outBufPointer> + %<numOutputElem> * %<bytesPerOutElemStr>, %<IC_Pointer>, %<numOutputElem> * %<bytesPerOutElemStr>);
+        %endif
+      %endif
+    %endif
+    %%
+    %%
+    %<LibBlockDWork(OutIdx, "", "", 0)> = 0;
+    %%
+    %if (!useSpecialSampleHit)
+      %<LibBlockDWork(readBufIdx,    "", "", 0)> = 1;
+      %%
+      %assign COND1_NEED_ICS         = ((IS_MULTI_RATE) && IS_MULTI_TASKING)
+      %assign COND2_NEED_ICS         = ( (FRAMEBASED) && (IS_MULTI_RATE) )
+      %assign NEED_EXTRA_LATENCY_ICS = (COND1_NEED_ICS || COND2_NEED_ICS)
+      %%
+      %if NEED_EXTRA_LATENCY_ICS
+        %<LibBlockDWork(wrtBufIdx, "", "", 0)> = 0;
+      %else
+        %<LibBlockDWork(wrtBufIdx, "", "", 0)> = 1;
+      %endif
+    %endif
+    %%
+    %<LibBlockDWork(PhaseIdx, "", "", 0)> = 0;
+    %<LibBlockDWork(CoeffIdx, "", "", 0)> = 0;
+}
+
+%endfunction
+
+%% Function: Outputs ==========================================================
+%%
+%function Outputs(block, system) Output
+/* DSP System Toolbox FIR Decimation %<Type> (%<ParamSettings.FunctionName>) - '%<Name>' */
+{
+  %if (useSpecialSampleHit) 
+    if (%<LibIsSFcnSampleHit("InputPortIdx0")>) {
+      %<TDF_NonFrame(block)>
+    }
+  %else
+    /* Input polyphase filtering */
+    %if (IS_MULTI_RATE)
+        if (%<LibIsSFcnSampleHit("InputPortIdx0")>) {
+    %endif
+    %<GenerateInlineCode(block)>
+    %if (IS_MULTI_RATE)
+    }
+    %endif
+
+    /* Write double-buffered data to output port */
+    %if (IS_MULTI_RATE)
+        if (%<LibIsSFcnSampleHit("OutputPortIdx0")>)
+    %endif
+    %<CopyDataToOutport(block)>
+    %%
+  %endif
+}
+%endfunction  %% Outputs
+
+
+%% Function: OutputsForTID =====================================================
+%% This function is called only in multi-rate, multi-tasking ert mode
+%function OutputsForTID(block, system, tid) Output
+/* DSP System Toolbox FIR Decimation %<Type> (%<ParamSettings.FunctionName>) - '%<Name>' */
+{
+  %if(useSpecialSampleHit) 
+    %if (tid == %<LibGetGlobalTIDFromLocalSFcnTID("InputPortIdx0")>)
+      %<TDF_NonFrame(block)>
+    %endif
+  %else 
+    /* Input polyphase filtering */
+    %if (tid == %<LibGetGlobalTIDFromLocalSFcnTID("InputPortIdx0")>)
+        %<GenerateInlineCode(block)>
+    %endif
+    /* Write double-buffered data to output port */
+    %if (tid == %<LibGetGlobalTIDFromLocalSFcnTID("OutputPortIdx0")>)
+        %<CopyDataToOutport(block)>
+    %endif
+  %endif
+}
+%endfunction %% OutputsForTID
+
+%%
+%% Subfunction: TDF_NonFrame ======================================
+%%
+%function TDF_NonFrame(block) Output
+%%
+%assign accLabel  = LibBlockDWork(Sums, "k", "", 0)
+%assign accIsCplx = OUT_COMPLEX
+%assign prodLabel = "prod"
+%assign cffLabel  = LibBlockParameter(FILT, "cffIdx", "", "0")
+%assign inLabel   = LibBlockInputSignal(INPORT, "inputIdx", "","0")
+%assign outBufLabel = LibBlockDWork(OutBuff, "outIdx", "", "0")
+%assign block = block + accLabel + accIsCplx + prodLabel + cffLabel \
+                      + inLabel + outBufLabel
+%%
+%if (!isFloat)
+    %createrecord rndSatRec { roundingMode FixPtRoundingMode; ...
+                              overflowMode FixPtSaturationMode}
+    %% create accRec record
+    %assign accDT = FixPt_GetParameterDataType(ACC_DATA_TYPE, 0, 0)
+    %createrecord accRec { label     accLabel; ...
+                           dTypeRec  accDT; ...
+                           isComplex accIsCplx }
+    %% create prodRec record (always real)
+    %assign prodDT = FixPt_GetParameterDataType(PROD_DATA_TYPE, 0, 0)
+    %createrecord prodRec { label     prodLabel; ...
+                            dTypeRec  prodDT; ...
+                            isComplex 0 }
+    %% create cffRec record
+    %assign cffDT = FixPt_GetParameterDataType(CFF_DATA_TYPE, 0, 0)
+    %createrecord cffRec { label     cffLabel; ...
+                           dTypeRec  cffDT; ...
+                           isComplex FILT_COMPLEX }
+    %% create inRec record
+    %createrecord inRec { label     inLabel; ...
+                          dTypeRec  inDT; ...
+                          isComplex DATA_COMPLEX }
+    %% create outBufRec record
+    %createrecord outBufRec { label     outBufLabel; ...
+                              dTypeRec  outDT; ...
+                              isComplex OUT_COMPLEX }
+    %assign polyAccDT = FixPt_GetParameterDataType(POLYACC_DATA_TYPE, 0, 0)
+    %createrecord polyAccRec { label     ""; ...
+                             dTypeRec  polyAccDT; ...
+                             isComplex accIsCplx }
+    %createrecord finalSumRec { label     "finalSum"; ...
+                             dTypeRec  accRec.dTypeRec; ...
+                             isComplex accIsCplx }
+    %createrecord statesRec   { label     LibBlockDWork(StatesBuff, "stateChanOffset", "", 0); ...
+                              dTypeRec  accRec.dTypeRec; ...
+                              isComplex accIsCplx }                                
+    %% create input tap record
+    %assign block = block + rndSatRec + accDT + accRec + prodDT + prodRec \
+                          + cffDT + cffRec + inRec + outBufRec + polyAccRec \
+                          + finalSumRec + statesRec
+%endif
+{
+    /* Define common polyphase parameters */
+    int_T curPhaseIdx  = %<LibBlockDWork(PhaseIdx,  "", "", 0)>;
+    int_T curOutBufIdx = %<LibBlockDWork(OutIdx,  "", "", 0)>;
+    int_T cffIdx = %<LibBlockDWork(CoeffIdx, "", "", 0)>;
+    %%
+    %if (ALGO == FIR_TDF)
+      %<TDFAlgo_NonFrame(block)>\
+    %else
+      %<TDFDegenerateAlgo_NonFrame(block)>\
+    %endif
+    
+    /* Save common polyphase parameters for next function call */
+    %<LibBlockDWork(CoeffIdx,  "", "", 0)> = cffIdx;
+    %<LibBlockDWork(PhaseIdx,  "", "", 0)> = curPhaseIdx;
+    %<LibBlockDWork(OutIdx,  "", "", 0)>   = curOutBufIdx;
+}
+
+/* Run output at special sample hit */
+if (%<LibIsSFcnSpecialSampleHit("OutputPortIdx0", "InputPortIdx0")>) {
+    memcpy((byte_T *)%<LibBlockOutputSignalAddr(OUTPORT,  "", "", 0)>, 
+           (byte_T *)%<LibBlockDWorkAddr(OutBuff, "", "", 0)>, 
+           %<OUT_ROWS> * %<OUT_COLS> * %<bytesPerOutElemStr>);
+}
+
+%endfunction %% TDF_NonFrame
+
+
+%% Subfunction: TDFDegenerateAlgo_NonFrame ============================
+%%
+%function TDFDegenerateAlgo_NonFrame(block) Output
+%%
+%if (!isFloat)
+  %createrecord polyAccRec { label      ""; ...
+                             dTypeRec   FixPt_GetParameterDataType(POLYACC_DATA_TYPE, 0, 0); ...
+                             isComplex  accIsCplx }
+  %createrecord finalSumRec { label     "finalSum"; ...
+                             dTypeRec   accRec.dTypeRec; ...
+                             isComplex  accIsCplx }
+%endif
+%if (!isFloat)
+  %<prodDT.Name> %<prodLabel>;
+  %if accIsCplx
+    %<accDT.ComplexName> finalSum;
+  %else
+    %<accDT.Name> finalSum;
+  %endif
+%else
+  %<OUT_T> finalSum;
+%endif
+%if (NUM_CHANS > 1)
+int_T k = 0;
+for (k=0; k < %<NUM_CHANS>; k++) {
+%endif
+  int_T idx = 0;
+%if (NUM_CHANS > 1)
+  curPhaseIdx  = %<LibBlockDWork(PhaseIdx,  "", "", 0)>;
+  curOutBufIdx = %<LibBlockDWork(OutIdx,  "", "", 0)>;
+  cffIdx       = %<LibBlockDWork(CoeffIdx, "", "", 0)>;
+%endif    
+%%
+  while (idx < %<inFrameSize>) {
+    if (curPhaseIdx == %<dFactorMinusOne>){
+        /* initialize accumulator */
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "k", "", 0) \
+                             : LibBlockDWork(Sums, "", "", 0)
+        %assign cffLabel = LibBlockParameter(FILT, "curPhaseIdx", "", "0")
+        %assign inLabel  = (NUM_CHANS > 1) \
+                         ? LibBlockInputSignal(INPORT, "k+idx", "","0") \
+                         : LibBlockInputSignal(INPORT, "idx", "","0")
+        %if (isFloat)
+          %<FltptMAC(polyAccLabel, "=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+        %else
+          %assign polyAccRec.label = polyAccLabel
+          %assign cffRec.label = cffLabel
+          %assign inRec.label = inLabel
+          %<FixptMAC(polyAccRec, "=", prodRec, inRec, cffRec, rndSatRec)>\
+        %endif
+        idx++;
+	curPhaseIdx--;
+    }
+            
+    /* Add phases to the partial sums */
+    while ((idx < %<inFrameSize>) && (curPhaseIdx > -1)){
+        %if (isFloat)
+          %<FltptMAC(polyAccLabel, "+=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+        %else
+          %<FixptMAC(polyAccRec, "+=", prodRec, inRec, cffRec, rndSatRec)>\
+        %endif
+        idx++;
+        curPhaseIdx--;
+    }
+
+    if (curPhaseIdx == -1){
+        %if (isFloat)
+          finalSum = %<polyAccLabel>;
+        %else
+          %<DSPFixptLibEquals(finalSumRec, polyAccRec, rndSatRec)>\
+        %endif
+
+        /* calculate appropriate output index for storing FinalSum */
+        {
+          %if (NUM_CHANS > 1)
+            int_T outIdx = k + curOutBufIdx;
+          %else
+            int_T outIdx = curOutBufIdx;
+          %endif
+          %if (isFloat)
+            %<outBufLabel> = finalSum;
+          %else
+            %<DSPFixptLibEquals(outBufRec, finalSumRec, rndSatRec)>\
+          %endif
+        }
+        
+        /* increment outputIdx */
+        if ( (++curOutBufIdx) >= %<outFrameSize> ) {
+            curOutBufIdx = 0;
+        }
+        curPhaseIdx = %<dFactorMinusOne>;
+    }
+  }
+%if (NUM_CHANS > 1)
+}
+%endif
+
+
+%endfunction %% TDFDegenerateAlgo_NonFrame
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%% Subfunction: TDFAlgo_NonFrame ======================================
+%%
+%function TDFAlgo_NonFrame(block) Output
+%%
+%assign polyphaseFiltLenMinusOne = polyphaseFiltLen-1
+%assign polyphaseFiltLenMinusTwo = polyphaseFiltLen-2
+%%
+int_T j;
+%if (!isFloat)
+  %<prodDT.Name> %<prodLabel>;
+  %if accIsCplx
+    %<accDT.ComplexName> finalSum;
+  %else
+    %<accDT.Name> finalSum;
+  %endif
+%else
+  %<OUT_T> finalSum;
+%endif
+%if (NUM_CHANS > 1)
+int_T k = 0;
+for (k=0; k < %<NUM_CHANS>; k++) {
+  /* per channel parameters */
+  int_T accChanOffset    = k*%<polyphaseFiltLen>;
+  int_T stateChanOffset  = k*%<polyphaseFiltLenMinusOne>;
+%endif
+  int_T idx = 0;
+%if (NUM_CHANS > 1)
+  curPhaseIdx  = %<LibBlockDWork(PhaseIdx,  "", "", 0)>;
+  curOutBufIdx = %<LibBlockDWork(OutIdx,  "", "", 0)>;
+  cffIdx       = %<LibBlockDWork(CoeffIdx, "", "", 0)>;
+%endif    
+%%
+  while (idx < %<inFrameSize>) {
+    
+    if (curPhaseIdx == %<dFactorMinusOne>) {
+      /* initialize accumulators */
+      for (j=0; j< %<polyphaseFiltLen>; j++) {
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "j+accChanOffset", "", 0) \
+                             : LibBlockDWork(Sums, "j", "", 0)
+        %assign cffLabel = LibBlockParameter(FILT, "curPhaseIdx*%<polyphaseFiltLen>+j", "", "0")
+        %assign inLabel  = (NUM_CHANS > 1) \
+                         ? LibBlockInputSignal(INPORT, "k+idx", "","0") \
+                         : LibBlockInputSignal(INPORT, "idx", "","0")
+        %if (isFloat)
+          %<FltptMAC(polyAccLabel, "=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+        %else
+          %assign polyAccRec.label = polyAccLabel
+          %assign cffRec.label = cffLabel
+          %assign inRec.label = inLabel
+          %<FixptMAC(polyAccRec, "=", prodRec, inRec, cffRec, rndSatRec)>\
+        %endif
+      }
+      idx++;
+      curPhaseIdx--;
+    }
+
+    /* Add phases to intermediate sums */
+    while ((idx < %<inFrameSize>) && (curPhaseIdx > -1)) {
+        for (j=0; j < %<polyphaseFiltLen>; j++){
+          %if (isFloat)
+            %<FltptMAC(polyAccLabel, "+=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+          %else
+            %<FixptMAC(polyAccRec, "+=", prodRec, inRec, cffRec, rndSatRec)>\
+          %endif
+        }
+        idx++;
+        curPhaseIdx--;
+    }
+
+    if (curPhaseIdx == -1) {
+        /* Output sample */
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "accChanOffset", "", 0) \
+                             : LibBlockDWork(Sums, "", "", 0)
+        %assign statesLabel  = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(StatesBuff, "stateChanOffset", "", 0) \
+                             : LibBlockDWork(StatesBuff, "", "", 0)
+        %if (isFloat)
+          %if accIsCplx
+            finalSum.re = %<statesLabel>.re + %<polyAccLabel>.re;
+            finalSum.im = %<statesLabel>.im + %<polyAccLabel>.im;
+          %else
+            finalSum = %<statesLabel> + %<polyAccLabel>;
+          %endif
+        %else
+          %assign polyAccRec.label = polyAccLabel
+          %assign statesRec.label = statesLabel
+          %<DSPFixptLibEquals(finalSumRec, statesRec, rndSatRec)>\
+          %<DSPFixptLibPlusEquals(finalSumRec, polyAccRec, rndSatRec)>\
+        %endif
+        
+        {
+          /* calculate appropriate output index for storing finalSum */
+          %if (NUM_CHANS > 1)
+          int_T outIdx = k + curOutBufIdx;
+          %else
+          int_T outIdx = curOutBufIdx;
+          %endif
+          %if (isFloat)
+            %<outBufLabel> = finalSum;
+          %else
+            %<DSPFixptLibEquals(outBufRec, finalSumRec, rndSatRec)>\
+          %endif
+        }
+        
+        /* increment outputIdx */
+        if ( (++curOutBufIdx) >= %<outFrameSize> ) {
+            curOutBufIdx = 0;
+        }
+        
+        /* update states */
+        for (j=0; j < %<polyphaseFiltLenMinusTwo>; j++){
+          %assign statesLabelBefore = (NUM_CHANS > 1) \
+                                    ? LibBlockDWork(StatesBuff, "j+1+stateChanOffset", "", 0) \
+                                    : LibBlockDWork(StatesBuff, "j+1", "", 0)
+          %assign polyAccLabel = (NUM_CHANS > 1) \
+                               ? LibBlockDWork(Sums, "j+1+accChanOffset", "", 0) \
+                               : LibBlockDWork(Sums, "j+1", "", 0)
+          %assign statesLabelAfter = (NUM_CHANS > 1) \
+                                   ? LibBlockDWork(StatesBuff, "j+stateChanOffset", "", 0) \
+                                   : LibBlockDWork(StatesBuff, "j", "", 0)
+          %if (isFloat)
+            %if accIsCplx
+              finalSum.re = %<statesLabelBefore>.re + %<polyAccLabel>.re;
+              finalSum.im = %<statesLabelBefore>.im + %<polyAccLabel>.im;
+            %else
+              finalSum = %<statesLabelBefore> + %<polyAccLabel>;
+            %endif
+            %<statesLabelAfter> = finalSum;
+          %else
+            %assign statesRec.label = statesLabelBefore
+            %<DSPFixptLibEquals(finalSumRec, statesRec, rndSatRec)>\
+            %assign polyAccRec.label = polyAccLabel
+            %<DSPFixptLibPlusEquals(finalSumRec, polyAccRec, rndSatRec)>\
+            %assign statesRec.label = statesLabelAfter
+            %<DSPFixptLibEquals(statesRec, finalSumRec, rndSatRec)>\
+          %endif
+        }
+        %assign statesLabel = (NUM_CHANS > 1) \
+                            ? LibBlockDWork(StatesBuff, "%<polyphaseFiltLenMinusTwo>+stateChanOffset", "", 0) \
+                            : LibBlockDWork(StatesBuff, "%<polyphaseFiltLenMinusTwo>", "", 0)
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "%<polyphaseFiltLenMinusOne>+accChanOffset", "", 0) \
+                             : LibBlockDWork(Sums, "%<polyphaseFiltLenMinusOne>", "", 0)
+        %if (isFloat)
+          %<statesLabel> = %<polyAccLabel>;
+        %else
+          %assign statesRec.label = statesLabel
+          %assign polyAccRec.label = polyAccLabel
+          %<DSPFixptLibEquals(statesRec, polyAccRec, rndSatRec)>\
+        %endif
+        curPhaseIdx = %<dFactorMinusOne>;
+    }
+  }
+%if (NUM_CHANS > 1)
+}
+
+%endif
+%%
+%endfunction %%TDFAlgo_NonFrame
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%% Subfunction: GenerateInlineCode ======================================
+%%
+%function GenerateInlineCode(block) Output
+%%
+%assign accLabel  = LibBlockDWork(Sums, "k", "", 0)
+%assign accIsCplx = OUT_COMPLEX
+%assign prodLabel = "prod"
+%assign cffLabel  = LibBlockParameter(FILT, "cffIdx", "", "0")
+%assign inLabel   = LibBlockInputSignal(INPORT, "inputIdx", "","0")
+%assign outBufLabel = LibBlockDWork(OutBuff, "outIdx", "", "0")
+%assign block = block + accLabel + accIsCplx + prodLabel + cffLabel \
+                      + inLabel + outBufLabel
+%%
+%if (!isFloat)
+    %createrecord rndSatRec { roundingMode FixPtRoundingMode; ...
+                              overflowMode FixPtSaturationMode}
+    %% create accRec record
+    %assign accDT = FixPt_GetParameterDataType(ACC_DATA_TYPE, 0, 0)
+    %createrecord accRec { label     accLabel; ...
+                           dTypeRec  accDT; ...
+                           isComplex accIsCplx }
+    %% create prodRec record (always real)
+    %assign prodDT = FixPt_GetParameterDataType(PROD_DATA_TYPE, 0, 0)
+    %createrecord prodRec { label     prodLabel; ...
+                            dTypeRec  prodDT; ...
+                            isComplex 0 }
+    %% create cffRec record
+    %assign cffDT = FixPt_GetParameterDataType(CFF_DATA_TYPE, 0, 0)
+    %createrecord cffRec { label     cffLabel; ...
+                           dTypeRec  cffDT; ...
+                           isComplex FILT_COMPLEX }
+    %% create inRec record
+    %createrecord inRec { label     inLabel; ...
+                          dTypeRec  inDT; ...
+                          isComplex DATA_COMPLEX }
+    %% create outBufRec record
+    %createrecord outBufRec { label     outBufLabel; ...
+                              dTypeRec  outDT; ...
+                              isComplex OUT_COMPLEX }  
+    %assign block = block + rndSatRec + accDT + accRec + prodDT + prodRec \
+                          + cffDT + cffRec + inRec + outBufRec
+%endif
+{
+    /* Define common polyphase parameters */
+    int_T curPhaseIdx  = %<LibBlockDWork(PhaseIdx,  "", "", 0)>;
+    int_T curOutBufIdx = %<LibBlockDWork(OutIdx,  "", "", 0)>;
+    int_T cffIdx       = %<LibBlockDWork(CoeffIdx, "", "", 0)>;
+    boolean_T curBuf   = %<LibBlockDWork(wrtBufIdx, "", "", 0)>;
+    %%
+    %if (ALGO == FIR_TDF)
+      %<TDFAlgo(block)>\
+    %elseif (ALGO == FIR_TDF_DEGENERATE)
+      %<TDFDegenerateAlgo(block)>\
+    %else
+      %exit Fatal: Unknown FIR decimation filter structure.
+    %endif
+    
+    /* Save common polyphase parameters for next function call */
+    %<LibBlockDWork(CoeffIdx,  "", "", 0)> = cffIdx;
+    %<LibBlockDWork(PhaseIdx,  "", "", 0)> = curPhaseIdx;
+    %<LibBlockDWork(OutIdx,  "", "", 0)>   = curOutBufIdx;
+    %<LibBlockDWork(wrtBufIdx, "", "", 0)> = curBuf;
+}
+
+%endfunction %% GenerateInlineCode
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Subfunction: TDFDegenerateAlgo 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function TDFDegenerateAlgo(block) Output
+%if (!isFloat)
+  %createrecord polyAccRec { label      ""; ...
+                             dTypeRec   FixPt_GetParameterDataType(POLYACC_DATA_TYPE, 0, 0); ...
+                             isComplex  accIsCplx }
+  %createrecord finalSumRec { label     "finalSum"; ...
+                             dTypeRec   accRec.dTypeRec; ...
+                             isComplex  accIsCplx }
+%endif
+%if (!isFloat)
+  %<prodDT.Name> %<prodLabel>;
+  %if accIsCplx
+    %<accDT.ComplexName> finalSum;
+  %else
+    %<accDT.Name> finalSum;
+  %endif
+%else
+  %<OUT_T> finalSum;
+%endif
+%if (NUM_CHANS > 1)
+int_T k = 0;
+for (k=0; k < %<NUM_CHANS>; k++) {
+  /* per channel parameters */
+  int_T inputChanOffset  = k*%<inFrameSize>;
+  int_T outputChanOffset = k*%<outFrameSize>;
+%endif
+  int_T idx = 0;
+%if (NUM_CHANS > 1)
+  curPhaseIdx  = %<LibBlockDWork(PhaseIdx,  "", "", 0)>;
+  curOutBufIdx = %<LibBlockDWork(OutIdx,  "", "", 0)>;
+  cffIdx       = %<LibBlockDWork(CoeffIdx, "", "", 0)>;
+  curBuf       = %<LibBlockDWork(wrtBufIdx, "", "", 0)>;
+%endif    
+%%
+  while (idx < %<inFrameSize>) {
+    if (curPhaseIdx == %<dFactorMinusOne>){
+        /* initialize accumulator */
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "k", "", 0) \
+                             : LibBlockDWork(Sums, "", "", 0)
+        %assign cffLabel = LibBlockParameter(FILT, "curPhaseIdx", "", "0")
+        %assign inLabel  = (NUM_CHANS > 1) \
+                         ? LibBlockInputSignal(INPORT, "inputChanOffset+idx", "","0") \
+                         : LibBlockInputSignal(INPORT, "idx", "","0")
+        %if (isFloat)
+          %<FltptMAC(polyAccLabel, "=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+        %else
+          %assign polyAccRec.label = polyAccLabel
+          %assign cffRec.label = cffLabel
+          %assign inRec.label = inLabel
+          %<FixptMAC(polyAccRec, "=", prodRec, inRec, cffRec, rndSatRec)>\
+        %endif
+        idx++;
+	curPhaseIdx--;
+    }
+            
+    /* Add phases to the partial sums */
+    while ((idx < %<inFrameSize>) && (curPhaseIdx > -1)){
+        %if (isFloat)
+          %<FltptMAC(polyAccLabel, "+=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+        %else
+          %<FixptMAC(polyAccRec, "+=", prodRec, inRec, cffRec, rndSatRec)>\
+        %endif
+        idx++;
+        curPhaseIdx--;
+    }
+
+    if (curPhaseIdx == -1){
+        %if (isFloat)
+          finalSum = %<polyAccLabel>;
+        %else
+          %<DSPFixptLibEquals(finalSumRec, polyAccRec, rndSatRec)>\
+        %endif
+
+        /* calculate appropriate output index for storing FinalSum */
+        {
+          %if (NUM_CHANS > 1)
+            int_T outIdx = outputChanOffset + curOutBufIdx;
+          %else
+            int_T outIdx = curOutBufIdx;
+          %endif
+          if (curBuf) outIdx += %<outElem>;
+          %if (isFloat)
+            %<outBufLabel> = finalSum;
+          %else
+            %<DSPFixptLibEquals(outBufRec, finalSumRec, rndSatRec)>\
+          %endif
+        }
+        
+        /* increment outputIdx */
+        if ( (++curOutBufIdx) >= %<outFrameSize> ) {
+            curOutBufIdx = 0;
+            curBuf       = (boolean_T)(!curBuf); 
+        }
+        curPhaseIdx = %<dFactorMinusOne>;
+    }
+  }
+%if (NUM_CHANS > 1)
+}
+%endif
+
+%endfunction    %% TDFDegenerateAlgo
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Subfunction: TDFAlgo 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function TDFAlgo(block) Output
+%if (!isFloat)
+  %assign polyAccDT = FixPt_GetParameterDataType(POLYACC_DATA_TYPE, 0, 0)
+  %createrecord polyAccRec { label     ""; ...
+                             dTypeRec  polyAccDT; ...
+                             isComplex accIsCplx }
+  %createrecord finalSumRec { label     "finalSum"; ...
+                             dTypeRec  accRec.dTypeRec; ...
+                             isComplex accIsCplx }
+  %createrecord statesRec   { label     LibBlockDWork(StatesBuff, "stateChanOffset", "", 0); ...
+                              dTypeRec  accRec.dTypeRec; ...
+                              isComplex accIsCplx }
+%endif
+%assign polyphaseFiltLenMinusOne = polyphaseFiltLen-1
+%assign polyphaseFiltLenMinusTwo = polyphaseFiltLen-2
+%%
+int_T j;
+%if (!isFloat)
+  %<prodDT.Name> %<prodLabel>;
+  %if accIsCplx
+    %<accDT.ComplexName> finalSum;
+  %else
+    %<accDT.Name> finalSum;
+  %endif
+%else
+  %<OUT_T> finalSum;
+%endif
+%if (NUM_CHANS > 1)
+int_T k = 0;
+for (k=0; k < %<NUM_CHANS>; k++) {
+  /* per channel parameters */
+  int_T inputChanOffset  = k*%<inFrameSize>;
+  int_T outputChanOffset = k*%<outFrameSize>;
+  int_T accChanOffset    = k*%<polyphaseFiltLen>;
+  int_T stateChanOffset  = k*%<polyphaseFiltLenMinusOne>;
+%endif
+  int_T idx = 0;
+%if (NUM_CHANS > 1)
+  curPhaseIdx  = %<LibBlockDWork(PhaseIdx,  "", "", 0)>;
+  curOutBufIdx = %<LibBlockDWork(OutIdx,  "", "", 0)>;
+  cffIdx       = %<LibBlockDWork(CoeffIdx, "", "", 0)>;
+  curBuf       = %<LibBlockDWork(wrtBufIdx, "", "", 0)>;
+%endif    
+%%
+  while (idx < %<inFrameSize>) {
+    
+    if (curPhaseIdx == %<dFactorMinusOne>) {
+      /* initialize accumulators */
+      for (j=0; j< %<polyphaseFiltLen>; j++) {
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "j+accChanOffset", "", 0) \
+                             : LibBlockDWork(Sums, "j", "", 0)
+        %assign cffLabel = LibBlockParameter(FILT, "curPhaseIdx*%<polyphaseFiltLen>+j", "", "0")
+        %assign inLabel  = (NUM_CHANS > 1) \
+                         ? LibBlockInputSignal(INPORT, "inputChanOffset+idx", "","0") \
+                         : LibBlockInputSignal(INPORT, "idx", "","0")
+        %if (isFloat)
+          %<FltptMAC(polyAccLabel, "=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+        %else
+          %assign polyAccRec.label = polyAccLabel
+          %assign cffRec.label = cffLabel
+          %assign inRec.label = inLabel
+          %<FixptMAC(polyAccRec, "=", prodRec, inRec, cffRec, rndSatRec)>\
+        %endif
+      }
+      idx++;
+      curPhaseIdx--;
+    }
+
+    /* Add phases to intermediate sums */
+    while ((idx < %<inFrameSize>) && (curPhaseIdx > -1)) {
+        for (j=0; j < %<polyphaseFiltLen>; j++){
+          %if (isFloat)
+            %<FltptMAC(polyAccLabel, "+=", inLabel, cffLabel, accIsCplx, DATA_COMPLEX, FILT_COMPLEX)>\
+          %else
+            %<FixptMAC(polyAccRec, "+=", prodRec, inRec, cffRec, rndSatRec)>\
+          %endif
+        }
+        idx++;
+        curPhaseIdx--;
+    }
+
+    if (curPhaseIdx == -1) {
+        /* Output sample */
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "accChanOffset", "", 0) \
+                             : LibBlockDWork(Sums, "", "", 0)
+        %assign statesLabel  = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(StatesBuff, "stateChanOffset", "", 0) \
+                             : LibBlockDWork(StatesBuff, "", "", 0)
+        %if (isFloat)
+          %if accIsCplx
+            finalSum.re = %<statesLabel>.re + %<polyAccLabel>.re;
+            finalSum.im = %<statesLabel>.im + %<polyAccLabel>.im;
+          %else
+            finalSum = %<statesLabel> + %<polyAccLabel>;
+          %endif
+        %else
+          %assign polyAccRec.label = polyAccLabel
+          %assign statesRec.label = statesLabel
+          %<DSPFixptLibEquals(finalSumRec, statesRec, rndSatRec)>\
+          %<DSPFixptLibPlusEquals(finalSumRec, polyAccRec, rndSatRec)>\
+        %endif
+        
+        {
+          /* calculate appropriate output index for storing finalSum */
+          %if (NUM_CHANS > 1)
+          int_T outIdx = outputChanOffset + curOutBufIdx;
+          %else
+          int_T outIdx = curOutBufIdx;
+          %endif
+          if (curBuf) outIdx += %<outElem>;
+          %if (isFloat)
+            %<outBufLabel> = finalSum;
+          %else
+            %<DSPFixptLibEquals(outBufRec, finalSumRec, rndSatRec)>\
+          %endif
+        }
+        
+        /* increment outputIdx */
+        if ( (++curOutBufIdx) >= %<outFrameSize> ) {
+            curOutBufIdx = 0;
+            curBuf = (boolean_T)(!curBuf); 
+        }
+        
+        /* update states */
+        for (j=0; j < %<polyphaseFiltLenMinusTwo>; j++){
+          %assign statesLabelBefore = (NUM_CHANS > 1) \
+                                    ? LibBlockDWork(StatesBuff, "j+1+stateChanOffset", "", 0) \
+                                    : LibBlockDWork(StatesBuff, "j+1", "", 0)
+          %assign polyAccLabel = (NUM_CHANS > 1) \
+                               ? LibBlockDWork(Sums, "j+1+accChanOffset", "", 0) \
+                               : LibBlockDWork(Sums, "j+1", "", 0)
+          %assign statesLabelAfter = (NUM_CHANS > 1) \
+                                   ? LibBlockDWork(StatesBuff, "j+stateChanOffset", "", 0) \
+                                   : LibBlockDWork(StatesBuff, "j", "", 0)
+          %if (isFloat)
+            %if accIsCplx
+              finalSum.re = %<statesLabelBefore>.re + %<polyAccLabel>.re;
+              finalSum.im = %<statesLabelBefore>.im + %<polyAccLabel>.im;
+            %else
+              finalSum = %<statesLabelBefore> + %<polyAccLabel>;
+            %endif
+            %<statesLabelAfter> = finalSum;
+          %else
+            %assign statesRec.label = statesLabelBefore
+            %<DSPFixptLibEquals(finalSumRec, statesRec, rndSatRec)>\
+            %assign polyAccRec.label = polyAccLabel
+            %<DSPFixptLibPlusEquals(finalSumRec, polyAccRec, rndSatRec)>\
+            %assign statesRec.label = statesLabelAfter
+            %<DSPFixptLibEquals(statesRec, finalSumRec, rndSatRec)>\
+          %endif
+        }
+        %assign statesLabel = (NUM_CHANS > 1) \
+                            ? LibBlockDWork(StatesBuff, "%<polyphaseFiltLenMinusTwo>+stateChanOffset", "", 0) \
+                            : LibBlockDWork(StatesBuff, "%<polyphaseFiltLenMinusTwo>", "", 0)
+        %assign polyAccLabel = (NUM_CHANS > 1) \
+                             ? LibBlockDWork(Sums, "%<polyphaseFiltLenMinusOne>+accChanOffset", "", 0) \
+                             : LibBlockDWork(Sums, "%<polyphaseFiltLenMinusOne>", "", 0)
+        %if (isFloat)
+          %<statesLabel> = %<polyAccLabel>;
+        %else
+          %assign statesRec.label = statesLabel
+          %assign polyAccRec.label = polyAccLabel
+          %<DSPFixptLibEquals(statesRec, polyAccRec, rndSatRec)>\
+        %endif
+        curPhaseIdx = %<dFactorMinusOne>;
+    }
+  }
+%if (NUM_CHANS > 1)
+}
+%endif
+
+%endfunction    %% TDFAlgo
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Subfunction: CopyDataToOutport 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%function CopyDataToOutport(block) Output
+{
+    byte_T *y = (byte_T *)%<LibBlockDWorkAddr(OutBuff, "", "", 0)>;
+    const int_T bytesToCopy = %<OUT_ROWS> * %<OUT_COLS> * %<bytesPerOutElemStr>;
+    if (%<LibBlockDWork(readBufIdx, "", "", 0)>) y += bytesToCopy;
+    memcpy((byte_T *)%<LibBlockOutputSignalAddr(OUTPORT,  "", "", 0)>, y, bytesToCopy);
+    %<LibBlockDWork(readBufIdx, "", "", 0)> = !(%<LibBlockDWork(readBufIdx, "", "", 0)>);
+}
+
+%endfunction %% CopyDataToOutport
+
+%% [EOF] sdspfirdn2.tlc

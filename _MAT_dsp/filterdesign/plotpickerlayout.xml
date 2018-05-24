@@ -1,0 +1,67 @@
+<plotpicker>
+<category name="DSP System Toolbox Plots">
+<plotaction ID="fdtfvtool" description="Open Filter Visualization Tool" function="fdtfvtool" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." largeicon="(matlabroot)/toolbox/signal/sigtools/private/fvtool1.png"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtool',[],args)">
+</plotaction>
+<plotaction ID="fdtfvtoolmag" description="fvtool magnitude analysis plot" shortdescription = "Magnitude Response" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/mag.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_mag.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolmag',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolmag',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolphase" description="fvtool phase analysis plot" shortdescription = "Phase Response" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/phase.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_phase.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolphase',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolphase',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolmagphase" description="fvtool magnitude and phase plot" shortdescription = "Magnitude and Phase Response" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/magphase.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_magphase.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolmagphase',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolmagphase',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolgrpdelay" description="fvtool group delay plot" shortdescription = "Group Delay" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/grpdelay.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_grpdelay.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolgrpdelay',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolgrpdelay',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolphdelay" description="fvtool phase delay plot" shortdescription = "Phase Delay" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/phdelay.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_phase.gif" visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolphdelay',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolphdelay',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolimpulse" description="fvtool impulse response plot" shortdescription = "Impulse Response" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/impulse.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_impulse.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolimpulse',[],args)"  action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolimpulse',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolstep" description="fvtool step response plot" shortdescription = "Step Response" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/step.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_step.gif" visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolstep',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolstep',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolpolezero" description="fvtool pole zero plot" shortdescription = "Pole/Zero Plot" function="fvtool"  methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic." 
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/polezero.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_polezero.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolpolezero',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolpolezero',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolfiltcoef" description="fvtool filter coefficients" shortdescription = "Filter Coefficients" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic."  
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/filtcoef.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_filtcoef.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolfiltcoef',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolfiltcoef',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolfiltinfo" description="fvtool filter information" shortdescription = "Filter Information" function="fvtool" methodof="adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic" rule="One or more of most multi-rate and adaptive filter objects inheriting from: adaptfilt.apru,adaptfilt.bap,aadaptfilt.adaptfilt,adaptfilt.adaptdffir,mfilt.abstractfirmultirate,mfilt.abstractcic."  
+largeicon="(matlabroot)/toolbox/signal/sigtools/private/filtinfo.png" smallicon="(matlabroot)/toolbox/signal/sigtools/private/button_filtinfo.gif"
+visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolfiltinfo',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolfiltinfo',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolmagestimate" description="fvtool estimate fixed-point filter frequency response through filtering" shortdescription="Fixed-Point Magnitude Response" function="fvtool" rule="DFILT filter objects excluding adaptive or multi-rate filters (ADAPTFILT or MFILT objects)." largeicon="(matlabroot)/toolbox/shared/filterdesignlib/images/freqrespest.png" smallicon="(matlabroot)/toolbox/shared/filterdesignlib/images/plotpicker_freqrespest.png" visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolmagestimate',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolmagestimate',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtfvtoolnoisepower" description="fvtool estimate of round-off noise power spectral density of filter output" shortdescription="Round-off Noise Power" function="fvtool" rule="DFILT filter objects excluding adaptive or multi-rate filters (ADAPTFILT or MFILT objects)." largeicon="(matlabroot)/toolbox/shared/filterdesignlib/images/noisepsd.png" smallicon="(matlabroot)/toolbox/shared/filterdesignlib/images/plotpicker_noisepsd.png" visibility = "@(args) filterplotfunc('defaultshow','fdtfvtoolnoisepower',[],args)" action="@(varNames,varValues) filterplotfunc('defaultdisplay','fdtfvtoolnoisepower',varNames,varValues)"
+producthelp="fvtool" refpagepath="plot.html">
+</plotaction>
+<plotaction ID="fdtzerophase" description="Zero-phase response of digital filter" function="zerophase" rule="One or more adaptive filter (adaptfilt) or multi-rate filter (mfilt) objects." largeicon="(matlabroot)/toolbox/signal/sigtools/private/zerophase.png"
+visibility = "@(args) filterplotfunc('defaultshow','fdtzerophase',[],args)">
+</plotaction>
+<plotaction ID="polyphase" description="Polyphase decomposition of multirate filter" function="polyphase" rule="A multi-rate filter object ." largeicon="(matlabroot)/toolbox/shared/filterdesignlib/images/polyphase.png"
+visibility = "@(args) filterplotfunc('defaultshow','polyphase',[],args)">
+</plotaction>
+</category>
+</plotpicker> 

@@ -1,0 +1,16 @@
+function help_maxpole(~)
+%HELP_MAXPOLE  
+
+%   Copyright 2010 The MathWorks, Inc.
+
+maxpole_str = sprintf('%s\n%s\n%s\n%s\n%s', ...
+    '    H = IIRLPNORM(..., ''MaxPoleRadius'', RADIUS) returns a filter having a', ...
+    '    maximum pole radius of RADIUS where 0<RADIUS<=1. RADIUS defaults to 1.', ...
+    '    When RADIUS<1 a constrained least P-norm optimal IIR filter algorithm', ...
+    '    is used. Filters having a reduced pole radius may retain better', ...
+    '    transfer function accuracy when quantized.');
+disp(maxpole_str);
+disp(' ');
+
+
+% [EOF]

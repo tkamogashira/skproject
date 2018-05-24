@@ -1,0 +1,425 @@
+%% sdspsrt2.tlc
+%% Abstract: TLC for DSP System Toolbox Sort block, found in Statistics library. (sdspsrt2)
+%%
+%% Copyright 1995-2010 The MathWorks, Inc. 
+%%  
+
+%implements sdspsrt2 "C"
+
+%% Function: BlockInstanceSetup ===============================================
+%%
+%function BlockInstanceSetup(block, system) void
+    %%
+    %% All fixed-point blocks call the fixed-point setup function
+    %%
+    %<FixPt_Setup(block, system)>
+    %%
+    %% I/O port data types
+    %assign inDT  = FixPt_GetInputDataType(0)
+    %assign isFixPt = !FixPt_DataTypeIsFloat(inDT)
+    %assign block = block + isFixPt
+    %%
+    %assign Ascend  = 1
+    %assign Descend = 2
+    %%
+    %assign QuickSort = 1
+    %assign InsertionSort = 2
+    %%
+    %assign outVal_and_Idx = 1
+    %assign outVal         = 2
+    %assign outIdx         = 3
+    %%
+    %assign direction = CAST("Number",SFcnParamSettings.Direction)
+    %assign outType   = CAST("Number",SFcnParamSettings.Output_Type)
+    %assign sortAlgorithm = CAST("Number",SFcnParamSettings.Sort_Type)
+    %assign inPlace   = SFcnParamSettings.In_Place
+    %assign INPORT_DATA  = 0
+    %assign OUTPORT_DATA = 0
+    %assign OUTPORT_IDX  = (outType == outIdx) ? 0 : 1
+    %%
+    %assign dtype       = LibBlockInputSignalDataTypeName(INPORT_DATA,"")
+    %assign dtype_real  = LibBlockInputSignalDataTypeName(INPORT_DATA,"%<tRealPart>")
+    %assign inSingle    = ((dtype == "real32_T") || (dtype == "creal32_T")) ? 1 : 0
+    %assign cplx        = (LibBlockInputSignalIsComplex(INPORT_DATA) != 0)
+    %if (isFixPt && cplx)
+        %assign accDT  = FixPt_GetParameterDataType(ACC_DATA_TYPE, 0, 0)
+        %assign prodDT = FixPt_GetParameterDataType(PROD_DATA_TYPE, 0, 0)
+        %assign block  = block + accDT + prodDT +inDT
+    %endif
+    %assign width       = LibBlockInputSignalWidth(INPORT_DATA)
+    %assign numDims     = LibBlockInputSignalNumDimensions(INPORT_DATA)
+    %assign dims        = LibBlockInputSignalDimensions(INPORT_DATA)
+    %%
+    %assign isFullMatrix = LibBlockInputSignalIsFullMatrix(INPORT_DATA)
+    %assign frame        = LibBlockInputSignalIsFrameData(INPORT_DATA)
+    %assign nChans       = (frame || isFullMatrix) ? dims[1] : 1
+    %assign nSamps       = (frame || isFullMatrix) ? dims[0] : width
+    %%
+    %assign block = block + INPORT_DATA + OUTPORT_DATA + OUTPORT_IDX + inSingle ...
+                    + dtype + cplx + Ascend + Descend + outVal_and_Idx + dtype_real ...
+                    + outVal + outIdx + nChans + nSamps + width + direction + outType ...
+                    + inPlace + QuickSort + InsertionSort + sortAlgorithm
+%endfunction %% BlockInstanceSetup
+
+
+%% Function: Outputs ==========================================================
+%%
+%function Outputs(block, system) Output
+/* DSP System Toolbox Sort (%<ParamSettings.FunctionName>) - '%<Name>' */
+%%
+%if (!isFixPt)
+    %assign dTypeStr = inSingle ? "_R" : "_D"
+    %assign dTypeStrBldInfo = inSingle ? "_r_rt.c" : "_d_rt.c"
+%elseif (isFixPt && cplx)
+    %if (accDT.Name == "int8_T")
+        %assign dTypeStr = "_S08"
+        %assign dTypeStrBldInfo = "_s08_rt.c"
+    %elseif (accDT.Name == "uint8_T")
+        %assign dTypeStr = "_U08"
+        %assign dTypeStrBldInfo = "_u08_rt.c"
+    %elseif (accDT.Name == "int16_T")
+        %assign dTypeStr = "_S16"
+        %assign dTypeStrBldInfo = "_s16_rt.c"
+    %elseif (accDT.Name == "uint16_T")
+        %assign dTypeStr = "_U16"
+        %assign dTypeStrBldInfo = "_u16_rt.c"
+    %elseif (accDT.Name == "int32_T")
+        %assign dTypeStr = "_S32"
+        %assign dTypeStrBldInfo = "_s32_rt.c"
+    %else  %% (accDT.Name == "uint32_T")
+        %assign dTypeStr = "_U32"
+        %assign dTypeStrBldInfo = "_u32_rt.c"
+    %endif
+%else
+    %if (dtype_real == "int8_T")
+        %assign dTypeStr = "_S08"
+        %assign dTypeStrBldInfo = "_s08_rt.c"
+    %elseif (dtype_real == "uint8_T")
+        %assign dTypeStr = "_U08"
+        %assign dTypeStrBldInfo = "_u08_rt.c"
+    %elseif (dtype_real == "int16_T")
+        %assign dTypeStr = "_S16"
+        %assign dTypeStrBldInfo = "_s16_rt.c"
+    %elseif (dtype_real == "uint16_T")
+        %assign dTypeStr = "_U16"
+        %assign dTypeStrBldInfo = "_u16_rt.c"
+    %elseif (dtype_real == "int32_T")
+        %assign dTypeStr = "_S32"
+        %assign dTypeStrBldInfo = "_s32_rt.c"
+    %else %% (dtype_real == "uint32_T")
+        %assign dTypeStr = "_U32"
+        %assign dTypeStrBldInfo = "_u32_rt.c"
+    %endif
+%endif
+%%
+%if (outType == outVal) && (!cplx)
+    %assign sortMethodStr = "_Val"
+    %assign dTypeStrBldInfo1 = "_val" + dTypeStrBldInfo
+%else
+    %assign sortMethodStr = "_Idx"
+    %assign dTypeStrBldInfo1 = "_idx" + dTypeStrBldInfo
+%endif
+%%
+%assign str = sortMethodStr + dTypeStr
+%%
+%%
+%if ( outType == outVal )
+    %<QkSortVal(block, str, dTypeStrBldInfo1)>
+%else
+    %<QkSortIdx(block, str, dTypeStrBldInfo1)>
+%endif
+
+%endfunction  %% Outputs
+
+%% Subfunction: QkSortVal ======================================
+%%
+%function QkSortVal(block, str, dTypeStrBldInfo) Output
+{
+%if (nSamps > 1)
+    %if (!inPlace)
+    const %<dtype> *u = %<LibBlockInputSignalAddr(INPORT_DATA, "", "", 0)>;
+    %endif
+    %<dtype> *y = %<LibBlockOutputSignalAddr(OUTPORT_DATA, "","", 0)>;
+    %%
+    %if (nChans > 1)
+        uint32_T i_SORT, k_SORT;
+        for(i_SORT=0; i_SORT<%<nChans>; i_SORT++) {
+            uint32_T start = i_SORT * %<nSamps>;
+            %assign nSampsMinusOne = nSamps-1
+            %if (!inPlace)
+                %if (cplx)
+                    uint32_T index[%<nSamps>];
+                    %<calculateMagSq(block, "start+k_SORT")> \
+                    for(k_SORT=0; k_SORT<%<nSamps>; k_SORT++) {
+                        index[k_SORT] = k_SORT;
+                    }
+                %else
+                    memcpy(y+start, u+start, %<nSamps>*sizeof(%<dtype>));
+                %endif
+            %endif
+            %%
+            %<genSortFcnCall(block, str, dTypeStrBldInfo)>
+            %%
+            %if (cplx)
+                for(k_SORT=0; k_SORT<%<nSamps>; k_SORT++) {
+                     y[start+k_SORT] = u[start+index[k_SORT]];
+                }
+            %endif
+            %if (direction == Descend)
+                /* Reverse sorted value order */
+                {
+                    uint32_T range = (%<nSamps> >> 1);
+                    for (k_SORT=0; k_SORT<range; k_SORT++) {
+                        %<dtype> tmp_IDX = y[start+k_SORT];
+                        y[start+k_SORT] = y[start+%<nSampsMinusOne>-k_SORT];
+                        y[start+%<nSampsMinusOne>-k_SORT]  = tmp_IDX;
+                    }
+                }
+            %endif
+        } %% end channel loop
+    %else
+    %% single channel optimization
+    %%
+        %if (!inPlace)
+            %if (cplx)  %% Sfunction disallows in-place when cplx
+                uint32_T index[%<nSamps>];
+                %<calculateMagSq(block, "k_SORT")> \
+                for(k_SORT=0; k_SORT<%<nSamps>; k_SORT++) {
+                    index[k_SORT] = k_SORT;
+                }
+            %else
+                memcpy(y, u, %<nSamps>*sizeof(%<dtype>));
+            %endif
+        %endif
+        %%
+        %<genSortFcnCall(block, str, dTypeStrBldInfo)>
+        %%
+        %if (cplx)
+            for(k_SORT=0; k_SORT<%<nSamps>; k_SORT++) {
+                 y[k_SORT] = u[index[k_SORT]];
+            }
+        %endif
+        %if (direction == Descend)
+            %assign stop = nSamps-1
+            /* Reverse sorted value order */
+            {
+                uint32_T k_SORT;
+                uint32_T range = (%<nSamps> >> 1);
+                for (k_SORT=0; k_SORT<range; k_SORT++) {
+                    %<dtype> tmp_IDX = y[k_SORT];
+                    y[k_SORT] = y[%<stop>-k_SORT];
+                    y[%<stop>-k_SORT]  = tmp_IDX;
+                }
+            }
+        %endif
+    %endif
+%%
+%else
+%% nSamps == 1 optimization
+%%
+    %if (!inPlace)
+        const %<dtype> *u = %<LibBlockInputSignalAddr(INPORT_DATA, "", "", 0)>;
+        %<dtype> *y = %<LibBlockOutputSignalAddr(OUTPORT_DATA, "","", 0)>;
+        %if (nChans > 1)
+            uint32_T i_SORT;
+            for(i_SORT=0; i_SORT<%<nChans>; i_SORT++) {
+                y[i_SORT] = u[i_SORT];
+            }
+        %else
+            *y = *u;
+        %endif
+    %endif
+%endif
+
+}
+%endfunction
+
+%% Subfunction: QkSortIdx ======================================
+%%
+%function QkSortIdx(block, str, dTypeStrBldInfo) Output
+{
+    %if !( (outType == outIdx) && (nSamps == 1) )
+    const %<dtype> *u = %<LibBlockInputSignalAddr(INPORT_DATA, "", "", 0)>;
+    %endif
+    uint32_T *index = %<LibBlockOutputSignalAddr(OUTPORT_IDX,"","",0)>;
+    %if (outType != outIdx)
+    %<dtype> *y = %<LibBlockOutputSignalAddr(OUTPORT_DATA, "","", 0)>;
+    %endif
+    %%
+    %if (nChans > 1)
+    uint32_T i_SORT;
+    for(i_SORT=0; i_SORT<%<nChans>; i_SORT++) {
+        %if (nSamps > 1)
+            uint32_T start = i_SORT * %<nSamps>;
+            %%int_T stop  = (i_SORT+1) * %<nSamps> - 1;
+            %assign len = nSamps - 1
+            uint32_T j_SORT;
+            for(j_SORT=0; j_SORT<%<nSamps>; j_SORT++) {
+              index[j_SORT+start] = j_SORT+start;
+            }
+            %%
+            %if cplx
+                {
+                    %<calculateMagSq(block, "start+k_SORT")> \
+                    %<genSortFcnCall(block, str, dTypeStrBldInfo)>
+                }
+            %else
+                %<genSortFcnCall(block, str, dTypeStrBldInfo)>
+            %endif
+            %if (direction == Descend)
+                %<reverseChanIdx(block, "start+k_SORT", "start+%<len>-k_SORT")>
+            %endif
+            for(j_SORT=0; j_SORT<%<nSamps>; j_SORT++) {
+                %if (outType == outVal_and_Idx)
+                 y[j_SORT+start] = u[index[j_SORT+start]];
+                %endif
+                index[j_SORT+start] += (1-start); /* Convert to MATLAB 1-based indexing */
+            }
+        %else
+            %if (outType == outVal_and_Idx)
+            *y++ = *u++;
+            %endif
+            *index++ = 1; /* Convert to MATLAB 1-based indexing */
+        %endif
+        %%
+    } %% end channel loop
+    %else
+        %if (nSamps > 1)
+            %assign stop  = nSamps-1
+            uint32_T j_SORT;
+            for(j_SORT=0; j_SORT<%<nSamps>; j_SORT++) {
+              index[j_SORT] = j_SORT;
+            }
+            %%
+            %if cplx
+                {
+                    %<calculateMagSq(block, "k_SORT")> \
+                    %<genSortFcnCall(block, str, dTypeStrBldInfo)>
+                }
+            %else
+                %<genSortFcnCall(block, str, dTypeStrBldInfo)>
+            %endif
+            %%
+            %if (direction == Descend)
+                %assign nSampsMinusOne = nSamps - 1
+                %<reverseChanIdx(block, "k_SORT", "%<nSampsMinusOne>-k_SORT")>
+            %endif
+            for(j_SORT=0; j_SORT<%<nSamps>; j_SORT++) {
+                %if (outType == outVal_and_Idx)
+                 y[j_SORT] = u[index[j_SORT]];
+                %endif
+                index[j_SORT] += 1; /* Convert to MATLAB 1-based indexing */
+            }
+        %else
+            %if (outType == outVal_and_Idx)
+            *y = *u;
+            %endif
+            *index = 1; /* Convert to MATLAB 1-based indexing */
+        %endif
+        %%
+    %endif
+}
+%endfunction
+
+%% QkSort helper function: calculateMagSq ======================================
+%%
+%% only call this function when input is complex
+%%
+%function calculateMagSq(block, inIdxStr) Output
+%%
+    %if (isFixPt)
+        %createrecord rndSatRec {roundingMode FixPtRoundingMode; ...
+          overflowMode FixPtSaturationMode}
+        %createrecord accRec {label "inputMagSqVal[k_SORT]"; ...
+          dTypeRec accDT; isComplex 0}
+        %createrecord prodRec {label "prod"; ...
+          dTypeRec prodDT; isComplex 0}
+        %assign inRealLabel = "u[%<inIdxStr>].re"
+        %assign inImagLabel = "u[%<inIdxStr>].im"
+        %createrecord inRealRec {label inRealLabel; ...
+          dTypeRec inDT; isComplex 0}
+        %createrecord inImagRec {label inImagLabel; ...
+          dTypeRec inDT; isComplex 0}
+        %%
+        %<accDT.Name> inputMagSqVal[%<nSamps>];
+        %<prodDT.Name> prod;
+        uint32_T k_SORT;
+        for (k_SORT=0; k_SORT<%<nSamps>; k_SORT++) {
+          %<FixptMAC(accRec, "=",  prodRec, inRealRec, inRealRec, rndSatRec)>
+          %<FixptMAC(accRec, "+=", prodRec, inImagRec, inImagRec, rndSatRec)>
+        }
+    %else
+        %<dtype_real> inputMagSqVal[%<nSamps>];
+        uint32_T k_SORT;
+        for (k_SORT=0; k_SORT<%<nSamps>; k_SORT++) {
+            inputMagSqVal[k_SORT] = CMAGSQ(u[%<inIdxStr>]);
+        }
+    %endif
+%%
+%endfunction
+
+%% QkSort helper function: reverseChanIdx ======================================
+%%
+%function reverseChanIdx(block, startIdxStr, stopIdxStr) Output
+{
+    uint32_T range = (%<nSamps> >> 1);
+    uint32_T k_SORT;
+    for (k_SORT=0; k_SORT<range; k_SORT++) {
+        uint32_T tmp_IDX = index[%<startIdxStr>];
+        index[%<startIdxStr>] = index[%<stopIdxStr>];
+        index[%<stopIdxStr>] = tmp_IDX;
+    }
+}
+%endfunction
+
+%% Sort helper function: genSortFcnCall ======================================
+%%
+%function genSortFcnCall(block, str, dTypeStrBldInfo) Output
+%%
+%if (sortAlgorithm == QuickSort)
+    %assign nSampsMinusOne = nSamps - 1
+    %%
+    %if (outType == outVal)
+        %if (nChans > 1)
+            %assign arg = (cplx) ? "(inputMagSqVal, index, 0, %<nSampsMinusOne>)" : "(y, start, start+%<nSampsMinusOne>)"
+        %else
+            %assign arg = (cplx) ? "(inputMagSqVal, index, 0, %<nSampsMinusOne>)" : "(y, 0, %<nSampsMinusOne>)"
+        %endif
+    %else
+        %if (nChans > 1)
+            %assign arg = (cplx) ? "((inputMagSqVal-start), index, start, start+%<nSampsMinusOne>)" : "(u, index, start, start+%<nSampsMinusOne>)"
+        %else
+            %assign arg = (cplx) ? "(inputMagSqVal, index, 0, %<nSampsMinusOne>)" : "(u, index, 0, %<nSampsMinusOne>)"
+        %endif
+    %endif
+    %%
+    %assign modifyBldInfoFileStr = "sort_qk" + dTypeStrBldInfo
+    MWDSP_Sort_Qk%<str>%<arg>;
+    %%
+%else
+    %assign nElemToSort = nSamps
+    %if (outType == outVal)
+        %if (nChans > 1)
+            %assign arg = (cplx) ? "(inputMagSqVal, index, %<nElemToSort>)" : "(y+start, %<nElemToSort>)"
+        %else
+            %assign arg = (cplx) ? "(inputMagSqVal, index, %<nElemToSort>)" : "(y, %<nElemToSort>)"
+        %endif
+    %else
+        %if (nChans > 1)
+            %assign arg = (cplx) ? "((inputMagSqVal-start), index+start, %<nElemToSort>)" : "(u, index+start, %<nElemToSort>)"
+        %else
+            %assign arg = (cplx) ? "(inputMagSqVal, index, %<nElemToSort>)" : "(u, index, %<nElemToSort>)"
+        %endif
+    %endif
+    %%
+    %assign modifyBldInfoFileStr = "sort_ins" + dTypeStrBldInfo    
+    MWDSP_Sort_Ins%<str>%<arg>;
+    %%
+%endif
+%<Include_rt_header(block,"dspsrt_rt")>
+%<ModifyBuildInfo("dspblks", "dspqsrt", "dspsrt_rt.h", "", "", "")>
+%<ModifyBuildInfo("dspblks", "dspqsrt", "", modifyBldInfoFileStr, "", "")>  
+%%
+%endfunction
+
+%% [EOF] sdspsrt2.tlc

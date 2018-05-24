@@ -1,0 +1,114 @@
+%% 
+%%  
+%% 
+%%
+%% Copyright 1995-2006 The MathWorks, Inc.
+%%
+%% Abstract: Discrete Impulse Generator.
+%%
+
+%implements "sdspimpgen2" "C"
+
+%% Function: InitializeConditions ===================================================================
+%% Abstract:
+%%      During initialization set the counter to be the number of delays plus one.
+%%
+%function InitializeConditions(block, system) Output
+    /* DSP System Toolbox Discrete Impulse Generator (%<ParamSettings.FunctionName>) - '%<Name>' */
+    %%
+    %assign  DelayLen  = LibBlockDWorkWidth(COUNT)
+    %%
+    %if (DelayLen == 1)
+        %% Scalar delay
+        %<LibBlockDWork(COUNT,"","",0)> = ((int_T)%<LibBlockParameter(DELAY, "", "", 0)>) + 1;
+    %else
+        %% Vector delay
+        {
+          %assign delay = LibBlockParameter(DELAY, "i", "", 0)
+          %assign count = LibBlockDWork(COUNT, "i", "", 0)                  
+          int_T i;
+
+          for (i = 0; i < %<DelayLen>; i++) {        
+            %<count> = %<delay> + 1;           
+          }
+        }
+    %endif
+
+%endfunction
+
+%%%%%%%%%%%%%%%%%%%%% 
+%% Function: Outputs ================================================================================
+%%
+%function Outputs(block, system) Output   
+    /* DSP System Toolbox Discrete Impulse Generator (%<ParamSettings.FunctionName>) - '%<Name>' */
+    %%
+    %% Parameters are not tunable
+    %%
+    %assign OUTPORT = 0
+    %assign outType = LibBlockOutputSignalDataTypeName(OUTPORT,"")
+    %assign nChans  = LibBlockDWorkWidth(COUNT)
+    %assign dims    = LibBlockOutputSignalDimensions(OUTPORT)
+    %assign nSamps  = dims[0]
+    %if ((nChans == 1) && (nSamps == 1))
+      if (%<LibBlockDWork(COUNT, "", "", 0)> > 0) {
+        if (%<LibBlockDWork(COUNT, "", "", 0)> == 1) {
+          %<LibBlockOutputSignal(OUTPORT, "", "", 0)> = %<LibBlockParameter(ZERO_ONE_VAL, "", "", 1)>;
+        } else {
+          %<LibBlockOutputSignal(OUTPORT, "", "", 0)> = %<LibBlockParameter(ZERO_ONE_VAL, "", "", 0)>;
+        }
+        %<LibBlockDWork(COUNT, "", "", 0)>--;
+      } else {
+        %<LibBlockOutputSignal(OUTPORT, "", "", 0)> = %<LibBlockParameter(ZERO_ONE_VAL, "", "", 0)>;
+      }
+    %elseif (nChans == 1)
+      {
+        %<outType> *y = %<LibBlockOutputSignalAddr(OUTPORT, "", "", 0)>;
+        int_T sampCount = %<nSamps>;
+        while (sampCount--) {
+          if (%<LibBlockDWork(COUNT, "", "", 0)> > 0) {
+            if (%<LibBlockDWork(COUNT, "", "", 0)> == 1) {
+              *y++ = %<LibBlockParameter(ZERO_ONE_VAL, "", "", 1)>;
+            } else {
+              *y++ = %<LibBlockParameter(ZERO_ONE_VAL, "", "", 0)>;
+            }
+            %<LibBlockDWork(COUNT, "", "", 0)>--;
+          } else {
+            *y++ = %<LibBlockParameter(ZERO_ONE_VAL, "", "", 0)>;
+          }
+        }
+      }
+    %else
+      {
+        int32_T *count = %<LibBlockDWorkAddr(COUNT, "", "", 0)>;
+        %<outType> *y = %<LibBlockOutputSignalAddr(OUTPORT, "", "", 0)>;
+        int_T chanCount = %<nChans>;
+        %if (nSamps > 1)
+          int_T sampCount;
+        %endif
+
+        while (chanCount--) {  %% Begin channel loop
+          %if (nSamps > 1)
+            sampCount = %<nSamps>;
+            while (sampCount--) {   %% Begin sample loop
+          %endif
+            if (*count > 0) {
+              if (*count == 1) {
+                *y++ = %<LibBlockParameter(ZERO_ONE_VAL, "1", "", 0)>;
+              } else {
+                *y++ = %<LibBlockParameter(ZERO_ONE_VAL, "0", "", 0)>;
+              }
+              (*count)--;
+            } else {
+              *y++ = %<LibBlockParameter(ZERO_ONE_VAL, "0", "", 0)>;
+            }
+            %if (nSamps > 1)
+            }                      %% End sample loop
+          %endif
+          count++;
+        }                       %% End channel loop
+      }
+    %endif
+    
+%endfunction
+  
+%% [EOF] sdspimpgen2.tlc

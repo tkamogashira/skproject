@@ -1,0 +1,51 @@
+-------HB7 HEADPHONE BUFFER------------
+
+When the HB7 is driven at too high a Voltage, it 
+is overloaded: the sound disappears intermittently.
+There is a hard maximum to the current the HB7 can produce:
+Imax = 0.175 mA, (derived from specs 32 Ohm ~ 1 W).
+When the Gain setting is 0 dB (recommended, see below),
+this corresponds to a max input Voltage  Vmax = Imax*R, 
+with R loudspeaker impedance. Therefore:
+
+  Rspeaker RMS Vmax
+  ----------------
+   4 Ohm    0.7 V
+   8 Ohm    1.4 V
+  10 Ohm    1.75 V
+----------------
+
+To ensure staying in this range, it is best to permanently
+connect a Voltage divider ("attenuator") to the HB7 input, and
+to set the HB7 Gain to 0 dB.  The alternative solution, setting 
+the Gain to -15 dB, produces much more distortion at high 
+input Voltage. 
+
+Using a proper Voltage divider allows you to use the full 
+10 V range of input Voltages from RX6, RP2, etc.
+A Voltage divider with resistances r and R realizes an
+attenuation factor of r/(R+r):
+
+           R
+      o--/\/\/---|---------o
+                 |
+    Vin          /       Vout = Vin * r/(R+r)
+              r  \
+                 /
+                 |
+      o----------|----------o
+
+Note that the input impedance of the HB7 is 10 kOhm, so 
+when using an external resistance of r kOhm, its 
+effective value is r' = 10*r/(r+10) kOhm.
+
+
+          min Atten.         
+Rspeaker  Ampl factor   Atten (dB)
+--------------------------------
+ 4 Ohm      10.5 x        21 dB
+ 8 Ohm       5.5 x        15 dB
+10 Ohm       4.5 x        13 dB
+--------------------------------
+
+

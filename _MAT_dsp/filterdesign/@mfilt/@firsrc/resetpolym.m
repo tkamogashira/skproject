@@ -1,0 +1,13 @@
+function resetpolym(Hm,num)
+%RESETPOLYM Reset the polyphase matrix.
+
+%   Author: R. Losada
+%   Copyright 1999-2002 The MathWorks, Inc.
+
+
+R = Hm.RateChangeFactors;
+
+P = firpolyphase(num, R(1));
+
+Hm.PolyphaseMatrix = P;
+

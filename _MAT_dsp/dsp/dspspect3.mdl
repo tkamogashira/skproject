@@ -1,0 +1,2399 @@
+Library {
+  Name			  "dspspect3"
+  Version		  8.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "US-ASCII"
+  RequirementInfo	  "9"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Active"
+  ForwardingTableString	  "||__slOldName__||dspspect3/Short-Time FFT||__slNewName__||dspspect3/Periodogram"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [12.0, 45.0, 314.0, 570.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[270.0, 401.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
+      }
+    }
+  }
+  Created		  "Tue Jun 09 09:05:28 1998"
+  Creator		  "don"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "jibrahim"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Sep 03 08:38:03 2013"
+  RTWModifiedTimeStamp	  300098280
+  ModelVersionFormat	  "1.%<AutoIncrement:294>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "d"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  CovEnableCumulative	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      6
+      Version		      "1.13.1"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  7
+	  Version		  "1.13.1"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  8
+	  Version		  "1.13.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  9
+	  Version		  "1.13.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  10
+	  Version		  "1.13.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "Warning"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  11
+	  Version		  "1.13.1"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  12
+	  Version		  "1.13.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  13
+	  Version		  "1.13.1"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  14
+	  Version		  "1.13.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      15
+	      Version		      "1.13.1"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      16
+	      Version		      "1.13.1"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PurelyIntegerCode"
+		Cell			"PortableWordSizes"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 360, 285, 1240, 915 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      MATLABSystem
+      System		      "<Enter System Class Name>"
+      SimulateUsing	      "Code generation"
+    }
+    Block {
+      BlockType		      Math
+      Operator		      "exp"
+      OutputSignalType	      "auto"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
+      AlgorithmType	      "Newton-Raphson"
+      Iterations	      "3"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+  }
+  System {
+    Name		    "dspspect3"
+    Location		    [12, 45, 326, 615]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "8"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Burg Method"
+      SID		      "1"
+      Ports		      [1, 1]
+      Position		      [130, 143, 210, 197]
+      ZOrder		      -1
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		17
+	$ClassName		"Simulink.Mask"
+	Type			"Burg Method"
+	Description		"Power spectral density estimation via Burg's method."
+	Help			"eval('blocksethelp');"
+	Initialization		"[xe,x,y]=dspblkburgmeth2('icon');\ndspblkburgmeth2('init',inheritOrd,...\n    inheritFFT,inheritTs,T"
+	"s);\n"
+	SelfModifiable		"on"
+	Display			"text(-3,1.2,'Burg'); plot(-xe,0,xe,1.3,x,y)"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  6
+	  Object {
+	    $ObjectID		    18
+	    Type		    "checkbox"
+	    Name		    "inheritOrd"
+	    Prompt		    "Inherit estimation order from input dimensions"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkburgmeth2('dynamic')"
+	  }
+	  Object {
+	    $ObjectID		    19
+	    Type		    "edit"
+	    Name		    "ord"
+	    Prompt		    "Estimation order:"
+	    Value		    "6"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    20
+	    Type		    "checkbox"
+	    Name		    "inheritFFT"
+	    Prompt		    "Inherit FFT length from estimation order"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkburgmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    21
+	    Type		    "edit"
+	    Name		    "fftsize"
+	    Prompt		    "FFT length:"
+	    Value		    "256"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    22
+	    Type		    "checkbox"
+	    Name		    "inheritTs"
+	    Prompt		    "Inherit sample time from input"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkburgmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    23
+	    Type		    "edit"
+	    Name		    "Ts"
+	    Prompt		    "Sample time of original time series:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Burg Method"
+	Location		[12, 45, 369, 825]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"6"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "1:1"
+	  Position		  [15, 150, 35, 170]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Burg AR\nEstimator"
+	  SID			  "1:2"
+	  Ports			  [1, 2]
+	  Position		  [70, 37, 135, 88]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.405"
+	  SourceBlock		  "dspparest3/Burg AR\nEstimator"
+	  SourceType		  "Burg AR Estimator"
+	  fcn			  "A"
+	  inheritOrder		  off
+	  ord			  "ord"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Period To\nSample Time"
+	  SID			  "1:3"
+	  Ports			  [1, 1]
+	  Position		  [200, 140, 250, 180]
+	  ZOrder		  -3
+	  LibraryVersion	  "1.82"
+	  SourceBlock		  "dspmisc/Frame Period To\nSample Time"
+	  SourceType		  "SubSystem"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Magnitude\nFFT"
+	  SID			  "1:4"
+	  Ports			  [1, 1]
+	  Position		  [175, 24, 255, 76]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.293"
+	  SourceBlock		  "dspspect3/Magnitude\nFFT"
+	  SourceType		  "Magnitude FFT"
+	  ContentPreviewEnabled	  off
+	  mag_or_magsq		  "Magnitude squared"
+	  FFTImplementation	  "Auto"
+	  fftLenInherit		  off
+	  fftsize		  "fftsize"
+	  WrapInput		  on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "1:5"
+	  Ports			  [3, 1]
+	  Position		  [300, 23, 340, 187]
+	  ZOrder		  -5
+	  Inputs		  "/**"
+	  RndMeth		  "Floor"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "1:6"
+	  Position		  [360, 95, 380, 115]
+	  ZOrder		  -6
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    ZOrder		    2
+	    DstBlock		    "Burg AR\nEstimator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Frame Period To\nSample Time"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Burg AR\nEstimator"
+	  SrcPort		  1
+	  DstBlock		  "Magnitude\nFFT"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Magnitude\nFFT"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Burg AR\nEstimator"
+	  SrcPort		  2
+	  Points		  [10, 0; 0, 30]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Frame Period To\nSample Time"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Covariance Method"
+      SID		      "2"
+      Ports		      [1, 1]
+      Position		      [20, 227, 100, 283]
+      ZOrder		      -2
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		24
+	$ClassName		"Simulink.Mask"
+	Type			"Covariance Method"
+	Description		"Power spectral density estimation via the covariance method."
+	Help			"eval('blocksethelp');"
+	Initialization		"[xe,x,y]=dspblkcovarmeth2('icon',ord,fftsize);\ndspblkcovarmeth2('init',inheritFFT,inheritTs,Ts);\n"
+	SelfModifiable		"on"
+	Display			"text(-3,1.2,'Cov AR'); plot(-xe,0,xe,1.3,x,y)"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    25
+	    Type		    "edit"
+	    Name		    "ord"
+	    Prompt		    "Estimation order:"
+	    Value		    "6"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    26
+	    Type		    "checkbox"
+	    Name		    "inheritFFT"
+	    Prompt		    "Inherit FFT length from estimation order"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkcovarmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    27
+	    Type		    "edit"
+	    Name		    "fftsize"
+	    Prompt		    "FFT length:"
+	    Value		    "256"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    28
+	    Type		    "checkbox"
+	    Name		    "inheritTs"
+	    Prompt		    "Inherit sample time from input"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkcovarmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    29
+	    Type		    "edit"
+	    Name		    "Ts"
+	    Prompt		    "Sample time of original time series:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Covariance Method"
+	Location		[272, 182, 720, 623]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"6"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "2:1"
+	  Position		  [20, 140, 40, 160]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Covariance AR\nEstimator"
+	  SID			  "2:2"
+	  Ports			  [1, 2]
+	  Position		  [70, 28, 145, 77]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.405"
+	  SourceBlock		  "dspparest3/Covariance AR\nEstimator"
+	  SourceType		  "Covariance AR Estimator"
+	  ContentPreviewEnabled	  off
+	  P			  "ord"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Period To\nSample Time"
+	  SID			  "2:3"
+	  Ports			  [1, 1]
+	  Position		  [165, 129, 210, 171]
+	  ZOrder		  -3
+	  LibraryVersion	  "1.82"
+	  SourceBlock		  "dspmisc/Frame Period To\nSample Time"
+	  SourceType		  "SubSystem"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Magnitude\nFFT"
+	  SID			  "2:4"
+	  Ports			  [1, 1]
+	  Position		  [185, 14, 265, 66]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.293"
+	  SourceBlock		  "dspspect3/Magnitude\nFFT"
+	  SourceType		  "Magnitude FFT"
+	  ContentPreviewEnabled	  off
+	  mag_or_magsq		  "Magnitude squared"
+	  FFTImplementation	  "Auto"
+	  fftLenInherit		  off
+	  fftsize		  "fftsize"
+	  WrapInput		  on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "2:5"
+	  Ports			  [3, 1]
+	  Position		  [305, 15, 335, 175]
+	  ZOrder		  -5
+	  ShowName		  off
+	  Inputs		  "/**"
+	  RndMeth		  "Floor"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "2:6"
+	  Position		  [360, 85, 380, 105]
+	  ZOrder		  -6
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Magnitude\nFFT"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Covariance AR\nEstimator"
+	  SrcPort		  1
+	  DstBlock		  "Magnitude\nFFT"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Covariance AR\nEstimator"
+	  SrcPort		  2
+	  Points		  [20, 0; 0, 30]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    ZOrder		    6
+	    DstBlock		    "Covariance AR\nEstimator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    7
+	    DstBlock		    "Frame Period To\nSample Time"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Frame Period To\nSample Time"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
+      BlockType		      MATLABSystem
+      Name		      "Discrete\nTransfer Function\nEstimator"
+      SID		      "8"
+      Ports		      [2, 1]
+      Position		      [20, 314, 125, 376]
+      ZOrder		      2
+      System		      "dsp.TransferFunctionEstimator"
+      MaskType		      "dsp.TransferFunctionEstimator"
+      MaskDisplay	      "disp(['Discrete' char(10) 'Transfer Function' char(10) 'Estimator']);\nport_label('input',1,'"
+      "x');\nport_label('input',2,'y');\nport_label('output',1,'H');\n"
+      SpectralAverages	      "8"
+      FFTLengthSource	      "Auto"
+      FFTLength		      "128"
+      Window		      "Hann"
+      SidelobeAttenuation     "60"
+      FrequencyRange	      "twosided"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Magnitude\nFFT"
+      SID		      "3"
+      Ports		      [1, 1]
+      Position		      [130, 54, 210, 106]
+      ZOrder		      -3
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		30
+	$ClassName		"Simulink.Mask"
+	Type			"Magnitude FFT"
+	Description		"Compute magnitude or magnitude-squared FFT of the input, with optional zero padding."
+	Help			"eval('blocksethelp');"
+	Initialization		"str=dspblkmagfft2('init');\ndspblkmagfft2('update');"
+	SelfModifiable		"on"
+	Display			"disp(str,'texmode','on');"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    31
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Magnitude squared"
+	      Cell		      "Magnitude"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "mag_or_magsq"
+	    Prompt		    "Output:"
+	    Value		    "Magnitude squared"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    32
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Auto"
+	      Cell		      "Radix-2"
+	      Cell		      "FFTW"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "FFTImplementation"
+	    Prompt		    "FFT implementation:"
+	    Value		    "Auto"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    33
+	    Type		    "checkbox"
+	    Name		    "fftLenInherit"
+	    Prompt		    "Inherit FFT length from input dimensions"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkmagfft2;"
+	  }
+	  Object {
+	    $ObjectID		    34
+	    Type		    "edit"
+	    Name		    "fftsize"
+	    Prompt		    "FFT length:"
+	    Value		    "256"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    35
+	    Type		    "checkbox"
+	    Name		    "WrapInput"
+	    Prompt		    "Wrap input data when FFT length is shorter than input length"
+	    Value		    "on"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Magnitude\nFFT"
+	Location		[12, 45, 369, 825]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"5"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "3:1"
+	  Position		  [15, 38, 45, 52]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "FFT"
+	  SID			  "3:3"
+	  Ports			  [1, 1]
+	  Position		  [80, 28, 120, 62]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.478"
+	  SourceBlock		  "dspxfrm3/FFT"
+	  SourceType		  "FFT"
+	  CompMethod		  "Table lookup"
+	  TableOpt		  "NEW"
+	  TableOptActive	  "Speed"
+	  BitRevOrder		  off
+	  InheritFFTLength	  off
+	  FFTLength		  "fftsize"
+	  WrapInput		  on
+	  RowConvenienceOn	  off
+	  FFTImplementation	  "Auto"
+	  additionalParams	  off
+	  SkipNorm		  off
+	  allowOverrides	  on
+	  firstCoeffMode	  "Same word length as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  firstCoeffDataTypeStr	  "Inherit: Same word length as input"
+	  firstCoeffLastDataTypeStr "Inherit: Same word length as input"
+	  outputMode		  "Inherit via internal rule"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  outputDataTypeStr	  "Inherit: Inherit via internal rule"
+	  outputLastDataTypeStr	  "Inherit: Inherit via internal rule"
+	  outputMin		  "[]"
+	  outputMax		  "[]"
+	  accumMode		  "Inherit via internal rule"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  accumDataTypeStr	  "Inherit: Inherit via internal rule"
+	  accumLastDataTypeStr	  "Inherit: Inherit via internal rule"
+	  prodOutputMode	  "Inherit via internal rule"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  prodOutputDataTypeStr	  "Inherit: Inherit via internal rule"
+	  prodOutputLastDataTypeStr "Inherit: Inherit via internal rule"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  LockScale		  off
+	}
+	Block {
+	  BlockType		  Math
+	  Name			  "Magnitude\nSquared"
+	  SID			  "3:4"
+	  Ports			  [1, 1]
+	  Position		  [160, 30, 190, 60]
+	  ZOrder		  -3
+	  Operator		  "magnitude^2"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "3:5"
+	  Position		  [235, 38, 265, 52]
+	  ZOrder		  -4
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Magnitude\nSquared"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "FFT"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "FFT"
+	  SrcPort		  1
+	  DstBlock		  "Magnitude\nSquared"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Modified Covariance\nMethod"
+      SID		      "4"
+      Ports		      [1, 1]
+      Position		      [130, 228, 210, 282]
+      ZOrder		      -4
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		36
+	$ClassName		"Simulink.Mask"
+	Type			"Modified Covariance Method"
+	Description		"Power spectral density estimation via the modified covariance method."
+	Help			"eval('blocksethelp');"
+	Initialization		"[xe,x,y]=dspblkmodcovmeth2('icon',ord, fftsize);\ndspblkmodcovmeth2('init',inheritFFT,inheritTs,Ts);"
+	"\n"
+	SelfModifiable		"on"
+	Display			"text(-3,1.2,'MCov AR'); plot(-xe,0,xe,1.3,x,y)"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    37
+	    Type		    "edit"
+	    Name		    "ord"
+	    Prompt		    "Estimation order:"
+	    Value		    "6"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    38
+	    Type		    "checkbox"
+	    Name		    "inheritFFT"
+	    Prompt		    "Inherit FFT length from estimation order"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkmodcovmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    39
+	    Type		    "edit"
+	    Name		    "fftsize"
+	    Prompt		    "FFT length:"
+	    Value		    "256"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    40
+	    Type		    "checkbox"
+	    Name		    "inheritTs"
+	    Prompt		    "Inherit sample time from input"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkmodcovmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    41
+	    Type		    "edit"
+	    Name		    "Ts"
+	    Prompt		    "Sample time of original time series:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Modified Covariance\nMethod"
+	Location		[12, 154, 483, 606]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"6"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "4:1"
+	  Position		  [15, 140, 35, 160]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Period To\nSample Time"
+	  SID			  "4:2"
+	  Ports			  [1, 1]
+	  Position		  [165, 129, 210, 171]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.82"
+	  SourceBlock		  "dspmisc/Frame Period To\nSample Time"
+	  SourceType		  "SubSystem"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Magnitude\nFFT"
+	  SID			  "4:3"
+	  Ports			  [1, 1]
+	  Position		  [195, 14, 275, 66]
+	  ZOrder		  -3
+	  LibraryVersion	  "1.293"
+	  SourceBlock		  "dspspect3/Magnitude\nFFT"
+	  SourceType		  "Magnitude FFT"
+	  ContentPreviewEnabled	  off
+	  mag_or_magsq		  "Magnitude squared"
+	  FFTImplementation	  "Auto"
+	  fftLenInherit		  off
+	  fftsize		  "fftsize"
+	  WrapInput		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Modified Covariance\nAR Estimator"
+	  SID			  "4:4"
+	  Ports			  [1, 2]
+	  Position		  [70, 29, 145, 76]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.405"
+	  SourceBlock		  "dspparest3/Modified Covariance\nAR Estimator"
+	  SourceType		  "Modified Covariance AR Estimator"
+	  ContentPreviewEnabled	  off
+	  P			  "ord"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "4:5"
+	  Ports			  [3, 1]
+	  Position		  [325, 12, 355, 178]
+	  ZOrder		  -5
+	  ShowName		  off
+	  Inputs		  "/**"
+	  RndMeth		  "Floor"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "4:6"
+	  Position		  [385, 85, 405, 105]
+	  ZOrder		  -6
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    ZOrder		    2
+	    DstBlock		    "Modified Covariance\nAR Estimator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Frame Period To\nSample Time"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Modified Covariance\nAR Estimator"
+	  SrcPort		  2
+	  Points		  [20, 0; 0, 30]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Modified Covariance\nAR Estimator"
+	  SrcPort		  1
+	  DstBlock		  "Magnitude\nFFT"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Magnitude\nFFT"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Frame Period To\nSample Time"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Periodogram"
+      SID		      "5"
+      Ports		      [1, 1]
+      Position		      [20, 54, 100, 106]
+      ZOrder		      -5
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		42
+	$ClassName		"Simulink.Mask"
+	Type			"Periodogram"
+	Description		"Power spectral density and mean-square power spectrum estimation via the periodogram method and Welch's"
+	" averaged, modified periodogram method."
+	Help			"eval('blocksethelp');"
+	Initialization		"[xe,x,y,iconStr]=dspblkshorttimefft2('icon',navg);\ndspblkshorttimefft2('init',measurement,...\n    "
+	"inheritFFT,inheritTs,navg,Ts);\n\n"
+	SelfModifiable		"on"
+	Display			"text(-3,1.15,iconStr);\nplot((-xe),0,xe,1.3,x,y)\n"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  11
+	  Object {
+	    $ObjectID		    43
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Power spectral density"
+	      Cell		      "Mean-square spectrum"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "measurement"
+	    Prompt		    "Measurement:"
+	    Value		    "Power spectral density"
+	    Tunable		    "off"
+	    Callback		    "dspblkshorttimefft2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    44
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      9
+	      Cell		      "Bartlett"
+	      Cell		      "Blackman"
+	      Cell		      "Boxcar"
+	      Cell		      "Chebyshev"
+	      Cell		      "Hamming"
+	      Cell		      "Hann"
+	      Cell		      "Hanning"
+	      Cell		      "Kaiser"
+	      Cell		      "Triang"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "wintype"
+	    Prompt		    "Window:"
+	    Value		    "Hamming"
+	    Callback		    "dspblkshorttimefft2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    45
+	    Type		    "edit"
+	    Name		    "Rs"
+	    Prompt		    "Stopband attenuation in dB:"
+	    Value		    "50"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    46
+	    Type		    "edit"
+	    Name		    "beta"
+	    Prompt		    "Beta:"
+	    Value		    "5"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    47
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Symmetric"
+	      Cell		      "Periodic"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "winsamp"
+	    Prompt		    "Window sampling:"
+	    Value		    "Symmetric"
+	  }
+	  Object {
+	    $ObjectID		    48
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Auto"
+	      Cell		      "Radix-2"
+	      Cell		      "FFTW"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "FFTImplementation"
+	    Prompt		    "FFT implementation:"
+	    Value		    "Auto"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    49
+	    Type		    "checkbox"
+	    Name		    "inheritFFT"
+	    Prompt		    "Inherit FFT length from input dimensions"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkshorttimefft2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    50
+	    Type		    "edit"
+	    Name		    "fftsize"
+	    Prompt		    "FFT length:"
+	    Value		    "256"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    51
+	    Type		    "edit"
+	    Name		    "navg"
+	    Prompt		    "Number of spectral averages:"
+	    Value		    "4"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    52
+	    Type		    "checkbox"
+	    Name		    "inheritTs"
+	    Prompt		    "Inherit sample time from input"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkshorttimefft2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    53
+	    Type		    "edit"
+	    Name		    "Ts"
+	    Prompt		    "Sample time of original time series:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Periodogram"
+	Location		[12, 45, 369, 825]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"9"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "5:1"
+	  Position		  [20, 178, 50, 192]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Digital Filter"
+	  SID			  "5:2"
+	  Ports			  [1, 1]
+	  Position		  [380, 37, 455, 73]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.321"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag0"
+	  SourceBlock		  "dsparch4/Digital Filter"
+	  SourceType		  "Digital Filter"
+	  TypePopup		  "FIR (all zeros)"
+	  IIRFiltStruct		  "Direct form II transposed"
+	  AllPoleFiltStruct	  "Direct form"
+	  FIRFiltStruct		  "Direct form"
+	  CoeffSource		  "Specify via dialog"
+	  NumCoeffs		  "ones(navg,1)/navg"
+	  DenCoeffs		  "[1 0.1]"
+	  BiQuadCoeffs		  "[1 0.3 0.4 1 0.1 0.2]"
+	  LatticeCoeffs		  "[0.2 0.4]"
+	  denIgnore		  on
+	  FiltPerSampPopup	  "One filter per frame"
+	  IC			  "0"
+	  ICnum			  "0"
+	  ICden			  "0"
+	  additionalParams	  off
+	  allowOverrides	  on
+	  showCoeff		  off
+	  firstCoeffMode	  "Same word length as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  secondCoeffMode	  "Same as numerator"
+	  secondCoeffWordLength	  "16"
+	  secondCoeffFracLength	  "15"
+	  thirdCoeffMode	  "Same as input"
+	  thirdCoeffWordLength	  "16"
+	  thirdCoeffFracLength	  "15"
+	  showOut		  off
+	  outputMode		  "Same as accumulator"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  showAcc		  off
+	  accumMode		  "Same as product output"
+	  accumWordLength	  "32"
+	  accumFracLength	  "30"
+	  showMpy		  off
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "32"
+	  prodOutputFracLength	  "30"
+	  showMem		  off
+	  memoryMode		  "Same as accumulator"
+	  memoryWordLength	  "16"
+	  memoryFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  ScaleValues		  "1"
+	  scaleValueFracLength	  "14"
+	  tapSumMode		  "Same as input"
+	  tapSumWordLength	  "32"
+	  tapSumFracLength	  "30"
+	  stageIOMode		  "Same as input"
+	  stageIOWordLength	  "16"
+	  stageInFracLength	  "15"
+	  stageOutFracLength	  "15"
+	  LockScale		  off
+	  FilterSource		  "Specify via dialog"
+	  dfiltObjectName	  "dfilt.dffir([1 2 1])"
+	  multiplicandMode	  "Same as output"
+	  multiplicandWordLength  "32"
+	  multiplicandFracLength  "30"
+	  InputProcessing	  "Elements as channels (sample based)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Error If Not\nFloating-Point"
+	  SID			  "5:3"
+	  Ports			  [1, 1]
+	  Position		  [75, 84, 145, 126]
+	  ZOrder		  -3
+	  LibraryVersion	  "1.503"
+	  SourceBlock		  "dspsigattribs/Check Signal\nAttributes"
+	  SourceType		  "Check Signal Attributes"
+	  ContentPreviewEnabled	  off
+	  SigAttribCheckMethod	  "Does not match attributes exactly"
+	  Complexity		  "Ignore"
+	  Frame			  "Ignore"
+	  DimsCheckMethod	  "Ignore"
+	  Dimensions		  "1-D"
+	  DatatypeCheckMethod	  "Is..."
+	  DatatypeGeneral	  "Floating-point"
+	  DtypeFloatSpecific	  "Any floating-point"
+	  DtypeFixedSpecific	  "Any fixed-point"
+	  DtypeIntSpecific	  "Any integer"
+	  SampleMode		  "Ignore"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Magnitude\nFFT"
+	  SID			  "5:4"
+	  Ports			  [1, 1]
+	  Position		  [285, 29, 365, 81]
+	  ZOrder		  -4
+	  LibraryVersion	  "1.293"
+	  SourceBlock		  "dspspect3/Magnitude\nFFT"
+	  SourceType		  "Magnitude FFT"
+	  ContentPreviewEnabled	  off
+	  mag_or_magsq		  "Magnitude squared"
+	  FFTImplementation	  "Auto"
+	  fftLenInherit		  off
+	  fftsize		  "fftsize"
+	  WrapInput		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Normalization\nFor PSD"
+	  SID			  "5:5"
+	  Ports			  [1, 1]
+	  Position		  [380, 96, 430, 144]
+	  ZOrder		  -5
+	  LibraryVersion	  "1.82"
+	  SourceBlock		  "dspmisc/Normalization\nFor PSD"
+	  SourceType		  "SubSystem"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Periodogram -\nFrame Period\nTo Sample Time"
+	  SID			  "5:6"
+	  Ports			  [1, 1]
+	  Position		  [255, 160, 305, 210]
+	  ZOrder		  -6
+	  LibraryVersion	  "1.82"
+	  SourceBlock		  "dspmisc/Periodogram -\nFrame Period\nTo Sample Time"
+	  SourceType		  "SubSystem"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "5:7"
+	  Ports			  [3, 1]
+	  Position		  [505, 24, 545, 216]
+	  ZOrder		  -7
+	  Inputs		  "***"
+	  RndMeth		  "Floor"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Window"
+	  SID			  "5:8"
+	  Ports			  [1, 2]
+	  Position		  [175, 77, 255, 133]
+	  ZOrder		  -8
+	  LibraryVersion	  "1.733"
+	  SourceBlock		  "dspsigops/Window\nFunction"
+	  SourceType		  "Window Function"
+	  winmode		  "Generate and apply window"
+	  wintype		  "Hamming"
+	  sampmode		  "Continuous"
+	  samptime		  "1"
+	  N			  "64"
+	  Rs			  "Rs"
+	  beta			  "beta"
+	  winsamp		  "Symmetric"
+	  UserWindow		  "hamming"
+	  OptParams		  off
+	  UserParams		  "{1.0}"
+	  RowConvenienceOn	  off
+	  additionalParams	  on
+	  allowOverrides	  on
+	  dataType		  "double"
+	  isSigned		  on
+	  wordLen		  "16"
+	  udDataType		  "sfix(16)"
+	  fracBitsMode		  "Best precision"
+	  numFracBits		  "15"
+	  firstCoeffMode	  "Same word length as input"
+	  firstCoeffWordLength	  "16"
+	  firstCoeffFracLength	  "15"
+	  prodOutputMode	  "Same as input"
+	  prodOutputWordLength	  "16"
+	  prodOutputFracLength	  "15"
+	  outputMode		  "Same as input"
+	  outputWordLength	  "16"
+	  outputFracLength	  "15"
+	  roundingMode		  "Floor"
+	  overflowMode		  off
+	  LockScale		  off
+	  numSidelobes		  "4"
+	  sidelobeLevel		  "-30"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "5:9"
+	  Position		  [570, 113, 600, 127]
+	  ZOrder		  -9
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  Branch {
+	    ZOrder		    2
+	    DstBlock		    "Error If Not\nFloating-Point"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Periodogram -\nFrame Period\nTo Sample Time"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Magnitude\nFFT"
+	  SrcPort		  1
+	  DstBlock		  "Digital Filter"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Window"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -35]
+	  DstBlock		  "Magnitude\nFFT"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Digital Filter"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Normalization\nFor PSD"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "Window"
+	  SrcPort		  2
+	  DstBlock		  "Normalization\nFor PSD"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "Error If Not\nFloating-Point"
+	  SrcPort		  1
+	  DstBlock		  "Window"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Periodogram -\nFrame Period\nTo Sample Time"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Yule-Walker\nMethod"
+      SID		      "6"
+      Ports		      [1, 1]
+      Position		      [20, 143, 100, 197]
+      ZOrder		      -6
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		54
+	$ClassName		"Simulink.Mask"
+	Type			"Yule-Walker Method"
+	Description		"Power spectral density estimation via Yule-Walker's method."
+	Help			"eval('blocksethelp');"
+	Initialization		"[xe,x,y]=dspblkyulewalkmeth2('icon');\ndspblkyulewalkmeth2('init',inheritOrd,...\n    inheritFFT,inh"
+	"eritTs, Ts);\n"
+	SelfModifiable		"on"
+	Display			"text(-3,1.2,'Yule AR'); plot(-xe,0,xe,1.3,x,y)"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  6
+	  Object {
+	    $ObjectID		    55
+	    Type		    "checkbox"
+	    Name		    "inheritOrd"
+	    Prompt		    "Inherit estimation order from input dimensions"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkyulewalkmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    56
+	    Type		    "edit"
+	    Name		    "ord"
+	    Prompt		    "Estimation order:"
+	    Value		    "6"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    57
+	    Type		    "checkbox"
+	    Name		    "inheritFFT"
+	    Prompt		    "Inherit FFT length from estimation order"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkyulewalkmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    58
+	    Type		    "edit"
+	    Name		    "fftsize"
+	    Prompt		    "FFT length:"
+	    Value		    "256"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    59
+	    Type		    "checkbox"
+	    Name		    "inheritTs"
+	    Prompt		    "Inherit sample time from input"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Callback		    "dspblkyulewalkmeth2('dynamic');"
+	  }
+	  Object {
+	    $ObjectID		    60
+	    Type		    "edit"
+	    Name		    "Ts"
+	    Prompt		    "Sample time of original time series:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Yule-Walker\nMethod"
+	Location		[272, 129, 723, 562]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"6"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "6:1"
+	  Position		  [25, 130, 45, 150]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Frame Period To\nSample Time"
+	  SID			  "6:2"
+	  Ports			  [1, 1]
+	  Position		  [165, 119, 210, 161]
+	  ZOrder		  -2
+	  LibraryVersion	  "1.82"
+	  SourceBlock		  "dspmisc/Frame Period To\nSample Time"
+	  SourceType		  "SubSystem"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Magnitude\nFFT"
+	  SID			  "6:3"
+	  Ports			  [1, 1]
+	  Position		  [175, 14, 255, 66]
+	  ZOrder		  -3
+	  LibraryVersion	  "1.293"
+	  SourceBlock		  "dspspect3/Magnitude\nFFT"
+	  SourceType		  "Magnitude FFT"
+	  ContentPreviewEnabled	  off
+	  mag_or_magsq		  "Magnitude squared"
+	  FFTImplementation	  "Auto"
+	  fftLenInherit		  off
+	  fftsize		  "fftsize"
+	  WrapInput		  on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "6:4"
+	  Ports			  [3, 1]
+	  Position		  [295, 16, 330, 164]
+	  ZOrder		  -4
+	  ShowName		  off
+	  Inputs		  "/**"
+	  RndMeth		  "Floor"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Yule-Walker AR\nEstimator"
+	  SID			  "6:5"
+	  Ports			  [1, 2]
+	  Position		  [75, 28, 150, 77]
+	  ZOrder		  -5
+	  LibraryVersion	  "1.405"
+	  SourceBlock		  "dspparest3/Yule-Walker AR\nEstimator"
+	  SourceType		  "Yule-Walker AR Estimator"
+	  ContentPreviewEnabled	  off
+	  ywArOutType		  "A"
+	  inheritOrder		  off
+	  ord			  "ord"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "6:6"
+	  Position		  [360, 80, 380, 100]
+	  ZOrder		  -6
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "0"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Yule-Walker AR\nEstimator"
+	  SrcPort		  1
+	  DstBlock		  "Magnitude\nFFT"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Magnitude\nFFT"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Yule-Walker AR\nEstimator"
+	  SrcPort		  2
+	  Points		  [0, 25]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  Points		  [10, 0]
+	  Branch {
+	    ZOrder		    6
+	    DstBlock		    "Yule-Walker AR\nEstimator"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    7
+	    DstBlock		    "Frame Period To\nSample Time"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Frame Period To\nSample Time"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  3
+	}
+      }
+    }
+    Annotation {
+      SID		      "7"
+      Name		      "Power Spectrum Estimation"
+      Position		      [115, 29, 302, 50]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -1
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    L (   8    (     @         %    \"     $    !     0         %  0 %@    $   !8    :&%S26"
+    "YH97)I=&5D3W!T:6]N     &9I;'1E<D-O;G-T<G5C=&]R      !F:6QT97)#;VYS=')U8W1O<D%R9W, 24-$871A                      X "
+    "   P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   $     &    \"     0         !0    @  "
+    "  !    \"P    $         $     L   !D9FEL=\"YD9F9I<@      #@   (     &    \"     $         !0    @    !     0    $ "
+    "        #@   %     &    \"     8         !0    @    $     0    $         \"0   \"            #0/P       - _       "
+    " T#\\       #0/PX    0 0  !@    @    \"          4    (     0    $    !          4 !  &     0   !(   !)0VYU;0!)0V1"
+    "E;@!)0P             .    .     8    (    !@         %    \"     $    !     0         )    \"               #@   #@"
+    "    &    \"     8         !0    @    !     0    $         \"0    @               X    X    !@    @    &          4"
+    "    (     0    $    !          D    (               "
+  }
+}

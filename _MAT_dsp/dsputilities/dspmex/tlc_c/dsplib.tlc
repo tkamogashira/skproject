@@ -1,0 +1,10 @@
+%%
+%% dsplib.tlc - Helper functions for DSP System Toolbox code generation
+%%
+%% Copyright 1995-2010 The MathWorks, Inc.
+%%  
+
+%addincludepath "../../../../shared/dsp/vision/matlab/utilities/mex/tlc_c"
+%include "spclib.tlc"
+
+%% [EOF] dsplib.tlc

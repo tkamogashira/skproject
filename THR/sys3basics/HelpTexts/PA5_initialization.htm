@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html><head><title>Transients on startup.</title>
+
+
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<link rel="stylesheet" href="PA5_initialization_files/default_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../../default.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+p.whs1 { font-weight:bold; }
+p.whs2 { font-weight:bold; color:#ffffff; background-color:#003f7f; }
+ol.whs3 { list-style:decimal; }
+div.whs4 { width:100%; }
+img_whs5 { border:none; float:none; width:373px; height:5px; border-style:none; }
+p.whs6 { color:#000080; letter-spacing:0.1pt; }
+-->
+</style><script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="PA5_initialization_files/whtopic.js"></script><script type="text/javascript" language="javascript1.2" src="PA5_initialization_files/whutils.js"></script><script type="text/javascript" language="javascript" src="PA5_initialization_files/whver.js"></script><script type="text/javascript" language="javascript1.2">
+    <!--
+    var linkedScrollbarStyle = "<link rel='stylesheet' href='../../wf_topics.css'>";
+    if( (!isTopicOnly()) &&(parent.gbFHPureHtml == null) )
+    {
+        document.write(linkedScrollbarStyle);
+    }
+    //-->
+</script></head><body><div id="scrollbarDIV" style="border-color: darkgray; border-width: 1px; border-left: 1px solid darkgray; border-right: 1px solid darkgray; left: 10px; width: 3px; position: absolute; top: 0px; height: 100%; background-color: lightgrey; visibility: hidden; z-index: 100;"></div>
+
+
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.addTocInfo)
+{
+addTocInfo("Hardware\nHB7\nTransients on startup.");
+addTocInfo("Hardware\nRPx\nTransients on startup. ");
+addTocInfo("Hardware\nTransients on startup.");
+
+  addShowButton();
+}
+if (window.setRelStartPage)
+{
+setRelStartPage("../../System3TechNotes.htm");
+
+	sendTopicLoaded();
+	autoSync(1);
+	sendSyncInfo();
+	sendAveInfo();
+	sendBgColorInfo();
+}
+//-->
+</script>
+<h1><span style="font-weight: bold;"><b>T</b></span>ransients on startup. </h1>
+
+<p><span style="font-weight: bold;"><b>Note #:</b></span> 0040</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-weight: bold;"><b>Product: </b></span>RPx</p>
+
+<p>&nbsp;</p>
+
+<p class="whs1">Version: <span style="font-weight: normal;">All</span></p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p><span style="font-weight: bold;"><b>Date Added:</b></span> &nbsp;8/16/02 
+ </p>
+
+<p>&nbsp;&nbsp;</p>
+
+<p class="whs2">Issue:</p>
+
+<p>&nbsp;</p>
+
+<p>The RPx devices generate a momentary transient (10V) on analog output 
+ channels when they are powered ON, when the hardware is reset, or when 
+ a circuit is loaded. When a transducers is connected to the RPx devices 
+ the transient can be heard as a brief pop or click. </p>
+
+<p>&nbsp;&nbsp;</p>
+
+<p class="whs2">Workaround:</p>
+
+<p>&nbsp;</p>
+
+<p>If you have a PA5 module, you can connect the RPx output to the transducers 
+ through the PA5 and follow the steps below to set the PA5 start-up attenuation 
+ setting to 120dB so that the noise is muted to the maximum. </p>
+
+<p>&nbsp;</p>
+
+<ol class="whs3" type="1">
+	
+	<li class="kadov-p"><p>Turn ON the PA5 and press the Select knob once.</p></li>
+	
+	<li class="kadov-p"><p>"Atten" should appear in the display 
+ screen. </p></li>
+	
+	<li class="kadov-p"><p>&nbsp;Rotate 
+ the knob until the value is set to 120.0, then press the Select knob to 
+ accept the value. </p></li>
+	
+	<li class="kadov-p"><p>&nbsp;Rotate 
+ the knob again until the display reads "Save PS", then press 
+ the Select knob once. </p></li>
+	
+	<li class="kadov-p"><p>"Preset-1" should appear in the display 
+ screen. Press the select knob again to accept the setting. &nbsp;</p></li>
+	
+	<li class="kadov-p"><p>"Saving" should appear in the display 
+ screen. </p></li>
+</ol>
+
+<p>&nbsp;</p>
+
+<p>If you do not have PA5, you can reduce the click noise by adjusting 
+ the gain setting on the external amplifier or by waiting until the circuit 
+ is loaded to the RPX device before connecting or turning on the external 
+ amplifier. </p>
+
+<p>&nbsp;</p>
+
+<div placeholder="" id="footer" class="whs4">
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+ <p>&nbsp;</p>
+ <p><img src="PA5_initialization_files/horiz_shadow_baby_thin.jpg" x-save-file="TRUE" x-save-method="compute-relative" class="img_whs5" border="0" height="5" width="373"></p>
+ <p class="whs6"><span style="color: rgb(127, 127, 255);"><font color="#7f7fff">Contact 
+ TDT Technical Support at </font></span>&nbsp;<a href="mailto:support@tdt.com" style="color: rgb(127, 127, 255); letter-spacing: 0.1pt;">support@tdt.com</a>&nbsp;<span style="color: rgb(127, 127, 255);"><font color="#7f7fff">or 
+ 386.462.9622.</font></span></p>
+</div>
+</body></html>

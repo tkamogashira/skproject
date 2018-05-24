@@ -1,0 +1,162 @@
+%% sdsptri2.tlc
+%% Abstract: extract lower/upper triangular part
+%%
+%% Copyright 1995-2008 The MathWorks, Inc.
+%%   
+
+%implements sdsptri2 "C"
+
+%% Function: BlockInstanceSetup ==============================================
+%%
+%function BlockInstanceSetup(block, system) void
+
+  %assign UPPER = 1
+  %assign LOWER = 2
+  %%
+  %assign INPORT    = 0
+  %assign OUTPORT   = 0
+  %assign extract   = CAST("Number", SFcnParamSettings.ExtractMode)
+  %%
+  %assign numDims   = LibBlockInputSignalNumDimensions(INPORT)
+  %assign dims      = LibBlockInputSignalDimensions(INPORT)
+  %assign cols      = (numDims == 2) ? dims[1] : 1
+  %assign rows      = dims[0]
+  %assign width     = LibBlockInputSignalWidth(0)
+  %assign min_dims =  MIN(cols,rows)
+  %assign cplx      = LibBlockInputSignalIsComplex(INPORT) != 0
+  %assign dtype     = LibBlockInputSignalDataTypeName( INPORT,"")
+  %assign DTYPE_ID  = LibBlockInputSignalDataTypeId(   INPORT)
+  %assign need_copy = (LibBlockInputSignalBufferDstPort(INPORT) != OUTPORT)
+
+  %assign block = block + UPPER + LOWER + INPORT + OUTPORT + extract  + numDims ...
+                + dims  + cols  + rows   + width   + min_dims + cplx    ...
+                + dtype + DTYPE_ID + need_copy
+
+%endfunction %% BlockInstanceSetup
+
+%% Function: Outputs ==========================================================
+%%
+%function Outputs(block, system) Output
+  %assign uplow     = (extract == UPPER) ? "Upper" : "Lower"
+  %if (width == 1) || (cols==1 && extract == LOWER) || (rows==1 && extract == UPPER)
+    %if need_copy
+    /* DSP System Toolbox Extract %<uplow> Triangular Matrix (%<ParamSettings.FunctionName>) - '%<Name>' */
+    {
+      %<LibBlockCopyInputsToOutputs(INPORT, OUTPORT)>
+    }
+  	%endif
+  %else
+    /* DSP System Toolbox Extract %<uplow> Triangular Matrix (%<ParamSettings.FunctionName>) - '%<Name>' */
+    {
+      %<dtype> *y = %<LibBlockOutputSignalAddr(OUTPORT, "", "", 0)>;
+      %if need_copy
+        const %<dtype> *u = %<LibBlockInputSignalAddr(INPORT, "", "", 0)>;
+      %endif
+      %%
+      %if LibIsDataTypeMultiWordFixpt(DTYPE_ID)
+        %assign zeroValStr = FixPt_GetGroundValueOrNameFromDataTypeRec(FixPt_GetOutputDataType(OUTPORT), cplx)
+      %else
+        %% Floating-point or single word fixed-point
+        %if cplx
+          const %<dtype> zeroCplx = { %<SLibGetGroundValueFromId(DTYPE_ID)>, %<SLibGetGroundValueFromId(DTYPE_ID)> };
+          %assign zeroValStr = "zeroCplx"
+        %else
+          %assign zeroValStr = SLibGetGroundValueFromId(DTYPE_ID)
+        %endif
+      %endif
+      %assign block = block + zeroValStr
+      %%
+      %if min_dims > 1
+        int_T c;
+      %endif
+      %if (min_dims > 1) || (cols > rows) || (cols == 1)
+        int_T r;
+      %endif
+      %%
+      %if extract == LOWER
+        %<Extract_Lower(block)>
+      %else
+        %<Extract_Upper(block)>
+      %endif
+    }
+  %endif
+%endfunction
+
+%% Function: Extract_Lower Output
+%% This function extracts the lower triangular part of an input
+%% matrix, inserting zeros into the upper triangle.  Works for
+%% either in-place or out-of-place I/O.
+%function Extract_Lower(block) Output
+  %if rows > 1
+    %if need_copy
+      const int_T bytesPerElement = sizeof(%<dtype>);
+      memcpy(y, u, %<rows> * bytesPerElement);
+    %endif
+    y += %<rows>;
+    for (c=1; c < %<min_dims>; c++ ) {
+      for (r=0; r++ < c; ) {
+        *y++ = %<zeroValStr>;
+      }
+      %if need_copy
+        u += %<rows> + 1;
+        memcpy(y, u, (%<rows>-c) * bytesPerElement);
+      %endif
+      y += %<rows> - c;
+    }
+  %else
+    %if need_copy
+      *y++ = *u;
+    %else
+      y++;
+    %endif
+  %endif
+  %% For tall, skinny, we're done. For short fat, we need to copy a
+  %% bunch of zeros.
+  %if cols > rows
+    %assign many_zeros = (cols - rows) * rows
+    for (r=0; r++ < %<many_zeros>; ) {
+      *y++ = %<zeroValStr>;
+    }
+  %endif
+%endfunction    %% Extract_Lower(block)
+
+%% Function: Extract_Upper Output
+%% This function extracts the upper triangular part of an input
+%% matrix, inserting zeros into the lower triangle.  Works for
+%% either in-place or out-of-place I/O.
+%function Extract_Upper(block) Output
+  %if need_copy && (cols > 1)
+    const int_T bytesPerElement = sizeof(%<dtype>);
+  %endif
+  %if cols > 1
+    %assign cols_first = (cols >= rows) ? min_dims-1 : min_dims
+    for (c=0; c++ < %<cols_first>;) {
+      %% c now incremented from initial value
+      %if need_copy
+        memcpy( y, u, c * bytesPerElement);
+        u += %<rows>;
+      %endif
+      y += c;
+      for (r=c; r++ < %<rows>;) {
+        *y++ = %<zeroValStr>;
+      }
+    }
+  %else
+    %if need_copy
+      *y++ = *u;
+    %else
+      y++;
+    %endif
+    for (r=1; r < %<rows>; r++ ) {
+      *y++ = %<zeroValStr>;
+    }
+  %endif
+  %if need_copy
+    %% For tall, skinny, we're done. For short fat, we need to copy a
+    %% bunch of input data.
+    %if cols >= rows
+      %assign elements_left = (cols - rows + 1) * rows
+      memcpy(y, u, %<elements_left>*sizeof(%<dtype>));
+    %endif
+  %endif
+%endfunction    %% Extract_Upper(block)

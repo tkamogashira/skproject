@@ -1,0 +1,630 @@
+%% 
+%% 
+%%
+%% Copyright 1995-2010 The MathWorks, Inc.
+%%
+%% Abstract: CIC Filter
+%%
+
+%implements sdspcicfilter "C"
+
+%% Function: BlockInstanceSetup ===============================================
+%%
+%% Abstract:
+%%      Rename the S-Function parameters for easy reference.
+%%
+%function BlockInstanceSetup(block, system) void
+    %%
+    %% All fixed-point blocks call the fixed-point setup function
+    %%
+    %<FixPt_Setup(block, system)>
+    %%
+    %% I/O port data types
+    %assign inpDT = FixPt_GetInputDataType(0)
+    %assign outDT = FixPt_GetOutputDataType(0)
+    %assign block = block + inpDT + outDT
+    %%
+    %% I/O port constants
+    %assign INPORT  = 0
+    %assign OUTPORT = 0
+    %assign block   = block + INPORT + OUTPORT
+    %%
+    %% Simulation/runtime parameters for low-latency operation
+    %%
+    %assign IS_MULTI_RATE    = !LibIsSFcnSingleRate(block)
+    %assign IS_MULTI_TASKING = IsModelMultiTasking()
+    %assign block            = block + IS_MULTI_TASKING + IS_MULTI_RATE
+    %%
+    %% I/O Port Dimensions
+    %%
+    %assign inpNumDims   = LibBlockInputSignalNumDimensions(INPORT)
+    %assign inpDims      = LibBlockInputSignalDimensions(INPORT)
+    %assign INP_ROWS     = inpDims[0]
+    %assign INP_COLS     = (inpNumDims == 2) ? inpDims[1] : 1
+    %assign INPORTWIDTH  = INP_ROWS * INP_COLS
+    %assign inpComplex   = LibBlockInputSignalIsComplex(INPORT)
+    %assign NUM_CHANS    = SFcnParamSettings.nChans
+    %assign block        = block + NUM_CHANS + inpComplex
+    %%
+    %%
+    %% S-fcn param settings and strings for code comments
+    %%
+    %assign R          = SFcnParamSettings.RsmpFctr
+    %assign M          = SFcnParamSettings.M
+    %assign N          = SFcnParamSettings.N
+    %assign nCICFrames = SFcnParamSettings.nFrames
+    %assign block      = block + R + M + N + nCICFrames
+    %%
+    %assign isDecimator      = SFcnParamSettings.IsDecim
+    %assign isLatency        = SFcnParamSettings.IsLatency
+    %assign block            = block + isDecimator + isLatency
+    %assign decimOrInterpStr = (isDecimator == 1) ? "decimator" : "interpolator"
+    %assign latencyTypeStr   = (isLatency   == 1) ? "Latency"   : "Zero latency"
+    %assign block            = block + decimOrInterpStr + latencyTypeStr
+    %%
+    %assign inpNumBits = SFcnParamSettings.NIBits
+    %assign outNumBits = SFcnParamSettings.NOBits
+    %createrecord rndSatRec { roundingMode "Floor"; ...
+                              overflowMode "Wrap"}
+    %assign block = block + inpNumBits + outNumBits + rndSatRec
+    %%
+%endfunction %% BlockInstanceSetup
+
+
+%% Function: InitializeConditions =============================================
+%%
+%% Abstract:
+%%      Initialize the DWork vectors to the initial values specified.
+%%
+%function InitializeConditions(block, system) Output
+/* DSP System Toolbox CIC Filter %<Type> (%<ParamSettings.FunctionName>) - '%<Name>' */
+{
+  /* Initialize states for %<latencyTypeStr> %<decimOrInterpStr> filter structure
+   * with %<NUM_CHANS> channels, filter stages (N): %<N>, diff delay (M): %<M>
+   * Note that all (<= 32-bit) states are stored in int32_T arrays.
+   */
+%if isDecimator
+  /* Decimator state memory arrangement (per channel):
+   *   N (length 1) integrator states
+   *   N (length M) circbuff comb states
+   */
+%else
+  /* Interpolator state memory arrangement (per channel):
+   *   N (length M) circbuff comb states
+   *   N (length 1) integrator states
+   */
+%endif
+
+  /* Initialize circular buffer counter */
+  memset(%<LibBlockDWorkAddr(CircBufCounter,"","",0)>, 0, %<NUM_CHANS> * sizeof(int32_T) );
+
+%assign numRealChans = inpComplex ? 2 * NUM_CHANS : NUM_CHANS
+%if numRealChans > 1
+  /* Initialize all (M * N * numberOfChannels) comb states to zero */
+  memset(%<LibBlockDWorkAddr(CombStateData,"","",0)>, 0, (%<M> * %<N> * %<numRealChans> * sizeof(int32_T)));
+
+  /* Initialize all (N * numberOfChannels) integrator states to zero */
+  memset(%<LibBlockDWorkAddr(CICStates,"","",0)>, 0, (%<N> * %<numRealChans> * sizeof(int32_T)));
+
+%else
+  /* Initialize all (M * N) comb states to zero */
+  memset(%<LibBlockDWorkAddr(CombStateData,"","",0)>, 0, (%<M> * %<N> * sizeof(int32_T)));
+
+  /* Initialize all N integrator states to zero */
+  memset(%<LibBlockDWorkAddr(CICStates,"","",0)>, 0, (%<N> * sizeof(int32_T)));
+%endif
+
+%if (!isDecimator && IS_MULTI_TASKING && IS_MULTI_RATE)
+  /* Initialize input buffer to zero */
+  memset(%<LibBlockDWorkAddr(InputBuf,"","",0)>, 0, \
+         %<LibBlockDWorkWidth(InputBuf)> * sizeof(%<LibBlockDWorkDataTypeName(InputBuf,"")>));
+%endif
+}
+
+%endfunction
+
+%% Function: Outputs ==========================================================
+%%
+%function Outputs(block, system) Output
+{
+  %%
+  %<generateComments(block)> \
+  %%
+  %if !IS_MULTI_RATE
+    %% Frame-based single rate
+    %<CICProcessStep(block)>\
+  %else
+    %% Sample-based multi-rate
+    %if isDecimator
+      if (%<LibIsSFcnSampleHit("InputPortIdx0")>) {
+        %<CICProcessStep(block)>\
+      }
+    %else
+      %% CIC interpolation
+      if (%<LibIsSFcnSampleHit("OutputPortIdx0")>) {
+        %<CICProcessStep(block)>\
+      }
+      %if (IS_MULTI_TASKING && IS_MULTI_RATE)
+        if (%<LibIsSFcnSampleHit("InputPortIdx0")>) {
+	  memcpy(%<LibBlockDWorkAddr(InputBuf,"","",0)>,	\
+	         %<LibBlockInputSignalAddr(INPORT,"", "", 0)>,\
+		 %<LibBlockDWorkWidth(InputBuf)> * sizeof(%<LibBlockDWorkDataTypeName(InputBuf,"")>));
+        }
+      %endif
+    %endif
+  %endif
+}
+
+%endfunction  %% Outputs
+
+%% Function: OutputsForTID =====================================================
+%% This functions is called only for multi-rate, multi-tasking ert mode.
+%%
+%function OutputsForTID(block, system, tid) Output
+{
+    %if (isDecimator)
+	%% fast to slow transition
+	%if (tid == LibGetGlobalTIDFromLocalSFcnTID("InputPortIdx0"))
+	    %<CICProcessStep(block)>\
+        %endif
+    %else
+	%% slow to fast transition
+	%if (tid == LibGetGlobalTIDFromLocalSFcnTID("OutputPortIdx0"))
+	  %<CICProcessStep(block)>\
+	%endif
+	%if (tid == LibGetGlobalTIDFromLocalSFcnTID("InputPortIdx0"))
+	  memcpy(%<LibBlockDWorkAddr(InputBuf,"","",0)>,	\
+	  	 %<LibBlockInputSignalAddr(INPORT,"", "", 0)>,\
+		 %<LibBlockDWorkWidth(InputBuf)> * sizeof(%<LibBlockDWorkDataTypeName(InputBuf,"")>));
+	%endif
+    %endif
+}
+%endfunction %% OutputsForTID
+
+%% Function: CICProcessStep ============================================
+%% Common CIC process step function for frame-based and sample-based
+%% single and multi-tasking code
+%%
+%function CICProcessStep(block) Output
+%%
+int_T chanCount, intStateIdx;
+%if !IS_MULTI_RATE
+  int_T frameCount, sampCount;
+%endif
+int_T inputIdx  = 0;
+int_T outputIdx = 0;
+
+/* Loop over all channels */
+for (chanCount = 0; chanCount < %<NUM_CHANS>; chanCount++) {
+  const int_T chIndexOffset = chanCount * %<N>;
+  %%
+  %if isDecimator
+    %<runCICDecim(block)>\
+  %else
+    %if IS_MULTI_RATE
+      %<runCICInterpMultiRate(block)>\
+    %else
+      %<runCICInterpSingleRate(block)>\
+    %endif
+  %endif
+  
+}
+
+%endfunction	%% CICProcessStep
+
+
+%% Function: runCICDecim ============================================
+%%
+%function runCICDecim(block) Output
+%%
+  %if !IS_MULTI_RATE
+  /* Loop over number of full filter frames */
+  for (frameCount = 0; frameCount < %<nCICFrames>; frameCount++) {
+
+    for (sampCount = 0; sampCount < %<R>; sampCount++) {
+
+  %endif
+  %%
+  %<runIntegratorStages(block)>\
+  %%
+  %if !IS_MULTI_RATE
+    /* Run downsampler at proper sample */
+    if (sampCount == 0) {
+  %else
+    /* Run comb stages at special sample hit */
+    if (%<LibIsSFcnSpecialSampleHit("OutputPortIdx0", "InputPortIdx0")>) {
+  %endif
+      %%
+      %<readLastIntegratorValue(block)>\
+      %<runCombFilterStages(block)>\
+      %<outputFinalStage(block)>\
+    }
+  %if !IS_MULTI_RATE
+    }
+  }
+  %endif
+
+%endfunction    %% runCICDecim
+
+
+%% Function: runCICInterpSingleRate ============================================
+%%
+%function runCICInterpSingleRate(block) Output
+%%
+  /* Loop over number of full filter frames */
+  for (frameCount = 0; frameCount < %<nCICFrames>; frameCount++) {
+
+  %foreach stageCount = N
+    %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<stageCount>, 0, 0)
+    %if inpComplex
+        %<curStateDT.ComplexName> tmpCmbState%<stageCount>, accCmbState%<stageCount>;
+    %else
+        %<curStateDT.Name> tmpCmbState%<stageCount>, accCmbState%<stageCount>;
+    %endif
+  %endforeach
+    %<loadFirstCombStage(block)>\
+    %<runCombFilterStages(block)>\
+    %%
+    for (sampCount = 0; sampCount < %<R>; sampCount++) {
+      %foreach stageCount = N
+        %if isLatency
+          %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount>, 0, 0)
+          %if inpComplex
+            %<curStateDT.ComplexName> tmpIntState%<stageCount>;
+          %else
+            %<curStateDT.Name> tmpIntState%<stageCount>;
+          %endif
+        %endif
+      %endforeach
+      /* Run integrator stages */
+      %foreach stageCount = N    
+        %if (stageCount == 0)
+          %if isLatency
+            %<initFirstTmpIntState(block, stageCount)>\
+          %endif
+          if (sampCount == 0) {
+            %<readLastCombStageValue(block)>\
+          }
+        %else
+            %<doNextIntegratorStages(block, stageCount)>\
+        %endif      
+      %endforeach
+
+      %<outputFinalStage(block)>\
+    }
+  }
+
+%endfunction    %% runCICInterpSingleRate
+
+
+%% Function: runCICInterpMultiRate ============================================
+%%
+%function runCICInterpMultiRate(block) Output
+%%
+  %foreach stageCount = N
+    %if isLatency
+      %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount>, 0, 0)
+      %if inpComplex
+        %<curStateDT.ComplexName> tmpIntState%<stageCount>;
+      %else
+        %<curStateDT.Name> tmpIntState%<stageCount>;
+      %endif
+    %endif
+    %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<stageCount>, 0, 0)
+    %if inpComplex
+      %<curStateDT.ComplexName> tmpCmbState%<stageCount>, accCmbState%<stageCount>;
+    %else
+      %<curStateDT.Name> tmpCmbState%<stageCount>, accCmbState%<stageCount>;
+    %endif
+  %endforeach
+  if (%<LibIsSFcnSpecialSampleHit("InputPortIdx0",  "OutputPortIdx0")>) {
+    %<loadFirstCombStage(block)>\
+    %<runCombFilterStages(block)>\
+    %%
+    %foreach stageCount = N
+      %if (stageCount == 0)
+        %if !isLatency
+          %<readLastCombStageValue(block)>\
+        %endif
+  }
+        %if isLatency
+          %<initFirstTmpIntState(block, stageCount)>\
+          if (%<LibIsSFcnSpecialSampleHit("InputPortIdx0",  "OutputPortIdx0")>) {
+            %<readLastCombStageValue(block)>\
+          }
+        %endif
+      %else
+        %<doNextIntegratorStages(block, stageCount)>\
+      %endif
+    %%
+    %endforeach
+
+  %<outputFinalStage(block)>\
+%%
+%endfunction    %% runCICInterpMultiRate
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   HELPER FUNCTIONS FOR CIC INTERP
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Function: initFirstTmpIntState ============================================
+%%
+%function initFirstTmpIntState(block, stageCount) Output
+%%
+%assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount>, 0, 0)
+%createrecord curIntStateRec { label     "%<LibBlockDWork(CICStates,"intStateIdx","",0)>"; ...
+                                dTypeRec  curStateDT; ...
+                                isComplex inpComplex }
+%createrecord tmpIntStateRec { label     "tmpIntState%<stageCount>"; ...
+                                dTypeRec  curStateDT; ...
+                                isComplex inpComplex }  
+intStateIdx = chIndexOffset;
+%<DSPFixptLibEquals(tmpIntStateRec, curIntStateRec, rndSatRec)>\  
+
+%endfunction    %%initFirstTmpIntState
+
+%% Function: doNextIntegratorStages ============================================
+%%
+%function doNextIntegratorStages(block, stageCount) Output
+%%
+  %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount>, 0, 0)
+  %createrecord curIntStateRec { label     "%<LibBlockDWork(CICStates,"intStateIdx","",0)>"; ...
+                                 dTypeRec  curStateDT; ...
+                                 isComplex inpComplex }
+  %createrecord tmpIntStateRec { label     "tmpIntState%<stageCount>"; ...
+                                 dTypeRec  curStateDT; ...
+                                 isComplex inpComplex } 
+  %assign prevStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount-1>, 0, 0)
+  intStateIdx = chIndexOffset + %<stageCount>;
+  %if isLatency
+    %createrecord prevTmpIntStateRec { label     "tmpIntState%<stageCount-1>"; ...
+                                        dTypeRec  prevStateDT; ...
+                                        isComplex inpComplex }
+    %<DSPFixptLibEquals(tmpIntStateRec, curIntStateRec, rndSatRec)>\
+    %<DSPFixptLibPlusEquals(curIntStateRec, prevTmpIntStateRec, rndSatRec)>\
+  %else
+    %createrecord prevIntStateRec { label     "%<LibBlockDWork(CICStates,"intStateIdx-1","",0)>"; ...
+                                    dTypeRec  prevStateDT; ...
+                                    isComplex inpComplex }
+    %<DSPFixptLibPlusEquals(curIntStateRec, prevIntStateRec, rndSatRec)>\  
+  %endif
+
+%endfunction    %% doNextIntegratorStages
+
+
+%% Function: readLastCombStageValue ============================================
+%%
+%function readLastCombStageValue(block) Output
+%%
+  /* Read value from last comb stage */
+  %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N>, 0, 0)
+  %assign curIntState = "%<LibBlockDWork(CICStates,"chIndexOffset","",0)>"
+  %assign lastStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N-1>, 0, 0)
+  %createrecord curIntStateRec {  label     curIntState; ...
+                                  dTypeRec  curStateDT; ...
+                                  isComplex inpComplex }
+  %createrecord lastCmbStateRec {  label    "accCmbState%<N-1>"; ...
+                                  dTypeRec  lastStateDT; ...
+                                  isComplex inpComplex }
+  %<DSPFixptLibPlusEquals(curIntStateRec, lastCmbStateRec, rndSatRec)>\
+
+%endfunction    %% readLastCombStageValue
+
+
+%% Function: loadFirstCombStage ============================================
+%%
+%function loadFirstCombStage(block) Output
+%%
+  /* Pre-load first comb stage */
+  %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE0, 0, 0)
+  %createrecord tmpCmbStateRec {  label     "tmpCmbState0"; ...
+                                  dTypeRec  curStateDT; ...
+                                  isComplex inpComplex }
+  %if (IS_MULTI_TASKING && IS_MULTI_RATE)
+    %createrecord inputRec { label     "%<LibBlockDWork(InputBuf,"inputIdx","",0)>"; ...
+                             dTypeRec  FixPt_GetInputDataType(INPORT);  ...
+                             isComplex inpComplex }
+  %else
+    %createrecord inputRec { label     "%<LibBlockInputSignal(INPORT,"inputIdx", "", 0)>"; ...
+                             dTypeRec  FixPt_GetInputDataType(INPORT);  ...
+                             isComplex inpComplex }
+  %endif
+  %<DSPFixptLibEquals(tmpCmbStateRec, inputRec, rndSatRec)>\
+  inputIdx++;
+
+%endfunction    %% loadFirstCombStage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   HELPER FUNCTIONS FOR CIC DECIM
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Function: runIntegratorStages ============================================
+%%
+%function runIntegratorStages(block) Output
+%%
+  /* Run integrator stages */
+  %if isLatency
+    %foreach stageCount = N
+      %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<stageCount>, 0, 0)
+      %if inpComplex
+        %<curStateDT.ComplexName> tmpIntState%<stageCount>;
+      %else
+        %<curStateDT.Name> tmpIntState%<stageCount>;
+      %endif
+    %endforeach
+  %endif
+  %foreach stageCount = N
+    %assign curStateDT  = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<stageCount>, 0, 0)
+    %createrecord curIntStateRec { label     "%<LibBlockDWork(CICStates,"intStateIdx","",0)>"; ...
+                                   dTypeRec  curStateDT; ...
+                                   isComplex inpComplex }
+    %createrecord tmpIntStateRec { label     "tmpIntState%<stageCount>"; ...
+                                   dTypeRec  curStateDT; ...
+                                   isComplex inpComplex }
+    %if stageCount == 0
+      intStateIdx = chIndexOffset;
+      %createrecord inputRec { label     "%<LibBlockInputSignal(INPORT,"inputIdx", "", 0)>"; ...
+                               dTypeRec  FixPt_GetInputDataType(INPORT);  ...
+                               isComplex inpComplex }
+      %if isLatency
+        %<DSPFixptLibEquals(tmpIntStateRec, curIntStateRec, rndSatRec)>\
+      %endif
+      %<DSPFixptLibPlusEquals(curIntStateRec, inputRec, rndSatRec)>\
+      inputIdx++;
+    %else
+      %assign prevStateDT  = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<stageCount-1>, 0, 0)
+      intStateIdx = chIndexOffset + %<stageCount>;
+      %if isLatency
+        %createrecord prevTmpIntStateRec { label     "tmpIntState%<stageCount-1>"; ...
+                                           dTypeRec  prevStateDT; ...
+                                           isComplex inpComplex }
+        %<DSPFixptLibEquals(tmpIntStateRec, curIntStateRec, rndSatRec)>\
+        %<DSPFixptLibPlusEquals(curIntStateRec, prevTmpIntStateRec, rndSatRec)>\
+      %else
+        %createrecord prevIntStateRec { label     "%<LibBlockDWork(CICStates,"intStateIdx-1","",0)>"; ...
+                                        dTypeRec  prevStateDT; ...
+                                        isComplex inpComplex }
+        %<DSPFixptLibPlusEquals(curIntStateRec, prevIntStateRec, rndSatRec)>\
+      %endif
+    %endif
+  %endforeach
+
+%endfunction    %%runIntegratorStages
+
+%% Function: readLastIntegratorValue ============================================
+%%
+%function readLastIntegratorValue(block) Output
+%%
+  /* Read value from last integrator stage */
+  %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N>, 0, 0)
+  %assign lastIntState = "%<LibBlockDWork(CICStates,"chIndexOffset+%<N-1>","",0)>"
+  %assign lastIntStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N-1>, 0, 0)
+  %createrecord tmpCmbStateRec {  label     "tmpCmbState0"; ...
+                                  dTypeRec  curStateDT; ...
+                                  isComplex inpComplex }
+  %foreach stageCount = N
+    %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount>, 0, 0)
+    %if inpComplex
+      %<curStateDT.ComplexName> tmpCmbState%<stageCount>, accCmbState%<stageCount>;
+    %else
+      %<curStateDT.Name> tmpCmbState%<stageCount>, accCmbState%<stageCount>;
+    %endif
+  %endforeach
+  %if isLatency
+    %createrecord lastTmpIntStateRec { label     "tmpIntState%<N-1>"; ...
+                                       dTypeRec  lastIntStateDT; ...
+                                       isComplex inpComplex }
+    %<DSPFixptLibEquals(tmpCmbStateRec, lastTmpIntStateRec, rndSatRec)>\
+  %else
+    %createrecord lastIntStateRec { label     lastIntState; ...
+                                    dTypeRec  lastIntStateDT; ...
+                                    isComplex inpComplex }
+    %<DSPFixptLibEquals(tmpCmbStateRec, lastIntStateRec, rndSatRec)>\
+  %endif
+
+%endfunction    %% readLastIntegratorValue
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   COMMON HELPER FUNCTIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Function: runCombFilterStages ============================================
+%%
+%function runCombFilterStages(block) Output
+%%
+{
+  /* Run comb stages */
+  int_T curCircBufIdx = %<LibBlockDWork(CircBufCounter,"chanCount","",0)>;
+  %foreach stageCount = N
+    %assign curStateDT = isDecimator \
+                       ? FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount>, 0, 0) \
+                       : FixPt_GetParameterDataType(STAGE_DATA_TYPE%<stageCount>, 0, 0)
+    %assign cmbState   = (stageCount) > 0 \
+                       ? "%<LibBlockDWork(CombStateData,"(chIndexOffset+%<stageCount>)*%<M>+curCircBufIdx","",0)>" \
+                       : "%<LibBlockDWork(CombStateData,"chIndexOffset*%<M>+curCircBufIdx","",0)>"
+    %if (stageCount > 0)
+      %assign prevCmbStateDT = isDecimator \
+                             ? FixPt_GetParameterDataType(STAGE_DATA_TYPE%<N+stageCount-1>, 0, 0) \
+                             : FixPt_GetParameterDataType(STAGE_DATA_TYPE%<stageCount-1>, 0, 0)
+      %createrecord accCmbStateRec { label     "accCmbState%<stageCount-1>"; ...
+                                     dTypeRec  prevCmbStateDT; ...
+                                     isComplex inpComplex }
+      %createrecord tmpCmbStateRec { label     "tmpCmbState%<stageCount>"; ...
+                                     dTypeRec  curStateDT; ...
+                                     isComplex inpComplex }
+      %<DSPFixptLibEquals(tmpCmbStateRec, accCmbStateRec, rndSatRec)>\
+    %endif
+    %createrecord accCmbStateRec { label     "accCmbState%<stageCount>"; ...
+                                   dTypeRec  curStateDT; ...
+                                   isComplex inpComplex }
+    %createrecord tmpCmbStateRec { label     "tmpCmbState%<stageCount>"; ...
+                                   dTypeRec  curStateDT; ...
+                                   isComplex inpComplex }
+    %createrecord cmbStateRec    { label     cmbState; ...
+                                   dTypeRec  curStateDT; ...
+                                   isComplex inpComplex }
+    %<DSPFixptLibEquals(accCmbStateRec, tmpCmbStateRec, rndSatRec)>\
+    %<DSPFixptLibEquals(tmpCmbStateRec, cmbStateRec,    rndSatRec)>\
+    %<DSPFixptLibEquals(cmbStateRec,    accCmbStateRec, rndSatRec)>\
+    %<DSPFixptLibMinusEquals(accCmbStateRec, tmpCmbStateRec, rndSatRec)>
+  %endforeach
+
+  /* All comb stages done : update CircBufCounter */
+  %<LibBlockDWork(CircBufCounter,"chanCount","",0)>++;
+  if (%<LibBlockDWork(CircBufCounter,"chanCount","",0)> >= %<M>) {
+    %<LibBlockDWork(CircBufCounter,"chanCount","",0)> -= %<M>;
+  }
+}
+%endfunction %%runCombFilterStages
+
+
+%% Function: outputFinalStage ============================================
+%%
+%function outputFinalStage(block) Output
+%%
+  /* Output final stage */
+  %createrecord outputRec { label     "%<LibBlockOutputSignal(OUTPORT, "outputIdx", "", 0)>"; ...
+                            dTypeRec  FixPt_GetOutputDataType(OUTPORT);  ...
+                            isComplex inpComplex }
+  %assign curStateDT = FixPt_GetParameterDataType(STAGE_DATA_TYPE%<2*N-1>, 0, 0)
+  %if isDecimator
+    %createrecord lastAccCmbStateRec { label     "accCmbState%<N-1>"; ...
+                                       dTypeRec  curStateDT; ...
+                                       isComplex inpComplex }
+    %<DSPFixptLibEquals(outputRec, lastAccCmbStateRec, rndSatRec)>\
+  %else
+    %if isLatency
+      %createrecord tmpIntStateRec { label     "tmpIntState%<N-1>"; ...
+                                     dTypeRec  curStateDT; ...
+                                     isComplex inpComplex } 
+      %<DSPFixptLibEquals(outputRec, tmpIntStateRec, rndSatRec)>\
+    %else
+      %assign lastIntState = "%<LibBlockDWork(CICStates,"chIndexOffset+%<N-1>","",0)>"
+      %createrecord lastIntStateRec { label     lastIntState; ...
+                                      dTypeRec  curStateDT; ...
+                                      isComplex inpComplex }
+      %<DSPFixptLibEquals(outputRec, lastIntStateRec, rndSatRec)>\
+    %endif
+  %endif
+  outputIdx++;
+
+%endfunction    %% outputFinalStage
+
+
+%% Function: generateComments ============================================
+%%
+%function generateComments(block) Output
+/* DSP System Toolbox CIC Filter %<Type> (%<ParamSettings.FunctionName>) - '%<Name>' */
+  /*
+   * %<latencyTypeStr> %<decimOrInterpStr> filter structure
+   * R: %<R>, M: %<M>, N: %<N>
+   * %<NUM_CHANS> real channels
+   * %<nCICFrames> CIC filter frames per channel per function call
+   *
+   * Input:  %<inpNumBits> bits (using %<inpDT.NativeType>)
+   * Output: %<outNumBits> bits (using %<outDT.NativeType>)
+   */
+%%
+%endfunction %% generateComments
+
+%% [EOF] sdspcicfilter.tlc

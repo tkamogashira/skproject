@@ -1,0 +1,6002 @@
+Model {
+  Name			  "dspdtmf"
+  Version		  8.3
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "US-ASCII"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.369"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Active"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [15.0, 25.0, 928.0, 700.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[928.0, 700.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
+      }
+    }
+  }
+  Created		  "Wed Dec 02 11:21:15 1998"
+  Creator		  "The MathWorks Inc."
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Jan 17 19:39:49 2014"
+  RTWModifiedTimeStamp	  311888388
+  ModelVersionFormat	  "1.%<AutoIncrement:369>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  on
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  on
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    6
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "dspdtmf"
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "dspdtmf"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      ""
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  CovEnableCumulative	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  CovSFcnEnable		  off
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  off
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      7
+      Version		      "1.14.2"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  8
+	  Version		  "1.14.2"
+	  StartTime		  "0"
+	  StopTime		  "5"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  9
+	  Version		  "1.14.2"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  off
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  off
+	  SaveState		  off
+	  SignalLogging		  off
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  off
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  10
+	  Version		  "1.14.2"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "OptimizeModelRefInitCode"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  off
+	  BufferReuse		  off
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  off
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  off
+	  LocalBlockOutputs	  off
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  on
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  11
+	  Version		  "1.14.2"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "warning"
+	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "None"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  12
+	  Version		  "1.14.2"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  13
+	  Version		  "1.14.2"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  14
+	  Version		  "1.14.2"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  15
+	  Version		  "1.14.2"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "IncludeHyperlinkInReport"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  "Generic Real-Time Target"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  on
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      16
+	      Version		      "1.14.2"
+	      Array {
+		Type			"Cell"
+		Dimension		9
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement on
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      17
+	      Version		      "1.14.2"
+	      Array {
+		Type			"Cell"
+		Dimension		11
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"SupportContinuousTime"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 72, 69, 952, 699 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    7
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    18
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  WSMdlFileData		  "DataTag0"
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Abs
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Buffer
+      N			      "64"
+      V			      "0"
+      ic		      "0"
+      TreatMby1Signals	      "M channels (this choice will be removed - see release notes)"
+      HasFrameUpgradeWarning  on
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      DiscreteFilter
+      NumeratorSource	      "Dialog"
+      Numerator		      "[1]"
+      DenominatorSource	      "Dialog"
+      Denominator	      "[1 0.5]"
+      InitialStatesSource     "Dialog"
+      InitialStates	      "0"
+      InputProcessing	      "Elements as channels (sample based)"
+      ExternalReset	      "None"
+      InitialDenominatorStates "0"
+      FilterStructure	      "Direct form II"
+      SampleTime	      "-1"
+      a0EqualsOne	      off
+      NumCoefMin	      "[]"
+      NumCoefMax	      "[]"
+      DenCoefMin	      "[]"
+      DenCoefMax	      "[]"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      StateDataTypeStr	      "Inherit: Same as input"
+      MultiplicandDataTypeStr "Inherit: Same as input"
+      NumCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      DenCoefDataTypeStr      "Inherit: Inherit via internal rule"
+      NumProductDataTypeStr   "Inherit: Inherit via internal rule"
+      DenProductDataTypeStr   "Inherit: Inherit via internal rule"
+      NumAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      DenAccumDataTypeStr     "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      Lockdown		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      EnablePort
+      StatesWhenEnabling      "held"
+      PropagateVarSize	      "Only when enabling"
+      ShowOutputPort	      off
+      ZeroCross		      on
+      PortDimensions	      "1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "double"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Fcn
+      Expr		      "sin(u[1])"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      FrameConversion
+      InheritSamplingMode     off
+      OutFrame		      "Frame-based"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Lookup_n-D
+      NumberOfTableDimensions "2"
+      BreakpointsForDimension1 "[10,22,31]"
+      BreakpointsForDimension2 "[10,22,31]"
+      BreakpointsForDimension3 "[1:3]"
+      BreakpointsForDimension4 "[1:3]"
+      BreakpointsForDimension5 "[1:3]"
+      BreakpointsForDimension6 "[1:3]"
+      BreakpointsForDimension7 "[1:3]"
+      BreakpointsForDimension8 "[1:3]"
+      BreakpointsForDimension9 "[1:3]"
+      BreakpointsForDimension10	"[1:3]"
+      BreakpointsForDimension11	"[1:3]"
+      BreakpointsForDimension12	"[1:3]"
+      BreakpointsForDimension13	"[1:3]"
+      BreakpointsForDimension14	"[1:3]"
+      BreakpointsForDimension15	"[1:3]"
+      BreakpointsForDimension16	"[1:3]"
+      BreakpointsForDimension17	"[1:3]"
+      BreakpointsForDimension18	"[1:3]"
+      BreakpointsForDimension19	"[1:3]"
+      BreakpointsForDimension20	"[1:3]"
+      BreakpointsForDimension21	"[1:3]"
+      BreakpointsForDimension22	"[1:3]"
+      BreakpointsForDimension23	"[1:3]"
+      BreakpointsForDimension24	"[1:3]"
+      BreakpointsForDimension25	"[1:3]"
+      BreakpointsForDimension26	"[1:3]"
+      BreakpointsForDimension27	"[1:3]"
+      BreakpointsForDimension28	"[1:3]"
+      BreakpointsForDimension29	"[1:3]"
+      BreakpointsForDimension30	"[1:3]"
+      BreakpointsForDimension1Min "[]"
+      BreakpointsForDimension2Min "[]"
+      BreakpointsForDimension3Min "[]"
+      BreakpointsForDimension4Min "[]"
+      BreakpointsForDimension5Min "[]"
+      BreakpointsForDimension6Min "[]"
+      BreakpointsForDimension7Min "[]"
+      BreakpointsForDimension8Min "[]"
+      BreakpointsForDimension9Min "[]"
+      BreakpointsForDimension10Min "[]"
+      BreakpointsForDimension11Min "[]"
+      BreakpointsForDimension12Min "[]"
+      BreakpointsForDimension13Min "[]"
+      BreakpointsForDimension14Min "[]"
+      BreakpointsForDimension15Min "[]"
+      BreakpointsForDimension16Min "[]"
+      BreakpointsForDimension17Min "[]"
+      BreakpointsForDimension18Min "[]"
+      BreakpointsForDimension19Min "[]"
+      BreakpointsForDimension20Min "[]"
+      BreakpointsForDimension21Min "[]"
+      BreakpointsForDimension22Min "[]"
+      BreakpointsForDimension23Min "[]"
+      BreakpointsForDimension24Min "[]"
+      BreakpointsForDimension25Min "[]"
+      BreakpointsForDimension26Min "[]"
+      BreakpointsForDimension27Min "[]"
+      BreakpointsForDimension28Min "[]"
+      BreakpointsForDimension29Min "[]"
+      BreakpointsForDimension30Min "[]"
+      BreakpointsForDimension1Max "[]"
+      BreakpointsForDimension2Max "[]"
+      BreakpointsForDimension3Max "[]"
+      BreakpointsForDimension4Max "[]"
+      BreakpointsForDimension5Max "[]"
+      BreakpointsForDimension6Max "[]"
+      BreakpointsForDimension7Max "[]"
+      BreakpointsForDimension8Max "[]"
+      BreakpointsForDimension9Max "[]"
+      BreakpointsForDimension10Max "[]"
+      BreakpointsForDimension11Max "[]"
+      BreakpointsForDimension12Max "[]"
+      BreakpointsForDimension13Max "[]"
+      BreakpointsForDimension14Max "[]"
+      BreakpointsForDimension15Max "[]"
+      BreakpointsForDimension16Max "[]"
+      BreakpointsForDimension17Max "[]"
+      BreakpointsForDimension18Max "[]"
+      BreakpointsForDimension19Max "[]"
+      BreakpointsForDimension20Max "[]"
+      BreakpointsForDimension21Max "[]"
+      BreakpointsForDimension22Max "[]"
+      BreakpointsForDimension23Max "[]"
+      BreakpointsForDimension24Max "[]"
+      BreakpointsForDimension25Max "[]"
+      BreakpointsForDimension26Max "[]"
+      BreakpointsForDimension27Max "[]"
+      BreakpointsForDimension28Max "[]"
+      BreakpointsForDimension29Max "[]"
+      BreakpointsForDimension30Max "[]"
+      BreakpointsForDimension1DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension2DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension3DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension4DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension5DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension6DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension7DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension8DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension9DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension10DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension11DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension12DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension13DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension14DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension15DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension16DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension17DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension18DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension19DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension20DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension21DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension22DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension23DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension24DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension25DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension26DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension27DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension28DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension29DataTypeStr "Inherit: Same as corresponding input"
+      BreakpointsForDimension30DataTypeStr "Inherit: Same as corresponding input"
+      IndexSearchMethod	      "Binary search"
+      BeginIndexSearchUsingPreviousIndexResult off
+      UseOneInputPortForAllInputData off
+      Table		      "[4 5 6;16 19 20;10 18 23]"
+      TableMin		      "[]"
+      TableMax		      "[]"
+      TableDataTypeStr	      "Inherit: Same as output"
+      IntermediateResultsDataTypeStr "Inherit: Same as output"
+      InterpMethod	      "Linear"
+      ExtrapMethod	      "Linear"
+      DiagnosticForOutOfRangeInput "None"
+      RemoveProtectionInput   off
+      UseLastTableValue	      off
+      SampleTime	      "-1"
+      InternalRulePriority    "Precision"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      FractionDataTypeStr     "Inherit: Inherit via internal rule"
+      SupportTunableTableSize off
+      MaximumIndicesForEachDimension "[]"
+      LUTDesignTableMode      "Redesign Table"
+      LUTDesignDataSource     "Block Dialog"
+      LUTDesignFunctionName   "sqrt(x)"
+      LUTDesignUseExistingBP  on
+      LUTDesignRelError	      "0.01"
+      LUTDesignAbsError	      "1e-6"
+    }
+    Block {
+      BlockType		      Merge
+      Inputs		      "2"
+      InitialOutput	      "[]"
+      AllowUnequalInputPortWidths off
+      InputPortOffsets	      "[]"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      RandomNumber
+      Mean		      "0"
+      Variance		      "1"
+      Seed		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Reshape
+      OutputDimensionality    "1-D array"
+      OutputDimensions	      "[1,1]"
+    }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "1"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      StatesWhenEnabling      "inherit"
+      PropagateVarSize	      "During execution"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      SampleTimeType	      "triggered"
+      SampleTime	      "1"
+      ZeroCross		      on
+      PortDimensions	      "-1"
+      TriggerSignalSampleTime "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      Interpolate	      on
+    }
+  }
+  System {
+    Name		    "dspdtmf"
+    Location		    [15, 25, 943, 725]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    128
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "D:\\Applications\\MatlabR11\\toolbox\\rptgenext\\simulink-images.rpt"
+    SIDHighWatermark	    "231"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Channel"
+      SID		      "1"
+      Ports		      [1, 1]
+      Position		      [425, 200, 475, 270]
+      ZOrder		      -1
+      ShowName		      off
+      ShowPortLabels	      "none"
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		19
+	$ClassName		"Simulink.Mask"
+	Type			"Channel"
+	Description		"Models a noisy channel"
+	Display			"disp('Channel')"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  2
+	  Object {
+	    $ObjectID		    20
+	    Type		    "edit"
+	    Name		    "var"
+	    Prompt		    "Noise power"
+	    Value		    "0.04"
+	  }
+	  Object {
+	    $ObjectID		    21
+	    Type		    "edit"
+	    Name		    "g"
+	    Prompt		    "Gain"
+	    Value		    "2"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      Port {
+	PortNumber		1
+	Name			"tones + noise"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Channel"
+	Location		[272, 333, 614, 519]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "2"
+	  Position		  [25, 33, 55, 47]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "3"
+	  Position		  [100, 25, 130, 55]
+	  ZOrder		  -2
+	  Gain			  "g"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "4"
+	  Ports			  [2, 1]
+	  Position		  [180, 25, 210, 55]
+	  ZOrder		  -3
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  RandomNumber
+	  Name			  "Vector of Noise"
+	  SID			  "5"
+	  Position		  [100, 110, 130, 140]
+	  ZOrder		  -4
+	  Variance		  "var"
+	  Seed			  "[1:dtmfFramesize]"
+	  SampleTime		  "dtmfFramesize/dtmfFs"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "6"
+	  Position		  [270, 33, 300, 47]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  Labels		  [1, 0]
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Vector of Noise"
+	  SrcPort		  1
+	  Points		  [60, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DTMF Generator"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [275, 200, 360, 270]
+      ZOrder		      -2
+      ShowName		      off
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		22
+	$ClassName		"Simulink.Mask"
+	Type			"DTMF Generator"
+	Description		"Generates dual-tone multifrequency tones by summing row and column frequency tones. The frequency bias "
+	"of each row and column frequency tone can be specified as a percentage of the tone frequency.\n"
+	Display			"disp('DTMF\\nGenerator');"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  7
+	  Object {
+	    $ObjectID		    23
+	    Type		    "edit"
+	    Name		    "dtmfdelta_f1"
+	    Prompt		    "Row tone 1 (697 Hz) frequency bias (%):"
+	    Value		    "4.5"
+	  }
+	  Object {
+	    $ObjectID		    24
+	    Type		    "edit"
+	    Name		    "dtmfdelta_f2"
+	    Prompt		    "Row tone 2 (770 Hz) frequency bias (%):"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    25
+	    Type		    "edit"
+	    Name		    "dtmfdelta_f3"
+	    Prompt		    "Row tone 3 (852 Hz) frequency bias (%):"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    26
+	    Type		    "edit"
+	    Name		    "dtmfdelta_f4"
+	    Prompt		    "Row tone 4 (941 Hz) frequency bias (%):"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    27
+	    Type		    "edit"
+	    Name		    "dtmfdelta_f5"
+	    Prompt		    "Column tone 1 (1209 Hz) frequency bias (%):"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    28
+	    Type		    "edit"
+	    Name		    "dtmfdelta_f6"
+	    Prompt		    "Column tone 2 (1336 Hz) frequency bias (%):"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    29
+	    Type		    "edit"
+	    Name		    "dtmfdelta_f7"
+	    Prompt		    "Column tone 3 (1477 Hz) frequency bias (%):"
+	    Value		    "0"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      Port {
+	PortNumber		1
+	Name			"tones"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"DTMF Generator"
+	Location		[132, 578, 843, 836]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "8"
+	  Position		  [120, 118, 150, 132]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "9"
+	  Position		  [205, 160, 225, 180]
+	  ZOrder		  -2
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Digit to Tone"
+	  SID			  "10"
+	  Ports			  [1, 1, 1]
+	  Position		  [315, 97, 420, 153]
+	  ZOrder		  -3
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  System {
+	    Name		    "Digit to Tone"
+	    Location		    [219, 267, 900, 699]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In1"
+	      SID		      "11"
+	      Position		      [45, 143, 75, 157]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      EnablePort
+	      Name		      "Enable"
+	      SID		      "12"
+	      Ports		      []
+	      Position		      [260, 35, 280, 55]
+	      ZOrder		      -2
+	      PropagateVarSize	      "During execution"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Column Tones"
+	      SID		      "13"
+	      Ports		      [1, 1]
+	      Position		      [275, 252, 355, 308]
+	      ZOrder		      -3
+	      RequestExecContextInheritance off
+	      System {
+		Name			"Column Tones"
+		Location		[120, 275, 778, 644]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Column"
+		  SID			  "14"
+		  Position		  [20, 193, 50, 207]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "1209 Hz"
+		  SID			  "15"
+		  Ports			  [0, 1, 1]
+		  Position		  [295, 83, 340, 137]
+		  ZOrder		  -2
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "1209 Hz"
+		    Location		    [479, 502, 920, 716]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "16"
+		    Ports		    []
+		    Position		    [175, 30, 195, 50]
+		    ZOrder		    -1
+		    PropagateVarSize	    "During execution"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sine Wave1"
+		    SID			    "17"
+		    Ports		    [0, 1]
+		    Position		    [160, 103, 205, 147]
+		    ZOrder		    -2
+		    LibraryVersion	    "1.734"
+		    SourceBlock		    "dspsrcs4/Sine Wave"
+		    SourceType		    "Sine Wave"
+		    Amplitude		    "1"
+		    Frequency		    "1209*(1+dtmfdelta_f5/100)"
+		    Phase		    "0"
+		    SampleMode		    "Discrete"
+		    OutComplex		    "Real"
+		    CompMethod		    "Trigonometric fcn"
+		    TableSize		    "Speed"
+		    SampleTime		    "1/dtmfFs"
+		    SamplesPerFrame	    "dtmfFramesize"
+		    ResetState		    "Restart at time zero"
+		    additionalParams	    off
+		    allowOverrides	    on
+		    dataType		    "double"
+		    wordLen		    "16"
+		    udDataType		    "sfix(16)"
+		    fracBitsMode	    "Best precision"
+		    numFracBits		    "15"
+		    OutDataTypeStr	    "double"
+		    LastOutDataTypeStr	    "double"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "18"
+		    Position		    [320, 118, 350, 132]
+		    ZOrder		    -3
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Sine Wave1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "1336 Hz"
+		  SID			  "19"
+		  Ports			  [0, 1, 1]
+		  Position		  [295, 178, 340, 232]
+		  ZOrder		  -3
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "1336 Hz"
+		    Location		    [24, 454, 519, 656]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "20"
+		    Ports		    []
+		    Position		    [175, 30, 195, 50]
+		    ZOrder		    -1
+		    PropagateVarSize	    "During execution"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sine Wave1"
+		    SID			    "21"
+		    Ports		    [0, 1]
+		    Position		    [160, 103, 205, 147]
+		    ZOrder		    -2
+		    LibraryVersion	    "1.734"
+		    SourceBlock		    "dspsrcs4/Sine Wave"
+		    SourceType		    "Sine Wave"
+		    Amplitude		    "1"
+		    Frequency		    "1336*(1+dtmfdelta_f6/100)"
+		    Phase		    "0"
+		    SampleMode		    "Discrete"
+		    OutComplex		    "Real"
+		    CompMethod		    "Trigonometric fcn"
+		    TableSize		    "Speed"
+		    SampleTime		    "1/dtmfFs"
+		    SamplesPerFrame	    "dtmfFramesize"
+		    ResetState		    "Restart at time zero"
+		    additionalParams	    off
+		    allowOverrides	    on
+		    dataType		    "double"
+		    wordLen		    "16"
+		    udDataType		    "sfix(16)"
+		    fracBitsMode	    "Best precision"
+		    numFracBits		    "15"
+		    OutDataTypeStr	    "double"
+		    LastOutDataTypeStr	    "double"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "22"
+		    Position		    [320, 118, 350, 132]
+		    ZOrder		    -3
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Sine Wave1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "1477 Hz"
+		  SID			  "23"
+		  Ports			  [0, 1, 1]
+		  Position		  [295, 268, 340, 322]
+		  ZOrder		  -4
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "1477 Hz"
+		    Location		    [60, 483, 528, 678]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "24"
+		    Ports		    []
+		    Position		    [175, 30, 195, 50]
+		    ZOrder		    -1
+		    PropagateVarSize	    "During execution"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sine Wave1"
+		    SID			    "25"
+		    Ports		    [0, 1]
+		    Position		    [160, 103, 205, 147]
+		    ZOrder		    -2
+		    LibraryVersion	    "1.734"
+		    SourceBlock		    "dspsrcs4/Sine Wave"
+		    SourceType		    "Sine Wave"
+		    Amplitude		    "1"
+		    Frequency		    "1477*(1+dtmfdelta_f7/100)"
+		    Phase		    "0"
+		    SampleMode		    "Discrete"
+		    OutComplex		    "Real"
+		    CompMethod		    "Trigonometric fcn"
+		    TableSize		    "Speed"
+		    SampleTime		    "1/dtmfFs"
+		    SamplesPerFrame	    "dtmfFramesize"
+		    ResetState		    "Restart at time zero"
+		    additionalParams	    off
+		    allowOverrides	    on
+		    dataType		    "double"
+		    wordLen		    "16"
+		    udDataType		    "sfix(16)"
+		    fracBitsMode	    "Best precision"
+		    numFracBits		    "15"
+		    OutDataTypeStr	    "double"
+		    LastOutDataTypeStr	    "double"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "26"
+		    Position		    [320, 118, 350, 132]
+		    ZOrder		    -3
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Sine Wave1"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  SID			  "27"
+		  Position		  [135, 55, 165, 85]
+		  ZOrder		  -5
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "28"
+		  Position		  [135, 145, 165, 175]
+		  ZOrder		  -6
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  SID			  "29"
+		  Position		  [135, 235, 165, 265]
+		  ZOrder		  -7
+		  ShowName		  off
+		  Value			  "2"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  "30"
+		  Ports			  [3, 1]
+		  Position		  [500, 220, 540, 260]
+		  ZOrder		  -8
+		  Inputs		  "3"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  SID			  "31"
+		  Ports			  [2, 1]
+		  Position		  [195, 47, 225, 78]
+		  ZOrder		  -9
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator1"
+		  SID			  "32"
+		  Ports			  [2, 1]
+		  Position		  [195, 137, 225, 168]
+		  ZOrder		  -10
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator2"
+		  SID			  "33"
+		  Ports			  [2, 1]
+		  Position		  [195, 227, 225, 258]
+		  ZOrder		  -11
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Tone"
+		  SID			  "34"
+		  Position		  [580, 233, 610, 247]
+		  ZOrder		  -12
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  DstBlock		  "Tone"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "1477 Hz"
+		  SrcPort		  1
+		  Points		  [130, 0; 0, -40]
+		  DstBlock		  "Merge"
+		  DstPort		  3
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "1336 Hz"
+		  SrcPort		  1
+		  Points		  [130, 0; 0, 35]
+		  DstBlock		  "Merge"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  4
+		  SrcBlock		  "1209 Hz"
+		  SrcPort		  1
+		  Points		  [140, 0]
+		  DstBlock		  "Merge"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  5
+		  SrcBlock		  "Column"
+		  SrcPort		  1
+		  Points		  [40, 0]
+		  Branch {
+		    ZOrder		    6
+		    Points		    [0, -55]
+		    Branch {
+		    ZOrder		    7
+		    Points		    [0, -90]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    8
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    ZOrder		    9
+		    Points		    [0, 35]
+		    DstBlock		    "Relational\nOperator2"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  ZOrder		  10
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [85, 0]
+		  DstBlock		  "1209 Hz"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  11
+		  SrcBlock		  "Relational\nOperator1"
+		  SrcPort		  1
+		  Points		  [85, 0]
+		  DstBlock		  "1336 Hz"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  12
+		  SrcBlock		  "Relational\nOperator2"
+		  SrcPort		  1
+		  Points		  [85, 0]
+		  DstBlock		  "1477 Hz"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  13
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  14
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator1"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  15
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator2"
+		  DstPort		  2
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "Column value\nfor digit"
+	      SID		      "200"
+	      Ports		      [1, 1]
+	      Position		      [180, 259, 235, 301]
+	      ZOrder		      -4
+	      NumberOfTableDimensions "1"
+	      BreakpointsForDimension1 "[0 1 2 3 4 5 6 7 8 9 10 11]"
+	      Table		      "[1 0 1 2 0 1 2 0 1 2 0 2]"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Row Tones"
+	      SID		      "36"
+	      Ports		      [1, 1]
+	      Position		      [275, 122, 355, 178]
+	      ZOrder		      -5
+	      RequestExecContextInheritance off
+	      System {
+		Name			"Row Tones"
+		Location		[118, 205, 868, 622]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Row"
+		  SID			  "37"
+		  Position		  [15, 183, 45, 197]
+		  ZOrder		  -1
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "697 Hz"
+		  SID			  "38"
+		  Ports			  [0, 1, 1]
+		  Position		  [295, 73, 340, 127]
+		  ZOrder		  -2
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "697 Hz"
+		    Location		    [230, 375, 697, 571]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "39"
+		    Ports		    []
+		    Position		    [175, 30, 195, 50]
+		    ZOrder		    -1
+		    PropagateVarSize	    "During execution"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sine Wave"
+		    SID			    "40"
+		    Ports		    [0, 1]
+		    Position		    [155, 103, 200, 147]
+		    ZOrder		    -2
+		    LibraryVersion	    "1.734"
+		    SourceBlock		    "dspsrcs4/Sine Wave"
+		    SourceType		    "Sine Wave"
+		    Amplitude		    "1"
+		    Frequency		    "697*(1+dtmfdelta_f1/100)"
+		    Phase		    "0"
+		    SampleMode		    "Discrete"
+		    OutComplex		    "Real"
+		    CompMethod		    "Trigonometric fcn"
+		    TableSize		    "Speed"
+		    SampleTime		    "1/dtmfFs"
+		    SamplesPerFrame	    "dtmfFramesize"
+		    ResetState		    "Restart at time zero"
+		    additionalParams	    off
+		    allowOverrides	    on
+		    dataType		    "double"
+		    wordLen		    "16"
+		    udDataType		    "sfix(16)"
+		    fracBitsMode	    "Best precision"
+		    numFracBits		    "15"
+		    OutDataTypeStr	    "double"
+		    LastOutDataTypeStr	    "double"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "41"
+		    Position		    [320, 118, 350, 132]
+		    ZOrder		    -3
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Sine Wave"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "770 Hz"
+		  SID			  "42"
+		  Ports			  [0, 1, 1]
+		  Position		  [295, 168, 340, 222]
+		  ZOrder		  -3
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "770 Hz"
+		    Location		    [144, 252, 643, 460]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "43"
+		    Ports		    []
+		    Position		    [175, 30, 195, 50]
+		    ZOrder		    -1
+		    PropagateVarSize	    "During execution"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sine Wave"
+		    SID			    "44"
+		    Ports		    [0, 1]
+		    Position		    [155, 103, 200, 147]
+		    ZOrder		    -2
+		    LibraryVersion	    "1.734"
+		    SourceBlock		    "dspsrcs4/Sine Wave"
+		    SourceType		    "Sine Wave"
+		    Amplitude		    "1"
+		    Frequency		    "770*(1+dtmfdelta_f2/100)"
+		    Phase		    "0"
+		    SampleMode		    "Discrete"
+		    OutComplex		    "Real"
+		    CompMethod		    "Trigonometric fcn"
+		    TableSize		    "Speed"
+		    SampleTime		    "1/dtmfFs"
+		    SamplesPerFrame	    "dtmfFramesize"
+		    ResetState		    "Restart at time zero"
+		    additionalParams	    off
+		    allowOverrides	    on
+		    dataType		    "double"
+		    wordLen		    "16"
+		    udDataType		    "sfix(16)"
+		    fracBitsMode	    "Best precision"
+		    numFracBits		    "15"
+		    OutDataTypeStr	    "double"
+		    LastOutDataTypeStr	    "double"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "45"
+		    Position		    [320, 118, 350, 132]
+		    ZOrder		    -3
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Sine Wave"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "852 Hz"
+		  SID			  "46"
+		  Ports			  [0, 1, 1]
+		  Position		  [295, 258, 340, 312]
+		  ZOrder		  -4
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "852 Hz"
+		    Location		    [107, 262, 572, 456]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "47"
+		    Ports		    []
+		    Position		    [175, 30, 195, 50]
+		    ZOrder		    -1
+		    PropagateVarSize	    "During execution"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sine Wave"
+		    SID			    "48"
+		    Ports		    [0, 1]
+		    Position		    [160, 103, 205, 147]
+		    ZOrder		    -2
+		    LibraryVersion	    "1.734"
+		    SourceBlock		    "dspsrcs4/Sine Wave"
+		    SourceType		    "Sine Wave"
+		    Amplitude		    "1"
+		    Frequency		    "852*(1+dtmfdelta_f3/100)"
+		    Phase		    "0"
+		    SampleMode		    "Discrete"
+		    OutComplex		    "Real"
+		    CompMethod		    "Trigonometric fcn"
+		    TableSize		    "Speed"
+		    SampleTime		    "1/dtmfFs"
+		    SamplesPerFrame	    "dtmfFramesize"
+		    ResetState		    "Restart at time zero"
+		    additionalParams	    off
+		    allowOverrides	    on
+		    dataType		    "double"
+		    wordLen		    "16"
+		    udDataType		    "sfix(16)"
+		    fracBitsMode	    "Best precision"
+		    numFracBits		    "15"
+		    OutDataTypeStr	    "double"
+		    LastOutDataTypeStr	    "double"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "49"
+		    Position		    [320, 118, 350, 132]
+		    ZOrder		    -3
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Sine Wave"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "941 Hz"
+		  SID			  "50"
+		  Ports			  [0, 1, 1]
+		  Position		  [295, 343, 340, 397]
+		  ZOrder		  -5
+		  TreatAsAtomicUnit	  on
+		  RequestExecContextInheritance	off
+		  System {
+		    Name		    "941 Hz"
+		    Location		    [96, 315, 590, 525]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    EnablePort
+		    Name		    "Enable"
+		    SID			    "51"
+		    Ports		    []
+		    Position		    [175, 30, 195, 50]
+		    ZOrder		    -1
+		    PropagateVarSize	    "During execution"
+		    }
+		    Block {
+		    BlockType		    Reference
+		    Name		    "Sine Wave"
+		    SID			    "52"
+		    Ports		    [0, 1]
+		    Position		    [155, 103, 200, 147]
+		    ZOrder		    -2
+		    LibraryVersion	    "1.734"
+		    SourceBlock		    "dspsrcs4/Sine Wave"
+		    SourceType		    "Sine Wave"
+		    Amplitude		    "1"
+		    Frequency		    "941*(1+dtmfdelta_f4/100)"
+		    Phase		    "0"
+		    SampleMode		    "Discrete"
+		    OutComplex		    "Real"
+		    CompMethod		    "Trigonometric fcn"
+		    TableSize		    "Speed"
+		    SampleTime		    "1/dtmfFs"
+		    SamplesPerFrame	    "dtmfFramesize"
+		    ResetState		    "Restart at time zero"
+		    additionalParams	    off
+		    allowOverrides	    on
+		    dataType		    "double"
+		    wordLen		    "16"
+		    udDataType		    "sfix(16)"
+		    fracBitsMode	    "Best precision"
+		    numFracBits		    "15"
+		    OutDataTypeStr	    "double"
+		    LastOutDataTypeStr	    "double"
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "53"
+		    Position		    [320, 118, 350, 132]
+		    ZOrder		    -3
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    ZOrder		    1
+		    SrcBlock		    "Sine Wave"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant"
+		  SID			  "54"
+		  Position		  [135, 45, 165, 75]
+		  ZOrder		  -6
+		  ShowName		  off
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "55"
+		  Position		  [135, 135, 165, 165]
+		  ZOrder		  -7
+		  ShowName		  off
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant2"
+		  SID			  "56"
+		  Position		  [135, 225, 165, 255]
+		  ZOrder		  -8
+		  ShowName		  off
+		  Value			  "2"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant3"
+		  SID			  "57"
+		  Position		  [135, 315, 165, 345]
+		  ZOrder		  -9
+		  ShowName		  off
+		  Value			  "3"
+		}
+		Block {
+		  BlockType		  Merge
+		  Name			  "Merge"
+		  SID			  "58"
+		  Ports			  [4, 1]
+		  Position		  [500, 210, 540, 250]
+		  ZOrder		  -10
+		  Inputs		  "4"
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator"
+		  SID			  "59"
+		  Ports			  [2, 1]
+		  Position		  [195, 37, 225, 68]
+		  ZOrder		  -11
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator1"
+		  SID			  "60"
+		  Ports			  [2, 1]
+		  Position		  [195, 127, 225, 158]
+		  ZOrder		  -12
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator2"
+		  SID			  "61"
+		  Ports			  [2, 1]
+		  Position		  [195, 217, 225, 248]
+		  ZOrder		  -13
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  RelationalOperator
+		  Name			  "Relational\nOperator3"
+		  SID			  "62"
+		  Ports			  [2, 1]
+		  Position		  [195, 307, 225, 338]
+		  ZOrder		  -14
+		  ShowName		  off
+		  Operator		  "=="
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Tone"
+		  SID			  "63"
+		  Position		  [575, 223, 605, 237]
+		  ZOrder		  -15
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "Row"
+		  SrcPort		  1
+		  Points		  [45, 0]
+		  Branch {
+		    ZOrder		    2
+		    Points		    [0, -55]
+		    Branch {
+		    ZOrder		    3
+		    Points		    [0, -90]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    4
+		    DstBlock		    "Relational\nOperator1"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    ZOrder		    5
+		    Points		    [0, 35]
+		    Branch {
+		    ZOrder		    6
+		    DstBlock		    "Relational\nOperator2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    7
+		    Points		    [0, 90]
+		    DstBlock		    "Relational\nOperator3"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  ZOrder		  8
+		  SrcBlock		  "697 Hz"
+		  SrcPort		  1
+		  Points		  [140, 0]
+		  DstBlock		  "Merge"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  "770 Hz"
+		  SrcPort		  1
+		  Points		  [130, 0; 0, 30]
+		  DstBlock		  "Merge"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  10
+		  SrcBlock		  "852 Hz"
+		  SrcPort		  1
+		  Points		  [130, 0; 0, -50]
+		  DstBlock		  "Merge"
+		  DstPort		  3
+		}
+		Line {
+		  ZOrder		  11
+		  SrcBlock		  "941 Hz"
+		  SrcPort		  1
+		  Points		  [140, 0]
+		  DstBlock		  "Merge"
+		  DstPort		  4
+		}
+		Line {
+		  ZOrder		  12
+		  SrcBlock		  "Merge"
+		  SrcPort		  1
+		  DstBlock		  "Tone"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  13
+		  SrcBlock		  "Relational\nOperator"
+		  SrcPort		  1
+		  Points		  [85, 0]
+		  DstBlock		  "697 Hz"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  14
+		  SrcBlock		  "Relational\nOperator1"
+		  SrcPort		  1
+		  Points		  [85, 0]
+		  DstBlock		  "770 Hz"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  15
+		  SrcBlock		  "Relational\nOperator2"
+		  SrcPort		  1
+		  Points		  [85, 0]
+		  DstBlock		  "852 Hz"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  16
+		  SrcBlock		  "Relational\nOperator3"
+		  SrcPort		  1
+		  Points		  [85, 0]
+		  DstBlock		  "941 Hz"
+		  DstPort		  enable
+		}
+		Line {
+		  ZOrder		  17
+		  SrcBlock		  "Constant"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  18
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator1"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  19
+		  SrcBlock		  "Constant2"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator2"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  20
+		  SrcBlock		  "Constant3"
+		  SrcPort		  1
+		  DstBlock		  "Relational\nOperator3"
+		  DstPort		  2
+		}
+		Annotation {
+		  SID			  "223"
+		  Name			  "One out of the four tone generators\nare enabled at any time"
+		  Position		  [473, 42, 630, 64]
+		  InternalMargins	  [1, 1, 1, 1]
+		  AutoSize		  on
+		  WordWrap		  off
+		  ZOrder		  -1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "Row value\nfor digit"
+	      SID		      "201"
+	      Ports		      [1, 1]
+	      Position		      [180, 129, 235, 171]
+	      ZOrder		      -6
+	      NumberOfTableDimensions "1"
+	      BreakpointsForDimension1 "[0 1 2 3 4 5 6 7 8 9 10 11]"
+	      Table		      "[3 0 0 0 1 1 1 2 2 2 3 3]"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum"
+	      SID		      "65"
+	      Ports		      [2, 1]
+	      Position		      [460, 135, 490, 165]
+	      ZOrder		      -7
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "background1"
+	      SID		      "66"
+	      Ports		      []
+	      Position		      [144, 240, 396, 333]
+	      ZOrder		      -8
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      FontSize		      9
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		30
+		$ClassName		"Simulink.Mask"
+		Display			"disp('')"
+	      }
+	      System {
+		Name			"background1"
+		Location		[209, 325, 575, 532]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "background2"
+	      SID		      "67"
+	      Ports		      []
+	      Position		      [144, 110, 396, 203]
+	      ZOrder		      -9
+	      BackgroundColor	      "lightBlue"
+	      ShowName		      off
+	      FontName		      "Arial"
+	      FontSize		      9
+	      RequestExecContextInheritance off
+	      Object {
+		$PropName		"MaskObject"
+		$ObjectID		31
+		$ClassName		"Simulink.Mask"
+		Display			"disp('')"
+	      }
+	      System {
+		Name			"background2"
+		Location		[209, 325, 575, 532]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      SID		      "68"
+	      Position		      [565, 143, 595, 157]
+	      ZOrder		      -10
+	      IconDisplay	      "Port number"
+	      OutputWhenDisabled      "reset"
+	      InitialOutput	      "0"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Column value\nfor digit"
+	      SrcPort		      1
+	      DstBlock		      "Column Tones"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "Row value\nfor digit"
+	      SrcPort		      1
+	      DstBlock		      "Row Tones"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "In1"
+	      SrcPort		      1
+	      Points		      [0, 0; 45, 0]
+	      Branch {
+		ZOrder			5
+		Points			[0, 130]
+		DstBlock		"Column value\nfor digit"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			6
+		DstBlock		"Row value\nfor digit"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "Column Tones"
+	      SrcPort		      1
+	      Points		      [115, 0]
+	      DstBlock		      "Sum"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Row Tones"
+	      SrcPort		      1
+	      DstBlock		      "Sum"
+	      DstPort		      1
+	    }
+	    Annotation {
+	      SID		      "224"
+	      Name		      "Row Tones"
+	      Position		      [158, 90, 223, 106]
+	      InternalMargins	      [1, 1, 1, 1]
+	      AutoSize		      on
+	      WordWrap		      off
+	      ZOrder		      -1
+	      FontName		      "Arial"
+	      FontSize		      12
+	      FontWeight	      "bold"
+	    }
+	    Annotation {
+	      SID		      "225"
+	      Name		      "Column Tones"
+	      Position		      [156, 355, 240, 371]
+	      InternalMargins	      [1, 1, 1, 1]
+	      AutoSize		      on
+	      WordWrap		      off
+	      ZOrder		      -2
+	      FontName		      "Arial"
+	      FontSize		      12
+	      FontWeight	      "bold"
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "69"
+	  Ports			  [2, 1]
+	  Position		  [235, 115, 255, 135]
+	  ZOrder		  -4
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "70"
+	  Position		  [470, 118, 500, 132]
+	  ZOrder		  -5
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [0, 0; 50, 0]
+	  Branch {
+	    ZOrder		    2
+	    Points		    [0, -65; 160, 0]
+	    DstBlock		    "Digit to Tone"
+	    DstPort		    enable
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Digit to Tone"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Digit to Tone"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "226"
+	  Position		  [147, 21, 149, 33]
+	  InternalMargins	  [1, 1, 1, 1]
+	  AutoSize		  on
+	  WordWrap		  off
+	  ZOrder		  -1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DTMF Receiver"
+      SID		      "71"
+      Ports		      [1, 1]
+      Position		      [580, 198, 660, 272]
+      ZOrder		      -3
+      ShowName		      off
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		32
+	$ClassName		"Simulink.Mask"
+	Type			"DTMF Receiver"
+	Description		"Receiver and decoder for dual-tone multifrequency tones. The bandwidth of the bandpass filters can be s"
+	"pecified as a percentage of the center frequency."
+	Display			"disp('DTMF\\nReceiver');"
+	Object {
+	  $PropName		  "Parameters"
+	  $ObjectID		  33
+	  $ClassName		  "Simulink.MaskParameter"
+	  Type			  "edit"
+	  Name			  "dtmf_p"
+	  Prompt		  "Bandpass filter frequency bandwidth (% of central frequency):"
+	  Value			  "4.5"
+	}
+      }
+      Port {
+	PortNumber		1
+	Name			"digits"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"DTMF Receiver"
+	Location		[119, 468, 979, 742]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "72"
+	  Position		  [20, 63, 50, 77]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs"
+	  SID			  "73"
+	  Position		  [130, 55, 160, 85]
+	  ZOrder		  -2
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Bandpass and decode"
+	  SID			  "74"
+	  Ports			  [1, 1]
+	  Position		  [330, 126, 420, 194]
+	  ZOrder		  -3
+	  RequestExecContextInheritance	off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Digit"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Bandpass and decode"
+	    Location		    [11, 75, 639, 352]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Input"
+	      SID		      "75"
+	      Position		      [20, 93, 50, 107]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	      Port {
+		PortNumber		1
+		Name			"Input Tones"
+		PropagatedSignals	"tones + noise"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Lookup_n-D
+	      Name		      "Calculate\nDigit"
+	      SID		      "204"
+	      Ports		      [2, 1]
+	      Position		      [415, 92, 445, 128]
+	      ZOrder		      -2
+	      BreakpointsForDimension1 "[1:4]"
+	      BreakpointsForDimension2 "[1:3]"
+	      Table		      "[1 2 3;4 5 6;7 8 9;10 0 11]"
+	      ExtrapMethod	      "Clip"
+	      SaturateOnIntegerOverflow	on
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Calculate Column"
+	      SID		      "77"
+	      Ports		      [1, 1]
+	      Position		      [230, 175, 300, 245]
+	      ZOrder		      -3
+	      FontName		      "MS Sans Serif"
+	      RequestExecContextInheritance off
+	      System {
+		Name			"Calculate Column"
+		Location		[60, 109, 927, 635]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  SID			  "78"
+		  Position		  [15, 112, 45, 128]
+		  ZOrder		  -1
+		  NamePlacement		  "alternate"
+		  FontName		  "MS Sans Serif"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Lookup_n-D
+		  Name			  "Col=f(Tone)"
+		  SID			  "202"
+		  Ports			  [1, 1]
+		  Position		  [575, 185, 605, 215]
+		  ZOrder		  -2
+		  NumberOfTableDimensions "1"
+		  BreakpointsForDimension1 "[0:7]"
+		  Table			  "[0 1 2 0 3 0 0 0]"
+		  SaturateOnIntegerOverflow on
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Detect tone"
+		  SID			  "80"
+		  Ports			  [1, 1]
+		  Position		  [195, 105, 265, 135]
+		  ZOrder		  -3
+		  AttributesFormatString  "%<F> Hz"
+		  RequestExecContextInheritance	off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    34
+		    $ClassName		    "Simulink.Mask"
+		    Object {
+		    $PropName		    "Parameters"
+		    $ObjectID		    35
+		    $ClassName		    "Simulink.MaskParameter"
+		    Type		    "edit"
+		    Name		    "F"
+		    Prompt		    "Frequency"
+		    Value		    "1477"
+		    }
+		  }
+		  Port {
+		    PortNumber		    1
+		    Name		    "row 1"
+		    PropagatedSignals	    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "Detect tone"
+		    Location		    [71, 373, 868, 666]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "81"
+		    Position		    [40, 93, 70, 107]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "82"
+		    Position		    [250, 85, 280, 115]
+		    ZOrder		    -2
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "83"
+		    Position		    [515, 140, 545, 170]
+		    ZOrder		    -3
+		    Value		    "0.6"
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design1"
+		    SID			    "209"
+		    Ports		    [1, 1]
+		    Position		    [325, 72, 395, 128]
+		    ZOrder		    -262
+		    InputPortMap	    "u0"
+		    Numerator		    "butter(4,0.024414 )"
+		    Denominator		    "[1     -3.799600047139706      5.418636382695164      -3.43734174118743     0.8183367726466712]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design2"
+		    SID			    "210"
+		    Ports		    [1, 1]
+		    Position		    [130, 72, 200, 128]
+		    ZOrder		    -263
+		    InputPortMap	    "u0"
+		    Numerator		    "cheby1(4,1,[0.34437 0.37682] )"
+		    Denominator		    "[1     -3.351534504625169       8.10699128745984     -12.15068111449483      14.40624674632962"
+		    "     -11.85923479241394      7.722756593485457     -3.116033501354059     0.9074431772544341]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Band Passed"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    "86"
+		    Position		    [510, 86, 555, 114]
+		    ZOrder		    -6
+		    Gain		    "1/dtmfFramesize"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    SID			    "87"
+		    Ports		    [2, 1]
+		    Position		    [620, 92, 650, 123]
+		    ZOrder		    -7
+		    Port {
+		    PortNumber		    1
+		    Name		    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "88"
+		    Ports		    [1, 1]
+		    Position		    [455, 90, 475, 110]
+		    ZOrder		    -8
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "1"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "89"
+		    Position		    [750, 103, 780, 117]
+		    ZOrder		    -9
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    1
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Y/N"
+		    ZOrder		    2
+		    Labels		    [0, 0; 1, 0]
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    4
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Band Passed"
+		    ZOrder		    5
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design2"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design2"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    7
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    8
+		    Labels		    [0, 0]
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Detect tone2"
+		  SID			  "90"
+		  Ports			  [1, 1]
+		  Position		  [190, 185, 260, 215]
+		  ZOrder		  -4
+		  AttributesFormatString  "%<F> Hz"
+		  RequestExecContextInheritance	off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    36
+		    $ClassName		    "Simulink.Mask"
+		    Object {
+		    $PropName		    "Parameters"
+		    $ObjectID		    37
+		    $ClassName		    "Simulink.MaskParameter"
+		    Type		    "edit"
+		    Name		    "F"
+		    Prompt		    "Frequency"
+		    Value		    "1336"
+		    }
+		  }
+		  Port {
+		    PortNumber		    1
+		    Name		    "row 1"
+		    PropagatedSignals	    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "Detect tone2"
+		    Location		    [71, 373, 868, 666]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "91"
+		    Position		    [40, 93, 70, 107]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "92"
+		    Position		    [250, 85, 280, 115]
+		    ZOrder		    -2
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "93"
+		    Position		    [515, 140, 545, 170]
+		    ZOrder		    -3
+		    Value		    "0.6"
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design1"
+		    SID			    "211"
+		    Ports		    [1, 1]
+		    Position		    [325, 72, 395, 128]
+		    ZOrder		    -264
+		    InputPortMap	    "u0"
+		    Numerator		    "butter(4,0.024414 )"
+		    Denominator		    "[1     -3.799600047139706      5.418636382695164      -3.43734174118743     0.8183367726466712]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design2"
+		    SID			    "212"
+		    Ports		    [1, 1]
+		    Position		    [130, 72, 200, 128]
+		    ZOrder		    -265
+		    InputPortMap	    "u0"
+		    Numerator		    "cheby1(4,1,[0.31149 0.34085] )"
+		    Denominator		    "[1     -4.109271737397858      10.23854068371831     -16.38274148509198      19.22475767149518"
+		    "     -16.02675157800493      9.798412568107882     -3.847129397590863     0.9158731444103425]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Band Passed"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    "96"
+		    Position		    [510, 86, 555, 114]
+		    ZOrder		    -6
+		    Gain		    "1/dtmfFramesize"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    SID			    "97"
+		    Ports		    [2, 1]
+		    Position		    [620, 92, 650, 123]
+		    ZOrder		    -7
+		    Port {
+		    PortNumber		    1
+		    Name		    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "98"
+		    Ports		    [1, 1]
+		    Position		    [455, 90, 475, 110]
+		    ZOrder		    -8
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "1"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "99"
+		    Position		    [750, 103, 780, 117]
+		    ZOrder		    -9
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    1
+		    Labels		    [0, 0]
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    2
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design2"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Band Passed"
+		    ZOrder		    4
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design2"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    5
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "Y/N"
+		    ZOrder		    7
+		    Labels		    [0, 0; 1, 0]
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    8
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Detect tone3"
+		  SID			  "100"
+		  Ports			  [1, 1]
+		  Position		  [190, 265, 260, 295]
+		  ZOrder		  -5
+		  AttributesFormatString  "%<F> Hz"
+		  RequestExecContextInheritance	off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    38
+		    $ClassName		    "Simulink.Mask"
+		    Object {
+		    $PropName		    "Parameters"
+		    $ObjectID		    39
+		    $ClassName		    "Simulink.MaskParameter"
+		    Type		    "edit"
+		    Name		    "F"
+		    Prompt		    "Frequency"
+		    Value		    "1209"
+		    }
+		  }
+		  Port {
+		    PortNumber		    1
+		    Name		    "row 1"
+		    PropagatedSignals	    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "Detect tone3"
+		    Location		    [77, 367, 874, 660]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "101"
+		    Position		    [40, 93, 70, 107]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "102"
+		    Position		    [250, 85, 280, 115]
+		    ZOrder		    -2
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "103"
+		    Position		    [515, 140, 545, 170]
+		    ZOrder		    -3
+		    Value		    "0.6"
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design1"
+		    SID			    "213"
+		    Ports		    [1, 1]
+		    Position		    [325, 72, 395, 128]
+		    ZOrder		    -266
+		    InputPortMap	    "u0"
+		    Numerator		    "butter(4,0.024414 )"
+		    Denominator		    "[1     -3.799600047139706      5.418636382695164      -3.43734174118743     0.8183367726466712]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design2"
+		    SID			    "214"
+		    Ports		    [1, 1]
+		    Position		    [130, 72, 200, 128]
+		    ZOrder		    -267
+		    InputPortMap	    "u0"
+		    Numerator		    "cheby1(4,1,[0.28188 0.30845] )"
+		    Denominator		    "[1     -4.752348043106542      12.38564406749955     -20.67287188883259      24.34715829142214"
+		    "     -20.26589425714094      11.90277663892072     -4.477143154545357     0.9235523052060477]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Band Passed"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    "106"
+		    Position		    [510, 86, 555, 114]
+		    ZOrder		    -6
+		    Gain		    "1/dtmfFramesize"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    SID			    "107"
+		    Ports		    [2, 1]
+		    Position		    [620, 92, 650, 123]
+		    ZOrder		    -7
+		    Port {
+		    PortNumber		    1
+		    Name		    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "108"
+		    Ports		    [1, 1]
+		    Position		    [455, 90, 475, 110]
+		    ZOrder		    -8
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "1"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "109"
+		    Position		    [750, 103, 780, 117]
+		    ZOrder		    -9
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    1
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Y/N"
+		    ZOrder		    2
+		    Labels		    [0, 0; 1, 0]
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    4
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Band Passed"
+		    ZOrder		    5
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design2"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design2"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    7
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    8
+		    Labels		    [0, 0]
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  Reference
+		  Name			  "Frame Status\nConversion1"
+		  SID			  "110"
+		  Ports			  [1, 1]
+		  Position		  [450, 180, 515, 220]
+		  ZOrder		  -6
+		  LibraryVersion	  "1.508"
+		  SourceBlock		  "dspobslib/Frame Status\nConversion"
+		  SourceType		  "Frame Status Conversion"
+		  ContentPreviewEnabled	  off
+		  growRefPort		  off
+		  outframe		  "Sample-based"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain"
+		  SID			  "111"
+		  Position		  [325, 105, 355, 135]
+		  ZOrder		  -7
+		  Gain			  "4"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  SID			  "112"
+		  Position		  [320, 185, 350, 215]
+		  ZOrder		  -8
+		  Gain			  "2"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "113"
+		  Ports			  [3, 1]
+		  Position		  [380, 185, 410, 215]
+		  ZOrder		  -9
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "+++"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		  Port {
+		    PortNumber		    1
+		    Name		    "YN"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  SID			  "114"
+		  Position		  [650, 193, 680, 207]
+		  ZOrder		  -10
+		  FontName		  "MS Sans Serif"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  Name			  "YN"
+		  ZOrder		  1
+		  Labels		  [0, 0]
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Frame Status\nConversion1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "Frame Status\nConversion1"
+		  SrcPort		  1
+		  DstBlock		  "Col=f(Tone)"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "row 1"
+		  ZOrder		  3
+		  Labels		  [0, 0]
+		  SrcBlock		  "Detect tone2"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  4
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  Points		  [0, 0; 40, 0]
+		  Branch {
+		    ZOrder		    5
+		    DstBlock		    "Detect tone"
+		    DstPort		    1
+		  }
+		  Branch {
+		    ZOrder		    6
+		    Points		    [0, 80]
+		    Branch {
+		    ZOrder		    7
+		    Points		    [0, 80]
+		    DstBlock		    "Detect tone3"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    8
+		    DstBlock		    "Detect tone2"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  "Col=f(Tone)"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  10
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "row 1"
+		  ZOrder		  11
+		  Labels		  [0, 0]
+		  SrcBlock		  "Detect tone"
+		  SrcPort		  1
+		  DstBlock		  "Gain"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  12
+		  SrcBlock		  "Gain"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "row 1"
+		  ZOrder		  13
+		  Labels		  [0, 0]
+		  SrcBlock		  "Detect tone3"
+		  SrcPort		  1
+		  Points		  [130, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  3
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Calculate Row"
+	      SID		      "115"
+	      Ports		      [1, 1]
+	      Position		      [230, 67, 300, 133]
+	      ZOrder		      -4
+	      FontName		      "MS Sans Serif"
+	      RequestExecContextInheritance off
+	      System {
+		Name			"Calculate Row"
+		Location		[75, 95, 827, 704]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "In1"
+		  SID			  "116"
+		  Position		  [85, 163, 115, 177]
+		  ZOrder		  -1
+		  FontName		  "MS Sans Serif"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Detect tone"
+		  SID			  "117"
+		  Ports			  [1, 1]
+		  Position		  [190, 155, 260, 185]
+		  ZOrder		  -2
+		  AttributesFormatString  "%<F> Hz"
+		  RequestExecContextInheritance	off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    40
+		    $ClassName		    "Simulink.Mask"
+		    Object {
+		    $PropName		    "Parameters"
+		    $ObjectID		    41
+		    $ClassName		    "Simulink.MaskParameter"
+		    Type		    "edit"
+		    Name		    "F"
+		    Prompt		    "Frequency"
+		    Value		    "941"
+		    }
+		  }
+		  Port {
+		    PortNumber		    1
+		    Name		    "row 1"
+		    PropagatedSignals	    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "Detect tone"
+		    Location		    [317, 382, 1187, 608]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "118"
+		    Position		    [40, 93, 70, 107]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "119"
+		    Position		    [280, 85, 310, 115]
+		    ZOrder		    -2
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "120"
+		    Position		    [605, 140, 635, 170]
+		    ZOrder		    -3
+		    Value		    "0.6"
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design1"
+		    SID			    "215"
+		    Ports		    [1, 1]
+		    Position		    [355, 72, 425, 128]
+		    ZOrder		    -268
+		    InputPortMap	    "u0"
+		    Numerator		    "butter(4,0.024414 )"
+		    Denominator		    "[1     -3.799600047139706      5.418636382695164      -3.43734174118743     0.8183367726466712]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design2"
+		    SID			    "216"
+		    Ports		    [1, 1]
+		    Position		    [130, 72, 200, 128]
+		    ZOrder		    -269
+		    InputPortMap	    "u0"
+		    Numerator		    "cheby1(4,1,[0.2194 0.24007] )"
+		    Denominator		    "[1     -5.958859496378779      17.25206476391561     -30.82030278001819      36.95597582617549"
+		    "     -30.34721652315746      16.72649806780964     -5.688650155299636     0.9400051443679699]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Band Passed"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    "123"
+		    Position		    [600, 86, 645, 114]
+		    ZOrder		    -6
+		    Gain		    "1/dtmfFramesize"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    SID			    "124"
+		    Ports		    [2, 1]
+		    Position		    [710, 92, 740, 123]
+		    ZOrder		    -7
+		    Port {
+		    PortNumber		    1
+		    Name		    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "125"
+		    Ports		    [1, 1]
+		    Position		    [525, 90, 545, 110]
+		    ZOrder		    -8
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "1"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "126"
+		    Position		    [785, 103, 815, 117]
+		    ZOrder		    -9
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    1
+		    Labels		    [0, 0]
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [0, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    2
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design2"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Band Passed"
+		    ZOrder		    4
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design2"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    5
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    Points		    [0, 0]
+		    DstBlock		    "Digital IIR\nFilter Design1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "Y/N"
+		    ZOrder		    7
+		    Labels		    [0, 0; 1, 0]
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    8
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Detect tone1"
+		  SID			  "127"
+		  Ports			  [1, 1]
+		  Position		  [185, 260, 255, 290]
+		  ZOrder		  -3
+		  AttributesFormatString  "%<F> Hz"
+		  RequestExecContextInheritance	off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    42
+		    $ClassName		    "Simulink.Mask"
+		    Object {
+		    $PropName		    "Parameters"
+		    $ObjectID		    43
+		    $ClassName		    "Simulink.MaskParameter"
+		    Type		    "edit"
+		    Name		    "F"
+		    Prompt		    "Frequency"
+		    Value		    "852"
+		    }
+		  }
+		  Port {
+		    PortNumber		    1
+		    Name		    "row 1"
+		    PropagatedSignals	    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "Detect tone1"
+		    Location		    [318, 400, 1187, 636]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "128"
+		    Position		    [40, 93, 70, 107]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "129"
+		    Position		    [280, 85, 310, 115]
+		    ZOrder		    -2
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "130"
+		    Position		    [585, 140, 615, 170]
+		    ZOrder		    -3
+		    Value		    "0.6"
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design1"
+		    SID			    "217"
+		    Ports		    [1, 1]
+		    Position		    [355, 72, 425, 128]
+		    ZOrder		    -270
+		    InputPortMap	    "u0"
+		    Numerator		    "butter(4,0.024414 )"
+		    Denominator		    "[1     -3.799600047139706      5.418636382695164      -3.43734174118743     0.8183367726466712]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design2"
+		    SID			    "218"
+		    Ports		    [1, 1]
+		    Position		    [130, 72, 200, 128]
+		    ZOrder		    -271
+		    InputPortMap	    "u0"
+		    Numerator		    "cheby1(4,1,[0.19865 0.21737] )"
+		    Denominator		    "[1     -6.307290738785874      18.86115258817615     -34.33641523909546      41.43128366098485"
+		    "     -33.85873013586509       18.3400163783615     -6.047701819053891     0.9455074094657447]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    "133"
+		    Position		    [580, 86, 625, 114]
+		    ZOrder		    -6
+		    Gain		    "1/dtmfFramesize"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    SID			    "134"
+		    Ports		    [2, 1]
+		    Position		    [690, 92, 720, 123]
+		    ZOrder		    -7
+		    Port {
+		    PortNumber		    1
+		    Name		    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "135"
+		    Ports		    [1, 1]
+		    Position		    [525, 90, 545, 110]
+		    ZOrder		    -8
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "1"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "136"
+		    Position		    [765, 103, 795, 117]
+		    ZOrder		    -9
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    1
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Y/N"
+		    ZOrder		    2
+		    Labels		    [0, 0; 2, 0]
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    Points		    [0, 0]
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    4
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    5
+		    SrcBlock		    "Digital IIR\nFilter Design2"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design2"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    7
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    8
+		    Labels		    [0, 0]
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    Points		    [0, 0]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Annotation {
+		    SID			    "227"
+		    Name		    "Band passed"
+		    Position		    [239, 115, 299, 127]
+		    InternalMargins	    [1, 1, 1, 1]
+		    AutoSize		    on
+		    WordWrap		    off
+		    ZOrder		    -1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Detect tone2"
+		  SID			  "137"
+		  Ports			  [1, 1]
+		  Position		  [190, 365, 260, 395]
+		  ZOrder		  -4
+		  AttributesFormatString  "%<F> Hz"
+		  RequestExecContextInheritance	off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    44
+		    $ClassName		    "Simulink.Mask"
+		    Object {
+		    $PropName		    "Parameters"
+		    $ObjectID		    45
+		    $ClassName		    "Simulink.MaskParameter"
+		    Type		    "edit"
+		    Name		    "F"
+		    Prompt		    "Frequency"
+		    Value		    "770"
+		    }
+		  }
+		  Port {
+		    PortNumber		    1
+		    Name		    "row 1"
+		    PropagatedSignals	    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "Detect tone2"
+		    Location		    [73, 371, 983, 715]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "138"
+		    Position		    [40, 93, 70, 107]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "139"
+		    Position		    [250, 85, 280, 115]
+		    ZOrder		    -2
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "140"
+		    Position		    [515, 140, 545, 170]
+		    ZOrder		    -3
+		    Value		    "0.6"
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design1"
+		    SID			    "219"
+		    Ports		    [1, 1]
+		    Position		    [325, 72, 395, 128]
+		    ZOrder		    -272
+		    InputPortMap	    "u0"
+		    Numerator		    "butter(4,0.024414 )"
+		    Denominator		    "[1     -3.799600047139706      5.418636382695164      -3.43734174118743     0.8183367726466712]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design2"
+		    SID			    "220"
+		    Ports		    [1, 1]
+		    Position		    [130, 72, 200, 128]
+		    ZOrder		    -273
+		    InputPortMap	    "u0"
+		    Numerator		    "cheby1(4,1,[0.17953 0.19645] )"
+		    Denominator		    "[1     -6.602847127805465      20.29779156008288     -37.54784384124043      45.55694442771227"
+		    "     -37.07539184815035      19.79020814600772     -6.356732018737127     0.9506151081795299]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Band Passed"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    "143"
+		    Position		    [510, 86, 555, 114]
+		    ZOrder		    -6
+		    Gain		    "1/dtmfFramesize"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    SID			    "144"
+		    Ports		    [2, 1]
+		    Position		    [620, 92, 650, 123]
+		    ZOrder		    -7
+		    Port {
+		    PortNumber		    1
+		    Name		    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "145"
+		    Ports		    [1, 1]
+		    Position		    [455, 90, 475, 110]
+		    ZOrder		    -8
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "1"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "146"
+		    Position		    [750, 103, 780, 117]
+		    ZOrder		    -9
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    1
+		    Labels		    [0, 0]
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    2
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design2"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Band Passed"
+		    ZOrder		    4
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design2"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    5
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    Name		    "Y/N"
+		    ZOrder		    7
+		    Labels		    [0, 0; 1, 0]
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    8
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  SubSystem
+		  Name			  "Detect tone3"
+		  SID			  "147"
+		  Ports			  [1, 1]
+		  Position		  [190, 470, 260, 500]
+		  ZOrder		  -5
+		  AttributesFormatString  "%<F> Hz"
+		  RequestExecContextInheritance	off
+		  Object {
+		    $PropName		    "MaskObject"
+		    $ObjectID		    46
+		    $ClassName		    "Simulink.Mask"
+		    Object {
+		    $PropName		    "Parameters"
+		    $ObjectID		    47
+		    $ClassName		    "Simulink.MaskParameter"
+		    Type		    "edit"
+		    Name		    "F"
+		    Prompt		    "Frequency"
+		    Value		    "697"
+		    }
+		  }
+		  Port {
+		    PortNumber		    1
+		    Name		    "row 1"
+		    PropagatedSignals	    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		  System {
+		    Name		    "Detect tone3"
+		    Location		    [85, 446, 882, 739]
+		    Open		    off
+		    ModelBrowserVisibility  off
+		    ModelBrowserWidth	    200
+		    ScreenColor		    "white"
+		    PaperOrientation	    "landscape"
+		    PaperPositionMode	    "auto"
+		    PaperType		    "usletter"
+		    PaperUnits		    "inches"
+		    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+		    TiledPageScale	    1
+		    ShowPageBoundaries	    off
+		    ZoomFactor		    "100"
+		    Block {
+		    BlockType		    Inport
+		    Name		    "In1"
+		    SID			    "148"
+		    Position		    [40, 93, 70, 107]
+		    ZOrder		    -1
+		    IconDisplay		    "Port number"
+		    }
+		    Block {
+		    BlockType		    Abs
+		    Name		    "Abs"
+		    SID			    "149"
+		    Position		    [250, 85, 280, 115]
+		    ZOrder		    -2
+		    }
+		    Block {
+		    BlockType		    Constant
+		    Name		    "Constant"
+		    SID			    "150"
+		    Position		    [515, 140, 545, 170]
+		    ZOrder		    -3
+		    Value		    "0.6"
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design1"
+		    SID			    "221"
+		    Ports		    [1, 1]
+		    Position		    [325, 72, 395, 128]
+		    ZOrder		    -274
+		    InputPortMap	    "u0"
+		    Numerator		    "butter(4,0.024414 )"
+		    Denominator		    "[1     -3.799600047139706      5.418636382695164      -3.43734174118743     0.8183367726466712]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    DiscreteFilter
+		    Name		    "Digital IIR\nFilter Design2"
+		    SID			    "222"
+		    Ports		    [1, 1]
+		    Position		    [130, 72, 200, 128]
+		    ZOrder		    -275
+		    InputPortMap	    "u0"
+		    Numerator		    "cheby1(4,1,[0.16251 0.17782] )"
+		    Denominator		    "[1     -6.844396697786066      21.52092460865172     -40.33641962283424      49.16722309158686"
+		    "     -39.87689970998925      21.03338086634554     -6.613139526612567     0.9552071096321408]"
+		    InputProcessing	    "Columns as channels (frame based)"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Band Passed"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Gain
+		    Name		    "Gain"
+		    SID			    "153"
+		    Position		    [510, 86, 555, 114]
+		    ZOrder		    -6
+		    Gain		    "1/dtmfFramesize"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    RelationalOperator
+		    Name		    "Relational\nOperator"
+		    SID			    "154"
+		    Ports		    [2, 1]
+		    Position		    [620, 92, 650, 123]
+		    ZOrder		    -7
+		    Port {
+		    PortNumber		    1
+		    Name		    "Y/N"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Sum
+		    Name		    "Sum1"
+		    SID			    "155"
+		    Ports		    [1, 1]
+		    Position		    [455, 90, 475, 110]
+		    ZOrder		    -8
+		    ShowName		    off
+		    IconShape		    "round"
+		    Inputs		    "1"
+		    Port {
+		    PortNumber		    1
+		    Name		    "Detected"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		    }
+		    }
+		    Block {
+		    BlockType		    Outport
+		    Name		    "Out1"
+		    SID			    "156"
+		    Position		    [750, 103, 780, 117]
+		    ZOrder		    -9
+		    IconDisplay		    "Port number"
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    1
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design1"
+		    SrcPort		    1
+		    DstBlock		    "Sum1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Y/N"
+		    ZOrder		    2
+		    Labels		    [0, 0; 1, 0]
+		    SrcBlock		    "Relational\nOperator"
+		    SrcPort		    1
+		    DstBlock		    "Out1"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    3
+		    SrcBlock		    "Constant"
+		    SrcPort		    1
+		    Points		    [0, -40]
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    2
+		    }
+		    Line {
+		    ZOrder		    4
+		    SrcBlock		    "Abs"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design1"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Band Passed"
+		    ZOrder		    5
+		    Labels		    [0, 0]
+		    SrcBlock		    "Digital IIR\nFilter Design2"
+		    SrcPort		    1
+		    DstBlock		    "Abs"
+		    DstPort		    1
+		    }
+		    Line {
+		    ZOrder		    6
+		    SrcBlock		    "In1"
+		    SrcPort		    1
+		    DstBlock		    "Digital IIR\nFilter Design2"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    7
+		    Labels		    [0, 0]
+		    SrcBlock		    "Sum1"
+		    SrcPort		    1
+		    DstBlock		    "Gain"
+		    DstPort		    1
+		    }
+		    Line {
+		    Name		    "Detected"
+		    ZOrder		    8
+		    Labels		    [0, 0]
+		    SrcBlock		    "Gain"
+		    SrcPort		    1
+		    DstBlock		    "Relational\nOperator"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Block {
+		  BlockType		  FrameConversion
+		  Name			  "Frame Status"
+		  SID			  "157"
+		  Ports			  [1, 1]
+		  Position		  [470, 310, 550, 350]
+		  ZOrder		  -6
+		  OutFrame		  "Sample-based"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain1"
+		  SID			  "158"
+		  Position		  [315, 365, 345, 395]
+		  ZOrder		  -7
+		  Gain			  "2"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain2"
+		  SID			  "159"
+		  Position		  [315, 260, 345, 290]
+		  ZOrder		  -8
+		  Gain			  "4"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "Gain3"
+		  SID			  "160"
+		  Position		  [320, 155, 350, 185]
+		  ZOrder		  -9
+		  Gain			  "8"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Lookup_n-D
+		  Name			  "Row=f(Tone)"
+		  SID			  "203"
+		  Ports			  [1, 1]
+		  Position		  [600, 315, 630, 345]
+		  ZOrder		  -10
+		  NumberOfTableDimensions "1"
+		  BreakpointsForDimension1 "[0:15]"
+		  Table			  "[0 1 2 0 3 0 0 0 4 0 0 0 0 0 0 0]"
+		  SaturateOnIntegerOverflow on
+		  Port {
+		    PortNumber		    1
+		    Name		    "row"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "162"
+		  Ports			  [4, 1]
+		  Position		  [395, 315, 425, 345]
+		  ZOrder		  -11
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "++++"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		  Port {
+		    PortNumber		    1
+		    Name		    "YN"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  SID			  "163"
+		  Position		  [685, 323, 715, 337]
+		  ZOrder		  -12
+		  FontName		  "MS Sans Serif"
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  1
+		  SrcBlock		  "In1"
+		  SrcPort		  1
+		  Points		  [0, 0; 30, 0]
+		  Branch {
+		    ZOrder		    2
+		    DstBlock		    "Detect tone"
+		    DstPort		    1
+		  }
+		  Branch {
+		    ZOrder		    3
+		    Points		    [0, 105]
+		    Branch {
+		    ZOrder		    4
+		    DstBlock		    "Detect tone1"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    5
+		    Points		    [0, 105]
+		    Branch {
+		    ZOrder		    6
+		    DstBlock		    "Detect tone2"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    7
+		    Points		    [0, 105]
+		    DstBlock		    "Detect tone3"
+		    DstPort		    1
+		    }
+		    }
+		  }
+		}
+		Line {
+		  Name			  "row"
+		  FontName		  "MS Sans Serif"
+		  ZOrder		  8
+		  Labels		  [0, 0]
+		  SrcBlock		  "Row=f(Tone)"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  9
+		  SrcBlock		  "Frame Status"
+		  SrcPort		  1
+		  DstBlock		  "Row=f(Tone)"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "row 1"
+		  ZOrder		  10
+		  Labels		  [0, 0]
+		  SrcBlock		  "Detect tone2"
+		  SrcPort		  1
+		  DstBlock		  "Gain1"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "row 1"
+		  ZOrder		  11
+		  Labels		  [0, 0]
+		  SrcBlock		  "Detect tone1"
+		  SrcPort		  1
+		  DstBlock		  "Gain2"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "row 1"
+		  ZOrder		  12
+		  Labels		  [0, 0]
+		  SrcBlock		  "Detect tone"
+		  SrcPort		  1
+		  DstBlock		  "Gain3"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  13
+		  SrcBlock		  "Gain3"
+		  SrcPort		  1
+		  Points		  [55, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  14
+		  SrcBlock		  "Gain2"
+		  SrcPort		  1
+		  Points		  [34, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  15
+		  SrcBlock		  "Gain1"
+		  SrcPort		  1
+		  Points		  [30, 0; 0, -35]
+		  DstBlock		  "Sum"
+		  DstPort		  3
+		}
+		Line {
+		  Name			  "YN"
+		  ZOrder		  16
+		  Labels		  [0, 0]
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Frame Status"
+		  DstPort		  1
+		}
+		Line {
+		  Name			  "row 1"
+		  ZOrder		  17
+		  Labels		  [0, 0]
+		  SrcBlock		  "Detect tone3"
+		  SrcPort		  1
+		  Points		  [145, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  4
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Output"
+	      SID		      "164"
+	      Position		      [555, 103, 585, 117]
+	      ZOrder		      -5
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      Name		      "Input Tones"
+	      ZOrder		      1
+	      Labels		      [1, 0]
+	      SrcBlock		      "Input"
+	      SrcPort		      1
+	      Points		      [110, 0]
+	      Branch {
+		ZOrder			2
+		Points			[0, 110]
+		DstBlock		"Calculate Column"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			3
+		DstBlock		"Calculate Row"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      4
+	      Labels		      [0, 0]
+	      SrcBlock		      "Calculate\nDigit"
+	      SrcPort		      1
+	      DstBlock		      "Output"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "Calculate Row"
+	      SrcPort		      1
+	      DstBlock		      "Calculate\nDigit"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "Calculate Column"
+	      SrcPort		      1
+	      Points		      [95, 0]
+	      DstBlock		      "Calculate\nDigit"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "165"
+	  Position		  [255, 55, 285, 85]
+	  ZOrder		  -4
+	  Gain			  "1/dtmfFramesize"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Integer Delay1"
+	  SID			  "208"
+	  Ports			  [1, 1]
+	  Position		  [455, 52, 500, 88]
+	  ZOrder		  -3
+	  ShowName		  off
+	  LibraryVersion	  "1.735"
+	  UserDataPersistent	  on
+	  UserData		  "DataTag1"
+	  SourceBlock		  "dspsigops/Delay"
+	  SourceType		  "Delay"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  dly_unit		  "Samples"
+	  delay			  "1"
+	  ic_detail		  off
+	  dif_ic_for_ch		  off
+	  dif_ic_for_dly	  off
+	  ic			  "0"
+	  reset_popup		  "None"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Delayed edge"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Leading Edge\nDetector"
+	  SID			  "167"
+	  Ports			  [1, 1]
+	  Position		  [330, 47, 410, 93]
+	  ZOrder		  -6
+	  NamePlacement		  "alternate"
+	  FontName		  "Arial"
+	  FontSize		  12
+	  RequestExecContextInheritance	off
+	  System {
+	    Name		    "Leading Edge\nDetector"
+	    Location		    [68, 348, 729, 558]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Env"
+	      SID		      "168"
+	      Position		      [40, 43, 70, 57]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "Binary\nTo Bipolar"
+	      SID		      "169"
+	      Position		      [240, 44, 285, 76]
+	      ZOrder		      -2
+	      Expr		      "2*u-1"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "170"
+	      Position		      [80, 80, 110, 110]
+	      ZOrder		      -3
+	      Value		      "0.5"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Digital Filter"
+	      SID		      "171"
+	      Ports		      [1, 1]
+	      Position		      [305, 42, 375, 78]
+	      ZOrder		      -4
+	      LibraryVersion	      "1.321"
+	      UserDataPersistent      on
+	      UserData		      "DataTag2"
+	      SourceBlock	      "dsparch4/Digital Filter"
+	      SourceType	      "Digital Filter"
+	      TypePopup		      "FIR (all zeros)"
+	      IIRFiltStruct	      "Direct form II transposed"
+	      AllPoleFiltStruct	      "Direct form"
+	      FIRFiltStruct	      "Direct form"
+	      CoeffSource	      "Specify via dialog"
+	      NumCoeffs		      "[ones(1,4) -ones(1,4)]"
+	      DenCoeffs		      "[1 0.1]"
+	      BiQuadCoeffs	      "[1 0.3 0.4 1 0.1 0.2]"
+	      LatticeCoeffs	      "[0.2 0.4]"
+	      denIgnore		      on
+	      FiltPerSampPopup	      "One filter per frame"
+	      IC		      "0"
+	      ICnum		      "0"
+	      ICden		      "0"
+	      additionalParams	      off
+	      allowOverrides	      on
+	      showCoeff		      off
+	      firstCoeffMode	      "Same word length as input"
+	      firstCoeffWordLength    "16"
+	      firstCoeffFracLength    "15"
+	      secondCoeffMode	      "Same as numerator"
+	      secondCoeffWordLength   "16"
+	      secondCoeffFracLength   "15"
+	      thirdCoeffMode	      "Same as input"
+	      thirdCoeffWordLength    "16"
+	      thirdCoeffFracLength    "15"
+	      showOut		      off
+	      outputMode	      "Same as accumulator"
+	      outputWordLength	      "16"
+	      outputFracLength	      "15"
+	      showAcc		      off
+	      accumMode		      "Same as product output"
+	      accumWordLength	      "32"
+	      accumFracLength	      "30"
+	      showMpy		      off
+	      prodOutputMode	      "Same as input"
+	      prodOutputWordLength    "32"
+	      prodOutputFracLength    "30"
+	      showMem		      off
+	      memoryMode	      "Same as accumulator"
+	      memoryWordLength	      "16"
+	      memoryFracLength	      "15"
+	      roundingMode	      "Floor"
+	      overflowMode	      off
+	      ScaleValues	      "1"
+	      scaleValueFracLength    "14"
+	      tapSumMode	      "Same as input"
+	      tapSumWordLength	      "32"
+	      tapSumFracLength	      "30"
+	      stageIOMode	      "Same as input"
+	      stageIOWordLength	      "16"
+	      stageInFracLength	      "15"
+	      stageOutFracLength      "15"
+	      LockScale		      off
+	      FilterSource	      "Specify via dialog"
+	      dfiltObjectName	      "dfilt.dffir([1 2 1])"
+	      multiplicandMode	      "Same as output"
+	      multiplicandWordLength  "32"
+	      multiplicandFracLength  "30"
+	      InputProcessing	      "Elements as channels (sample based)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Edge\nDetector1"
+	      SID		      "172"
+	      Ports		      [1, 1]
+	      Position		      [470, 40, 520, 80]
+	      ZOrder		      -5
+	      LibraryVersion	      "1.225"
+	      UserDataPersistent      on
+	      UserData		      "DataTag3"
+	      SourceBlock	      "dspswit3/Edge\nDetector"
+	      SourceType	      "Edge Detector"
+	      ContentPreviewEnabled   off
+	      InputProcessing	      "Elements as channels (sample based)"
+	    }
+	    Block {
+	      BlockType		      RelationalOperator
+	      Name		      "Relational\nOperator"
+	      SID		      "173"
+	      Ports		      [2, 1]
+	      Position		      [175, 42, 205, 73]
+	      ZOrder		      -6
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Fcn
+	      Name		      "Rising Edge\nStart"
+	      SID		      "174"
+	      Position		      [395, 45, 455, 75]
+	      ZOrder		      -7
+	      Expr		      "u>5"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Edge"
+	      SID		      "175"
+	      Position		      [550, 53, 580, 67]
+	      ZOrder		      -8
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Edge\nDetector1"
+	      SrcPort		      1
+	      DstBlock		      "Edge"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Digital Filter"
+	      SrcPort		      1
+	      DstBlock		      "Rising Edge\nStart"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "Binary\nTo Bipolar"
+	      SrcPort		      1
+	      DstBlock		      "Digital Filter"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "Rising Edge\nStart"
+	      SrcPort		      1
+	      DstBlock		      "Edge\nDetector1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "Env"
+	      SrcPort		      1
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      DstBlock		      "Relational\nOperator"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "Relational\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Binary\nTo Bipolar"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Shift register"
+	  SID			  "176"
+	  Ports			  [1, 1, 0, 1]
+	  Position		  [540, 133, 620, 187]
+	  ZOrder		  -7
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  System {
+	    Name		    "Shift register"
+	    Location		    [794, 559, 1085, 739]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Input"
+	      SID		      "177"
+	      Position		      [55, 93, 85, 107]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      TriggerPort
+	      Name		      "Trigger"
+	      SID		      "178"
+	      Ports		      []
+	      Position		      [130, 20, 150, 40]
+	      ZOrder		      -2
+	      ZeroCross		      off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Delay Line"
+	      SID		      "179"
+	      Ports		      [1, 1]
+	      Position		      [110, 74, 170, 126]
+	      ZOrder		      -3
+	      LibraryVersion	      "1.413"
+	      UserDataPersistent      on
+	      UserData		      "DataTag4"
+	      SourceBlock	      "dspbuff3/Delay Line"
+	      SourceType	      "Delay Line"
+	      siz		      "11"
+	      ic		      "0"
+	      directfeed	      on
+	      enable_output	      off
+	      hold_output	      off
+	      TreatMby1Signals	      "One channel"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Output"
+	      SID		      "180"
+	      Position		      [195, 93, 225, 107]
+	      ZOrder		      -4
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Input"
+	      SrcPort		      1
+	      DstBlock		      "Delay Line"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Delay Line"
+	      SrcPort		      1
+	      DstBlock		      "Output"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "181"
+	  Ports			  [1, 1]
+	  Position		  [200, 60, 220, 80]
+	  ZOrder		  -8
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "182"
+	  Position		  [670, 153, 700, 167]
+	  ZOrder		  -9
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    ZOrder		    2
+	    Points		    [0, 90]
+	    DstBlock		    "Bandpass and decode"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Abs"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Abs"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Leading Edge\nDetector"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Leading Edge\nDetector"
+	  SrcPort		  1
+	  DstBlock		  "Integer Delay1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Digit"
+	  ZOrder		  8
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bandpass and decode"
+	  SrcPort		  1
+	  DstBlock		  "Shift register"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Delayed edge"
+	  ZOrder		  9
+	  Labels		  [0, 0]
+	  SrcBlock		  "Integer Delay1"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  DstBlock		  "Shift register"
+	  DstPort		  trigger
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "Shift register"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Generate\ntelephone numbers"
+      SID		      "183"
+      Ports		      [0, 1]
+      Position		      [90, 223, 230, 247]
+      ZOrder		      -4
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		48
+	$ClassName		"Simulink.Mask"
+	Description		"This block simulates the dialed numbers. The output is a sequency of pulses with the dialed number as t"
+	"he pulse amplitude."
+	Initialization		"if (~isreal(Number) || ~isvector(Number) || issparse(Number) || ischar(Number) || isfi(Number))\n   "
+	" error(['Input must be an integer vector with values in the range 0 to 11, inclusive']);\nend\nfor i = 1:length(Numbe"
+	"r)\n    if ((Number(i) > 11) || (Number(i)<0)) || ((Number(i)-floor(Number(i)))~=0)\n        error(['Input values mus"
+	"t be integers from 0 to 11, inclusive']);\n    end\nend"
+	Display			"disp(Number)\n"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  2
+	  Object {
+	    $ObjectID		    49
+	    Type		    "edit"
+	    Name		    "Number"
+	    Prompt		    "Telephone number"
+	    Value		    "[1 5 0 8 6 4 7 7 0 0 0]"
+	  }
+	  Object {
+	    $ObjectID		    50
+	    Type		    "edit"
+	    Name		    "Td"
+	    Prompt		    "Digit Period (s)"
+	    Value		    "(1/dtmfFs)*256*6"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      Port {
+	PortNumber		1
+	Name			"digits"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Generate\ntelephone numbers"
+	Location		[576, 664, 1191, 964]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "Discrete Pulse\nGenerator"
+	  SID			  "184"
+	  Ports			  [0, 1]
+	  Position		  [180, 60, 210, 90]
+	  ZOrder		  -1
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  SampleTime		  "Td"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "185"
+	  Ports			  [2, 1]
+	  Position		  [355, 67, 385, 98]
+	  ZOrder		  -2
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Triggered Signal\nFrom Workspace1"
+	  SID			  "186"
+	  Ports			  [0, 1, 0, 1]
+	  Position		  [190, 121, 285, 159]
+	  ZOrder		  -3
+	  ForegroundColor	  "blue"
+	  BackgroundColor	  "cyan"
+	  LibraryVersion	  "1.735"
+	  SourceBlock		  "dspsigops/Triggered Signal\nFrom Workspace"
+	  SourceType		  "Triggered Signal From Workspace"
+	  ContentPreviewEnabled	  off
+	  Signal		  "Number+1"
+	  TriggerType		  "Rising edge"
+	  ic			  "0"
+	  SamplesPerFrame	  "1"
+	  OutputAfterFinalValue	  "Setting to zero"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "187"
+	  Position		  [410, 78, 440, 92]
+	  ZOrder		  -4
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Discrete Pulse\nGenerator"
+	  SrcPort		  1
+	  Points		  [0, 0; 20, 0]
+	  Branch {
+	    ZOrder		    2
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "Triggered Signal\nFrom Workspace1"
+	    DstPort		    trigger
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Triggered Signal\nFrom Workspace1"
+	  SrcPort		  1
+	  Points		  [50, 0]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Info"
+      SID		      "188"
+      Ports		      []
+      Position		      [72, 434, 123, 484]
+      ZOrder		      -5
+      BackgroundColor	      "cyan"
+      LibraryVersion	      "1.82"
+      SourceBlock	      "dspmisc/Info"
+      SourceType	      "Info"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Spectrogram"
+      SID		      "189"
+      Ports		      [1]
+      Position		      [740, 409, 795, 461]
+      ZOrder		      -6
+      RequestExecContextInheritance off
+      System {
+	Name			"Spectrogram"
+	Location		[14, 237, 756, 491]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "190"
+	  Position		  [15, 58, 45, 72]
+	  ZOrder		  -1
+	  NamePlacement		  "alternate"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Buffer
+	  Name			  "Buffer2"
+	  SID			  "191"
+	  Position		  [425, 40, 475, 90]
+	  ZOrder		  -2
+	  ShowName		  off
+	  N			  "48*64"
+	  V			  "46*64"
+	  ic			  "-70"
+	  TreatMby1Signals	  "One channel"
+	}
+	Block {
+	  BlockType		  Reshape
+	  Name			  "Reshape"
+	  SID			  "206"
+	  Ports			  [1, 1]
+	  Position		  [530, 50, 580, 80]
+	  ZOrder		  -3
+	  OutputDimensionality	  "Customize"
+	  OutputDimensions	  "[64 48]"
+	}
+	Block {
+	  BlockType		  Selector
+	  Name			  "Selector"
+	  SID			  "192"
+	  Ports			  [1, 1]
+	  Position		  [225, 50, 275, 80]
+	  ZOrder		  -4
+	  ShowName		  off
+	  InputPortWidth	  "dtmfFramesize/2"
+	  Indices		  "1:(dtmfFramesize/4)"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Short-Time FFT1"
+	  SID			  "193"
+	  Ports			  [1, 1]
+	  Position		  [115, 39, 195, 91]
+	  ZOrder		  -5
+	  LibraryVersion	  "1.294"
+	  SourceBlock		  "dspspect3/Periodogram"
+	  SourceType		  "Periodogram"
+	  ContentPreviewEnabled	  off
+	  measurement		  "Power spectral density"
+	  wintype		  "Hamming"
+	  Rs			  "50"
+	  beta			  "5"
+	  winsamp		  "Periodic"
+	  FFTImplementation	  "Auto"
+	  inheritFFT		  off
+	  fftsize		  "128"
+	  navg			  "2"
+	  inheritTs		  on
+	  Ts			  "1"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Spectogram"
+	  SID			  "194"
+	  Ports			  [1]
+	  Position		  [645, 40, 690, 90]
+	  ZOrder		  -6
+	  LibraryVersion	  "1.509"
+	  SourceBlock		  "dspsnks4/Matrix\nViewer"
+	  SourceType		  "Matrix Viewer"
+	  ShowPortLabels	  off
+	  ImageParams		  on
+	  CMapStr		  "jet(256)"
+	  YMin			  "-155"
+	  YMax			  "-45"
+	  AxisColorbar		  off
+	  AxisParams		  on
+	  AxisOrigin		  "Lower left corner"
+	  XLabel		  "Time Index"
+	  YLabel		  "Frequency Index"
+	  ZLabel		  "dB Magnitude"
+	  FigPos		  "[217 460 283 114]"
+	  AxisZoom		  on
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "dB Conversion"
+	  SID			  "196"
+	  Ports			  [1, 1]
+	  Position		  [315, 46, 375, 84]
+	  ZOrder		  -7
+	  LibraryVersion	  "1.665"
+	  SourceBlock		  "dspmathops/dB Conversion"
+	  SourceType		  "dB Conversion"
+	  ContentPreviewEnabled	  off
+	  dBtype		  "dB"
+	  intype		  "Amplitude"
+	  R			  "1"
+	  fuzz			  on
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Short-Time FFT1"
+	  SrcPort		  1
+	  DstBlock		  "Selector"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  Labels		  [1, 0]
+	  SrcBlock		  "Selector"
+	  SrcPort		  1
+	  DstBlock		  "dB Conversion"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Buffer2"
+	  SrcPort		  1
+	  DstBlock		  "Reshape"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Short-Time FFT1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Reshape"
+	  SrcPort		  1
+	  DstBlock		  "Spectogram"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "dB Conversion"
+	  SrcPort		  1
+	  DstBlock		  "Buffer2"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Telephone\nnumbers detected"
+      SID		      "197"
+      Ports		      [1]
+      Position		      [730, 109, 810, 361]
+      ZOrder		      -7
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "background1"
+      SID		      "198"
+      Ports		      []
+      Position		      [82, 190, 366, 299]
+      ZOrder		      -8
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      FontName		      "Arial"
+      FontSize		      9
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		51
+	$ClassName		"Simulink.Mask"
+	Display			"disp('')"
+      }
+      System {
+	Name			"background1"
+	Location		[209, 325, 575, 532]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "background4"
+      SID		      "199"
+      Ports		      []
+      Position		      [712, 97, 834, 497]
+      ZOrder		      -9
+      BackgroundColor	      "lightBlue"
+      DropShadow	      on
+      ShowName		      off
+      FontName		      "Arial"
+      FontSize		      9
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		52
+	$ClassName		"Simulink.Mask"
+	Display			"disp('')"
+      }
+      System {
+	Name			"background4"
+	Location		[209, 325, 575, 532]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+      }
+    }
+    Line {
+      Name		      "digits"
+      ZOrder		      1
+      Labels		      [-1, 0]
+      SrcBlock		      "Generate\ntelephone numbers"
+      SrcPort		      1
+      DstBlock		      "DTMF Generator"
+      DstPort		      1
+    }
+    Line {
+      Name		      "tones + noise"
+      ZOrder		      2
+      Labels		      [0, 0]
+      SrcBlock		      "Channel"
+      SrcPort		      1
+      Points		      [65, 0]
+      Branch {
+	ZOrder			3
+	DstBlock		"DTMF Receiver"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			4
+	Points			[0, 200]
+	DstBlock		"Spectrogram"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "digits"
+      ZOrder		      5
+      Labels		      [0, 0]
+      SrcBlock		      "DTMF Receiver"
+      SrcPort		      1
+      DstBlock		      "Telephone\nnumbers detected"
+      DstPort		      1
+    }
+    Line {
+      Name		      "tones"
+      ZOrder		      6
+      Labels		      [-1, 0]
+      SrcBlock		      "DTMF Generator"
+      SrcPort		      1
+      DstBlock		      "Channel"
+      DstPort		      1
+    }
+    Annotation {
+      SID		      "228"
+      Name		      "\n DTMF Generator and Receiver\n "
+      Position		      [419, 48, 684, 114]
+      InternalMargins	      [1, 1, 1, 1]
+      AutoSize		      on
+      WordWrap		      off
+      DropShadow	      on
+      ZOrder		      -1
+      FontName		      "Arial"
+      FontSize		      18
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "229"
+      Name		      "Display"
+      Position		      [665, 94, 709, 110]
+      InternalMargins	      [1, 1, 1, 1]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -2
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "230"
+      Name		      "Tone\nGenerator"
+      Position		      [120, 158, 179, 188]
+      InternalMargins	      [1, 1, 1, 1]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -3
+      FontName		      "Arial"
+      FontSize		      12
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "231"
+      Name		      "Copyright 2005-2010 The MathWorks, Inc."
+      Position		      [437, 503, 626, 515]
+      InternalMargins	      [1, 1, 1, 1]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -4
+    }
+  }
+}
+MatData {
+  NumRecords		  5
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    4 $   8    (     @         %    \"     $    \"     0         %  0 !@    $    ,    3F%M9"
+    "0  5F%L=64       X   !     !@    @    $          4    (     0    T    !         !     -    9'1M9D9R86UE<VEZ90    X"
+    "    X    !@    @    &          4    (     0    $    !          D    (            <$ .    .     8    (    !        "
+    "  %    \"     $    &     0         0    !@   &1T;69&<P  #@   #@    &    \"     8         !0    @    !     0    $  "
+    "       \"0    @           # 0 "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    T (   8    (     @         %    \"     $    !     0         %  0 %@    $   !8    :&%S26"
+    "YH97)I=&5D3W!T:6]N     &9I;'1E<D-O;G-T<G5C=&]R      !F:6QT97)#;VYS=')U8W1O<D%R9W, 24-$871A                      X "
+    "   P    !@    @    ) @        4    (     0    $    !          (  0 !    #@   $     &    \"     0         !0    @  "
+    "  !    \"P    $         $     L   !D9FEL=\"YD9F9I<@      #@   *     &    \"     $         !0    @    !     0    $ "
+    "        #@   '     &    \"     8         !0    @    !    \"     $         \"0   $            #P/P       / _       "
+    " \\#\\       #P/P       /\"_        \\+\\       #POP       /\"_#@   ! !   &    \"     (         !0    @    !     0"
+    "    $         !0 $  8    !    $@   $E#;G5M $E#9&5N $E#              X    X    !@    @    &          4    (     0  "
+    "  $    !          D    (               .    .     8    (    !@         %    \"     $    !     0         )    \"   "
+    "            #@   #@    &    \"     8         !0    @    !     0    $         \"0    @               "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    @     8    (     @         %    \"     $    !     0         %  0 #P    $    /    :&%S34"
+    "-H86Y/<'1I;VX   X    P    !@    @    ) @        4    (     0    $    !          (  0 !    "
+  }
+}
+#Finite State Machines
+#
+#   Stateflow Version 8.1 (R2014a) dated Jan 17 2014, 18:24:06
+#
+#
+Stateflow {
+  machine {
+    id			    1
+    name		    "dspdtmf"
+    created		    "29-Aug-2000 14:09:45"
+    isLibrary		    0
+    firstTarget		    2
+    sfVersion		    76014001.002
+    sfDemoChecksum	    [1505867981 1816331723 2040829343 2330573123]
+  }
+  target {
+    id			    2
+    name		    "sfun"
+    codeFlags		    ""
+    machine		    1
+    linkNode		    [1 0 3]
+  }
+  target {
+    id			    3
+    name		    "rtw"
+    codeFlags		    " comments=0 preservenames=0 preservenameswithparent=0 exportcharts=0 statebitsets=0 databitsets=1"
+    machine		    1
+    linkNode		    [1 2 0]
+  }
+}

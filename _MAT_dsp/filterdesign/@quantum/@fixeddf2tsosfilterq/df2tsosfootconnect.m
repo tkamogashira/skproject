@@ -1,0 +1,187 @@
+function [NL, PrevIPorts, PrevOPorts, mainparams]=df2tsosfootconnect(q,NL,H,mainparams)
+%DF2TSOSFOOTCONNECT specifies the connection and quantization parameters in the
+%conceptual foot stage
+
+%   Author(s): Honglei Chen
+%   Copyright 1988-2009 The MathWorks, Inc.
+
+%replace the gain with the output cast since in fixed point mode, a(1)=1
+% specify the qparam
+NL.setnode(filtgraph.node('cast'),5);
+set(NL.nodes(5).block,'label','CastStageOutput');
+set(NL.nodes(5).block,'orientation','right');
+set(NL.nodes(5),'position',[5 0 5 0]);
+% Store the gain label so that we know that this node is an optimized
+% gain. We need this to track and remove the useless gain labels from
+% demux when MapCoeffsToPorts is on.
+mainparams(5)=filtgraph.indexparam(5,{'0'},mainparams(5).gainlabels);
+
+NL.setnode(filtgraph.node('cast'),17);
+NL.setnode(filtgraph.node('cast'),18);
+set(NL.nodes(17).block,'label','CastStates');
+set(NL.nodes(18).block,'label','CastFootStates');
+set(NL.nodes(17),'position',[4 0.2 4 0.2]);
+set(NL.nodes(18),'position',[3 0.6 3 0.6]);
+set(NL.nodes(17).block,'orientation','up');
+set(NL.nodes(18).block,'orientation','up');
+mainparams(17)=filtgraph.indexparam(17,{});
+mainparams(18)=filtgraph.indexparam(18,{});
+
+
+% specify the qparam
+%CastStageOutput
+caststageoutqparam.outQ=[H.SectionOutputWordLength H.SectionOutputFracLength];
+caststageoutqparam.RoundMode=H.RoundMode;
+caststageoutqparam.OverflowMode=H.OverflowMode;
+set(NL.nodes(5),'qparam',caststageoutqparam);
+
+% gain
+%LHG numerator gain
+lgainqparam.qcoeff=[H.CoeffWordLength H.NumFracLength];
+lgainqparam.qproduct=[H.ProductWordLength H.NumProdFracLength];
+lgainqparam.Signed=H.Signed;
+lgainqparam.RoundMode=H.RoundMode;
+lgainqparam.OverflowMode=H.OverflowMode;
+set(NL.nodes(3),'qparam', lgainqparam);
+set(NL.nodes(7),'qparam', lgainqparam);
+set(NL.nodes(12),'qparam', lgainqparam);
+%RHG denominator gain
+rgainqparam.qcoeff=[H.CoeffWordLength H.DenFracLength];
+rgainqparam.qproduct=[H.ProductWordLength H.DenProdFracLength];
+rgainqparam.Signed=H.Signed;
+rgainqparam.RoundMode=H.RoundMode;
+rgainqparam.OverflowMode=H.OverflowMode;
+set(NL.nodes(10),'qparam', rgainqparam);
+set(NL.nodes(14),'qparam', rgainqparam);
+%Scale Gain
+% if the scale value is 1 and OptimizeScaleValues is true, only a convert
+% block is necessary since 1 does not to be quantized.
+if strcmpi(mainparams(2).params,'opsv')
+    NL.setnode(filtgraph.node('cast'),2);
+    set(NL.nodes(2).block,'label','ConvertScale');
+    set(NL.nodes(2).block,'orientation','right');
+    set(NL.nodes(2),'position',[1 0 1 0]);
+    % Store the gain label so that we know that this node is an optimized
+    % gain. We need this to track and remove the useless gain labels from
+    % demux when MapCoeffsToPorts is on.
+    mainparams(2)=filtgraph.indexparam(2,{'0'},mainparams(2).gainlabels);
+    %ConvertScale
+    convertscaleqparam.outQ=[H.SectionInputWordLength H.SectionInputFracLength];
+    convertscaleqparam.RoundMode=H.RoundMode;
+    convertscaleqparam.OverflowMode=H.OverflowMode;
+    set(NL.nodes(2),'qparam',convertscaleqparam);
+else
+    scalegainqparam.qcoeff=[H.CoeffWordLength H.ScaleValueFracLength];
+    scalegainqparam.qproduct=[H.SectionInputWordLength H.SectionInputFracLength];
+    scalegainqparam.Signed=H.Signed;
+    scalegainqparam.RoundMode=H.RoundMode;
+    scalegainqparam.OverflowMode=H.OverflowMode;
+    set(NL.nodes(2),'qparam', scalegainqparam);
+end
+lscalegainqparam.qcoeff=[H.CoeffWordLength H.ScaleValueFracLength];
+lscalegainqparam.qproduct=[H.OutputWordLength H.OutputFracLength];
+lscalegainqparam.Signed=H.Signed;
+lscalegainqparam.RoundMode=H.RoundMode;
+lscalegainqparam.OverflowMode=H.OverflowMode;
+set(NL.nodes(16),'qparam', lscalegainqparam);
+
+%CastStates
+castqparam.outQ=[H.StateWordLength H.StateFracLength];
+castqparam.RoundMode=H.RoundMode;
+castqparam.OverflowMode=H.OverflowMode;
+set(NL.nodes(17),'qparam',castqparam);
+set(NL.nodes(18),'qparam',castqparam);
+
+
+% sum
+if H.CastBeforeSum
+    lsumqparam.AccQ = [H.AccumWordLength H.NumAccumFracLength];
+    rsumqparam.AccQ = [H.AccumWordLength H.DenAccumFracLength];
+else
+    s=getbestprecision(H);
+    lsumqparam.AccQ = [s.AccumWordLength s.NumAccumFracLength];
+    rsumqparam.AccQ = [s.AccumWordLength s.DenAccumFracLength];
+end
+%LHS numerator sum
+lsumqparam.sumQ = [H.AccumWordLength H.NumAccumFracLength];
+lsumqparam.RoundMode = H.RoundMode;
+lsumqparam.OverflowMode = H.OverflowMode;
+set(NL.nodes(4),'qparam',lsumqparam);
+set(NL.nodes(8),'qparam',lsumqparam);
+set(NL.nodes(13),'qparam',lsumqparam);
+%RHS denominator sum
+rsumqparam.sumQ = [H.AccumWordLength H.DenAccumFracLength];
+rsumqparam.RoundMode = H.RoundMode;
+rsumqparam.OverflowMode = H.OverflowMode;
+set(NL.nodes(9),'qparam',rsumqparam);
+
+
+% If last scale value is 1 and OptimizeScaleValues is true, the parameter
+% is 'opsv' and the block is replaced by a ConvertOut block. This block is
+% of type 'convertio' as no future optimization is required. If last scale
+% value is 1 and OptmizeScaleValues is false, the parameter is '1' and we
+% need to render an additional ConvertOut block. This block is of type
+% 'cast' as it may need to be optimized in the future. If OptimizeOnes is
+% 'on' for realizemdl, the block will stay as it is responsible for cast
+% the output to the right format. Otherwise, this block will be removed by
+% optimize_noopconvert since it is an noop.
+
+%ConvertOut
+convertoutqparam.outQ=[H.OutputWordLength H.OutputFracLength];
+convertoutqparam.RoundMode=H.RoundMode;
+convertoutqparam.OverflowMode=H.OverflowMode;
+if strcmpi(mainparams(16).params,'opsv')
+    NL.setnode(filtgraph.node('convertio'),16);
+    set(NL.nodes(16).block,'label','ConvertOut');
+    set(NL.nodes(16).block,'orientation','right');
+    set(NL.nodes(16),'position',[6 0 6 0]);
+    % Store the gain label so that we know that this node is an optimized
+    % gain. We need this to track and remove the useless gain labels from
+    % demux when MapCoeffsToPorts is on.
+    mainparams(16) = filtgraph.indexparam(16,{'0'},mainparams(16).gainlabels);
+    set(NL.nodes(16),'qparam',convertoutqparam);
+    NL.connect(16,1,6,1);
+elseif strcmpi(mainparams(16).params,'1')
+    NL.setnode(filtgraph.node('cast'),19);
+    set(NL.nodes(19).block,'label','ConvertOut');
+    set(NL.nodes(19).block,'orientation','right');
+    set(NL.nodes(19),'position',[6.5 0 6.5 0]);
+    mainparams(19) = filtgraph.indexparam(19,{});
+    set(NL.nodes(19),'qparam',convertoutqparam);
+    NL.connect(16,1,19,1);
+    NL.connect(19,1,6,1);
+else
+    NL.connect(16,1,6,1);
+end
+
+% specify the connection
+% NL.connect(source node, source port, dest node, dest port)
+% note that input and output are numbered separately
+NL.connect(1,1,2,1);
+NL.connect(2,1,3,1);
+NL.connect(2,1,7,1);
+NL.connect(2,1,12,1);
+NL.connect(3,1,4,1);
+NL.connect(5,1,16,1);
+NL.connect(5,1,10,1);
+NL.connect(5,1,14,1);
+NL.connect(7,1,8,1);
+NL.connect(10,1,9,2);
+NL.connect(11,1,4,2);
+NL.connect(12,1,13,1);
+NL.connect(14,1,13,2);
+NL.connect(15,1,8,2);
+NL.connect(17,1,11,1);
+NL.connect(18,1,15,1);
+
+% setup the interstage connections
+% since in the middle, both previous and next input and output needs to be
+% specified.  Note that one stage's number of output has to match the
+% number of input in adjacent layers.
+NL.connect(4,1,5,1);
+NL.connect(8,1,9,1);
+NL.connect(9,1,17,1);
+NL.connect(13,1,18,1);
+
+PrevIPorts = [];
+PrevOPorts = [];

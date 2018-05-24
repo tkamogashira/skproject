@@ -1,0 +1,1 @@
+function varargout = f4% f4 -- h = figure(4); % Go to/make figure(4) and return handle when requested% See also aa, figure  h = figure(4);if nargout, varargout(1) = {h}; end

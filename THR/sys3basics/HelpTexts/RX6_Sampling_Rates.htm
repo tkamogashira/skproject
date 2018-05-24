@@ -1,0 +1,502 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html><head><title>Realizable Sampling Rates for the RX6</title>
+
+
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHELP by eHelp Corporation - www.ehelp.com">
+<link rel="stylesheet" href="RX6_Sampling_Rates_files/default_ns.css"><script type="text/javascript" language="JavaScript" title="WebHelpSplitCss">
+<!--
+if (navigator.appName !="Netscape")
+{   document.write("<link rel='stylesheet' href='../../../default.css'>");}
+//-->
+</script>
+<style type="text/css">
+<!--
+table.whs1 { x-cell-content-align:top; border-spacing:0px; }
+tr.whs2 { x-cell-content-align:top; }
+td.whs3 { padding-right:10px; padding-left:10px; border-top-style:Solid; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; border-left-color:#808080; border-left-width:1px; border-left-style:Solid; border-top-color:#808080; border-top-width:1px; background-color:#c0c0c0; }
+p.whs4 { text-align:center; font-weight:bold; margin-top:4.5pt; margin-bottom:4.5pt; }
+td.whs5 { padding-right:10px; padding-left:10px; border-top-style:Solid; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; border-top-color:#808080; border-top-width:1px; background-color:#c0c0c0; }
+td.whs6 { padding-right:10px; padding-left:10px; border-top-style:Solid; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-top-color:#808080; border-top-width:1px; border-right-color:#808080; border-right-width:1px; background-color:#c0c0c0; }
+td.whs7 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; border-left-color:#808080; border-left-width:1px; border-left-style:Solid; background-color:#cecee5; }
+p.whs8 { text-align:center; margin-top:0pt; margin-bottom:0pt; }
+td.whs9 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; background-color:#cecee5; }
+p.whs10 { text-align:right; margin-top:0pt; margin-bottom:0pt; }
+td.whs11 { padding-right:10px; padding-left:10px; background-color:#cecee5; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; }
+td.whs12 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; border-left-color:#808080; border-left-width:1px; border-left-style:Solid; }
+td.whs13 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; }
+p.whs14 { text-align:center; background-color:#cecee5; margin-top:0pt; margin-bottom:0pt; }
+td.whs15 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; border-right-color:#808080; border-right-width:1px; background-color:#c0c0c0; }
+td.whs16 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-right-color:#808080; border-right-width:1px; border-left-color:#808080; border-left-width:1px; border-left-style:Solid; border-bottom-color:#808080; border-bottom-width:1px; background-color:#cecee5; }
+td.whs17 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-right-color:#808080; border-right-width:1px; border-bottom-color:#808080; border-bottom-width:1px; background-color:#cecee5; }
+td.whs18 { padding-right:10px; padding-left:10px; border-right-style:Solid; border-bottom-style:Solid; border-right-color:#808080; border-right-width:1px; border-bottom-color:#808080; border-bottom-width:1px; }
+-->
+</style><script type="text/javascript" language="JavaScript">
+<!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4))
+{
+  var strNSS = "<style type='text/css'>";
+  strNSS += "p.whs8 {margin-top:1pt;margin-bottom:1pt; }";
+  strNSS += "p.whs10 {margin-top:1pt;margin-bottom:1pt; }";
+  strNSS += "p.whs14 {margin-top:1pt;margin-bottom:1pt; }";
+  strNSS +="</style>";
+  document.write(strNSS);
+}
+//-->
+</script>
+<script type="text/javascript" language="JavaScript" title="WebHelpInlineScript">
+<!--
+function reDo() {
+  if (innerWidth != origWidth || innerHeight != origHeight)
+     location.reload();
+}
+if ((parseInt(navigator.appVersion) == 4) && (navigator.appName == "Netscape")) {
+	origWidth = innerWidth;
+	origHeight = innerHeight;
+	onresize = reDo;
+}
+onerror = null; 
+//-->
+</script>
+<style type="text/css">
+<!--
+div.WebHelpPopupMenu { position:absolute; left:0px; top:0px; z-index:4; visibility:hidden; }
+-->
+</style><script type="text/javascript" language="javascript1.2" src="RX6_Sampling_Rates_files/whmsg.js"></script>
+<script type="text/javascript" language="javascript" src="RX6_Sampling_Rates_files/whver.js"></script>
+<script type="text/javascript" language="javascript1.2" src="RX6_Sampling_Rates_files/whproxy.js"></script>
+<script type="text/javascript" language="javascript1.2" src="RX6_Sampling_Rates_files/whutils.js"></script>
+<script type="text/javascript" language="javascript1.2" src="RX6_Sampling_Rates_files/whtopic.js"></script></head><body><script type="text/javascript" language="javascript1.2">
+<!--
+if (window.gbWhTopic)
+{
+	if (window.addTocInfo)
+	{
+	addTocInfo("System 3 Hardware\nRX High Performance Processors\nRX6 Piranha\nRealizable Sampling Rates");
+addButton("show",BTN_TEXT,"Show","","","","",0,0,"","","");
+
+	}
+	if (window.writeBtnStyle)
+		writeBtnStyle();
+
+	if (window.writeIntopicBar)
+		writeIntopicBar(1);
+
+	if (window.setRelStartPage)
+	{
+	setRelStartPage("../../../TDTHelp.htm");
+
+		autoSync(1);
+		sendSyncInfo();
+		sendAveInfoOut();
+	}
+}
+else
+	if (window.gbIE4)
+		document.location.reload();
+//-->
+</script>
+<h1>Realizable Sampling Rates for the RX6</h1>
+
+<p>The following table shows the actual sampling rate values for the RX6. 
+ The X's on the table correspond to realizable frequencies for the ADC, 
+ DAC, Optical input, and Digital I/O. For example, the Digital I/O accepts 
+ a sampling rate up to 390625.0 Hz (or 400kHz standard) and the Audio ADC 
+ and DAC each accept a sampling rate up to 260416.67 Hz. The maximum realizable 
+ sampling rates are accepted as the maximum sampling rate without distortion. 
+ Each of the inputs and outputs will function above these sampling rates, 
+ but distortion will be present in the signal.</p>
+
+<table x-use-null-cells="" class="whs1" cellspacing="0">
+<script language="JavaScript"><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table><table x-use-null-cells cellspacing='0' border='1' bordercolor='gray' bordercolorlight='gray' bordercolordark='gray'>");
+//--></script>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+
+<tbody><tr class="whs2" valign="top">
+<td class="whs3" bgcolor="#c0c0c0">
+<p class="whs4" align="center">Standard Rate</p></td>
+<td class="whs5" bgcolor="#c0c0c0">
+<p class="whs4" align="center">Actual/Arbitrary <span style="text-align: center; font-weight: bold;"><b><br>
+Rate (Hz)</b></span></p></td>
+<td class="whs5" bgcolor="#c0c0c0">
+<p class="whs4" align="center">Audio ADC</p></td>
+<td class="whs5" bgcolor="#c0c0c0">
+<p class="whs4" align="center">Audio DAC</p></td>
+<td class="whs5" bgcolor="#c0c0c0">
+<p class="whs4" align="center">Optical/AMP<br>
+Input</p></td>
+<td class="whs6" bgcolor="#c0c0c0">
+<p class="whs4" align="center">Digital I/O</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs7" bgcolor="#cecee5">
+<p class="whs8" align="center">6 kHz</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs10" align="right">6103.52</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">6975.45</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">8138.025</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">9765.63</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs7" bgcolor="#cecee5">
+<p class="whs8" align="center">12 kHz</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs10" align="right">12207.03</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">13950.89</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">16276.04</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">19531.25</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs7" bgcolor="#cecee5">
+<p class="whs8" align="center">25 kHz</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs10" align="right">24414.06</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">27901.79</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">32552.08</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">39062.50</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs7" bgcolor="#cecee5">
+<p class="whs8" align="center">50 kHz</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs10" align="right">48828.13</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x*</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">55803.57</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">65104.17</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">78125.00</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs7" bgcolor="#cecee5">
+<p class="whs8" align="center">100 kHz</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs10" align="right">97656.25</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs14" align="center">x*</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">111607.14</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs13">
+<p class="whs10" align="right">130208.33</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td colspan="1" rowspan="1" class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs10" align="right">156250.00</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td colspan="1" rowspan="1" class="whs7" bgcolor="#cecee5">
+<p class="whs8" align="center">200 kHz</p></td>
+<td colspan="1" rowspan="1" class="whs9" bgcolor="#cecee5">
+<p class="whs10" align="right">195312.50</p></td>
+<td colspan="1" rowspan="1" class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td colspan="1" rowspan="1" class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs10" align="right">223214.29</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td colspan="1" rowspan="1" class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs15" bgcolor="#c0c0c0">
+<p class="whs10" align="right">260416.67</p></td>
+<td colspan="1" rowspan="1" class="whs9" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td colspan="1" rowspan="1" class="whs12">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs10" align="right">312500.00</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs13">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+
+<tr class="whs2" valign="top">
+<td colspan="1" rowspan="1" class="whs16" bgcolor="#cecee5">
+<p class="whs8" align="center">400 kHz</p></td>
+<td colspan="1" rowspan="1" class="whs17" bgcolor="#cecee5">
+<p class="whs10" align="right">390625.00</p></td>
+<td colspan="1" rowspan="1" class="whs18">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs18">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs18">
+<p class="whs8" align="center">&nbsp;</p></td>
+<td colspan="1" rowspan="1" class="whs11" bgcolor="#cecee5">
+<p class="whs8" align="center">x</p></td></tr>
+<script language="JavaScript"><!--
+if ((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) == 4)) document.write("</table></table><table>");
+//--></script>
+</tbody></table>
+
+<p>[X] = Fully functional [X*] = Sampling limited to 25KHz</p>
+
+<script type="text/javascript" language="javascript1.2">
+<!--
+if (window.writeIntopicBar)
+	writeIntopicBar(0);
+//-->
+</script>
+</body></html>

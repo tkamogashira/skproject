@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * BlockRegistration.xml 
+ * Abstract: 
+ *  Register blocks in dsp_core_blocks module  
+ *  To be shipped with DSP System Toolbox
+ *
+ * Copyright 2011-2013 The MathWorks, Inc.
+ -->
+
+<Modules>
+
+<ModuleRegistry modname="dsp_core_blocks"
+                modulePath="$MATLABROOT/bin/$ARCH"
+                registryVersion="1.0"
+                >
+<BlockRegistration block_type_str = "DSPFlip" />
+<BlockRegistration block_type_str = "DownSample"/>
+<BlockRegistration block_type_str = "Buffer"/>
+<BlockRegistration block_type_str = "Unbuffer"/>
+<BlockRegistration block_type_str = "DSPIntegrator"/>
+
+</ModuleRegistry>
+
+<ModuleRegistry modname="dspscopes"
+                modulePath="$MATLABROOT/bin/$ARCH"
+                registryVersion="1.0"
+                >
+<BlockRegistration block_type_str = "SpectrumAnalyzer"/>
+
+</ModuleRegistry>
+
+</Modules>

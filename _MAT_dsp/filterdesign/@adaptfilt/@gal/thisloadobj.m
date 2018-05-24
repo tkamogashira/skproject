@@ -1,0 +1,16 @@
+function thisloadobj(this, s)
+%THISLOADOBJ   Load this object.
+
+%   Author(s): J. Schickler
+%   Copyright 1999-2004 The MathWorks, Inc.
+
+nlms_thisloadobj(this, s);
+
+set(this, ...
+    'ReflectionCoeffs',     s.ReflectionCoeffs, ...
+    'FwdPredErrorPower',    s.FwdPredErrorPower, ...
+    'BkwdPredErrorPower',   s.BkwdPredErrorPower, ...
+    'ReflectionCoeffsStep', s.ReflectionCoeffsStep, ...
+    'AvgFactor',            s.AvgFactor);
+
+% [EOF]

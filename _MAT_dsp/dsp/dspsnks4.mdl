@@ -1,0 +1,2291 @@
+Library {
+  Name			  "dspsnks4"
+  Version		  8.1
+  MdlSubVersion		  0
+  RequirementInfo	  "9"
+  SavedCharacterEncoding  "windows-1252"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  LockLinksToLibrary	  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Active"
+  ForwardingTableString	  "||__slOldName__||dspsnks4/To Wave File||__slNewName__||dspwin32/To Wave File||__slOldName__"
+  "||dspsnks4/Spectrum Scope||__slNewName__||dspsnks4/Spectrum Analyzer||__slOldName__||dspsnks4/To Multimedia File||__"
+  "slNewName__||dspvision/To Multimedia File"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [156.0, 208.0, 1219.0, 662.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[0]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1169.0, 526.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, -5.125]
+      }
+    }
+  }
+  Created		  "Tue Jun 09 08:59:24 1998"
+  Creator		  "don"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "dsomasun"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Dec 06 16:21:41 2012"
+  RTWModifiedTimeStamp	  276711637
+  ModelVersionFormat	  "1.%<AutoIncrement:509>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "d"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      6
+      Version		      "1.13.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  7
+	  Version		  "1.13.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  8
+	  Version		  "1.13.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  9
+	  Version		  "1.13.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  10
+	  Version		  "1.13.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "Warning"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  11
+	  Version		  "1.13.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  12
+	  Version		  "1.13.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  13
+	  Version		  "1.13.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  14
+	  Version		  "1.13.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      15
+	      Version		      "1.13.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      16
+	      Version		      "1.13.0"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PurelyIntegerCode"
+		Cell			"PortableWordSizes"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 1160, 285, 2040, 915 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      ComplexToRealImag
+      Output		      "Real and imag"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Concatenate
+      NumInputs		      "2"
+      Mode		      "Vector"
+      ConcatenateDimension    "1"
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      FrameConversion
+      InheritSamplingMode     off
+      OutFrame		      "Frame-based"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      M-S-Function
+      FunctionName	      "matlabfile"
+      DisplayMFileStacktrace  on
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SignalToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SaveFormat	      "Array"
+      Save2DMode	      "2-D array (concatenate along first dimension)"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
+    Block {
+      BlockType		      SpectrumAnalyzer
+      DefaultConfigurationName "spbscopes.SpectrumAnalyzerBlockCfg"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+    Block {
+      BlockType		      TimeScope
+      NumInputPorts	      "1"
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      StatesWhenEnabling      "inherit"
+      PropagateVarSize	      "During execution"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      SampleTimeType	      "triggered"
+      SampleTime	      "1"
+      ZeroCross		      on
+      PortDimensions	      "-1"
+      TriggerSignalSampleTime "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      Interpolate	      on
+    }
+  }
+  System {
+    Name		    "dspsnks4"
+    Location		    [156, 208, 1375, 870]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "25"
+    Block {
+      BlockType		      Display
+      Name		      "Display"
+      SID		      "1"
+      Ports		      [1]
+      Position		      [35, 145, 125, 175]
+      ZOrder		      -1
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      M-S-Function
+      Name		      "Matrix\nViewer"
+      SID		      "2"
+      Ports		      [1]
+      Position		      [223, 45, 268, 95]
+      ZOrder		      -2
+      DialogController	      "dspdialog.MatrixViewer"
+      DialogControllerArgs    "DataTag0"
+      CopyFcn		      "sdspmview2([],[],[],'BlockCopy');"
+      DeleteFcn		      "sdspmview2([],[],[],'BlockDelete');"
+      NameChangeFcn	      "sdspmview2([],[],[],'BlockNameChange');"
+      FunctionName	      "sdspmview2"
+      Parameters	      "{CMapStr},YMin,YMax,AxisColorbar,AxisOrigin,{XLabel},{YLabel},{ZLabel},FigPos,AxisZoom"
+      DisplayMFileStacktrace  off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		17
+	$ClassName		"Simulink.Mask"
+	Type			"Matrix Viewer"
+	Description		"Display a matrix as an image, scaling the colormap to the specified input data range.  Colormap must be"
+	" an Nx3 matrix of RGB values.  Type \"help graph3d\" at the MATLAB prompt for a list of predefined colormaps."
+	Help			"eval('blocksethelp');"
+	SelfModifiable		"on"
+	Display			"disp('Matrix\\nViewer')"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  13
+	  Object {
+	    $ObjectID		    18
+	    Type		    "checkbox"
+	    Name		    "ShowPortLabels"
+	    Prompt		    "dummy"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    19
+	    Type		    "checkbox"
+	    Name		    "ImageParams"
+	    Prompt		    "-------------------------------- Show Image properties ------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    20
+	    Type		    "edit"
+	    Name		    "CMapStr"
+	    Prompt		    "Colormap matrix:"
+	    Value		    "hot(256)"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    21
+	    Type		    "edit"
+	    Name		    "YMin"
+	    Prompt		    "Minimum input value:"
+	    Value		    "-1.0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    22
+	    Type		    "edit"
+	    Name		    "YMax"
+	    Prompt		    "Maximum input value:"
+	    Value		    "1.0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    23
+	    Type		    "checkbox"
+	    Name		    "AxisColorbar"
+	    Prompt		    "Display colorbar"
+	    Value		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    24
+	    Type		    "checkbox"
+	    Name		    "AxisParams"
+	    Prompt		    "-------------------------------- Show axis properties ----------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    25
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Upper left corner"
+	      Cell		      "Lower left corner"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "AxisOrigin"
+	    Prompt		    "Axis origin:"
+	    Value		    "Upper left corner"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    26
+	    Type		    "edit"
+	    Name		    "XLabel"
+	    Prompt		    "X-axis title:"
+	    Value		    "X-axis"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    27
+	    Type		    "edit"
+	    Name		    "YLabel"
+	    Prompt		    "Y-axis title:"
+	    Value		    "Y-axis"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    28
+	    Type		    "edit"
+	    Name		    "ZLabel"
+	    Prompt		    "Colorbar title:"
+	    Value		    "Z-axis"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    29
+	    Type		    "edit"
+	    Name		    "FigPos"
+	    Prompt		    "Figure position:"
+	    Value		    "get(0,'defaultfigureposition')"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    30
+	    Type		    "checkbox"
+	    Name		    "AxisZoom"
+	    Prompt		    "Axis zoom"
+	    Value		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      SignalToWorkspace
+      Name		      "Signal To\nWorkspace"
+      SID		      "14"
+      Ports		      [1]
+      Position		      [180, 134, 230, 176]
+      ZOrder		      -3
+      CopyFcn		      "dspblkcopystw(gcbh);"
+      VariableName	      "yout"
+      MaxDataPoints	      "inf"
+    }
+    Block {
+      BlockType		      SpectrumAnalyzer
+      Name		      "Spectrum\nAnalyzer"
+      SID		      "25"
+      Ports		      [1]
+      Position		      [152, 44, 197, 96]
+      ZOrder		      2
+    }
+    Block {
+      BlockType		      TimeScope
+      Name		      "Time\nScope"
+      SID		      "15"
+      Ports		      [1]
+      Position		      [35, 53, 65, 85]
+      ZOrder		      1
+      UserDataPersistent      on
+      DefaultConfigurationName "spbscopes.TimeScopeBlockCfg"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "To Audio\nDevice"
+      SID		      "6"
+      Ports		      [1]
+      Position		      [180, 214, 235, 266]
+      ZOrder		      -6
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag1"
+      FunctionName	      "sdspToAudioDevice"
+      Parameters	      "deviceName, inheritSampleRate, sampleRate, deviceDatatype, autoBufferSize, bufferSize, queueDu"
+      "ration,defaultOutputChannelMapping,outputChannelMapping"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		31
+	$ClassName		"Simulink.Mask"
+	Type			"To Audio Device"
+	Description		"Send sound data to your computer's audio device."
+	Help			"eval('blocksethelp');"
+	Initialization		"icon = dspdialog.ToAudioDevice.maskInit();\n\n"
+	Display			"patch(icon.x1, icon.y1,[1 1 1]*.5);\npatch(icon.x2, icon.y2);\nplot(icon.x, icon.y);\nplot(icon.x1, icon.y"
+	"1);"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  9
+	  Object {
+	    $ObjectID		    32
+	    Type		    "edit"
+	    Name		    "deviceName"
+	    Prompt		    "Device name"
+	    Value		    "Default"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    33
+	    Type		    "checkbox"
+	    Name		    "inheritSampleRate"
+	    Prompt		    "Inherit sample rate"
+	    Value		    "on"
+	    Tunable		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    34
+	    Type		    "edit"
+	    Name		    "sampleRate"
+	    Prompt		    "Sample rate (Hz)"
+	    Value		    "44100"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    35
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "Determine from input data type"
+	      Cell		      "8-bit integer"
+	      Cell		      "16-bit integer"
+	      Cell		      "24-bit integer"
+	      Cell		      "32-bit float"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "deviceDatatype"
+	    Prompt		    "Device data type"
+	    Value		    "Determine from input data type"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    36
+	    Type		    "checkbox"
+	    Name		    "autoBufferSize"
+	    Prompt		    "Automatically determine buffer size"
+	    Value		    "on"
+	    Tunable		    "off"
+	    Alias		    "determineBufSize"
+	  }
+	  Object {
+	    $ObjectID		    37
+	    Type		    "edit"
+	    Name		    "bufferSize"
+	    Prompt		    "Buffer size (samples)"
+	    Value		    "4096"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    38
+	    Type		    "edit"
+	    Name		    "queueDuration"
+	    Prompt		    "Queue duration (seconds)"
+	    Value		    "1.0"
+	    Tunable		    "off"
+	    Alias		    "bufDuration"
+	  }
+	  Object {
+	    $ObjectID		    39
+	    Type		    "checkbox"
+	    Name		    "defaultOutputChannelMapping"
+	    Prompt		    "Use default mapping between Data and Device Output Channels"
+	    Value		    "on"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    40
+	    Type		    "edit"
+	    Name		    "outputChannelMapping"
+	    Prompt		    "Device Output Channels"
+	    Value		    "1"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "To Multimedia File"
+      SID		      "23"
+      Ports		      [1]
+      Position		      [20, 215, 140, 265]
+      ZOrder		      -7
+      LibraryVersion	      "1.19"
+      SourceBlock	      "dspvision/To Multimedia File"
+      SourceType	      "To Multimedia File"
+      outputFilename	      "output.wav"
+      streamSelection	      "Audio only"
+      videoCompressor	      "None (uncompressed)"
+      audioCompressor	      "None (uncompressed)"
+      imagePorts	      "Separate color signals"
+      fileType		      "WAV"
+      audioDatatype	      "16-bit integer"
+      fourcc		      "RGB"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Triggered\nTo Workspace"
+      SID		      "9"
+      Ports		      [1, 0, 0, 1]
+      Position		      [275, 134, 330, 176]
+      ZOrder		      -8
+      UserDataPersistent      on
+      UserData		      "DataTag2"
+      CopyFcn		      "dspblkcopystw(gcbh);"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		41
+	$ClassName		"Simulink.Mask"
+	Type			"Triggered To Workspace"
+	Description		"Write input to specified variable in the workspace when trigger is received."
+	Help			"eval('blocksethelp');"
+	Initialization		"dspblktrigtwks('init',TriggerType);"
+	SelfModifiable		"on"
+	Display			"disp(VariableName);\n"
+	IconOpaque		"off"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  6
+	  Object {
+	    $ObjectID		    42
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Rising edge"
+	      Cell		      "Falling edge"
+	      Cell		      "Either edge"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "TriggerType"
+	    Prompt		    "Trigger type:"
+	    Value		    "Rising edge"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    43
+	    Type		    "edit"
+	    Name		    "VariableName"
+	    Prompt		    "Variable name:"
+	    Value		    "yout"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    44
+	    Type		    "edit"
+	    Name		    "Buffer"
+	    Prompt		    "Maximum number of rows:"
+	    Value		    "1000"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    45
+	    Type		    "edit"
+	    Name		    "Decimation"
+	    Prompt		    "Decimation:"
+	    Value		    "1"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    46
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "2-D array (concatenate along first dimension)"
+	      Cell		      "3-D array (concatenate along third dimension)"
+	      Cell		      "Inherit from input (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "Save2DMode"
+	    Prompt		    "Save 2-D signals as:"
+	    Value		    "2-D array (concatenate along first dimension)"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    47
+	    Type		    "checkbox"
+	    Name		    "FixptAsFi"
+	    Prompt		    "Log fixed-point data as a fi object"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Triggered\nTo Workspace"
+	Location		[42, 22, 473, 520]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"4"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "9:1"
+	  Position		  [20, 88, 50, 102]
+	  ZOrder		  -1
+	  ShowName		  off
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  "Trigger"
+	  SID			  "9:2"
+	  Ports			  []
+	  Position		  [70, 15, 90, 35]
+	  ZOrder		  -2
+	}
+	Block {
+	  BlockType		  SignalToWorkspace
+	  Name			  "Signal To\nWorkspace"
+	  SID			  "9:4"
+	  Ports			  [1]
+	  Position		  [70, 74, 120, 116]
+	  ZOrder		  1
+	  CopyFcn		  "dspblkcopystw(gcbh);"
+	  VariableName		  "yout"
+	  MaxDataPoints		  "inf"
+	}
+	Line {
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Signal To\nWorkspace"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "UDP Send"
+      SID		      "12"
+      Ports		      [1]
+      Position		      [250, 215, 355, 265]
+      ZOrder		      -9
+      LibraryVersion	      "1.105"
+      SourceBlock	      "dspnetwork/UDP Send"
+      SourceType	      "UDP Send"
+      remoteURL		      "'127.0.0.1'"
+      remotePort	      "25000"
+      localURL		      "'0.0.0.0'"
+      localPortSource	      "Automatically determine"
+      localPort		      "-1"
+      sampletime	      "-1"
+      separateLengthPort      "0"
+    }
+    Block {
+      BlockType		      M-S-Function
+      Name		      "Vector\nScope"
+      SID		      "10"
+      Ports		      [1]
+      Position		      [91, 45, 126, 95]
+      ZOrder		      -10
+      DialogController	      "dspdialog.VectorScope"
+      DialogControllerArgs    "DataTag3"
+      CopyFcn		      "sdspfscope2([],[],[],'BlockCopy');    \nset_param(gcb,'XAxisParamsVer','6.9');"
+      DeleteFcn		      "sdspfscope2([],[],[],'BlockDelete');"
+      NameChangeFcn	      "sdspfscope2([],[],[],'NameChange');"
+      FunctionName	      "sdspfscope2"
+      Parameters	      "1"
+      DisplayMFileStacktrace  off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		48
+	$ClassName		"Simulink.Mask"
+	Type			"Vector Scope"
+	Description		"Display a vector or matrix of time-domain, frequency-domain, or user-specified data.  Each column of a "
+	"2-D input matrix is plotted as a separate data channel.  1-D inputs are assumed to be a single data channel.\n\nFor f"
+	"requency-domain operation, input should come from a source such as the Magnitude FFT block, or a block with equivalen"
+	"t data organization."
+	Help			"eval('blocksethelp');"
+	Initialization		"[x,y,str] = dspblkfscope2('icon');\ns = dspblkfscope2('init');\n\n"
+	SelfModifiable		"on"
+	Display			"plot(x,y); text(14,20,str);\n"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  33
+	  Object {
+	    $ObjectID		    49
+	    Type		    "checkbox"
+	    Name		    "ScopeProperties"
+	    Prompt		    "-------------------------------- Show scope properties ------------------------------------"
+	    Value		    "on"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    50
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Time"
+	      Cell		      "Frequency"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "Domain"
+	    Prompt		    "Input domain:"
+	    Value		    "Time"
+	  }
+	  Object {
+	    $ObjectID		    51
+	    Type		    "edit"
+	    Name		    "HorizSpan"
+	    Prompt		    "Time display span (number of frames):"
+	    Value		    "1"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    52
+	    Type		    "checkbox"
+	    Name		    "DisplayProperties"
+	    Prompt		    "-------------------------------- Show display properties -----------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    53
+	    Type		    "checkbox"
+	    Name		    "AxisGrid"
+	    Prompt		    "Show grid"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    54
+	    Type		    "checkbox"
+	    Name		    "Memory"
+	    Prompt		    "Persistence"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    55
+	    Type		    "checkbox"
+	    Name		    "FrameNumber"
+	    Prompt		    "Frame number"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    56
+	    Type		    "checkbox"
+	    Name		    "AxisLegend"
+	    Prompt		    "Channel legend"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    57
+	    Type		    "checkbox"
+	    Name		    "AxisZoom"
+	    Prompt		    "Compact display"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    58
+	    Type		    "checkbox"
+	    Name		    "OpenScopeAtSimStart"
+	    Prompt		    "Open scope at start of simulation"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    59
+	    Type		    "checkbox"
+	    Name		    "OpenScopeImmediately"
+	    Prompt		    "Open scope immediately"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    60
+	    Type		    "edit"
+	    Name		    "FigPos"
+	    Prompt		    "Scope position:"
+	    Value		    "get(0,'defaultfigureposition')"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    61
+	    Type		    "checkbox"
+	    Name		    "AxisProperties"
+	    Prompt		    "-------------------------------- Show axis properties ----------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    62
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Hertz"
+	      Cell		      "rad/sec"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "XUnits"
+	    Prompt		    "Frequency units:"
+	    Value		    "Hertz"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    63
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "[0...Fs/2]"
+	      Cell		      "[-Fs/2...Fs/2]"
+	      Cell		      "[0...Fs]"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "XRange"
+	    Prompt		    "Frequency range:"
+	    Value		    "[0...Fs/2]"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    64
+	    Type		    "checkbox"
+	    Name		    "InheritXIncr"
+	    Prompt		    "Inherit sample increment from input"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    65
+	    Type		    "edit"
+	    Name		    "XIncr"
+	    Prompt		    "Increment per sample in input frame:"
+	    Value		    "1"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    66
+	    Type		    "edit"
+	    Name		    "XLabel"
+	    Prompt		    "X-axis title:"
+	    Value		    "Time"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    67
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Auto"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "XLimit"
+	    Prompt		    "X limits:"
+	    Value		    "Auto"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    68
+	    Type		    "edit"
+	    Name		    "XMin"
+	    Prompt		    "Minimum X-limit:"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    69
+	    Type		    "edit"
+	    Name		    "XMax"
+	    Prompt		    "Maximum X-limit:"
+	    Value		    "1"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    70
+	    Type		    "edit"
+	    Name		    "XStart"
+	    Prompt		    "X Start"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    71
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Magnitude"
+	      Cell		      "dB"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "YUnits"
+	    Prompt		    "Amplitude scaling:"
+	    Value		    "dB"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    72
+	    Type		    "edit"
+	    Name		    "YMin"
+	    Prompt		    "Minimum Y-limit:"
+	    Value		    "-10"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    73
+	    Type		    "edit"
+	    Name		    "YMax"
+	    Prompt		    "Maximum Y-limit:"
+	    Value		    "10"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    74
+	    Type		    "edit"
+	    Name		    "YLabel"
+	    Prompt		    "Y-axis title:"
+	    Value		    "Amplitude"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    75
+	    Type		    "checkbox"
+	    Name		    "LineProperties"
+	    Prompt		    "-------------------------------- Show line properties -----------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    76
+	    Type		    "edit"
+	    Name		    "LineDisables"
+	    Prompt		    "Line visibilities:"
+	    Value		    ""
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    77
+	    Type		    "edit"
+	    Name		    "LineStyles"
+	    Prompt		    "Line styles:"
+	    Value		    ""
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    78
+	    Type		    "edit"
+	    Name		    "LineMarkers"
+	    Prompt		    "Line markers:"
+	    Value		    ""
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    79
+	    Type		    "edit"
+	    Name		    "LineColors"
+	    Prompt		    "Line colors:"
+	    Value		    ""
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    80
+	    Type		    "checkbox"
+	    Name		    "ShowPortLabels"
+	    Prompt		    "dummy"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    81
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "6.8"
+	      Cell		      "6.9"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "XAxisParamsVer"
+	    Prompt		    "Version of X-axis parameters:"
+	    Value		    "6.8"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Waterfall"
+      SID		      "11"
+      Ports		      [1]
+      Position		      [295, 45, 350, 95]
+      ZOrder		      -11
+      CopyFcn		      "sdspwfall([],[],[],'BlockCopy');"
+      DeleteFcn		      "sdspwfall([],[],[],'BlockDelete');"
+      UndoDeleteFcn	      "sdspwfall([],[],[],'BlockUndoDelete');"
+      LoadFcn		      "sdspwfall([],[],[],'BlockLoad');"
+      NameChangeFcn	      "sdspwfall([],[],[],'BlockNameChange');"
+      OpenFcn		      "sdspwfall([],[],[],'BlockOpen');"
+      ShowPortLabels	      "none"
+      ErrorFcn		      "sdspwfall"
+      TreatAsAtomicUnit	      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Non-reusable function"
+      FunctionWithSeparateData off
+      SimViewingDevice	      on
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		82
+	$ClassName		"Simulink.Mask"
+	Type			"Waterfall"
+	Description		"Display sequence of vectors as a 3-D waterfall plot.  Input must be real-valued.  For matrix inputs, ea"
+	"ch column of data is treated as a sequential vector input to the waterfall.\n\nColormap must be the name of a MATLAB "
+	"colormap function, without arguments or parentheses.  Type \"help graph3d\" at the MATLAB prompt for a list of predef"
+	"ined colormaps."
+	Help			"eval('blocksethelp');"
+	Initialization		"if strcmp(Suspend,'on'),\n	str='Suspend';\nelseif strcmp(Snapshot,'on'),\n	str='SnapShot';\nelse\n	s"
+	"tr='';\nend\nsdspwfall([],[],[],'DialogApply');\n"
+	SelfModifiable		"on"
+	Display			"disp('Waterfall\\nScope\\n')\ncolor('red')\ntext(.08,.2,str)\n"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  45
+	  Object {
+	    $ObjectID		    83
+	    Type		    "checkbox"
+	    Name		    "TraceProperties"
+	    Prompt		    "-------------------------------- Show waterfall properties ------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Callback		    "dspblkwfall('dynamic','TraceProperties');"
+	  }
+	  Object {
+	    $ObjectID		    84
+	    Type		    "edit"
+	    Name		    "NumTraces"
+	    Prompt		    "Number of traces:"
+	    Value		    "6"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    85
+	    Type		    "edit"
+	    Name		    "CMapStr"
+	    Prompt		    "Colormap name (jet, hot, etc):"
+	    Value		    "autumn"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    86
+	    Type		    "edit"
+	    Name		    "TNewest"
+	    Prompt		    "Transparency of newest trace, 0 to 1 (1=opaque):"
+	    Value		    "1"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    87
+	    Type		    "edit"
+	    Name		    "TOldest"
+	    Prompt		    "Transparency of oldest trace, 0 to 1:"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    88
+	    Type		    "edit"
+	    Name		    "HistoryLength"
+	    Prompt		    "History length:"
+	    Value		    "10"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    89
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Overwrite"
+	      Cell		      "Suspend"
+	      Cell		      "Extend"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "HistoryFull"
+	    Prompt		    "History full:"
+	    Value		    "Overwrite"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    90
+	    Type		    "edit"
+	    Name		    "UpdateInterval"
+	    Prompt		    "Display update interval:"
+	    Value		    "1"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    91
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Selected"
+	      Cell		      "All visible"
+	      Cell		      "All history"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "ExportMode"
+	    Prompt		    "Data logging:"
+	    Value		    "Selected"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    92
+	    Type		    "edit"
+	    Name		    "MLExportName"
+	    Prompt		    "MATLAB export variable name:"
+	    Value		    "ExportData"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    93
+	    Type		    "checkbox"
+	    Name		    "AutoExport"
+	    Prompt		    "Automatic export to workspace"
+	    Value		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    94
+	    Type		    "checkbox"
+	    Name		    "DisplayProperties"
+	    Prompt		    "-------------------------------- Show display properties ----------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Callback		    "dspblkwfall('dynamic','DisplayProperties');"
+	  }
+	  Object {
+	    $ObjectID		    95
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Arrow"
+	      Cell		      "Orbit"
+	      Cell		      "Zoom"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "MouseMode"
+	    Prompt		    "Mouse mode:"
+	    Value		    "Orbit"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    96
+	    Type		    "checkbox"
+	    Name		    "AxisGrid"
+	    Prompt		    "Show grid"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    97
+	    Type		    "checkbox"
+	    Name		    "Snapshot"
+	    Prompt		    "Snapshot (pause) display"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    98
+	    Type		    "checkbox"
+	    Name		    "Suspend"
+	    Prompt		    "Suspend data capture"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    99
+	    Type		    "checkbox"
+	    Name		    "SyncSnapshots"
+	    Prompt		    "Synchronize suspend/snapshot"
+	    Value		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    100
+	    Type		    "checkbox"
+	    Name		    "OpenScopeAtSimStart"
+	    Prompt		    "Open scope at start of simulation"
+	    Value		    "on"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    101
+	    Type		    "edit"
+	    Name		    "FigPos"
+	    Prompt		    "Scope position:"
+	    Value		    "[243 195 405 320]"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    102
+	    Type		    "edit"
+	    Name		    "CameraView"
+	    Prompt		    "Camera view:"
+	    Value		    "[69.4600750684385 564.426060114276 -133.474523953492 0 18.5 3.5 0.616338299486424 -7.9078811427274 1."
+	    "98411164834144 2.40985953613679 1 18.5 3]"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    103
+	    Type		    "edit"
+	    Name		    "InportDimsHint"
+	    Prompt		    "Inport dimensions hint:"
+	    Value		    "[32 1]"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    104
+	    Type		    "checkbox"
+	    Name		    "AxisProperties"
+	    Prompt		    "-------------------------------- Show axis properties ----------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Callback		    "dspblkwfall('dynamic','AxisProperties');"
+	  }
+	  Object {
+	    $ObjectID		    105
+	    Type		    "edit"
+	    Name		    "YMin"
+	    Prompt		    "Minimum input value:"
+	    Value		    "-1"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    106
+	    Type		    "edit"
+	    Name		    "YMax"
+	    Prompt		    "Maximum input value:"
+	    Value		    "1"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    107
+	    Type		    "edit"
+	    Name		    "AxisColor"
+	    Prompt		    "Axis color:"
+	    Value		    "'w'"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    108
+	    Type		    "edit"
+	    Name		    "XLabel"
+	    Prompt		    "X-axis title:"
+	    Value		    "Amplitude"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    109
+	    Type		    "edit"
+	    Name		    "YLabel"
+	    Prompt		    "Y-axis title:"
+	    Value		    "Samples"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    110
+	    Type		    "edit"
+	    Name		    "ZLabel"
+	    Prompt		    "Z-axis title:"
+	    Value		    "Time"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    111
+	    Type		    "checkbox"
+	    Name		    "TriggerProperties"
+	    Prompt		    "-------------------------------- Show trigger properties ----------------------------------------"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Callback		    "dspblkwfall('dynamic','TriggerProperties');"
+	  }
+	  Object {
+	    $ObjectID		    112
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      4
+	      Cell		      "Immediately"
+	      Cell		      "After T seconds"
+	      Cell		      "After N inputs"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "TrigStartMode"
+	    Prompt		    "Begin recording:"
+	    Value		    "Immediately"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    113
+	    Type		    "edit"
+	    Name		    "TrigStartT"
+	    Prompt		    "Begin record time, T:"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    114
+	    Type		    "edit"
+	    Name		    "TrigStartN"
+	    Prompt		    "Begin record count, N:"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    115
+	    Type		    "edit"
+	    Name		    "TrigStartFcn"
+	    Prompt		    "Begin record function:"
+	    Value		    "trigbegin"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    116
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      4
+	      Cell		      "Never"
+	      Cell		      "After T seconds"
+	      Cell		      "After N inputs"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "TrigStopMode"
+	    Prompt		    "Record until:"
+	    Value		    "Never"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    117
+	    Type		    "edit"
+	    Name		    "TrigStopT"
+	    Prompt		    "End record time, T:"
+	    Value		    "0.1"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    118
+	    Type		    "edit"
+	    Name		    "TrigStopN"
+	    Prompt		    "End record count, N:"
+	    Value		    "1"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    119
+	    Type		    "edit"
+	    Name		    "TrigStopFcn"
+	    Prompt		    "End record function:"
+	    Value		    "trigend"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    120
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      4
+	      Cell		      "Never"
+	      Cell		      "After T seconds"
+	      Cell		      "After N inputs"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "TrigRearmMode"
+	    Prompt		    "Re-enable recording:"
+	    Value		    "Never"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    121
+	    Type		    "edit"
+	    Name		    "TrigRearmT"
+	    Prompt		    "Re-enable time, T:"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    122
+	    Type		    "edit"
+	    Name		    "TrigRearmN"
+	    Prompt		    "Re-enable count, N:"
+	    Value		    "0"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    123
+	    Type		    "edit"
+	    Name		    "TrigRearmFcn"
+	    Prompt		    "Re-enable function:"
+	    Value		    "trigrearm"
+	    Evaluate		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    124
+	    Type		    "checkbox"
+	    Name		    "XformProperties"
+	    Prompt		    "-------------------------------- Show transform properties ----------------------------------------"
+	    Value		    "on"
+	    Evaluate		    "off"
+	    Callback		    "dspblkwfall('dynamic','XformProperties');"
+	  }
+	  Object {
+	    $ObjectID		    125
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      11
+	      Cell		      "None"
+	      Cell		      "Amplitude->dB"
+	      Cell		      "Complex->Mag Lin"
+	      Cell		      "Complex->Mag dB"
+	      Cell		      "Complex->Angle"
+	      Cell		      "FFT->Mag Lin Fs/2"
+	      Cell		      "FFT->Mag dB Fs/2"
+	      Cell		      "FFT->Angle Fs/2"
+	      Cell		      "Power->dB"
+	      Cell		      "User-defined fcn"
+	      Cell		      "User-defined expr"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "XformMode"
+	    Prompt		    "Transform:"
+	    Value		    "None"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    126
+	    Type		    "edit"
+	    Name		    "XformFcn"
+	    Prompt		    "Function:"
+	    Value		    "abs"
+	    Evaluate		    "off"
+	  }
+	  Object {
+	    $ObjectID		    127
+	    Type		    "edit"
+	    Name		    "XformExpr"
+	    Prompt		    "Expression:"
+	    Value		    "(u+1)/2"
+	    Evaluate		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Waterfall"
+	Location		[635, 645, 1155, 751]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"5"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "11:1"
+	  Position		  [15, 28, 45, 42]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  ComplexToRealImag
+	  Name			  "ComplexCheck"
+	  SID			  "11:2"
+	  Ports			  [1, 2]
+	  Position		  [185, 17, 215, 53]
+	  ZOrder		  -2
+	}
+	Block {
+	  BlockType		  FrameConversion
+	  Name			  "Frame Conversion"
+	  SID			  "11:3"
+	  Ports			  [1, 1]
+	  Position		  [95, 15, 150, 55]
+	  ZOrder		  -3
+	  OutFrame		  "Sample-based"
+	}
+	Block {
+	  BlockType		  Concatenate
+	  Name			  "Matrix\nConcatenation"
+	  SID			  "11:4"
+	  Ports			  [2, 1]
+	  Position		  [255, 14, 310, 56]
+	  ZOrder		  -4
+	  ShowName		  off
+	  Mode			  "Multidimensional array"
+	}
+	Block {
+	  BlockType		  M-S-Function
+	  Name			  "S-Function"
+	  SID			  "11:5"
+	  Ports			  [1]
+	  Position		  [350, 19, 405, 51]
+	  ZOrder		  -5
+	  FunctionName		  "sdspwfall"
+	  DisplayMFileStacktrace  off
+	}
+	Line {
+	  SrcBlock		  "Matrix\nConcatenation"
+	  SrcPort		  1
+	  DstBlock		  "S-Function"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "ComplexCheck"
+	  SrcPort		  2
+	  DstBlock		  "Matrix\nConcatenation"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "ComplexCheck"
+	  SrcPort		  1
+	  DstBlock		  "Matrix\nConcatenation"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  "Frame Conversion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Frame Conversion"
+	  SrcPort		  1
+	  DstBlock		  "ComplexCheck"
+	  DstPort		  1
+	}
+      }
+    }
+    Annotation {
+      SID		      "24"
+      Name		      "Sinks"
+      Position		      [195, 19]
+      ZOrder		      -1
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  4
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    ,     8    (    !          %    \"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    N     8    (     0         %    \"     $    \"     0         .    0     8    (    !    "
+    "      %    \"     $    -     0         0    #0   %1O075D:6]$979I8V4    .    0     8    (    !          %    \"    "
+    " $    )     0         0    \"0   &1S<&1I86QO9P         "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    ,     8    (    !          %    \"                0         0          "
+  }
+}

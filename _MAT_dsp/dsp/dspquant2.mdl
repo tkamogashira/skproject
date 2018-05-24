@@ -1,0 +1,1155 @@
+Library {
+  Name			  "dspquant2"
+  Version		  8.0
+  MdlSubVersion		  0
+  RequirementInfo	  "9"
+  SavedCharacterEncoding  "US-ASCII"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Run 1"
+  ForwardingTableString	  "||__slOldName__||dspquant2/Scalar Quantizer||__slNewName__||dspobslib/Scalar Quantizer"
+  MaxMDLFileLineLength	  120
+  Created		  "Mon Nov 02 09:00:02 1998"
+  Creator		  "szlotkin"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "lij"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Oct 10 16:26:02 2011"
+  RTWModifiedTimeStamp	  188225875
+  ModelVersionFormat	  "1.%<AutoIncrement:367>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "d"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.12.0"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.12.0"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.12.0"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  AccelParallelForEachSubsystem	on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.12.0"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Use local settings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "Warning"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.12.0"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.12.0"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.12.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.12.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateSLWebview	  off
+	  GenerateCodeMetricsReport off
+	  RTWCompilerOptimization "Off"
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.12.0"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"PortableWordSizes"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      CodeExecutionProfiling  off
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 520, 285, 1400, 915 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Quantizer
+      QuantizationInterval    "0.5"
+      LinearizeAsGain	      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+    }
+  }
+  System {
+    Name		    "dspquant2"
+    Location		    [88, 211, 485, 588]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "10"
+    Block {
+      BlockType		      S-Function
+      Name		      "G.711 Codec"
+      SID		      "1"
+      Ports		      [1, 1]
+      Position		      [295, 61, 355, 99]
+      FunctionName	      "sdspg711"
+      Parameters	      "mode,errmode"
+      EnableBusSupport	      off
+      MaskType		      "G.711 Codec"
+      MaskDescription	      "Implements the ITU-T G.711 recommendation for encoding, decoding, or converting speech si"
+      "gnals.\n\nThe block encodes int16 PCM signals using A-law or mu-law into uint8 codewords.  The input is assumed "
+      "to be a 13-bit (A-law) or 14-bit (mu-law) PCM signal.\n\nThe block decodes uint8 codewords into 13-bit (A-law) o"
+      "r 14-bit (mu-law) PCM signals of type int16.\n\nThe block converts between A-law and mu-law uint8 codewords."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Mode:|Overflow diagnostic:"
+      MaskStyleString	      "popup(Encode PCM to A-law|Encode PCM to mu-law|Decode A-law to PCM|Decode mu-law to PCM|C"
+      "onvert A-law to mu-law|Convert mu-law to A-law),popup(Ignore|Warning|Error)"
+      MaskVariables	      "mode=@1;errmode=@2;"
+      MaskTunableValueString  "on,on"
+      MaskCallbackString      "dspblkg711('enables')|"
+      MaskEnableString	      "on,on"
+      MaskVisibilityString    "on,on"
+      MaskToolTipString	      "on,on"
+      MaskInitialization      "[iconStr, inLabel, outLabel] = dspblkg711('icon',mode);"
+      MaskSelfModifiable      on
+      MaskDisplay	      "text(0.3,0.85,iconStr)\nport_label('input',1,inLabel)\nport_label('output',1,outLabel)"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Encode PCM to A-law|Warning"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      Quantizer
+      Name		      "Quantizer"
+      SID		      "2"
+      Position		      [225, 60, 265, 100]
+      LinearizeAsGain	      off
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Scalar Quantizer\nDecoder"
+      SID		      "3"
+      Ports		      [1, 1]
+      Position		      [155, 143, 250, 197]
+      FunctionName	      "sdspsqdec"
+      Parameters	      "CBsource,codebook, invalidin,isCustomFloat,fxpIsSigned,dTypeID,fxpWordLength,fxpFracLength"
+      EnableBusSupport	      off
+      MaskType		      "Scalar Quantizer Decoder"
+      MaskDescription	      "For each input index value, the block outputs the corresponding codeword. Each element of"
+      " the Codebook parameter represents a codeword. The output values have the same data type as the codebook values."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Action for out of range index value:|Source of codebook:|Codebook values:|Codebook and o"
+      "utput data type:|Signed|Word length:|User-defined data type (e.g. sfix(16), float('single')):|Set fraction lengt"
+      "h in output to:|Fraction length:|Codebook and output data type:|Last output data type"
+      MaskStyleString	      "popup(Clip|Clip and warn|Error),popup(Specify via dialog|Input port),edit,popup(Same as i"
+      "nput|double|single|Fixed-point|User-defined|Inherit via back propagation),checkbox,edit,edit,popup(Best precisio"
+      "n|User-defined),edit,unidt({a=10|||}{i=Inherit: Inherit via back propagation|Inherit: Same as input}{b=double|si"
+      "ngle}{s=UDTBinaryPointMode|UDTBestPrecisionMode}{g=UDTSignedSign|UDTUnsignedSign}),edit"
+      MaskVariables	      "invalidin=@1;CBsource=@2;codebook=@3;dataType=@4;isSigned=@5;wordLen=@6;udDataType=@7;fracB"
+      "itsMode=@8;numFracBits=@9;OutDataTypeStr=@10;LastOutDataTypeStr=&11;"
+      MaskTunableValueString  "off,off,on,off,off,off,off,off,off,off,off"
+      MaskCallbackString      "|dspblksqvqdec|||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,off,off,off,off,off,off,on,off"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "isCustomFloat =  0; % nice default\nfxpIsSigned   =  1; % nice default\nfxpWordLength ="
+      "  8; % nice default\nfxpFracLength =  0; % nice default\nif strcmpi(get_param(gcbh,'CBSource'), 'Input port'),  "
+      " \n    dTypeID   = -3; % SAME_AS_INPUT\nelse\n    dtRows            = dspblkGetSQVQDecoderDTRowInfo();\n    [dtI"
+      "nfo, dTypeID] = dspblkUDTMapperOutDType(gcbh, dtRows{1}, 'dataType', max(abs(squeeze(codebook(:)))));\n    isCus"
+      "tomFloat     = dtInfo.DataTypeIsCustomFloat;\n    if ~isCustomFloat\n        fxpIsSigned   = dtInfo.DataTypeIsSi"
+      "gned;\n        fxpWordLength = dtInfo.DataTypeWordLength;\n        fxpFracLength = dtInfo.DataTypeFracOrMantBits"
+      ";\n    end\nend\n"
+      MaskSelfModifiable      on
+      MaskDisplay	      "text(.2, .9, 'SQ Decoder');\nx = [0.11 0.28 0.28 0.48 0.48 0.68 0.68 0.85 NaN];\ny = [0.1 0.1"
+      " 0.3 0.3 0.5 0.5 0.7 0.7 NaN];\nplot(x,y);\nsi(1).port = 1;\nsi(1).txt = 'I';\nif strcmpi(get_param(gcbh,'CBSour"
+      "ce'), 'Input port'),   \n  si(2).port = 2;\n  si(2).txt = 'C';\nelse\n  si(2).port = 1;\n  si(2).txt = 'I';\nend"
+      "  \nso(1).port = 1;\nso(1).txt = 'Q(U)';\nport_label('input',si(1).port, si(1).txt);\nport_label('input',si(2).p"
+      "ort, si(2).txt);\nport_label('output',so(1).port, so(1).txt);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Clip|Specify via dialog|[1:10]|double|on|16|sfix(16)|Best precision|11|double|double"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+      MaskTabNameString	      "Main,Main,Main,Data Types,Data Types,Data Types,Data Types,Data Types,Data Types,Data T"
+      "ypes,Data Types"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Scalar Quantizer\nEncoder"
+      SID		      "4"
+      Ports		      [1, 1]
+      Position		      [25, 142, 120, 198]
+      DialogController	      "dspfixptddg.SQEncoder"
+      FunctionName	      "sdspsqenc"
+      Parameters	      "paramSrc,partType,BBoundary,UBoundary,SearchMethod,tieBreakRule,outQU,outQError,codebook,outSt"
+      "atus,invalidin,additionalParams,idtype,dtInfo.roundingMode,dtInfo.overflowMode"
+      EnableBusSupport	      off
+      MaskType		      "Scalar Quantizer Encoder"
+      MaskDescription	      "The block maps each input value to a quantization region by comparing the input value to "
+      "the user-specified boundary points. Then, the block outputs the index of the associated region. If you want the "
+      "block to output the quantized value or the associated quantization error, you must provide the codebook. \n\nIf "
+      "the Codebook parameter is defined as [c1 c2 c3 ... cN] and the Boundary points parameter is denoted by [p0 p1 p2"
+      " p3 ... pN], then p0<c1<p1<c2 ... p(N-1)<cN<pN for a regular quantizer. If your quantizer is bounded, you need t"
+      "o specify [p0 p1 p2 p3 ... pN]. For any input less than p0 or greater than pN, you can optionally output the cli"
+      "pping status. If your quantizer is unbounded, you need to specify [p1 p2 p3 ... p(N-1)] and the block sets p0=-I"
+      "nf and pN = +Inf. \n\nYou must enter the boundary points in ascending order."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Source of quantizer parameters:|Partitioning:|Boundary points:|Boundary points:|Searchin"
+      "g method:|Tie-breaking rule:|Output codeword|Output quantization error|Codebook:|Output clipping status|Action f"
+      "or out of range input:|--------------- Show additional parameters ---------------|Index output data type:|Allow "
+      "overrides from DSP Fixed-Point Attributes blocks|Round integer calculations toward:|Saturate on integer overflow"
+      MaskStyleString	      "popup(Specify via dialog|Input port),popup(Bounded|Unbounded),edit,edit,popup(Linear|Bina"
+      "ry),popup(Choose the lower index|Choose the higher index),checkbox,checkbox,edit,checkbox,popup(Clip|Clip and wa"
+      "rn|Error),checkbox,popup(int8|uint8|int16|uint16|int32|uint32|Inherit via back propagation),checkbox,popup(Ceili"
+      "ng|Convergent|Floor|Nearest|Round|Simplest|Zero),checkbox"
+      MaskVariables	      "paramSrc=@1;partType=@2;BBoundary=@3;UBoundary=@4;SearchMethod=@5;tieBreakRule=@6;outQU=@7;"
+      "outQError=@8;codebook=@9;outStatus=@10;invalidin=@11;additionalParams=@12;idtype=@13;allowOverrides=@14;rounding"
+      "Mode=@15;overflowMode=@16;"
+      MaskTunableValueString  "off,off,on,on,off,off,off,off,on,off,off,off,off,off,off,off"
+      MaskCallbackString      "dspblksqenc;\ndspblksqenc;|dspblksqenc;|||||dspblksqenc;\ndspblksqenc;|dspblksqenc;\nds"
+      "pblksqenc;||||||||"
+      MaskEnableString	      "on,on,on,off,on,on,on,on,off,on,on,off,on,off,on,on"
+      MaskVisibilityString    "on,on,on,off,on,on,on,on,on,on,on,off,on,off,on,on"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "[x,y,si,so,disp_str,dtInfo]=dspblksqenc('icon');"
+      MaskSelfModifiable      on
+      MaskDisplay	      "text(.2, .9, disp_str);\nplot(x,y);\nport_label('input',si(1).port, si(1).txt);\nport_label('"
+      "input',si(2).port, si(2).txt);\nport_label('input',si(3).port, si(3).txt);\n\nport_label('output',so(1).port, so"
+      "(1).txt);\nport_label('output',so(2).port, so(2).txt);\nport_label('output',so(3).port, so(3).txt);\nport_label("
+      "'output',so(4).port, so(4).txt);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Specify via dialog|Bounded|[1:10]|[2:9]|Linear|Choose the lower index|off|off|[1.5:9.5]|o"
+      "ff|Clip|off|int32|on|Floor|off"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Scalar Quantizer \nDesign"
+      SID		      "5"
+      Ports		      []
+      Position		      [284, 142, 364, 196]
+      OpenFcn		      "sqdtool"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Scalar Quantizer Design"
+      MaskDescription	      "Designs optimal scalar quantizer and automatically realizes scalar quantizer with specifi"
+      "c final codebook, final boundary points, seraching method and tie-breaking rule."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskInitialization      "x = [0.0 0.2 0.2 0.4 0.4 0.6 0.6 0.8 NaN]+0.08;\ny = [0.2 0.2 0.4 0.4 0.6 0.6 0.8 0.8 N"
+      "aN]-0.1;\n\n"
+      MaskSelfModifiable      on
+      MaskDisplay	      "text(.05, .9, 'SQDTool');\nplot(x,y);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+      System {
+	Name			"Scalar Quantizer \nDesign"
+	Location		[469, 448, 835, 688]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"1"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Empty SubSystem"
+	  SID			  "5:1"
+	  Ports			  []
+	  Position		  [160, 100, 190, 130]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Empty SubSystem"
+	    Location		    [146, 180, 902, 673]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Uniform\nDecoder"
+      SID		      "6"
+      Ports		      [1, 1]
+      Position		      [125, 59, 195, 101]
+      FunctionName	      "sdspudecode2"
+      Parameters	      "peak,bits,otype,overflowMode"
+      EnableBusSupport	      off
+      MaskType		      "Uniform Decoder"
+      MaskDescription	      "Uniformly decode the input with positive and negative Peak value.   Saturate or wrap the "
+      "input in overflow.  The  output datatype is double or single."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Peak:|Bits:|Overflow mode:|Output type:"
+      MaskStyleString	      "edit,edit,popup(Saturate|Wrap),popup(Double|Single)"
+      MaskVariables	      "peak=@1;bits=@2;overflowMode=@3;otype=@4;"
+      MaskTunableValueString  "off,off,off,off"
+      MaskCallbackString      "|||"
+      MaskEnableString	      "on,on,on,on"
+      MaskVisibilityString    "on,on,on,on"
+      MaskToolTipString	      "on,on,on,on"
+      MaskInitialization      "[x, y, str] = dspblkudecode;"
+      MaskSelfModifiable      on
+      MaskDisplay	      "plot(x,y);\ntext(0.1,0.5,str);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "1|3|Saturate|Double"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Uniform\nEncoder"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [25, 59, 95, 101]
+      FunctionName	      "sdspuencode2"
+      Parameters	      "peak,bits,otype"
+      EnableBusSupport	      off
+      MaskType		      "Uniform Encoder"
+      MaskDescription	      "Uniformly quantize and encode the input into specified number of bits. The input is satur"
+      "ated at positive and negative Peak value. Output datatype is either 8, 16, or 32-bit signed or unsigned integer,"
+      " based on the least number of bits needed. "
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Peak:|Bits:|Output type:"
+      MaskStyleString	      "edit,edit,popup(Unsigned integer|Signed integer)"
+      MaskVariables	      "peak=@1;bits=@2;otype=@3;"
+      MaskTunableValueString  "off,off,off"
+      MaskCallbackString      "||"
+      MaskEnableString	      "on,on,on"
+      MaskVisibilityString    "on,on,on"
+      MaskToolTipString	      "on,on,on"
+      MaskInitialization      "[x, y, str] = dspblkuencode(bits,otype);"
+      MaskSelfModifiable      on
+      MaskDisplay	      "plot(x,y);\ntext(0.6,0.5,str);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "1|8|Unsigned integer"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Vector Quantizer\nDecoder"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [155, 243, 250, 297]
+      FunctionName	      "sdspvqdec"
+      Parameters	      "CBsource,codebook,invalidin,isCustomFloat,fxpIsSigned,dTypeID,fxpWordLength,fxpFracLength"
+      EnableBusSupport	      off
+      MaskType		      "Vector Quantizer Decoder"
+      MaskDescription	      "For each input index value, the block outputs the corresponding codeword. Each column of "
+      "the Codebook parameter represents a codeword. The output values have the same data type as the codebook values."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Action for out of range index value:|Source of codebook:|Codebook values:|Codebook and o"
+      "utput data type:|Signed|Word length:|User-defined data type (e.g. sfix(16), float('single')):|Set fraction lengt"
+      "h in output to:|Fraction length:|Codebook and output data type:|Last output data type:"
+      MaskStyleString	      "popup(Clip|Clip and warn|Error),popup(Specify via dialog|Input port),edit,popup(Same as i"
+      "nput|double|single|Fixed-point|User-defined|Inherit via back propagation),checkbox,edit,edit,popup(Best precisio"
+      "n|User-defined),edit,unidt({a=10|||}{i=Inherit: Inherit via back propagation|Inherit: Same as input}{b=double|si"
+      "ngle}{s=UDTBinaryPointMode|UDTBestPrecisionMode}{g=UDTSignedSign|UDTUnsignedSign}),edit"
+      MaskVariables	      "invalidin=@1;CBsource=@2;codebook=@3;dataType=@4;isSigned=@5;wordLen=@6;udDataType=@7;fracB"
+      "itsMode=@8;numFracBits=@9;OutDataTypeStr=@10;LastOutDataTypeStr=&11;"
+      MaskTunableValueString  "off,off,on,off,off,off,off,off,off,off,off"
+      MaskCallbackString      "|dspblksqvqdec|||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,off,off,off,off,off,off,on,off"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "isCustomFloat =  0; % nice default\nfxpIsSigned   =  1; % nice default\nfxpWordLength ="
+      "  8; % nice default\nfxpFracLength =  0; % nice default\nif strcmpi(get_param(gcbh,'CBSource'), 'Input port'),  "
+      " \n    dTypeID   = -3; % SAME_AS_INPUT\nelse\n    dtRows            = dspblkGetSQVQDecoderDTRowInfo();\n    [dtI"
+      "nfo, dTypeID] = dspblkUDTMapperOutDType(gcbh, dtRows{1}, 'dataType', max(abs(squeeze(codebook(:)))));\n    isCus"
+      "tomFloat     = dtInfo.DataTypeIsCustomFloat;\n    if ~isCustomFloat\n        fxpIsSigned   = dtInfo.DataTypeIsSi"
+      "gned;\n        fxpWordLength = dtInfo.DataTypeWordLength;\n        fxpFracLength = dtInfo.DataTypeFracOrMantBits"
+      ";\n    end\nend\n"
+      MaskSelfModifiable      on
+      MaskDisplay	      "text(.2, .9, 'VQ Decoder');\n% Voronoi cells with centroids\nx1 = [ 0.52 0.55 0.70 0.78 NaN  "
+      "0.78 0.65 0.48 0.46 NaN 0.20 0.38 0.35 0.20]-0.04;\ny1 = [ 0.15 0.40 0.50 0.43 NaN  0.85 0.65 0.72 0.93 NaN 0.80"
+      " 0.67 0.50 0.35]-0.15;\nx2 = [x1(3) x1(7) NaN x1(8) x1(12) NaN x1(13) x1(2)];\ny2 = [y1(3) y1(7) NaN y1(8) y1(12"
+      ") NaN y1(13) y1(2)];\n% Circles\nS=8; t=(0:S)'/S*2*pi; a=0.01;\nxcos=a*cos(t);ysin=a*sin(t);\nxc=xcos*ones(1,7) "
+      "+ ones(size(t))*([.72 .80 .65 .41  0.32  0.40 0.59]-0.1);\nyc=ysin*ones(1,7) + ones(size(t))*([.30 .60 .80 .80  "
+      "0.60  0.30 0.55]-0.15);\nplot(x1,y1,x2,y2);\npatch(xc(1:9), yc(1:9),[0 0 0]);\npatch(xc(10:18), yc(10:18),[0 0 0"
+      "]);\npatch(xc(19:27), yc(19:27),[0 0 0]);\npatch(xc(28:36), yc(28:36),[0 0 0]);\npatch(xc(37:45), yc(37:45),[0 0"
+      " 0]);\npatch(xc(46:54), yc(46:54),[0 0 0]);\npatch(xc(55:63), yc(55:63),[0 0 0]);\n% Port labels\nsi(1).port = 1"
+      ";\nsi(1).txt = 'I';\nif strcmpi(get_param(gcbh,'CBSource'), 'Input port'),   \n    si(2).port = 2;\n    si(2).tx"
+      "t = 'C';\nelse\n    si(2).port = 1;\n    si(2).txt = 'I';\nend  \nso(1).port = 1;\nso(1).txt = 'Q(U)';\nport_lab"
+      "el('input',si(1).port, si(1).txt);\nport_label('input',si(2).port, si(2).txt);\nport_label('output',so(1).port, "
+      "so(1).txt);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Clip|Specify via dialog|[1.5  13.3  136.4  6.8 ; 2.5  14.3  137.4  7.8; 3.5  15.3  138.4 "
+      " 8.8]|double|on|16|sfix(16)|Best precision|7|double|double"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+      MaskTabNameString	      "Main,Main,Main,Data Types,Data Types,Data Types,Data Types,Data Types,Data Types,Data T"
+      "ypes,Data Types"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Vector Quantizer\nDesign"
+      SID		      "9"
+      Ports		      []
+      Position		      [282, 242, 362, 296]
+      OpenFcn		      "vqdtool"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      MaskType		      "Vector Quantizer Design"
+      MaskDescription	      "Designs optimal vector quantizer and automatically realizes vector quantizer encoder and/"
+      "or vector quantizer decoder blocks  with specific final codebook and tie-breaking rule."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskInitialization      "x1=[ 0.52 0.55 0.70 0.84 NaN  0.84 0.65 0.48 0.46 NaN 0.15 0.38 0.35 0.15]-0.04;\ny1=[ "
+      "0.15 0.40 0.50 0.43 NaN  0.85 0.65 0.72 0.93 NaN 0.80 0.67 0.50 0.35]-0.15;\nx2 = [x1(3) x1(7) NaN x1(8) x1(12) "
+      "NaN x1(13) x1(2)];\ny2 = [y1(3) y1(7) NaN y1(8) y1(12) NaN y1(13) y1(2)];\n\nS=8; t=(0:S)'/S*2*pi; a=0.01;\nxcos"
+      "=a*cos(t);ysin=a*sin(t);\n	\nxc=xcos*ones(1,7) + ones(size(t))*[[.72 .80 .65 .41  0.32  0.40 0.59]-0.1];\nyc=ysi"
+      "n*ones(1,7) + ones(size(t))*[[.30 .60 .80 .80  0.60  0.30 0.55]-0.15];\n\n"
+      MaskSelfModifiable      on
+      MaskDisplay	      "text(.05, .9, 'VQDTool');\nplot(x1,y1,x2,y2);\npatch(xc(1:9), yc(1:9),[0 0 0]);\npatch(xc(10:"
+      "18), yc(10:18),[0 0 0]);\npatch(xc(19:27), yc(19:27),[0 0 0]);\npatch(xc(28:36), yc(28:36),[0 0 0]);\npatch(xc(3"
+      "7:45), yc(37:45),[0 0 0]);\npatch(xc(46:54), yc(46:54),[0 0 0]);\npatch(xc(55:63), yc(55:63),[0 0 0]);"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+      System {
+	Name			"Vector Quantizer\nDesign"
+	Location		[469, 448, 835, 688]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"1"
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Empty SubSystem"
+	  SID			  "9:1"
+	  Ports			  []
+	  Position		  [160, 100, 190, 130]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Empty SubSystem"
+	    Location		    [146, 180, 902, 673]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Vector Quantizer\nEncoder"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [25, 243, 120, 297]
+      DialogController	      "dspfixptddg.VQEncoder"
+      DialogControllerArgs    "DataTag0"
+      FunctionName	      "sdspvqenc"
+      Parameters	      "CBsource,codebook,distMeasure,wgtSrc,weights,idtype,tieBreakRule,outQU,outQError,additionalPar"
+      "ams,dtInfo.prodOutputMode,dtInfo.prodOutputWordLength,dtInfo.prodOutputFracLength,dtInfo.accumMode,dtInfo.accumW"
+      "ordLength,dtInfo.accumFracLength,dtInfo.roundingMode,dtInfo.overflowMode"
+      EnableBusSupport	      off
+      MaskType		      "Vector Quantizer Encoder"
+      MaskDescription	      "For each input column vector, the block outputs a zero-based index value of the nearest c"
+      "odeword. You can choose to output the nearest codeword and corresponding quantization error for each input colum"
+      "n vector. Each column of the Codebook parameter represents a codeword. If you choose to specify a weighting fact"
+      "or, it must be a vector having length equal to the number of rows of your input. The block applies the same code"
+      "book and weighting factor to each input column vector.\n\nAll the inputs to the block must be the same data type"
+      ". The output index values can be signed or unsigned integers. All other outputs have the same data type as the i"
+      "nputs."
+      MaskHelp		      "eval('blocksethelp');"
+      MaskPromptString	      "Source of codebook:|Codebook:|Distortion measure:|Source of weighting factor:|Weighting "
+      "factor:|Tie-breaking rule:|Output codeword|Output quantization error|--------------- Show additional parameters "
+      "---------------|Index output data type:|Fixed-point product output attributes:|Product output word length|Produc"
+      "t output fraction length|Fixed-point accumulator attributes:|Accumulator word length:|Accumulator fraction lengt"
+      "h:|Round integer calculations toward:|Saturate on integer overflow"
+      MaskStyleString	      "popup(Specify via dialog|Input port),edit,popup(Squared error|Weighted squared error),pop"
+      "up(Specify via dialog|Input port),edit,popup(Choose the lower index|Choose the higher index),checkbox,checkbox,c"
+      "heckbox,popup(int8|uint8|int16|uint16|int32|uint32|Inherit via back propagation),popup(Same as input|Binary poin"
+      "t scaling|Slope and bias scaling),edit,edit,popup(Same as product output|Same as input|Binary point scaling|Slop"
+      "e and bias scaling),edit,edit,popup(Ceiling|Convergent|Floor|Nearest|Round|Simplest|Zero),checkbox"
+      MaskVariables	      "CBsource=@1;codebook=@2;distMeasure=@3;wgtSrc=@4;weights=@5;tieBreakRule=@6;outQU=@7;outQEr"
+      "ror=@8;additionalParams=@9;idtype=@10;prodOutputMode=@11;prodOutputWordLength=@12;prodOutputFracLength=@13;accum"
+      "Mode=@14;accumWordLength=@15;accumFracLength=@16;roundingMode=@17;overflowMode=@18;"
+      MaskTunableValueString  "off,on,off,off,on,off,off,off,off,off,off,off,off,off,off,off,off,off"
+      MaskCallbackString      "dspblkvqenc;||dspblkvqenc;\ndspblkvqenc;|dspblkvqenc;||||||||||||||"
+      MaskEnableString	      "on,on,on,on,on,on,on,on,off,on,on,on,on,on,on,on,on,on"
+      MaskVisibilityString    "on,on,on,off,off,on,on,on,on,off,off,off,off,off,off,off,off,off"
+      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on"
+      MaskInitialization      "[x1,y1,x2,y2,xc,yc,si,so,dtInfo]=dspblkvqenc('icon');"
+      MaskSelfModifiable      on
+      MaskDisplay	      "text(.2, .9, 'VQ Encoder');\nplot(x1,y1,x2,y2);\npatch(xc(1:9), yc(1:9),[0 0 0]);\npatch(xc(1"
+      "0:18), yc(10:18),[0 0 0]);\npatch(xc(19:27), yc(19:27),[0 0 0]);\npatch(xc(28:36), yc(28:36),[0 0 0]);\npatch(xc"
+      "(37:45), yc(37:45),[0 0 0]);\npatch(xc(46:54), yc(46:54),[0 0 0]);\npatch(xc(55:63), yc(55:63),[0 0 0]);\n\nport"
+      "_label('input',si(1).port, si(1).txt);\nport_label('input',si(2).port, si(2).txt);\nport_label('input',si(3).por"
+      "t, si(3).txt);\n\nport_label('output',so(1).port, so(1).txt);\nport_label('output',so(2).port, so(2).txt);\nport"
+      "_label('output',so(3).port, so(3).txt);\n"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskPortRotate	      "default"
+      MaskIconUnits	      "normalized"
+      MaskValueString	      "Specify via dialog|[1.5  13.3  136.4  6.8 ; 2.5  14.3  137.4  7.8; 3.5  15.3  138.4  8.8]"
+      "|Squared error|Specify via dialog|[1 1 1]|Choose the lower index|off|off|off|int32|Same as input|16|15|Same as p"
+      "roduct output|16|15|Floor|off"
+      MaskCapabilities	      "dspmaskedcaps(gcbh)"
+    }
+    Annotation {
+      Name		      "Quantizers"
+      Position		      [200, 24]
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    ,     8    (    !@         %    \"                0         )          "
+  }
+}

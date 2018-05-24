@@ -1,0 +1,13 @@
+
+AO=analogoutput('contec','AIO000');
+chan=addchannel(AO,0:1);
+
+%duration=10;
+set(AO,'SampleRate',100);
+set(AO,'TriggerType','Manual');
+%ActualRate=get(AO,'SampleRate');
+%len=ActualRate*duration;
+time=(0:(1/100):10);
+data=sin(2*pi*4*time)';
+leng=length(
+putdata(AO,[data data])

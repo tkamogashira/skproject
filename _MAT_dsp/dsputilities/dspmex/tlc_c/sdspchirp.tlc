@@ -1,0 +1,244 @@
+%% 
+%%   
+%%
+%% Copyright 1995-2009 The MathWorks, Inc.
+%%
+%% Abstract: Target file for the S-Function sdspchirp.c
+%%           Used for the Chirp Block
+
+%implements "sdspchirp" "C"
+
+%% Function: BlockInstanceSetup ===============================================
+%%
+%function BlockInstanceSetup(block, system) void
+
+    %assign OUTPORT = 0
+
+    %% Non-tunable parameters
+    %assign Sweep           = SFcnParamSettings.FreqSweep
+    %assign Mode            = SFcnParamSettings.SweepMode
+    %assign Delta           = SFcnParamSettings.SampleTime
+    %assign SamplesPerFrame = SFcnParamSettings.SamplesPerFrame
+    %assign dtype           = LibBlockOutputSignalDataTypeName(OUTPORT,"")
+ 
+    %% Calculated parameters
+    %assign TargetFreq  = LibBlockParameter(FREQ_TARGET,  "", "", 0)
+    %assign InitialFreq = LibBlockParameter(INITIAL_FREQ,  "", "", 0)
+    %assign Direction = "(%<TargetFreq> > %<InitialFreq>) ? 0 : 1"
+
+    %% Sweep enumerations:
+    %assign SWEPT_COSINE = 1    
+    %assign LINEAR       = 2
+    %assign LOGARITHMIC  = 3
+    %assign QUADRATIC    = 4
+
+    %assign ModeComment = (%<Mode>==1) ? "Unidirectional" : "Bidirectional"
+    
+    %switch %<Sweep>
+        %case SWEPT_COSINE
+        %assign SweepComment =  "Swept cosine"
+        %break
+        %case LINEAR
+        %assign SweepComment =  "Linear"
+        %break
+        %case LOGARITHMIC
+        %assign SweepComment =  "Logarithmic"
+        %break
+        %case QUADRATIC
+        %assign SweepComment =  "Quadratic"
+        %break
+    %endswitch
+
+    %assign ChirpComment = "/* %<ModeComment> %<SweepComment>  */"
+
+    %assign block = block + OUTPORT + Sweep + Mode + Delta + SamplesPerFrame + Direction
+    %assign block = block + ChirpComment + dtype
+    %assign block = block + SWEPT_COSINE + LINEAR + LOGARITHMIC + QUADRATIC
+
+%endfunction %% BlockInstanceSetup
+
+
+%% Function: InitializeConditions ============================================================
+%% Abstract: Initialize DWorks
+%%      
+%function InitializeConditions(block, system) Output
+  /* DSP System Toolbox Chirp (%<ParamSettings.FunctionName>) - '%<Name>' */
+  %<ChirpComment>
+  %assign str  = (dtype == "real32_T") ? "F" : ""
+  %assign fstr = (dtype == "real32_T") ? "f" : ""
+  %% Tunable parameters
+  %assign Tsw         = LibBlockParameter(PERIOD_SWEEP,  "", "", 0)
+  %assign InitialFreq = LibBlockParameter(INITIAL_FREQ,  "", "", 0)
+  %assign TargetFreq  = LibBlockParameter(FREQ_TARGET,  "", "", 0)
+  %assign TargetTime  = LibBlockParameter(TIME_TARGET,  "", "", 0)
+  %% DWorks
+  %assign beta        = LibBlockDWork(BETA,  "", "", 0)
+  %assign minFreq     = LibBlockDWork(MIN_FREQ,  "", "", 0)
+  %assign periodTheta = LibBlockDWork(PERIOD_THETA,  "", "", 0)
+  %%
+  %switch(%<Sweep>)
+    %case SWEPT_COSINE      
+      %<beta> = fabs%<fstr>(%<TargetFreq> - %<InitialFreq>) / %<TargetTime>;
+      if (%<TargetFreq> > %<InitialFreq>) {
+        %<minFreq> = %<InitialFreq>;
+      } else {
+        %<minFreq> = %<InitialFreq> - %<beta> * %<Tsw>;
+      }
+      %<periodTheta> = %<minFreq> * %<Tsw> + %<beta> * %<Tsw> * %<Tsw>;
+      %break
+      %%
+    %case LINEAR
+      %<beta> = fabs%<fstr>(%<TargetFreq> - %<InitialFreq>) / %<TargetTime>;
+      if (%<TargetFreq> > %<InitialFreq>) {
+        %<minFreq> = %<InitialFreq>;
+      } else {
+        %<minFreq> = %<InitialFreq> - %<beta> * %<Tsw>;
+      }
+      %<periodTheta> = %<minFreq> * %<Tsw> + %<beta> * %<Tsw> * %<Tsw> / 2.0%<str>;
+      %break
+      %%
+    %case LOGARITHMIC
+      if ( (%<TargetFreq> > %<InitialFreq>) && (%<InitialFreq> > 0.0%<str>) ) {
+        %<minFreq> = %<TargetFreq> / %<InitialFreq>;
+        %<beta> = %<TargetTime> / log(%<minFreq>);
+      }
+      %<periodTheta> = %<beta> * %<InitialFreq> * \
+      (pow%<fstr>(%<minFreq> , %<Tsw> / %<TargetTime>) - 1.0%<str>);
+      %break
+      %%
+    %case QUADRATIC
+      if (%<TargetFreq> > %<InitialFreq>) {
+        %<beta> = fabs%<fstr>(%<TargetFreq> - %<InitialFreq>) / (%<TargetTime> * %<TargetTime>);
+        %<minFreq> = %<InitialFreq>;
+      } else {
+        %<beta> = fabs%<fstr>(%<TargetFreq> - %<InitialFreq>) / (2 * %<Tsw> - %<TargetTime>) / %<TargetTime>;
+        %<minFreq> = %<InitialFreq> - %<beta> * %<Tsw> * %<Tsw>;
+      }
+      %<periodTheta> = %<minFreq> * %<Tsw> + %<beta> * pow%<fstr>(%<Tsw>, 3) / 3.0%<str>;
+      %break
+  %endswitch
+          
+  %<LibBlockDWork(SWEEP_DIRECTION, "", "", 0)> = %<Direction>;
+  %<LibBlockDWork(ACC_PHASE, "", "", 0)>       = 0.0%<str>;
+  %<LibBlockDWork(CURRENT_STEP, "", "", 0)>    = 0.0%<str>;
+
+%endfunction 
+
+
+%% Function: Outputs ==========================================================
+%%
+%function Outputs(block, system) Output
+    /* DSP System Toolbox Chirp (%<ParamSettings.FunctionName>) - '%<Name>' */
+    %<ChirpComment>
+    %%
+    %assign t = LibBlockDWork(CURRENT_STEP, "", "", 0)
+    {
+	%<dtype> *y   =  %<LibBlockOutputSignalAddr(OUTPORT,"","",0)>;
+	%<dtype> instantPhase = 0.0;
+	%if SamplesPerFrame > 1
+	    const int_T  samplesPerFrame = %<SamplesPerFrame>;
+	    int_T        i;
+	    for(i=0; i<samplesPerFrame; i++) {
+	%endif
+        %<SweepOutput(t,Delta)> \
+       	%if SamplesPerFrame > 1
+	    } 
+	%endif
+    }
+%endfunction   %% Outputs
+
+
+%% Function: SweepOutput ===========================================
+%%
+%function SweepOutput(t,Delta) Output 
+%%
+    %%
+    %assign yout = (SamplesPerFrame > 1) ? "*y++" : "*y"
+    %assign phase = LibBlockParameter(PHASE,  "", "", 0)
+    %assign accPhase = LibBlockDWork(ACC_PHASE, "", "", 0)
+    %assign str  = (dtype == "real32_T") ? "F" : ""
+    %assign fstr = (dtype == "real32_T") ? "f" : ""
+    %assign caststr = (dtype == "real32_T") ? "(real32_T)" : ""
+    %% Tunable parameters
+    %assign Tsw         = LibBlockParameter(PERIOD_SWEEP,  "", "", 0)
+    %assign InitialFreq = LibBlockParameter(INITIAL_FREQ,  "", "", 0)
+    %assign TargetTime  = LibBlockParameter(TIME_TARGET,  "", "", 0)
+    %% DWorks
+    %assign beta        = LibBlockDWork(BETA,  "", "", 0)
+    %assign minFreq     = LibBlockDWork(MIN_FREQ,  "", "", 0)
+    %assign periodTheta = LibBlockDWork(PERIOD_THETA,  "", "", 0)
+    %%
+    %switch(%<Sweep>) 
+    %%
+    %case LINEAR
+      %%	
+      /* We are in Bidirectional Linear mode */
+      instantPhase = (%<LibBlockDWork(SWEEP_DIRECTION, "", "", 0)> == 0) \
+      ? %<minFreq> * %<t> + %<beta> * pow%<fstr>(%<t>, 2) / 2.0%<str> \
+      : %<periodTheta> - %<minFreq> * (%<Tsw> - %<t>) - \
+      %<beta> * pow%<fstr>((%<Tsw> - %<t>), 2) / 2.0%<str>;
+      %%
+      %break
+      %%
+    %case QUADRATIC
+      %%
+      instantPhase = (%<LibBlockDWork(SWEEP_DIRECTION, "", "", 0)> == 0) \
+      ? %<minFreq> * %<t> + %<beta> * pow%<fstr>(%<t>, 3) / 3.0%<str> \
+      : %<periodTheta> - %<minFreq> * (%<Tsw> - %<t>) - %<beta> * \
+      pow%<fstr>((%<Tsw> - %<t>), 3) / 3.0%<str>;
+      %%
+      %break
+      %%
+    %case LOGARITHMIC
+      %%
+      instantPhase = (%<LibBlockDWork(SWEEP_DIRECTION, "", "", 0)> == 0) \
+      ? %<beta>*%<InitialFreq>*(pow%<fstr>(%<minFreq>,%<t> / %<TargetTime>) - 1.0%<str>) \
+      : %<periodTheta> - %<beta>*%<InitialFreq>*(pow%<fstr>(%<minFreq>,(%<Tsw>-%<t>) / %<TargetTime>) - 1.0%<str>);
+      %%  	
+      %break
+      %%
+    %case SWEPT_COSINE
+      %%
+      instantPhase = (%<LibBlockDWork(SWEEP_DIRECTION, "", "", 0)> == 0) \
+      ? %<minFreq> * %<t> + %<beta> * pow%<fstr>(%<t>, 2.0%<str>) \
+      : %<periodTheta> - %<minFreq> * (%<Tsw> - %<t>) - %<beta> * pow%<fstr>((%<Tsw> - %<t>), 2.0%<str>);
+      %%
+      %break
+      %%
+    %endswitch
+    %%
+    instantPhase -= (int_T)instantPhase;
+    %%
+    %<yout> = cos%<fstr>(%<caststr>DSP_TWO_PI * (instantPhase + %<accPhase>) + %<phase>);
+    %<t> += %<Delta>%<str>;  /* Go to next time step */
+    %%
+    %<CheckAndResetStep(t,accPhase)>
+    %%
+%endfunction
+
+%% Function: CheckAndResetStep ===========================================
+%%
+%function CheckAndResetStep(t,accPhase) Output 
+%%
+%% When the target time or zero is exceeded, the current step
+%% may have to be reset depeding on the freq mode parameter.
+%%
+%assign Tsw = LibBlockParameter(PERIOD_SWEEP,  "", "", 0)
+%assign eps = (dtype == "real32_T") ? "FLT_EPSILON" : "DBL_EPSILON"
+%assign one = (dtype == "real32_T") ? "1.0F" : "1.0"
+    if(%<t> > (%<Tsw> + %<eps>)){
+	%<t> = %<t> - %<Tsw>;
+	%<accPhase> += instantPhase;
+	while(%<accPhase> > %<one>) {
+            %<accPhase> -= %<one>;
+        }
+	%%
+	%if(%<Mode>==2)		%%Bidirectional
+        /* Reverse direction of sweep */
+	%<LibBlockDWork(SWEEP_DIRECTION, "", "", 0)> = !%<LibBlockDWork(SWEEP_DIRECTION, "", "", 0)>;
+	%endif
+    }
+%%
+%endfunction   %% CheckAndResetStep
+
+%% [EOF] sdspchirp.tlc

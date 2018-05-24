@@ -1,0 +1,4221 @@
+Library {
+  Name			  "dspsigops"
+  Version		  8.2
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  RequirementInfo	  "9"
+  LibraryType		  "BlockLibrary"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  FPTRunName		  "Run 1"
+  ForwardingTableString	  "||__slOldName__||dspsigops/Zero Pad||__slNewName__||dspsigops/Pad||__slOldName__||dspsigops"
+  "/Integer Delay||__slNewName__||dspobslib/Integer Delay"
+  MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [17.0, 8.0, 570.0, 837.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[520.0, 671.0]
+	ZoomFactor		[1.0]
+	Offset			[-2.0, 9.0]
+      }
+    }
+  }
+  Created		  "Mon Jun 08 14:37:10 1998"
+  Creator		  "szlotkin"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "mmclerno"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Sep 19 16:19:32 2013"
+  RTWModifiedTimeStamp	  301502675
+  ModelVersionFormat	  "1.%<AutoIncrement:735>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  RecordCoverage	  off
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "d"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  CovEnableCumulative	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
+  CovBoundaryAbsTol	  0.000010
+  CovBoundaryRelTol	  0.010000
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      6
+      Version		      "1.13.1"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  7
+	  Version		  "1.13.1"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "SingleTasking"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  8
+	  Version		  "1.13.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  9
+	  Version		  "1.13.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    4
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  off
+	  BooleanDataType	  off
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  ExpressionDepthLimit	  2147483647
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero off
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  10
+	  Version		  "1.13.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"none"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "TryResolveAllWithWarning"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "Warning"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  11
+	  Version		  "1.13.1"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  on
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  12
+	  Version		  "1.13.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  13
+	  Version		  "1.13.1"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimBlas		  on
+	  SimCtrlC		  on
+	  SimExtrinsic		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  14
+	  Version		  "1.13.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  PackageName		  ""
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ProcessScript		  ""
+	  ConfigurationScript	  ""
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  CustomSourceCode	  ""
+	  CustomHeaderCode	  ""
+	  CustomInclude		  ""
+	  CustomSource		  ""
+	  CustomLibrary		  ""
+	  CustomInitializer	  ""
+	  CustomTerminator	  ""
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  RTWCompilerOptimization "Off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  CustomRebuildMode	  "OnUpdate"
+	  DataInitializer	  ""
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      15
+	      Version		      "1.13.1"
+	      Array {
+		Type			"Cell"
+		Dimension		17
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      16
+	      Version		      "1.13.1"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"PurelyIntegerCode"
+		Cell			"PortableWordSizes"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 400, 210, 1280, 840 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      FrameConversion
+      InheritSamplingMode     off
+      OutFrame		      "Frame-based"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      OutDataTypeStr	      "Inherit: auto"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      MATLABSystem
+      System		      "<Enter System Class Name>"
+      SimulateUsing	      "Code generation"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+      SFunctionDeploymentMode off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      Variant		      off
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      StatesWhenEnabling      "inherit"
+      PropagateVarSize	      "During execution"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      SampleTimeType	      "triggered"
+      SampleTime	      "1"
+      ZeroCross		      on
+      PortDimensions	      "-1"
+      TriggerSignalSampleTime "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      Interpolate	      on
+    }
+  }
+  System {
+    Name		    "dspsigops"
+    Location		    [17, 8, 587, 845]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "23"
+    Block {
+      BlockType		      S-Function
+      Name		      "Constant Ramp"
+      SID		      "1"
+      Ports		      [1, 1]
+      Position		      [285, 416, 330, 454]
+      ZOrder		      -1
+      FunctionName	      "sdspramp"
+      Parameters	      "L, dim, Slope, Offset, isCustomFloat,isSigned,dTypeID,wordLength,fracBits,fracBitsMode"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		17
+	$ClassName		"Simulink.Mask"
+	Type			"Constant Ramp"
+	Description		"Generate a ramp of length L, where L is the length of the input signal in the dimension specified by th"
+	"e 'Ramp length equals number of' parameter.\n\nThe output of this block is calculated using output = [0:L-1] * slope "
+	"+ offset"
+	Help			"eval('blocksethelp');"
+	Initialization		"blkh   = gcbh;\ndtRows = dspblkGetConstantRampDTRowInfo();\noutRow = dtRows{1};\nif strcmpi(L, 'Elem"
+	"ents in specified dimension')\n    [dtInfo, dTypeID] = dspblkUDTMapperOutDType(blkh, outRow, 'dataType', (dim - 1));\n"
+	"else\n    [dtInfo, dTypeID] = dspblkUDTMapperOutDType(blkh, outRow, 'dataType', 1);\nend\nisCustomFloat  = dtInfo.Dat"
+	"aTypeIsCustomFloat;\nif ~isCustomFloat\n    isSigned   = dtInfo.DataTypeIsSigned;\n    wordLength = dtInfo.DataTypeWo"
+	"rdLength;\n    fracBits   = dtInfo.DataTypeFracOrMantBits;\nelse\n    isSigned   =  1; % nice default\n    wordLength"
+	" =  8; % nice default\n    fracBits   =  0; % nice default\nend\n"
+	SelfModifiable		"on"
+	Display			"plot([.1 .9],[0 1]);"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  14
+	  Object {
+	    $ObjectID		    18
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Rows"
+	      Cell		      "Columns"
+	      Cell		      "Elements in specified dimension"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "L"
+	    Prompt		    "Ramp length equals number of:"
+	    Value		    "Rows"
+	    Tunable		    "off"
+	    Callback		    "dspblkramp;"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    19
+	    Type		    "edit"
+	    Name		    "dim"
+	    Prompt		    "Dimension:"
+	    Value		    "1"
+	    Visible		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    20
+	    Type		    "edit"
+	    Name		    "Slope"
+	    Prompt		    "Slope:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    21
+	    Type		    "edit"
+	    Name		    "Offset"
+	    Prompt		    "Offset:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    22
+	    Type		    "checkbox"
+	    Name		    "additionalParams"
+	    Prompt		    "------- Show additional parameters --------"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    23
+	    Type		    "checkbox"
+	    Name		    "allowOverrides"
+	    Prompt		    "Allow overrides from DSP Fixed-Point Attributes blocks"
+	    Value		    "on"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    24
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      13
+	      Cell		      "Same as input"
+	      Cell		      "double"
+	      Cell		      "single"
+	      Cell		      "int8"
+	      Cell		      "uint8"
+	      Cell		      "int16"
+	      Cell		      "uint16"
+	      Cell		      "int32"
+	      Cell		      "uint32"
+	      Cell		      "boolean"
+	      Cell		      "Fixed-point"
+	      Cell		      "User-defined"
+	      Cell		      "Inherit via back propagation"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "dataType"
+	    Prompt		    "Output data type:"
+	    Value		    "Same as input"
+	    Tunable		    "off"
+	    Visible		    "off"
+	    TabName		    "Data Types"
+	  }
+	  Object {
+	    $ObjectID		    25
+	    Type		    "checkbox"
+	    Name		    "isSigned"
+	    Prompt		    "Signed"
+	    Value		    "on"
+	    Tunable		    "off"
+	    Visible		    "off"
+	    TabName		    "Data Types"
+	  }
+	  Object {
+	    $ObjectID		    26
+	    Type		    "edit"
+	    Name		    "wordLen"
+	    Prompt		    "Word length:"
+	    Value		    "16"
+	    Tunable		    "off"
+	    Visible		    "off"
+	    TabName		    "Data Types"
+	  }
+	  Object {
+	    $ObjectID		    27
+	    Type		    "edit"
+	    Name		    "udDataType"
+	    Prompt		    "User-defined data type (e.g. sfix(16), float('single')):"
+	    Value		    "sfix(16)"
+	    Tunable		    "off"
+	    Visible		    "off"
+	    TabName		    "Data Types"
+	  }
+	  Object {
+	    $ObjectID		    28
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Best precision"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "fracBitsMode"
+	    Prompt		    "Set fraction length in output to:"
+	    Value		    "Best precision"
+	    Tunable		    "off"
+	    Visible		    "off"
+	    TabName		    "Data Types"
+	  }
+	  Object {
+	    $ObjectID		    29
+	    Type		    "edit"
+	    Name		    "numFracBits"
+	    Prompt		    "Fraction length:"
+	    Value		    "15"
+	    Tunable		    "off"
+	    Visible		    "off"
+	    TabName		    "Data Types"
+	  }
+	  Object {
+	    $ObjectID		    30
+	    Type		    "unidt({a=13|||}{i=Inherit: Inherit via back propagation|Inherit: Same as input}{b=double|single|int8|u"
+	    "int8|int16|uint16|int32|uint32|boolean}{s=UDTBinaryPointMode|UDTBestPrecisionMode}{g=UDTSignedSign|UDTUnsignedSig"
+	    "n})"
+	    Name		    "OutDataTypeStr"
+	    Prompt		    "Output data type:"
+	    Value		    "Inherit: Same as input"
+	    Tunable		    "off"
+	    TabName		    "Data Types"
+	  }
+	  Object {
+	    $ObjectID		    31
+	    Type		    "edit"
+	    Name		    "LastOutDataTypeStr"
+	    Prompt		    "Last output data type:"
+	    Value		    "Inherit: Same as input"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Visible		    "off"
+	    TabName		    "Data Types"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Convolution"
+      SID		      "2"
+      Ports		      [2, 1]
+      Position		      [270, 232, 320, 268]
+      ZOrder		      -2
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag0"
+      FunctionName	      "sdspconvcorr"
+      Parameters	      "domain,0,outputMin,outputMax,dtInfo.prodOutputMode,dtInfo.prodOutputWordLength,dtInfo.prodOutp"
+      "utFracLength,dtInfo.accumMode,dtInfo.accumWordLength,dtInfo.accumFracLength,dtInfo.outputMode,dtInfo.outputWordL"
+      "ength,dtInfo.outputFracLength,dtInfo.roundingMode,dtInfo.overflowMode"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		32
+	$ClassName		"Simulink.Mask"
+	Type			"Convolution"
+	Description		"Convolve two inputs in the time or frequency domain. To allow the block to compute the convolution in t"
+	"he domain that minimizes the number of computations, set the 'Computation domain' parameter to 'Fastest'. To minimize"
+	" memory usage, set the 'Computation domain' parameter to 'Time'."
+	Help			"eval('blocksethelp');"
+	Initialization		"blkh = gcbh;\ndtRows = dspblkGetConvolutionDTRowInfo();\ndtInfo = dspGetUDTFixptDataTypeInfo(blkh, d"
+	"tRows, true);\n"
+	SelfModifiable		"on"
+	Display			"disp('CONV')"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  23
+	  Object {
+	    $ObjectID		    33
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Time"
+	      Cell		      "Frequency"
+	      Cell		      "Fastest"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "domain"
+	    Prompt		    "Computation domain: "
+	    Value		    "Time"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    34
+	    Type		    "checkbox"
+	    Name		    "additionalParams"
+	    Prompt		    "------- Show additional parameters -------"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    35
+	    Type		    "checkbox"
+	    Name		    "allowOverrides"
+	    Prompt		    "Allow overrides from DSP Fixed-Point Attributes blocks"
+	    Value		    "on"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    36
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      6
+	      Cell		      "Same as accumulator"
+	      Cell		      "Same as product output"
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "outputMode"
+	    Prompt		    "Fixed-point output attributes:"
+	    Value		    "Same as accumulator"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    37
+	    Type		    "edit"
+	    Name		    "outputWordLength"
+	    Prompt		    "Output word length:"
+	    Value		    "16"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    38
+	    Type		    "edit"
+	    Name		    "outputFracLength"
+	    Prompt		    "Output fraction length:"
+	    Value		    "15"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    39
+	    Type		    "unidt({a=7|9|10|}{i=Inherit: Same as first input|Inherit: Same as product output|Inherit: Same as accu"
+	    "mulator}{s=UDTBinaryPointMode}{g=UDTInheritSign})"
+	    Name		    "outputDataTypeStr"
+	    Prompt		    "Output data type string:"
+	    Value		    "Inherit: Same as accumulator"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    40
+	    Type		    "edit"
+	    Name		    "outputLastDataTypeStr"
+	    Prompt		    "Last output data type string:"
+	    Value		    "Inherit: Same as accumulator"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    41
+	    Type		    "min"
+	    Name		    "outputMin"
+	    Prompt		    "Output minimum:"
+	    Value		    "[]"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    42
+	    Type		    "max"
+	    Name		    "outputMax"
+	    Prompt		    "Output maximum:"
+	    Value		    "[]"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    43
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      6
+	      Cell		      "Inherit via internal rule"
+	      Cell		      "Same as product output"
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "accumMode"
+	    Prompt		    "Fixed-point accumulator attributes:"
+	    Value		    "Inherit via internal rule"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    44
+	    Type		    "edit"
+	    Name		    "accumWordLength"
+	    Prompt		    "Accumulator word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    45
+	    Type		    "edit"
+	    Name		    "accumFracLength"
+	    Prompt		    "Accumulator fraction length:"
+	    Value		    "30"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    46
+	    Type		    "unidt({a=14|||}{i=Inherit: Inherit via internal rule|Inherit: Same as first input|Inherit: Same as pro"
+	    "duct output}{s=UDTBinaryPointMode}{g=UDTInheritSign})"
+	    Name		    "accumDataTypeStr"
+	    Prompt		    "Accum data type string:"
+	    Value		    "Inherit: Inherit via internal rule"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    47
+	    Type		    "edit"
+	    Name		    "accumLastDataTypeStr"
+	    Prompt		    "Last accum data type string:"
+	    Value		    "Inherit: Inherit via internal rule"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    48
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "Inherit via internal rule"
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "prodOutputMode"
+	    Prompt		    "Fixed-point product output attributes:"
+	    Value		    "Inherit via internal rule"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    49
+	    Type		    "edit"
+	    Name		    "prodOutputWordLength"
+	    Prompt		    "Product output word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    50
+	    Type		    "edit"
+	    Name		    "prodOutputFracLength"
+	    Prompt		    "Product output fraction length:"
+	    Value		    "30"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    51
+	    Type		    "unidt({a=19|||}{i=Inherit: Inherit via internal rule|Inherit: Same as first input}{s=UDTBinaryPointMod"
+	    "e}{g=UDTInheritSign})"
+	    Name		    "prodOutputDataTypeStr"
+	    Prompt		    "ProdOutput data type string:"
+	    Value		    "Inherit: Inherit via internal rule"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    52
+	    Type		    "edit"
+	    Name		    "prodOutputLastDataTypeStr"
+	    Prompt		    "Last prodOutput data type string:"
+	    Value		    "Inherit: Inherit via internal rule"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    53
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      7
+	      Cell		      "Ceiling"
+	      Cell		      "Convergent"
+	      Cell		      "Floor"
+	      Cell		      "Nearest"
+	      Cell		      "Round"
+	      Cell		      "Simplest"
+	      Cell		      "Zero"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "roundingMode"
+	    Prompt		    "Round integer calculations toward:"
+	    Value		    "Floor"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    54
+	    Type		    "checkbox"
+	    Name		    "overflowMode"
+	    Prompt		    "Saturate on integer overflow"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    55
+	    Type		    "checkbox"
+	    Name		    "LockScale"
+	    Prompt		    "Lock scaling"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      MATLABSystem
+      Name		      "DC Blocker"
+      SID		      "23"
+      Ports		      [1, 1]
+      Position		      [375, 145, 460, 185]
+      ZOrder		      4
+      System		      "dsp.DCBlocker"
+      MaskType		      "DCBlocker"
+      MaskDisplay	      "disp('DC Blocker');\n"
+      Algorithm		      "IIR"
+      NormalizedBandwidth     "0.001"
+      Length		      "8"
+      Order		      "6"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Delay"
+      SID		      "3"
+      Ports		      [1, 1]
+      Position		      [30, 145, 85, 185]
+      ZOrder		      -3
+      UserDataPersistent      on
+      UserData		      "DataTag1"
+      FunctionName	      "sdspdelay"
+      Parameters	      "dly_unit, delay, dif_ic_for_ch, dif_ic_for_dly, ic, reset, InputProcessing"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		56
+	$ClassName		"Simulink.Mask"
+	Type			"Delay"
+	Description		"Delay the discrete-time input by a specified number of samples or frames. "
+	Help			"eval('blocksethelp');"
+	Initialization		"dly_unitValue = get_param(gcbh, 'dly_unit');\n if (~iscell(ic)) \n	ic = double(ic);\n end	\ndspblkde"
+	"lay('initInputProcessing', gcbh);\n[str, ic] = dspblkdelay('init',dly_unitValue,double(delay), ic);\nif (strcmp(str, "
+	"'Delay'))\n    x1 = -10;\n    y1 = -10;\n    x2 = 0.35;\n    y2 = 0.48;\nelse\n    dx = min(0.35, 0.01*length(str));\n"
+	"    x1 = 0.42-dx;\n    y1 = 0.4;\n    x2 = 0.5-dx;\n    y2 = 0.6;\nend\nreset = reset_popup-1;\nif (reset == 0)\n	s.i"
+	"1 = 1; s.i1s = '';\n	s.i2 = 1; s.i2s = '';\nelse\n	s.i1 = 1; s.i1s = 'In';\n	s.i2 = 2; s.i2s = 'Rst';\nend"
+	SelfModifiable		"on"
+	Display			"text(x1, y1, 'z'); text(x2, y2, str);\nport_label('input',s.i1,s.i1s);\nport_label('input',s.i2,s.i2s);\n"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  8
+	  Object {
+	    $ObjectID		    57
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Columns as channels (frame based)"
+	      Cell		      "Elements as channels (sample based)"
+	      Cell		      "Inherited (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InputProcessing"
+	    Prompt		    "Input processing:"
+	    Value		    "Columns as channels (frame based)"
+	    Tunable		    "off"
+	    Callback		    "dspblkdelay"
+	  }
+	  Object {
+	    $ObjectID		    58
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Samples"
+	      Cell		      "Frames"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "dly_unit"
+	    Prompt		    "Delay units:"
+	    Value		    "Samples"
+	    Tunable		    "off"
+	    Callback		    "dspblkdelay"
+	  }
+	  Object {
+	    $ObjectID		    59
+	    Type		    "edit"
+	    Name		    "delay"
+	    Prompt		    "Delay (samples):"
+	    Value		    "1"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    60
+	    Type		    "checkbox"
+	    Name		    "ic_detail"
+	    Prompt		    "--------------- Show additional parameters ---------------"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    61
+	    Type		    "checkbox"
+	    Name		    "dif_ic_for_ch"
+	    Prompt		    "Specify different initial conditions for each channel"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    62
+	    Type		    "checkbox"
+	    Name		    "dif_ic_for_dly"
+	    Prompt		    "Specify different initial conditions within a channel"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    63
+	    Type		    "edit"
+	    Name		    "ic"
+	    Prompt		    "Initial conditions:"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    64
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "None"
+	      Cell		      "Rising edge"
+	      Cell		      "Falling edge"
+	      Cell		      "Either edge"
+	      Cell		      "Non-zero sample"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "reset_popup"
+	    Prompt		    "Reset port:"
+	    Value		    "None"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Downsample"
+      SID		      "4"
+      Ports		      [1, 1]
+      Position		      [160, 73, 195, 107]
+      ZOrder		      -4
+      UserDataPersistent      on
+      UserData		      "DataTag2"
+      FunctionName	      "sdspdsamp2"
+      Parameters	      "N,phase,ic,smode,fmode,InputProcessing,RateOptions"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		65
+	$ClassName		"Simulink.Mask"
+	Type			"Downsample"
+	Description		"Downsample by an integer  factor."
+	Help			"eval('blocksethelp');"
+	Initialization		"NValue = get_param(gcbh, 'N');\n[s,x,y] = dspblkdsamp2('icon',N, NValue);\ndspblkdsamp2('init', gcbh"
+	");"
+	SelfModifiable		"on"
+	Display			"plot(x,y);\ntext(.6,.4,s);"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  7
+	  Object {
+	    $ObjectID		    66
+	    Type		    "edit"
+	    Name		    "N"
+	    Prompt		    "Downsample factor, K:"
+	    Value		    "2"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    67
+	    Type		    "edit"
+	    Name		    "phase"
+	    Prompt		    "Sample offset (0 to K-1):"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    68
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Columns as channels (frame based)"
+	      Cell		      "Elements as channels (sample based)"
+	      Cell		      "Inherited (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InputProcessing"
+	    Prompt		    "Input processing:"
+	    Value		    "Columns as channels (frame based)"
+	    Tunable		    "off"
+	    Callback		    "dspblkdsamp2"
+	  }
+	  Object {
+	    $ObjectID		    69
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Enforce single-rate processing"
+	      Cell		      "Allow multirate processing"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "RateOptions"
+	    Prompt		    "Rate options:"
+	    Value		    "Enforce single-rate processing"
+	    Tunable		    "off"
+	    Callback		    "dspblkdsamp2"
+	  }
+	  Object {
+	    $ObjectID		    70
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Allow multirate"
+	      Cell		      "Force single rate"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "smode"
+	    Prompt		    "Sample-based mode:"
+	    Value		    "Allow multirate"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    71
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Maintain input frame size"
+	      Cell		      "Maintain input frame rate"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "fmode"
+	    Prompt		    "Frame-based mode:"
+	    Value		    "Maintain input frame size"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    72
+	    Type		    "edit"
+	    Name		    "ic"
+	    Prompt		    "Initial condition:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Interpolation"
+      SID		      "5"
+      Ports		      [1, 1]
+      Position		      [135, 229, 220, 271]
+      ZOrder		      -5
+      FunctionName	      "sdspinterp"
+      Parameters	      "InterpSource,InterpPoints,InterpMode,interpFilter,InvalidMode"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		73
+	$ClassName		"Simulink.Mask"
+	Type			"Interpolation"
+	Description		"Interpolate values between real-valued samples in one or more input vectors using linear or FIR interpo"
+	"lation. "
+	Help			"eval('blocksethelp');"
+	Initialization		"ports = dspblkinterp('icon');\ninterpFilter = dspblkinterp('init', true, InterpR, InterpL, InterpAlp"
+	"ha);\n"
+	SelfModifiable		"on"
+	Display			"disp('Interp')\nport_label('input',ports.port1, ports.txt1);\nport_label('input',ports.port2, ports.txt2);"
+	"\nport_label('output',ports.port3, ports.txt3);\n"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  7
+	  Object {
+	    $ObjectID		    74
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Specify via dialog"
+	      Cell		      "Input port"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InterpSource"
+	    Prompt		    "Source of interpolation points:"
+	    Value		    "Specify via dialog"
+	    Tunable		    "off"
+	    Callback		    "dspblkinterp"
+	  }
+	  Object {
+	    $ObjectID		    75
+	    Type		    "edit"
+	    Name		    "InterpPoints"
+	    Prompt		    "Interpolation points:"
+	    Value		    "[1.1 4.8 2.67 1.6 3.2]'"
+	  }
+	  Object {
+	    $ObjectID		    76
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Linear"
+	      Cell		      "FIR"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InterpMode"
+	    Prompt		    "Interpolation mode:"
+	    Value		    "Linear"
+	    Tunable		    "off"
+	    Callback		    "dspblkinterp"
+	  }
+	  Object {
+	    $ObjectID		    77
+	    Type		    "edit"
+	    Name		    "InterpL"
+	    Prompt		    "Interpolation filter half-length:"
+	    Value		    "3"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    78
+	    Type		    "edit"
+	    Name		    "InterpR"
+	    Prompt		    "Interpolation points per input sample:"
+	    Value		    "3"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    79
+	    Type		    "edit"
+	    Name		    "InterpAlpha"
+	    Prompt		    "Normalized input bandwidth:"
+	    Value		    "0.5"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    80
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Clip"
+	      Cell		      "Clip and warn"
+	      Cell		      "Error"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InvalidMode"
+	    Prompt		    "Out of range interpolation points:"
+	    Value		    "Clip"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "NCO"
+      SID		      "6"
+      Ports		      [1, 1]
+      Position		      [380, 407, 450, 463]
+      ZOrder		      -6
+      DialogController	      "dspdialog.NCO"
+      FunctionName	      "sdspnco"
+      Parameters	      "AccIncSrc,AccInc,PhaseOffsetSrc,PhaseOffset,AccumWL,HasOutputPhaseError,HasDither,DitherWL,PNg"
+      "eneratorLength,Formula,DataType,OutputWL,OutputFL,CompMethod,HasPhaseQuantizer,TableDepth,SampleTime,SamplesPerF"
+      "rame"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		81
+	$ClassName		"Simulink.Mask"
+	Type			"NCO"
+	Description		"Generate a real or complex fixed-point sinusoidal signal."
+	Help			"eval('blocksethelp');"
+	Initialization		"str = dspblknco(AccIncSrc,PhaseOffsetSrc,Formula,HasOutputPhaseError,HasPhaseQuantizer);\nset_param("
+	"gcbh, 'MaskDisplay', str);"
+	SelfModifiable		"on"
+	Display			"disp('NCO');port_label('input',1,'inc');port_label('output',1,'sin');"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  18
+	  Object {
+	    $ObjectID		    82
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Specify via dialog"
+	      Cell		      "Input port"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "AccIncSrc"
+	    Prompt		    "Phase increment source:"
+	    Value		    "Input port"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    83
+	    Type		    "edit"
+	    Name		    "AccInc"
+	    Prompt		    "Phase increment:"
+	    Value		    "100"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    84
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Specify via dialog"
+	      Cell		      "Input port"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "PhaseOffsetSrc"
+	    Prompt		    "Phase offset source:"
+	    Value		    "Specify via dialog"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    85
+	    Type		    "edit"
+	    Name		    "PhaseOffset"
+	    Prompt		    "Phase offset:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    86
+	    Type		    "edit"
+	    Name		    "AccumWL"
+	    Prompt		    "Phase accumulator size:"
+	    Value		    "16"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    87
+	    Type		    "checkbox"
+	    Name		    "HasDither"
+	    Prompt		    "Add dither"
+	    Value		    "on"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    88
+	    Type		    "edit"
+	    Name		    "DitherWL"
+	    Prompt		    "Number of dither bits:"
+	    Value		    "4"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    89
+	    Type		    "edit"
+	    Name		    "PNgeneratorLength"
+	    Prompt		    "PN sequence generator length:"
+	    Value		    "19"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    90
+	    Type		    "checkbox"
+	    Name		    "HasPhaseQuantizer"
+	    Prompt		    "Phase quantization"
+	    Value		    "on"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    91
+	    Type		    "edit"
+	    Name		    "TableDepth"
+	    Prompt		    "Number of quantized bits:"
+	    Value		    "12"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    92
+	    Type		    "checkbox"
+	    Name		    "HasOutputPhaseError"
+	    Prompt		    "Output phase quantization error"
+	    Value		    "off"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    93
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      4
+	      Cell		      "Sine"
+	      Cell		      "Cosine"
+	      Cell		      "Complex exponential"
+	      Cell		      "Sine and cosine"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "Formula"
+	    Prompt		    "Output signal:"
+	    Value		    "Sine"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    94
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "double"
+	      Cell		      "single"
+	      Cell		      "Binary point scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "DataType"
+	    Prompt		    "Output data type:"
+	    Value		    "Binary point scaling"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    95
+	    Type		    "edit"
+	    Name		    "OutputWL"
+	    Prompt		    "Output word length:"
+	    Value		    "16"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    96
+	    Type		    "edit"
+	    Name		    "OutputFL"
+	    Prompt		    "Output fraction length:"
+	    Value		    "14"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    97
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      1
+	      Cell		      "Table lookup (no interpolation)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "CompMethod"
+	    Prompt		    "Computation method:"
+	    Value		    "Table lookup (no interpolation)"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    98
+	    Type		    "edit"
+	    Name		    "SampleTime"
+	    Prompt		    "Output sample period (s):"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    TabName		    "Main"
+	  }
+	  Object {
+	    $ObjectID		    99
+	    Type		    "edit"
+	    Name		    "SamplesPerFrame"
+	    Prompt		    "Samples per frame:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    TabName		    "Main"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      MATLABSystem
+      Name		      "NCO\nHDL Optimized"
+      SID		      "22"
+      Ports		      [2, 2]
+      Position		      [165, 529, 330, 636]
+      ZOrder		      2
+      System		      "dsp.HDLNCO"
+      MaskType		      "dsp.HDLNCO"
+      MaskDisplay	      "disp(['NCO' char(10) 'HDL Optimized']);\nport_label('input',1,'inc');\nport_label('input',2,'"
+      "validIn');\nport_label('output',1,'sin');\nport_label('output',2,'validOut');\n"
+      PhaseIncrementSource    "Input port"
+      PhaseIncrement	      "100"
+      PhaseOffsetSource	      "Property"
+      PhaseOffset	      "0"
+      DitherSource	      "Property"
+      NumDitherBits	      "4"
+      PhaseQuantization	      on
+      NumQuantizerAccumulatorBits "12"
+      LUTCompress	      off
+      ResetAction	      off
+      Waveform		      "Sine"
+      PhasePort		      off
+      AccumulatorWL	      "16"
+      OutputDataType	      "Binary point scaling"
+      OutputWL		      "16"
+      OutputFL		      "14"
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Offset"
+      SID		      "7"
+      Ports		      [4, 2]
+      Position		      [135, 312, 235, 383]
+      ZOrder		      -7
+      FunctionName	      "sdspoffset"
+      Parameters	      "mode,numDatOffPair,outWidthSpec,outWidth,actionOutRange"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		100
+	$ClassName		"Simulink.Mask"
+	Type			"Offset"
+	Description		"Truncates input vectors by removing or keeping beginning or ending values. The resulting vectors are ei"
+	"ther truncated again or zero-padded to the specified output length."
+	Help			"eval('blocksethelp');"
+	Initialization		"dspblkoffset(numDatOffPair);"
+	SelfModifiable		"on"
+	Display			"port_label('input',1, 'In1'); port_label('output',1, 'Out1'); port_label('input',2, 'O1'); port_label('inp"
+	"ut',3, 'In2'); port_label('output',2, 'Out2'); port_label('input',4, 'O2'); disp('Offset');"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    101
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      4
+	      Cell		      "Remove beginning samples"
+	      Cell		      "Remove ending samples"
+	      Cell		      "Keep beginning samples"
+	      Cell		      "Keep ending samples"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "mode"
+	    Prompt		    "Mode:"
+	    Value		    "Remove beginning samples"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    102
+	    Type		    "edit"
+	    Name		    "numDatOffPair"
+	    Prompt		    "Number of input data-offset pairs:"
+	    Value		    "2"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    103
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Same as input"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "outWidthSpec"
+	    Prompt		    "Output port length:"
+	    Value		    "Same as input"
+	    Callback		    "dspblkoffset;"
+	  }
+	  Object {
+	    $ObjectID		    104
+	    Type		    "edit"
+	    Name		    "outWidth"
+	    Prompt		    "Output length:"
+	    Value		    "9"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    105
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Clip"
+	      Cell		      "Clip and warn"
+	      Cell		      "Error"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "actionOutRange"
+	    Prompt		    "Action for out of range offset value:"
+	    Value		    "Clip"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Pad"
+      SID		      "8"
+      Ports		      [1, 1]
+      Position		      [380, 70, 455, 110]
+      ZOrder		      -8
+      FunctionName	      "sdsppad"
+      Parameters	      "1,valSrc,padVal,spec,padNumOutColsSpecMethod,0,0,numOutCols,padNumOutRowsSpecMethod,0,0,numOut"
+      "Rows,trunc_flag,padAlong,padSigAt,outSizeMode,outSize,dimsToPad,padBeginning,padEnd,1"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		106
+	$ClassName		"Simulink.Mask"
+	Type			"Pad"
+	Description		"Append or prepend a constant value to the input along the specified dimensions.  Truncation occurs when"
+	" the specified output dimensions are shorter than the corresponding input dimensions."
+	Help			"eval('blocksethelp');"
+	Initialization		"ports = dspblkpad('icon');\n"
+	SelfModifiable		"on"
+	Display			"disp('Pad')\nport_label('input',ports.port1, ports.txt1);\nport_label('input',ports.port2, ports.txt2);\np"
+	"ort_label('output',ports.port3, ports.txt3);"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  27
+	  Object {
+	    $ObjectID		    107
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "Columns"
+	      Cell		      "Rows"
+	      Cell		      "Columns and rows"
+	      Cell		      "None"
+	      Cell		      "Specified dimensions"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "padAlong"
+	    Prompt		    "Pad over:"
+	    Value		    "Columns"
+	    Tunable		    "off"
+	    Callback		    "dspblkpad"
+	    Alias		    "zpadAlong"
+	  }
+	  Object {
+	    $ObjectID		    108
+	    Type		    "edit"
+	    Name		    "dimsToPad"
+	    Prompt		    "Dimensions to pad:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    109
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Specify via dialog"
+	      Cell		      "Input port"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "valSrc"
+	    Prompt		    "Pad value source:"
+	    Value		    "Specify via dialog"
+	    Tunable		    "off"
+	    Callback		    "dspblkpad"
+	  }
+	  Object {
+	    $ObjectID		    110
+	    Type		    "edit"
+	    Name		    "padVal"
+	    Prompt		    " Pad value:"
+	    Value		    "0"
+	  }
+	  Object {
+	    $ObjectID		    111
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Pad size"
+	      Cell		      "Output size"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "spec"
+	    Prompt		    "Specify:"
+	    Value		    "Output size"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	    Callback		    "dspblkpad"
+	  }
+	  Object {
+	    $ObjectID		    112
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "User-specified"
+	      Cell		      "Next power of two"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "padNumOutRowsSpecMethod"
+	    Prompt		    "Output column mode:"
+	    Value		    "User-specified"
+	    Tunable		    "off"
+	    Callback		    "dspblkpad"
+	  }
+	  Object {
+	    $ObjectID		    113
+	    Type		    "edit"
+	    Name		    "numOutRows"
+	    Prompt		    " Column size:"
+	    Value		    "1"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    114
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "User-specified"
+	      Cell		      "Next power of two"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "padNumOutColsSpecMethod"
+	    Prompt		    "Output row mode:"
+	    Value		    "User-specified"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	    Callback		    "dspblkpad"
+	  }
+	  Object {
+	    $ObjectID		    115
+	    Type		    "edit"
+	    Name		    "numOutCols"
+	    Prompt		    " Row size:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    116
+	    Type		    "checkbox"
+	    Name		    "isVarDimsMode"
+	    Prompt		    "Variable dimension mode:"
+	    Value		    "off"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    117
+	    Type		    "edit"
+	    Name		    "padBeginning"
+	    Prompt		    "Pad size at beginning:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    118
+	    Type		    "edit"
+	    Name		    "padEnd"
+	    Prompt		    "Pad  size at end:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    119
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "User-specified"
+	      Cell		      "Next power of two"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "outSizeMode"
+	    Prompt		    "Output size mode:"
+	    Value		    "User-specified"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	    Callback		    "dspblkpad"
+	  }
+	  Object {
+	    $ObjectID		    120
+	    Type		    "edit"
+	    Name		    "outSize"
+	    Prompt		    " Output size:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    121
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "End"
+	      Cell		      "Beginning"
+	      Cell		      "Beginning and end"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "padSigAt"
+	    Prompt		    "Pad signal at:"
+	    Value		    "End"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    122
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "None"
+	      Cell		      "Warning"
+	      Cell		      "Error"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "trunc_flag"
+	    Prompt		    "Action when truncation occurs:"
+	    Value		    "None"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    123
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Same as input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "outputMode"
+	    Prompt		    "Fixed-point output attributes:"
+	    Value		    "Same as input"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    124
+	    Type		    "edit"
+	    Name		    "outputWordLength"
+	    Prompt		    "Output word length"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    125
+	    Type		    "edit"
+	    Name		    "outputFracLength"
+	    Prompt		    "Output fraction length:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    126
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Same as input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "accumMode"
+	    Prompt		    "Fixed-point accumulator attributes:"
+	    Value		    "Same as input"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    127
+	    Type		    "edit"
+	    Name		    "accumWordLength"
+	    Prompt		    "Accumulator word length:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    128
+	    Type		    "edit"
+	    Name		    "accumFracLength"
+	    Prompt		    "Accumulator fraction length:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    129
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Floor"
+	      Cell		      "Nearest"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "roundingMode"
+	    Prompt		    "Round integer calculations toward:"
+	    Value		    "Floor"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    130
+	    Type		    "checkbox"
+	    Name		    "overflowMode"
+	    Prompt		    "Saturate on integer overflow"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    131
+	    Type		    "checkbox"
+	    Name		    "LockScale"
+	    Prompt		    "Lock scaling"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    132
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Truncate"
+	      Cell		      "Wrap"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "truncOrWrapMode"
+	    Prompt		    "Action when output size is smaller than input size:"
+	    Value		    "Truncate"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    133
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "None"
+	      Cell		      "Warning"
+	      Cell		      "Error"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "wrap_flag"
+	    Prompt		    "Action when wrap occurs:"
+	    Value		    "None"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Peak Finder"
+      SID		      "9"
+      Ports		      [1, 1]
+      Position		      [20, 322, 100, 378]
+      ZOrder		      -9
+      DialogController	      "dspdialog.PeakFinder"
+      DialogControllerArgs    "DataTag3"
+      FunctionName	      "sdsppeaks"
+      Parameters	      "maxPeaks, polarity, NoiseDistinguish, thresh, outputIdx, outputVal, dtInfo.roundingMode, dtInf"
+      "o.overflowMode"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		134
+	$ClassName		"Simulink.Mask"
+	Type			"Peak Finder"
+	Description		"Output the number of extrema (maxima and minima) in an input signal."
+	Help			"eval('blocksethelp');"
+	Initialization		"[s, dtInfo] = dspblkpeaks('icon',outputIdx,outputVal,polarity);"
+	SelfModifiable		"on"
+	Display			"disp(['Find\\n',s.txt]);\nport_label('output',s.i1,s.s1);\nport_label('output',s.i2,s.s2);\nport_label('ou"
+	"tput',1,'Cnt');\nport_label('output',s.i3,s.s3);"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  10
+	  Object {
+	    $ObjectID		    135
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Maxima"
+	      Cell		      "Minima"
+	      Cell		      "Maxima and Minima"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "polarity"
+	    Prompt		    "Peak types:"
+	    Value		    "Maxima and Minima"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    136
+	    Type		    "checkbox"
+	    Name		    "outputIdx"
+	    Prompt		    "Output peak indices"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    137
+	    Type		    "checkbox"
+	    Name		    "outputVal"
+	    Prompt		    "Output peak values"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    138
+	    Type		    "edit"
+	    Name		    "maxPeaks"
+	    Prompt		    "Maximum number of peaks to find:"
+	    Value		    "10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    139
+	    Type		    "checkbox"
+	    Name		    "NoiseDistinguish"
+	    Prompt		    "Ignore peaks within threshold of neighboring values"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    140
+	    Type		    "edit"
+	    Name		    "thresh"
+	    Prompt		    "Threshold"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    141
+	    Type		    "checkbox"
+	    Name		    "additionalParams"
+	    Prompt		    "-------------- Show additional parameters ---------------"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    142
+	    Type		    "checkbox"
+	    Name		    "allowOverrides"
+	    Prompt		    "Allow overrides from DSP Fixed-Point Attributes blocks"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    143
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      7
+	      Cell		      "Ceiling"
+	      Cell		      "Convergent"
+	      Cell		      "Floor"
+	      Cell		      "Nearest"
+	      Cell		      "Round"
+	      Cell		      "Simplest"
+	      Cell		      "Zero"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "roundingMode"
+	    Prompt		    "Round integer calculations toward:"
+	    Value		    "Floor"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    144
+	    Type		    "checkbox"
+	    Name		    "overflowMode"
+	    Prompt		    "Saturate on integer overflow"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Repeat"
+      SID		      "10"
+      Ports		      [1, 1]
+      Position		      [275, 73, 315, 107]
+      ZOrder		      -10
+      UserDataPersistent      on
+      UserData		      "DataTag4"
+      FunctionName	      "sdspupsamp2"
+      Parameters	      "N,0,ic,RateOptions,0,InputProcessing"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		145
+	$ClassName		"Simulink.Mask"
+	Type			"Repeat"
+	Description		"Repeat input samples N times."
+	Help			"eval('blocksethelp');"
+	Initialization		"NValue = get_param(gcbh, 'N');\ns = dspblkrepeat2(gcbh,'icon',N, NValue);\ndspblkrepeat2(gcbh,'init'"
+	",mode);"
+	SelfModifiable		"on"
+	Display			"disp(s);"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    146
+	    Type		    "edit"
+	    Name		    "N"
+	    Prompt		    "Repetition count:"
+	    Value		    "5"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    147
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Columns as channels (frame based)"
+	      Cell		      "Elements as channels (sample based)"
+	      Cell		      "Inherited (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InputProcessing"
+	    Prompt		    "Input processing:"
+	    Value		    "Columns as channels (frame based)"
+	    Tunable		    "off"
+	    Callback		    "dspblkrepeat2"
+	  }
+	  Object {
+	    $ObjectID		    148
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Enforce single-rate processing"
+	      Cell		      "Allow multirate processing"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "RateOptions"
+	    Prompt		    "Rate options:"
+	    Value		    "Enforce single-rate processing"
+	    Tunable		    "off"
+	    Callback		    "dspblkrepeat2"
+	  }
+	  Object {
+	    $ObjectID		    149
+	    Type		    "edit"
+	    Name		    "ic"
+	    Prompt		    "Initial conditions:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    150
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Unused parameter value"
+	      Cell		      "Maintain input frame size"
+	      Cell		      "Maintain input frame rate"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "mode"
+	    Prompt		    "Frame-based mode:"
+	    Value		    "Unused parameter value"
+	    Tunable		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Sample\nand Hold"
+      SID		      "11"
+      Ports		      [1, 1, 0, 1]
+      Position		      [160, 414, 210, 456]
+      ZOrder		      -11
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		151
+	$ClassName		"Simulink.Mask"
+	Type			"Sample and Hold"
+	Description		"Sample and hold the input signal. If Latch (buffer) input is selected, then this block produces the val"
+	"ue of the input from the previous time step."
+	Help			"eval('blocksethelp');"
+	Initialization		"switch trig\ncase 1, s='rising';\ncase 2, s='falling';\ncase 3, s='either';\nend\nset_param([gcb '/T"
+	"rigger'],'triggertype',s);\nif (latchinput == 1)\n	set_param([gcb '/In'],'latchinput','on');\nelse\n	set_param([gcb '"
+	"/In'],'latchinput','off');\nend\n"
+	SelfModifiable		"on"
+	Display			"disp('S/H')"
+	IconOpaque		"off"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  3
+	  Object {
+	    $ObjectID		    152
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Rising edge"
+	      Cell		      "Falling edge"
+	      Cell		      "Either edge"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "trig"
+	    Prompt		    "Trigger type:"
+	    Value		    "Rising edge"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    153
+	    Type		    "edit"
+	    Name		    "initCond"
+	    Prompt		    "Initial condition:"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    154
+	    Type		    "checkbox"
+	    Name		    "latchinput"
+	    Prompt		    "Latch (buffer) input"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Sample\nand Hold"
+	Location		[236, 542, 386, 616]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"3"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In"
+	  SID			  "11:1"
+	  Position		  [55, 20, 75, 40]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  "Trigger"
+	  SID			  "11:2"
+	  Ports			  []
+	  Position		  [20, 15, 40, 35]
+	  ZOrder		  -2
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  " "
+	  SID			  "11:3"
+	  Position		  [100, 20, 120, 40]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "initCond"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In"
+	  SrcPort		  1
+	  DstBlock		  " "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Triggered Signal\nFrom Workspace"
+      SID		      "12"
+      Ports		      [0, 1, 0, 1]
+      Position		      [35, 417, 90, 453]
+      ZOrder		      -12
+      TreatAsAtomicUnit	      on
+      RequestExecContextInheritance off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		155
+	$ClassName		"Simulink.Mask"
+	Type			"Triggered Signal From Workspace"
+	Description		"Output successive signal samples obtained from the MATLAB workspace when a trigger event occurs. A sign"
+	"al matrix is interpreted as having one channel per column.  Signal columns may be buffered into frames by specifying "
+	"a number of samples per frame greater than 1. An M x N x P signal array outputs M x N matrices when a trigger event o"
+	"ccurs.  The samples per frame must be equal to 1 for 3 dimensional signal arrays."
+	Help			"eval('blocksethelp');"
+	Initialization		"SignalValue = get_param(gcbh, 'Signal');\ns = dspblktsfw2('init', Signal,SamplesPerFrame);"
+	SelfModifiable		"on"
+	Display			"disp(SignalValue);"
+	IconOpaque		"off"
+	IconUnits		"pixels"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  5
+	  Object {
+	    $ObjectID		    156
+	    Type		    "edit"
+	    Name		    "Signal"
+	    Prompt		    "Signal:"
+	    Value		    "1:10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    157
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Rising edge"
+	      Cell		      "Falling edge"
+	      Cell		      "Either edge"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "TriggerType"
+	    Prompt		    "Trigger type:"
+	    Value		    "Falling edge"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    158
+	    Type		    "edit"
+	    Name		    "ic"
+	    Prompt		    "Initial output:"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    159
+	    Type		    "edit"
+	    Name		    "SamplesPerFrame"
+	    Prompt		    "Samples per frame:"
+	    Value		    "1"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    160
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Setting to zero"
+	      Cell		      "Holding final value"
+	      Cell		      "Cyclic repetition"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "OutputAfterFinalValue"
+	    Prompt		    "Form output after final data value by:"
+	    Value		    "Setting to zero"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+      System {
+	Name			"Triggered Signal\nFrom Workspace"
+	Location		[566, 298, 1071, 449]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"4"
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  "Trigger"
+	  SID			  "12:1"
+	  Ports			  [0, 1]
+	  Position		  [25, 20, 45, 40]
+	  ZOrder		  -1
+	  TriggerType		  "falling"
+	  StatesWhenEnabling	  "reset"
+	  ZeroCross		  off
+	}
+	Block {
+	  BlockType		  FrameConversion
+	  Name			  "Frame Status"
+	  SID			  "12:2"
+	  Ports			  [1, 1]
+	  Position		  [300, 35, 355, 75]
+	  ZOrder		  -2
+	  OutFrame		  "Sample-based"
+	}
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "From Workspace"
+	  SID			  "12:3"
+	  Position		  [65, 42, 105, 68]
+	  ZOrder		  -3
+	  VariableName		  "s"
+	  Interpolate		  off
+	  OutputAfterFinalValue	  "Setting to zero"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out"
+	  SID			  "12:4"
+	  Position		  [420, 48, 450, 62]
+	  ZOrder		  -4
+	  ShowName		  off
+	  IconDisplay		  "Port number"
+	  InitialOutput		  "ic"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "From Workspace"
+	  SrcPort		  1
+	  DstBlock		  "Frame Status"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Frame Status"
+	  SrcPort		  1
+	  DstBlock		  "Out"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Unwrap"
+      SID		      "13"
+      Ports		      [1, 1]
+      Position		      [395, 232, 440, 268]
+      ZOrder		      -13
+      UserDataPersistent      on
+      UserData		      "DataTag5"
+      FunctionName	      "sdspunwrap2"
+      Parameters	      "tol, running, InputProcessing"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		161
+	$ClassName		"Simulink.Mask"
+	Type			"Unwrap"
+	Description		"Add or subtract multiples of 2pi to each input element to remove phase discontinuities (unwrap). The in"
+	"put units are radians."
+	Help			"eval('blocksethelp');"
+	Initialization		"dspblkunwrap(gcbh,'init');"
+	SelfModifiable		"on"
+	Display			"plot(0,0,100,100,[16 16],[92 8],[8 92],[16 16],[16 48 48 80],[64 44 76 56],[64 64 58 64 70],[60 40 46 40 4"
+	"6],[69 82],[30 22],[],[],[52 65],[41 33])"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  3
+	  Object {
+	    $ObjectID		    162
+	    Type		    "edit"
+	    Name		    "tol"
+	    Prompt		    "Tolerance (radians):"
+	    Value		    "pi"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    163
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Columns as channels (frame based)"
+	      Cell		      "Elements as channels (sample based)"
+	      Cell		      "Inherited (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InputProcessing"
+	    Prompt		    "Input processing:"
+	    Value		    "Columns as channels (frame based)"
+	    Tunable		    "off"
+	    Callback		    "dspblkunwrap"
+	  }
+	  Object {
+	    $ObjectID		    164
+	    Type		    "checkbox"
+	    Name		    "running"
+	    Prompt		    "Do not unwrap phase discontinuities between successive frames"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Upsample"
+      SID		      "14"
+      Ports		      [1, 1]
+      Position		      [40, 73, 75, 107]
+      ZOrder		      -14
+      UserDataPersistent      on
+      UserData		      "DataTag6"
+      FunctionName	      "sdspupsamp2"
+      Parameters	      "N,phase,ic,RateOptions,1,InputProcessing"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		165
+	$ClassName		"Simulink.Mask"
+	Type			"Upsample"
+	Description		"Upsample by inserting L-1 zeros between input samples."
+	Help			"eval('blocksethelp');"
+	Initialization		"NValue = get_param(gcbh, 'N');\n[s,x,y] = dspblkupsamp2(gcbh,'icon',N,NValue);\ndspblkupsamp2(gcbh,'"
+	"init',mode);"
+	SelfModifiable		"on"
+	Display			"plot(x,y)\ntext(.6,.4,s);\n"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  6
+	  Object {
+	    $ObjectID		    166
+	    Type		    "edit"
+	    Name		    "N"
+	    Prompt		    "Upsample factor, L:"
+	    Value		    "3"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    167
+	    Type		    "edit"
+	    Name		    "phase"
+	    Prompt		    "Sample offset (0 to L-1):"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    168
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Columns as channels (frame based)"
+	      Cell		      "Elements as channels (sample based)"
+	      Cell		      "Inherited (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InputProcessing"
+	    Prompt		    "Input processing:"
+	    Value		    "Columns as channels (frame based)"
+	    Tunable		    "off"
+	    Callback		    "dspblkupsamp2"
+	  }
+	  Object {
+	    $ObjectID		    169
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Enforce single-rate processing"
+	      Cell		      "Allow multirate processing"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "RateOptions"
+	    Prompt		    "Rate options:"
+	    Value		    "Enforce single-rate processing"
+	    Tunable		    "off"
+	    Callback		    "dspblkupsamp2"
+	  }
+	  Object {
+	    $ObjectID		    170
+	    Type		    "edit"
+	    Name		    "ic"
+	    Prompt		    "Initial conditions:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    171
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Unused parameter value"
+	      Cell		      "Maintain input frame size"
+	      Cell		      "Maintain input frame rate"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "mode"
+	    Prompt		    "Frame-based mode:"
+	    Value		    "Unused parameter value"
+	    Tunable		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Variable\nFractional Delay"
+      SID		      "15"
+      Ports		      [2, 1]
+      Position		      [255, 145, 340, 185]
+      ZOrder		      -15
+      UserDataPersistent      on
+      UserData		      "DataTag7"
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag8"
+      FunctionName	      "sdspvdly2"
+      Parameters	      "modeActive,dmax,InputProcessing,b,ic, L,FarrowL, R, alpha, fallbackFIR, fallbackFarrow, noDFT,"
+      "  dtInfo.firstCoeffMode ,\n\ndtInfo.firstCoeffWordLength ,\n\ndtInfo.firstCoeffFracLength ,\n\ndtInfo.secondCoef"
+      "fMode ,\n\ndtInfo.secondCoeffWordLength,\n\ndtInfo.secondCoeffFracLength ,\n\ndtInfo.interProdMode ,\n\ndtInfo.i"
+      "nterProdWordLength ,\n\ndtInfo.interProdFracLength ,\n\ndtInfo.prodOutputMode ,\n\ndtInfo.prodOutputWordLength ,"
+      "\n\ndtInfo.prodOutputFracLength ,\n\ndtInfo.accumMode ,\n\ndtInfo.accumWordLength ,\n\ndtInfo.accumFracLength ,\n"
+      "\ndtInfo.memoryMode ,\n\ndtInfo.memoryWordLength ,\n\ndtInfo.memoryFracLength ,\n\ndtInfo.outputMode, dtInfo.out"
+      "putWordLength , dtInfo.outputFracLength ,\n\ndtInfo.roundingMode ,\n\ndtInfo.overflowMode"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		172
+	$ClassName		"Simulink.Mask"
+	Type			"Variable Fractional Delay"
+	Description		"Delay discrete-time input by the time-varying fractional number of sample periods specified by the 'Del"
+	"ay' input. The block provides Linear, FIR, and Farrow interpolation modes. In FIR mode, the filter is designed using "
+	"the 'intfilt' function from the Signal Processing Toolbox.\n\nThe input delay is clipped to a valid range (Dmin to Dm"
+	"ax) that is determined by the parameter settings."
+	Help			"eval('blocksethelp');"
+	Initialization		"blkh = gcbh;\ndtInfo = dspGetFixptDataTypeInfo(blkh,383);\nif (modeActive == 3)\n    [b] = dspblkvfd"
+	"ly2(blkh,modeActive,FarrowL);\nelse\n    [b] = dspblkvfdly2(blkh,modeActive,R,L,alpha);\nend\n"
+	SelfModifiable		"on"
+	Display			"text(0.5,0.4,'z','horiz','right')\ntext(0.5,0.6,'-f','horiz','left')\nport_label('input',1,'In')\nport_lab"
+	"el('input',2,'Delay')"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  36
+	  Object {
+	    $ObjectID		    173
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Linear interpolation"
+	      Cell		      "FIR interpolation"
+	      Cell		      "OBSOLETE"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "mode"
+	    Prompt		    "Mode Obsolete:"
+	    Value		    "OBSOLETE"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    174
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Linear"
+	      Cell		      "FIR"
+	      Cell		      "Farrow"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "modeActive"
+	    Prompt		    "Interpolation structure:"
+	    Value		    "Linear"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    175
+	    Type		    "edit"
+	    Name		    "dmax"
+	    Prompt		    "Maximum delay (samples):"
+	    Value		    "100"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    176
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Columns as channels (frame based)"
+	      Cell		      "Elements as channels (sample based)"
+	      Cell		      "Inherited (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InputProcessing"
+	    Prompt		    "Input processing:"
+	    Value		    "Columns as channels (frame based)"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    177
+	    Type		    "edit"
+	    Name		    "L"
+	    Prompt		    "Interpolation filter half-length:"
+	    Value		    "4"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    178
+	    Type		    "edit"
+	    Name		    "FarrowL"
+	    Prompt		    "Farrow filter length:"
+	    Value		    "4"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    179
+	    Type		    "edit"
+	    Name		    "R"
+	    Prompt		    "Interpolation points per input sample:"
+	    Value		    "10"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    180
+	    Type		    "edit"
+	    Name		    "alpha"
+	    Prompt		    "Normalized input bandwidth (0 to 1):"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    181
+	    Type		    "edit"
+	    Name		    "ic"
+	    Prompt		    "Initial conditions:"
+	    Value		    "0"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    182
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Clip to the minimum value necessary for centered kernel"
+	      Cell		      "Switch to linear interpolation if kernel cannot be centered"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "fallbackFIR"
+	    Prompt		    "Interpolation kernel selection mode:"
+	    Value		    "Clip to the minimum value necessary for centered kernel"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    183
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Clip to the minimum value necessary for centered kernel"
+	      Cell		      "Use off-centered kernel"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "fallbackFarrow"
+	    Prompt		    "Interpolation kernel selection mode:"
+	    Value		    "Clip to the minimum value necessary for centered kernel"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	  }
+	  Object {
+	    $ObjectID		    184
+	    Type		    "checkbox"
+	    Name		    "noDFT"
+	    Prompt		    "Require an additional input delay value to disallow direct feedthrough"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    185
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      4
+	      Cell		      "Same as accumulator"
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "outputMode"
+	    Prompt		    "Fixed-point output attributes:"
+	    Value		    "Same as accumulator"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    186
+	    Type		    "edit"
+	    Name		    "outputWordLength"
+	    Prompt		    "Output word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    187
+	    Type		    "edit"
+	    Name		    "outputFracLength"
+	    Prompt		    "Output fraction length:"
+	    Value		    "10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    188
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "prodOutputMode"
+	    Prompt		    "Fixed-point product output attributes:"
+	    Value		    "Same as first input"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    189
+	    Type		    "edit"
+	    Name		    "prodOutputWordLength"
+	    Prompt		    "Product output word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    190
+	    Type		    "edit"
+	    Name		    "prodOutputFracLength"
+	    Prompt		    "Product output fraction length:"
+	    Value		    "10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    191
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      4
+	      Cell		      "Same as product output"
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "accumMode"
+	    Prompt		    "Fixed-point accumulator attributes:"
+	    Value		    "Same as product output"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    192
+	    Type		    "edit"
+	    Name		    "accumWordLength"
+	    Prompt		    "Accumulator word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    193
+	    Type		    "edit"
+	    Name		    "accumFracLength"
+	    Prompt		    "Accumulator fraction length:"
+	    Value		    "10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    194
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Same word length as input"
+	      Cell		      "Specify word length"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "firstCoeffMode"
+	    Prompt		    "Fixed-point coefficients attributes:"
+	    Value		    "Same word length as input"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    195
+	    Type		    "edit"
+	    Name		    "firstCoeffWordLength"
+	    Prompt		    "Coefficients word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    196
+	    Type		    "edit"
+	    Name		    "firstCoeffFracLength"
+	    Prompt		    "Coefficients word length:"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    197
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "interProdMode"
+	    Prompt		    "Fixed-point product 2 output attributes:"
+	    Value		    "Same as first input"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    198
+	    Type		    "edit"
+	    Name		    "interProdWordLength"
+	    Prompt		    "Product output word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    199
+	    Type		    "edit"
+	    Name		    "interProdFracLength"
+	    Prompt		    "Product output fraction length:"
+	    Value		    "10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    200
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "secondCoeffMode"
+	    Prompt		    "Fixed-point accumulator 2 attributes:"
+	    Value		    "Same as first input"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    201
+	    Type		    "edit"
+	    Name		    "secondCoeffWordLength"
+	    Prompt		    "Accumulator 2 word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    202
+	    Type		    "edit"
+	    Name		    "secondCoeffFracLength"
+	    Prompt		    "Accumulator 2 fraction length:"
+	    Value		    "10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    203
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Same as first input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "memoryMode"
+	    Prompt		    "Fixed-point multiplicand attributes:"
+	    Value		    "Same as first input"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    204
+	    Type		    "edit"
+	    Name		    "memoryWordLength"
+	    Prompt		    "Multiplicand word length:"
+	    Value		    "32"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    205
+	    Type		    "edit"
+	    Name		    "memoryFracLength"
+	    Prompt		    "Multiplicand fraction length:"
+	    Value		    "10"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    206
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      7
+	      Cell		      "Ceiling"
+	      Cell		      "Convergent"
+	      Cell		      "Floor"
+	      Cell		      "Nearest"
+	      Cell		      "Round"
+	      Cell		      "Simplest"
+	      Cell		      "Zero"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "roundingMode"
+	    Prompt		    "Round integer calculations toward:"
+	    Value		    "Zero"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    207
+	    Type		    "checkbox"
+	    Name		    "overflowMode"
+	    Prompt		    "Saturate on integer overflow"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    208
+	    Type		    "checkbox"
+	    Name		    "LockScale"
+	    Prompt		    "Lock scaling"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Variable\nInteger Delay"
+      SID		      "16"
+      Ports		      [2, 1]
+      Position		      [135, 145, 220, 185]
+      ZOrder		      -16
+      UserDataPersistent      on
+      UserData		      "DataTag9"
+      FunctionName	      "sdspvdly2"
+      Parameters	      "0,dmax,InputProcessing,0,ic,0,0,0,0,0,0,noDFT,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		209
+	$ClassName		"Simulink.Mask"
+	Type			"Variable Integer Delay"
+	Description		"Delay discrete-time input by a time-varying integer number of sample periods specified by the \"delay\""
+	" input."
+	Help			"eval('blocksethelp');"
+	Initialization		"dspSetFrameUpgradeParameter(gcbh, 'InputProcessing','Inherited (this choice will be removed - see re"
+	"lease notes)');"
+	SelfModifiable		"on"
+	Display			"text(0.5,0.4,'z','horiz','right')\ntext(0.5,0.6,'-i','horiz','left')\nport_label('input',1,'In')\nport_lab"
+	"el('input',2,'Delay')\nport_label('output',1,'Out')\n"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  4
+	  Object {
+	    $ObjectID		    210
+	    Type		    "edit"
+	    Name		    "dmax"
+	    Prompt		    "Maximum delay (samples):"
+	    Value		    "100"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    211
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Columns as channels (frame based)"
+	      Cell		      "Elements as channels (sample based)"
+	      Cell		      "Inherited (this choice will be removed - see release notes)"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "InputProcessing"
+	    Prompt		    "Input processing:"
+	    Value		    "Columns as channels (frame based)"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    212
+	    Type		    "edit"
+	    Name		    "ic"
+	    Prompt		    "Initial conditions:"
+	    Value		    "0"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    213
+	    Type		    "checkbox"
+	    Name		    "noDFT"
+	    Prompt		    "Disable direct feedthrough by increasing minimum possible delay by one"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Window\nFunction"
+      SID		      "17"
+      Ports		      [1, 1]
+      Position		      [20, 222, 100, 278]
+      ZOrder		      -17
+      DialogController	      "dspDDGCreate"
+      DialogControllerArgs    "DataTag10"
+      FunctionName	      "sdspwindow2"
+      Parameters	      "winmode,N,sampmode,samptime,wintype,winsamp,Rs,beta,numSidelobes,sidelobeLevel,UserWindow,OptP"
+      "arams,UserParams,RowConvenienceOn,dtInfo.DataTypeIsCustomFloat,dtInfo.DataTypeIsSigned,dTypeID,dtInfo.DataTypeWo"
+      "rdLength,dtInfo.DataTypeFracOrMantBits,fixptInfo.firstCoeffMode,fixptInfo.firstCoeffWordLength,fixptInfo.firstCo"
+      "effFracLength,fixptInfo.prodOutputMode,fixptInfo.prodOutputWordLength,fixptInfo.prodOutputFracLength,fixptInfo.o"
+      "utputMode,fixptInfo.outputWordLength,fixptInfo.outputFracLength,fixptInfo.roundingMode,fixptInfo.overflowMode"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		214
+	$ClassName		"Simulink.Mask"
+	Type			"Window Function"
+	Description		"Generate a window function and/or apply a window function to an input signal."
+	Help			"eval('blocksethelp');"
+	Initialization		"[x,y,str,ports,w,dtInfo,dTypeID,fixptInfo]=dspblkwinfcn2('init');\n"
+	SelfModifiable		"on"
+	Display			"plot(x,y); text(.2,.85,str);\nport_label(ports(1).type,ports(1).port,ports(1).txt);\nport_label(ports(2).t"
+	"ype,ports(2).port,ports(2).txt);\nport_label(ports(3).type,ports(3).port,ports(3).txt);\n"
+	IconUnits		"normalized"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Array {
+	  Type			  "Simulink.MaskParameter"
+	  Dimension		  34
+	  Object {
+	    $ObjectID		    215
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      3
+	      Cell		      "Apply window to input"
+	      Cell		      "Generate window"
+	      Cell		      "Generate and apply window"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "winmode"
+	    Prompt		    "Operation:"
+	    Value		    "Apply window to input"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    216
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      11
+	      Cell		      "Bartlett"
+	      Cell		      "Blackman"
+	      Cell		      "Boxcar"
+	      Cell		      "Chebyshev"
+	      Cell		      "Hamming"
+	      Cell		      "Hann"
+	      Cell		      "Hanning"
+	      Cell		      "Kaiser"
+	      Cell		      "Taylor"
+	      Cell		      "Triang"
+	      Cell		      "User defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "wintype"
+	    Prompt		    "Window type:"
+	    Value		    "Hamming"
+	  }
+	  Object {
+	    $ObjectID		    217
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Discrete"
+	      Cell		      "Continuous"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "sampmode"
+	    Prompt		    "Sample mode: "
+	    Value		    "Continuous"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    218
+	    Type		    "edit"
+	    Name		    "samptime"
+	    Prompt		    "Sample time:"
+	    Value		    "1"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    219
+	    Type		    "edit"
+	    Name		    "N"
+	    Prompt		    "Window length:"
+	    Value		    "64"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    220
+	    Type		    "edit"
+	    Name		    "Rs"
+	    Prompt		    "Stopband attenuation in dB:"
+	    Value		    "50"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    221
+	    Type		    "edit"
+	    Name		    "beta"
+	    Prompt		    "Beta:"
+	    Value		    "10"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    222
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Symmetric"
+	      Cell		      "Periodic"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "winsamp"
+	    Prompt		    "Sampling:"
+	    Value		    "Symmetric"
+	  }
+	  Object {
+	    $ObjectID		    223
+	    Type		    "edit"
+	    Name		    "UserWindow"
+	    Prompt		    "Window function name:"
+	    Value		    "hamming"
+	    Evaluate		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    224
+	    Type		    "checkbox"
+	    Name		    "OptParams"
+	    Prompt		    "Additional parameters for user defined window"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    225
+	    Type		    "edit"
+	    Name		    "UserParams"
+	    Prompt		    "Window function parameters:"
+	    Value		    "{'symmetric'}"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    226
+	    Type		    "checkbox"
+	    Name		    "RowConvenienceOn"
+	    Prompt		    "Perform row convenience"
+	    Value		    "on"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    227
+	    Type		    "checkbox"
+	    Name		    "additionalParams"
+	    Prompt		    "------- Show additional parameters --------"
+	    Value		    "off"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    228
+	    Type		    "checkbox"
+	    Name		    "allowOverrides"
+	    Prompt		    "Allow overrides from DSP Fixed-Point Attributes blocks"
+	    Value		    "on"
+	    Tunable		    "off"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    229
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "double"
+	      Cell		      "single"
+	      Cell		      "Fixed-point"
+	      Cell		      "User-defined"
+	      Cell		      "Inherit via back propagation"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "dataType"
+	    Prompt		    "Output data type:"
+	    Value		    "double"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    230
+	    Type		    "checkbox"
+	    Name		    "isSigned"
+	    Prompt		    "Signed"
+	    Value		    "on"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    231
+	    Type		    "edit"
+	    Name		    "wordLen"
+	    Prompt		    "Word length:"
+	    Value		    "16"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    232
+	    Type		    "edit"
+	    Name		    "udDataType"
+	    Prompt		    "User-defined data type  (e.g. sfix(16), float('single')):"
+	    Value		    "sfix(16)"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    233
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      2
+	      Cell		      "Best precision"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "fracBitsMode"
+	    Prompt		    "Set fraction length in output to:"
+	    Value		    "Best precision"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    234
+	    Type		    "edit"
+	    Name		    "numFracBits"
+	    Prompt		    "Fraction length:"
+	    Value		    "15"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    235
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "Same word length as input"
+	      Cell		      "Specify word length"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "firstCoeffMode"
+	    Prompt		    "Fixed-point window attributes:"
+	    Value		    "Same word length as input"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    236
+	    Type		    "edit"
+	    Name		    "firstCoeffWordLength"
+	    Prompt		    "Window word length:"
+	    Value		    "16"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    237
+	    Type		    "edit"
+	    Name		    "firstCoeffFracLength"
+	    Prompt		    "Window fraction length:"
+	    Value		    "15"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    238
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "Inherit via internal rule"
+	      Cell		      "Same as input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "prodOutputMode"
+	    Prompt		    "Fixed-point product output attributes:"
+	    Value		    "Inherit via internal rule"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    239
+	    Type		    "edit"
+	    Name		    "prodOutputWordLength"
+	    Prompt		    "Product output word length:"
+	    Value		    "16"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    240
+	    Type		    "edit"
+	    Name		    "prodOutputFracLength"
+	    Prompt		    "Product output fraction length:"
+	    Value		    "15"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    241
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      5
+	      Cell		      "Same as product output"
+	      Cell		      "Same as input"
+	      Cell		      "Binary point scaling"
+	      Cell		      "Slope and bias scaling"
+	      Cell		      "User-defined"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "outputMode"
+	    Prompt		    "Fixed-point output attributes:"
+	    Value		    "Same as product output"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    242
+	    Type		    "edit"
+	    Name		    "outputWordLength"
+	    Prompt		    "Output word length:"
+	    Value		    "16"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    243
+	    Type		    "edit"
+	    Name		    "outputFracLength"
+	    Prompt		    "Output fraction length:"
+	    Value		    "15"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    244
+	    Type		    "popup"
+	    Array {
+	      Type		      "Cell"
+	      Dimension		      7
+	      Cell		      "Ceiling"
+	      Cell		      "Convergent"
+	      Cell		      "Floor"
+	      Cell		      "Nearest"
+	      Cell		      "Round"
+	      Cell		      "Simplest"
+	      Cell		      "Zero"
+	      PropName		      "TypeOptions"
+	    }
+	    Name		    "roundingMode"
+	    Prompt		    "Round integer calculations towards:"
+	    Value		    "Floor"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    245
+	    Type		    "checkbox"
+	    Name		    "overflowMode"
+	    Prompt		    "Saturate on integer overflow"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    246
+	    Type		    "checkbox"
+	    Name		    "LockScale"
+	    Prompt		    "Lock scaling"
+	    Value		    "off"
+	    Tunable		    "off"
+	  }
+	  Object {
+	    $ObjectID		    247
+	    Type		    "edit"
+	    Name		    "numSidelobes"
+	    Prompt		    "Number of sidelobes:"
+	    Value		    "4"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  Object {
+	    $ObjectID		    248
+	    Type		    "edit"
+	    Name		    "sidelobeLevel"
+	    Prompt		    "Sidelobe level (db):"
+	    Value		    "-30"
+	    Enabled		    "off"
+	    Visible		    "off"
+	  }
+	  PropName		  "Parameters"
+	}
+      }
+    }
+    Block {
+      BlockType		      S-Function
+      Name		      "Zero Crossing"
+      SID		      "18"
+      Ports		      [1, 1]
+      Position		      [270, 321, 350, 379]
+      ZOrder		      -18
+      UserDataPersistent      on
+      UserData		      "DataTag11"
+      FunctionName	      "sdspzc"
+      Parameters	      "InputProcessing,1,1"
+      EnableBusSupport	      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		249
+	$ClassName		"Simulink.Mask"
+	Type			"Zero Crossing"
+	Description		"Counts the number of zero crossings in a signal."
+	Help			"eval('blocksethelp');"
+	Initialization		"dspSetFrameUpgradeParameter(gcbh, 'InputProcessing','Inherited (this choice will be removed - see re"
+	"lease notes)');"
+	SelfModifiable		"on"
+	Display			"disp(['Zero\\nCrossing']);\nport_label('output',1,'Cnt');"
+	Capabilities		"dspmaskedcaps(gcbh)"
+	Object {
+	  $PropName		  "Parameters"
+	  $ObjectID		  250
+	  $ClassName		  "Simulink.MaskParameter"
+	  Type			  "popup"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    3
+	    Cell		    "Columns as channels (frame based)"
+	    Cell		    "Elements as channels (sample based)"
+	    Cell		    "Inherited (this choice will be removed - see release notes)"
+	    PropName		    "TypeOptions"
+	  }
+	  Name			  "InputProcessing"
+	  Prompt		  "Input processing:"
+	  Value			  "Columns as channels (frame based)"
+	  Tunable		  "off"
+	}
+      }
+    }
+    Annotation {
+      SID		      "19"
+      Name		      "Signal Operations"
+      Position		      [254, 32, 376, 50]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -1
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+    Annotation {
+      SID		      "20"
+      Name		      "HDL Optimized Blocks"
+      Position		      [248, 507, 400, 525]
+      AutoSize		      on
+      WordWrap		      off
+      ZOrder		      -2
+      FontName		      "Arial"
+      FontSize		      14
+      FontWeight	      "bold"
+    }
+  }
+}
+MatData {
+  NumRecords		  12
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    N     8    (     0         %    \"     $    \"     0         .    .     8    (    !    "
+    "      %    \"     $    (     0         0    \"    $-O;G9#;W)R#@   $@    &    \"     0         !0    @    !    %0  "
+    "  $         $    !4   !34$-5;FEF:65D1FEX<'1$;&=$1$<    "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    ,     8    (    !          %    \"                0         0          "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag6
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag7
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag8
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    %     0         0    !0   %9&1&QY    "
+  }
+  DataRecord {
+    Tag			    DataTag9
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+  DataRecord {
+    Tag			    DataTag10
+    Data		    "  %)30     .    :     8    (     0         %    \"     $    !     0         .    .     8    (    !     "
+    "     %    \"     $    &     0         0    !@   %=I;F1O=P  "
+  }
+  DataRecord {
+    Tag			    DataTag11
+    Data		    "  %)30     .    B     8    (     @         %    \"     $    !     0         %  0 $P    $    3    :&%S26"
+    "YH97)I=&5D3W!T:6]N        #@   #     &    \"     D\"        !0    @    !     0    $          @ !  $    "
+  }
+}
