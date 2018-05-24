@@ -1,0 +1,4688 @@
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 1-21-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate1"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl1"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio1"
+ 
+clo all
+ 
+df G0856
+ 
+SYNC MAN
+ 
+id 1-9-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate2"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl2"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio2"
+ 
+clo all
+ 
+df G0859
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate3"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl3"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio3"
+ 
+clo all
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 21-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate4"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl4"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio4"
+ 
+clo all
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 22-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate5"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl5"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio5"
+ 
+clo all
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 24-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate6"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl6"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio6"
+ 
+clo all
+ 
+df S0883
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate7"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl7"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio7"
+ 
+clo all
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate8"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl8"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio8"
+ 
+clo all
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate9"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl9"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio9"
+ 
+clo all
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate10"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl10"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio10"
+ 
+clo all
+ 
+df G0887
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate11"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl11"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio11"
+ 
+clo all
+ 
+df G0887
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate12"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl12"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio12"
+ 
+clo all
+ 
+df G0887
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate13"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl13"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio13"
+ 
+clo all
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate14"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl14"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio14"
+ 
+clo all
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate15"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl15"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio15"
+ 
+clo all
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate16"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl16"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio16"
+ 
+clo all
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate17"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl17"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio17"
+ 
+clo all
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate18"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl18"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio18"
+ 
+clo all
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate19"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl19"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio19"
+ 
+clo all
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate20"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl20"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio20"
+ 
+clo all
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate21"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl21"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio21"
+ 
+clo all
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate22"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl22"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio22"
+ 
+clo all
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate23"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl23"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio23"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate24"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl24"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio24"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate25"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl25"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio25"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate26"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl26"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio26"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate27"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl27"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio27"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate28"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl28"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio28"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 12-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate29"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl29"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio29"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 13-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate30"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl30"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio30"
+ 
+clo all
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 12-3-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate31"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl31"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio31"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate32"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl32"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio32"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate33"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl33"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio33"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate34"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl34"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio34"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate35"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl35"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio35"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate36"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl36"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio36"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate37"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl37"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio37"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate38"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl38"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio38"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate39"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl39"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio39"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate40"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl40"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio40"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 2-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate41"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl41"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio41"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate42"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl42"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio42"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate43"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl43"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio43"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate44"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl44"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio44"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate45"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl45"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio45"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate46"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl46"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio46"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate47"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl47"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio47"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate48"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl48"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio48"
+ 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate49"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl49"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio49"
+ 
+clo all
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate50"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl50"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio50"
+ 
+clo all
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate51"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl51"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio51"
+ 
+clo all
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate52"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl52"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio52"
+ 
+clo all
+ 
+df G0903
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate53"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl53"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio53"
+ 
+clo all
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 1-26-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate54"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl54"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio54"
+ 
+clo all
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate55"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl55"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio55"
+ 
+clo all
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate56"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl56"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio56"
+ 
+clo all
+ 
+df G0856
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate57"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl57"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio57"
+ 
+clo all
+ 
+df G0843
+ 
+SYNC MAN
+ 
+id 2-3-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate58"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl58"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio58"
+ 
+clo all
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate59"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl59"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio59"
+ 
+clo all
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 9-8-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate60"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl60"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio60"
+ 
+clo all
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 13-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate61"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl61"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio61"
+ 
+clo all
+ 
+df G0894
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate62"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl62"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio62"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate63"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl63"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio63"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate64"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl64"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio64"
+ 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 17-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate65"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl65"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio65"
+ 
+clo all
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate66"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl66"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio66"
+ 
+clo all
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate67"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl67"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio67"
+ 
+clo all
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate68"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl68"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio68"
+ 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 2-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate69"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl69"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio69"
+ 
+clo all
+ 
+df G0847
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate70"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl70"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio70"
+ 
+clo all
+ 
+df G0847
+ 
+SYNC MAN
+ 
+id 12-2-SPL
+ 
+ou sp
+ 
+gv v4 valmax
+ 
+exp v4 "maxrate71"
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl71"
+ 
+rr def
+ 
+aw 10 25
+ 
+bw 0.1
+ 
+v7 5
+ 
+v8 v6+v7
+ 
+aw v6 v8
+ 
+nl sp
+ 
+gv v1 xvar
+ 
+gv v2 yvar
+ 
+aw v8 25
+ 
+nl sp
+ 
+gv v3 yvar
+ 
+v2 / v3
+ 
+ou scp v1 v2
+ 
+gv v9 xmax
+ 
+rr x v9 v9
+ 
+ou scp v1 v2
+ 
+gv v10 yvar
+ 
+exp v10 "PSratio71"
+ 
+clo all
+ 
+return

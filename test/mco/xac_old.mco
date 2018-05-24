@@ -1,0 +1,8 @@
+sync man
+rr x 1 1
+gv v1 ndset
+swp
+ds v1
+rr x -1 -1
+ou xc
+return

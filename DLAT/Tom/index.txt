@@ -1,0 +1,108 @@
+INHOUD C:/usr/Tom
+
+
+Tom/mfiles
+
+psLATgen_A0454: genereert WFPlot en DLAT tabel (delays van centrale piek difcors tussen BBN-responsen op verschillende SPLfs ifv SPL) met data van A0454
+
+psLATgen_DSACXAC: genereert WFPlot en DLAT tabel, met data van A0241, A0242, A0428, A0454 (zoals automatisch gegenereerd door pSACXACextractor)
+
+psLATgen_all: genereert groupplots (delay,intensity), (delay,intensity) opgesplitst in CF-groepen, (slope,cf) en DLAT tabel, die wordt opgeslagen onder pslatgen_all.mat
+Bevat alle bruikbare noise-data (NRHO en NSPL) van A0241, A0242, A0428, A0454. NRHO en NSPL data worden met verschillende kleuren en symbolen geplot.
+
+psLATgen_M0542BBN: genereert groupplots (delay,intensity), (slope,cf) van de bruikbare noise-data van M0542.  Intensities, delays,slopes, cf etc worden opgeslagen in een struct array DLAT in pslatgen_M0542BBN.mat
+
+pslatgen_M0542T: idem als pslatgen_M0542BBN, maar met de bruikbare SPL-data (dus tonen op CF, op verschillende SPLS) van M0542
+
+pslatgen_M0542T_Cflag: idem als pslatgen_M0542T, maar nu is de maximum delay voor de kruiscorrelatie vastgesteld op +/- (1/(2CF))
+
+concat: zet de verschillende rijen met telkens 1 xval en 1 yval in een struct array om naar een struct array met 1 rij, met als xval en yval vectoren met de respectieve waarden. Gebruikt in psLATgen_all (bij data met slechts responsen op 1 interaurale correlatie, want blijkbaar voegt ExtractPSEntry aan de struct array D dan verschillende rijen toe (met telkens 1 xval en 1 yval-waarde)
+
+psLATgen_Dref: idem, maar de respons van 1 vezel met verschillende SPLfs als referentie
+
+psLATgen_MagnPrim: idem als psLATgen, maar kijkt naar de grootte van de centrale piek ipv delay
+
+psML_SX: emengtf een DLAT-tabel van psLATgen en een DSACXAC-tabel van psSACXAC + maakt nieuw veld, eslopef, aan in de resulterende tabel, met de slope-waardes
+
+psSACXAC: bevat alle data waarmee DIFCORs gemaakt kunnen worden van de dieren A0241, A0242, A0428, A0454
+
+slopecfplotDM: maakt plot(cf,slope) of plot(cf,abs(slope)) op basis van de struct array DM die opgeslagen in psml_sx.mat
+
+DSACXACextractor: extraheert uit de DSACXAC-lijst van psSACXAC.mat alle vezels bruikbaar voor psLATgen (ttz alle vezels met spl-data voor meer dan 1 spl-waarde)(deze lijst bevat enkel NRHO-datasets)
+Vervolgens worden paragrafen gemaakt voor psLATgen, deze worden gezamenlijk in een matrix gestoken en die matrix wordt naar een tekstbestand etekstvoorpslat.txtf weggeschreven
+
+pstrifvMBL: popscript dat trading ratios voor vezels berekent voor verschillende waarden van de emean binaural levelf. Een struct array DMBL met deze trading ratios en een struct array D met delays,slopes, etc worden opgeslagen in pstrifvmbl.mat.
+Er worden 2 plots gemaakt: enerzijds een groupplot met de delays ifv gMBLh en gILDh voor elke gMBLh-waarde van elke vezel, anderzijds een groupplot met de trading ratio ifv de gMBLh voor elke vezel. Bevat momenteel vezels van A0241,A0242 en enkele van A0428.
+
+pslatgen_MBBNLF: pslatgen-popscript met monkey-data voor ruis van laagfrequente vezels
+
+SACmaker: correlatie-programma, genereert correlogram van een groep spike-trains
+
+
+[X;Y;Z]=corr2Trains(A,B,b,m): functie gebruikt door SACmaker.m, correleert 2 vectoren met spike times A en B, op basis van een zekere binwidth b en een absolute waarde van maximum delay m.
+X = kolomvector van de ondergrenzen van de bins
+Y = kolomvector van de bovengrenze van de bins
+Z = kolomvector van de groottes van correlatie voor de betreffende bin
+
+filterspl(D,r): functie gebruikt door pstrifvMBL.m, filtert de referentie-spl (waarvan de rangorde in een orde van hoog naar laag is aangegeven door r)  van de genwfplot uit het output argument van ExtractPSEntry D.
+
+getTRatios(D): berekent trading ratios van een struct array D , op basis van de SPL-waarden in het veld exvalf en de delay-waarden in het veld eyvalf van die struct array. De trading ratios worden teruggegeven als een kolomvector in microsec/dB.
+
+getFNr(DF, dsnrs): geeft een vector van vezelnummers voor de 1-dimensionele cell array van datafilenames DF en een vector van overeenkomstige datasets dsnrs.
+
+getMBL(D): geeft een vector van gMBLsh die overeenkomen met de SPL-waarden in het veld xval van een struct array D
+
+concatto1Row(D,e,f): zet een struct array D om naar een struct array met 1 rij, waarbij de waarden voor de 2 velden e en f in vectoren worden omgezet
+
+groupandconcat(D,e,f): zet groepen rijen (gespecifieerd op basis van 2 velden, zie code: gf1 en gf2) in een struct array D om naar 1 rij, waarbij de waarden voor de 2 velden e en f worden omgezet in vectoren.
+
+mergetroldtrnew: slopes uit DLAT van pslatgen_all en D van pstrifvmbl worden samengenomen in een tabel DM en geplot t.o.v. elkaar (momenteel voor A0241 en A0242 data)
+
+stringpresent(s,t): kijkt voor elke rij van een char array t of deze gelijk is aan een string s. Resultaat is een vector, met als element op een bepaalde plaats 1 als de overeenkomstige rij in t gelijk is aan s, en 0 als dit niet zo is. Dit kan gebruikt worden in een structfilter command voor fields die strings bevatten 
+(b.v. DLAT = structfilter(DLAT, estringpresent(efA0241ff, $ds1.filename$)f
+
+changename(struct array D, oldname, newname): verandert de naam van het veld oldname in struct array D in newname.
+
+GetCFList(CorFncs): geeft de characteristic frequency van een vezel aan de hand van de struct array CorFncs zoals in GenWFPlot.m
+
+FilterCor: modelletje om effect van filtering op correlogrammen te bestuderen. (in ontwikkeling)
+
+selectSplitFibers: functie die ahv lijst van thrlist.m vezels selecteert waarvan de drempel lager ligt dan een bepaalde waarde, en deze vezels opsplitst in lage en hoge cf (ahv een zekere grenswaarde)
+
+psLFcode: functie die pslatgen-code genereert voor lage frequentie vezels (in ontwikkeling)
+
+psHFcode: functie die pslatgen-code genereert voor hoge frequentie vezels (in ontwikkeling)
+
+staggerWFplot: maakt op basis van een DLAT-tabel gegenereerd met GenWFPlotTF en ExtractPSEntryTF een groupplot van de correlogrammen van een bepaalde intensiteit door te estaggerenf op cf (~> tau-freq-plane)
+
+staggerWFplotREL: maakt een curve van de primary peak-delay-verschillen en  amplitude-verschillen tussen correlogrammen van 2 intensiteiten
+
+staggerWFplotDIFFILD: trekt de correlogrammen van 2 verschillende niet-referentie-intensiteiten van elkaar af, om een beeld te krijgen van het verschil in activiteit (in een tau-freq-plane) bij een verschil van ILD.
+
+staggerWFplotDIFFITD: trekt een correlogram met een bepaalde delay af van hetzelfde correlogram zonder delay, om een beeld te krijgen (in een tau-freq-plane) van het verschil in activiteit voor de introductie van een bepaalde delay
+
+ExtractPSEntryTF: verschilt van ExtractPSEntry door o.a. ook de waarden van de correlogrammen zelf te extraheren (delay en genormaliseerd aantal correlaties)
+
+GenWFPlotTF: verschilt van GenWFPlot door ook smoothing en spline mogelijk te maken + de waarde van de cf wordt in de titel van de WFplot weergegeven + de lag-waarden en normco-waarden worden ook in de output-struct array meegegeven
+
+Tom/plots/A0454/
+
+
+Tom/plots/A0241_242_428_454/
+
+
+Tom/plots/TRifvMBL
+
+	Bevat de groupplots gegenereerd door pstrifvMBL.m, en plots van mergetroldtrnew.m
+
+Tom/plots/M0542/BBN
+
+	Bevat plots van pslatgen_M0542BBN
+
+Tom/plots/M0542/TonesatCF
+
+	Bevat plots van pslatgen_M0542T en pslatgen_M0542T_CFlag	
+
+Tom/papers
+	
+Bevat gedownloade papers.

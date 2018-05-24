@@ -1,0 +1,61 @@
+** pstshotaro.mco
+** RAP macro to plot several panels for responses to short (25 ms) tones
+** PXJ and SK '08/9/12
+**
+** page 1: plots across SPL
+pp x 3
+pp y 2
+* plot rate, dot raster etc. for entire duration
+* RATE CURVE
+ou sp
+* DOT RASTER
+lw ras 1
+col aw t
+ou ras
+* PEAK LATENCY
+set pkl srw 50 100
+ou pkl
+* get peak latency at highest SPL
+gv v5 xmax
+rr x v5 v5
+nl pkl
+gv v6 yvar
+rr def
+* SYNC: R AND PHASE
+aw 10 25
+* still implement: cyclint yes
+* min is 0.5
+ou sy
+ou ph
+* P/K RATIO **** temporary try
+bw 0.1
+v7 5
+* v7 is a dummy to add and subtract a couple of ms from v6
+v8 v6+v7
+aw v6 v8
+nl sp
+gv v1 xvar
+gv v2 yvar
+aw v8 25
+nl sp
+gv v3 yvar
+v2 / v3
+ou scp v1 v2
+*
+*
+* page 2: PSTHs
+xm 35
+aw 0 35
+bw 0.1 
+* (same bw as Blackburn & Sachs, a little coarser than nb 500, which gives bw 0.7 for 35 ms pst)
+col aw t
+pp x 5
+pp y 3
+* to do: calculate # mistriggers, put with SPL
+ou pst
+xm def
+nb def
+pp def
+aw def
+min is 0
+return

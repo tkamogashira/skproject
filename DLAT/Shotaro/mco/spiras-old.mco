@@ -1,0 +1,9 @@
+pp x 2
+pp y 1
+ou sp
+col aw t
+lw ras 1
+ou ras
+** pr
+** clo all
+return

@@ -1,0 +1,13 @@
+** isi.mco
+** macro to check ISI distribution
+** PXJ 08/2008
+pp x 3
+pp y 2
+aw def
+nb 500
+xm 5
+ou isi
+aw def
+nb def
+xm def
+return

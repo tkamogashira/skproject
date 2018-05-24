@@ -1,0 +1,76 @@
+*****************************************************************
+* CUTOFF FREQUENCY EXTRACTION FROM MODULATION TRANSFER FUNCTION *
+*****************************************************************
+*Useful variables in RAP workspace after execution of this macro:
+*   V10 = Maximum synchronicity
+*   V20 = Best modulation frequency
+*   V30 = Cutoff threshold
+*   V40 = Cutoff modulation frequency (zero if error occured)
+*****************************************************************
+*Choose your cutoff threshold in dB:
+GV V99 1.41253754462275 //3dB
+GV V999 3
+*GV V99 1.99526231496888 //6dB
+*GV V999 6
+*GV V99 3.16227766016838 //10dB
+*GV V999 10
+*****************************************************************
+*                        Generate plot
+*****************************************************************
+PP X 2
+PP Y 2
+RR DEF
+OU SP
+GV V1 STMDUR
+AW 10 V1
+OU SYNC
+GV V10 VSMMAX     //V10 = Maximum synchronicity
+GV V20 VSMBVAL    //V20 = Best modulation frequency
+GV V30 VSMMAX/V99 //V30 = Cutoff threshold
+OU PHASE
+*****************************************************************
+*             Calculation of cutoff modulation frequency
+*****************************************************************
+*Loop through synchronicity values starting from the maximum, until
+*synchronicity drops below threshold or end of curve reached ...
+*   V1 = Previous modulation frequency
+*   V2 = Previous synchronicity
+*   V3 = Current modulation frequency
+*   V4 = Current synchronicity
+GV V1 V20
+GV V2 V10
+GV V3 V20
+LOOPSYNC: 
+GV V3 V3+XINC           //Don't use subsequences to walk through curve, this gives 
+IF V3 GT XHIGH GO ERROR //problems when stimuli are randomized ...
+RR X V3
+NL SYNC
+GV V4 VSMMAX ERR=LOOPSYNC
+IF V4 LT V30 GO INTERPOLATE
+GV V1 V3
+GV V2 V4
+GO LOOPSYNC
+*Linear interpolation of cutoff modulation frequency. (V1, V2) and
+*(V3, V4) are the points delimiting the line ...
+*   V5  = Slope of line
+*   V6  = Y-intercept of line
+*   V40 = Cutoff modulation frequency
+INTERPOLATE:
+GV V5 (V4-V2)/(V3-V1)
+GV V6 V2-(V5*V1)
+GV V40 (V30-V6)/V5
+*Display calulated data ...
+ECHO "Calculation data: (CutOff = " V999 "dB)"
+ECHO "MaxR       = " V10
+ECHO "BestFmod   = " V20 "Hz"
+ECHO "CutOffR    = " V30
+ECHO "CutOffFmod = " V40 "Hz"
+GO END
+*Display error message ...
+ERROR: ECHO "Could not extract data."
+GV V40 0
+*Clean up ...
+END: RR DEF
+PP DEF
+RETURN
+*****************************************************************

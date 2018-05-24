@@ -1,0 +1,11 @@
+** sy25.mco
+** macro to graph synchronization for short 25 ms tone bursts
+** PXJ 08/2008
+pp x 3
+pp y 2
+aw 10 25
+ou sy
+ou ch
+aw def
+nb def
+return

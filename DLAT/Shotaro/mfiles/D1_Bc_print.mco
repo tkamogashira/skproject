@@ -1,0 +1,194 @@
+ 
+df G0868      
+SYNC MAN      
+id 13-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0868      
+SYNC MAN      
+id 14-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0868      
+SYNC MAN      
+id 15-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0868      
+SYNC MAN      
+id 16-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0868      
+SYNC MAN      
+id 17-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0868      
+SYNC MAN      
+id 18-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0868      
+SYNC MAN      
+id 23-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df S0884      
+SYNC MAN      
+id 1-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0886      
+SYNC MAN      
+id 9-8-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0887      
+SYNC MAN      
+id 4-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0889      
+SYNC MAN      
+id 1-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0890      
+SYNC MAN      
+id 13-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0894      
+SYNC MAN      
+id 5-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0896      
+SYNC MAN      
+id 8-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0896      
+SYNC MAN      
+id 9-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0896      
+SYNC MAN      
+id 17-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0897      
+SYNC MAN      
+id 4-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0897      
+SYNC MAN      
+id 9-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0897      
+SYNC MAN      
+id 11-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0899      
+SYNC MAN      
+id 2-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0847      
+SYNC MAN      
+id 9-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0847      
+SYNC MAN      
+id 12-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0856      
+SYNC MAN      
+id 13-2-SPL   
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all       
+ 
+df G0857      
+SYNC MAN      
+id 1-2-SPL    
+em pstshotaro2
+*PAUSE          
+pr all        
+clo all 
+
+return 

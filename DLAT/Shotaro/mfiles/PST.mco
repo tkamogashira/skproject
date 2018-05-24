@@ -1,0 +1,12 @@
+* PST.mco 
+* RAP macro to plot PSTHs to short (25 ms) tones
+* PXJ, '04/5/10
+xm 35
+nb 500
+pp x 3
+pp y 2
+ou pst
+xm def
+nb def
+pp def
+return

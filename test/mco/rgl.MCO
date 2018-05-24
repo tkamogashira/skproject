@@ -1,0 +1,10 @@
+* RAP macro to plot regularity analysis
+SET RGL MINSPK 3
+SET RGL WIN 12 18
+AW 0 50
+NB 50
+MIN IS 0.5
+*OU RGL MEAN
+OU RGL
+* gv v1 iscv
+RETURN

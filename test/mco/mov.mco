@@ -1,0 +1,7 @@
+* mov.mco         RAP macro, PXJ 11/2004
+* to display PSTs to "moving" stimuli superimposed on NITD function
+* first load background NITD stimulus
+* then load foreground mov stimulus
+* e.g. ds 93 (= NITD dataset); swp; ds 94 (= MOV dataset)
+!Evalmove(rapds,'nitdds', rapds('b'))
+return

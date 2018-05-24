@@ -1,0 +1,21 @@
+* PKLAT.MCO - June 30, 2004: RAP macro to estimate latency of response
+* modelled after RAP(Madison) macro PKLAT.MCO (10/27/95 - RAPN macro)
+NB 250
+PP 9
+* spontaneous rate window
+V1 0
+V2 3
+SET PKL SRW V1 V2
+* peak window
+V3 3
+V4 5
+SET PKL PKW V3 V4
+* Percentage between steady state and peak which is threshold
+PER PKL 20
+* Smoothing (e.g. 3 points)
+SM PKL 3
+OU PKL 
+PP DEF
+SM HI 3
+OU PST
+RETURN

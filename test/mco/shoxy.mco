@@ -1,0 +1,9 @@
+* shoxy PXJ '04 april 30
+* RAP macro SHOXY: shows x- and y-values of plot (plot needs to be activated)
+!V1 = get(findobj(gca, 'type', 'line'), 'xdata');
+gv V1
+!V2 = get(findobj(gca, 'type', 'line'), 'ydata');
+gv V2
+echo "xvar = " V1
+echo "yvar = " V2
+return

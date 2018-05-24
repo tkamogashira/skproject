@@ -1,0 +1,1423 @@
+ 
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 1-21-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl1"
+ 
+df G0856
+ 
+SYNC MAN
+ 
+id 1-9-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl2"
+ 
+df G0859
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl3"
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 21-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl4"
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 22-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl5"
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 24-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl6"
+ 
+df S0883
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl7"
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl8"
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl9"
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl10"
+ 
+df G0887
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl11"
+ 
+df G0887
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl12"
+ 
+df G0887
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl13"
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl14"
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl15"
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl16"
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl17"
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl18"
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl19"
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl20"
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl21"
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl22"
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl23"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl24"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl25"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl26"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl27"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl28"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 12-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl29"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 13-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl30"
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 12-3-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl31"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl32"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl33"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl34"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl35"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl36"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl37"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl38"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl39"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl40"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 2-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl41"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl42"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl43"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl44"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl45"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl46"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl47"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl48"
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl49"
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl50"
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl51"
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl52"
+ 
+df G0903
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl53"
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 1-26-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl54"
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl55"
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl56"
+ 
+df G0856
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl57"
+ 
+df G0843
+ 
+SYNC MAN
+ 
+id 2-3-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl58"
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl59"
+ 
+df G0886
+ 
+SYNC MAN
+ 
+id 9-8-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl60"
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 13-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl61"
+ 
+df G0894
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl62"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl63"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl64"
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 17-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl65"
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl66"
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl67"
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl68"
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 2-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl69"
+ 
+df G0847
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl70"
+ 
+df G0847
+ 
+SYNC MAN
+ 
+id 12-2-SPL
+ 
+set pkl srw 50 100
+ 
+ou pkl
+ 
+gv v5 xmax
+ 
+rr x v5 v5
+ 
+nl pkl
+ 
+gv v6 yvar
+ 
+exp v6 "pkl71"
+
+return

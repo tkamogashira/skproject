@@ -1,0 +1,40 @@
+df G0819B     
+SYNC MAN      
+id 1-3-SPL    
+em pstshotaro2
+PAUSE         
+pr all        
+clo all       
+* 
+df G0819B     
+SYNC MAN      
+id 1-15-SPL   
+em pstshotaro2
+PAUSE         
+pr all        
+clo all       
+* 
+df G0819B     
+SYNC MAN      
+id 1-16-SPL   
+em pstshotaro2
+PAUSE         
+pr all        
+clo all       
+* 
+df G0819B     
+SYNC MAN      
+id 1-21-SPL   
+em pstshotaro2
+PAUSE         
+pr all        
+clo all       
+* 
+df G0819B     
+SYNC MAN      
+id 1-26-SPL   
+em pstshotaro2
+PAUSE         
+pr all        
+clo all
+return  

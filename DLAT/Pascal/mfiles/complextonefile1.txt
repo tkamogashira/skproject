@@ -1,0 +1,42 @@
+% Parameter file for specifying a complex tone
+% Read by mcreatecomplextone.m
+%
+% ordering of values in each line is:
+%  freq         Hz
+%  level(left)  dB
+%  level(right) dB
+%  phase        degrees (assumes 'sin' generator)(-999 is code for random)
+%  starttime    msecs
+%  end          msecs
+%  itd          usecs
+%  ipd          degrees
+% 
+% All lines beginning with '%' are ignored
+%
+% This example makes a complex-tone similar to that used by Hill 
+% and Darwin (1996; JASA, 100, 2352-2364): a 1000-ms duration
+% complex tone with 1500-us ITD but with the 500-Hz component 
+% starting after 400-ms and only lasting for 200 ms 
+% (cf Hill and Darwin, Exp 1)
+% 
+% Example of MATLAB call:
+% >> wave1 = mcreatecomplextone('complextonefile1.txt', 0, 20, 20000, 1);
+%
+%
+% version 1.0 (Jan 20th 2001)
+% MAA Winter 2001 
+%----------------------------------------------------------------
+
+
+200  60 60   90   0 1000   1500 0  
+300  60 60   90   0 1000   1500 0  
+400  60 60   90   0 1000   1500 0  
+
+600  60 60   90   0 1000   1500 0  
+700  60 60   90   0 1000   1500 0  
+800  60 60   90   0 1000   1500 0  
+
+500  60 60   90   400 600  1500 0  
+
+
+% the end!

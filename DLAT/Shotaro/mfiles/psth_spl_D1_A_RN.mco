@@ -1,0 +1,478 @@
+*Print PSTH for D1_A_RN of SPL
+
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 21-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0868
+ 
+SYNC MAN
+ 
+id 22-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df S0883
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0887
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 5-8-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0890
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 3-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0891
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 12-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0896
+ 
+SYNC MAN
+ 
+id 13-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0897
+ 
+SYNC MAN
+ 
+id 12-3-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 7-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 9-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 11-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 2-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 6-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 4-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0902
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0903
+ 
+SYNC MAN
+ 
+id 1-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 1-4-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 8-4-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 9-4-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 1-3-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 6-3-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 8-3-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 1-26-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 1-3-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0899
+ 
+SYNC MAN
+ 
+id 1-5-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0901
+ 
+SYNC MAN
+ 
+id 6-4-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 10-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0889
+ 
+SYNC MAN
+ 
+id 8-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+df G0819B
+ 
+SYNC MAN
+ 
+id 5-2-SPL
+ 
+ou pst 
+PAUSE  
+pr all 
+clo all
+ 
+
+return

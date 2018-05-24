@@ -1,0 +1,332 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x7c911e58, pid=6528, tid=6016
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0-b64 mixed mode)
+# Problematic frame:
+# C  [ntdll.dll+0x11e58]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0ddf5310):  JavaThread "Thread-38" [_thread_in_native, id=6016]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x0de74fd8, EBX=0x003b0000, ECX=0x00000000, EDX=0x0de74fe0
+ESP=0x1c70ec44, EBP=0x1c70ec50, ESI=0x0de74fd0, EDI=0x0de75000
+EIP=0x7c911e58, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x1c70ec44)
+0x1c70ec44:   003b0000 00000003 003b0005 1c70ec88
+0x1c70ec54:   7c918251 00000000 0de75000 1c70ec7c
+0x1c70ec64:   00000000 0000040a 00000000 003b0000
+0x1c70ec74:   00000005 6d6805a5 00000600 0dc00000
+0x1c70ec84:   00000000 1c70eeb8 7c911c76 033b0000
+0x1c70ec94:   00002050 00000000 00002042 00002038
+0x1c70eca4:   0ddb4e40 00000108 1c70ed14 0ddf53cc
+0x1c70ecb4:   00000028 1c70ecac 6d7826a0 1c70fc64 
+
+Instructions: (pc=0x7c911e58)
+0x7c911e48:   85 97 7a 03 00 8b 4e 0c 8d 46 08 8b 10 89 4d 08
+0x7c911e58:   8b 09 3b 4a 04 89 55 0c 0f 85 9d 00 00 00 3b c8 
+
+
+Stack: [0x1c690000,0x1c710000),  sp=0x1c70ec44,  free space=507k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x11e58]
+C  [ntdll.dll+0x18251]
+C  [ntdll.dll+0x11c76]
+C  [msvcrt.dll+0x1c3c9]
+C  [msvcrt.dll+0x1c3e7]
+C  [msvcrt.dll+0x1c42e]
+C  [fontmanager.dll+0x1335c]
+C  [fontmanager.dll+0x111de]
+C  [fontmanager.dll+0xf471]
+C  [fontmanager.dll+0xf39d]
+C  [fontmanager.dll+0x2b9da]
+C  [fontmanager.dll+0x2b94b]
+J  sun.font.FileFont.getGlyphOutline(JIFF)Ljava/awt/geom/GeneralPath;
+J  sun.font.CompositeStrike.getGlyphOutline(IFF)Ljava/awt/geom/GeneralPath;
+J  sun.font.StandardGlyphVector$GlyphStrike.appendGlyphOutline(ILjava/awt/geom/GeneralPath;FF)V
+J  sun.font.StandardGlyphVector.getGlyphsOutline(IIFF)Ljava/awt/Shape;
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  sun.font.StandardGlyphVector.getOutline(FF)Ljava/awt/Shape;+9
+j  sun.font.ExtendedTextSourceLabel.handleGetOutline(FF)Ljava/awt/Shape;+6
+j  sun.font.Decoration.getOutline(Lsun/font/Decoration$Label;FF)Ljava/awt/Shape;+3
+j  sun.font.ExtendedTextSourceLabel.getOutline(FF)Ljava/awt/Shape;+7
+j  java.awt.font.TextLine.getOutline(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;+70
+j  java.awt.font.TextLayout.getOutline(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;+9
+j  sun.print.PathGraphics.drawString(Ljava/lang/String;FFLjava/awt/Font;Ljava/awt/font/FontRenderContext;F)V+23
+j  sun.awt.windows.WPathGraphics.drawString(Ljava/lang/String;FFLjava/awt/Font;Ljava/awt/font/FontRenderContext;F)V+821
+J  sun.print.PathGraphics.printedSimpleGlyphVector(Ljava/awt/font/GlyphVector;FF)Z
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  sun.print.PathGraphics.drawGlyphVector(Ljava/awt/font/GlyphVector;FF)V+10
+j  sun.font.ExtendedTextSourceLabel.handleDraw(Ljava/awt/Graphics2D;FF)V+7
+j  sun.font.Decoration.drawTextAndDecorations(Lsun/font/Decoration$Label;Ljava/awt/Graphics2D;FF)V+5
+j  sun.font.ExtendedTextSourceLabel.draw(Ljava/awt/Graphics2D;FF)V+8
+j  java.awt.font.TextLine.draw(Ljava/awt/Graphics2D;FF)V+69
+j  java.awt.font.TextLayout.draw(Ljava/awt/Graphics2D;FF)V+54
+j  sun.print.PathGraphics.drawString(Ljava/lang/String;FF)V+31
+J  com.mathworks.widgets.text.print.TextPrintable.drawLineText(Lcom/mathworks/widgets/text/print/TextPrintable$AttributedTextLayout;Ljava/awt/geom/Point2D$Float;FLjava/awt/Graphics2D;)D
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  com.mathworks.widgets.text.print.TextPrintable.printImpl(Ljava/awt/Graphics;Ljava/awt/print/PageFormat;IZ)I+494
+j  com.mathworks.widgets.text.print.TextPrintable.printWrapper(Ljava/awt/Graphics;Ljava/awt/print/PageFormat;IZ)I+153
+j  com.mathworks.widgets.text.print.TextPrintable.print(Ljava/awt/Graphics;Ljava/awt/print/PageFormat;I)I+109
+j  sun.print.RasterPrinterJob.printPage(Ljava/awt/print/Pageable;I)I+656
+j  sun.print.RasterPrinterJob.print(Ljavax/print/attribute/PrintRequestAttributeSet;)V+474
+j  sun.print.Win32PrintJob.printableJob(Ljava/awt/print/Printable;)V+315
+j  sun.print.Win32PrintJob.print(Ljavax/print/Doc;Ljavax/print/attribute/PrintRequestAttributeSet;)V+480
+j  com.mathworks.widgets.SyntaxTextPaneBase$7.run()V+12
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x8168d]
+V  [jvm.dll+0xd4179]
+V  [jvm.dll+0x8155e]
+V  [jvm.dll+0x812bb]
+V  [jvm.dll+0x9bbe9]
+V  [jvm.dll+0xfe77f]
+V  [jvm.dll+0xfe74d]
+C  [msvcrt.dll+0x2a3b0]
+C  [kernel32.dll+0xb683]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  sun.font.FileFont.getGlyphOutline(JIFF)Ljava/awt/geom/GeneralPath;
+J  sun.font.CompositeStrike.getGlyphOutline(IFF)Ljava/awt/geom/GeneralPath;
+J  sun.font.StandardGlyphVector$GlyphStrike.appendGlyphOutline(ILjava/awt/geom/GeneralPath;FF)V
+J  sun.font.StandardGlyphVector.getGlyphsOutline(IIFF)Ljava/awt/Shape;
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  sun.font.StandardGlyphVector.getOutline(FF)Ljava/awt/Shape;+9
+j  sun.font.ExtendedTextSourceLabel.handleGetOutline(FF)Ljava/awt/Shape;+6
+j  sun.font.Decoration.getOutline(Lsun/font/Decoration$Label;FF)Ljava/awt/Shape;+3
+j  sun.font.ExtendedTextSourceLabel.getOutline(FF)Ljava/awt/Shape;+7
+j  java.awt.font.TextLine.getOutline(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;+70
+j  java.awt.font.TextLayout.getOutline(Ljava/awt/geom/AffineTransform;)Ljava/awt/Shape;+9
+j  sun.print.PathGraphics.drawString(Ljava/lang/String;FFLjava/awt/Font;Ljava/awt/font/FontRenderContext;F)V+23
+j  sun.awt.windows.WPathGraphics.drawString(Ljava/lang/String;FFLjava/awt/Font;Ljava/awt/font/FontRenderContext;F)V+821
+J  sun.print.PathGraphics.printedSimpleGlyphVector(Ljava/awt/font/GlyphVector;FF)Z
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  sun.print.PathGraphics.drawGlyphVector(Ljava/awt/font/GlyphVector;FF)V+10
+j  sun.font.ExtendedTextSourceLabel.handleDraw(Ljava/awt/Graphics2D;FF)V+7
+j  sun.font.Decoration.drawTextAndDecorations(Lsun/font/Decoration$Label;Ljava/awt/Graphics2D;FF)V+5
+j  sun.font.ExtendedTextSourceLabel.draw(Ljava/awt/Graphics2D;FF)V+8
+j  java.awt.font.TextLine.draw(Ljava/awt/Graphics2D;FF)V+69
+j  java.awt.font.TextLayout.draw(Ljava/awt/Graphics2D;FF)V+54
+j  sun.print.PathGraphics.drawString(Ljava/lang/String;FF)V+31
+J  com.mathworks.widgets.text.print.TextPrintable.drawLineText(Lcom/mathworks/widgets/text/print/TextPrintable$AttributedTextLayout;Ljava/awt/geom/Point2D$Float;FLjava/awt/Graphics2D;)D
+v  ~RuntimeStub::alignment_frame_return Runtime1 stub
+j  com.mathworks.widgets.text.print.TextPrintable.printImpl(Ljava/awt/Graphics;Ljava/awt/print/PageFormat;IZ)I+494
+j  com.mathworks.widgets.text.print.TextPrintable.printWrapper(Ljava/awt/Graphics;Ljava/awt/print/PageFormat;IZ)I+153
+j  com.mathworks.widgets.text.print.TextPrintable.print(Ljava/awt/Graphics;Ljava/awt/print/PageFormat;I)I+109
+j  sun.print.RasterPrinterJob.printPage(Ljava/awt/print/Pageable;I)I+656
+j  sun.print.RasterPrinterJob.print(Ljavax/print/attribute/PrintRequestAttributeSet;)V+474
+j  sun.print.Win32PrintJob.printableJob(Ljava/awt/print/Printable;)V+315
+j  sun.print.Win32PrintJob.print(Ljavax/print/Doc;Ljavax/print/attribute/PrintRequestAttributeSet;)V+480
+j  com.mathworks.widgets.SyntaxTextPaneBase$7.run()V+12
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0dd7e998 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=4944]
+=>0x0ddf5310 JavaThread "Thread-38" [_thread_in_native, id=6016]
+  0x0ddb38f8 JavaThread "Timer-10" [_thread_blocked, id=7080]
+  0x0ddb14c8 JavaThread "Timer-9" [_thread_blocked, id=7684]
+  0x0ddb2e60 JavaThread "Timer-8" [_thread_blocked, id=6940]
+  0x0ddb2ce0 JavaThread "Timer-7" [_thread_blocked, id=6712]
+  0x0dde3028 JavaThread "Timer-6" [_thread_blocked, id=4360]
+  0x0dd105d0 JavaThread "Thread-26" [_thread_blocked, id=6920]
+  0x0dca5848 JavaThread "Thread-24" [_thread_blocked, id=676]
+  0x0dca9030 JavaThread "Thread-21" [_thread_blocked, id=7812]
+  0x0dd6edb0 JavaThread "Timer-5" [_thread_blocked, id=356]
+  0x0dcd16b0 JavaThread "Text-Layout" [_thread_blocked, id=2240]
+  0x0dd4aa90 JavaThread "Thread-19" [_thread_blocked, id=7928]
+  0x0dcdbb80 JavaThread "Prefs Updater" [_thread_blocked, id=4696]
+  0x0dc72f80 JavaThread "Timer-4" [_thread_blocked, id=5180]
+  0x0e3c1c88 JavaThread "Timer-1" daemon [_thread_blocked, id=2736]
+  0x0dfcf480 JavaThread "TimerQueue" daemon [_thread_blocked, id=1060]
+  0x0df881f0 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=7744]
+  0x0df6e760 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=8128]
+  0x0df8bd30 JavaThread "Timer-0" [_thread_blocked, id=5012]
+  0x0df37bc8 JavaThread "AWT-Windows" daemon [_thread_in_native, id=6988]
+  0x0df377a0 JavaThread "AWT-Shutdown" [_thread_blocked, id=5080]
+  0x03646948 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3932]
+  0x03645650 JavaThread "CompilerThread0" daemon [_thread_blocked, id=8032]
+  0x03644948 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4984]
+  0x0363ba10 JavaThread "Finalizer" daemon [_thread_blocked, id=1764]
+  0x0363a580 JavaThread "Reference Handler" daemon [_thread_blocked, id=6260]
+  0x003bbe40 JavaThread "main" [_thread_in_native, id=6884]
+
+Other Threads:
+  0x003bfdb8 VMThread [id=4812]
+  0x03642be0 WatcherThread [id=3828]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 14912K, used 5623K [0x05680000, 0x066a0000, 0x06e80000)
+  eden space 13312K,  38% used [0x05680000, 0x05b83ba0, 0x06380000)
+  from space 1600K,  30% used [0x06380000, 0x063fa1d0, 0x06510000)
+  to   space 1600K,   0% used [0x06510000, 0x06510000, 0x066a0000)
+ tenured generation   total 49152K, used 21999K [0x06e80000, 0x09e80000, 0x0b680000)
+   the space 49152K,  44% used [0x06e80000, 0x083fbd28, 0x083fbe00, 0x09e80000)
+ compacting perm gen  total 23552K, used 23334K [0x0b680000, 0x0cd80000, 0x0d680000)
+   the space 23552K,  99% used [0x0b680000, 0x0cd49a98, 0x0cd49c00, 0x0cd80000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0051d000 	C:\Program Files\MATLAB\R2006b\bin\win32\MATLAB.exe
+0x7c900000 - 0x7c9b0000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c8f5000 	C:\WINDOWS\system32\kernel32.dll
+0x78440000 - 0x784fd000 	C:\Program Files\MATLAB\R2006b\bin\win32\libut.dll
+0x78100000 - 0x781aa000 	C:\Program Files\MATLAB\R2006b\bin\win32\icuin32.dll
+0x781f0000 - 0x78284000 	C:\Program Files\MATLAB\R2006b\bin\win32\icuuc32.dll
+0x77dd0000 - 0x77e6b000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e70000 - 0x77f02000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\WINDOWS\system32\Secur32.dll
+0x10000000 - 0x10005000 	C:\Program Files\MATLAB\R2006b\bin\win32\icudt32.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\MATLAB\R2006b\bin\win32\MSVCR71.dll
+0x781b0000 - 0x781bb000 	C:\Program Files\MATLAB\R2006b\bin\win32\icuio32.dll
+0x7c3a0000 - 0x7c41b000 	C:\Program Files\MATLAB\R2006b\bin\win32\MSVCP71.dll
+0x76c90000 - 0x76cb8000 	C:\WINDOWS\system32\imagehlp.dll
+0x77c10000 - 0x77c68000 	C:\WINDOWS\system32\msvcrt.dll
+0x7e410000 - 0x7e4a0000 	C:\WINDOWS\system32\USER32.dll
+0x77f10000 - 0x77f57000 	C:\WINDOWS\system32\GDI32.dll
+0x774e0000 - 0x7761d000 	C:\WINDOWS\system32\ole32.dll
+0x77120000 - 0x771ab000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x78df0000 - 0x78fff000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwservices.dll
+0x763b0000 - 0x763f9000 	C:\WINDOWS\system32\comdlg32.dll
+0x77f60000 - 0x77fd6000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x5d090000 - 0x5d12a000 	C:\WINDOWS\system32\COMCTL32.dll
+0x7c9c0000 - 0x7d1d6000 	C:\WINDOWS\system32\SHELL32.dll
+0x78590000 - 0x785aa000 	C:\Program Files\MATLAB\R2006b\bin\win32\mpath.dll
+0x78500000 - 0x7854a000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmx.dll
+0x78430000 - 0x7843e000 	C:\Program Files\MATLAB\R2006b\bin\win32\libz.dll
+0x00230000 - 0x0028f000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwmathutil.dll
+0x5b860000 - 0x5b8b4000 	C:\WINDOWS\system32\NETAPI32.dll
+0x71ab0000 - 0x71ac7000 	C:\WINDOWS\system32\WS2_32.dll
+0x71aa0000 - 0x71aa8000 	C:\WINDOWS\system32\WS2HELP.dll
+0x78550000 - 0x7855f000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmex.dll
+0x78580000 - 0x7858e000 	C:\Program Files\MATLAB\R2006b\bin\win32\mvalue.dll
+0x786f0000 - 0x78751000 	C:\Program Files\MATLAB\R2006b\bin\win32\m_dispatcher.dll
+0x78290000 - 0x78430000 	C:\Program Files\MATLAB\R2006b\bin\win32\xerces-c_2_6.dll
+0x78dd0000 - 0x78de6000 	C:\Program Files\MATLAB\R2006b\bin\win32\datasvcs.dll
+0x78560000 - 0x7857d000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmat.dll
+0x00290000 - 0x00357000 	C:\Program Files\MATLAB\R2006b\bin\win32\libhdf5.dll
+0x79430000 - 0x7945c000 	C:\Program Files\MATLAB\R2006b\bin\win32\mcr.dll
+0x79d00000 - 0x79d10000 	C:\Program Files\MATLAB\R2006b\bin\win32\mwoles05.dll
+0x78760000 - 0x78b77000 	C:\Program Files\MATLAB\R2006b\bin\win32\m_interpreter.dll
+0x78d70000 - 0x78d86000 	C:\Program Files\MATLAB\R2006b\bin\win32\m_pcodegen.dll
+0x78d30000 - 0x78d64000 	C:\Program Files\MATLAB\R2006b\bin\win32\m_ir.dll
+0x78d90000 - 0x78da4000 	C:\Program Files\MATLAB\R2006b\bin\win32\m_pcodeio.dll
+0x78b80000 - 0x78d24000 	C:\Program Files\MATLAB\R2006b\bin\win32\m_parser.dll
+0x78db0000 - 0x78dbd000 	C:\Program Files\MATLAB\R2006b\bin\win32\ir_xfmr.dll
+0x785b0000 - 0x78660000 	C:\Program Files\MATLAB\R2006b\bin\win32\mcos.dll
+0x00360000 - 0x0038d000 	C:\Program Files\MATLAB\R2006b\bin\win32\profiler.dll
+0x79db0000 - 0x79dec000 	C:\Program Files\MATLAB\R2006b\bin\win32\comcli.dll
+0x79d70000 - 0x79da3000 	C:\Program Files\MATLAB\R2006b\bin\win32\jmi.dll
+0x79e40000 - 0x79e5e000 	C:\Program Files\MATLAB\R2006b\bin\win32\bridge.dll
+0x78660000 - 0x786e4000 	C:\Program Files\MATLAB\R2006b\bin\win32\udd.dll
+0x79100000 - 0x79179000 	C:\Program Files\MATLAB\R2006b\bin\win32\uiw.dll
+0x791b0000 - 0x791b9000 	C:\Program Files\MATLAB\R2006b\bin\win32\uinone.dll
+0x79400000 - 0x7942b000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwhardcopy.dll
+0x791c0000 - 0x7926a000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwgui.dll
+0x79180000 - 0x791a8000 	C:\Program Files\MATLAB\R2006b\bin\win32\libuij.dll
+0x7c140000 - 0x7c243000 	C:\Program Files\MATLAB\R2006b\bin\win32\MFC71.DLL
+0x73000000 - 0x73026000 	C:\WINDOWS\system32\WINSPOOL.DRV
+0x7c120000 - 0x7c139000 	C:\Program Files\MATLAB\R2006b\bin\win32\ATL71.DLL
+0x79df0000 - 0x79df9000 	C:\Program Files\MATLAB\R2006b\bin\win32\mlautoregister.dll
+0x79d10000 - 0x79d65000 	C:\Program Files\MATLAB\R2006b\bin\win32\udd_mi.dll
+0x79270000 - 0x793c9000 	C:\Program Files\MATLAB\R2006b\bin\win32\hg.dll
+0x79460000 - 0x795e7000 	C:\Program Files\MATLAB\R2006b\bin\win32\numerics.dll
+0x79bf0000 - 0x79bf7000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwamd.dll
+0x79c00000 - 0x79c5a000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwcholmod.dll
+0x79c60000 - 0x79c67000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwcolamd.dll
+0x795f0000 - 0x79613000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwlapack.dll
+0x79650000 - 0x796d6000 	C:\Program Files\MATLAB\R2006b\bin\win32\libfftw3.dll
+0x796e0000 - 0x7975f000 	C:\Program Files\MATLAB\R2006b\bin\win32\libfftw3f.dll
+0x79c70000 - 0x79cf4000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwumfpack.dll
+0x76390000 - 0x763ad000 	C:\WINDOWS\system32\IMM32.DLL
+0x773d0000 - 0x774d3000 	C:\WINDOWS\WinSxS\x86_Microsoft.Windows.Common-Controls_6595b64144ccf1df_6.0.2600.2982_x-ww_ac3f9c03\comctl32.dll
+0x7c300000 - 0x7c30e000 	C:\Program Files\MATLAB\R2006b\bin\win32\MFC71ENU.DLL
+0x79620000 - 0x79648000 	C:\Program Files\MATLAB\R2006b\bin\win32\mkl.dll
+0x79760000 - 0x79be2000 	C:\Program Files\MATLAB\R2006b\bin\win32\lapack.dll
+0x01f80000 - 0x0202a000 	C:\Program Files\MATLAB\R2006b\bin\win32\libifcoremd.dll
+0x02030000 - 0x02260000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmmd.dll
+0x74290000 - 0x74294000 	C:\WINDOWS\system32\icmp.Dll
+0x76d60000 - 0x76d79000 	C:\WINDOWS\system32\iphlpapi.dll
+0x74720000 - 0x7476b000 	C:\WINDOWS\system32\MSCTF.dll
+0x6d640000 - 0x6d7c5000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\client\jvm.dll
+0x76b40000 - 0x76b6d000 	C:\WINDOWS\system32\WINMM.dll
+0x755c0000 - 0x755ee000 	C:\WINDOWS\system32\msctfime.ime
+0x6d280000 - 0x6d288000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d610000 - 0x6d61c000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\verify.dll
+0x6d300000 - 0x6d31d000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\java.dll
+0x6d630000 - 0x6d63f000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\zip.dll
+0x6d000000 - 0x6d166000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\awt.dll
+0x03570000 - 0x0357f000 	C:\Program Files\MATLAB\R2006b\bin\win32\nativejava.dll
+0x0e100000 - 0x0e11d000 	C:\Program Files\MATLAB\R2006b\bin\win32\nativejmi.dll
+0x0e1a0000 - 0x0e1a5000 	C:\Program Files\MATLAB\R2006b\bin\win32\nativeservices.dll
+0x6d240000 - 0x6d27d000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\fontmanager.dll
+0x6d4c0000 - 0x6d4d3000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\net.dll
+0x6d4e0000 - 0x6d4e9000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\nio.dll
+0x7ae80000 - 0x7ae89000 	C:\Program Files\MATLAB\R2006b\bin\win32\nativelex.dll
+0x02bf0000 - 0x02d66000 	C:\Program Files\Common Files\Thomson ResearchSoft\Cwyw\EndNote Cwyw.dll
+0x42c10000 - 0x42ce0000 	C:\WINDOWS\system32\WININET.dll
+0x02d80000 - 0x02d89000 	C:\WINDOWS\system32\Normaliz.dll
+0x42990000 - 0x429d5000 	C:\WINDOWS\system32\iertutil.dll
+0x02d90000 - 0x02e9f000 	C:\WINDOWS\WinSxS\x86_Microsoft.VC80.MFC_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_3bf8fa05\MFC80U.DLL
+0x02ea0000 - 0x02f3b000 	C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.1433_x-ww_5cf844d2\MSVCR80.dll
+0x7c420000 - 0x7c4a7000 	C:\WINDOWS\WinSxS\x86_Microsoft.VC80.CRT_1fc8b3b9a1e18e3b_8.0.50727.1433_x-ww_5cf844d2\MSVCP80.dll
+0x71ad0000 - 0x71ad9000 	C:\WINDOWS\system32\WSOCK32.dll
+0x5d360000 - 0x5d36e000 	C:\WINDOWS\WinSxS\x86_Microsoft.VC80.MFCLOC_1fc8b3b9a1e18e3b_8.0.50727.762_x-ww_91481303\MFC80ENU.DLL
+0x0ffd0000 - 0x0fff8000 	C:\WINDOWS\system32\rsaenh.dll
+0x769c0000 - 0x76a73000 	C:\WINDOWS\system32\USERENV.dll
+0x77a80000 - 0x77b14000 	C:\WINDOWS\system32\CRYPT32.dll
+0x77b20000 - 0x77b32000 	C:\WINDOWS\system32\MSASN1.dll
+0x74e30000 - 0x74e9c000 	C:\WINDOWS\system32\RICHED20.DLL
+0x605d0000 - 0x605d9000 	C:\WINDOWS\system32\mslbui.dll
+0x03250000 - 0x03266000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\hpu4drui.dll
+0x76d10000 - 0x76d21000 	C:\WINDOWS\system32\CLUSAPI.dll
+0x750b0000 - 0x750c2000 	C:\WINDOWS\system32\RESUTILS.dll
+0x76840000 - 0x76873000 	C:\WINDOWS\System32\spool\DRIVERS\W32X86\3\UNIDRVUI.DLL
+0x77c00000 - 0x77c08000 	C:\WINDOWS\system32\VERSION.dll
+0x79000000 - 0x790f6000 	C:\Program Files\MATLAB\R2006b\bin\win32\libmwbuiltins.dll
+0x0ff00000 - 0x0ff54000 	C:\Program Files\MATLAB\R2006b\bin\win32\xmlcore.dll
+0x7ae90000 - 0x7aeaa000 	C:\Program Files\MATLAB\R2006b\bin\win32\nativehg.dll
+0x6d360000 - 0x6d366000 	C:\Program Files\MATLAB\R2006b\sys\java\jre\win32\jre1.5.0\bin\jawt.dll
+0x10610000 - 0x10618000 	C:\Program Files\MATLAB\R2006b\toolbox\matlab\graph2d\private\lineseriesmex.mexw32
+0x73d90000 - 0x73db7000 	C:\WINDOWS\system32\CRTDLL.dll
+0x71a50000 - 0x71a8f000 	C:\WINDOWS\System32\mswsock.dll
+0x76f20000 - 0x76f47000 	C:\WINDOWS\system32\DNSAPI.dll
+0x76fb0000 - 0x76fb8000 	C:\WINDOWS\System32\winrnr.dll
+0x76f60000 - 0x76f8c000 	C:\WINDOWS\system32\WLDAP32.dll
+0x76fc0000 - 0x76fc6000 	C:\WINDOWS\system32\rasadhlp.dll
+
+VM Arguments:
+jvm_args: -Xss512k -XX:PermSize=16M -Xms64m -XX:NewRatio=3 -XX:MaxPermSize=32M -Xmx96m -Dsun.java2d.noddraw=true -Dsun.awt.nopixfmt=true -Xshare:off -Djava.library.path=C:\Program Files\MATLAB\R2006b\bin\win32 vfprintf abort
+java_command: <unknown>
+
+Environment Variables:
+PATH=C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\wbem;c:\program files\matlab\r2006b\bin;c:\program files\matlab\r2006b\bin\win32;c:\matlab6p1\bin\win32;c:\program files\common files\gtk\2.0\bin
+USERNAME=u0055708
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 3 Stepping 3, GenuineIntel
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 2
+
+CPU:total 2 family 15, cmov, cx8, fxsr, mmx, sse, sse2, ht
+
+Memory: 4k page, physical 1571564k(743108k free), swap 3516208k(2598504k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0-b64) for windows-x86, built on Sep 15 2004 03:00:31 by "java_re" with MS VC++ 6.0
+
