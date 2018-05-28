@@ -1,0 +1,487 @@
+function Rtn=RunSeries
+%RunSeries -- Run an experimental series
+%Run from ExptManM
+%By SF, 10/9/01
+
+global STIM StimType RESPONSE ExptManParam RunSeriesStatus CommandStatus H_EXPTMANM
+global Monitor1Setting Monitor2Setting Monitor3Setting Monitor4Setting
+global RP2 PA5 RA16 zBus %Active X controls for the TDT System3 modules
+global FsRP2 FsRA16
+
+Rtn=[];
+if strcmpi(CommandStatus,'stop') %Do nothing if the command status is 'stop'
+    return;
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Initialize variables
+
+%%% Load speaker correction data
+load (SpkrFile);
+SpkrData=[L R];
+rmfield(SpkrData,{'SysResp','FlatNoise'}); %Remove unnecessary fields
+
+
+%Get Sampling rates
+FsRP2=RP2PlayEz('GetFs');
+if FsRP2~=L.Fs | FsRP2~=R.Fs
+    error('Inconsistent Fs for RP2');    
+end
+FsRA16=RA16RecordEzM('GetFs');
+
+
+%%% Number of trials
+NStim=size(STIM,1);
+NRep=ExptManParam.NRep;
+if ~NRep %NRep=0 indicates repeating until stopped
+    NRep=inf;
+end
+
+%%% Generate Stimuli if using frozen signals
+if ExptManParam.Frozen
+    for iStim=1:NStim
+        mystr=sprintf('Generating stimuli... %d/%d',iStim,NStim);
+        ExptManM('ShowMessage',mystr); %Show message
+        
+        %Get parameters for the stimulus
+        myStim=STIM(iStim,:);
+        if ~strcmpi(myStim{1},'Files')
+            %Create Stimulus
+            [Signal,Atten,Duration]=feval(myStim{:},FsRP2);
+            
+            %Apply filter for speaker correction
+            for i=1:2           
+                %Filter the waveform, adjust delay by filtering
+                mydelay=SpkrData(i).FiltDelayPts;
+                mySignal=filter(SpkrData(i).FiltCoef,1,[Signal(i,:) zeros(1,mydelay)]);
+                mySignal(1:mydelay)=[];
+                %keyboard
+                
+                %Scale the waveform so that the maximum does not exceed 10 volts (TDT limit)
+                if any(mySignal)
+                    myscale=10/max(abs(mySignal(:)));
+                else
+                    myscale=1;
+                end
+                Signal(i,:)=mySignal*myscale;
+                
+                %Adjust attenuation due to scaling
+                Atten(i)=Atten(i)+20*log10(myscale)+SpkrData(i).FiltGain;
+                
+            end
+            
+            %Check if the Attenuation is in a proper range
+            for i=1:2
+                if Atten(i)>120
+                    myscale=10^((120-Atten(i))/20);
+                    Signal(i,:)=Signal(i,:)*myscale;
+                    Atten(i)=120;
+                    if max(Signal(i,:))<1.5259e-004 %Worse than 8-bit resolution
+                        mystr=sprintf('Chan%d (Stim %d): Cannot attenuate the signal',i,iStim);
+                        warning(mystr); 
+                    end
+                    
+                end
+                if Atten(i)<0
+                    mystr=sprintf('Chan%d (Stim %d): Short of signal level by %.1f dB',i,iStim,abs(Atten(i)));
+                    warning(mystr);
+                    Atten(i)=0;
+                end
+            end
+            
+            %File Name
+            FileName=fullfile(TempDir,sprintf('Stim%d.mat',iStim));
+            %Save
+            save(FileName,'Signal','Atten','Duration');
+        end
+    end
+end
+
+%%% Initialize data for responses
+RESPONSE=[];
+RESPONSE.N=zeros(NStim,1);
+RESPONSE.Order=[];
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Get ready
+RunSeriesStatus='running'; %Set the status as running
+ExptManM('ShowMessage',RunSeriesStatus); %Show message
+
+%Reset the data for monitor
+if ExptManParam.ChanFlag(1)
+    Monitor1 ResetData;
+end
+if ExptManParam.ChanFlag(2)
+    Monitor2 ResetData;
+end
+if ExptManParam.ChanFlag(3)
+    Monitor3 ResetData;
+end
+if ExptManParam.ChanFlag(4)
+    Monitor4 ResetData;
+end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Loop 
+RepCount=0;
+LastTrigTime=-inf;
+BrakeFlag=0;
+StartTime=cputime;
+while 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+    %Increment the repetition count
+    RepCount=RepCount+1;
+    if RepCount>NRep %Get out of the loop when reaching the specified count
+        load chirp
+        sound(y,Fs);
+        break;
+    end
+    ExptManM('UpdateRepNo',RepCount); %Show the current rep #
+    
+    
+    %Determine the order of the stimuli
+    ExptManParam.RandOrder;
+    if ExptManParam.RandOrder
+        StimIdxList=randperm(NStim);
+    else
+        StimIdxList=1:NStim;
+    end
+    %present stimuli
+    for iStim=1:NStim %%%%%%%%%%%%%
+        
+        %Get parameters for the current stimulus
+        StimIdx=StimIdxList(iStim);
+        ExptManM('UpdateCondNo',StimIdx); %Show the current stim idx
+        
+        %Use signals made in advance, or create for each trial
+        if ExptManParam.Frozen & ~strcmpi(STIM{StimIdx,1},'Files')
+            %File Name
+            FileName=fullfile(TempDir,sprintf('Stim%d.mat',StimIdx));
+            %Save
+            load(FileName,'Signal','Atten','Duration');
+        else
+            %Create Stimulus
+            myStim=STIM(StimIdx,:);
+            [Signal,Atten,Duration]=feval(myStim{:},FsRP2);
+            
+            %Apply filter for speaker correction
+            for i=1:2           
+                %Filter the waveform, adjust delay by filtering
+                mydelay=SpkrData(i).FiltDelayPts;
+                mySignal=filter(SpkrData(i).FiltCoef,1,[Signal(i,:) zeros(1,mydelay)]);
+                mySignal(1:mydelay)=[];
+                %keyboard
+                
+                %Scale the waveform so that the maximum does not exceed 10 volts (TDT limit)
+                if any(mySignal)
+                    myscale=10/max(abs(mySignal(:)));
+                else
+                    myscale=1;
+                end
+                Signal(i,:)=mySignal*myscale;
+                
+                %Adjust attenuation due to scaling
+                Atten(i)=Atten(i)+20*log10(myscale)+SpkrData(i).FiltGain;
+                
+            end
+            
+            %Check if the Attenuation is in a proper range
+            for i=1:2
+                if Atten(i)>120
+                    myscale=10^((120-Atten(i))/20);
+                    Signal(i,:)=Signal(i,:)*myscale;
+                    Atten(i)=120;
+                    if max(Signal(i,:))<1.5259e-004 %Worse than 8-bit resolution
+                        mystr=sprintf('Chan%d (Stim %d): Cannot attenuate the signal',i,StimIdx);
+                        warning(mystr); 
+                    end
+                    
+                end
+                if Atten(i)<0
+                    mystr=sprintf('Chan%d (Stim %d): Short of signal level by %.1f dB',i,StimIdx,abs(Atten(i)));
+                    warning(mystr);
+                    Atten(i)=0;
+                end
+            end
+            
+        end
+        
+        %%%%%%% Monitor the signal by plotting and playing %%%%
+        if 0 %Set non-zero to see the signal waveform
+            figure(1)
+            t=(1:size(Signal,2))/FsRP2*1000;
+            subplot(2,1,1)
+            plot(t,Signal(1,:))
+            xlim([min(t) max(t)]);
+            subplot(2,1,2)
+            plot(t,Signal(2,:))
+            xlim([min(t) max(t)]);
+        end
+        if 0 %Set non-zero to play the signal
+            soundsc(Signal',FsRP2);
+        end
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        %No signal for a specified channel
+        if ~ExptManParam.LChan
+            Signal(1,:)=0;
+            Atten(1)=120;
+        end
+        if ~ExptManParam.RChan
+            Signal(2,:)=0;
+            Atten(2)=120;
+        end
+        
+        while 1 %Repeat the stim until recording is made -- for the purpose of error trapping for RA16
+            
+            %Arm RP2
+            for iTry=1:5
+                e=RP2PlayEz('SetSignal',Signal);
+                e=e*RP2PlayEz('ResetIndex');
+                if ~e % If there is a problem, re-initialize TDT and try again.
+                    if iTry<5
+                        mystr=sprintf('[Rep%d; Stim%d] Failed in arming RP2 -- Retrying...',RepCount,iStim);
+                        disp(mystr);
+                        ReInitialize;
+                    else
+                        mystr=sprintf('[Rep%d; Stim%d] Failed in arming RP2 -- Gave up',RepCount,iStim);
+                        error(mystr);
+                    end
+                else
+                    break;
+                end
+            end
+            
+            %Arm PA5
+            %Atten=[20 20]
+            e=PA5Control('SetAtten',[1 2],Atten);
+            if ~e
+                error('Error in arming PA5');
+            end
+            
+            %Arm RA16
+            RecDur=Duration;
+            e=e*RA16RecordEzM('SetRecDur',RecDur);
+            e=e*RA16RecordEzM('ResetIndex');
+            if ~e
+                error('Error in arming RA16');
+            end
+            
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            % Trigger
+            while 1 %Secure some ISI
+                CurrentTime=cputime;
+                d=CurrentTime-LastTrigTime;
+                if d>ExptManParam.ISI/1000
+                    LastTrigTime=cputime;
+                    break;
+                end
+            end
+            
+            %Issue an trigger
+            e=zBusControl('TrigA');
+            if ~e
+                mystr=zBusControl('GetError');
+                mystr=['Error in zBus trigger: ' mystr];
+                error(mystr);
+            end
+            
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            % Wait while the RA16 processes are running
+            pause(RecDur/1000);
+            LastIndex=ones(sum(ExptManParam.ChanFlag>0),1)*(-100); %Dummy number
+            CurrentIndex=ones(sum(ExptManParam.ChanFlag>0),1); %Dummy number
+            t0=cputime;
+            ErrorFlag=0;
+            while 1
+                myidx=RA16RecordEzM('GetIndexRaw');
+                CurrentIndex=myidx(find(ExptManParam.ChanFlag));
+                %Stop waiting when all the indeces stop increasing
+                if all(CurrentIndex(:)==LastIndex(:)) & all(CurrentIndex(:))
+                    ErrorFlag=0;
+                    break;
+                elseif any(CurrentIndex(:)<LastIndex(:))
+                    error('Wrapping detected -- Something is wrong with RA16.');
+                else
+                    LastIndex=CurrentIndex;
+                end
+                if cputime-t0>5 & any(CurrentIndex(:)==LastIndex(:))
+                    ErrorFlag=1;
+                    break;
+                end
+            end
+            
+            if ErrorFlag %If error is detected, re-initialize RA16 and retry
+                mystr=sprintf('[Rep%d; Stim%d] Failed to retrive response -- Retrying...',RepCount,iStim);
+                disp(mystr);
+                ReInitialize;                
+            else
+                %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                % Get the waveform
+                RESPONSE.Wave=RA16RecordEzM('GetRawWave'); %Waveform
+                %RESPONSE.Time=(1:RESPONSE.Wave)/FsRA16*1000; %Time
+                RESPONSE.StimIdx=StimIdx;
+                RESPONSE.N(StimIdx)=RESPONSE.N(StimIdx)+1;
+                RESPONSE.Order=[RESPONSE.Order StimIdx];
+                
+                break;
+            end
+        end %while 1 %Repeat the stim until recording is made -- for the purpose of error trapping for RA16
+        
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Update the monitor, incl. online spike-sorting
+        AnalyzeResponseM;
+        drawnow;
+        if ExptManParam.ChanFlag(1)
+            Monitor1 Update;
+        end
+        if ExptManParam.ChanFlag(2)
+            Monitor2 Update;
+        end
+        if ExptManParam.ChanFlag(3)
+            Monitor3 Update;
+        end
+        if ExptManParam.ChanFlag(4)
+            Monitor4 Update;
+        end
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % Save the raw waveform if the path is specified
+        myflag=1;
+        for iChan=1:4
+            if ~isempty(ExptManParam.Path) & ~isempty(ExptManParam.SeriesNo) & ExptManParam.ChanFlag(iChan)
+                
+                %Directory and file name for the data
+                DirName=fullfile(ExptManParam.Path,sprintf('#%d',ExptManParam.SeriesNo));
+                InfoFileName=fullfile(DirName,sprintf('Info_%d.txt',iChan));
+                StimFileName=fullfile(DirName,'StimInfo');
+                WaveFileName=fullfile(DirName,sprintf('%03d_%d.raw',StimIdx,iChan));
+                MaxVolt=ExptManParam.MaxVolt;
+                NPts=length(RESPONSE.Wave{iChan});
+                
+                %Compress the waveform to 16-bit integer
+                mywave=RESPONSE.Wave{iChan}/MaxVolt*1000; %Normalize the response to MaxVolt
+                %Clip the waveform if it exceeds MaxVolt
+                I=find(abs(mywave)>MaxVolt);
+                if ~isempty(I)
+                    mywave(I)=sign(mywave(I));
+                end
+                %Fit the waveform to the full dynamic range
+                mywave=mywave*32767;
+                mywave=[32767 -32768 mywave]; %Put an marker for the head of a waveform
+                %Save the waveform
+                fid=fopen(WaveFileName,'ab');
+                if fid<0
+                    error(['Failure in opening data file ' WaveFileName]);
+                end
+                c=fwrite(fid,mywave,'int16');
+                if c~=length(mywave)
+                    error(['Failure in saving the data to file ' WaveFileName]);
+                end
+                fclose(fid);
+                
+                %Save the information about the record
+                if RepCount==1 & iStim==1 %For the first stimulus
+                    %Write the header to the 'INFO' file
+                    fid=fopen(InfoFileName,'wt');
+                    fprintf(fid,'%%FsRP2= %f\n',FsRP2); %Sampling rate of RP2
+                    fprintf(fid,'%%FsRA16= %f\n',FsRA16); %   "    RA16
+                    fprintf(fid,'%%NStim= %d\n',NStim); %Number of stimuli
+                    fprintf(fid,'%%MaxVolt= %f\n',MaxVolt); %Number of stimuli
+                    fprintf(fid,'%%LChanFlag= %d\n',ExptManParam.LChan); %Flag if L chan is on
+                    fprintf(fid,'%%RChanFlag= %d\n',ExptManParam.RChan); %Flag if R chan is on
+                    fprintf(fid,'%%ISI= %f\n',ExptManParam.ISI); %ISI
+                    fprintf(fid,'\n'); %Empty line indicating the end of the header
+                    
+                    %Save the STIM cell
+                    if myflag
+                        save(StimFileName,'STIM','StimType');
+                        myflag=0;
+                    end
+                    
+                else
+                    fid=fopen(InfoFileName,'at');
+                end
+                fprintf(fid,'%d %d\n',StimIdx,NPts); %Stim index and # of data points
+                fclose(fid);
+            end
+            
+        end
+        
+        %Flash data
+        RP2PlayEz('FlashSignal'); 
+        RA16RecordEzM('FlashData');
+        
+        drawnow;       
+        %Exit if the Stop button is pressed
+        if strcmpi(CommandStatus,'stop')
+            ButtonName=questdlg('Do you want to quit the series?','','Continue','Quit','Continue');
+            if strcmpi(ButtonName,'Quit')
+                BrakeFlag=1;
+            else
+                CommandStatus='go';
+            end
+        end
+        if BrakeFlag
+            break;
+        end
+    end %for iStim=1:NStim %%%%%%%%
+    if BrakeFlag
+        break;
+    end
+end %while 1 %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Save the monitor data if the path is specified
+if ~isempty(ExptManParam.Path) & ~isempty(ExptManParam.SeriesNo)
+    DirName=fullfile(ExptManParam.Path,sprintf('#%d',ExptManParam.SeriesNo));
+    for ii=1:4
+        if ExptManParam.ChanFlag(ii)
+            myname=['Monitor' num2str(ii) 'Setting'];
+            
+            %Directory and file name for the data
+            MonitorFileName=fullfile(DirName,myname);
+            save(MonitorFileName,myname);
+        end
+    end
+end    
+%Halt the TDT circuits
+%RP2PlayEz('Halt'); 
+%RA16RecordEzM('Halt');
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ending the series 
+RunSeriesStatus='idle'; %Set the status as idle   
+
+%Set the 'GO' button of ExptMan back to 'GO'
+if ~isempty(H_EXPTMANM)
+    hdlsExptman=guihandles(H_EXPTMANM);
+    set(hdlsExptman.push_go,'String','GO');
+end
+
+%ExptManM LastSeriesNo %Last series number
+ExptManM('ShowMessage',''); %Show message
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Re-initialize the system
+function ReInitialize
+
+%%% RP2 %%%
+e=RP2PlayEz('Initialize');
+if ~e
+    error('Error in initializing RP2');
+end
+RP2PlayEz('Run');
+
+%%% RA16 %%%
+e=RA16RecordEzM('Initialize');
+if ~e
+    error('Error in initializing RA16');
+end
+
+%Run the TDT circuits
+RA16RecordEzM('Run');
+

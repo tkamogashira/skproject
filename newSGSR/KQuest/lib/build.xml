@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<project name="JMatLink" basedir="." default="release">
+
+    <!-- grab the properties file -->
+    <property file="build.properties" />
+
+    <!-- include all the jars in the classpath -->
+    <path id="classpath">
+      <fileset dir="." >
+        <include name="**/*.jar" />
+      </fileset>
+    </path>
+
+    <!-- ================================================================= -->
+    <!-- E N V                                                             -->
+    <!-- ================================================================= -->
+    <target name="env" >
+        <echo message="java.home = ${java.home}" />
+        <echo message="user.home = ${user.home}" />
+    </target>
+
+    <!-- ================================================================= -->
+    <!-- C O M P I L E                                                     -->
+    <!-- ================================================================= -->
+    <target name="compile" depends="env">
+
+	<!-- compile object file -->
+        <exec executable="bcc32" dir="${build.src}/jmatlink/" >
+            <arg line="-Ic:\j2sdk1.4.2_06\include -Ic:\j2sdk1.4.2_06\include\Win32 -c -3 -a8 -w- -b -g30 -Ic:\bcc\INCLUDE -oJMatLink.obj -IC:\MATLAB6p5\extern\include -IC:\MATLAB6p5\simulink\include -O1 -DNDEBUG JMatLink.c"/>
+        </exec>
+
+	<!-- link object file to DLL -->
+        <exec executable="bcc32" dir="${build.src}/jmatlink/" >
+            <arg line="-DLL -eJMatLink.dll -tWD -Lc:\bcc\lib\32bit -Lc:\bcc\lib -LC:\MATLAB6p5\extern\lib\win32\borland\bc50 libmx.lib libmat.lib libeng.lib  JMatLink.obj" />
+        </exec>
+
+    	<move   file="${build.src}/jmatlink/JMatLink.dll" todir="${build.dir}" />
+    	<delete file="${build.src}/jmatlink/JMatLink.obj" />
+    	<delete file="${build.src}/jmatlink/JMatLink.tds" />
+    	
+    	
+    </target>
+
+    <!-- ================================================================= -->
+    <!-- R E L E A S E                                                     -->
+    <!-- ================================================================= -->
+    <target name="release" depends="" description="Make release">
+
+    	<echo message="Is is the version info in JMatLink.c up to date??" />
+    	<echo message="Is JMatLink.dll up to date??" />
+    	
+    	<delete dir="${dist.dir}" />
+    	
+		<copy todir="${dist.dir}/src">
+			<fileset dir="${build.src}">
+				<include name="**"/>
+			</fileset>
+		</copy>
+			
+    	<copy todir="${dist.dir}/doc">
+			<fileset dir="${build.doc}">
+				<include name="**"/>
+			</fileset>
+		</copy>
+    	
+    	<copy todir="${dist.dir}">
+			<fileset dir="${build.dest}">
+				<include name="**"/>
+			</fileset>
+		</copy>
+
+    	<!--<move file="${dist.dir}/jmatlink_CoreJMatLink.h" toDir="src/"/>-->
+
+    	<!-- copy individual files -->
+       	<copy file="${build.dir}/JMatLink.dll"         toDir="${dist.dir}/"/>
+    	<copy file="${build.dir}/build.properties"     toDir="${dist.dir}/"/>
+    	<copy file="${build.dir}/build.xml"            toDir="${dist.dir}/"/>
+      	<copy file="${build.dir}/ChangeLog.txt"        toDir="${dist.dir}/"/>
+    	<copy file="${build.dir}/INSTALL.txt"          toDir="${dist.dir}/"/>
+    	<copy file="${build.dir}/license.txt"          toDir="${dist.dir}/"/>
+       	<copy file="${build.dir}/ToDo.txt"             toDir="${dist.dir}/"/>
+    	
+    	<!-- zip everything into one file -->
+        <zip zipfile="${dist.dir}/JMatLink.zip">
+            <zipfileset dir="${dist.dir}">
+                <include name="**" />
+            </zipfileset>
+        </zip>
+
+    </target>
+  
+</project>

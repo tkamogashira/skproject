@@ -1,0 +1,113 @@
+Fs=44000;a=1;fc=1000;fm=83;
+
+N=1;ma=1;
+
+nsig=Fs*4;%4•b
+perio=1/Fs;% s
+tim=(perio:perio:(perio*nsig));
+
+%%% sig=a * sin(2*pi*fc*tim) .* (  2*ma*(  (( 1+sin(2*pi*fm*tim) )/2).^N - 0.5*ones(1,nsig) ) +1*ones(1,nsig) );
+sig=a * sin(2*pi*fc*tim) .* (  2*ma*(  (( 1+sin(2*pi*fm*tim-pi/2) )/2).^N - 0.5*ones(1,nsig) ) +1*ones(1,nsig) );
+sighil=hilbert(sig);env=abs(sighil);
+wavwrite(sig/100,Fs,['fc' num2str(fc) 'fm' num2str(fm) 'N' num2str(N)]);
+AmpSpec=abs(fft(sig)); %Amplitude spectrum
+%AmpSpec=AmpSpec(1:L)/L; %%%%%%
+AmpSpec_dB=20*log10(AmpSpec); %Spectrum in dB, for the positive frequency part
+
+% %Get STD within the passband
+% Iin=find(abs(Freq)>=min(PassBand) & abs(Freq)<=max(PassBand));
+% STD=std(AmpSpec_dB(Iin));
+
+% %Plot the result
+% if PlotFlag
+%     subplot(3,1,3)
+%     plot(Freq/1000,AmpSpec_dB);
+%     xlim([0 Fs/2/1000]);
+%     title(sprintf('STD: %.1f dB; Filter Gain: %.1f dB',STD,GainByFilt));
+%     xlabel('Frequency (kHz)')
+%     ylabel('dB')
+% end
+L=nsig;
+%Freq=(1:L)/L*Fs/2;
+Freq=(1:L)/L*Fs;
+
+figure;
+% subplot(2,2,1)
+% plot(tim,sig);grid on;
+
+subplot(2,2,1)
+plot(tim,sig);hold on;plot(tim,env,'m');
+grid on;xlim([0 50/1000]);
+title('N=1');xlabel('Time (s)');
+% subplot(2,2,2)
+% plot(Freq/1000,AmpSpec_dB);grid on;
+%     xlim([0 Fs/2/1000]);
+% %     title(sprintf('STD: %.1f dB; Filter Gain: %.1f dB',STD,GainByFilt));
+%     xlabel('Frequency (kHz)')
+%     ylabel('dB')
+    
+subplot(2,2,2)
+plot(Freq/1000,AmpSpec_dB);grid on;
+%    xlim([0 Fs/2/1000]);
+    xlim([0 2]);
+%     title(sprintf('STD: %.1f dB; Filter Gain: %.1f dB',STD,GainByFilt));
+    xlabel('Frequency (kHz)')
+    ylabel('dB')    
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%    
+    
+N=2;ma=1;
+
+nsig=Fs*4;%4•b
+perio=1/Fs;% s
+tim=(perio:perio:(perio*nsig));
+
+%%% sig=a * sin(2*pi*fc*tim) .* (  2*ma*(  (( 1+sin(2*pi*fm*tim) )/2).^N - 0.5*ones(1,nsig) ) +1*ones(1,nsig) );
+sig=a * sin(2*pi*fc*tim) .* (  2*ma*(  (( 1+sin(2*pi*fm*tim-pi/2) )/2).^N - 0.5*ones(1,nsig) ) +1*ones(1,nsig) );
+sighil=hilbert(sig);env=abs(sighil);
+wavwrite(sig/100,Fs,['fc' num2str(fc) 'fm' num2str(fm) 'N' num2str(N)]);
+AmpSpec=abs(fft(sig)); %Amplitude spectrum
+%AmpSpec=AmpSpec(1:L)/L; %%%%%%
+AmpSpec_dB=20*log10(AmpSpec); %Spectrum in dB, for the positive frequency part
+
+% %Get STD within the passband
+% Iin=find(abs(Freq)>=min(PassBand) & abs(Freq)<=max(PassBand));
+% STD=std(AmpSpec_dB(Iin));
+
+% %Plot the result
+% if PlotFlag
+%     subplot(3,1,3)
+%     plot(Freq/1000,AmpSpec_dB);
+%     xlim([0 Fs/2/1000]);
+%     title(sprintf('STD: %.1f dB; Filter Gain: %.1f dB',STD,GainByFilt));
+%     xlabel('Frequency (kHz)')
+%     ylabel('dB')
+% end
+L=nsig;
+%Freq=(1:L)/L*Fs/2;
+Freq=(1:L)/L*Fs;
+
+%figure;
+% subplot(2,2,1)
+% plot(tim,sig);grid on;
+
+subplot(2,2,3)
+
+plot(tim,sig);hold on;plot(tim,env,'m');
+grid on;xlim([0 50/1000]);
+title('N=2');xlabel('Time (s)');
+% subplot(2,2,2)
+% plot(Freq/1000,AmpSpec_dB);grid on;
+%     xlim([0 Fs/2/1000]);
+% %     title(sprintf('STD: %.1f dB; Filter Gain: %.1f dB',STD,GainByFilt));
+%     xlabel('Frequency (kHz)')
+%     ylabel('dB')
+    
+subplot(2,2,4)
+plot(Freq/1000,AmpSpec_dB);grid on;
+%    xlim([0 Fs/2/1000]);
+    xlim([0 2]);
+%     title(sprintf('STD: %.1f dB; Filter Gain: %.1f dB',STD,GainByFilt));
+    xlabel('Frequency (kHz)')
+    ylabel('dB')     
+    

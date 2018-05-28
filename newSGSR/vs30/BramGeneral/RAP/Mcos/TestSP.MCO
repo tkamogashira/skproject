@@ -1,0 +1,66 @@
+ECHO ON
+*-------------------------------------------
+*   RAP Macro for testing RATE curve
+*-------------------------------------------
+SGSR:
+DF A0406     //An SGSR dataset with values of the independent 
+ID 17-10-SPL //variable in ascending order and complete recording 
+OU SP
+DF A0406     //An SGSR dataset with values of the independent 
+ID 11-6-SPL  //variable in ascending order and incomplete recording 
+OU SP
+DF M0403D    //An SGSR dataset with values of the independent 
+ID 62-4-SPL  //variable in descending order and complete recording 
+OU SP
+DF A0404     //An SGSR dataset with values of the independent 
+ID 3-2-SPL   //variable in descending order and incomplete recording 
+OU SP
+DF A0307     //An SGSR dataset with values of the independent 
+ID 74-26-SPL //variable in random order and complete recording
+PP X 2
+OU SP
+OU RAS
+RR X 40 70
+PP X 2
+OU SP
+OU RAS
+//An SGSR dataset with values of the independent 
+//variable in random order and incomplete recording 
+//?????????????????????????????????????????????????
+EDF:
+//An EDF dataset with values of the independent 
+//variable in ascending order and complete recording 
+DF R95057 
+ID 7-3-BB
+PP X 2
+OU SP
+OU RAS
+//An EDF dataset with values of the independent 
+//variable in ascending order and incomplete recording 
+DF R95057
+ID 7-4-BBAM
+PP X 2
+OU SP
+OU RAS
+//An EDF dataset with values of the independent 
+//variable in descending order and complete recording 
+DF S94054
+ID 5-3-RCL
+PP X 2
+OU SP
+OU RAS
+//An EDF dataset with values of the independent 
+//variable in descending order and incomplete recording 
+DF S94054
+ID 12-9-RCM
+PP X 2
+OU SP
+OU RAS
+//An EDF dataset with values of the independent 
+//variable in random order and complete recording 
+//?????????????????????????????????????????????????
+//An EDF dataset with values of the independent 
+//variable in random order and incomplete recording 
+//?????????????????????????????????????????????????
+ECHO OFF
+RETURN

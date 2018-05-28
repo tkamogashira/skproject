@@ -1,0 +1,26 @@
+%DoMakeStimAndPstEz --
+
+
+if 1
+%    DataCell={...
+%            'd:\data\G021219\#0',;...
+%        }
+%   
+ N=18;
+ DataCell=cell(N+1,1);
+ for ii=0:N
+     DataCell{ii+1}=['d:\data\G021219\#' num2str(ii)];
+ end
+
+end
+
+NData=size(DataCell,1);
+%diary d:\data\diary.txt
+for iData=1:NData
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Root=DataCell{iData,1};
+    disp(Root);    
+    %Run
+    [StimIdx,pst]=MakeStimAndPstEz(Root);
+end
+%diary off

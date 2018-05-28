@@ -1,0 +1,6 @@
+package KQuest.GUI;
+
+public enum ConnectionType {
+
+    CONNECTION_OFFLINE, CONNECTION_ONLINE, CONNECTION_CONNECTING
+}

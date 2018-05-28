@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Continuous_Play", "Continuous_Play\Continuous_Play.vbproj", "{DE4F3F83-5F12-4F54-AB12-936A8BF1F353}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Circuit_Loader", "Circuit_Loader\Circuit_Loader.vbproj", "{C344C1D7-3B33-4D4C-8BCE-C67B0E83E541}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Band_Limited_Noise", "Band_Limited_Noise\Band_Limited_Noise.vbproj", "{4C9471A0-7E32-4559-B0C9-2D851C155952}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Continuous_Acquire", "Continuous_Acquire\Continuous_Acquire.vbproj", "{37B713E0-1991-4FB1-905F-DE0EB179B21B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Read_Data", "Read_Data\Read_Data.vbproj", "{C0FB18A9-A05A-4C0E-8BED-72E0F576E206}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TwoCh_Continuous_Play", "TwoCh_Continuous_Play\TwoCh_Continuous_Play.vbproj", "{76E3F135-4EFD-4146-821C-C5876BBB699B}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TwoCh_Continuous_Acquire", "TwoCh_Continuous_Acquire\TwoCh_Continuous_Acquire.vbproj", "{AFDAB176-2DDC-4E87-8B71-67B22528E7D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE4F3F83-5F12-4F54-AB12-936A8BF1F353}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4F3F83-5F12-4F54-AB12-936A8BF1F353}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{DE4F3F83-5F12-4F54-AB12-936A8BF1F353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4F3F83-5F12-4F54-AB12-936A8BF1F353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C344C1D7-3B33-4D4C-8BCE-C67B0E83E541}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{C344C1D7-3B33-4D4C-8BCE-C67B0E83E541}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{C344C1D7-3B33-4D4C-8BCE-C67B0E83E541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C344C1D7-3B33-4D4C-8BCE-C67B0E83E541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C9471A0-7E32-4559-B0C9-2D851C155952}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9471A0-7E32-4559-B0C9-2D851C155952}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{4C9471A0-7E32-4559-B0C9-2D851C155952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9471A0-7E32-4559-B0C9-2D851C155952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B713E0-1991-4FB1-905F-DE0EB179B21B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{37B713E0-1991-4FB1-905F-DE0EB179B21B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{37B713E0-1991-4FB1-905F-DE0EB179B21B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B713E0-1991-4FB1-905F-DE0EB179B21B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0FB18A9-A05A-4C0E-8BED-72E0F576E206}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{C0FB18A9-A05A-4C0E-8BED-72E0F576E206}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{C0FB18A9-A05A-4C0E-8BED-72E0F576E206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0FB18A9-A05A-4C0E-8BED-72E0F576E206}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76E3F135-4EFD-4146-821C-C5876BBB699B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E3F135-4EFD-4146-821C-C5876BBB699B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E3F135-4EFD-4146-821C-C5876BBB699B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E3F135-4EFD-4146-821C-C5876BBB699B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFDAB176-2DDC-4E87-8B71-67B22528E7D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFDAB176-2DDC-4E87-8B71-67B22528E7D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFDAB176-2DDC-4E87-8B71-67B22528E7D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFDAB176-2DDC-4E87-8B71-67B22528E7D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,26 @@
+% Tdiff(V6conditions) per an indivisual
+function TdiffIndivisual=V6toTdiffInd(V6)
+TdiffIndivisual(1,1)=VtoTdiff(V6(1,:));
+TdiffIndivisual(1,2)=VtoTdiff(V6(2,:));
+TdiffIndivisual(1,3)=VtoTdiff(V6(3,:));
+TdiffIndivisual(1,4)=VtoTdiff(V6(4,:));
+TdiffIndivisual(2,1)=VtoTdiff(V6(5,:));
+TdiffIndivisual(2,2)=VtoTdiff(V6(6,:));
+TdiffIndivisual(2,3)=VtoTdiff(V6(7,:));
+TdiffIndivisual(2,4)=VtoTdiff(V6(8,:));
+TdiffIndivisual(3,1)=VtoTdiff(V6(9,:));
+TdiffIndivisual(3,2)=VtoTdiff(V6(10,:));
+TdiffIndivisual(3,3)=VtoTdiff(V6(11,:));
+TdiffIndivisual(3,4)=VtoTdiff(V6(12,:));
+TdiffIndivisual(4,1)=VtoTdiff(V6(13,:));
+TdiffIndivisual(4,2)=VtoTdiff(V6(14,:));
+TdiffIndivisual(4,3)=VtoTdiff(V6(15,:));
+TdiffIndivisual(4,4)=VtoTdiff(V6(16,:));
+TdiffIndivisual(5,1)=VtoTdiff(V6(17,:));
+TdiffIndivisual(5,2)=VtoTdiff(V6(18,:));
+TdiffIndivisual(5,3)=VtoTdiff(V6(19,:));
+TdiffIndivisual(5,4)=VtoTdiff(V6(20,:));
+TdiffIndivisual(6,1)=VtoTdiff(V6(21,:));
+TdiffIndivisual(6,2)=VtoTdiff(V6(22,:));
+TdiffIndivisual(6,3)=VtoTdiff(V6(23,:));
+TdiffIndivisual(6,4)=VtoTdiff(V6(24,:))

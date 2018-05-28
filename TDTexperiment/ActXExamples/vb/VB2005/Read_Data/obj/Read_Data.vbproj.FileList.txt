@@ -1,0 +1,10 @@
+bin\Release\Read_Data.exe
+bin\Release\Read_Data.pdb
+bin\Release\Read_Data.xml
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Read_Data.frmRDMain.resources
+obj\Release\Read_Data.Resources.resources
+obj\Release\Read_Data.vbproj.GenerateResource.Cache
+obj\Release\Read_Data.exe
+obj\Release\Read_Data.xml
+obj\Release\Read_Data.pdb

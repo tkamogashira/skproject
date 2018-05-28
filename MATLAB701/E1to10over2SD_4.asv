@@ -1,0 +1,8 @@
+% FindMax
+function MaxCh=FindMax(M,N)
+[EachMaxVal,EachMaxLatIndex]=max(M(:,(1:204));
+[MaxChVal,MaxChLatIndex]=max(EachMaxVal);
+MaxCh=[MaxChLatIndex;N(1,MaxChLatIndex);EachMaxLatIndex(1,MaxChLatIndex),MaxChVal];
+assignin('base','MaxCh',MaxCh);
+plot(S((15:137),203)/1000,H(:,1),'b',S((15:137),203)/1000,H(:,2),'r'),grid on
+end

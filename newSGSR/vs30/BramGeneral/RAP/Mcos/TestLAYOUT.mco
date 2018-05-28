@@ -1,0 +1,52 @@
+*------------------------------------------
+* MACRO for testing the RAP Layouy Manager
+*------------------------------------------
+DF A0242 //Dataset 18-9-SPL of A0242
+DS -54
+//The default layout for unisubsequence plots, is a single plot
+//per page ...
+OU SP
+//For a multisubsequence plot the default layout is 3 2 ...
+OU PST
+//When a figure isn't finished, which is the case, the this
+//figure is completed by default with the current layout
+OU RAS //This is a unisubsequence plot!
+//When the layout of a figure is fully defined, this is the case
+//when either the current figure is not completed, or if the
+//layout is set be the user explicitly (NEEDS TO BE IMPLEMENTED), 
+//then the user can select the output with the SOU command ..
+SOU 2 2 //Output will be directed to second row and second column ...
+RR SEQ 1
+OU CH
+RR DEF
+//The default layout can always be overruled by the user. This
+//is done via the command PP. When this command is invoked a
+//new figure is always started ...
+PP 4 //Four plots on a page with a square layout ...
+OU ISI
+//The figure isn't complete, so again the current layout of the 
+//figure is used ...
+RR SEQ 1 4
+OU SP
+//The figure is now complete, but because the layout is still set
+//by the user, requesting a unisubsequence plot will still use the
+//square page layout ...
+OU RAS
+*-----------------------NEEDS TO BE IMPLEMENTED----------------------
+//With PP DEF the layout settings are set to default and a new figure
+//is always started afterwards ..
+*PP DEF
+*RR DEF
+*OU SP
+//With the command SOU NEW FIG a new figure is started but the current
+//layout, either set explicitly by the user or when the previous figure
+//wasn't completed, is kept for this new figure. This is different from
+//the PP command which discards every layout setting ...
+*SOU NEW FIG
+*OU PST
+*PP DEF
+*OU PST //Figure not yet completed ...
+*SOU NEW FIG
+*OU SP
+*--------------------------------------------------------------------
+RETURN

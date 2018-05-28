@@ -1,0 +1,54 @@
+*----------------------------------------------
+*   RAP macro for testing variable exporting
+*----------------------------------------------
+DF A0242 
+*----------------------------------------------
+DS 1 //Dataset 1-1-THR ...
+OU TH
+*Saving the calculated parameters for a plot in a
+*memory variable isn't strictly necessary, because
+*the substitution variables that stand for these
+*calculated parameters are only discarded if a new
+*plot of the same type is created ... Saving in memory
+*variables is only done for esthetic reasons ...
+GV V11 THCF //Remember Characteristic Frequency ...
+GV V12 THSPON //Remember Spontaneous Activity ...
+DS -1 //Dataset 1-2-SPL ...
+PP X 2
+YN 0
+YM 1
+OU SYNC
+GV V13 VSMMAX //Remember Maximum Synchronicity ...
+YN DEF
+YM DEF
+OU PHASE
+PAUSE
+CLO ALL
+GV V100 1 //Initializing the counter variable ...
+EXP V11 "D(" V100 ").CF"   //Creating structure-array D in
+EXP V12 "D(" V100 ").SA"   //the MATLAB base workspace ...
+EXP V13 "D(" V100 ").MaxR"
+*----------------------------------------------
+DS 22 //Dataset 8-1-THR ...
+OU TH
+GV V11 THCF //Remember Characteristic Frequency ...
+GV V12 THSPON //Remember Spontaneous Activity ...
+DS -18 //Dataset 8-5-SPL ...
+PP X 2
+YN 0 
+YM 1
+OU SYNC
+GV V13 VSMMAX //Remember Maximum Synchronicity ...
+YN DEF
+YM DEF
+OU PHASE
+PAUSE
+CLO ALL
+GV V100 V100+1 //Augmenting the counter ...
+EXP V11 "D(" V100 ").CF"   //Creating structure-array D in
+EXP V12 "D(" V100 ").SA"   //the MATLAB base workspace ...
+EXP V13 "D(" V100 ").MaxR"
+*----------------------------------------------
+*After this RAP macro, the structure-array D is created
+*in the MATLAB workspace ...
+RETURN

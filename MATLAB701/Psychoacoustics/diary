@@ -1,0 +1,816 @@
+uiopen('E:\20050721Vocal_Karino\voiceonset1.mat', true);
+openvar('ChanName', ChanName);
+channelcheck=[ChanName;ave_0001(1,(1:234))];
+??? ｴﾗｰ: ==> vertcat
+ブラケットで囲まれたすべての行要素は、同じ行数を持つ必要があります
+
+channelcheck=ave_0001(1,:);
+openvar('channelcheck', channelcheck);
+openvar('ChanName', ChanName);
+openvar('Sheet1', Sheet1);
+openvar('channelcheck', channelcheck);
+diary off
+uiopen('C:\Program Files\MATLAB704\work\SSto4HzFFTSinePhaseCo625.m',1)
+uiopen('C:\Program Files\MATLAB704\work\Ellip_RMS_forASSR.m',1)
+uiopen('C:\Program Files\MATLAB704\work\diary',1)
+time=ave_0001(:,235);
+openvar('time', time);
+openvar('channelcheck', channelcheck);
+uiopen('C:\Program Files\MATLAB704\work\Ellip_RMS_forASSR.m',1)
+uiopen('C:\Program Files\MATLAB704\work\Butter_RMS_forASSR.m',1)
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 13 
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+  Columns 14 through 21 
+
+   NaN   NaN   NaN   NaN   NaN   NaN   NaN   NaN
+
+uiopen('C:\Program Files\MATLAB704\work\Ellip_forVocal.m',1)
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   -0.0977   -0.0906   -0.1024   -0.0947   -0.0900   -0.0968    0.7996
+
+  Columns 8 through 14 
+
+   -0.0904   -0.0908   -0.0900   -0.0973   -0.0894   -0.0931   -0.0958
+
+  Columns 15 through 21 
+
+   -0.0951   -0.0843   -0.0986   -0.0926   -0.0966   -0.1006   -0.0978
+
+uiopen('C:\Program Files\MATLAB704\work\Ellip_forVocal.m',1)
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  1.0e+258 *
+
+  Columns 1 through 7 
+
+   -0.0384    0.0716   -0.0325   -0.0017    0.3132    0.0144    0.2649
+
+  Columns 8 through 14 
+
+   -0.0351   -0.0370   -0.4199   -0.0035   -0.0719   -0.1307   -0.0110
+
+  Columns 15 through 21 
+
+    1.2963    0.3613   -0.0143   -0.0023   -0.0170   -0.0024   -0.0044
+
+uiopen('C:\Program Files\MATLAB704\work\Ellip_forVocal.m',1)
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+警告: 行列は特異値に近いかスケールがよくありません。
+         結果は正しくないかも知れません。RCOND = 1.437805e-016.
+> In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,81,1">filtfilt at 81</a>
+  In <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\filtfilt.m,49,1">filtfilt at 49</a>
+  In <a href="error:C:\Program Files\MATLAB704\work\Ellip_forVocal.m,4,1">Ellip_forVocal at 4</a>
+
+ans =
+
+  Columns 1 through 7 
+
+   -1.0573   -1.1680   -1.3223   -0.9461   -1.1166   -1.1122   28.7687
+
+  Columns 8 through 14 
+
+   -1.1924   -0.9687   -1.0976   -1.2683   -1.1811   -1.1158   -1.3352
+
+  Columns 15 through 21 
+
+   -1.2914   -0.9722   -1.2551   -1.4332   -1.2372   -1.2059   -1.2137
+
+uiopen('C:\Program Files\MATLAB704\work\Ellip_forVocal.m',1)
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   -0.0407   -0.0285   -0.0329   -0.0382   -0.0276   -0.0369   -0.6193
+
+  Columns 8 through 14 
+
+   -0.0202   -0.0392   -0.0261   -0.0352   -0.0297   -0.0408   -0.0287
+
+  Columns 15 through 21 
+
+   -0.0212   -0.0350   -0.0341   -0.0145   -0.0327   -0.0328   -0.0292
+
+uiopen('C:\Program Files\MATLAB704\work\Ellip_forVocal.m',1)
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   -0.0462   -0.0338   -0.0388   -0.0436   -0.0329   -0.0425   -0.6239
+
+  Columns 8 through 14 
+
+   -0.0255   -0.0444   -0.0312   -0.0410   -0.0352   -0.0463   -0.0345
+
+  Columns 15 through 21 
+
+   -0.0269   -0.0401   -0.0398   -0.0202   -0.0383   -0.0385   -0.0349
+
+Ellip_forVocal(ave_0001(:,(1:204)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   34.7812   21.6350   -0.9273  -40.8918   11.6268    0.8647   62.3528
+
+  Columns 8 through 14 
+
+   21.2261    5.8335   21.7879   -9.3293   -3.4595   -5.9056  -28.9556
+
+  Columns 15 through 21 
+
+   18.9091   -9.1238   29.2866  -13.0504  -15.6990  -22.4356    1.0124
+
+  Columns 22 through 28 
+
+   -7.4481    2.9138  -11.0258    4.4028  -15.1221   -9.3462  -19.3450
+
+  Columns 29 through 35 
+
+  -12.7634  -11.1003    2.7205   -8.4144   17.5509   -3.0294   -7.3089
+
+  Columns 36 through 42 
+
+   14.2259    2.0177   -2.5172    3.6857   -9.3408   -7.7254    3.7125
+
+  Columns 43 through 49 
+
+    3.8534    8.5412    3.8245   -0.7949    8.4551   -1.9364  -13.6538
+
+  Columns 50 through 56 
+
+    5.3716    7.2389    5.5452    2.4399   16.1624  -15.3135   15.5252
+
+  Columns 57 through 63 
+
+  -24.3968    3.4323   16.8891    0.5375  -12.0981   14.3156  -21.1242
+
+  Columns 64 through 70 
+
+   15.3675   16.7249    1.8732   22.3443   18.6360   10.2421    2.8371
+
+  Columns 71 through 77 
+
+   -2.6765   16.7067    0.8557   18.0279   -3.3617   -1.5799    3.7666
+
+  Columns 78 through 84 
+
+   -6.1376  -30.7581   17.6588    1.0062    8.1884    6.2824    5.4800
+
+  Columns 85 through 91 
+
+  -19.8139    9.7253   -9.6339   -0.1472   13.0660   15.3432   -2.0638
+
+  Columns 92 through 98 
+
+   12.7620   18.9800    3.4241   -1.2878    5.4006    9.2611   12.0425
+
+  Columns 99 through 105 
+
+   29.4130   -9.5799  -18.2626   -5.3380  -37.5389  -10.8811  -37.5118
+
+  Columns 106 through 112 
+
+   16.7979    2.9184   -7.9419   20.7064  -19.7778   46.3140  -36.6413
+
+  Columns 113 through 119 
+
+  112.9830  -10.4506   79.7555    4.8795   18.0406  -40.7990  -15.9427
+
+  Columns 120 through 126 
+
+  -28.5186  -21.1968  -16.0681   20.5926  -15.0630   90.7982  -53.3247
+
+  Columns 127 through 133 
+
+   51.2169  -14.4746   35.6682  -40.9586   65.9985  -18.5669   -5.1214
+
+  Columns 134 through 140 
+
+  -10.3540  -20.0280  -13.6218  -10.0204    4.5672   -6.8819   -0.9089
+
+  Columns 141 through 147 
+
+  -12.6589   -1.9638   15.4118    9.2939   20.7845   -6.9373   13.7975
+
+  Columns 148 through 154 
+
+   -1.4845   -4.5156   14.2004   -4.9908   13.4125    0.3596   -2.2099
+
+  Columns 155 through 161 
+
+   -7.8028    5.6203    0.8644   19.5141   -2.8866   -2.2947   33.9285
+
+  Columns 162 through 168 
+
+   15.1549   46.9887   -9.5884   18.6254   10.0713   -5.9947   14.4426
+
+  Columns 169 through 175 
+
+    9.3133   24.7503    1.0401   -1.9247    2.5150    8.8594   14.0969
+
+  Columns 176 through 182 
+
+   37.5991    9.2512    9.6244   -5.9971   16.4248   -2.3136   -1.9616
+
+  Columns 183 through 189 
+
+  -18.0114   22.9389   -8.3972   44.1077   -1.7789    7.0489   12.3768
+
+  Columns 190 through 196 
+
+   18.0769   -4.7556   16.6967    0.7060    8.3768   19.4221    6.7064
+
+  Columns 197 through 203 
+
+   -9.1569   29.0699  -14.5258    8.4473   -3.7030   21.3242    3.5542
+
+  Column 204 
+
+   17.2652
+
+diary off
+Ellip_forVocal(ave_0001(:,(1:204)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+  -73.1431   16.0814   37.5903   -2.5815   42.5793   18.6386   -1.7887
+
+  Columns 8 through 14 
+
+    1.0001   38.6664  -21.2926   18.5308    0.9970   19.6122   35.6980
+
+  Columns 15 through 21 
+
+   28.4136   -6.3981  -56.0971   -0.2224   26.2699   29.5008  -11.7638
+
+  Columns 22 through 28 
+
+   13.5540   17.0350   11.3923  -14.0396  -15.5745    8.9774   28.1551
+
+  Columns 29 through 35 
+
+    4.3498    9.4064  -25.6183    5.4154  -41.5796    2.1437  -26.2425
+
+  Columns 36 through 42 
+
+  -14.0281   -0.4250    2.0360   30.9564   28.1590  -12.5736   -0.7449
+
+  Columns 43 through 49 
+
+   -6.0393   -6.4272   -7.8124   -6.0670   -4.6381    0.6711    0.2666
+
+  Columns 50 through 56 
+
+  -10.4334    9.6471   15.5237  -13.9738    0.4907   -0.4589    4.3092
+
+  Columns 57 through 63 
+
+  -45.7851   25.7472  -16.0510   22.7672  -54.4148   -0.2713  -26.0548
+
+  Columns 64 through 70 
+
+   -7.7587   -7.3912    6.5198  -14.1021   -0.6098  -12.0219   -3.5782
+
+  Columns 71 through 77 
+
+  -14.7269  -14.3517   -3.6476   -2.3567  -20.3937   -6.9833   -2.5968
+
+  Columns 78 through 84 
+
+  -10.8538   17.0380  -17.1360   -2.6463   -4.5023    7.0618    3.4408
+
+  Columns 85 through 91 
+
+  -12.8990   -8.1965   -8.9776    5.5908  -13.5933  -31.4471   -3.2176
+
+  Columns 92 through 98 
+
+  -13.3182  -23.4833  -19.1943  -23.7308    4.3381  -42.9259    2.2117
+
+  Columns 99 through 105 
+
+  -45.3301   13.3732  -12.2726   18.7695    4.5500   -0.7802   28.1659
+
+  Columns 106 through 112 
+
+  -19.6630   -8.4607    7.4424   50.2823   12.1680   43.0592   18.1693
+
+  Columns 113 through 119 
+
+   49.5674  -32.0964   40.3574   16.2016   25.6711    6.9807   18.1920
+
+  Columns 120 through 126 
+
+   21.8903   13.1536   -1.8030   20.1786   -5.5140   48.5002  -47.7249
+
+  Columns 127 through 133 
+
+   29.2486  -27.0890   13.5005  -11.4471   13.2743  -50.3756   -9.5911
+
+  Columns 134 through 140 
+
+   -8.0096    6.0149   -0.3034  -11.0216   13.8252   -7.1424   -2.2533
+
+  Columns 141 through 147 
+
+   -6.0387   -7.2935    1.0157  -20.1971    2.4648  -19.4745   16.3972
+
+  Columns 148 through 154 
+
+  -22.7053  -10.0114   -2.0388   -1.7353    1.3263  -24.2163    3.8436
+
+  Columns 155 through 161 
+
+   -4.1420   -9.7462    4.4406  -31.7418   15.2214  -23.9136   25.0041
+
+  Columns 162 through 168 
+
+  -28.7421   17.6074  -28.7691  -15.8469   -2.5191   16.2457   11.0866
+
+  Columns 169 through 175 
+
+   -3.1986   -7.4766  -24.8512   10.8184  -25.2867   -6.7581  -21.5295
+
+  Columns 176 through 182 
+
+  -11.6360   -0.5449  -25.8945    9.1362    0.6042  -14.6195    2.7155
+
+  Columns 183 through 189 
+
+  -13.8722  -13.6301   -2.9290  -19.0455   -8.6227   17.5606   -6.6744
+
+  Columns 190 through 196 
+
+  -22.6145   -4.8063  -17.6813   42.0501  -23.7575   49.1188  -24.2784
+
+  Columns 197 through 203 
+
+  -34.5712   19.9743   51.5257  -18.4185   36.2169  -38.2942  -48.8124
+
+  Column 204 
+
+  -73.4515
+
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+    0.0757    0.0606    0.0667    0.0844    0.0593    0.0736    2.1088
+
+  Columns 8 through 14 
+
+    0.0494    0.0731    0.0581    0.0681    0.0641    0.0812    0.0641
+
+  Columns 15 through 21 
+
+    0.0533    0.0673    0.0702    0.0414    0.0664    0.0649    0.0650
+
+Butter_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+??? Input argument "Wn" is undefined.
+
+ｴﾗｰ ==> <a href="error:C:\Program Files\MATLAB704\toolbox\signal\signal\ellip.m,39,1">ellip at 39</a>
+[btype,analog,errStr] = iirchk(Wn,varargin{:});
+
+ｴﾗｰ ==> <a href="error:C:\Program Files\MATLAB704\work\Butter_forVocal.m,3,1">Butter_forVocal at 3</a>
+[b,a] = ellip(2,[0.1/300 10/300],'stop');
+
+uiopen('C:\Program Files\MATLAB704\work\Butter_forVocal.m',1)
+uiopen('C:\Program Files\MATLAB704\work\Ellip_forVocal.m',1)
+Butter_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   -0.0951   -0.0800   -0.0918   -0.0898   -0.0803   -0.0886    0.5195
+
+  Columns 8 through 14 
+
+   -0.0822   -0.0949   -0.0818   -0.0844   -0.0797   -0.0878   -0.0851
+
+  Columns 15 through 21 
+
+   -0.0778   -0.0803   -0.0912   -0.0712   -0.0872   -0.0972   -0.0888
+
+Ellip_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   -0.0462   -0.0338   -0.0388   -0.0436   -0.0329   -0.0425   -0.6239
+
+  Columns 8 through 14 
+
+   -0.0255   -0.0444   -0.0312   -0.0410   -0.0352   -0.0463   -0.0345
+
+  Columns 15 through 21 
+
+   -0.0269   -0.0401   -0.0398   -0.0202   -0.0383   -0.0385   -0.0349
+
+Ellip_forVocal(ave_0001(:,(1:204)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   34.7812   21.6350   -0.9273  -40.8918   11.6268    0.8647   62.3528
+
+  Columns 8 through 14 
+
+   21.2261    5.8335   21.7879   -9.3293   -3.4595   -5.9056  -28.9556
+
+  Columns 15 through 21 
+
+   18.9091   -9.1238   29.2866  -13.0504  -15.6990  -22.4356    1.0124
+
+  Columns 22 through 28 
+
+   -7.4481    2.9138  -11.0258    4.4028  -15.1221   -9.3462  -19.3450
+
+  Columns 29 through 35 
+
+  -12.7634  -11.1003    2.7205   -8.4144   17.5509   -3.0294   -7.3089
+
+  Columns 36 through 42 
+
+   14.2259    2.0177   -2.5172    3.6857   -9.3408   -7.7254    3.7125
+
+  Columns 43 through 49 
+
+    3.8534    8.5412    3.8245   -0.7949    8.4551   -1.9364  -13.6538
+
+  Columns 50 through 56 
+
+    5.3716    7.2389    5.5452    2.4399   16.1624  -15.3135   15.5252
+
+  Columns 57 through 63 
+
+  -24.3968    3.4323   16.8891    0.5375  -12.0981   14.3156  -21.1242
+
+  Columns 64 through 70 
+
+   15.3675   16.7249    1.8732   22.3443   18.6360   10.2421    2.8371
+
+  Columns 71 through 77 
+
+   -2.6765   16.7067    0.8557   18.0279   -3.3617   -1.5799    3.7666
+
+  Columns 78 through 84 
+
+   -6.1376  -30.7581   17.6588    1.0062    8.1884    6.2824    5.4800
+
+  Columns 85 through 91 
+
+  -19.8139    9.7253   -9.6339   -0.1472   13.0660   15.3432   -2.0638
+
+  Columns 92 through 98 
+
+   12.7620   18.9800    3.4241   -1.2878    5.4006    9.2611   12.0425
+
+  Columns 99 through 105 
+
+   29.4130   -9.5799  -18.2626   -5.3380  -37.5389  -10.8811  -37.5118
+
+  Columns 106 through 112 
+
+   16.7979    2.9184   -7.9419   20.7064  -19.7778   46.3140  -36.6413
+
+  Columns 113 through 119 
+
+  112.9830  -10.4506   79.7555    4.8795   18.0406  -40.7990  -15.9427
+
+  Columns 120 through 126 
+
+  -28.5186  -21.1968  -16.0681   20.5926  -15.0630   90.7982  -53.3247
+
+  Columns 127 through 133 
+
+   51.2169  -14.4746   35.6682  -40.9586   65.9985  -18.5669   -5.1214
+
+  Columns 134 through 140 
+
+  -10.3540  -20.0280  -13.6218  -10.0204    4.5672   -6.8819   -0.9089
+
+  Columns 141 through 147 
+
+  -12.6589   -1.9638   15.4118    9.2939   20.7845   -6.9373   13.7975
+
+  Columns 148 through 154 
+
+   -1.4845   -4.5156   14.2004   -4.9908   13.4125    0.3596   -2.2099
+
+  Columns 155 through 161 
+
+   -7.8028    5.6203    0.8644   19.5141   -2.8866   -2.2947   33.9285
+
+  Columns 162 through 168 
+
+   15.1549   46.9887   -9.5884   18.6254   10.0713   -5.9947   14.4426
+
+  Columns 169 through 175 
+
+    9.3133   24.7503    1.0401   -1.9247    2.5150    8.8594   14.0969
+
+  Columns 176 through 182 
+
+   37.5991    9.2512    9.6244   -5.9971   16.4248   -2.3136   -1.9616
+
+  Columns 183 through 189 
+
+  -18.0114   22.9389   -8.3972   44.1077   -1.7789    7.0489   12.3768
+
+  Columns 190 through 196 
+
+   18.0769   -4.7556   16.6967    0.7060    8.3768   19.4221    6.7064
+
+  Columns 197 through 203 
+
+   -9.1569   29.0699  -14.5258    8.4473   -3.7030   21.3242    3.5542
+
+  Column 204 
+
+   17.2652
+
+Butter_forVocal(ave_0001(:,(1:204)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   33.7596   40.5705    3.4378  -54.7032   33.8737    3.5487   91.4451
+
+  Columns 8 through 14 
+
+   34.6066   35.5963   21.9146  -17.4797  -18.7593   -4.4295  -29.8217
+
+  Columns 15 through 21 
+
+   50.0592  -20.0962   18.0197  -34.5163  -14.9956  -26.0705  -10.7317
+
+  Columns 22 through 28 
+
+  -19.0620   15.5207  -17.3283    0.5574  -39.8648  -23.9017  -27.7360
+
+  Columns 29 through 35 
+
+  -26.3350  -23.8642   -4.0230  -16.7718   10.1259  -15.7295    8.2078
+
+  Columns 36 through 42 
+
+   -1.9316   -6.7941  -18.7528   -4.7809  -24.4944   -0.1124  -16.9140
+
+  Columns 43 through 49 
+
+    0.3381  -17.0382   18.2522  -21.0246   -2.4608  -10.9041  -23.6179
+
+  Columns 50 through 56 
+
+   -8.1628   27.6476    8.3300    9.0321   21.1974   -6.7348   26.9281
+
+  Columns 57 through 63 
+
+  -30.2692  -15.9890   13.7198  -12.7885  -32.3653   -6.2725  -33.0736
+
+  Columns 64 through 70 
+
+   -4.4395   23.5178   -9.9245   28.4284    8.2555   12.2886  -14.5380
+
+  Columns 71 through 77 
+
+   -0.3037   -1.2791   -7.9757    0.3428   -1.0817  -19.4226   16.8059
+
+  Columns 78 through 84 
+
+  -20.0759  -24.0847    9.2826   -4.0249    5.1215   24.7663    9.7171
+
+  Columns 85 through 91 
+
+  -31.6560   -1.8478  -15.0650   -6.6481   25.6439    4.3387    5.9443
+
+  Columns 92 through 98 
+
+  -12.5101   20.6604    5.2978  -15.5916   20.0868   -1.5744    8.9441
+
+  Columns 99 through 105 
+
+   22.8606    8.1024  -38.4247   20.2351  -76.4423   -4.0537  -73.0806
+
+  Columns 106 through 112 
+
+   27.1538    0.5417   13.0291   49.8280   -8.9310   75.1771  -52.9330
+
+  Columns 113 through 119 
+
+  161.4130  -27.2312  124.5148    8.9879   44.6699  -40.5697  -17.4170
+
+  Columns 120 through 126 
+
+  -29.5946  -28.3785  -11.4405   35.9667  -17.4690  114.4729  -81.1066
+
+  Columns 127 through 133 
+
+   76.6735  -29.4308   39.0356  -36.5820   81.5748  -10.9910   -9.3674
+
+  Columns 134 through 140 
+
+   -9.0798  -38.7357   -8.1755   -4.7297    5.0569   -3.2439    1.8539
+
+  Columns 141 through 147 
+
+  -18.7257    6.0002   16.1085   12.7635   25.5035   -0.1770   12.0674
+
+  Columns 148 through 154 
+
+    6.7115   -0.7616   17.8967   -1.7734   17.4186   -4.7482   -1.9439
+
+  Columns 155 through 161 
+
+   -3.6882   18.4224    6.4801   28.8083    4.3546    9.5383   30.8107
+
+  Columns 162 through 168 
+
+   31.1311   54.3531    0.8570   32.4639   10.4846    1.4622   18.0659
+
+  Columns 169 through 175 
+
+   13.7253   36.9571   -1.8331    6.9903    3.6363   21.9089    7.4925
+
+  Columns 176 through 182 
+
+   51.1886   15.2005   21.0893   -2.4018   31.5213    3.9338    5.7516
+
+  Columns 183 through 189 
+
+  -31.4266   24.1796   -8.4331   55.6131    7.1843   26.1058   16.4378
+
+  Columns 190 through 196 
+
+   32.6350  -11.0559   26.2239  -15.9577   21.7443   18.6454   16.4415
+
+  Columns 197 through 203 
+
+  -38.9992   54.7839  -40.7730    8.5573  -29.8380   17.7555  -14.6164
+
+  Column 204 
+
+    1.5320
+
+Butter_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   -0.0951   -0.0800   -0.0918   -0.0898   -0.0803   -0.0886    0.5195
+
+  Columns 8 through 14 
+
+   -0.0822   -0.0949   -0.0818   -0.0844   -0.0797   -0.0878   -0.0851
+
+  Columns 15 through 21 
+
+   -0.0778   -0.0803   -0.0912   -0.0712   -0.0872   -0.0972   -0.0888
+
+uiopen('C:\Program Files\MATLAB704\work\Butter_forVocal.m',1)
+Butter_forVocal(ave_0001(:,(214:234)),400,ave_0001(:,235))
+
+ans =
+
+  Columns 1 through 7 
+
+   -0.0613   -0.0478   -0.0556   -0.0565   -0.0484   -0.0547    0.6309
+
+  Columns 8 through 14 
+
+   -0.0506   -0.0643   -0.0503   -0.0520   -0.0482   -0.0557   -0.0521
+
+  Columns 15 through 21 
+
+   -0.0439   -0.0502   -0.0587   -0.0389   -0.0540   -0.0637   -0.0542
+
+uiopen('C:\Program Files\MATLAB704\work\Ellip_forVocal.m',1)
+uiopen('C:\Program Files\MATLAB704\work\Butter_forVocal.m',1)
+diary off

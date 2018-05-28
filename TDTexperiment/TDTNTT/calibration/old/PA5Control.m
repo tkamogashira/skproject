@@ -1,0 +1,111 @@
+function varargout=PA5Control(varargin)
+%PA5Control -- Interface for the TDT system3 PA5
+%  Slightly easier than directly using invoke command
+%
+
+global PA5 %ActiveX Control handle
+
+%If no input is specified, list the options with some explanations
+if ~nargin
+    disp('###### PA5Control ######')
+    disp('Handle Name:  zBus (global)');
+    disp(' ')
+    disp('--- Command List ---')
+    disp('''Initialize'', DevNo | Define ActX object');
+    disp('''GetAtten'', DevNo | Get current attenuation');
+    disp('''SetAtten'', DevNo, Atten | Set attenuation');
+    
+    return
+else
+    Action=varargin{1};
+end
+
+switch lower(Action)
+case 'initialize' %Initialize RP2 and return the ActX handle
+    
+    %Make 2 elements cell array
+    if exist('PA5','var')~=1
+        PA5=cell(2,1);
+    end
+    
+    if nargin==2
+        DevNo=unique(varargin{2}); %Device number
+        
+        %Check the validity of device numbers
+        n=length(DevNo);
+        if any(~ismember(DevNo,[1 2]))
+            error('Illigal device number');
+        end
+
+        %Initialize
+        e=1;
+        for i=1:n
+            myDevNo=DevNo(i);
+            PA5{myDevNo}=actxcontrol('PA5.x',[5 5 26 26]);
+%            e=e * double(invoke(PA5{myDevNo},'ConnectPA5','USB',myDevNo));
+            e=e * double(invoke(PA5{myDevNo},'ConnectPA5',TDTInterface,myDevNo));
+            e=e * double(invoke(PA5{myDevNo},'Reset'));
+            e=e * double(invoke(PA5{myDevNo},'SetAtten',99.9)); %Initially, set large attenuation
+        end
+    else
+        error('Inputs must be Action and DevNo.');
+    end  
+ 
+    %Return the flag for error
+    if nargout
+        varargout{1}=e;
+    end
+case 'setatten' %Set attenuation
+    if nargin==3
+        DevNo=unique(varargin{2}); %Device number
+        Atten=varargin{3}; %Attenuation
+        
+        %Check the validity of device numbers
+        n=length(DevNo);
+        if any(~ismember(DevNo,[1 2]))
+            error('Illigal device number');
+        end
+        if length(Atten)~=n
+            error('Unmatched attenuation values');
+        end
+        
+        e=1;
+        for i=1:n
+            myDevNo=DevNo(i);
+            e=e * double(invoke(PA5{myDevNo},'SetAtten',Atten(i)));
+        end
+    else
+        error('Inputs must be Action, DevNo, and Atten.');
+    end  
+
+    %Return the flag for error
+    if nargout
+        varargout{1}=e;
+    end
+case 'getatten' %Get current attenuation
+    if nargin==2
+        DevNo=unique(varargin{2}); %Device number
+        
+        %Check the validity of device numbers
+        n=length(DevNo);
+        if any(~ismember(DevNo,[1 2]))
+            error('Illigal device number');
+        end
+        
+        e=1;
+        Atten=zeros(1,n);
+        for i=1:n
+            myDevNo=DevNo(i);
+            Atten(i)=double(invoke(PA5{myDevNo},'GetAtten'));
+        end
+        %Return the attenuation values
+        if nargout
+            varargout{1}=Atten;
+        end
+    else
+        error('Inputs must be Action and DevNo.');
+    end  
+
+otherwise
+    error(['Unrecognized action ''' Action '''']);
+end

@@ -1,0 +1,13 @@
+% PtoMap
+function SigChN=PtoMap(P,N)
+for C=1:202
+    if P(N,C)<0.01
+        plot(P(126,C),P(127,C),'kx'),hold on;
+    else
+        plot(P(126,C),P(127,C),'.'),hold on;
+    end;
+P(126,find(P(125,(1:202))>0)),    
+end
+
+
+

@@ -1,0 +1,112 @@
+%------------------------------------------------------
+%               DATAQUEST - ALIAS TABLE
+%------------------------------------------------------
+%Aliases are case-insensitive and must be unique, i.e.
+%an alias can only refer to one fieldname. But multiple
+%aliases can refer to the same fieldname ...
+%------------------------------------------------------
+%Alias          FieldName
+%------------------------------------------------------
+filename        ID.FileName
+datafile        ID.FileName
+fileformat      ID.FileFormat
+format          ID.FileFormat
+iseq            ID.iSeq
+seqnr           ID.iSeq
+stimtype        ID.StimType
+exptype         ID.StimType
+icell           ID.iCell
+cellnr          ID.iCell
+seqid           ID.SeqID
+dsid            ID.SeqID
+id              ID.SeqID
+time            ID.Time
+place           ID.Place
+experimenter    ID.Experimenter
+schname         ID.SchName
+schema          ID.SchName
+schemaid        ID.SchName
+%------------------------------------------------------
+nsub            Common.Nsub
+nrec            Common.NsubRecorded
+nrep            Common.Nrep
+ntimers         Common.Ntimers
+nchan           Common.Nchan
+channr          Common.ChanNr
+achan           Common.ChanNr
+dssmode         Common.DSSmode
+mdssmode        Common.DSSmode#1
+sdssmode        Common.DSSmode#2
+dssnr           Common.DSSnr
+mdssnr          Common.DSSnr#1
+sdssnr          Common.DSSnr#2
+indepnr         Common.IndepNr
+indepname       Common.IndepName
+xname           Common.IndepName#1
+yname           Common.IndepName#2
+unit            Common.IndepUnit
+indepunit       Common.IndepUnit
+xunit           Common.IndepUnit#1
+yunit           Common.IndepUnit#2
+tone            Common.isTone
+istone          Common.isTone
+noise           Common.isNoise
+isnoise         Common.isNoise
+repdur          Common.RepDur
+intdur          Common.RepDur
+burstdur        Common.BurstDur
+stimdur         Common.BurstDur
+stmdur          Common.BurstDur
+risedur         Common.RiseDur
+falldur         Common.FallDur
+itd             Common.ITD
+spl             Common.SPL
+freq            Common.Tone.CarFreq
+carfreq         Common.Tone.CarFreq
+fcar            Common.Tone.CarFreq
+modfreq         Common.Tone.ModFreq
+fmod            Common.Tone.ModFreq
+beatfreq        Common.Tone.BeatFreq
+fbeat           Common.Tone.BeatFreq
+fbeatmod        Common.Tone.BeatModFreq
+beatmodfreq     Common.Tone.BeatModFreq
+moddepth        Common.Tone.ModDepth
+dmod            Common.Tone.ModDepth
+flow            Common.Noise.Flow
+lowfreq         Common.Noise.Flow
+noiseflow       Common.Noise.Flow
+fhigh           Common.Noise.Fhigh
+highfreq        Common.Noise.Fhigh
+noisefhigh      Common.Noise.Fhigh
+bw              Common.Noise.BW
+noisebw         Common.Noise.BW
+rho             Common.Noise.Rho
+noiserho        Common.Noise.Rho
+polarity        Common.Noise.Polarity
+pol             Common.Noise.Polarity
+noisepol        Common.Noise.Polarity
+sign            Common.Noise.Polarity
+noisesign       Common.Noise.Polarity
+rseed           Common.Noise.RSeed
+seed            Common.Noise.RSeed
+noiseseed       Common.Noise.RSeed
+noisefname      Common.Noise.FileName
+noisefilename   Common.Noise.FileName
+noisedsid       Common.Noise.SeqID
+noiseid         Common.Noise.SeqID
+noiseseqid      Common.Noise.SeqID
+%-----------------------ARMIN--------------------------
+flipfreq        Specific.FlipFreq
+ffreq           Specific.FlipFreq
+conseed         Specific.seedC
+varlowseed      Specific.seedVlow
+varhighseed     Specific.seedVhigh
+polalow         Specific.polalow
+polahigh        Specific.polahigh
+polaconst       Specific.polaconst
+constear        Specific.ConstEar
+varear          Specific.VarEar
+akversion       Specific.AKVersion
+arminver        Specific.AKVersion
+arminversion    Specific.AKVersion
+%------------------------------------------------------

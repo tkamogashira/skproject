@@ -1,0 +1,121 @@
+function [Signal,Atten,TotalDurMs]=Files(varargin)
+%function [Signal,Atten,TotalDurMs]=Files(PathName,FileName,SPLStr,Fs)
+%Files -- Load the signal from the specified file
+%
+%<<Input>> 
+%PathName : Path name for the file.
+%FileName : File name (eg. Signal.wav)
+%SPL : (String) Nominal SPL of the signal (dB). This value is used to set
+%the attenuator, based on the minimum RMS (V) given by the info file
+%Fs: Sampling frequency (Hz)
+%
+%<<Output>>
+%Signal: (2-by-NPts matrix) Row vectors of signal; 1st and 2nd row for channels 1 and 2.
+%Atten : (1-by-2 matrix) Attenuations by PA5 for channel1 and 2
+%TotalDur: Scalar duration of signal (ms)
+%
+%By SF, 11/11/02
+%
+
+%Get input variables
+if length(varargin)<6
+    error('Insufficient number of input arguments');
+end
+[PathName,FileName,SilenceStr,SPLStr,MinMedMax,Fs]=deal(varargin{[1:5 end]});
+%Convert the string format of the stimulus paramters to numeric
+Silence=str2num(SilenceStr);
+SPL=str2num(SPLStr);
+
+%Get the filenames and check if they exist
+%File name for the stim data
+WavFName=fullfile(PathName,FileName);
+if exist(WavFName,'file')~=2
+    error([WavFName ' does not exist']);
+end
+%File name for the stim info
+[dum,FNameRoot,ext] = fileparts(FileName);
+InfFName=fullfile(PathName,[FNameRoot,'.inf']);
+if exist(InfFName,'file')~=2
+    error([InfFName ' does not exist']);
+end
+
+%Read the INF file
+Inf=ReadInfFile(InfFName);
+
+%Check the sampling rate
+if abs(Inf.Fs - Fs)/Fs>0.01
+    error('Fs does not match between the TDT and the Inf file');
+end
+
+%Load the Wav file
+Signal=LoadWavFile(WavFName,Inf);
+
+%Pad zeros for silence
+n1=ceil(Silence(1)/1000*Fs);
+n2=ceil(Silence(1)/1000*Fs);
+Signal=[zeros(2,n1) Signal zeros(2,n2)];
+
+%Duration of the stim
+TotalDurMs=(n1+Inf.NPts+n2)/Fs*1000;
+
+%Adjust SPL
+switch  lower(MinMedMax)
+    case 'min'
+        MyLevel=mean(Inf.MinLevel);
+    case 'med'
+        MeanLevel=mean(Inf.MedLevel);
+    case 'max'
+        MeanLevel=mean(Inf.MaxLevel);
+    otherwise
+        error('Unrecognized SPL setting');
+end
+Atten=[1 1]*MeanLevel-SPL;
+%Atten=[1 1]*20*log10(Inf.MinRMS)-SPL;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function Inf=ReadInfFile(FName)
+%Read the inf file
+%Each line of the file can be regarded as a matlab code
+
+Inf=[];
+fid=fopen(FName,'rt');
+while 1
+    tline = fgetl(fid);
+    if ~isstr(tline), break, end
+    eval(['Inf.' tline]);
+end
+fclose(fid);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function Signal=LoadWavFile(FName,Inf);
+%Load the Wav file
+
+%Determine the scale factor for the signal so that the amplitude ranges
+%between +/-10V
+switch lower(Inf.Precision)
+    case 'int16'
+        Scaler=10/(2^15);
+    case 'int32'
+        Scaler=10/(2^31);
+    otherwise %Assume that it's floating numbers representing (V)
+        Scaler=1;
+end        
+
+%Read the file
+fid=fopen(FName,'rb');
+[Signal,cnt]=fread(fid,inf,Inf.Precision);
+fclose (fid);
+
+%Check the size
+if Inf.NChan*Inf.NPts~=cnt
+    error('NPts does not match between the Wav and Inf files');
+end
+
+%Reshape and scale
+Signal=reshape(Signal,[2 Inf.NPts])*Scaler;
+
+
+
+

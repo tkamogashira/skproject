@@ -1,0 +1,717 @@
+*    ERROR.TXT
+*    CREATED : 1/25/1988  (RK)
+*    LAST MODIFIED : 2/11/2008  (RK)
+*    REVISION LEVEL : 1.143
+*    CONTAINS LIST OF ERROR CODES AND CORRESPONDING DESCRIPTIONS
+*    LINES THAT BEGIN WITH * ARE COMMENTS
+*
+*    THE FORMAT OF THE ERROR MESSAGES IS AS FOLLOWS :
+*      CHARS  1-5 : ERROR NUMBER
+*      CHAR     6 : NORMALLY BLANK (IF NON-BLANK THEN CONTINUATION LINE)
+*      CHARS 7-80 : DESCRIPTION OF ERROR
+*
+*    MOST ERROR DESCRIPTIONS ARE ONE LINE IN LENGTH. FOR CASES
+*    WHERE THE ERROR DESCR. OCCUPIES TWO OR MORE LINES, THE
+*    NUMBER FIELD FOR THE SECOND, THIRD ETC. LINES SHOULD BE LEFT
+*    BLANK, BUT ANY NON-BLANK CHARACTER SHOULD BE ENTERED IN COL. 6
+*
+*    THE ERROR DESCRIPTIONS MUST BE IN ASCENDING ORDER BY ERROR NO.
+*
+    0 No error, normal completion
+  101 Data set not found in data file
+  102 Invalid schema name
+     .This data set is not suitable for RAP analysis
+  103 INITSC or HINITSC must be called first
+  104 Data set ID must be specified first
+     .Please do so with the ID.. or DS.. commands
+  105 This is not an integer*4 variable
+  106 Variable name not found in schema
+  107 This is not a type REAL variable
+  108 This is not a repeating group name
+  109 This variable is not type "character"
+  110 Cannot divide by zero
+  111 Frequency is outside calibration range
+  112 Data file name must be specified first
+     .Please do so with the "DF ..." command
+  113 Cannot raise a negative value to any power
+  114 Cannot compute log of zero or negative number
+  115 Invalid number of repeating group occurences
+  116 RG did not occur this many times
+  117 Variable does not occur within specified RG
+  118 File not suitable for RAP analysis
+  119 Cannot compute square root of negative numbers
+  120 Sorry, this option not available yet
+  121 Supplied buffer is too small
+  122 Number of spikes exceeds buffer size
+  123 Variable value is undefined
+  124 Value of COTANGENT is infinity
+  125 Cannot compute FACTORIAL of negative or fractional numbers
+  126 Value too large to compute FACTORIAL
+  127 Invalid repeating group length
+  128 This variable is not type "vector string"
+  129 This variable is not type "vector RG"
+  130 Error converting Harris character to VAX character string
+  131 Error converting Harris integer to VAX integer
+  132 Error converting Harris floating point to VAX floating point
+  133 Invalid repeating group occurence number
+  134 Number of points is too small
+  135 This is not Tuning Curve data
+  136 Unable to estimate CF
+  137 Frequency increment is improper
+  138 Value too large to compute INT()
+  139 Character variable number out of range
+  140 Improper Schema name for this operation
+  141 Unable to spawn sub-process, try again, or consult programmer
+  144 Unable to convert from character string to integer array
+  145 Unable to get system time and/or date
+  146 Impossible error, consult programmer
+  147 Error converting from integer array to character string
+  148 Unable to obtain value of variable
+  149 Unable to extract unit number from DSID
+  150 This is not a valid General Waveform data set
+  151 Too few or too many points
+  152 Number of points must be power of two
+  153 Invalid time resolution
+  154 Unable to determine peak
+  155 Trial number is outside range specified by user
+  156 Number of points per cycle must be a power of two
+  157 Too many zero-crossings
+  158 Number of points in the two waveforms must be the same
+  159 Specified character string is of improper length
+  160 Syntax error
+  161 Variable value is out of range
+  162 Too many windows
+  163 Too few columns
+  164 Invalid spike number
+  165 Improper analysis for this program
+  166 Value must be positive, non-zero
+  167 Invalid message number
+  168 Invalid Unit Event Timer channel number
+  169 Curve fitting not possible because Fit Window is undefined
+  170 Invalid curve fit model number
+  171 Unable to find left parenthesis
+  172 Mismatch in number of parameters
+  173 Indexing is improper
+  174 Unable to form a new DSID
+  175 Work buffer is too small, try again, or consult programmer
+  176 Too few or too many points for gridding
+  177 Invalid plot orientation
+     .Possible choices are : DEF, PORTRAIT or LANDSCAPE
+  178 The two data sets must have the same header size
+  179 STATUS table contents appear damaged
+  180 Improper number of STATUS table variables
+  181 STATUS table must be initialized first by calling STBINI
+  182 Not enough space in directory for this data set
+  183 The general waveform file must be opened first
+  184 Band-pass range is invalid
+  185 Unable to extract sequence # from DSID
+  186 Invalid number of sub-tasks
+  187 Invalid number of sub-task parameters
+  188 Calibration table has not been read in yet
+     .Use the CID1 or CID2 command to specify Calibration ID first
+  189 Sub-task parameter RG length is invalid
+  190 Invalid number of coils
+  191 Too many points to rotate by
+  192 No postscript file was ever opened
+  193 All points in the buffer are zero
+  194 Number of FIT parameters exceeds number of observations
+  195 This is not a calibration data set
+  196 This calibration is for a different phone or DSS
+  197 Too many calibration values, buffer overflow
+  198 No general waveform has been specified yet
+  199 Increment value cannot be equal to zero
+  201 Parameter 1 is invalid
+  202 Parameter 2 is invalid
+  203 Parameter 3 is invalid
+  210 Unable to start process with DO_COMMAND, consult programmer
+  211 Differentiaition window must be an odd number between 3 and 31
+  212 Unable to compute slope or intercept
+  213 Date format is invalid
+  214 Invalid data set size
+  215 Too many events, buffer overflow
+  216 Invalid expression for "SYNCH"
+  217 Invalid number of speakers
+  218 Only variables of type "ARRAY" can be used for this operation
+  219 Not enough space in destination array
+  220 File is empty, no data found
+  221 Too few entries in directory
+  222 No entries were deleted
+  223 The FROM number cannot exceed the TO number
+  224 Invalid data set number
+  225 INITDF or INITRF must be called first
+  226 Entry already exists in directory
+  228 Data File directory is full
+  229 Bad Directory Header
+  231 Unable to read Event Flag, consult programmer, or try again
+  232 Unable to create VMS mailbox, consult programmer
+  233 Error in writing to VMS mailbox, consult programmer
+  234 Error in reading from VMS mailbox, consult programmer
+  235 Error in writing to VMS mailbox async, consult programmer
+  236 Error in assigning VMS mailbox, consult programmer
+  237 Error in opening VMS mailbox for I/O, consult programmer
+  238 Invalid event flag number, consult programmer
+  239 Error clearing event flag, consult programmer
+  240 Error waiting for event flag, consult programmer
+  241 Bad data in file
+  242 Unable to create global section, consult programmer
+  243 Unable to map global section, consult programmer
+  245 Unable to de-assign mailbox, consult programmer
+  246 Unexpected command via mailbox, consult programmer
+  247 Unable to create Page Frame Section, consult programmer
+  248 Error creating sub-process with $CREPRC, consult programmer
+  249 Error associating with Common Event Flag cluster, consult programmer
+  250 File Read error
+  251 File Write error
+  252 File Open error
+     .Please use the DIR command to check for file existence
+     .Also make sure you are authorized to access the file
+  253 Invalid Logical Unit Number
+  254 File name already includes directory spec
+  255 Unable to create file
+     .Please check disc quota and file name
+  256 This file already exists
+  260 Error opening the Parameter Storage File (PSF)
+  261 Unable to create logical name entry in job table
+  262 Unable to spawn sub-process
+  263 Invalid no. of characters in output buffer
+  264 Invalid pointer into buffer
+  265 Too many real variables, Buffer is full
+  266 Too many character variables, Buffer is full
+  267 Variable already defined as a different data type
+  268 Unable to de-assign I/O channel. Try again, or get help
+  269 Error writing to PSF (DCPF), try again or get help
+     .Make sure no one else is running a data collection program
+  270 Error calling GETJPI system service, try again or get help
+  271 Too many processes
+  272 Too many points in Tuning Curve, buffer overflow
+  273 UIS windows not installed on this system
+  274 Improper number of values in line-table buffer
+  275 Unable to get logical unit number
+  276 Unable to open system information file, try again or get help
+  277 Error reading the PSF (DCPF), try again or get help
+     .Make sure no else is running a data collection program
+  278 Too many stimulus points, buffer overflow
+     .Use the RR command to restrict range
+  279 Too few data points for 3-D plot
+  280 Improper data storage format
+  281 Unable to cancel pending I/O request(s), consult programmer
+  282 Too many spikes, buffer overflow
+     .Please use a shorter repetition time
+  283 Invalid output format
+  284 Too many data values for array variable, buffer overflow
+     .Please define a larger array size with the DIM command
+  285 No space to create temp. array, out of memory space
+  286 Invalid array size
+  287 Invalid SDA array location
+  288 Unable to determine DOP name, consult programmer
+  289 Array is undefined
+  290 Array sizes are not the same
+  291 Invalid array number
+  292 This array already exists with a diferent size
+  293 Unable to open DECwindow
+     .Try from a terminal that supports X-windows
+  294 A user file is already assigned to this number
+     .File open failed, try a different number
+  295 User file numbers can only be from 1 to 10
+  296 Number of variables in input list must be between 1 and 4
+  297 Free format is possible only if all variables are type "REAL"
+  298 User file is not open
+     . Please open first with the OPFILE command
+  299 Error calling $SETIMR system service, consult programmer, or try again
+  300 Too many stimulus points
+     .Use a lesser range, or fewer number of reps
+  301 Improper STATUS table type
+     .This data may not be suitable for RAP analysis
+  302 No histograms to plot
+  303 Invalid histogram type
+  304 Invalid output device or file
+  305 Improper display type
+  306 Invalid number of legend lines
+  307 Improper number of RA variables
+  308 Invalid number of plots along X-direction
+  309 Invalid number of plots along Y-direction
+  310 Improper number of repetitions
+  311 Improper number of sequences
+  312 Improper number of STATUS table pointers
+  313 Log increment not supported at this time
+  314 Invalid time base
+  315 Invalid stimulus duration
+  316 Invalid repetition interval
+  317 Improper number of DSS's
+  318 Invalid master DSS number
+  319 No data recorded at this stimulus point
+  320 Invalid value of sync. coefficient
+  321 Invalid Rise/Fall envelope shape
+  322 Invalid units for duration time
+  323 Invalid units for repetition interval
+  324 Invalid units for delay
+  325 Invalid units for time base
+  326 Unexpected signal from data collection program
+  327 Rayleigh Coeff. value must be between 0 and 1.0
+  328 Invalid repetition number
+  329 Only Type-2 STATUS table supported for this operation
+  330 STATUS Tables for the two data sets must be the same TYPE
+  331 Number of reps for the two data sets must be the same
+  332 Stimulus duration for the two data sets must be the same
+  333 Repetition interval for the two data sets must be the same
+  334 Number of RA variables for the two data sets must be the same
+  335 Variable increments for the two data sets must be the same
+  336 Format is undefined
+     .Please define first with "SET FORMAT ..."
+  337 Invalid variable type for this operation
+  338 Array element is out of bounds
+  339 Only Type-1 STATUS table supported for this operation
+  340 No data within specified time range
+     .Please pick a different range
+  341 Only array type variables can be sorted
+  342 Sorting order must be either "ascending" or "descending"
+  343 Invalid number of arrays
+  344 Too few points in array
+  345 All points in the array are "missing points"
+  346 Error reading from Postscript file
+  347 Error creating new Postscript file
+  348 Number of points must be greater than zero
+  349 Too many points for scatter plot
+  350 Invalid number of plot legends
+  351 Invalid command, or syntax error
+  352 Invalid number of grids
+  353 Invalid number of digits after decimal point
+  354 Invalid number of grids between labels
+  355 Invalid number of histogram bins
+  356 No binning frequency specified
+  357 This is not one of the RA variables
+  358 Binning frequency cannot be zero or negative
+  359 Invalid Plot type
+  360 Variable number is out of range
+  361 Invalid analysis window
+  362 Spike time cannot be negative
+  363 Invalid variable name
+  364 Destination-Parameter type mismatch
+  365 Invalid number of messages with plot
+  366 Too many statement labels in macro
+  367 Two or more statement labels are the same
+  368 Invalid macro level
+  369 Improper number of plot captions
+  370 Percent value must be between 0 and 100
+  371 Smoothing factor must be an odd number .LE. 31 (or zero)
+  372 Symbol codes must be greater than or equal to zero
+  373 Program not supported by XP command, try RUN instead
+  374 Destination of branch is unknown
+  375 Invalid binning frequency
+  376 Invalid no. of time slices for spectrogram plot
+  377 Macros can only be nested to three levels
+  378 Unable to open Macro file, please make sure it exists
+  379 Improper number of page captions
+  380 Too many histogram bins
+  381 Threshold too high
+  382 Macros can only be nested to two levels
+  383 Viewing angle must be in the range -180 to +180 degrees
+  384 Viewing distance cannot be zero or negative
+  385 Speed cannot be zero or negative
+  386 Tic increment value cannot be zero
+  387 Invalid caption value
+  388 Invalid caption number
+     .Must be between 1 and 100
+  389 Invalid number of arrows
+  390 Remote node name is invalid
+  391 Remote job name is invalid
+  392 Unable to connect to remote server process
+  393 Error writing to remote client
+  394 Unable to connect to remote client
+  395 Error reading from remote client
+  396 Invalid command from remote client
+  397 (0,0) position is not in the free-field data base
+  398 Requested position is not in the free-field data base
+  399 Invalid number of directory entries
+  400 Invalid file name
+  401 Unable to open STATPK file
+     .Please use the DIR command to check for file existence
+     .Also make sure you are authorized to access the file
+  402 STATPK file name must be specified first
+     .Use the "STF ..." command in RAP to do so
+  403 This is not a STATPK data file
+  404 Too many data sets in STATPK file
+  405 Destination file is full
+  406 Specified column not found in STATPK data set
+  407 Neither slope nor intercept specified
+  408 Invalid column number
+  409 Invalid point number
+  410 Destination file format is improper
+  411 Invalid number of columns (or variables)
+     .STATPK data sets must have between 1 and 127 columns
+  412 There is not enough space between data sets to insert this one
+  420 Invalid CSF entry number
+  421 INICSF must be called first
+  422 Unable to open STATUS Table file
+  423 Unable to write to STATUS Table file
+  424 No data in CSF for this entry
+  425 Bad directory entry in CSF
+  426 Unable to read from STATUS table file
+  427 Checksum error in STATUS table file
+  428 DSID does not match ID stored in STBF
+  429 Improper entries in STBF
+  430 Keyword not found in database
+  431 Too many points in calibration table in CSF
+  432 The X-var or Y-var must be FREQ to apply calibration phase correction
+  433 Invalid phone number
+  434 Invalid number of values in calibration table
+  435 Bad Freq. increment in calibration table
+  436 Unable to open mechanical calibration file
+  437 Mechanical calibration file name has not been specified
+  438 Mechanical calibration data set not found
+  439 Mechanical calibration has not been read in yet
+  440 Stimulus Paramter File is empty
+  441 Too many records in Stimulus Parameter File (SPF)
+  442 Time too long
+  443 Invalid time format, consult programmer, or try again
+  444 Too few records in the Cat Parameter File (CPF)
+  445 Bad data in Cat Parameter File (CPF)
+  446 Bad checksum in STBF header
+  447 The two waveforms must have the same playback resolution
+  448 Invalid Page Legend Number
+  451 Unable to open plot file
+  452 No metafile was created
+  453 Unable to create temporary work file
+  454 Spool file name must be specified first
+  455 Unable to create spool file
+  456 Unable to open spool file
+  457 Spool file write error
+  458 Improper number of metafiles
+  459 Poon notch cannot be created if CF < 4500 Hz
+  460 Too few or too many variable parameters, consult programmer
+  461 Two or more data sets have the same DSID
+  463 DSS not responding (STATUS-A is always 0)
+  464 DSS is busy (STATUS-C is always 0)
+  465 Too many points to sample with A/D, reduce rate or sampling time
+  466 A/D sampling error
+  467 A/D setup error
+  468 Too many GW files
+  469 Value out of range
+  470 DSS number is invalid
+  471 Sum of M1 and M2 must be no greater than 1.00
+  472 Master delay is too long
+  473 Unable to assign channel to A/D converter
+     .Make sure no else is using the A/D
+     .Try again, or get help
+  474 DSS I/O channel was not assigned earlier
+  475 Unable to close DSS I/O channel, try again
+  476 Unable to assign DSS I/O channel
+     .The DSS may be in use by some other user
+  477 DSS status-A bit is always zero
+     .The DSS power may be OFF
+  478 Insufficient GEWAB memory
+  479 Bad data in GEWAB header
+  480 Invalid GEWAB entry number
+  481 Frequency too high
+  482 PHASE should be between 0.0 and 1.0
+  483 Attenuator setting too high or too low
+     .Can only be between 0 and 127 dB
+  484 Value too large to be loaded into GEWAB memory
+  485 The same speaker cannot be selected for both DSS outputs
+  486 Invalid number of A/D channels
+  487 GEWAB start increment in this mode cannot exceed 32767
+  488 Sum of amplitude multipliers must not exceed 1.0
+  489 ITD cannot be varied for master DSS
+  490 Not a Microsoft PCM Format
+  491 Not in RIFF WAVE format
+  492 Stereo sound not supported at this time
+  493 Formats other than 8 or 16 bits not supported yet
+  494 Invalid variable specification for plot
+  495 No waveform available for this azimuth and elevation
+  496 No trials matched specified selection criteria
+  497 Auto-scaling not possible if histogram already binned
+  498 Cannot vary TONLVL if masking stimulus is TONE
+  499 Cannot vary GWLVL if masking stimulus is GW
+  501 Error in queueing I/O operation on the A/D device channel
+  502 Invalid gain - must be an integer equal to 1, 2, 4 or 8
+  503 Conversion count out of range - must be between 1 and 32767
+     .(for the ADQ-32 device, must be between 1 and 4294967296)
+  504 Handshaking error between ADQRD() and the A/D converter
+  505 ADQ-32 : Non-existent memory error
+  506 ADQ-32 : Clock overrun error
+  507 ADQ-32 : FIFO overflow error
+  508 ADQ-32 : End of process error
+  509 ADQ-32 : Some ADQ device error
+  510 A/D error number 510
+  511 A/D error number 511
+  512 A/D error number 512
+  513 A/D error number 513
+  514 A/D error number 514
+  515 A/D error number 515
+  516 A/D error number 516
+  517 A/D error number 517
+  518 A/D error number 518
+  519 A/D error number 519
+  520 ZIP array processor error
+  521 ZIP array processor error
+  522 ZIP array processor error
+  523 ZIP array processor error
+  524 ZIP array processor error
+  525 ZIP array processor error
+  526 ZIP array processor error
+  527 ZIP array processor error
+  528 ZIP array processor error
+  529 ZIP array processor error
+  530 ZIP array processor error
+  531 ZIP array processor error
+  532 ZIP array processor error
+  533 ZIP array processor error
+  534 ZIP array processor error
+  535 ZIP array processor error
+  536 ZIP array processor error
+  537 ZIP array processor error
+  538 ZIP array processor error
+  539 ZIP array processor error
+  556 Device Timeout, possible hardware error, try again or get help
+  571 mailbox is empty
+  572 Too many entries in directory
+  573 Cannot compute shuffled auto-correlation with less than 2 reps
+  574 Unsupported "Adapter" waveform type
+  575 Too many harmonics
+  576 Segment length must be greater than 0
+  577 Inter-segment gap must be positive or zero
+  578 Waveform Type-code for segmented waveforms must be from 20 to 29
+  579 A Median could not be determined
+  580 Command is meaningless in this mode
+  581 Improper range specification for file names
+  582 Plot position sequence no. is too large.
+     .Adjust with "SET PLPOS" or "PP #"
+  583 Unable to determine X- or Y-var increment
+     .Possibly there is no valid data available
+  584 Sorry, cannot modify value of "PI"
+  585 Sorry, cannot modify value of "E"
+  586 Stack overflow
+  587 Number of items in Stack cannot be negative
+  588 Undefined binary operator
+  589 Undefined unary operator
+  590 Parentheses out of order
+  591 Bad general waveform parameters
+  592 Cannot load GW value greater than 32767
+  593 Variable NAME-VALUE table is full
+  594 Only interlaced storage mode supported
+  595 Unknown System type
+  596 Unsupported file type
+  597 Unable to map memory mapped object
+  598 A Repeating Group entry is already open, call STBEN3R_END first
+  599 DEFTER must be called first
+  600 Mismatch in number of spikes
+  601 Unable to open process
+  602 Unable to terminate process
+  603 Process is not currently running
+  604 No permission to terminate process
+  605 Unable to load the library PSAPI.DLL
+  606 Unable to identify operating system
+  607 Unsupported operating system
+  608 Unknown filter type
+  609 Unable to open the CSF
+  610 Invalid number of channels
+  611 Unable to create the CSF
+  612 Error writing to the CSF
+  613 Unable to get computer name
+  614 Unable to open printer device
+  615 Error reading from the CSF
+  616 Invalid occurrence number
+  617 Max must be greater than Min
+  618 Unable to launch web browser
+  619 Unable to determine "Application Data" Folder
+  620 Directory path is too long
+  621 Directory not found
+  622 Unable to create directory
+  623 User Application Data Folder does not exist
+  624 Memory Mapped Object does not exist
+  625 Event Object name must be non-blank
+  626 Unable to create Event Object
+  627 There is no handle to this Event Object
+  628 Unable to Reset the Event Object
+  629 Unable to open Memory Mapped Object or File
+  630 Unable to map Memory Mapped Object or File
+  631 Unable to Set the Event Object
+  632 Invalid Process name
+  633 There is no Default Printer Queue Name
+  634 Unable to allocate memory
+  635 Unable to Enumerate Printers
+  636 Unable to StartDoc for printing
+  637 Unable to StartPage for printing
+  638 Unable to EndPage for printing
+  639 Environment variable not found
+  640 Invalid mutex-object name
+  641 Unable to create mutex-object
+  642 Mutex-object already exists
+  643 Key or Variable name is too long
+  644 Unable to open Registry Key
+  645 Unable to find specified variable in Registry
+  646 STATPK keyboard data entry mode not suported in Windows
+  647 The source and destination files must have the same format
+  648 Unable to load DLL
+  649 Invalid Drive or Directory name or number
+  650 Unable to determine MS Internet Explorer version number
+  651 Unable to create Metafile - Please delete any old ones
+  652 Error reading STATPK file header
+  653 Unable to open the DT-321 A/D converter
+  654 Unable to Initialize the DT-321 A/D converter
+  655 Unable to get DT-321 A/D sub-system handle
+  656 Unable to set DT-321 sampling rate
+  657 DT-321 Config failed
+  658 Unable to read back clock frequency from DT-321 A/D
+  659 Unable to get number of DMA channels for DT-321 A/D
+  660 Unable to set Data Sampling mode for DT-321 A/D
+  661 Unable to set Data Wrap mode for DT-321 A/D
+  662 Unable to start DT-321 A/D converter
+  663 Unable to set Triggered Scan option for DT-321 A/D
+  664 Unable to add buffer to DT-321 A/D ready queue
+  665 Unable to fetch DT-321 encoding method
+  666 Unable to Unmap Memory Mapped Object or File
+  667 Unable to close handle to Memory Mapped Object
+  668 Unable to set DT-321 clock source
+  669 Error clearing the DSS Rate Generators
+  670 Error setting/starting the DSS Rate Generators
+  671 Error setting up the PC-32
+  672 Error setting up the PC-44
+  673 Error calling dosqcommand()
+  674 Error in stopmode()
+  675 Error in startmode()
+  676 Error in initgwparams()
+  677 Error in setgwparams()
+  678 Error in loadgwinfo()
+  679 Error in loadgwwave()
+  680 Error in seqclrchan()
+  681 Error in setseqprms()
+  682 Error in createseq()
+  683 Error in setattn()
+  684 Frequency too high or too low
+  685 Sampling rate too high or too low
+  686 Error setting DT-321 Trigger Mode
+  687 Error flushing the DT-321 A/D buffers
+  688 Unable to Reset the DT-321 A/D converter
+  689 Error in clrrgext()
+  690 Error in setrgext()
+  691 A/D converter Buffer Overflow or Overrun
+  692 Error in restartmode()
+  693 Request line not available, or invalid line number
+  694 Dialog box failed
+  695 Error in reset44()
+  696 Invalid server name
+  697 Error in reset32()
+  698 Error in startseq()
+  699 Data must be converted first
+  700 Unable to get procedure address(es) from PSAPI.DLL
+  701 Unable to get process list, EnumProcesses failed
+  702 Unable to load the library KERNEL32.DLL
+  703 Unable to get procedure address(es) from KERNEL32.DLL
+  704 CreateToolhelp32Snapshot failed
+  705 Too few or too many processes
+  706 Two tone paradigm not supported for this analysis
+  707 Error in dss4initc33dsp()
+  708 Error in dss4mode()
+  709 Error in dss4dur()
+  710 Error in dss4freq()
+  711 Error in dss4phase()
+  712 Error in dss4rise()
+  713 Error in dss4fall()
+  714 Error in dss4armdsp()
+  715 Error in configtimerboad()
+  716 Error in ss4timrreset()
+  717 Error in ss4mdelay()
+  718 Error in ss4portrddc()
+  719 Error in ss4timrstrt()
+  720 Error in dss4attn()
+  721 Error in dss4closec33dsp()
+  722 Error in GetModuleFileName - Supplied buffer may be too small
+  723 Module Path name is invalid
+  724 Master/Slave selection must be between 1 and 2
+  725 Error in dss4stopdsp()
+  726 Error in getseqstat()
+  727 Error in dss4setsamplerate()
+  728 Error in dss4resettimer()
+  729 Error in dss4inittimer()
+  730 Error in dss4settimer()
+  731 Error in dss4settimer - (repint*nreps) is too large
+  732 Error in dss4settimer - (dur time is too large)
+  733 Error in GetCurrentDirectory - Supplied buffer may be too small
+  734 The values must be specified in pairs
+  735 Invalid number of points in "Exclude Stimulus Points" list
+  736 Error in dss4timerstat()
+  737 Output Metafile Name is too long
+  738 Error in dss4rgreset()
+  739 Invalid Rate Generator Number
+  740 Invalid Rate (for Rate Generator)
+  741 Invalid Start Mode (for Rate Generator)
+  742 Error in dss4rgrate()
+  743 Error in dss4rgarm()
+  744 Error in dss4rgdisarm()
+  745 Unable to open Equalizer Coefficients file
+  746 Number of A coeffs. cannot exceed number of B coeffs. in Equalizer file
+  747 Too many coefficients in Equalizer file
+  748 Error in dss4initmatrixselector()
+  749 Error in dss4signalconnect()
+  750 Error in dss4armtimer()
+  751 Error in dss4disarmtimer()
+  752 Error in dss4am()
+  753 Error in dss4lfm()
+  754 Error in dss4loadgewab()
+  755 Error in dss4setgewab()
+  756 Error in dss4gewabrise()
+  757 Error in dss4gewabfall()
+  758 Validity check failed
+  759 The file is not fixable for this type of error
+  760 Unable to get File Size
+  761 File name is too long
+  762 Invalid Program name
+  763 Error in dss4uetboot()
+  764 Error in dss4uetclose()
+  765 Error in dss4uetena()
+  766 Unable to create Named Pipe
+  767 Error writing to Named Pipe
+  768 Error opening Named Pipe
+  769 Mode value must be either 0 or 1
+  770 Unable to open diagnostic file
+  771 Invalid DSID (Data Set ID)
+  772 Ambiguous or indterminate Stimulus Type
+  773 Two RA Variables names cannot be identical
+  774 Cannot vary TONLVL and GWLVL on the same DSS
+  775 Increment value is improper
+  776 Unable to evaluate expression
+  777 Slave DSS cannot be on longer than Master DSS
+  778 Data Collection option must be Y or N
+  779 At least one UET channel must be selected
+  780 Invalid Sampling Time
+  781 Averaging Option must be Y ar N
+  782 Invalid A/D channel selection
+  783 At least one A/D channel must be selected
+  784 This is not a valid macro file
+  785 Animal ID must be specified
+  786 Invalid EDF type
+  787 Unable to create the data file (EDF)
+  788 Invalid buffer size
+  789 Unable to get TEMP path name
+  790 Error reading from Named Pipe
+  791 Specified Named Pipe does not exist
+  792 Delay is too small (cannot be zero)
+  793 Unable to delete file - it may be open by another application
+  794 Error in dss4rgrateact()
+  795 Only Triangular-FM supported at this time
+  796 Unable to read from Temp work file.
+  797 Error in dss4setdevnumbers()
+  798 Error in dss4rginit_fpga()
+  799 Error in dss4rgrate_fpga()
+  800 Error in dss4_rgstart_fpga()
+  801 Error in dss4rgstop_fpga()
+  802 Unable to obtain DSS hardware info
+  803 Invalid or out-of-range Item Number
+  804 Error in olDaSetChannelListSize (Data Translation function)
+  805 Error in olDaSetChannelListEntry (Data Translation function)
+  806 Unsupported file format
+  807 Error in olDaGetChannelListSize (Data Translation function)
+  808 Error in olDaGetSSCaps (Data Translation function)
+  809 Unsupported Waveform Format
+  810 Error in MultiByteToWideChar()
+  811 Error in CoCreateInstance()
+  812 Unable to resolve shortcut
+  813 Unable to load shortcut
+  814 Error in GetShortPathName
+  815 Unknown or unsupported .WAV file format
+  816 File version info size is not available from GetFileVersionInfoSize
+  817 File Version info is not available from GetFileVersionInfo
+  818 VerQueryValue failed
+  819 Version Info string is too small or too large
+  820 This operation supported on VAX format files only

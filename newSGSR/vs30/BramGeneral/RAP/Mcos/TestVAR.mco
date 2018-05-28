@@ -1,0 +1,118 @@
+ECHO ON
+MORE OFF
+*----------------------------------------------
+*   RAP macro for testing variable interface
+*----------------------------------------------
+*==============================================
+FIRST: DF A0242 //Dataset 92-6-FS-CL of A0242
+DS -162 
+*Datasets contains responses to a stimulus with
+*varied carrier frequency. This is a monaural
+*dataset, so no beat is present ...
+*----------------------------------------------
+RR SEQ 1 12
+PP X 4
+PP Y 3
+OU CH //Standard binning frequency is the carrier frequency ...
+GV V1 2 //In expressions containing a vector, in this example FCARR, scalar
+HI BF FCARR*V1-(XINC+2) //numeric variables and constants can be included ...
+OU CH
+GV V2 (FCARR*V1-(XINC/2)) //Also possible for GV command ...
+GV V1 FMOD ERR=SKIP //For SGSR datasets the modulation frequency is set to zero in the dataset when not used.
+SKIP: //It is important to note that this is not the case for EDF datasets, but to make things consistent in RAP
+//requesting modulation frequency from an SGSR dataset that has no modulation frequency gives an error ...
+PAUSE
+CLO ALL
+*==============================================
+SECOND: DF R00001 //Dataset 44-8-AB of R00001
+DS 412
+*----------------------------------------------
+*The following two statements give valid errors because FMOD is not a valid
+*substitution variable for this dataset ... Because of the errors the following
+*lines are commented out ...
+*GV V1 FMOD
+*HI BF FCARR*2-2*FMOD
+*GV V1 FCARR*2-2*FMOD
+PAUSE
+*==============================================
+THIRD: DF C0302 //Dataset 7-1-BFS of C0302
+DS -12
+*This dataset contains responses to a binaural
+*stimulus with varied carrier frequency and a
+*fixed beat between the ears ...
+*----------------------------------------------
+PP X 4
+PP Y 2
+OU CH //Standard Binning Frequency is the beat fequency on the carrier ...
+HI BF FCARR //Setting Binning Frequency on the carrier frequency of the Master DSS ...
+OU CH
+GV V4 FCARR#M-FCARR#S //Setting the Binning frequency to the beat of the carrier can
+IF V4 LT 0 GV V4 FCARR#S-FCARR#M //also be done manually ...
+HI BF V4
+OU CH
+HI BFI 50 50 //Setting the Binning Frequency manually by supplying start and increment
+OU CH //frequency ...
+HI BF FCARR*2-25 //Setting the Binning Frequency by supplying an expression ...
+OU CH
+HI BF DEF
+PP X 2
+PP Y 2
+RR X 150 300 //Resetting range doesn't affect the previous functionality ... In
+OU CH //expressions numeric variables that are a vector are still calculated correctly ...
+HI BF FCARR*2-25
+OU CH
+IF V4 EQ 2 ECHO The beat frequency on the carrier is 2 //Comparing a vector and a scalar ...
+PAUSE
+CLO ALL
+*==============================================
+FORTH: DF M0401 //Dataset 15-12-LMS of M0401
+DS -25
+*This dataset contains monaurally collected
+*spiketimes. Stimulus is a modulated fixed
+*carrier frequency ...
+*----------------------------------------------
+GV V1 FCARR-2*FMOD //FCARR is a scalar for this dataset and FMOD a vector ...
+*FCARR for the slave DSS doesn't exist, so trying to retrieve this should 
+*result in an error ...
+GV V1 FCARR#S ERR=ERROR
+BACK: OU CH //Standard Binning Frequency is the modulation frequency ...
+//Setting Binning Frequency to the fixed carrier frequency ...
+HI BF FCARR //This is a special case because FCARR is a scalar here ...
+OU CH
+PAUSE
+CLO ALL
+*==============================================
+FIFTH: DF C0214 //Dataset 9-11-BMS-MTF of C0214
+DS -50
+*This dataset contains binaurally collected
+*spiketimes. Stimulus is a modulated fixed
+*carrier frequency ...
+*----------------------------------------------
+PP X 4
+PP Y 3
+OU CH //Standard Binning Frequency is the beat fequency on the modulation ...
+HI BF FMOD //Setting Binning Frequency on the modulation frequency of the Master DSS ...
+OU CH
+HI BF FCARR //Setting Binning Frequency on the carrier frequency of the Master DSS ...
+OU CH
+//The following expression contains scalar and vector substitution variables and
+GV V1 (FCARR#M-FCARR#S)*(FMOD#M-FMOD#S) //therefore the expression results in a vector ...
+RR SEQ 1 6 //After restricting the range, the size of the vector isn't also reduced accordingly.
+GV V1 (FMOD#S-FMOD#M) //The size is always equal to the number of conditions recorded ...
+HI BF V1 //But still the binning frequency is taken correctly ...
+PP DEF
+OU CH
+//Some conditional expressions containing both scalars and vectors ...
+GV V1 FMOD
+IF V1 EQ FMOD ECHO Modulation frequency vector is equal to itself //Comparing two vectors of equal size ...
+GV V1 FMOD#M-FMOD#S
+IF V1 EQ -1 ECHO Beat modulation frequency is -1 //Comparing vector and scalar ...
+PAUSE
+CLO ALL
+*==============================================
+MORE ON
+ECHO OFF
+RETURN
+*===================LOCALS=====================
+ERROR: ECHO "An error occured!"
+GO BACK

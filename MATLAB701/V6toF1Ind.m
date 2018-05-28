@@ -1,0 +1,26 @@
+% F1(V6conditions) per an indivisual
+function F1Indivisual=V6toF1Ind(V6)
+F1Indivisual(1,1)=VtoF1(V6(1,:));
+F1Indivisual(1,2)=VtoF1(V6(2,:));
+F1Indivisual(1,3)=VtoF1(V6(3,:));
+F1Indivisual(1,4)=VtoF1(V6(4,:));
+F1Indivisual(2,1)=VtoF1(V6(5,:));
+F1Indivisual(2,2)=VtoF1(V6(6,:));
+F1Indivisual(2,3)=VtoF1(V6(7,:));
+F1Indivisual(2,4)=VtoF1(V6(8,:));
+F1Indivisual(3,1)=VtoF1(V6(9,:));
+F1Indivisual(3,2)=VtoF1(V6(10,:));
+F1Indivisual(3,3)=VtoF1(V6(11,:));
+F1Indivisual(3,4)=VtoF1(V6(12,:));
+F1Indivisual(4,1)=VtoF1(V6(13,:));
+F1Indivisual(4,2)=VtoF1(V6(14,:));
+F1Indivisual(4,3)=VtoF1(V6(15,:));
+F1Indivisual(4,4)=VtoF1(V6(16,:));
+F1Indivisual(5,1)=VtoF1(V6(17,:));
+F1Indivisual(5,2)=VtoF1(V6(18,:));
+F1Indivisual(5,3)=VtoF1(V6(19,:));
+F1Indivisual(5,4)=VtoF1(V6(20,:));
+F1Indivisual(6,1)=VtoF1(V6(21,:));
+F1Indivisual(6,2)=VtoF1(V6(22,:));
+F1Indivisual(6,3)=VtoF1(V6(23,:));
+F1Indivisual(6,4)=VtoF1(V6(24,:))

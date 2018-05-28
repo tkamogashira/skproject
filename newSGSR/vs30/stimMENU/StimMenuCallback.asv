@@ -1,0 +1,148 @@
+
+
+
+function StimMenuCallback(varargin);
+
+% generic callback function for stimulus Menu controls other than PRP stuff
+
+global PRPstatus StimMenuStatus
+menuName = PRPstatus.prefix;
+hh = StimMenuStatus.handles;
+
+uih = gcbo;
+TAG = get(gcbo,'tag');
+
+% last-visited edit control will not be updated if it is somehow "active"...
+% ... so disable all controls before updating them
+PRPsetButtons('stopping'); 
+switch TAG
+%------------DEFAULTS---------
+case 'DefaultsRestoreInitialMenuItem'
+   % restore last-saved defaults
+   RestoreMenuDefaults(menuName,'',1);
+   % make sure that no inactive channels are activated
+   if UpdateActiveChannelbutton,
+      local_ActChannelWarn; % report correction
+   else, UIinfo(''); % remove previous messages from message text
+   end
+case 'DefaultsSaveCurrentMenuItem'
+   local_SaveCurParams(menuName, hh);
+case 'DefaultsFromFileMenuItem'
+   local_GetParamsFromFile(menuName, hh);
+   % make sure that no inactive channels are activated
+   if UpdateActiveChannelbutton,
+      local_ActChannelWarn; % report correction
+   end
+case 'SaveAsSearchMenuItem';
+   if ~StimMenuCheck, return; end;
+   SaveSMSasSearchStim; % save stimulus definition as search stimulus
+otherwise,
+   if isequal(1,findstr(TAG, 'GetFile')),
+      local_GetFile(TAG, menuName);
+   else,
+      eh = errordlg(['unknown callback object ' TAG],...
+         [menuName ' Menu Error']);
+      uiwait(eh);
+   end
+end % switch TAG
+
+PRPsetButtons('waiting');
+
+%---------locals-------------
+function local_SaveCurParams(menuName, hh);
+% first determine the directory where to store the default set
+defDir = local_getDefDir(menuName);
+if isempty(defDir), % something went wrong 
+   return;
+end
+% save data to file
+while 1,
+   [fn fp] = uiputfile([defDir '\*.def'],...
+      'specify filename for storage of current parameter set');
+   if fn==0, return; end; % user cancelled
+   % check the directory, provide correct extension
+   FullFname = local_checkDefFileName([fp fn], defDir);
+   if ~isempty(FullFname), % all is OK
+      break; % from endless loop
+   end
+end % while 1
+FromDisplay = 1; % grab edit/button values from menu, regardless of their validity
+saveMenuDefaults(menuName, FullFname,FromDisplay);
+mess = strvcat('Current parameter values saved to file ', ...
+   periodStr(FullFname,35));
+UIinfo(mess);
+
+function local_GetParamsFromFile(menuName, hh);
+% first determine/create the directory where to get the default set
+defDir = local_getDefDir(menuName);
+while 1,
+   [fn fp] = uigetfile([defDir '\*.def'],...
+      'select filename containing parameter set');
+   if fn==0, return; end;
+   % check the directory, provide correct extension
+   FullFname = local_checkDefFileName([fp fn], defDir,1);
+   if ~isempty(FullFname), % all is OK
+      break; % from endless loop
+   end
+end % while 1
+rest = RestoreMenuDefaults(menuName,FullFname);
+if rest, AddToDefFileList(strtok(fn,'.')); end;
+UIinfo(strvcat('parameters retrieved from ', ['file ''' fn '''']));
+
+function defDir = local_getDefDir(menuName);
+global DEFDIRS
+parentDir = DEFDIRS.UIdef;
+childDir = menuName;
+defDir = [parentDir '\' childDir];
+if ~isequal(7,exist(defDir)), % create it
+   msg = '';
+   [status, msg] = mkdir(parentDir, childDir);
+   if ~isequal(status,1) | ~isequal(7,exist(defDir)),
+      mess = strvcat('error while creating directory',...
+         ['''' childDir ''' in dir ''' parentDir  ''''],...
+         ['MatLab error: ' msg]);
+      eh = errordlg(mess, [menuName ' Menu Error']);
+      uiwait(eh);
+      defDir = '';
+      return;
+   end
+end
+
+function FullFname = local_checkDefFileName(FN, defDir,MustExist);
+if nargin<3, MustExist=0; end;
+% check the directory
+[PP FF EE] = fileparts(FN);
+% provide .def extension if needed
+FullFname = FN;
+if ~isequal(lower(EE),'.def'), FullFname = [FullFname '.def']; end;
+if ~isequal(lower(PP),[lower(defDir)]),
+   mess = strvcat('directory must be',['''' defDir '''']);
+   eh = errordlg(mess, [menuName ' Menu Error']);
+   uiwait(eh);
+   FullFname = '';
+end
+if MustExist,
+   if ~isequal(2,exist(FullFname)),
+      mess = strvcat('cannot find file',FullFname);
+      eh = errordlg(mess, 'error retrieving file');
+      uiwait(eh);
+      FullFname = '';
+   end
+end
+
+function local_ActChannelWarn;
+mess = strvcat('Cannot restore setting of active channels',...
+   'because both DA channels are not active', ...
+   ['in current sessio' 'n']);
+UIwarn(mess);
+
+function local_GetFile(tag, menuName);
+FileName = FileNameFromDefMenuItem(tag);
+defDir = local_getDefDir(menuName);
+FullFname = [defDir filesep FileName '.def'];
+rest = RestoreMenuDefaults(menuName,FullFname);
+if rest,
+   UIinfo(strvcat('Parameters retrieved from ', ['file ''' FileName '''']));
+else,
+   UIerror(strvcat('Unable to open ', ['file ''' FileName '''']));
+end

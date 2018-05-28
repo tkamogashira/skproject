@@ -1,0 +1,285 @@
+function varargout = FlatSpec(varargin)
+% FlatSpec Application M-file for FlatSpec.fig
+%    FIG = FlatSpec launch FlatSpec GUI.
+%    FlatSpec('callback_name', ...) invoke the named callback.
+%
+% The program obtains filter coefficients to correct the earphone response.
+%
+% By SF, 8/1/2001
+
+% Last Modified by GUIDE v2.0 31-Jul-2001 19:39:49
+
+if nargin == 0  % LAUNCH GUI
+
+	fig = openfig(mfilename,'reuse');
+
+	% Use system color scheme for figure:
+	set(fig,'Color',get(0,'defaultUicontrolBackgroundColor'));
+
+	% Generate a structure of handles to pass to callbacks, and store it. 
+	handles = guihandles(fig);
+	guidata(fig, handles);
+
+    
+    %Codes added by Shig start here ---------------------
+    %Set default parameters
+    SetDefaultParam(handles);
+        
+    %--------------------- Codes added by Shig end here
+    
+	if nargout > 0
+		varargout{1} = fig;
+	end
+
+elseif ischar(varargin{1}) % INVOKE NAMED SUBFUNCTION OR CALLBACK
+
+	try
+		if (nargout)
+			[varargout{1:nargout}] = feval(varargin{:}); % FEVAL switchyard
+		else
+			feval(varargin{:}); % FEVAL switchyard
+		end
+	catch
+		disp(lasterr);
+	end
+
+end
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function SetDefaultParam(handles)
+% Subfunction to set default parameters
+
+%Set the radio buttons for L chan
+set(handles.RadioLeft,'Value',1);
+set(handles.RadioRight,'Value',0);
+%Passband
+set(handles.EditPassband,'String','[300 15000]'); 
+%No of filter coefficients
+set(handles.EditNFilt,'String','256');
+%Filename for saving or appending
+set(handles.EditFileName,'String',SpkrFile);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function ActivateObjects(handles,OnOff);
+
+hvec=[handles.PushGo];
+
+if strcmpi(OnOff,'off');
+    set(hvec,'Enable','off');
+else
+    set(hvec,'Enable','on');
+end    
+
+
+
+%%%%%%%%%%  %%%%%%%%%%%%%%%%%%%%%
+
+%| ABOUT CALLBACKS:
+%| GUIDE automatically appends subfunction prototypes to this file, and 
+%| sets objects' callback properties to call them through the FEVAL 
+%| switchyard above. This comment describes that mechanism.
+%|
+%| Each callback subfunction declaration has the following form:
+%| <SUBFUNCTION_NAME>(H, EVENTDATA, HANDLES, VARARGIN)
+%|
+%| The subfunction name is composed using the object's Tag and the 
+%| callback type separated by '_', e.g. 'slider2_Callback',
+%| 'figure1_CloseRequestFcn', 'axis1_ButtondownFcn'.
+%|
+%| H is the callback object's handle (obtained using GCBO).
+%|
+%| EVENTDATA is empty, but reserved for future use.
+%|
+%| HANDLES is a structure containing handles of components in GUI using
+%| tags as fieldnames, e.g. handles.figure1, handles.slider2. This
+%| structure is created at GUI startup using GUIHANDLES and stored in
+%| the figure's application data using GUIDATA. A copy of the structure
+%| is passed to each callback.  You can store additional information in
+%| this structure at GUI startup, and you can change the structure
+%| during callbacks.  Call guidata(h, handles) after changing your
+%| copy to replace the stored original so that subsequent callbacks see
+%| the updates. Type "help guihandles" and "help guidata" for more
+%| information.
+%|
+%| VARARGIN contains any extra arguments you have passed to the
+%| callback. Specify the extra arguments by editing the callback
+%| property in the inspector. By default, GUIDE sets the property to:
+%| <MFILENAME>('<SUBFUNCTION_NAME>', gcbo, [], guidata(gcbo))
+%| Add any extra arguments after the last argument, before the final
+%| closing parenthesis.
+
+
+
+% --------------------------------------------------------------------
+function varargout = RadioLeft_Callback(h, eventdata, handles, varargin)
+
+set(handles.RadioLeft,'Value',1);
+set(handles.RadioRight,'Value',0);
+
+
+% --------------------------------------------------------------------
+function varargout = RadioRight_Callback(h, eventdata, handles, varargin)
+
+set(handles.RadioLeft,'Value',0);
+set(handles.RadioRight,'Value',1);
+
+
+
+% --------------------------------------------------------------------
+function varargout = EditPassband_Callback(h, eventdata, handles, varargin)
+
+
+
+% --------------------------------------------------------------------
+function varargout = EditNFilt_Callback(h, eventdata, handles, varargin)
+
+
+
+% --------------------------------------------------------------------
+function varargout = EditFileName_Callback(h, eventdata, handles, varargin)
+
+
+
+% --------------------------------------------------------------------
+function varargout = PushBrowseFile_Callback(h, eventdata, handles, varargin)
+%Browse the output file and set the file name in the edit box
+
+[FileName,PathName] = uigetfile('*.mat','File name for saving or appending the data');
+if isstr(FileName) & isstr(PathName)
+    mystr=fullfile(PathName,FileName);
+    set(handles.EditFileName,'String',mystr);
+end
+
+
+% --------------------------------------------------------------------
+function varargout = PushGo_Callback(h, eventdata, handles, varargin)
+% Run the program
+
+%Inactivate some objects
+ActivateObjects(handles,'off');
+cla(handles.AxesSystemResponse);
+cla(handles.AxesFiltCoef);
+cla(handles.AxesFlatNoise);
+
+
+%%% Get parameters %%%%%%%%%%%%
+%Channel specification
+if get(handles.RadioRight,'Value');
+    ChanNo=2; %Right Channel
+    ColorSpec='r';
+else
+    ChanNo=1; %Left Channel
+    ColorSpec='b';
+end
+%Passband
+PassBand=eval(get(handles.EditPassband,'String')); 
+%No of filter coefficients
+NFiltCoef=eval(get(handles.EditNFilt,'String')); 
+%Filename for saving or appending
+FileName=get(handles.EditFileName,'String');
+
+%%% Run the computation function %%%%%%%%%%%%
+Rtn=GetFiltCoef(ChanNo,PassBand,NFiltCoef,0);
+if isempty(Rtn) %The program not succesful
+    errofdlg(lasterr);
+    
+    %Activate some objects
+    ActivateObjects(handles,'on');
+    
+    return;
+end
+
+
+
+%%% Display the results %%%%%%%%%%%%
+%Sampling Frequency
+set(handles.TextFs,'String',sprintf('%.1f',Rtn.Fs));
+
+%System Freq response
+axes(handles.AxesSystemResponse);
+y=20*log10(abs(Rtn.SysResp.H));
+x=Rtn.SysResp.Freq/1000;
+semilogx(x,y,ColorSpec);
+xlim([10 Rtn.Fs/2/1000]);
+myylim=ylim;
+myylim(1)=max(y(:))-50;
+ylim(myylim);
+title('System Freq Response');
+xlabel('Frequency (kHz)');
+ylabel('(dB)');
+
+%Filter coefficients
+axes(handles.AxesFiltCoef);
+plot(Rtn.FiltCoef,ColorSpec);
+xlim([1 NFiltCoef])
+title(sprintf('Filter Coefficients: Gain %.1fdB; Delay %dpts',Rtn.FiltGain,Rtn.FiltDelayPts));
+
+%Spectrum of the flat noise
+axes(handles.AxesFlatNoise);
+y=20*log10(abs(Rtn.FlatNoise.AmpSpec));
+x=Rtn.FlatNoise.Freq/1000;
+semilogx(x,y,ColorSpec);
+xlim([10 Rtn.Fs/2/1000]);
+myylim=ylim;
+myylim(1)=max(y(:))-50;
+ylim(myylim);
+%Get STD within the passband
+Iin=find(abs(Rtn.FlatNoise.Freq)>=min(PassBand) & abs(Rtn.FlatNoise.Freq)<=max(PassBand));
+STD=std(y(Iin));
+title(sprintf('Flattened Noise: STD %.1fdB',STD));
+xlabel('Frequency (kHz)');
+ylabel('(dB)');
+
+%%%% Save the results %%%%%%%%%%%%%%%%%%
+if ~exist(FileName) %File does not exist
+    %Check if the directory exists
+    [PATH,NAME,EXT]=fileparts(FileName);
+    if exist(PATH,'dir')~=7
+        %Ask if making the directory
+        ButtonName=questdlg(['Directory ' PATH ' does not exist. Create it?'], ...
+            ' ','Yes','No','Yes');
+        if strcmp(ButtonName,'Yes')
+            dos(['mkdir ' PATH]);
+        else
+            %Activate the button
+            ActivateObjects(handles,'on');
+        end
+    end
+    
+    %Save the data
+    if ChanNo==1;
+        L=Rtn;
+        save(FileName,'L');
+    else
+        R=Rtn;
+        save(FileName,'R');
+    end
+    
+
+else %The file already exists -- append the data
+    if ChanNo==1;
+        L=Rtn;
+        save(FileName,'L','-append');
+    else
+        R=Rtn;
+        save(FileName,'R','-append');
+    end
+end
+
+%Activate the button
+ActivateObjects(handles,'on');
+
+% --------------------------------------------------------------------
+function varargout = PushDefault_Callback(h, eventdata, handles, varargin)
+%Set default parameters
+
+SetDefaultParam(handles);
+
+% --------------------------------------------------------------------
+function varargout = PushQuit_Callback(h, eventdata, handles, varargin)
+%Close the window
+
+close(handles.FigFlatSpec);
+
+

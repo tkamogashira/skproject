@@ -1,0 +1,27 @@
+*-----------------------------------------------------
+*   Macro for Testing Multiple Independent Variables
+*-----------------------------------------------------
+DF S94049
+ID 1-14-RAI
+OU RAS //Raster plot of all subsequences ...
+RR X 95
+PP X 2
+PP Y 2
+OU SP //Rate plot only works for one-dimensional restriction ...
+OU RAS
+OU SYNC //VSM plot only works for one-dimensional restriction ...
+OU PHASE //VSP plot only works for one-dimensional restriction ...
+RR DEF //When restricting range for dataset with multiple independent
+RR Y 10000 //variable, the range is narrowed down instead of reset ...
+PP X 2
+PP Y 2
+OU SP
+OU RAS
+OU SYNC
+OU PHASE
+RR DEF
+RR X 95
+PP DEF
+OU CH //Unisubsequence plots aren't affected by multiple independent
+OU PST //variables ...
+RETURN

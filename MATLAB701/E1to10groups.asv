@@ -1,0 +1,75 @@
+% E1to10groups
+function SigChN4=E1to10groups(BB4,BB6,BBN,V)
+P4((1:123),203)=([BB4((1:123),203,1)])';
+P4((1:7),(1:202))=ones(7,202);
+P4((117:123),(1:202))=ones(7,202);
+P6((1:123),203)=([BB6((1:123),203,1)])';
+P6((1:7),(1:202))=ones(7,202);
+P6((117:123),(1:202))=ones(7,202);
+for C=1:202
+    for f=8:116
+        if (mean(BB4(f,C,:),3)>mean(BBN(f,C,:),3))&(mean(BB4(f,C,:),3)>mean(BB6(f,C,:),3))
+            [H,p,ci]=ttest(BB4(f,C,:),BBN(f,C,:));
+            if p<0.05
+                [H,P4(f,C),ci]=ttest(BB4(f,C,:),BB6(f,C,:));
+            else
+                P4(f,C)=1;
+            end;
+        else
+            P4(f,C)=1;
+        end;
+    end;
+end;
+SigChN4(1:7)=[0 0 0 0 0 0 0];
+SigChN4(117:123)=[0 0 0 0 0 0 0];
+for F=8:116
+    SigChN4(F)=sum(P4(F,(1:202))<0.05);
+end;
+Plot4P=[[P4;V] [SigChN4 0 0 0 0]'];
+assignin('base','Plot4P',Plot4P);
+
+for D=1:202
+    for g=8:116
+        if (mean(BB6(g,D,:),3)>mean(BBN(g,D,:),3))&(mean(BB6(g,D,:),3)>mean(BB4(g,D,:),3))
+            [H,p,ci]=ttest(BB6(g,D,:),BBN(G,D,:));
+            if p<0.05
+                [H,P6(g,D),ci]=ttest(BB6(g,D,:),BB4(g,D,:));
+            else
+                P6(g,D)=1;
+            end;
+        else
+            P6(g,D)=1;
+        end;
+    end;
+end;
+SigChN6(1:7)=[0 0 0 0 0 0 0];
+SigChN6(117:123)=[0 0 0 0 0 0 0];
+for G=8:116
+    SigChN6(G)=sum(P6(G,(1:202))<0.05);
+end;
+Plot6P=[[P6;V] [SigChN6 0 0 0 0]'];
+assignin('base','Plot6P',Plot6P);
+
+[i,j]=find(Plot4P((1:123),(1:202))<0.05);
+X=[i j];
+for k=1:size(X,1)
+    if Plot4P(125,X(k,2))>0
+        plot3(Plot4P(126,X(k,2)),Plot4P(127,X(k,2)),Plot4P(X(k,1),203),'bo'),hold on;
+    else
+        plot3(Plot4P(126,X(k,2)),Plot4P(127,X(k,2)),Plot4P(X(k,1),203),'b.'),hold on;
+    end;
+end;
+
+[I,J]=find(Plot6P((1:123),(1:202))<0.05);
+Y=[I J];
+for K=1:size(Y,1)
+    if Plot6P(125,Y(K,2))>0
+        plot3(Plot6P(126,Y(K,2)),Plot6P(127,Y(K,2)),Plot6P(Y(K,1),203),'ro'),hold on;
+    else
+        plot3(Plot6P(126,Y(K,2)),Plot6P(127,Y(K,2)),Plot6P(Y(k,1),203),'b.'),hold on;
+    end;
+end;
+
+plot3(Plot4P(126,find(Plot4P(125,(1:202))>0)),Plot4P(127,find(Plot4P(125,(1:202))>0)),ones(nnz(Plot4P(125,(1:202))>0)),'ko'),hold on;
+plot3(Plot4P(126,find(Plot4P(125,(1:202))==0)),Plot4P(127,find(Plot4P(125,(1:202))==0)),ones(nnz(Plot4P(125,(1:202))==0)),'k.'),grid,axis([-60 60 -70 70 1 10]),hold on;          
+end

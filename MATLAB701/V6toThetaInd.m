@@ -1,0 +1,26 @@
+% Theta(V6conditions) per an indivisual
+function ThetaIndivisual=V6toThetaInd(V6)
+ThetaIndivisual(1,1)=VtoTheta(V6(1,:));
+ThetaIndivisual(1,2)=VtoTheta(V6(2,:));
+ThetaIndivisual(1,3)=VtoTheta(V6(3,:));
+ThetaIndivisual(1,4)=VtoTheta(V6(4,:));
+ThetaIndivisual(2,1)=VtoTheta(V6(5,:));
+ThetaIndivisual(2,2)=VtoTheta(V6(6,:));
+ThetaIndivisual(2,3)=VtoTheta(V6(7,:));
+ThetaIndivisual(2,4)=VtoTheta(V6(8,:));
+ThetaIndivisual(3,1)=VtoTheta(V6(9,:));
+ThetaIndivisual(3,2)=VtoTheta(V6(10,:));
+ThetaIndivisual(3,3)=VtoTheta(V6(11,:));
+ThetaIndivisual(3,4)=VtoTheta(V6(12,:));
+ThetaIndivisual(4,1)=VtoTheta(V6(13,:));
+ThetaIndivisual(4,2)=VtoTheta(V6(14,:));
+ThetaIndivisual(4,3)=VtoTheta(V6(15,:));
+ThetaIndivisual(4,4)=VtoTheta(V6(16,:));
+ThetaIndivisual(5,1)=VtoTheta(V6(17,:));
+ThetaIndivisual(5,2)=VtoTheta(V6(18,:));
+ThetaIndivisual(5,3)=VtoTheta(V6(19,:));
+ThetaIndivisual(5,4)=VtoTheta(V6(20,:));
+ThetaIndivisual(6,1)=VtoTheta(V6(21,:));
+ThetaIndivisual(6,2)=VtoTheta(V6(22,:));
+ThetaIndivisual(6,3)=VtoTheta(V6(23,:));
+ThetaIndivisual(6,4)=VtoTheta(V6(24,:))

@@ -1,0 +1,191 @@
+MyPCでSGSRを使うためにしたこと　2009/8/11
+
+１）C:\Program Files\MATLAB71\toolbox\localにqstart.mを入れた。
+
+２）C:\Program Files\MATLAB71\workにqstart.mを入れた。このファイルから動かすことがMyPCのMatlabのデフォルトになっているらしい。
+
+３）C:\USR\shotaro\MatlabStartupにqstart.mを入れた。
+
+１）のqstart.mと２）３）のqstart.mは全然違うmファイルである。
+１）のqstart.mは全く変えていない。
+２）３）のqstart.mは以下のように変更した。
+% start SGSRの項は、eドライブのハードディスク内のSGSRを起動するように変更した。
+% set data directoryの項は、eドライブのハードディスク内のデータを呼び出すように変更した。
+% set current dirの項は、なぜか分からないが指定のファイルにchange directoryできなかったので、使わないようにした。qstart shotaroを実行してから手動でcurrent directoryを変更すればよい。
+
+
+MyPCでSGSRを使うためにしたことその２　2010/5/17
+
+１）C:\Program Files\MATLAB71\toolbox\localにqstart.mを入れた。
+
+２）C:\Program Files\MATLAB71\workにqstart.mを入れた。このファイルから動かすことがMyPCのMatlabのデフォルトになっているらしい。
+
+３）C:\USR\shotaro\MatlabStartupにqstart.mを入れた。
+
+１）のqstart.mと２）３）のqstart.mは全然違うmファイルである。
+１）のqstart.mは全く変えていない。
+２）３）のqstart.mは以下のように変更した。
+% start SGSRの項は、以下のように変更
+% start SGSR
+cd f:\Shotaro\SGSR\startupdir
+から
+% start SGSR
+cd C:\whiteHD_BU20100205\Shotaro\SGSR\startupdir
+
+
+% set data directoryの項は、eドライブのハードディスク内のデータを呼び出すように変更した。
+% set data directory
+datadir(['F:\recover_data\Shotaro\rawData']);
+から
+% set data directory
+datadir(['C: \whiteHD_BU20100205\recover_data\Shotaro\rawData']);
+
+
+% set current dirの項は、なぜか分からないが指定のファイルにchange directoryできなかったので、使わないようにした。qstart shotaroを実行してから手動でcurrent directoryを変更すればよい。
+
+MyPCでMatlab2009を使うためにしたこと　2011/7/4
+
+C:\Program Files\MATLAB71\toolbox\localのqstart.mをコピーし、
+C:\Program Files\MATLAB\R2009a\toolbox\localのqstart.mとした。
+userDir = ['c:\USRnew\' UserName];のUSRnewの所を新しくした。
+
+
+USRnewを作り
+３）C:\USRnew\shotaro\MatlabStartupにqstart.mを入れた。
+% start SGSR
+cd C:\newSGSR\startupdir
+はnewSGSRの所を新しくした。
+% set data directory
+datadir(['C:\whiteHD_BU20100205\recover_data\Shotaro\rawData']);
+の所は変えず、matlab71と同じデータディレクトリを使うことにした。
+
+
+以下は以前の書類のコピーのまま
+１）C:\Program Files\MATLAB71\toolbox\localにqstart.mを入れた。
+
+２）C:\Program Files\MATLAB71\workにqstart.mを入れた。このファイルから動かすことがMyPCのMatlabのデフォルトになっているらしい。
+
+３）C:\USR\shotaro\MatlabStartupにqstart.mを入れた。
+
+１）のqstart.mと２）３）のqstart.mは全然違うmファイルである。
+１）のqstart.mは全く変えていない。
+２）３）のqstart.mは以下のように変更した。
+% start SGSRの項は、以下のように変更
+% start SGSR
+cd f:\Shotaro\SGSR\startupdir
+から
+% start SGSR
+cd C:\whiteHD_BU20100205\Shotaro\SGSR\startupdir
+
+
+% set data directoryの項は、eドライブのハードディスク内のデータを呼び出すように変更した。
+% set data directory
+datadir(['F:\recover_data\Shotaro\rawData']);
+から
+% set data directory
+datadir(['C: \whiteHD_BU20100205\recover_data\Shotaro\rawData']);
+
+
+% set current dirの項は、なぜか分からないが指定のファイルにchange directoryできなかったので、使わないようにした。qstart shotaroを実行してから手動でcurrent directoryを変更すればよい。
+
+NECでMatlab2009とnewSGSRを使うためにしたこと　2011/12/21
+
+
+C:newSGSR\vs30\Init\startSGSR.mの
+４３行目から５０行目
+を
+if atBigscreen || atKiwi || ~inLeuven
+   sgsr(1); % launch SGSR main dialog after scrolling the command window
+else
+   if or(inLeuven,inUtrecht) % set sample rates to those of setup so stimuli are correctly reconstructed
+      SGSR.samFreqs = [60096.1551890 125000.0027940]-1e-6*[-0.407592 0.032218];
+   end
+   disp('SGSR settings initialized.');
+end
+か下記に変えてcommand windowが最初に出ないようにした。
+%if atBigscreen || atKiwi || ~inLeuven
+   %sgsr(1); % launch SGSR main dialog after scrolling the command window
+%else
+   if or(inLeuven,inUtrecht) % set sample rates to those of setup so stimuli are correctly reconstructed
+      SGSR.samFreqs = [60096.1551890 125000.0027940]-1e-6*[-0.407592 0.032218];
+   end
+   disp('SGSR settings initialized.');
+%end
+
+さらにC:\newSGSR\vs30\Init\SGSRpath.mの
+６２行目のif inLeuvenを%if inLeuvenとし
+７３行目のendを%endとし、
+８３行目のif inLeuvenを%if inLeuvenとし
+８５行目のendを%endとしたら、structviewやRAPも使えるようになった。
+
+
+
+Mcc  B sgl uigetfolder_win32をして、コンパイルしたが、結局使わずにすんだ。
+
+MyPCでMatlab2009を使うためにしたこと　2011/7/4
+
+C:\Program Files\MATLAB71\toolbox\localのqstart.mをコピーし、
+C:\Program Files\MATLAB\R2009a\toolbox\localのqstart.mとした。
+userDir = ['c:\USRnew\' UserName];のUSRnewの所を新しくした。
+
+
+USRnewを作り
+３）C:\USRnew\shotaro\MatlabStartupにqstart.mを入れた。
+% start SGSR
+cd C:\newSGSR\startupdir
+はnewSGSRの所を新しくした。
+% set data directory
+datadir(['C:\whiteHD_BU20100205\recover_data\Shotaro\rawData']);
+の所は変えず、matlab71と同じデータディレクトリを使うことにした。
+
+
+以下は以前の書類のコピーのまま
+１）C:\Program Files\MATLAB71\toolbox\localにqstart.mを入れた。
+
+２）C:\Program Files\MATLAB71\workにqstart.mを入れた。このファイルから動かすことがMyPCのMatlabのデフォルトになっているらしい。
+
+３）C:\USR\shotaro\MatlabStartupにqstart.mを入れた。
+
+１）のqstart.mと２）３）のqstart.mは全然違うmファイルである。
+１）のqstart.mは全く変えていない。
+２）３）のqstart.mは以下のように変更した。
+% start SGSRの項は、以下のように変更
+% start SGSR
+cd f:\Shotaro\SGSR\startupdir
+から
+% start SGSR
+cd C:\whiteHD_BU20100205\Shotaro\SGSR\startupdir
+
+
+% set data directoryの項は、eドライブのハードディスク内のデータを呼び出すように変更した。
+% set data directory
+datadir(['F:\recover_data\Shotaro\rawData']);
+から
+% set data directory
+datadir(['C: \whiteHD_BU20100205\recover_data\Shotaro\rawData']);
+
+
+% set current dirの項は、なぜか分からないが指定のファイルにchange directoryできなかったので、使わないようにした。qstart shotaroを実行してから手動でcurrent directoryを変更すればよい。
+
+
+
+２０１２年５月２日に日本で試したこと
+
+>> qstart shotaro
+starting SGSR ...
+UserDir =
+     ''
+警告: Startup will fail - unable to find S232.DLL 
+> In TDTinit at 9
+  In HardwareInit at 13
+  In startSGSR at 39
+  In startup at 68
+  In qstart at 8
+  In qstart at 38
+SGSR settings initialized.
+>> databrowse
+警告: popupmenu control requires that Value be an integer within
+String range
+コントロールは、すべてのパラメータ値が有効でない場合描画されません 
+> In OpenUImenu at 74
+  In databrowse at 37

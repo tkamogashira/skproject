@@ -1,0 +1,14 @@
+% BBsub
+function BBsub(action)
+switch(action)
+    case 'start'
+        t=(1:(1/25000):10);
+        Y1(:,1)=sin(2*pi*250*t);
+        
+y=sin(2*pi*250*t);
+sound(y,25000,16)
+
+Y1(:,2)=sin(2*pi*254*t);
+sound(Y1,25000,16)
+
+end

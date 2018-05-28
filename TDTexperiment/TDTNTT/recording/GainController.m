@@ -1,0 +1,272 @@
+function varargout = GainController(varargin)
+% GAINCONTROLLER M-file for GainController.fig
+%      GAINCONTROLLER, by itself, creates a new GAINCONTROLLER or raises the existing
+%      singleton*.
+%
+%      H = GAINCONTROLLER returns the handle to a new GAINCONTROLLER or the handle to
+%      the existing singleton*.
+%
+%      GAINCONTROLLER('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in GAINCONTROLLER.M with the given input arguments.
+%
+%      GAINCONTROLLER('Property','Value',...) creates a new GAINCONTROLLER or raises the
+%      existing singleton*.  Starting from the left, property value pairs are
+%      applied to the GUI before GainController_OpeningFunction gets called.  An
+%      unrecognized property name or invalid value makes property application
+%      stop.  All inputs are passed to GainController_OpeningFcn via varargin.
+%
+%      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
+%      instance to run (singleton)".
+%
+% See also: GUIDE, GUIDATA, GUIHANDLES
+
+% Edit the above text to modify the response to help GainController
+
+% Last Modified by GUIDE v2.5 14-Apr-2003 16:08:19
+
+% Begin initialization code - DO NOT EDIT
+gui_Singleton = 1;
+gui_State = struct('gui_Name',       mfilename, ...
+                   'gui_Singleton',  gui_Singleton, ...
+                   'gui_OpeningFcn', @GainController_OpeningFcn, ...
+                   'gui_OutputFcn',  @GainController_OutputFcn, ...
+                   'gui_LayoutFcn',  [] , ...
+                   'gui_Callback',   []);
+if nargin & isstr(varargin{1})
+    gui_State.gui_Callback = str2func(varargin{1});
+end
+
+if nargout
+    [varargout{1:nargout}] = gui_mainfcn(gui_State, varargin{:});
+else
+    gui_mainfcn(gui_State, varargin{:});
+end
+% End initialization code - DO NOT EDIT
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% --- Check the entered gain values and update the gui
+function SetGain(handles, mygain, LR)
+global Gain
+
+if LR==1 %Left channel setting
+    if isempty(mygain)
+        mygain=Gain(1);
+    elseif mygain<-50 | mygain>30
+        mygain=Gain(1);
+    else
+        mygain=round(mygain);
+    end
+    Gain(1)=mygain;
+    if get(handles.check_commonatten,'Value')
+        Gain(2)=mygain;
+    end
+else %Right channel setting
+    if isempty(mygain)
+        mygain=Gain(2);
+    elseif mygain<-50 | mygain>30
+        mygain=Gain(2);
+    else
+        mygain=round(mygain);
+    end
+    Gain(2)=mygain;
+    if get(handles.check_commonatten,'Value')
+        Gain(1)=mygain;
+    end
+end
+
+%Update the GUI
+%Left chan
+set(handles.slider_leftatten,'Value',Gain(1));
+set(handles.edit_leftatten,'String',num2str(Gain(1)));
+%Right chan
+set(handles.slider_rightatten,'Value',Gain(2));
+set(handles.edit_rightatten,'String',num2str(Gain(2)));
+
+drawnow;
+
+
+%%%%%%%%%%%%%%%%% 
+% --- Executes just before GainController is made visible.
+function GainController_OpeningFcn(hObject, eventdata, handles, varargin)
+% This function has no output args, see OutputFcn.
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% varargin   command line arguments to GainController (see VARARGIN)
+
+% Choose default command line output for GainController
+handles.output = hObject;
+
+% Update handles structure
+guidata(hObject, handles);
+
+% UIWAIT makes GainController wait for user response (see UIRESUME)
+% uiwait(handles.figure_gaincontroller);
+
+global Gain
+if isempty(Gain)
+    Gain=[0 0];
+end
+
+%Use the settings used previously
+if exist('GainController.mat','file')==2
+    load('GainController') %Load the settings
+    
+    if exist('CommonFlag','var')==1
+        set(handles.check_commonatten,'Value',CommonFlag);
+    end
+    
+    %Position in the screen
+    if exist('Position','var')==1 
+        mypos=get(hObject,'Position');
+        mypos(1:2)=Position(1:2);
+        set(hObject,'Position',mypos);
+    end
+end   
+
+
+% --- Outputs from this function are returned to the command line.
+function varargout = GainController_OutputFcn(hObject, eventdata, handles)
+% varargout  cell array for returning output args (see VARARGOUT);
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Get default command line output from handles structure
+varargout{1} = handles.output;
+
+
+% --- Executes during object creation, after setting all properties.
+function slider_leftatten_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to slider_leftatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: slider controls usually have a light gray background, change
+%       'usewhitebg' to 0 to use default.  See ISPC and COMPUTER.
+usewhitebg = 1;
+if usewhitebg
+    set(hObject,'BackgroundColor',[.9 .9 .9]);
+else
+    set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
+end
+
+
+% --- Executes on slider movement.
+function slider_leftatten_Callback(hObject, eventdata, handles)
+% hObject    handle to slider_leftatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'Value') returns position of slider
+%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
+
+SetGain(handles, get(hObject,'Value'), 1);
+
+% --- Executes during object creation, after setting all properties.
+function slider_rightatten_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to slider_rightatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: slider controls usually have a light gray background, change
+%       'usewhitebg' to 0 to use default.  See ISPC and COMPUTER.
+usewhitebg = 1;
+if usewhitebg
+    set(hObject,'BackgroundColor',[.9 .9 .9]);
+else
+    set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
+end
+
+
+% --- Executes on slider movement.
+function slider_rightatten_Callback(hObject, eventdata, handles)
+% hObject    handle to slider_rightatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'Value') returns position of slider
+%        get(hObject,'Min') and get(hObject,'Max') to determine range of slider
+
+SetGain(handles, get(hObject,'Value'), 2);
+
+
+% --- Executes on button press in check_commonatten.
+function check_commonatten_Callback(hObject, eventdata, handles)
+% hObject    handle to check_commonatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of check_commonatten
+
+
+% --- Executes during object creation, after setting all properties.
+function edit_leftatten_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit_leftatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc
+    set(hObject,'BackgroundColor','white');
+else
+    set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
+end
+
+
+
+function edit_leftatten_Callback(hObject, eventdata, handles)
+% hObject    handle to edit_leftatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit_leftatten as text
+%        str2double(get(hObject,'String')) returns contents of edit_leftatten as a double
+
+SetGain(handles, str2num(get(hObject,'String')), 1);
+
+% --- Executes during object creation, after setting all properties.
+function edit_rightatten_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit_rightatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc
+    set(hObject,'BackgroundColor','white');
+else
+    set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
+end
+
+
+
+function edit_rightatten_Callback(hObject, eventdata, handles)
+% hObject    handle to edit_rightatten (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit_rightatten as text
+%        str2double(get(hObject,'String')) returns contents of edit_rightatten as a double
+
+SetGain(handles, str2num(get(hObject,'String')), 2);
+
+% --- Executes on button press in push_leftatten0.
+function push_leftatten0_Callback(hObject, eventdata, handles)
+% hObject    handle to push_leftatten0 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+SetGain(handles, 0, 1);
+
+
+% --- Executes on button press in push_rightatten0.
+function push_rightatten0_Callback(hObject, eventdata, handles)
+% hObject    handle to push_rightatten0 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+SetGain(handles, 0, 0);
+

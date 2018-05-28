@@ -1,0 +1,82 @@
+*-------------------------------------------
+*         Restrict Range TEST macro
+*-------------------------------------------
+DF A0242
+ID 1-2-SPL //Dataset with linear and increasing scale ...
+ECHO "Dataset with linear and increasing scale ..."
+PP X 4
+OU SP
+OU RAS
+GV V1 XLOW
+GV V2 XHIGH-2*XINC
+RR X V1 V2
+OU SP
+OU RAS
+PAUSE
+CLO ALL
+DF M0312
+ID 2-2-SPL //Dataset with linear but decreasing scale ...
+ECHO "Dataset with linear but decreasing scale ..."
+PP X 3
+PP Y 2
+OU SP
+OU RAS
+RR X 75 55 -10 //Negative increment ...
+OU SP
+OU RAS
+RR X 55 75 5
+OU SP
+OU RAS
+PAUSE
+CLO ALL
+DF M0312IC
+DS -11 //Dataset with logaritmic and increasing scale ...
+ECHO "Dataset with logaritmic and increasing scale ..."
+PP X 3
+PP Y 2
+OU SP
+OU RAS
+GV V1 XLOW
+GV V2 XHIGH
+GV V3 XINC
+IF V2 GT 500 GV V2 500
+RR X V1 V2 V3
+OU SP
+OU RAS
+RR DEF
+GV V2 XHIGH
+GV V3 -XINC
+RR X V2 500 V3 //Negative increment ...
+OU SP
+OU RAS
+PAUSE
+CLO ALL
+DF M0313
+ID 4-2-SPL //Dataset with linear scale and random presentation ...
+ECHO "Dataset with linear scale and random presentation ..."
+PP X 2
+PP Y 2
+OU SP
+OU RAS
+RR X 10 35 5
+OU SP
+OU RAS
+PAUSE
+CLO ALL
+DF S94049 
+ID 1-14-RAI //Dataset with two independent variables ...
+ECHO "Dataset with two independent variables ..."
+PP X 2
+PP Y 2
+RR X 95 //Rate curve can only be plotted for a one-dimensional restriction ...
+OU SP
+RR Y 10000
+OU SP
+PAUSE
+CLO ALL
+DF C0214B
+ID 45-11-NTD
+ECHO "Dataset where values of independent variable have a rounding error ..."
+RR X -1000 -700
+OU SP
+RETURN

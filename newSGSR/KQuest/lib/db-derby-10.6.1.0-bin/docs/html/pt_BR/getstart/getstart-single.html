@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><META http-equiv="Content-Type" content="text/html; charset=utf-8"><title> Introdu&ccedil;&atilde;o ao Derby </title><META content="text/css" http-equiv="Content-Style-Type"><style type="text/css">
+        a { color: black; border: none; text-decoration: none; }
+        img { border: none; }
+      </style></head><body topmargin="6" leftmargin="6" marginheight="6" marginwidth="6" bgcolor="white"><br><div valign="top"><div style="padding: 6pt; border-width: thin; border-color: black; font-family: Helvetica; margin-top: 2pc;"><div style="text-align: right; margin-bottom: 12pc; margin-top: 12pc; line-height: 100%; font-size: 12pt;"><img src="../images/logowithtext.jpg"></div></div><a name="cover"></a><div style="font-family: Helvetica; text-align: left;"><div style="line-height: 140%; font-weight: bold; font-size: 22pt;"> Introdu&ccedil;&atilde;o ao Derby </div><div style="font-style: italic; margin-bottom: 1in; line-height: 140%; font-size: 8pt;">
+          Version 10.2</div></div><div style="line-height: normal; font-size: 8pt; text-align: right; margin-top: 3pc;">
+          Derby Document build: <div>April 26, 2010, 1:11:52 PM (PDT)</div></div></div><br><br><div valign="top"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; text-align: center; color: purple;"></div></div><br><br><div valign="top"><div style="font-style: italic; margin-bottom: 1in; line-height: 140%; font-size: 8pt;">
+          Version 10.2
+         &nbsp;
+	 Introdu&ccedil;&atilde;o ao Derby </div></div><div valign="top"><a name="page1-1"></a><div style="font-family: Helvetica; font-size: 10pt; line-height: 12pt;"><div style="font-family: Helvetica; text-align: left;"><div> &nbsp;&nbsp;&nbsp; </div><a name="contents"></a><div style="line-height: 140%; font-weight: bold; font-size: 20pt;">
+              Contents </div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#rgscopyright"><span style="font-weight: bold;">Direitos autorais reservados</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#rgslicense"><span style="font-weight: bold;">Licen&ccedil;a</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#cgsintro"><span style="font-weight: bold;">Introdu&ccedil;&atilde;o ao Derby</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#cgsintdo"><span style="font-weight: bold;">Op&ccedil;&otilde;es de implementa&ccedil;&atilde;o</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#cgsinstr"><span style="font-weight: bold;">Requisitos do Sistema</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgsdocs17307"><span style="font-weight: bold;">A biblioteca do Derby</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#cgsinsta"><span style="font-weight: bold;">Instala&ccedil;&atilde;o e utiliza&ccedil;&atilde;o do Derby</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#cgsinstallingderby"><span style="font-weight: bold;">Instala&ccedil;&atilde;o do Derby</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#tgssetupjavaenvir"><span style="font-weight: bold;">Configura&ccedil;&atilde;o do ambiente Java</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#cgsusingtoolsutils"><span style="font-weight: bold;">Utiliza&ccedil;&atilde;o das ferramentas e dos utilit&aacute;rios de inicializa&ccedil;&atilde;o</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 9pc;"><a href="#cgsusingsysinfo">Utiliza&ccedil;&atilde;o do sysinfo &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 9pc;"><a href="#tgsrunningij">Execu&ccedil;&atilde;o do ij &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#cgsmanuallysetting"><span style="font-weight: bold;">Configura&ccedil;&atilde;o manual das vari&aacute;veis de ambiente e caminhos</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 9pc;"><a href="#tgs36360">Defini&ccedil;&atilde;o da vari&aacute;vel de ambiente DERBY_INSTALL &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 9pc;"><a href="#tgs26250">Configura&ccedil;&atilde;o do caminho de classe &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#cgsquck19524"><span style="font-weight: bold;">Guia de inicia&ccedil;&atilde;o r&aacute;pida para usu&aacute;rios de JDBC experientes</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#cgsquck70629"><span style="font-weight: bold;">Ambientes nos quais o Derby pode ser executado</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 9pc;"><a href="#cgsquck35643">Ambiente incorporado &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 9pc;"><a href="#cgsquck13780">Ambiente cliente/servidor &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgsquck35368"><span style="font-weight: bold;">Drivers dispon&iacute;veis</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgsquck30197"><span style="font-weight: bold;">URL de conex&atilde;o com banco de dados</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#rgsdocs37966"><span style="font-weight: bold;">Conven&ccedil;&otilde;es da documenta&ccedil;&atilde;o</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgsdocs99397"><span style="font-weight: bold;">Terminologia</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgsdocs10012"><span style="font-weight: bold;">Sintaxe SQL</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgsdocs18277"><span style="font-weight: bold;">Conven&ccedil;&otilde;es tipogr&aacute;ficas</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#cgslib19524"><span style="font-weight: bold;">Bibliotecas e scripts do Derby: refer&ecirc;ncia completa</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgslib46043"><span style="font-weight: bold;">Bibliotecas fornecidas pelo Derby</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgslib56653"><span style="font-weight: bold;">Bibliotecas n&atilde;o fornecidas pelo Derby</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 7.5pc;"><a href="#rgslib27507"><span style="font-weight: bold;">Scripts fornecidos pelo Derby</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div><div style="margin-left: 4.9pc; margin-top: 6pt;"><a href="#rgstrademderby"><span style="font-weight: bold;">Marcas Registradas</span> &nbsp;&nbsp;&nbsp; <span>&bull;</span></a></div></div></div></div><div valign="top"><div style="font-family: Helvetica; font-weight: bold; font-size: 10pt; text-align: center;"><span>&bull;</span></div></div><br><br><div valign="top"><div style="line-height: 8pt; font-size: 8pt;"> Introdu&ccedil;&atilde;o ao Derby </div></div><div valign="top"><div style="font-family: Helvetica; font-size: 10pt; text-align: left;">Apache Software Foundation Introdu&ccedil;&atilde;o ao Derby Apache Derby<div><a name="N1003D"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="rgscopyright"></a><div></div>Direitos autorais reservados</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10046"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Copyright 2004, 2006 The Apache Software Foundation</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">Licenciado sob a Licen&ccedil;a Apache, Vers&atilde;o 2.0 (doravante chamada apenas de
+"Licen&ccedil;a"); este arquivo n&atilde;o pode ser utilizado a n&atilde;o ser em conformidade com a
+Licen&ccedil;a. Pode ser obtida uma c&oacute;pia da Licen&ccedil;a em
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;"><span style="color: blue;"><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></span></div></pre></div></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10061"></a><span></span><div style="font-weight: bold;">Informa&ccedil;&otilde;es relacionadas</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><span style="color: blue;"><a href="#rgslicense">Licen&ccedil;a</a></span></div></div></div></div><div><a name="N1007F"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="rgslicense"></a><div></div>Licen&ccedil;a</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;"></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N100A2"></a><span></span><div style="font-weight: bold;">Licen&ccedil;a Apache, Vers&atilde;o 2.0</div><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">
+                               Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use,
+      reproduction, and distribution as defined by Sections 1 through
+      9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized
+      by the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under
+      common control with that entity. For the purposes of this
+      definition, "control" means (i) the power, direct or indirect,
+      to cause the direction or management of such entity, whether by
+      contract or otherwise, or (ii) ownership of fifty percent (50%)
+      or more of the outstanding shares, or (iii) beneficial ownership
+      of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making
+      modifications, including but not limited to software source code,
+      documentation source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or
+      Object form, that is based on (or derived from) the Work and
+      for which the editorial revisions, annotations, elaborations,
+      or other modifications represent, as a whole, an original work
+      of authorship.  For the purposes of this License, Derivative
+      Works shall not include works that remain separable from, or
+      merely link (or bind by name) to the interfaces of, the Work
+      and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or
+      additions to that Work or Derivative Works thereof, that is
+      intentionally submitted to Licensor for inclusion in the Work
+      by the copyright owner or by an individual or Legal Entity
+      authorized to submit on behalf of the copyright owner. For the
+      purposes of this definition,
+      "submitted" means any form of electronic, verbal, or written
+      communication sent to the Licensor or its representatives,
+      including but not limited to communication on electronic mailing
+      lists, source code control systems, and issue tracking systems
+      that are managed by, or on behalf of, the Licensor for the
+      purpose of discussing and improving the Work, but excluding
+      communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a
+      Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal
+      Entity on behalf of whom a Contribution has been received by
+      Licensor and subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions
+      of this License, each Contributor hereby grants to You a
+      perpetual, worldwide, non-exclusive, no-charge, royalty-free,
+      irrevocable copyright license to reproduce, prepare Derivative
+      Works of, publicly display, publicly perform, sublicense, and
+      distribute the Work and such Derivative Works in Source or
+      Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have
+      made, use, offer to sell, sell, import, and otherwise transfer
+      the Work, where such license applies only to those patent claims
+      licensable by such Contributor that are necessarily infringed by
+      their Contribution(s) alone or by combination of their
+      Contribution(s) with the Work to which such Contribution(s) was
+      submitted. If You institute patent litigation against any entity
+      (including a cross-claim or counterclaim in a lawsuit) alleging
+      that the Work or a Contribution incorporated within the Work
+      constitutes direct or contributory patent infringement, then any
+      patent licenses granted to You under this License for that Work
+      shall terminate as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute
+          must include a readable copy of the attribution notices
+          contained within such NOTICE file, excluding those notices
+          that do not pertain to any part of the Derivative Works, in
+          at least one of the following places: within a NOTICE text
+          file distributed as part of the Derivative Works; within the
+          Source form or documentation, if provided along with the
+          Derivative Works; or, within a display generated by the
+          Derivative Works, if and wherever such third-party notices
+          normally appear. The contents of the NOTICE file are for
+          informational purposes only and do not modify the License.
+          You may add Your own attribution notices within Derivative
+          Works that You distribute, alongside or as an addendum to
+          the NOTICE text from the Work, provided that such additional
+          attribution notices cannot be construed as modifying the
+          License.
+
+      You may add Your own copyright statement to Your modifications
+      and may provide additional or different license terms and
+      conditions for use, reproduction, or distribution of Your
+      modifications, or for any such Derivative Works as a whole,
+      provided Your use, reproduction, and distribution of the Work
+      otherwise complies with the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state
+      otherwise, any Contribution intentionally submitted for
+      inclusion in the Work by You to the Licensor shall be under the
+      terms and conditions of this License, without any additional
+      terms or conditions.  Notwithstanding the above, nothing herein
+      shall supersede or modify the terms of any separate license
+      agreement you may have executed with Licensor regarding such
+      Contributions.
+
+   6. Trademarks. This License does not grant permission to use the
+      trade names, trademarks, service marks, or product names of the
+      Licensor, except as required for reasonable and customary use
+      in describing the origin of the Work and reproducing the content
+      of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or
+      conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or
+      FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for
+      determining the appropriateness of using or redistributing the
+      Work and assume any risks associated with Your exercise of
+      permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and
+      grossly negligent acts) or agreed to in writing, shall any
+      Contributor be liable to You for damages, including any direct,
+      indirect, special, incidental, or consequential damages of any
+      character arising as a result of this License or out of the use
+      or inability to use the Work (including but not limited to
+      damages for loss of goodwill, work stoppage, computer failure or
+      malfunction, or any and all other commercial damages or losses),
+      even if such Contributor has been advised of the possibility of
+      such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by
+      reason of your accepting any such warranty or additional
+      liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+   implied.  See the License for the specific language governing
+   permissions and limitations under the License.
+</div></pre></div></div></div><div><a name="N100C5"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="cgsintro"></a><div></div>Introdu&ccedil;&atilde;o ao Derby</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Bem vindo ao <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>!
+O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+&eacute; um sistema gerenciador de banco de dados relacional (SGBDR) baseado em
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Java<span style="font-size: 75%;">(TM)</span></span> e SQL.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Esta se&ccedil;&atilde;o descreve o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></div><div><a name="N1012F"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="cgsintdo"></a><div></div>Op&ccedil;&otilde;es de implementa&ccedil;&atilde;o</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+pode ser implementado de v&aacute;rias maneiras diferentes.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">As op&ccedil;&otilde;es de implementa&ccedil;&atilde;o incluem:
+<div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>Incorporado a um aplicativo Java de um &uacute;nico usu&aacute;rio.
+O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> pode ficar
+praticamente invis&iacute;vel ao usu&aacute;rio final, porque n&atilde;o requer administra&ccedil;&atilde;o
+e executa na mesma m&aacute;quina virtual Java (JVM) que o aplicativo.</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>Incorporado a um aplicativo multiusu&aacute;rio como um servidor Web,
+um servidor de aplicativos, ou um ambiente de desenvolvimento compartilhado.</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>Incorporado a uma estrutura de servidor. Pode ser utilizado o Network Server
+com o driver de cliente da rede, ou um servidor de livre escolha.</div></td></tr></table></div></div></div></div><div><a name="N1019C"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="cgsinstr"></a><div></div>Requisitos do Sistema</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> &eacute; um
+mecanismo de banco de dados escrito inteiramente em Java; executa em qualquer
+M&aacute;quina Virtual Java (JVM) certificada.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"></div></div></div><div><a name="N101E2"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgsdocs17307"></a><div></div>A biblioteca do Derby</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">A biblioteca do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+inclui os manuais do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+e a refer&ecirc;ncia da API.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N101FC"></a><span></span><div><div><div style="font-size: 10pt; font-weight: bold; text-indent: 0em; margin-right: 24pt;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Desenvolvedor do Derby</span></span></div><div style="margin-left: 72pt + 16pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Descreve as funcionalidades e recursos do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+comuns a todas as implementa&ccedil;&otilde;es, como as especificidades do JDBC e do SQL do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>,
+implementa&ccedil;&atilde;o dos aplicativos
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>,
+seguran&ccedil;a, e outros recursos avan&ccedil;ados.</div></div></div><div><div style="font-size: 10pt; font-weight: bold; text-indent: 0em; margin-right: 24pt;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Manual de Refer&ecirc;ncia do Derby</span></span></div><div style="margin-left: 72pt + 16pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Documenta a implementa&ccedil;&atilde;o da linguagem SQL no
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.
+Al&eacute;m disso, fornece informa&ccedil;&otilde;es de refer&ecirc;ncia para as implementa&ccedil;&otilde;es de JDBC e
+JTA, palavras-chave, tabelas do sistema, propriedades e <span style="font-style: italic;">SQLExceptions</span>
+do <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></div></div><div><div style="font-size: 10pt; font-weight: bold; text-indent: 0em; margin-right: 24pt;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Ajuste do Derby</span></span></div><div style="margin-left: 72pt + 16pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Explica como configurar e ajustar o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+atrav&eacute;s de propriedades, e fornece informa&ccedil;&otilde;es de refer&ecirc;ncia sobre as
+propriedades. Tamb&eacute;m oferece dicas de desempenho, discuss&atilde;o detalhada sobre
+desempenho, e informa&ccedil;&otilde;es sobre o otimizador do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></div></div><div><div style="font-size: 10pt; font-weight: bold; text-indent: 0em; margin-right: 24pt;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia das Ferramentas e Utilit&aacute;rios do Derby</span></span></div><div style="margin-left: 72pt + 16pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Um guia para trabalhar com as ferramentas do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> como o
+<span style="font-family: Courier;">ij</span>, e utilit&aacute;rios mais avan&ccedil;ados como importa&ccedil;&atilde;o/exporta&ccedil;&atilde;o
+e o carregador de classes do banco de dados.</div></div></div><div><div style="font-size: 10pt; font-weight: bold; text-indent: 0em; margin-right: 24pt;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Servidor e Administra&ccedil;&atilde;o do Derby</span></span></div><div style="margin-left: 72pt + 16pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">A Parte Um deste guia discute a configura&ccedil;&atilde;o dos servidores, como
+programar aplicativos cliente, e administra&ccedil;&atilde;o do banco de dados.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Al&eacute;m disso, alguns sistemas podem requerer tarefas administrativas, como
+fazer c&oacute;pia de seguran&ccedil;a do banco de dados. Estas tarefas n&atilde;o dependem de
+nenhuma estrutura do servidor, sendo somente para sistemas multi-usu&aacute;rios ou
+grandes.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">A Parte Dois deste guia discute quest&otilde;es administrativas como c&oacute;pia de
+seguran&ccedil;a e depura&ccedil;&atilde;o de impasses (deadlocks).</div></div></div><div><div style="font-size: 10pt; font-weight: bold; text-indent: 0em; margin-right: 24pt;">javadoc da API do <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span></div><div style="margin-left: 72pt + 16pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Gerado automaticamente para todas as classes p&uacute;blicas do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+(N&atilde;o &eacute; fornecido nenhum javadoc para a API do JDBC, que faz parte da
+Java 2 Platform, Standard Edition). Para obter mais informa&ccedil;&otilde;es sobre as classes
+da API, deve ser consultada a publica&ccedil;&atilde;o
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Manual de Refer&ecirc;ncia do Derby</span></span></span>.</div></div></div></div></div></div></div></div><div><a name="N10314"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="cgsinsta"></a><div></div>Instala&ccedil;&atilde;o e utiliza&ccedil;&atilde;o do Derby</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Se voc&ecirc; for inexperiente com o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+e programa&ccedil;&atilde;o JDBC, esta se&ccedil;&atilde;o vai ajud&aacute;-lo a come&ccedil;ar a usar este produto.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Se voc&ecirc; for um programador JDBC experiente, ent&atilde;o veja o
+<span style="color: blue;"><a href="#cgsquck19524">Guia de inicia&ccedil;&atilde;o r&aacute;pida para usu&aacute;rios de JDBC experientes</a></span>.</div></div><div><a name="N1038E"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="cgsinstallingderby"></a><div></div>Instala&ccedil;&atilde;o do Derby</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">
+Para poder instalar o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>,
+primeiro &eacute; necess&aacute;rio baixar o arquivo zip ou tar do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+do site do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> na Web.
+</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Acesse a p&aacute;gina
+<span style="color: blue;"><a href="http://db.apache.org/derby/derby_downloads.html"><span style="border-right-width: 0pt; border-left-width: 0pt;">http://db.apache.org/derby/derby_downloads.html</span></a></span> utilizando o navegador
+Web. Esta p&aacute;gina cont&eacute;m v&aacute;rias distribui&ccedil;&otilde;es do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>,
+incluindo pacotes instant&acirc;neos e distribui&ccedil;&otilde;es bin&aacute;rias de vers&otilde;es
+est&aacute;veis. Tamb&eacute;m s&atilde;o encontradas informa&ccedil;&otilde;es sobre como acessar a distribui&ccedil;&atilde;o
+do c&oacute;digo ativo do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.
+As distribui&ccedil;&otilde;es se encontram em pacotes <span style="font-style: italic;">bin</span>, <span style="font-style: italic;">lib</span> e <span style="font-style: italic;">src</span>.
+Este guia assume que foi baixado o pacote de distribui&ccedil;&atilde;o <span style="font-style: italic;">bin</span>.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">Extraia o pacote baixado. A instala&ccedil;&atilde;o extra&iacute;da cont&eacute;m v&aacute;rios subdiret&oacute;rios:<div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>O subdiret&oacute;rio <span style="font-family: Courier;">demo</span> cont&eacute;m programas de demonstra&ccedil;&atilde;o.</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>O subdiret&oacute;rio <span style="font-family: Courier;">frameworks</span> cont&eacute;m scripts para a execu&ccedil;&atilde;o de
+utilit&aacute;rios e configura&ccedil;&atilde;o do ambiente.</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>O subdiret&oacute;rio <span style="font-family: Courier;">javadoc</span> cont&eacute;m a documenta&ccedil;&atilde;o da
+<span style="font-family: Courier;">api</span> gerada a partir dos coment&aacute;rios do c&oacute;digo fonte.</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>O subdiret&oacute;rio <span style="font-family: Courier;">doc</span> cont&eacute;m a documenta&ccedil;&atilde;o do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>O subdiret&oacute;rio <span style="font-family: Courier;">lib</span> cont&eacute;m os arquivos jar do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></td></tr></table></div></div></div></div><div><a name="N10463"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="tgssetupjavaenvir"></a><div></div>Configura&ccedil;&atilde;o do ambiente Java</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">&Eacute; necess&aacute;rio configurar a vari&aacute;vel de ambiente PATH para que a JVM
+e os aplicativos Java executem corretamente. Isto &eacute; extremamente importante para
+o sucesso da instala&ccedil;&atilde;o, porque a vari&aacute;vel PATH permite que o sistema
+operacional encontre os programas apropriados a partir de qualquer diret&oacute;rio.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10487"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Se houver mais de uma JVM instalada, a JVM que se deseja utilizar
+deve estar antes de qualquer outra na vari&aacute;vel PATH.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Para verificar a vari&aacute;vel de ambiente PATH:</div></div><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div>1. 
+          </div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Em uma janela de comando, digite:
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">java -version</div></pre></div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Se o caminho estiver definido corretamente, ser&aacute; exibida uma
+informa&ccedil;&atilde;o indicando a vers&atilde;o da JVM.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div>2. 
+          </div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Se o comando n&atilde;o retornar a vers&atilde;o correta da JVM,
+a vari&aacute;vel PATH deve ser configurada adicionando o subdiret&oacute;rio
+<span style="font-family: Courier;">bin</span> do diret&oacute;rio da JVM ao come&ccedil;o do caminho.
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Por exemplo, se o diret&oacute;rio for <span style="font-family: Courier;">C:\JDK1.4</span>,
+deve ser adicionado <span style="font-family: Courier;">C:\JDK1.4\bin</span> ao come&ccedil;o do caminho.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div>3. 
+          </div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">O passo 1 deve ser repetido para haver certeza que a vari&aacute;vel de
+ambiente PATH est&aacute; configurada corretamente.</span></div></td></tr></table></div></div></div><div><a name="N10519"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="cgsusingtoolsutils"></a><div></div>Utiliza&ccedil;&atilde;o das ferramentas e dos utilit&aacute;rios de inicializa&ccedil;&atilde;o</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">
+As ferramentas do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+incluem o dblook, o ij e o sysinfo.
+Os utilit&aacute;rios do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+incluem os utilit&aacute;rios de importa&ccedil;&atilde;o e exporta&ccedil;&atilde;o, e os utilit&aacute;rios de
+carga de classe do banco de dados.
+</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O diret&oacute;rio /frameworks/embedded/bin cont&eacute;m scripts para executar algumas das
+ferramentas e utilit&aacute;rios do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+no modo incorporado.
+Podem ser encontrados scripts semelhantes para executar ferramentas e
+utilit&aacute;rios do Network Server no diret&oacute;rio
+/frameworks/NetworkServer/bin.
+Na discuss&atilde;o sobre estas ferramentas e utilit&aacute;rios no modo incorporado o
+diret&oacute;rio /frameworks/embedded/bin &eacute; referenciado como diret&oacute;rio /bin, a menos
+que indicado de outra forma.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Os scripts possuem nomes descritivos, como <span style="font-family: Courier;">sysinfo.bat</span> ou
+<span style="font-family: Courier;">ij.ksh</span>.
+Como os scripts de caminho de classe, estes scripts terminam com extens&otilde;es
+diferentes dependendo do ambiente. Os scripts para o Windows possuem
+extens&atilde;o .bat, enquanto os scripts para o Unix possuem extens&atilde;o .ksh.
+Pode ser necess&aacute;rio modificar estes scripts para que as ferramentas e
+utilit&aacute;rios executem de forma apropriada nas plataformas Windows e Unix.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">A informa&ccedil;&otilde;es a seguir se aplicam <span style="font-style: italic;">apenas</span> &agrave;s plataformas UNIX.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Para se poder utilizar os arquivos de scripts deve ser feito o seguinte: </div><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div>1. 
+          </div></td><td width="8">&nbsp;</td><td valign="top"><div>Ativar o bit de execut&aacute;vel para os arquivos de script.
+Por exemplo:
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">chmod +x <span style="font-style: italic;">nomeArquivo</span></div></pre><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">onde <span style="font-style: italic;">nomeArquivo</span>
+&eacute; qualquer arquivo de script com uma extens&atilde;o .ksh.
+Isto informa ao sistema para executar os comandos no script toda vez que este
+for utilizado.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div>2. 
+          </div></td><td width="8">&nbsp;</td><td valign="top"><div>Adicionar o diret&oacute;rio /bin &agrave; vari&aacute;vel PATH.
+Isto permite a utiliza&ccedil;&atilde;o de comandos curtos para iniciar as ferramentas do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></td></tr></table></div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Para obter mais informa&ccedil;&otilde;es sobre os scripts consulte
+<span style="color: blue;"><a href="#rgslib27507">Scripts fornecidos pelo Derby</a></span>.</div></div><div><a name="N105E2"></a><div style="padding-top: 1pc; margin-bottom: 2pt; font-size: 12pt; font-weight: bold;"><a name="cgsusingsysinfo"></a><div></div>Utiliza&ccedil;&atilde;o do sysinfo</div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">A ferramenta sysinfo do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+mostra informa&ccedil;&otilde;es sobre o ambiente Java e a vers&atilde;o do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O script sysinfo define as vari&aacute;veis de ambiente apropriadas, incluindo o
+caminho de classe, e executa o programa sysinfo. Uma vez que se tenha o
+diret&oacute;rio /bin na vari&aacute;vel PATH, o sysinfo pode ser executando digitando
+em uma janela de comando: </div><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">sysinfo</div></pre></div></div><div><a name="N10635"></a><div style="padding-top: 1pc; margin-bottom: 2pt; font-size: 12pt; font-weight: bold;"><a name="tgsrunningij"></a><div></div>Execu&ccedil;&atilde;o do ij</div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">A ferramenta <span style="font-weight: bold;">ij</span> pode ser utilizada para conectar a um
+banco de dados
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N1064F"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O diret&oacute;rio /bin deve estar inclu&iacute;do na vari&aacute;vel de ambiente PATH
+para executar o ij.</div></div><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">O ij pode ser executado digitando o seguinte comando:
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">ij</div></pre></div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O script ij executa o programa ij e define vari&aacute;veis de ambiente,
+como CLASSPATH.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Para criar um banco de dados utilizando o ij, deve ser digitado o seguinte comando:</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">ij&gt; connect 'jdbc:derby:bdteste;create=true';</div></pre></div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Este comando cria o banco de dados chamado bdteste no diret&oacute;rio
+atual, preenche as tabelas do sistema, e conecta ao banco de dados.
+Em seguida podem ser executadas quaisquer instru&ccedil;&otilde;es SQL a partir da linha de
+comandos do ij.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Quando estiver pronto para sair do ij, digite:
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">ij&gt; exit;</div></pre></div></div></td></tr></table></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N1069F"></a><span></span>Para obter mais informa&ccedil;&otilde;es sobre a utiliza&ccedil;&atilde;o do ij deve ser
+consultado o
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia das Ferramentas e Utilit&aacute;rios do Derby</span></span></span>.</div></div></div></div><div><a name="N106E0"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="cgsmanuallysetting"></a><div></div>Configura&ccedil;&atilde;o manual das vari&aacute;veis de ambiente e caminhos</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Se n&atilde;o for poss&iacute;vel executar os scripts das ferramentas e utilit&aacute;rios do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>,
+determinadas etapas dever&atilde;o ser conclu&iacute;das manualmente.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Os seguintes t&oacute;picos mostram como configurar o ambiente e executar as
+ferramentas manualmente.</div></div><div><a name="N10745"></a><div style="padding-top: 1pc; margin-bottom: 2pt; font-size: 12pt; font-weight: bold;"><a name="tgs36360"></a><div></div>Defini&ccedil;&atilde;o da vari&aacute;vel de ambiente DERBY_INSTALL</div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Durante a instala&ccedil;&atilde;o &eacute; criado um diret&oacute;rio base, onde o
+produto &eacute; instalado. Este documento assume que este diret&oacute;rio se chama
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby_10</span>.
+Este documento faz refer&ecirc;ncia a este diret&oacute;rio como o diret&oacute;rio base do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N1075F"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Caso se planeje utilizar os scripts presentes no diret&oacute;rio
+<span style="font-family: Courier;">/frameworks/embedded/bin</span>, e se o sistema operacional suportar,
+deve ser criada uma vari&aacute;vel de ambiente chamada
+<span style="border-right-width: 0pt; border-left-width: 0pt;">DERBY_HOME</span>
+e definido seu valor como o caminho para o diret&oacute;rio base do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.
+Isto permite a utiliza&ccedil;&atilde;o de comandos curtos para executar as ferramentas e
+utilit&aacute;rios do <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10780"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">Por exemplo, se o produto est&aacute; instalado em
+c:\<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby_10</span>,
+a vari&aacute;vel de ambiente <span style="border-right-width: 0pt; border-left-width: 0pt;">DERBY_HOME</span>
+deve ser definida com o valor
+c:\<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby_10</span>:
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">set <span style="border-right-width: 0pt; border-left-width: 0pt;">DERBY_HOME</span>=c:\<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby_10</span></div></pre></div></div></div></div><div><a name="N107DA"></a><div style="padding-top: 1pc; margin-bottom: 2pt; font-size: 12pt; font-weight: bold;"><a name="tgs26250"></a><div></div>Configura&ccedil;&atilde;o do caminho de classe</div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">A JVM precisa conhecer o caminho de todos os arquivos de classe
+necess&aacute;rios ao aplicativo. O caminho de classe &eacute; uma lista de bibliotecas de
+classe requeridas pela JVM e outros aplicativos Java para executar o programa.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N107FE"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">A vari&aacute;vel de ambiente CLASSPATH pode ser definida no sistema
+operacional de forma tempor&aacute;ria, permanente, ou em tempo de execu&ccedil;&atilde;o quando for
+iniciado o aplicativo Java e a JVM. Se a vari&aacute;vel de ambiente for definida
+temporariamente, esta deve ser definida toda vez que &eacute; aberta uma nova janela
+de comandos.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Na maioria dos ambientes de desenvolvimento, &eacute; melhor definir a vari&aacute;vel de
+ambiente CLASSPATH do sistema operacional temporariamente.
+O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> fornece alguns
+scripts para ajudar a definir o caminho de classe desta maneira; est&atilde;o
+localizados no diret&oacute;rio /frameworks/embedded/bin e no diret&oacute;rio
+/frameworks/NetworkServer/bin.
+Para definir o caminho de classe temporariamente, deve ser executado um script
+toda vez que for aberta uma nova janela de comandos.</div></div><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Definir a vari&aacute;vel CLASSPATH para que inclua os arquivos derby.jar e
+derbytools.jar.
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Por exemplo:
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">set CLASSPATH=%<span style="border-right-width: 0pt; border-left-width: 0pt;">DERBY_HOME</span>%\lib\derby.jar;
+%<span style="border-right-width: 0pt; border-left-width: 0pt;">DERBY_HOME</span>%\lib\derbytools.jar;%CLASSPATH%</div></pre></div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Para executar manualmente o utilit&aacute;rio sysinfo, deve ser introduzido
+o seguinte comando em uma janela de comandos ou no interpretador de comandos:
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">java org.apache.derby.tools.sysinfo</div></pre></div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Para executar manualmente o utilit&aacute;rio ij e conectar ao banco de dados:</span><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div>a.</div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Introduza em uma janela de comandos ou no interpretador de comandos:
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">java org.apache.derby.tools.ij
+ij&gt; connect 'jdbc:derby:&lt;<span style="font-style: italic;">nome_do_bd</span>&gt;;create=true';</div></pre>onde
+&lt;<span style="font-style: italic;">nome_do_bd</span>&gt; &eacute; o nome do banco de dados onde est&aacute; sendo feita a
+conex&atilde;o.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div>b.</div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="border-right-width: 0pt; border-left-width: 0pt;">Para sair do utilit&aacute;rio ij deve ser digitado:
+</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"><pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">ij&gt; exit;</div></pre></div></div></td></tr></table></div></div></td></tr></table></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10889"></a><span></span>Para obter informa&ccedil;&otilde;es adicionais sobre a execu&ccedil;&atilde;o dos utilit&aacute;rios
+ij e sysinfo deve ser consultada a publica&ccedil;&atilde;o
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia das Ferramentas e Utilit&aacute;rios do Derby</span></span></span></div></div></div></div></div><div><a name="N108C9"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="cgsquck19524"></a><div></div>Guia de inicia&ccedil;&atilde;o r&aacute;pida para usu&aacute;rios de JDBC experientes</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Esta se&ccedil;&atilde;o se destina a programadores JDBC experientes, que j&aacute; sabem
+como definir o caminho de classes, como executar um programa Java, e como
+utilizar um driver de JDBC.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Para obter informa&ccedil;&otilde;es mais detalhadas sobre os t&oacute;picos cobertos por esta
+se&ccedil;&atilde;o devem ser consultadas as publica&ccedil;&otilde;es
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Desenvolvedor do Derby</span></span></span> e
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia das Ferramentas e Utilit&aacute;rios do Derby</span></span></span>.</div></div><div><a name="N10944"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="cgsquck70629"></a><div></div>Ambientes nos quais o Derby pode ser executado</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Antes de configurar o sistema para executar o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>,
+&eacute; &uacute;til compreender algo sobre os diferentes ambientes nos quais o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+pode executar, porque estes ambientes afetam o caminho de classe, o nome do
+driver e a URL de conex&atilde;o com o banco de dados.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Para obter mais informa&ccedil;&otilde;es sobre os ambientes do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+deve ser consultado o
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Desenvolvedor do Derby</span></span></span>.</div></div><div><a name="N109B2"></a><div style="padding-top: 1pc; margin-bottom: 2pt; font-size: 12pt; font-weight: bold;"><a name="cgsquck35643"></a><div></div>Ambiente incorporado</div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Um ambiente incorporado &eacute; um ambiente no qual somente um &uacute;nico
+aplicativo pode acessar o banco de dados de cada vez, sem que ocorra nenhum
+acesso pela rede.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Quando um aplicativo inicia uma inst&acirc;ncia do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+na sua JVM, o aplicativo executa em um ambiente incorporado.
+A carga do driver incorporado inicia o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></div></div><div><a name="N10A09"></a><div style="padding-top: 1pc; margin-bottom: 2pt; font-size: 12pt; font-weight: bold;"><a name="cgsquck13780"></a><div></div>Ambiente cliente/servidor</div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Um ambiente cliente/servidor &eacute; um ambiente no qual v&aacute;rios aplicativos
+se conectam ao <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+atrav&eacute;s da rede.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+executa incorporado a uma estrutura de servidor que permite v&aacute;rias conex&otilde;es de
+rede. (A pr&oacute;pria estrutura inicia uma inst&acirc;ncia do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+e executa em um ambiente incorporado. Entretanto, os aplicativos cliente
+n&atilde;o executam no ambiente incorporado.)</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> tamb&eacute;m pode ser
+incorporado a qualquer estrutura de servidor Java.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Para obter informa&ccedil;&otilde;es adicionais sobre como executar o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+em um servidor deve ser consultada a publica&ccedil;&atilde;o
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Servidor e Administra&ccedil;&atilde;o do Derby</span></span></span>.</div></div></div></div><div><a name="N10A8A"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgsquck35368"></a><div></div>Drivers dispon&iacute;veis</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Est&atilde;o dispon&iacute;veis drivers de JDBC diferentes dependendo do ambiente
+escolhido para o <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10A9E"></a><span></span><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>org.apache.derby.jdbc.EmbeddedDriver
+<div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Um driver para ambientes incorporados, onde o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> executa na mesma JVM
+do aplicativo.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>org.apache.derby.jdbc.ClientDriver
+<div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Um driver para o ambiente Network Server.
+O Network Server configura um ambiente cliente/servidor.</div></div></td></tr></table></div></div></div></div><div><a name="N10ADD"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgsquck30197"></a><div></div>URL de conex&atilde;o com banco de dados</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">
+Para conectar ao banco de dados deve ser utilizada uma
+URL de conex&atilde;o com banco de dados,
+quando &eacute; utilizado o driver incorporado fornecido pelo
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.
+</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10B0C"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">O formato da URL de conex&atilde;o com banco de dados para conectar ao banco
+de dados &eacute; o seguinte:
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">jdbc:derby:<span style="font-style: italic;">nomeBancoDados</span>;<span style="font-style: italic;">atributoURL</span></div></pre>
+onde:
+<div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">nomeBancoDados</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O nome do banco de dados ao qual se deseja conectar</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">atributoURL</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Um ou mais dos atributos suportados pela URL de conex&atilde;o com banco de dados,
+como: ;<span style="font-style: italic;">locale=ll_CC</span> ou ;<span style="font-style: italic;">create=true</span>.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Para obter informa&ccedil;&otilde;es adicionais deve ser consultada a publica&ccedil;&atilde;o
+<span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Desenvolvedor do Derby</span></span></span>.</div></div></td></tr></table></div></div></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10B66"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">Para o driver cliente da rede fornecido pelo
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>,
+o formato da URL de conex&atilde;o com banco de dados para conectar ao banco de dados
+&eacute; o seguinte:
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">jdbc:derby://&lt;servidor&gt;[:&lt;porta&gt;]/<span style="font-style: italic;">nomeBancoDados</span>
+[;<span style="font-style: italic;">atributoURL</span>=&lt;valor&gt; [;...]]</div></pre>
+onde &lt;servidor&gt; e &lt;porta&gt; especificam o nome do hospedeiro
+(ou endere&ccedil;o de IP) e o n&uacute;mero da porta onde o servidor est&aacute; atendendo as
+solicita&ccedil;&otilde;es. O <span style="font-style: italic;">atributoURL</span> pode ser um atributo do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+incorporado ou do cliente da rede.
+Para obter informa&ccedil;&otilde;es adicionais sobre como acessar o Network Server
+utilizando o cliente da rede deve ser consultada a publica&ccedil;&atilde;o
+<span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Servidor e Administra&ccedil;&atilde;o do Derby</span></span>.</div></div></div></div></div><div><a name="N10BBB"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="rgsdocs37966"></a><div></div>Conven&ccedil;&otilde;es da documenta&ccedil;&atilde;o</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Esta se&ccedil;&atilde;o descreve a terminologia, sintaxe e conven&ccedil;&otilde;es tipogr&aacute;ficas
+da documenta&ccedil;&atilde;o do <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10BCF"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"></div></div></div><div><a name="N10C12"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgsdocs99397"></a><div></div>Terminologia</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">A documenta&ccedil;&atilde;o do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+utiliza o termo especializado <span style="font-family: Courier;">ambiente</span> para descrever o m&eacute;todo
+utilizado pelo aplicativo para interagir com o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10C32"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">O ambiente &eacute; algumas vezes referenciado como <span style="font-style: italic;">estrutura</span>.
+Os dois tipos de ambiente s&atilde;o <span style="font-style: italic;">ambiente incorporado</span> e
+<span style="font-style: italic;">ambiente cliente/servidor</span>.</div></div></div></div><div><a name="N10C6A"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgsdocs10012"></a><div></div>Sintaxe SQL</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">A sintaxe SQL &eacute; apresentada em nota&ccedil;&atilde;o BNF modificada.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10C78"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">Os metass&iacute;mbolos do BNF s&atilde;o:
+<div><table style="margin-top: 12pt; margin-bottom: 10pt; background-color: white; border-style: solid; border-width: 1pt; border-color: black;" valign="top"><thead><tr><td style="border-style: solid; border-width: 1pt; border-color: black; font-weight: bold; text-align: center; padding: 2pt; background-color: silver; margin-left: 2pt;" valign="top"><div>S&iacute;mbolo</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; font-weight: bold; text-align: center; padding: 2pt; background-color: silver; margin-left: 2pt;" valign="top"><div>Significado</div></td></tr></thead><tbody><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">|</span></div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>&ldquo;ou&rdquo;. Escolha de um dos itens</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">[ ]</span></div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Circunda itens opcionais.</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">*</span></div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Sinaliza que o item pode ser repetido zero ou mais vezes.
+Possui significado especial nas instru&ccedil;&otilde;es SQL.</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">{ }</span></div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Agrupa itens para que possam ser marcados por um dos outros
+s&iacute;mbolos, ou seja, [ ], | ou *.</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">( )  . , </span></div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Outra pontua&ccedil;&atilde;o que faz parte da sintaxe.</div></td></tr></tbody></table></div></div></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10D19"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">Exemplo de como a sintaxe SQL &eacute; apresentada:
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;"><span style="font-weight: bold;">CREATE [ UNIQUE ] INDEX <span style="font-weight: bold;"><span style="font-style: italic;">nomeIndice</span></span>
+ON <span style="font-weight: bold;"><span style="font-style: italic;">nomeTabela</span></span> ( <span style="font-weight: bold;"><span style="font-style: italic;">nomeColunaSimples</span></span> [ , <span style="font-weight: bold;"><span style="font-style: italic;">nomeColunaSimples</span></span> ] * ) </span></div></pre></div></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10D54"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">A sintaxe da linha de comando para executar programas e utilit&aacute;rios Java
+(bem como exemplos), sempre inicia pela palavra <span style="font-style: italic;">java</span>:
+<pre><div style="margin-top: 1.2em; margin-bottom: 0.8em; background-color: #f0f0f0; font-family: Courier; line-height: 106%; font-size: 9pt;">java org.apache.derby.tools.ij</div></pre></div></div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10D69"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Al&eacute;m disso, esta documenta&ccedil;&atilde;o utiliza o estilo do
+<span style="font-style: italic;">IBM Software Development Kit</span>
+para definir os argumentos e as propriedades da JVM.
+Se for utilizada uma outra M&aacute;quina Virtual Java, a forma de definir os
+argumentos e as propriedades da JVM podem ser diferentes.</div></div></div></div><div><a name="N10D95"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgsdocs18277"></a><div></div>Conven&ccedil;&otilde;es tipogr&aacute;ficas</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Esta documenta&ccedil;&atilde;o utiliza algumas conven&ccedil;&otilde;es tipogr&aacute;ficas para
+real&ccedil;ar elementos da linguagem SQL, comandos do sistema operacional e da
+linguagem de programa&ccedil;&atilde;o Java.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N10DA3"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;"><div><div style="font-weight: bold;"><span style="color: red;">Tabela 1. </span>
+Conven&ccedil;&otilde;es tipogr&aacute;ficas do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span></div><table style="margin-top: 12pt; margin-bottom: 10pt; background-color: white; border-style: solid; border-width: 1pt; border-color: black;" valign="top"><thead><tr><td style="border-style: solid; border-width: 1pt; border-color: black; font-weight: bold; text-align: center; padding: 2pt; background-color: silver; margin-left: 2pt;" valign="top"><div>Utiliza&ccedil;&atilde;o</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; font-weight: bold; text-align: center; padding: 2pt; background-color: silver; margin-left: 2pt;" valign="top"><div>Tipo</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; font-weight: bold; text-align: center; padding: 2pt; background-color: silver; margin-left: 2pt;" valign="top"><div>Exemplos</div></td></tr></thead><tbody><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Novos termos</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>It&aacute;lico</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>definido por <span style="font-style: italic;">chaves</span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Nomes de arquivos e diret&oacute;rios</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>It&aacute;lico</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-style: italic;">C:\<span style="border-right-width: 0pt; border-left-width: 0pt;">derby</span></span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Objetos do dicion&aacute;rio</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>It&aacute;lico</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>A tabela <span style="font-style: italic;">Empregados</span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Os itens que n&atilde;o s&atilde;o digitados exatamente como aparecem na
+sintaxe, sendo substitu&iacute;dos pelo nome apropriado</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>It&aacute;lico</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">CREATE TABLE <span style="font-style: italic;">nomeTabela</span></span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Exemplos de SQL</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Negrito e/ou largura fixa</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;"><span style="font-weight: bold;">SELECT nome_cidade FROM Cidades</span></span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Exemplos de aplicativos Java</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Negrito e/ou largura fixa</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">Connection conn = DriverManager.getConnection ("jdbc:derby:Sample")</span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>O que se digita no <span style="font-style: italic;">prompt</span> de comando</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Negrito e/ou largura fixa</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-weight: bold;"><span style="font-family: Courier;">java org.apache.derby.tools.ij</span></span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Coment&aacute;rios nos exemplos</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Negrito e/ou largura fixa</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><span style="font-family: Courier;">--Linha ignorada</span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Palavras chave SQL (comandos)</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Tudo em letras mai&uacute;sculas</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Pode ser utilizada a instru&ccedil;&atilde;o CREATE TABLE</div></td></tr></tbody></table></div></div></div></div></div></div><div><a name="N10F12"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="cgslib19524"></a><div></div>Bibliotecas e scripts do Derby: refer&ecirc;ncia completa</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Este ap&ecirc;ndice descreve as bibliotecas e scripts do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;"></div></div><div><a name="N10F7B"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgslib46043"></a><div></div>Bibliotecas fornecidas pelo Derby</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">Esta se&ccedil;&atilde;o mostra as diferentes bibliotecas utilizadas pelo
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+e suas fun&ccedil;&otilde;es.</div><div><div style="font-weight: bold;"><span style="color: red;">Tabela 2. </span>Bibliotecas do Derby e suas utiliza&ccedil;&otilde;es</div><table style="margin-top: 12pt; margin-bottom: 10pt; background-color: white; border-style: solid; border-width: 1pt; border-color: black;" valign="top"><thead><tr><td style="border-style: solid; border-width: 1pt; border-color: black; font-weight: bold; text-align: center; padding: 2pt; background-color: silver; margin-left: 2pt;" valign="top"><div>Nome da biblioteca</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; font-weight: bold; text-align: center; padding: 2pt; background-color: silver; margin-left: 2pt;" valign="top"><div>Utiliza&ccedil;&atilde;o</div></td></tr></thead><tbody><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top" colspan="NaN"><div><span style="font-weight: bold;">Biblioteca de mecanismos</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Sempre necess&aacute;ria em ambientes incorporados.
+Para ambientes cliente/servidor somente &eacute; necess&aacute;ria no servidor.</div></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>derby.jar</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Para bancos de dados incorporados</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top" colspan="NaN"><div><span style="font-weight: bold;">Biblioteca de ferramentas</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Nos ambientes incorporados &eacute; necess&aacute;ria a presen&ccedil;a da biblioteca no caminho
+de classe para utilizar uma ferramenta.
+Para o ambiente cliente/servidor a biblioteca somente &eacute; necess&aacute;ria no cliente.</div></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>derbytools.jar</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Requerida para a execu&ccedil;&atilde;o de todas as ferramentas do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+(como ij, dblook e import/export).</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top" colspan="NaN"><div><span style="font-weight: bold;">Biblioteca do Network Server</span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>derbynet.jar</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Requerida para iniciar o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+Network Server.</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top" colspan="NaN"><div><span style="font-weight: bold;">Biblioteca cliente da rede</span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>derbyclient.jar</div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Requerida para utilizar o driver cliente da rede do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>.</div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top" colspan="NaN"><div><span style="font-weight: bold;">Bibliotecas de idioma</span></div></td></tr><tr><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_cs.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_es.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_de_DE.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_fr.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_hu.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_it.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_ja_JP.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_ko_KR.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_pl.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_pt_BR.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_ru.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_zh_CN.jar</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>derbyLocale_zh_TW.jar</div></td></tr></table></div></div></td><td style="border-style: solid; border-width: 1pt; border-color: black; padding: 2pt; background-color: #faf4fa; margin-left: 2pt;" valign="top"><div>Requeridas para fornecer mensagens traduzidas para o idioma
+indicado.</div></td></tr></tbody></table></div></div></div><div><a name="N11121"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgslib56653"></a><div></div>Bibliotecas n&atilde;o fornecidas pelo Derby</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">No ambiente Java Development Kit Vers&atilde;o 1.3 algumas funcionalidades
+especiais do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+requerem que sejam instaladas bibliotecas adicionais, e que estas sejam
+colocadas no caminho de classe (O Java Development Kit Vers&atilde;o 1.4 j&aacute; inclui
+todas estas bibliotecas).</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N11135"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;"><div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>LDAP (consulte a publica&ccedil;&atilde;o <span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Guia do Desenvolvedor do Derby</span></span></span>)</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>JTA (consulte a publica&ccedil;&atilde;o <span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Manual de Refer&ecirc;ncia do Derby</span></span></span>)</div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div>JDBC 2.0 Extensions (consulte a publica&ccedil;&atilde;o <span style="font-style: italic;"><span style="border-right-width: 0pt; border-left-width: 0pt;"><span style="font-style: italic;">Manual de Refer&ecirc;ncia do Derby</span></span></span>)</div></td></tr></table></div></div></div></div></div><div><a name="N111B9"></a><div style="padding-top: 1pc; margin-bottom: 5pt; font-size: 14pt; font-weight: bold;"><div style="border-right-width: 0pt; border-left-width: 0pt; border-top-width: 1pt; border-top-color: black;"><a name="rgslib27507"></a><div></div>Scripts fornecidos pelo Derby</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em; margin-left: 72pt;">O <span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+fornece scripts no diret&oacute;rio <span style="font-style: italic;">/bin</span>. Cada script vem em duas modalidades,
+uma terminada por .<span style="font-style: italic;">bat</span> e outra terminada por .<span style="font-style: italic;">ksh</span>.</div><div style="line-height: 12pt; margin-top: 0.6em; font-size: 10pt;"><a name="N111DF"></a><span></span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0em; margin-bottom: 0.6em;">Abaixo est&aacute; a rela&ccedil;&atilde;o completa:
+<div><table width="100%"><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/embedded/bin/dblook</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Executa o dblook.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/embedded/bin/ij</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Inicia o ij.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/embedded/bin/setEmbeddedCP</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Coloca todas as bibliotecas do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span>
+para o ambiente incorporado no caminho de classe.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/embedded/bin/sysinfo</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Executa o sysinfo.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/dblook</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Executa o dblook em um contexto de cliente do Network Server.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/ij</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Executa o ij em um contexto de cliente do Network Server.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/NetworkServerControl</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Executa o NetworkServerControl.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/setNetworkClientCP</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Coloca as bibliotecas necess&aacute;rias para conectar ao
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> Network Server
+no caminho de classe.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/setNetworkServerCP</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Coloca todas as bibliotecas necess&aacute;rias para o
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> Network Server
+no caminho de classe.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/startNetworkServer</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Inicia o Network Server na m&aacute;quina local.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/stopNetworkServer</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">P&aacute;ra o Network Server na m&aacute;quina local.</div></div></td></tr><tr><td valign="top" style="text-align: right;" width="24"><div><span>&bull;</span></div></td><td width="8">&nbsp;</td><td valign="top"><div><span style="font-style: italic;">frameworks/NetworkServer/bin/sysinfo</span><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Obt&eacute;m informa&ccedil;&otilde;es do sistema de um
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Derby</span> Network Server
+em execu&ccedil;&atilde;o.</div></div></td></tr></table></div></div></div></div></div></div><div><a name="N112EB"></a><div style="margin-top: 0pc; margin-bottom: 1.4pc; font-size: 16pt; font-weight: bold; padding-top: 1.4pc;"><div style="border-right-width: 0pt; border-left-width: 0pt; line-height: 100%; border-top-width: 3pt; border-top-color: black;"><a name="rgstrademderby"></a><div></div>Marcas Registradas</div></div><div style="margin-left: 72pt; font-size: 10pt;"><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Os seguintes termos s&atilde;o marcas registradas de outras empresas e foram
+utilizados em pelo menos um dos documentos da biblioteca de documenta&ccedil;&atilde;o do
+<span style="border-right-width: 0pt; border-left-width: 0pt;">Apache Derby</span>:</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Cloudscape, DB2, DB2 Universal Database, DRDA e IBM s&atilde;o marcas registradas da
+International Business Machines Corporation nos EUA, outros pa&iacute;ses, ou ambos.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Microsoft, Windows, Windows NT e o logotipo do Windows s&atilde;o marcas registradas
+da Microsoft Corporation nos EUA, outros pa&iacute;ses, ou ambos.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Java e todas as marcas registradas baseadas no Java s&atilde;o marcas registradas da
+Sun Microsystems, Inc. nos EUA, outros pa&iacute;ses, ou ambos.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">UNIX &eacute; uma marca registrada do <span style="font-style: italic;">The Open Group</span> nos EUA e outros pa&iacute;ses.</div><div style="font-size: 10pt; text-indent: 0em; margin-top: 0.6em; margin-bottom: 0.6em;">Outros nomes de empresas, produtos ou servi&ccedil;os podem ser marcas registradas
+ou marcas de servi&ccedil;os de terceiros.</div></div></div></div></div><div valign="top"><div style="font-family: Helvetica; font-weight: bold; font-size: 10pt; text-align: center;"><span>&bull;</span></div></div><br></body></html>

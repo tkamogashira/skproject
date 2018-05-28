@@ -1,0 +1,36 @@
+% BB_QUESTwith2AFC
+
+t=(1:(1/8192):3);
+NoBB=[(sin(2*pi*t*250))' (sin(2*pi*t*250))'];
+ISI2s=zeros([(8192*2),2]);
+
+tGuess=20*log10(252.5/250);
+tGuessSd=20*log10(0.05/250);
+pThreshold=0.92;
+beta=3.5;
+delta=0.01;
+gamma=0.5;
+q=QuestCreate(tGuess,tGuessSd,pThreshold,beta,delta,gamma);
+
+for k=1:10
+    tTest=QuestMode(q);
+    Fx=250*(10^(tTest/20));
+    BB=[(sin(2*pi*time*250))' (sin(2*pi*time*Fx))'];
+    BBinterval=unidrnd(2);
+    if BBinterval==1
+        Trial=[BB;ISI2s;NoBB];
+    else
+        Trial=[NoBB;ISI2s;BB];
+    end;
+    sound(Trial)
+    Ans=input('Which is BB? the former (1) or latter (2) ?');
+    if Ans==BBinterval
+       response=1;
+   else
+       response=0;
+   end;
+   q=QuestUpdate(q,tTest,response);
+end;
+
+t=QuestMean(q);
+sd=QuestSd(q);

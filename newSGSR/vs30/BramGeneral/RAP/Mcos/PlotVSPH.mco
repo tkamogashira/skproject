@@ -1,0 +1,12 @@
+*-------------------------------------------
+* RAP macro for plotting VS and PHase curve
+*-------------------------------------------
+PP X 2
+PP Y 1
+YN 0
+YM 1
+OU SYNC
+YN DEF
+YM DEF
+OU PHASE
+RETURN

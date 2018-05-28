@@ -1,0 +1,17 @@
+% M to 4HzPeakLabel3vsC
+function Ch=Mto4HzPeakLabel3vsC(M,V)
+ChPlusData=[M;V];
+hold off;
+for n=1:202
+    if ChPlusData(55,n)==max(ChPlusData((42:69),n))
+        plot(ChPlusData(412,n),ChPlusData(413,n),'k*'),hold on;
+    elseif ChPlusData(56,n)==max(ChPlusData((42:69),n)) 
+        plot(ChPlusData(412,n),ChPlusData(413,n),'k*'),hold on;
+    else
+        plot(ChPlusData(412,n),ChPlusData(413,n),'k.'),hold on;
+    end;
+end;
+for n=1:202
+    if ChPlusData(411,n)>0
+        
+

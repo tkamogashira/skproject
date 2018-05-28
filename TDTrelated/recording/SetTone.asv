@@ -1,0 +1,485 @@
+function varargout = SetTone(varargin)
+% SETTONE Application M-file for MakeTone.fig
+%    FIG = SETTONE launch MakeTone GUI.
+%    SETTONE('callback_name', ...) invoke the named callback.
+
+% Last Modified by GUIDE v2.5 30-Jan-2003 17:43:22
+
+if nargin == 0  % LAUNCH GUI
+
+	fig = openfig(mfilename,'reuse');
+
+	% Use system color scheme for figure:
+	set(fig,'Color',get(0,'defaultUicontrolBackgroundColor'));
+
+	% Generate a structure of handles to pass to callbacks, and store it. 
+	handles = guihandles(fig);
+	guidata(fig, handles);
+
+
+    %----------------------------------
+    %Initialization Code
+    
+    %Use the settings used previously
+    if exist('SetTone.mat','file')==2
+        load('SetTone') %Load the settings
+
+        if exist('Setting','var')==1
+            SetTone('SetSetting',Setting);
+        end
+        
+        %Position in the screen
+        if exist('Position','var')==1 
+            mypos=get(fig,'Position');
+            mypos(1:2)=Position(1:2);
+            set(fig,'Position',mypos);
+        end
+    end   
+    %Make sure that the figure is visible on the screen
+    movegui(fig,'onscreen');
+   
+    %----------------------------------
+
+    if nargout > 0
+		varargout{1} = fig;
+	end
+
+elseif ischar(varargin{1}) % INVOKE NAMED SUBFUNCTION OR CALLBACK
+
+	try
+		if (nargout)
+			[varargout{1:nargout}] = feval(varargin{:}); % FEVAL switchyard
+		else
+			feval(varargin{:}); % FEVAL switchyard
+		end
+	catch
+		disp(lasterr);
+	end
+
+end
+
+%%%%%%%%%%%%%%% functions created by user %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --------------------------------------------------------------------
+function Setting = GetSetting
+%Read the current settings
+%
+
+myh=findobj('Tag','fig_settone');
+Setting=[];
+if ~isempty(myh)
+    myhandles=guihandles(myh);
+    
+    %Freq
+    Setting.FreqManualFlag=get(myhandles.check_freqmanual,'Value');
+    Setting.FreqManual=get(myhandles.edit_freqmanual,'String');
+    Setting.FreqLogSpaceFlag=get(myhandles.check_freqlogspace,'Value');
+    Setting.FreqFrom=get(myhandles.edit_freqfrom,'String');
+    Setting.FreqTo=get(myhandles.edit_freqto,'String');
+    Setting.FreqStep=get(myhandles.edit_freqstep,'String');
+    Setting.DF=get(myhandles.edit_df,'String');
+
+    %SPL
+    Setting.SPL=get(myhandles.edit_spl,'String');
+    
+    %ITD/IPD
+    Setting.ITD=get(myhandles.edit_itd,'String');
+    Setting.IsRadian=get(myhandles.radio_radian,'Value');
+    Setting.FixEnvFlag=get(myhandles.check_fixenv,'Value');
+
+    %ILD
+    Setting.ILD=get(myhandles.edit_ild,'String');
+    
+    %Duration
+    Setting.Silence1=get(myhandles.edit_silence1,'String');
+    Setting.ToneDur=get(myhandles.edit_tone,'String');
+    Setting.Silence2=get(myhandles.edit_silence2,'String');
+    Setting.Ramp=get(myhandles.edit_ramp,'String');
+end
+
+% --------------------------------------------------------------------
+function varargout = SetSetting(Setting)
+%Set the current settings
+%
+
+myh=findobj('Tag','fig_settone');
+if ~isempty(myh) & ~isempty(Setting)
+    myhandles=guihandles(myh);
+    
+    %Freq
+    set(myhandles.check_freqmanual,'Value',Setting.FreqManualFlag);
+    if Setting.FreqManualFlag %% Disable the UI controls when the check is off
+        set([myhandles.edit_freqmanual myhandles.text_manual_hz],'Enable','on');
+    else
+        set([myhandles.edit_freqmanual myhandles.text_manual_hz],'Enable','off');
+    end
+    set(myhandles.edit_freqmanual,'String',Setting.FreqManual);
+
+    set(myhandles.check_freqlogspace,'Value',Setting.FreqLogSpaceFlag);
+    mymyhandles=[myhandles.edit_freqfrom myhandles.edit_freqto myhandles.edit_freqstep ...
+            myhandles.text_logspace_tild myhandles.text_logspace_hz myhandles.text_logspace_oct];
+    if Setting.FreqLogSpaceFlag
+        set(mymyhandles,'Enable','on');
+    else
+        set(mymyhandles,'Enable','off');
+    end
+    set(myhandles.edit_freqfrom,'String',Setting.FreqFrom);
+    set(myhandles.edit_freqto,'String',Setting.FreqTo);
+    set(myhandles.edit_freqstep,'String',Setting.FreqStep);
+    set(myhandles.edit_df,'String',Setting.DF);
+    
+    %SPL
+    set(myhandles.edit_spl,'String',Setting.SPL);
+    
+    %ITD/IPD
+    set(myhandles.edit_itd,'String',Setting.ITD);
+    if Setting.IsRadian %Toggle between the radio buttons
+        set(myhandles.radio_radian,'Value',1);
+        set(myhandles.radio_us,'Value',0);
+    else
+        set(myhandles.radio_radian,'Value',0);
+        set(myhandles.radio_us,'Value',1);
+    end
+    set(myhandles.check_fixenv,'Value',Setting.FixEnvFlag);
+
+    %ILD
+    set(myhandles.edit_ild,'String',Setting.ILD);
+    
+    %Duration
+    set(myhandles.edit_silence1,'String',Setting.Silence1);
+    set(myhandles.edit_tone,'String',Setting.ToneDur);
+    set(myhandles.edit_silence2,'String',Setting.Silence2);
+    set(myhandles.edit_ramp,'String',Setting.Ramp);
+end
+
+% --------------------------------------------------------------------
+function varargout = MakeStimList(Setting)
+%Parse the current settings and make the stim list
+%
+global STIM
+
+
+%%%%%%%%%%%%% Parse the current settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Freq
+Freq=[];
+if Setting.FreqManualFlag %Freq in linear scale
+    freq=str2num(Setting.FreqManual);
+    Freq=[Freq freq(:)'];
+end
+if Setting.FreqLogSpaceFlag %Freq in log scale
+    freqfrom=str2num(Setting.FreqFrom); %Start freq
+    freqto=str2num(Setting.FreqTo); %End freq
+    freqstep=abs(str2num(Setting.FreqStep)); %Steps in octave
+    if freqfrom>freqto 
+        freqstep=-freqstep;
+    end
+    freq=log2(freqfrom):freqstep:log2(freqto); %Equal step in log scale
+    freq=2.^freq; %back to linear scale
+    Freq=[Freq freq(:)'];
+end
+if isempty(Freq)
+    error('Invalid frequency setting.');
+else
+    Freq=sort(Freq);
+end
+NFreq=length(Freq);
+DF=str2num(Setting.DF);
+if length(DF)~=1
+    error('Invalid Silence1 setting.');
+end  
+
+%SPL
+SPL=str2num(Setting.SPL);
+if isempty(SPL)
+    error('Invalid SPL setting.');
+end
+NSPL=length(SPL);
+    
+%ITD/IPD
+ITD=str2num(Setting.ITD);
+if isempty(ITD)
+    error('Invalid ITD setting.');
+end        
+NITD=length(ITD);
+IsRadian=Setting.IsRadian; %Radian
+FixEnvFlag=Setting.FixEnvFlag; %Fix envelope
+
+%ILD
+ILD=str2num(Setting.ILD);
+if isempty(ILD)
+    error('Invalid ILD setting.');
+end        
+NILD=length(ILD);
+
+%Duration
+Silence1=str2num(Setting.Silence1);
+if length(Silence1)~=1
+    error('Invalid Silence1 setting.');
+end  
+ToneDur=str2num(Setting.ToneDur);
+if length(ToneDur)~=1
+    error('Invalid Tone Dur. setting.');
+end        
+Silence2=str2num(Setting.Silence2);
+if length(Silence2)~=1
+    error('Invalid Silence2 setting.');
+end        
+Ramp=str2num(Setting.Ramp);
+if length(Ramp)~=1
+    error('Invalid Ramp setting.');
+end        
+
+%%%%%%%%%%%% Make a cell array for a stim list %%%%%%%%%%%%%%%%%%%%%%%%
+NCond=NFreq*NSPL*NITD*NILD;
+mySTIM=cell(NCond,7);
+cnt=0;
+for iSPL=1:NSPL %%%%%%%%
+    mySPL=SPL(iSPL);
+    for iFreq=1:NFreq %%%%%%%%
+        myFreq=Freq(iFreq);
+        for iITD=1:NITD %%%%%%
+            myITD=ITD(iITD);
+            if IsRadian %If ITD is in xPi radian convert the phase to us
+                myITD=(1/myFreq*1e6/2)*myITD;
+            end
+            for iILD=1:NILD %%%%%
+                myILD=ILD(iILD);
+                
+                cnt=cnt+1;
+                mySTIM(cnt,:)={'Tone',num2str(myFreq),num2str(mySPL),num2str(myITD),num2str(FixEnvFlag),...
+                        num2str(myILD),num2str([Silence1 ToneDur Silence2 Ramp])};
+                
+            end %for iILD=1:NILD
+        end %for iITD=1:NITD
+    end %for iSPL=1:NSPL
+end %for iFreq=1:NFreq
+
+%Append to STIM
+[nrow,ncol]=size(STIM);
+d=ncol-7;
+if d>0
+    STIM=[STIM; [mySTIM cell(NCond,d)]];
+elseif d<0
+    STIM=[[STIM cell(nrow,-d)]; mySTIM];
+else
+    STIM=[STIM; mySTIM];
+end
+
+%Update the number of conditions in the ExptMan
+ExptMan('UpdateNCond'); 
+
+
+%| ABOUT CALLBACKS:
+%| GUIDE automatically appends subfunction prototypes to this file, and 
+%| sets objects' callback properties to call them through the FEVAL 
+%| switchyard above. This comment describes that mechanism.
+%|
+%| Each callback subfunction declaration has the following form:
+%| <SUBFUNCTION_NAME>(H, EVENTDATA, HANDLES, VARARGIN)
+%|
+%| The subfunction name is composed using the object's Tag and the 
+%| callback type separated by '_', e.g. 'slider2_Callback',
+%| 'figure1_CloseRequestFcn', 'axis1_ButtondownFcn'.
+%|
+%| H is the callback object's handle (obtained using GCBO).
+%|
+%| EVENTDATA is empty, but reserved for future use.
+%|
+%| HANDLES is a structure containing handles of components in GUI using
+%| tags as fieldnames, e.g. handles.figure1, handles.slider2. This
+%| structure is created at GUI startup using GUIHANDLES and stored in
+%| the figure's application data using GUIDATA. A copy of the structure
+%| is passed to each callback.  You can store additional information in
+%| this structure at GUI startup, and you can change the structure
+%| during callbacks.  Call guidata(h, handles) after changing your
+%| copy to replace the stored original so that subsequent callbacks see
+%| the updates. Type "help guihandles" and "help guidata" for more
+%| information.
+%|
+%| VARARGIN contains any extra arguments you have passed to the
+%| callback. Specify the extra arguments by editing the callback
+%| property in the inspector. By default, GUIDE sets the property to:
+%| <MFILENAME>('<SUBFUNCTION_NAME>', gcbo, [], guidata(gcbo))
+%| Add any extra arguments after the last argument, before the final
+%| closing parenthesis.
+
+
+
+% --------------------------------------------------------------------
+function varargout = push_append_Callback(h, eventdata, handles, varargin)
+%Append the current settings to the STIM cell
+
+%Get the current setting
+Setting=SetTone('GetSetting');
+MakeStimList(Setting);
+
+
+% --------------------------------------------------------------------
+function varargout = push_finish_Callback(h, eventdata, handles, varargin)
+%Append the current settings to the STIM cell and close the window
+
+%Get the current setting
+Setting=SetTone('GetSetting');
+MakeStimList(Setting);
+
+%Save the current setting
+save SetTone Setting
+
+closereq %Close the window
+
+
+% --------------------------------------------------------------------
+function varargout = push_cancel_Callback(h, eventdata, handles, varargin)
+%Close the window without appending the current settings
+
+global STIM
+
+ExptMan('UpdateNCond'); %Update the number of conditions in the ExptMan
+
+closereq %Close the window
+
+
+
+% --------------------------------------------------------------------
+function varargout = check_freqmanual_Callback(h, eventdata, handles, varargin)
+
+%% Disable the UI controls when the check is off
+myhandles=[handles.edit_freqmanual handles.text_manual_hz];
+if get(h,'Value')
+    set(myhandles,'Enable','on');
+else
+    set(myhandles,'Enable','off');
+end
+
+
+
+% --------------------------------------------------------------------
+function varargout = check_freqlogspace_Callback(h, eventdata, handles, varargin)
+
+%% Disable the UI controls when the check is off
+myhandles=[handles.edit_freqfrom handles.edit_freqto handles.edit_freqstep ...
+     handles.text_logspace_tild handles.text_logspace_hz handles.text_logspace_oct];
+if get(h,'Value')
+    set(myhandles,'Enable','on');
+else
+    set(myhandles,'Enable','off');
+end
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_freqmanual_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_freqfrom_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_freqto_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_freqstep_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_spl_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_itd_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = radio_radian_Callback(h, eventdata, handles, varargin)
+%Radio button for using Radian
+
+%Toggle between the radio buttons
+set(handles.radio_radian,'Value',1);
+set(handles.radio_us,'Value',0);
+
+
+
+% --------------------------------------------------------------------
+function varargout = radio_us_Callback(h, eventdata, handles, varargin)
+%Radio button for using micros sec (us)
+
+%Toggle between the radio buttons
+set(handles.radio_radian,'Value',0);
+set(handles.radio_us,'Value',1);
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = check_fixenv_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_ild_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_silence1_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_tone_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_silence2_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_ramp_Callback(h, eventdata, handles, varargin)
+
+
+% --- Executes during object creation, after setting all properties.
+function edit_df_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit_df (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc
+    set(hObject,'BackgroundColor','white');
+else
+    set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
+end
+
+
+
+function edit_df_Callback(hObject, eventdata, handles)
+% hObject    handle to edit_df (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit_df as text
+%        str2double(get(hObject,'String')) returns contents of edit_df as a double
+
+

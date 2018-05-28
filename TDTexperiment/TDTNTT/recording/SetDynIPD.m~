@@ -1,0 +1,373 @@
+function varargout = SetDynIPD(varargin)
+% SETDYNIPD Application M-file for MakeTone.fig
+%    FIG = SETDYNIPD launch MakeTone GUI.
+%    SETDYNIPD('callback_name', ...) invoke the named callback.
+
+% Last Modified by GUIDE v2.5 21-Feb-2003 17:07:55
+
+if nargin == 0  % LAUNCH GUI
+
+	fig = openfig(mfilename,'reuse');
+
+	% Use system color scheme for figure:
+	set(fig,'Color',get(0,'defaultUicontrolBackgroundColor'));
+
+	% Generate a structure of handles to pass to callbacks, and store it. 
+	handles = guihandles(fig);
+	guidata(fig, handles);
+
+
+    %----------------------------------
+    %Initialization Code
+    
+    %Use the settings used previously
+    if exist('SetDynIPD.mat','file')==2
+        load('SetDynIPD') %Load the settings
+
+        if exist('Setting','var')==1
+            SetDynIPD('SetSetting',Setting);
+        end
+        
+        %Position in the screen
+        if exist('Position','var')==1 
+            mypos=get(fig,'Position');
+            mypos(1:2)=Position(1:2);
+            set(fig,'Position',mypos);
+        end
+    end   
+    %Make sure that the figure is visible on the screen
+    movegui(fig,'onscreen');
+   
+    %----------------------------------
+
+    if nargout > 0
+		varargout{1} = fig;
+	end
+
+elseif ischar(varargin{1}) % INVOKE NAMED SUBFUNCTION OR CALLBACK
+
+	try
+		if (nargout)
+			[varargout{1:nargout}] = feval(varargin{:}); % FEVAL switchyard
+		else
+			feval(varargin{:}); % FEVAL switchyard
+		end
+	catch
+		disp(lasterr);
+	end
+
+end
+
+%%%%%%%%%%%%%%% functions created by user %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% --------------------------------------------------------------------
+function Setting = GetSetting
+%Read the current settings
+%
+
+myh=findobj('Tag','fig_setdynipd');
+Setting=[];
+if ~isempty(myh)
+    myhandles=guihandles(myh);
+    
+    %Freq
+    Setting.Freq=get(myhandles.edit_freq,'String');
+    
+    %SPL
+    Setting.SPL=get(myhandles.edit_spl,'String');
+    
+    %IPD
+    Setting.CenterIPD=get(myhandles.edit_centeripd,'String');
+    Setting.IPDRange=get(myhandles.radio_ipdrange,'Value');
+    Setting.Period=get(myhandles.check_period,'Value');
+    
+    %Duration
+    Setting.Silence1=get(myhandles.edit_silence1,'String');
+    Setting.ToneDur=get(myhandles.edit_tone,'String');
+    Setting.Silence2=get(myhandles.edit_silence2,'String');
+    Setting.Ramp=get(myhandles.edit_ramp,'String');
+end
+
+% --------------------------------------------------------------------
+function varargout = SetSetting(Setting)
+%Set the current settings
+%
+
+myh=findobj('Tag','fig_setdynipd');
+if ~isempty(myh) & ~isempty(Setting)
+    myhandles=guihandles(myh);
+    
+    %Freq
+    set(myhandles.edit_freq,'String',Setting.Freq);
+    
+    %SPL
+    set(myhandles.edit_spl,'String',Setting.SPL);
+    
+    %IPD
+    set(myhandles.edit_centeripd,'String',Setting.CenterIPD);
+    set(myhandles.edit_ipdrange,'String',Setting.IPDRange);
+    set(myhandles.edit_period,'String',Setting.Period);
+
+    %Duration
+    set(myhandles.edit_silence1,'String',Setting.Silence1);
+    set(myhandles.edit_tone,'String',Setting.ToneDur);
+    set(myhandles.edit_silence2,'String',Setting.Silence2);
+    set(myhandles.edit_ramp,'String',Setting.Ramp);
+end
+
+% --------------------------------------------------------------------
+function varargout = MakeStimList(Setting)
+%Parse the current settings and make the stim list
+%
+global STIM
+
+
+%%%%%%%%%%%%% Parse the current settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Freq
+Freq=str2num(Setting.Freq);
+NFreq=length(Freq);
+
+%SPL
+SPL=str2num(Setting.SPL);
+if isempty(SPL)
+    error('Invalid SPL setting.');
+end
+NSPL=length(SPL);
+    
+%IPD
+CenterIPD=str2num(Setting.CenterIPD);
+NCenterIPD=length(CenterIPD);
+IPDRange=str2num(Setting.IPDRange);
+if size(IPDRange,2)~=2
+    error('IPD should have start and end values, e.g., [-pi pi]');
+end
+NIPDRange=size(IPDRange,1);
+Period=str2num(Setting.Period);
+NPeriod=length(Period);
+
+%Duration
+Silence1=str2num(Setting.Silence1);
+if length(Silence1)~=1
+    error('Invalid Silence1 setting.');
+end  
+ToneDur=str2num(Setting.ToneDur);
+if length(ToneDur)~=1
+    error('Invalid Tone Dur. setting.');
+end
+if ToneDur<Period
+    warning('Tone duration shorter than the modulation period');
+end
+Silence2=str2num(Setting.Silence2);
+if length(Silence2)~=1
+    error('Invalid Silence2 setting.');
+end        
+Ramp=str2num(Setting.Ramp);
+if length(Ramp)~=1
+    error('Invalid Ramp setting.');
+end        
+
+%%%%%%%%%%%% Make a cell array for a stim list %%%%%%%%%%%%%%%%%%%%%%%%
+NCond=NFreq*NSPL*NCenterIPD*NIPDRange*NPeriod;
+NCol=7;
+mySTIM=cell(NCond,NCol);
+cnt=0;
+for iSPL=1:NSPL %%%%%%%%
+    mySPL=SPL(iSPL);
+    for iFreq=1:NFreq %%%%%%%%
+        myFreq=Freq(iFreq);
+        for iCenterIPD=1:NCenterIPD %%%%%%
+            myCenterIPD=CenterIPD(iCenterIPD);
+            for iIPDRange=1:NIPDRange
+                myIPDRange=IPDRange(iIPDRange);
+                for iPeriod=1:NPeriod
+                    myPeriod=Period(iPeriod);
+                    cnt=cnt+1;
+                    mySTIM(cnt,:)={'DynIPD',num2str(myFreq),num2str(mySPL),num2str(myCenterIPD),num2str(myIPDRange),...
+                            num2str(myPeriod),num2str([Silence1 ToneDur Silence2 Ramp])};
+                end %for iPeriod=1:NPeriod
+            end %for iIPDRange=1:NIPDRange
+        end %for iCenterIPD=1:NCenterIPD
+    end %for iSPL=1:NSPL
+end %for iFreq=1:NFreq
+
+%Append to STIM
+[nrow,ncol]=size(STIM);
+d=ncol-NCol;
+if d>0
+    STIM=[STIM; [mySTIM cell(NCond,d)]];
+elseif d<0
+    STIM=[[STIM cell(nrow,-d)]; mySTIM];
+else
+    STIM=[STIM; mySTIM];
+end
+
+%Update the number of conditions in the ExptMan
+ExptMan('UpdateNCond'); 
+
+
+%| ABOUT CALLBACKS:
+%| GUIDE automatically appends subfunction prototypes to this file, and 
+%| sets objects' callback properties to call them through the FEVAL 
+%| switchyard above. This comment describes that mechanism.
+%|
+%| Each callback subfunction declaration has the following form:
+%| <SUBFUNCTION_NAME>(H, EVENTDATA, HANDLES, VARARGIN)
+%|
+%| The subfunction name is composed using the object's Tag and the 
+%| callback type separated by '_', e.g. 'slider2_Callback',
+%| 'figure1_CloseRequestFcn', 'axis1_ButtondownFcn'.
+%|
+%| H is the callback object's handle (obtained using GCBO).
+%|
+%| EVENTDATA is empty, but reserved for future use.
+%|
+%| HANDLES is a structure containing handles of components in GUI using
+%| tags as fieldnames, e.g. handles.figure1, handles.slider2. This
+%| structure is created at GUI startup using GUIHANDLES and stored in
+%| the figure's application data using GUIDATA. A copy of the structure
+%| is passed to each callback.  You can store additional information in
+%| this structure at GUI startup, and you can change the structure
+%| during callbacks.  Call guidata(h, handles) after changing your
+%| copy to replace the stored original so that subsequent callbacks see
+%| the updates. Type "help guihandles" and "help guidata" for more
+%| information.
+%|
+%| VARARGIN contains any extra arguments you have passed to the
+%| callback. Specify the extra arguments by editing the callback
+%| property in the inspector. By default, GUIDE sets the property to:
+%| <MFILENAME>('<SUBFUNCTION_NAME>', gcbo, [], guidata(gcbo))
+%| Add any extra arguments after the last argument, before the final
+%| closing parenthesis.
+
+
+
+% --------------------------------------------------------------------
+function varargout = push_append_Callback(h, eventdata, handles, varargin)
+%Append the current settings to the STIM cell
+
+%Get the current setting
+Setting=SetDynIPD('GetSetting');
+MakeStimList(Setting);
+
+
+% --------------------------------------------------------------------
+function varargout = push_finish_Callback(h, eventdata, handles, varargin)
+%Append the current settings to the STIM cell and close the window
+
+%Get the current setting
+Setting=SetDynIPD('GetSetting');
+MakeStimList(Setting);
+
+%Save the current setting
+save SetDynIPD Setting
+
+closereq %Close the window
+
+
+% --------------------------------------------------------------------
+function varargout = push_cancel_Callback(h, eventdata, handles, varargin)
+%Close the window without appending the current settings
+
+global STIM
+
+ExptMan('UpdateNCond'); %Update the number of conditions in the ExptMan
+
+closereq %Close the window
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_freq_Callback(h, eventdata, handles, varargin)
+
+
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_spl_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_centeritd_Callback(h, eventdata, handles, varargin)
+
+
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_silence1_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_tone_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_silence2_Callback(h, eventdata, handles, varargin)
+
+
+
+
+% --------------------------------------------------------------------
+function varargout = edit_ramp_Callback(h, eventdata, handles, varargin)
+
+
+% --- Executes during object creation, after setting all properties.
+function edit_ipdrange_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit_ipdrange (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc
+    set(hObject,'BackgroundColor','white');
+else
+    set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
+end
+
+
+
+function edit_ipdrange_Callback(hObject, eventdata, handles)
+% hObject    handle to edit_ipdrange (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit_ipdrange as text
+%        str2double(get(hObject,'String')) returns contents of edit_ipdrange as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edit_period_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit_period (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc
+    set(hObject,'BackgroundColor','white');
+else
+    set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
+end
+
+
+
+function edit_period_Callback(hObject, eventdata, handles)
+% hObject    handle to edit_period (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit_period as text
+%        str2double(get(hObject,'String')) returns contents of edit_period as a double
+
+

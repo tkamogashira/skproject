@@ -1,0 +1,233 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\BandLimitedNoise.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\BandLimitedNoise.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BandLimitedNoise"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "BandLimitedNoise Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_BANDLIMITEDNOISE_DIALOG DIALOGEX 0, 0, 284, 182
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Band-Limited Noise"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Load Circuit",BUTTON_LOAD,181,20,78,28
+    CONTROL         "",IDC_X1,"{D323A625-1D13-11D4-8858-444553540000}",WS_TABSTOP,210,7,67,31
+    DEFPUSHBUTTON   "Start",BUTTON_START,181,59,78,28,WS_DISABLED
+    DEFPUSHBUTTON   "Stop",BUTTON_STOP,181,98,78,28,WS_DISABLED
+    GROUPBOX        "Results",IDC_STATIC,13,113,155,57
+    GROUPBOX        "Filter Settings",IDC_STATIC,13,7,155,56
+    GROUPBOX        "Noise Settings",IDC_STATIC,13,68,155,35
+    EDITTEXT        EDIT_CENTERFREQ,104,18,52,12,ES_RIGHT | ES_AUTOHSCROLL
+    RTEXT           "Center Frequency (Hz)",IDC_STATIC,17,20,83,8
+    EDITTEXT        EDIT_GAIN,104,31,52,12,ES_RIGHT | ES_AUTOHSCROLL
+    RTEXT           "Gain (dB)",IDC_STATIC,17,33,83,8
+    EDITTEXT        EDIT_BANDWIDTH,104,44,52,12,ES_RIGHT | ES_AUTOHSCROLL
+    RTEXT           "Bandwidth (Hz)",IDC_STATIC,17,46,83,8
+    EDITTEXT        EDIT_AMPLITUDE,104,83,52,12,ES_RIGHT | ES_AUTOHSCROLL
+    RTEXT           "Amplitude (V)",IDC_STATIC,17,85,83,8
+    EDITTEXT        EDIT_SAMPLERATE,104,120,52,12,ES_RIGHT | ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "Sample Rate (Hz)",IDC_STATIC,17,122,83,8
+    EDITTEXT        EDIT_CYCUSAGE,104,134,52,12,ES_RIGHT | ES_AUTOHSCROLL | WS_DISABLED
+    RTEXT           "Cycle Usage (%)",IDC_STATIC,17,136,83,8
+    RTEXT           "Clipped",IDC_STATIC,17,150,83,8
+    CONTROL         "Check1",CHECK_CLIPPED,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,104,150,10,8
+    DEFPUSHBUTTON   "Exit",BUTTON_EXIT,181,137,78,28
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "BandLimitedNoise MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "BandLimitedNoise"
+            VALUE "LegalCopyright", "Copyright (C) 2002"
+            VALUE "OriginalFilename", "BandLimitedNoise.EXE"
+            VALUE "ProductName", "BandLimitedNoise Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_BANDLIMITEDNOISE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 277
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_BANDLIMITEDNOISE_DIALOG DLGINIT
+BEGIN
+    IDC_X1, 0x376, 20, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x0a70, 0x0000, 0x052b, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About BandLimitedNoise..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\BandLimitedNoise.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

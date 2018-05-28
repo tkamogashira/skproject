@@ -1,0 +1,36 @@
+% E1to10AllChDiffN10fInt005vsNEW
+function SigChN=E1to10AllChDiffN10fInt005vsNEW(4BB,6BB,NBB,V)
+
+4P((1:123),203)=4BB((15:137),203,1);
+4P((1:7),(1:202))=ones(7,202);
+4P((117:123),(1:202))=ones(7,202);
+for C=1:202
+    for f=8:116
+        if (mean(4BB(f,C,:),3)>mean(NBB(f,C,:),3))&(mean(4BB(f,C,:),3)>mean(6BB(f,C,:),3))
+            [H,p,ci]=ttest(4BB(f,C,:),NBB(f,C,:));
+            if p<0.05
+                [H,4P(),ci]=ttest(4BB(f,C,:),NBB(f,C,:));
+        else
+            4P(f,C)=1;
+        end;
+    end;
+end;
+4SigChN(1:7)=[0 0 0 0 0 0 0];
+4SigChN(117:123)=[0 0 0 0 0 0 0];
+for F=8:116
+    SigChN(F)=sum(4P(F,(1:202))<0.05);
+end;
+PlotP=[[P;V] [SigChN 0 0 0 0]'];
+assignin('base','PlotP',PlotP);
+[i,j]=find(PlotP((1:123),(1:202))<0.05);
+X=[i j];
+for k=1:size(X,1)
+    if PlotP(125,X(k,2))>0
+        plot3(PlotP(126,X(k,2)),PlotP(127,X(k,2)),PlotP(X(k,1),203),'bo'),hold on;
+    else
+        plot3(PlotP(126,X(k,2)),PlotP(127,X(k,2)),PlotP(X(k,1),203),'b.'),hold on;
+    end;
+end;
+plot3(PlotP(126,find(PlotP(125,(1:202))>0)),PlotP(127,find(PlotP(125,(1:202))>0)),ones(nnz(PlotP(125,(1:202))>0)),'ko'),hold on;
+plot3(PlotP(126,find(PlotP(125,(1:202))==0)),PlotP(127,find(PlotP(125,(1:202))==0)),ones(nnz(PlotP(125,(1:202))==0)),'k.'),grid,axis([-60 60 -70 70 1 10]),hold on;          
+end

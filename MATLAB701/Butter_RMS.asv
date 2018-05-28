@@ -1,0 +1,20 @@
+% Butter_RMS
+function MaxRMS=Butter_RMS(M,N,q)
+[b,a] = butter(2,20/300,'low');
+M1=filtfilt(b,a,M(:,(1:204)));
+[d,c] = butter(2,1/300,'high');
+M2=filtfilt(d,c,M1(:,(1:204)));
+EachMean=mean(M2((5:29),(1:204)),1);
+[m,n]=size(M2);
+M3=M2(:,(1:204))-repmat(EachMean,m,1);
+MM=[(M3(:,(1:204))).^2 M(:,(205:214))];
+SelectData=MM(:,(N(4,(1:204))==q));
+SelectRMS=(mean(SelectData,2)).^(1/2);
+[MaxVal,PreMaxLatIndex]=max(SelectRMS((87:152),1));
+MaxLatIndex=PreMaxLatIndex+86;
+MaxRMS=[M(MaxLatIndex,214) MaxVal];
+assignin('base','MaxRMS',MaxRMS);
+RMSdata=[(M(:,214))';(SelectRMS(:,1))'];
+assignin('base','RMSdata',RMSdata);
+plot(M(:,214),SelectRMS(:,1)),grid on
+end

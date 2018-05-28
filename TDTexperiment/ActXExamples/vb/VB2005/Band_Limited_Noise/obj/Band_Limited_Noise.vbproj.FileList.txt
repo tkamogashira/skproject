@@ -1,0 +1,15 @@
+bin\Release\Band_Limited_Noise.exe
+bin\Release\Band_Limited_Noise.pdb
+bin\Release\Band_Limited_Noise.xml
+bin\Release\Interop.RPCOXLib.dll
+bin\Release\AxInterop.RPCOXLib.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Interop.RPCOXLib.dll
+obj\Release\AxInterop.RPCOXLib.dll
+obj\Release\Band_Limited_Noise.vbproj.ResolveComReference.cache
+obj\Release\Band_Limited_Noise.frmBLNMain.resources
+obj\Release\Band_Limited_Noise.Resources.resources
+obj\Release\Band_Limited_Noise.vbproj.GenerateResource.Cache
+obj\Release\Band_Limited_Noise.exe
+obj\Release\Band_Limited_Noise.xml
+obj\Release\Band_Limited_Noise.pdb

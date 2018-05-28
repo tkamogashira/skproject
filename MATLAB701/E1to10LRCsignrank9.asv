@@ -1,0 +1,105 @@
+% E1to10LRCsignrank9
+function frequency=E1to10LRCsignrank9(S1,S2,S3,S4,S5,S6,S7,S8,S9,M1,M2,M3,M4,M5,M6,M7,M8,M9,N1,N2,N3,N4,N5,N6,N7,N8,N9,V)
+% S:FFTby4HzBB; M:FFTby6.66HzBB; N:FFTbyNoBB; V:channels202XY 
+for c=1:202
+    Sn((1:123),c,1)=S1((15:137),c)/sum(S1((15:137),c))*123;
+    Sn((1:123),c,2)=S2((15:137),c)/sum(S2((15:137),c))*123;
+    Sn((1:123),c,3)=S3((15:137),c)/sum(S3((15:137),c))*123;
+    Sn((1:123),c,4)=S4((15:137),c)/sum(S4((15:137),c))*123;
+    Sn((1:123),c,5)=S5((15:137),c)/sum(S5((15:137),c))*123;
+    Sn((1:123),c,6)=S6((15:137),c)/sum(S6((15:137),c))*123;
+    Sn((1:123),c,7)=S7((15:137),c)/sum(S7((15:137),c))*123;
+    Sn((1:123),c,8)=S8((15:137),c)/sum(S8((15:137),c))*123;
+    Sn((1:123),c,9)=S9((15:137),c)/sum(S9((15:137),c))*123;
+    Mn((1:123),c,1)=M1((15:137),c)/sum(M1((15:137),c))*123;
+    Mn((1:123),c,2)=M2((15:137),c)/sum(M2((15:137),c))*123;
+    Mn((1:123),c,3)=M3((15:137),c)/sum(M3((15:137),c))*123;
+    Mn((1:123),c,4)=M4((15:137),c)/sum(M4((15:137),c))*123;
+    Mn((1:123),c,5)=M5((15:137),c)/sum(M5((15:137),c))*123;
+    Mn((1:123),c,6)=M6((15:137),c)/sum(M6((15:137),c))*123;
+    Mn((1:123),c,7)=M7((15:137),c)/sum(M7((15:137),c))*123;
+    Mn((1:123),c,8)=M8((15:137),c)/sum(M8((15:137),c))*123;
+    Mn((1:123),c,9)=M9((15:137),c)/sum(M9((15:137),c))*123;
+    Nn((1:123),c,1)=N1((15:137),c)/sum(N1((15:137),c))*123;
+    Nn((1:123),c,2)=N2((15:137),c)/sum(N2((15:137),c))*123;
+    Nn((1:123),c,3)=N3((15:137),c)/sum(N3((15:137),c))*123;
+    Nn((1:123),c,4)=N4((15:137),c)/sum(N4((15:137),c))*123;
+    Nn((1:123),c,5)=N5((15:137),c)/sum(N5((15:137),c))*123;
+    Nn((1:123),c,6)=N6((15:137),c)/sum(N6((15:137),c))*123;
+    Nn((1:123),c,7)=N7((15:137),c)/sum(N7((15:137),c))*123;
+    Nn((1:123),c,8)=N8((15:137),c)/sum(N8((15:137),c))*123;
+    Nn((1:123),c,9)=N9((15:137),c)/sum(N9((15:137),c))*123;
+end;
+for i=1:9
+    Sn((1:123),203,i)=S1((15:137),203)/1000;
+    Mn((1:123),203,i)=M1((15:137),203)/1000;
+    Nn((1:123),203,i)=N1((15:137),203)/1000;
+end;
+% significant 4HzBB-dominant frequency on left 40 channels 
+for f=1:123
+    X=[Sn(f,find(V(2,(1:202))==1),1);Mn(f,find(V(2,(1:202))==1),1);Nn(f,find(V(2,(1:202))==1),1);Sn(f,find(V(2,(1:202))==1),2);Mn(f,find(V(2,(1:202))==1),2);Nn(f,find(V(2,(1:202))==1),2);Sn(f,find(V(2,(1:202))==1),3);Mn(f,find(V(2,(1:202))==1),3);Nn(f,find(V(2,(1:202))==1),3);Sn(f,find(V(2,(1:202))==1),4);Mn(f,find(V(2,(1:202))==1),4);Nn(f,find(V(2,(1:202))==1),4);Sn(f,find(V(2,(1:202))==1),5);Mn(f,find(V(2,(1:202))==1),5);Nn(f,find(V(2,(1:202))==1),5);Sn(f,find(V(2,(1:202))==1),6);Mn(f,find(V(2,(1:202))==1),6);Nn(f,find(V(2,(1:202))==1),6);Sn(f,find(V(2,(1:202))==1),7);Mn(f,find(V(2,(1:202))==1),7);Nn(f,find(V(2,(1:202))==1),7);Sn(f,find(V(2,(1:202))==1),8);Mn(f,find(V(2,(1:202))==1),8);Nn(f,find(V(2,(1:202))==1),8);Sn(f,find(V(2,(1:202))==1),9);Mn(f,find(V(2,(1:202))==1),9);Nn(f,find(V(2,(1:202))==1),9)];
+    if (mean(mean(Sn(f,find(V(2,(1:202))==1),:),2),3)>mean(mean(Mn(f,find(V(2,(1:202))==1),:),2),3))&(mean(mean(Sn(f,find(V(2,(1:202))==1),:),2),3)>mean(mean(Nn(f,find(V(2,(1:202))==1),:),2),3))
+        p1=signrank(Sn(f,find(V(2,(1:202))==1)),Mn(f,find(V(2,(1:202))==1)),0.01);
+        [p2,h2]=signrank(Sn(f,find(V(2,(1:202))==1)),Nn(f,find(V(2,(1:202))==1)),0.01);
+        H4L(f,1)=h1*h2;
+    else
+        H4L(f,1)=0;
+    end;
+end;
+% significant 4HzBB-dominant frequency on right 40 channels
+for f=1:123
+    if (mean(Sn(f,find(V(2,(1:202))==2)))>mean(Mn(f,find(V(2,(1:202))==2))))&(mean(Sn(f,find(V(2,(1:202))==2)))>mean(Nn(f,find(V(2,(1:202))==2))))
+        [p1,h1]=signrank(Sn(f,find(V(2,(1:202))==2)),Mn(f,find(V(2,(1:202))==2)),0.01);
+        [p2,h2]=signrank(Sn(f,find(V(2,(1:202))==2)),Nn(f,find(V(2,(1:202))==2)),0.01);
+        H4R(f,1)=h1*h2;
+    else
+        H4R(f,1)=0;
+    end;
+end;
+% significant 4HzBB-dominant frequency on central 40 channels
+for f=1:123
+    if (mean(Sn(f,find(V(2,(1:202))==0)))>mean(Mn(f,find(V(2,(1:202))==0))))&(mean(Sn(f,find(V(2,(1:202))==0)))>mean(Nn(f,find(V(2,(1:202))==0))))
+        [p1,h1]=signrank(Sn(f,find(V(2,(1:202))==0)),Mn(f,find(V(2,(1:202))==0)),0.01);
+        [p2,h2]=signrank(Sn(f,find(V(2,(1:202))==0)),Nn(f,find(V(2,(1:202))==0)),0.01);
+        H4C(f,1)=h1*h2;
+    else
+        H4C(f,1)=0;
+    end;
+end;
+% significant 6.66HzBB-dominant frequency on left 40 channels 
+for f=1:123
+    if (mean(Mn(f,find(V(2,(1:202))==1)))>mean(Sn(f,find(V(2,(1:202))==1))))&(mean(Mn(f,find(V(2,(1:202))==1)))>mean(Nn(f,find(V(2,(1:202))==1))))
+        [p1,h1]=signrank(Mn(f,find(V(2,(1:202))==1)),Sn(f,find(V(2,(1:202))==1)),0.01);
+        [p2,h2]=signrank(Mn(f,find(V(2,(1:202))==1)),Nn(f,find(V(2,(1:202))==1)),0.01);
+        H6L(f,1)=h1*h2;
+    else
+        H6L(f,1)=0;
+    end;
+end;
+% significant 6.66HzBB-dominant frequency on right 40 channels
+for f=1:123
+    if (mean(Mn(f,find(V(2,(1:202))==2)))>mean(Sn(f,find(V(2,(1:202))==2))))&(mean(Mn(f,find(V(2,(1:202))==2)))>mean(Nn(f,find(V(2,(1:202))==2))))
+        [p1,h1]=signrank(Mn(f,find(V(2,(1:202))==2)),Sn(f,find(V(2,(1:202))==2)),0.01);
+        [p2,h2]=signrank(Mn(f,find(V(2,(1:202))==2)),Nn(f,find(V(2,(1:202))==2)),0.01);
+        H6R(f,1)=h1*h2;
+    else
+        H6R(f,1)=0;
+    end;
+end;
+% significant 6.66HzBB-dominant frequency on central 40 channels
+for f=1:123
+    if (mean(Mn(f,find(V(2,(1:202))==0)))>mean(Sn(f,find(V(2,(1:202))==0))))&(mean(Mn(f,find(V(2,(1:202))==0)))>mean(Nn(f,find(V(2,(1:202))==0))))
+        [p1,h1]=signrank(Mn(f,find(V(2,(1:202))==0)),Sn(f,find(V(2,(1:202))==0)),0.01);
+        [p2,h2]=signrank(Mn(f,find(V(2,(1:202))==0)),Nn(f,find(V(2,(1:202))==0)),0.01);
+        H6C(f,1)=h1*h2;
+    else
+        H6C(f,1)=0;
+    end;
+end;
+plot(ones(size(Sn(find(H4L(:,1)==1),203)),1),Sn(find(H4L(:,1)==1),203),'bo'),hold on;
+plot(ones(size(Sn(find(H4R(:,1)==1),203)),1)*3,Sn(find(H4R(:,1)==1),203),'bo'),hold on;
+plot(ones(size(Sn(find(H4C(:,1)==1),203)),1)*2,Sn(find(H4C(:,1)==1),203),'bo'),hold on;
+plot(ones(size(Sn(find(H6L(:,1)==1),203)),1),Sn(find(H6L(:,1)==1),203),'ro'),hold on;
+plot(ones(size(Sn(find(H6R(:,1)==1),203)),1)*3,Sn(find(H6R(:,1)==1),203),'ro'),hold on;
+plot(ones(size(Sn(find(H6C(:,1)==1),203)),1)*2,Sn(find(H6C(:,1)==1),203),'ro'),hold on;axis([0 4 1 10]),grid on
+end

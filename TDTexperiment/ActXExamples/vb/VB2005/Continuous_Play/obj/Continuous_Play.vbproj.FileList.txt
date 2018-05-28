@@ -1,0 +1,15 @@
+bin\Release\Continuous_Play.exe
+bin\Release\Continuous_Play.pdb
+bin\Release\Continuous_Play.xml
+bin\Release\Interop.RPCOXLib.dll
+bin\Release\AxInterop.RPCOXLib.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Interop.RPCOXLib.dll
+obj\Release\AxInterop.RPCOXLib.dll
+obj\Release\Continuous_Play.vbproj.ResolveComReference.cache
+obj\Release\Continuous_Play.frmCPMain.resources
+obj\Release\Continuous_Play.Resources.resources
+obj\Release\Continuous_Play.vbproj.GenerateResource.Cache
+obj\Release\Continuous_Play.exe
+obj\Release\Continuous_Play.xml
+obj\Release\Continuous_Play.pdb

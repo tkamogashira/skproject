@@ -1,0 +1,15 @@
+bin\Release\Circuit_Loader.exe
+bin\Release\Circuit_Loader.pdb
+bin\Release\Circuit_Loader.xml
+bin\Release\Interop.RPCOXLib.dll
+bin\Release\AxInterop.RPCOXLib.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Interop.RPCOXLib.dll
+obj\Release\AxInterop.RPCOXLib.dll
+obj\Release\Circuit_Loader.vbproj.ResolveComReference.cache
+obj\Release\Circuit_Loader.frmCLMain.resources
+obj\Release\Circuit_Loader.Resources.resources
+obj\Release\Circuit_Loader.vbproj.GenerateResource.Cache
+obj\Release\Circuit_Loader.exe
+obj\Release\Circuit_Loader.xml
+obj\Release\Circuit_Loader.pdb

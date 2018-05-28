@@ -1,0 +1,26 @@
+% R(V6conditions) per an indivisual
+function RIndivisual=V6toRInd(V6)
+RIndivisual(1,1)=VtoSineR(V6(1,:));
+RIndivisual(1,2)=VtoSineR(V6(2,:));
+RIndivisual(1,3)=VtoSineR(V6(3,:));
+RIndivisual(1,4)=VtoSineR(V6(4,:));
+RIndivisual(2,1)=VtoSineR(V6(5,:));
+RIndivisual(2,2)=VtoSineR(V6(6,:));
+RIndivisual(2,3)=VtoSineR(V6(7,:));
+RIndivisual(2,4)=VtoSineR(V6(8,:));
+RIndivisual(3,1)=VtoSineR(V6(9,:));
+RIndivisual(3,2)=VtoSineR(V6(10,:));
+RIndivisual(3,3)=VtoSineR(V6(11,:));
+RIndivisual(3,4)=VtoSineR(V6(12,:));
+RIndivisual(4,1)=VtoSineR(V6(13,:));
+RIndivisual(4,2)=VtoSineR(V6(14,:));
+RIndivisual(4,3)=VtoSineR(V6(15,:));
+RIndivisual(4,4)=VtoSineR(V6(16,:));
+RIndivisual(5,1)=VtoSineR(V6(17,:));
+RIndivisual(5,2)=VtoSineR(V6(18,:));
+RIndivisual(5,3)=VtoSineR(V6(19,:));
+RIndivisual(5,4)=VtoSineR(V6(20,:));
+RIndivisual(6,1)=VtoSineR(V6(21,:));
+RIndivisual(6,2)=VtoSineR(V6(22,:));
+RIndivisual(6,3)=VtoSineR(V6(23,:));
+RIndivisual(6,4)=VtoSineR(V6(24,:))

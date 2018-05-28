@@ -1,0 +1,236 @@
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<html>
+<head><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base target="contentwin"><title>Guia do Servidor e Administra&ccedil;&atilde;o</title>
+</head>
+<body>
+<UL>
+<LI><a href="radmincopyright.html">Direitos autorais reservados</a></LI>
+<LI><a href="radminlicense.html">Licen&ccedil;a</a></LI>
+<LI><a href="cadminpreface30074.html">Sobre este guia</a>
+<UL>
+<LI><a href="cadminpreface11181.html">Finalidade deste guia</a></LI>
+<LI><a href="cadminpreface22460.html">Audi&ecirc;ncia</a></LI>
+<LI><a href="cadminpreface23947.html">Como este guia est&aacute; organizado</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminpartone.html">Parte 1: Guia do servidor Derby</a>
+<UL>
+<LI><a href="cadminov11108.html">O Derby em um ambiente multiusu&aacute;rio</a>
+<UL>
+<LI><a href="cadminov17524.html">O Derby em uma estrutura servidora</a>
+<UL>
+<LI><a href="cadminov825125.html">Configura&ccedil;&otilde;es de conectividade</a></LI>
+<LI><a href="cadminov33597.html">Funcionalidades dispon&iacute;veis no Derby para atender v&aacute;rios clientes</a>
+<UL>
+<LI><a href="cadminov28261.html">Bloqueio no n&iacute;vel de linha</a></LI>
+<LI><a href="cadminov16172.html">V&aacute;rios n&iacute;veis de simultaneidade</a></LI>
+<LI><a href="cadminov65220.html">V&aacute;rias conex&otilde;es e v&aacute;rios fluxos de execu&ccedil;&atilde;o</a></LI>
+<LI><a href="cadminov83312.html">Ferramentas administrativas</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminov825266.html">O Network Server do Derby</a></LI>
+<LI><a href="cadminov825149.html">Servidores incorporados</a></LI>
+<LI><a href="cadminembeddedserver.html">Como inicializar o servidor incorporado a partir de um aplicativo</a></LI>
+<LI><a href="radminembeddedserverex.html">Exemplo de servidor incorporado</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminov38650.html">Sobre este guia e a documenta&ccedil;&atilde;o do Network Server</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminapps59125.html">Utiliza&ccedil;&atilde;o do Network Server com aplicativos Derby pr&eacute;-existentes</a>
+<UL>
+<LI><a href="cadminappsthenetworkserverandjvms.html">O Network Server e as JVMs</a></LI>
+<LI><a href="tadminappschangingyourclasspath.html">Instala&ccedil;&atilde;o dos arquivos jar requeridos e adi&ccedil;&otilde;es ao caminho de classes</a></LI>
+<LI><a href="tadmincbdjhhfd.html">Inicializa&ccedil;&atilde;o do Network Server</a>
+<UL>
+<LI><a href="tadminconfigalteringthestartnetworkserverscr.html">Altera&ccedil;&atilde;o do script startNetworkServer</a></LI>
+<LI><a href="tadminconfig814934.html">Inicializa&ccedil;&atilde;o do Network Server sem usar o script</a></LI>
+<LI><a href="tadminconfig814963.html">Inicializa&ccedil;&atilde;o do Network Server a partir de um aplicativo Java</a></LI>
+<LI><a href="tadminconfigipx.html">Inicializa&ccedil;&atilde;o do Network Server em m&aacute;quinas Windows com pilha dupla IPv6/Ipv4</a></LI>
+</UL>
+</LI>
+<LI><a href="tadminconfigshuttingdownthenetworkserver.html">Parar o Network Server</a>
+<UL>
+<LI><a href="tadminconfig815333.html">Parar utilizando a linha de comando</a></LI>
+<LI><a href="tadminconfig815357.html">Parar utilizando a API</a></LI>
+</UL>
+</LI>
+<LI><a href="tadminconfigsysteminformation.html">Obten&ccedil;&atilde;o de informa&ccedil;&otilde;es do sistema</a>
+<UL>
+<LI><a href="tadminconfig815768.html">Obten&ccedil;&atilde;o de informa&ccedil;&otilde;es do sistema utilizando a linha de comando</a></LI>
+<LI><a href="tadminconfig815853.html">Obten&ccedil;&atilde;o de informa&ccedil;&otilde;es do sistema utilizando a API</a>
+<UL>
+<LI><a href="tadminappsruntimeinfo.html">Obten&ccedil;&atilde;o de informa&ccedil;&otilde;es sobre o Network Server em tempo de execu&ccedil;&atilde;o</a></LI>
+<LI><a href="tadminconfig815822.html">Obten&ccedil;&atilde;o das propriedades do Network Server utilizando o m&eacute;todo getCurrentProperties</a></LI>
+</UL>
+</LI>
+</UL>
+</LI>
+<LI><a href="cadminappsclient.html">Acesso ao Network Server utilizando o driver cliente da rede</a>
+<UL>
+<LI><a href="cadminappsclientsecurity.html">Seguran&ccedil;a do cliente da rede</a></LI>
+<LI><a href="cadminappsclienttracing.html">Rastreamento do cliente da rede</a></LI>
+<LI><a href="radminappsclientxmp.html">Exemplos de driver cliente da rede</a></LI>
+<LI><a href="cadminapps810777.html">Acesso ao Network Server utilizando o Universal Driver do DB2</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminnsdatasources.html">Acesso ao Network Server utilizando DataSource</a></LI>
+<LI><a href="cadminapps811478.html">XA e o Network Server</a>
+<UL>
+<LI><a href="cadminappsxawthdriver.html">Utiliza&ccedil;&atilde;o de XA com o driver cliente da rede</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminappsusingthederbytoolswiththene.html">Utiliza&ccedil;&atilde;o das ferramentas do Derby com o Network Server</a>
+<UL>
+<LI><a href="tadminapps811302.html">Utiliza&ccedil;&atilde;o da ferramenta ij do Derby com o Network Server</a></LI>
+<LI><a href="tadminapps811345.html">Utiliza&ccedil;&atilde;o da ferramenta dblook do Derby com o Network Server</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminapps.html">Diferen&ccedil;as entre executar o Derby no modo incorporado e utilizando o Network Server</a>
+<UL>
+<LI><a href="cadminappsclientdiffs.html">Diferen&ccedil;as entre os drivers cliente incorporado e cliente da rede</a></LI>
+<LI><a href="radminappsresultsetdiffs.html">Conjuntos de resultados atualiz&aacute;veis</a></LI>
+<LI><a href="radminapps811974.html">Diferen&ccedil;as nas mensagens de erro</a></LI>
+<LI><a href="cadminapps49914.html">Diferen&ccedil;as na autentica&ccedil;&atilde;o do usu&aacute;rio</a>
+<UL>
+<LI><a href="cadminapps811631.html">O Network Server e a autentica&ccedil;&atilde;o de usu&aacute;rio, quando a mesma est&aacute; habilitada no Derby</a></LI>
+<LI><a href="cadminapps811656.html">O Network Server e a autentica&ccedil;&atilde;o de usu&aacute;rio, quando a mesma est&aacute; desabilitada no Derby</a></LI>
+<LI><a href="tadminapps811695.html">Habilita&ccedil;&atilde;o do mecanismo de seguran&ccedil;a de identifica&ccedil;&atilde;o do usu&aacute;rio e senha criptografados</a></LI>
+</UL>
+</LI>
+</UL>
+</LI>
+<LI><a href="tadminappssettingportnumbers.html">Defini&ccedil;&atilde;o do n&uacute;mero da porta</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminconfig86869.html">Gerenciamento do Network Server do Derby</a>
+<UL>
+<LI><a href="cadminconfigoverview.html">Vis&atilde;o geral</a>
+<UL>
+<LI><a href="tadminconfig813694.html">Utiliza&ccedil;&atilde;o da API do NetworkServerControl</a></LI>
+</UL>
+</LI>
+<LI><a href="tadminconfigsettingnetwrokserverproperties.html">Defini&ccedil;&atilde;o das propriedades do Network Server</a>
+<UL>
+<LI><a href="radmindrdahost.html">derby.drda.host</a></LI>
+<LI><a href="radmindrdakeepalive.html">derby.drda.keepAlive</a></LI>
+<LI><a href="radminconfigdb2jdrdalogconnections.html">derby.drda.logConnections</a></LI>
+<LI><a href="radmindrdamaxthreads.html">derby.drda.maxThreads</a></LI>
+<LI><a href="radmindrdaminthreads.html">derby.drda.minThreads</a></LI>
+<LI><a href="radminconfigportnumber.html">derby.drda.portNumber</a></LI>
+<LI><a href="radminconfigstartnetworkserver.html">derby.drda.startNetworkServer</a></LI>
+<LI><a href="radmindrdatimeslice.html">derby.drda.timeSlice</a></LI>
+<LI><a href="radminconfig.html">derby.drda.traceAll</a></LI>
+<LI><a href="radminconfigdb2jdrdatracedirectory.html">derby.drda.traceDirectory</a></LI>
+</UL>
+</LI>
+<LI><a href="tadminconfigverifyingstartup.html">Verifica&ccedil;&atilde;o da inicializa&ccedil;&atilde;o</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminservlet98430.html">Gerenciamento remoto do Network Server do Derby utilizando a interface servlet</a>
+<UL>
+<LI><a href="radminservlet810694.html">P&aacute;gina de inicializa&ccedil;&atilde;o</a></LI>
+<LI><a href="radminservlet810717.html">P&aacute;gina de execu&ccedil;&atilde;o</a></LI>
+<LI><a href="radminservlet810796.html">P&aacute;gina de rastreamento da sess&atilde;o</a></LI>
+<LI><a href="radminservlet810822.html">P&aacute;gina do diret&oacute;rio de rastreamento</a></LI>
+<LI><a href="radminservlet810910.html">Defini&ccedil;&atilde;o de par&acirc;metros do Network Server</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminadvtops.html">T&oacute;picos avan&ccedil;ados do Network Server do Derby</a>
+<UL>
+<LI><a href="cadminnetservsecurity.html">Seguran&ccedil;a do Network Server</a></LI>
+<LI><a href="tadminnetservrun.html">Execu&ccedil;&atilde;o do Network Server sob o gerenciador de seguran&ccedil;a</a></LI>
+<LI><a href="tadminconfiguringthenetworkserver.html">Configura&ccedil;&atilde;o do Network Server para tratar as conex&otilde;es</a></LI>
+<LI><a href="tadminlogfile.html">Controle do registro pela utiliza&ccedil;&atilde;o do arquivo de log</a></LI>
+<LI><a href="tadmintracefacility.html">Controle do rastreamento pela utiliza&ccedil;&atilde;o da facilidade de rastreamento</a>
+<UL>
+<LI><a href="tadminadv804410.html">Habilita&ccedil;&atilde;o da facilidade de rastreamento</a></LI>
+<LI><a href="tadminadv804451.html">Desabilita&ccedil;&atilde;o da facilidade de rastreamento</a></LI>
+</UL>
+</LI>
+</UL>
+</LI>
+<LI><a href="radminsampleprograms.html">Programas exemplo para o Network Server do Derby</a>
+<UL>
+<LI><a href="radminovnssample.html">O programa exemplo NsSample</a>
+<UL>
+<LI><a href="tadminovnsrundemo.html">Execu&ccedil;&atilde;o do programa exemplo NsSample</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminovntsrvsample.html">Programas exemplo do Network Server para conex&otilde;es incorporada e cliente</a>
+<UL>
+<LI><a href="cadminovsrvsmpprgm.html">Vis&atilde;o geral do programa SimpleNetworkServerSample</a></LI>
+<LI><a href="tadminovrunsrvprgm.html">Execu&ccedil;&atilde;o do programa SimpleNetworkServerSample</a></LI>
+<LI><a href="cadminovcliconnect.html">Conex&atilde;o de um cliente ao Network Server com o programa SimpleNetworkClientSample</a></LI>
+<LI><a href="tadminovclirun.html">Execu&ccedil;&atilde;o do programa SimpleNetworkClientSample</a></LI>
+</UL>
+</LI>
+</UL>
+</LI>
+</UL>
+</LI>
+<LI><a href="cadminparttwo.html">Parte 2: Guia de administra&ccedil;&atilde;o do Derby</a>
+<UL>
+<LI><a href="cadminconsist01.html">Verifica&ccedil;&atilde;o da consist&ecirc;ncia do banco de dados</a>
+<UL>
+<LI><a href="radminconsist30301.html">A fun&ccedil;&atilde;o SYSCS_CHECK_TABLE</a></LI>
+<LI><a href="radminconsist38781.html">Exemplos de mensagem de erro de SYSCS_CHECK_TABLE</a></LI>
+<LI><a href="radminconsist24642.html">Exemplos de comandos SYSCS_CHECK_TABLE</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminhubbkup98797.html">C&oacute;pia de seguran&ccedil;a e restaura&ccedil;&atilde;o do banco de dados</a>
+<UL>
+<LI><a href="cadminbckupdb.html">C&oacute;pia de seguran&ccedil;a do banco de dados</a>
+<UL>
+<LI><a href="cadminhubbkup12677.html">C&oacute;pias de seguran&ccedil;a fora de linha</a></LI>
+<LI><a href="cadminhubbkup63476.html">C&oacute;pias de seguran&ccedil;a em linha</a>
+<UL>
+<LI><a href="cadminhubbkup01.html">Utiliza&ccedil;&atilde;o do procedimento de c&oacute;pia de seguran&ccedil;a para realizar c&oacute;pia de seguran&ccedil;a em linha</a></LI>
+<LI><a href="cadminhubbkup75469.html">Utiliza&ccedil;&atilde;o de comandos do sistema operacional com os procedimentos do sistema de congelar e descongelar para realizar c&oacute;pias de seguran&ccedil;a em linha</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminhubbkup67525.html">Quando o log est&aacute; em um local diferente do padr&atilde;o</a></LI>
+<LI><a href="cadminhubbkup21105.html">C&oacute;pia de seguran&ccedil;a de um banco de dados criptografado</a></LI>
+</UL>
+</LI>
+<LI><a href="tadminhubbkup44.html">Restaura&ccedil;&atilde;o do banco de dados a partir da c&oacute;pia de seguran&ccedil;a</a></LI>
+<LI><a href="tadmincrtdbbkup.html">Cria&ccedil;&atilde;o de um banco de dados a partir de uma c&oacute;pia de seguran&ccedil;a</a></LI>
+<LI><a href="cadminrollforward.html">Recupera&ccedil;&atilde;o com rolagem para frente</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminlog98.html">Arquivo de log em uma unidade separada</a>
+<UL>
+<LI><a href="tadminlog800206.html">Utiliza&ccedil;&atilde;o do atributo logDevice</a></LI>
+<LI><a href="radminlog800241.html">Exemplo de cria&ccedil;&atilde;o do log em um local diferente do padr&atilde;o</a></LI>
+<LI><a href="radminlog800279.html">Exemplo de mover o log manualmente</a></LI>
+<LI><a href="cadminlog800315.html">Quest&otilde;es relativas ao log em um local diferente do padr&atilde;o</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminlockvti42553.html">Obten&ccedil;&atilde;o de informa&ccedil;&otilde;es sobre bloqueios</a>
+<UL>
+<LI><a href="cadminlockvti83889.html">Monitoramento dos impasses</a></LI>
+</UL>
+</LI>
+<LI><a href="cadminspace21579.html">Recupera&ccedil;&atilde;o do espa&ccedil;o n&atilde;o utilizado</a></LI>
+</UL>
+</LI>
+<LI><a href="radmintrademderby.html">Marcas Registradas</a></LI>
+</UL>
+</body>
+</html>
